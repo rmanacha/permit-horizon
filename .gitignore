@@ -54,3 +54,22 @@ sbom.spdx.json
 # Language-specific — paste rules for your stack here
 # (Python, Node, Go, R, Rust, etc.)
 # ==============================================================================
+
+# --- Python (uv manages .venv; nothing is installed into the system Python) --
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+
+# --- Node (web front-end under web/, from Phase 4) ----------------------------
+node_modules/
+web/dist/
+.vite/
+npm-debug.log*
+
+# --- Project exceptions -------------------------------------------------------
+# The organizers' curated data provider list is tracked despite data/* above.
+!data/DATA_SOURCES.md

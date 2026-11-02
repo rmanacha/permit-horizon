@@ -1,9 +1,9 @@
-# Dependabot keeps your dependencies patched and flags known vulnerabilities.
+# Dependabot keeps dependencies patched and flags known vulnerabilities.
 # Docs: https://docs.github.com/code-security/dependabot/dependabot-version-updates
 #
-# The "github-actions" block below works for every team, because every repo that
-# uses the CI workflow has GitHub Actions dependencies. UNCOMMENT the block that
-# matches your language so Dependabot also watches your project dependencies.
+# Three ecosystems: the GitHub Actions used in .github/workflows, the Python
+# packages pinned in uv.lock, and (from Phase 4) the npm packages of the web
+# front-end under /web.
 
 version: 2
 updates:
@@ -13,29 +13,14 @@ updates:
     schedule:
       interval: "weekly"
 
-  # --- Python -----------------------------------------------------------------
-  # - package-ecosystem: "uv"
-  #   directory: "/"
-  #   schedule:
-  #     interval: "weekly"
+  # Python dependencies, resolved and pinned by uv (pyproject.toml + uv.lock).
+  - package-ecosystem: "uv"
+    directory: "/"
+    schedule:
+      interval: "weekly"
 
-  # --- JavaScript / TypeScript ------------------------------------------------
-  # - package-ecosystem: "npm"
-  #   directory: "/"
-  #   schedule:
-  #     interval: "weekly"
-
-  # --- Go ---------------------------------------------------------------------
-  # - package-ecosystem: "gomod"
-  #   directory: "/"
-  #   schedule:
-  #     interval: "weekly"
-
-  # --- Rust -------------------------------------------------------------------
-  # - package-ecosystem: "cargo"
-  #   directory: "/"
-  #   schedule:
-  #     interval: "weekly"
-
-  # Other ecosystems (maven, bundler, composer, nuget, etc.) are listed at
-  # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#package-ecosystem
+  # Web front-end (Vite + React) under /web, added in Phase 4.
+  - package-ecosystem: "npm"
+    directory: "/web"
+    schedule:
+      interval: "weekly"

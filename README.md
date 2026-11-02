@@ -1,24 +1,10 @@
-<!--
-==============================================================================
-HOW TO USE THIS TEMPLATE (delete this comment block once you've read it)
+# Permit Horizon
 
-1. Click "Use this template" on GitHub to create your own PUBLIC repository.
-2. Read docs/REPO_SETUP_GUIDE.md and turn on the repository security settings (secret scanning, push protection, code scanning). These are settings, not files, so the template cannot enable them for you.
-3. Replace every [bracketed placeholder] below with your project's details.
-4. Fill in the "Command contract" so anyone can set up, run, and test your tool with the exact commands you list.
-5. Work through SUBMISSION_CHECKLIST.md before you submit.
-
-This template is language-agnostic. Use Python, JavaScript, Go, R, or anything else. The files here are configuration and documentation only; nothing forces a particular language or framework on you.
-==============================================================================
--->
-
-# [Project name]
-
-[One or two sentences: what your tool does and who it is for. Example: "A state-level simulator that estimates how many additional homes a set of pro-housing reforms could unlock in [state], with a county-level breakdown."]
+A statewide housing reform estimator. Permit Horizon estimates how five state-level reforms (accessory dwelling units, missing middle, transit-oriented density, parking-minimum reduction, and a 50% development fee cut) change residential building permits over five years versus a baseline, for all 50 states and DC, with low, central, and high ranges. Built for the Housing Data and Technology Innovation Challenge; audience: state legislators and their staff.
 
 ## What this tool does
 
-[Short description of the tool, the state(s) it covers, and the benchmark policy scenarios it addresses. List which of the five benchmark scenarios you implemented (at least three are required).]
+Status: Phase 0 (workspace and toolchain). The engine, data pipeline, scenarios, and web app arrive in later phases; this section will list the scenarios implemented and the showcase states (Utah, New Hampshire, Arizona) as they land.
 
 ## Command contract
 
@@ -26,11 +12,11 @@ Fill in the exact commands a stranger would run. These three commands are what r
 
 | Step  | Command                     | Notes |
 | ----- | --------------------------- | ----- |
-| Setup | `[e.g., pip install -r requirements.txt]` | Installs dependencies |
-| Run   | `[e.g., python app.py]`     | Starts the tool |
-| Test  | `[e.g., pytest]`            | Runs the automated tests |
+| Setup | `make setup` | Installs the exact pinned Python environment (`uv.lock`) into `.venv`; downloads Python 3.12 if needed |
+| Run   | `make run`   | Starts the tool (placeholder until the web app lands in Phase 4) |
+| Test  | `make test`  | Runs the automated tests with pytest |
 
-If there any assumptions on the environment required to run these commands, list them explicitly. Submissions with complicated build processes should provide a Dockerfile as a convenience.
+Environment assumptions: macOS or Linux (Windows via WSL), `make`, and [uv](https://docs.astral.sh/uv/getting-started/installation/) 0.11 or newer on your PATH. Nothing is installed into the system Python. `make lint` runs the static checks CI runs. The same three steps also run as `scripts/setup.sh`, `scripts/run.sh`, and `scripts/test.sh`, which is what CI calls.
 
 If your tool needs environment variables, copy `.env.example` to `.env` and fill in the values before running.
 
@@ -54,4 +40,4 @@ The challenge also permits **MIT**, **BSD 3-Clause**, and **BSD 2-Clause**. If y
 
 ## Team
 
-[List team members. All contributors must agree to the license and the challenge's [Official Rules](https://housingchallenge.turnout.rocks/rules.html).]
+Rishabh Manacha (Team Leader), Community Solutions, with teammates to be listed here. All contributors agree to the license and the challenge's [Official Rules](https://housingchallenge.turnout.rocks/rules.html).
