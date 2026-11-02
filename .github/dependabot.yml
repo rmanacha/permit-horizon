@@ -19,8 +19,10 @@ updates:
     schedule:
       interval: "weekly"
 
-  # Web front-end (Vite + React) under /web, added in Phase 4.
-  - package-ecosystem: "npm"
-    directory: "/web"
-    schedule:
-      interval: "weekly"
+  # Web front-end (Vite + React) under /web, added in Phase 4. Commented out
+  # until web/package.json exists, because Dependabot fails a weekly job for a
+  # directory with no manifest. Phase 4: uncomment this block.
+  # - package-ecosystem: "npm"
+  #   directory: "/web"
+  #   schedule:
+  #     interval: "weekly"
