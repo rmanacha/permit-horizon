@@ -88,7 +88,7 @@ Reproduction: **181 of 255 inside (71%), 37 above, 37 below**; worst origin 2005
 
 ## 5. Which band is the headline, and why both are shown
 
-The tool's headline band is rule A. Rule B is shown beside it in every results file (`baseline.alternative_band`), in its own section, computed exactly as tested here: the last five years' total stretched by the state's own slowest and fastest five years of the past 20 (decision 66). Rule A makes one checkable promise (inside in 80% of past periods) that held out of sample and allows for a shock the size of 2008. Rule B is narrower and follows each state's own history, but it promises no fixed coverage and missed most states after 2005. Showing both lets a reader see the trade-off between a wide band that rarely misses and a tight band that sometimes does.
+The tool's headline band is rule A. Rule B is shown beside it in every results file (`baseline.alternative_band`), in its own section, computed exactly as tested here: the last five years' total stretched by the state's own slowest and fastest five years of the past 20 (decision 69). Rule A makes one checkable promise (inside in 80% of past periods) that held out of sample and allows for a shock the size of 2008. Rule B is narrower and follows each state's own history, but it promises no fixed coverage and missed most states after 2005. Showing both lets a reader see the trade-off between a wide band that rarely misses and a tight band that sometimes does.
 
 ## 6. Plain-language reading
 

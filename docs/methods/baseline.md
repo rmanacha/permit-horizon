@@ -17,7 +17,7 @@ The three years are the latest three in the processed file (`baseline_window_yea
 
 0.5357 and 1.5924 are the 10th and 90th percentiles of *actual ÷ forecast* when this exact rule is rerun on every state and DC for every forecast origin 1990-2015. So: **in 80% of past five-year periods, the actual statewide total fell between 0.54 and 1.59 times what this rule would have said.** On 2016-2020 origins, which the fit never saw, 251 of 255 runs fell inside. The band is a summary of history, not a probability that the future lands inside. It was fitted on state totals; it is applied to counties too, where real errors are larger, and the results file says so.
 
-## A second way to draw the range, shown beside the headline (decision 66)
+## A second way to draw the range, shown beside the headline (decision 69)
 
 The results file also carries `alternative_band`, in its own section and never mixed into the headline numbers. It is the rule from Adam Ruege's prototype, Housing Reform Estimator v2.0, computed exactly as he tested it:
 

@@ -14,7 +14,7 @@ of past five-year periods the actual total fell inside this band": a statement
 about history, not a probability.
 
 Alongside the headline band, ``alternative_band`` shows the second rule from the
-backtest (decision 66): Adam Ruege's v2.0 20-year swing rule, computed exactly as
+backtest (decision 69): Adam Ruege's v2.0 20-year swing rule, computed exactly as
 he tested it on the state's own permit history (``state_permits_history``):
 point = the last five years' total; low and high = that point x the slowest and
 fastest rolling five-year totals of the last ``baseline_alt_band_history_years``

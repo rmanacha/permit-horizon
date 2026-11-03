@@ -24,7 +24,7 @@ Conventions:
 |---|---|---|
 | `state` | USPS code, e.g. `"NH"` | fixed table in `src/hre/data/states.py` |
 | `state_fips` | 2-digit FIPS, e.g. `"33"` | same |
-| `schema_version` | `"2"` | bumped when a field is added or changes meaning. Version 2 (Phase 2, 2026-11-03, decision 66) added `state_permits_history`; files written as version 1 fail validation and must be rebuilt with `hre build` |
+| `schema_version` | `"2"` | bumped when a field is added or changes meaning. Version 2 (Phase 2, 2026-11-03, decision 69) added `state_permits_history`; files written as version 1 fail validation and must be rebuilt with `hre build` |
 | `vintages` | which release of each source went in, e.g. `{"bps": "2025", "acs": "2020-2024 (2024 release)"}` | each fetcher |
 | `counties` | list of `CountyInputs` (below), one per county equivalent | |
 | `block_groups` | list of `BlockGroupInputs` (below) | |

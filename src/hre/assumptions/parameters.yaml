@@ -129,7 +129,7 @@ parameters:
   - id: baseline_alt_band_history_years
     label: Years of history for the 20-year swing band (shown beside the headline)
     description: >-
-      Adam Ruege's v2.0 band rule, shown in its own section next to the headline band (decision 66):
+      Adam Ruege's v2.0 band rule, shown in its own section next to the headline band (decision 69):
       point = the state's last five years of permits; low and high = point x the slowest and fastest
       rolling five-year totals of the last this-many years, each divided by their average. Coverage
       below is from docs/evidence/baseline_backtest.md, band rule B.

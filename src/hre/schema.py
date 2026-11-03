@@ -21,7 +21,7 @@ import json
 from dataclasses import asdict, dataclass, field, fields
 from typing import Any
 
-SCHEMA_VERSION = "2"  # 2: + state_permits_history (Phase 2, decision 66)
+SCHEMA_VERSION = "2"  # 2: + state_permits_history (Phase 2, decision 69)
 
 METRO_ROLES = ("central", "outlying", "none")
 CBSA_TYPES = ("metropolitan", "micropolitan")
