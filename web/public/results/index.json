@@ -474,12 +474,12 @@
     "tod": {
      "increment": {
       "low": 0.0,
-      "mid": 34.3124,
-      "high": 390.9268
+      "mid": 41.6311,
+      "high": 474.3098
      },
      "status": "register_default",
      "newly_affected_share": 1.0,
-     "benchmark_mid": 36.2495,
+     "benchmark_mid": 45.5066,
      "benchmark_outcome": "stock_change"
     },
     "parking": {
@@ -507,8 +507,8 @@
    },
    "combined": {
     "low": 383.2599,
-    "mid": 8568.0323,
-    "high": 35607.1552
+    "mid": 8560.2242,
+    "high": 35663.7519
    }
   },
   {
