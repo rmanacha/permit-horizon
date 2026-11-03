@@ -61,3 +61,33 @@ def test_report_renders_both_rules(panel):
     md = bt.render_markdown(bt.run_backtest(panel), "2026-11-03")
     for text in ("Band rule A", "Band rule B", "not a probability", "Plain-language reading"):
         assert text in md
+
+
+def test_coverage_by_period_partitions_the_runs(panel):
+    lo, hi = bt.percentile_band(bt.mean3_runs(panel, bt.EST_ORIGINS))
+    rows = bt.coverage_by_period(panel, lo, hi)
+    assert [r["origins"] for r in rows] == [list(p) for p in bt.PERIODS]
+    assert sum(r["n"] for r in rows) == len(bt.mean3_runs(panel, tuple(range(1990, 2021))))
+    for r in rows:
+        assert r["inside"] + r["above"] + r["below"] == r["n"]
+
+
+def test_realtime_fit_uses_closed_windows_only(panel):
+    rt = bt.realtime_test(panel, origins=(2005, 2012))
+    for row in rt["by_origin"]:
+        t = row["origin"]
+        fit = bt.mean3_runs(panel, tuple(range(1990, t - 4)))      # origins 1990..t-5
+        assert max(r.origin for r in fit) + bt.HORIZON <= t          # every fitted window closed by t
+        assert (row["p10"], row["p90"]) == bt.percentile_band(fit)
+        assert row["fit_runs"] == len(fit)
+    rec = bt.realtime_record(rt)
+    assert rec["runs"] == sum(r["n"] for r in rt["by_origin"])
+
+
+def test_reading_sentences_from_the_register(params):
+    from hre.model.drivers import band_period_reading, band_realtime_reading
+
+    e = params.entry("baseline_band_ratio")
+    s = band_period_reading(e["coverage_by_period"]) + " " + band_realtime_reading(e["coverage_realtime"])
+    assert s.startswith("Coverage was 56% at origins 2005-2010, the bust, and 75% at 2011-2015")
+    assert "covered 61% of 2000-2020 runs and under 5% at origins 2005-2008." in s

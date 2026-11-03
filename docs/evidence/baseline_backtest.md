@@ -65,6 +65,57 @@ By origin (rule A):
 | 2019 (test) | 51 | 51 | 0 | 0 | 100% | 14.6% |
 | 2020 (test) | 51 | 50 | 1 | 0 | 98% | 11.8% |
 
+### Coverage by period: the same fixed band on every origin 1990-2020
+
+Decision 66. The band is fitted once (origins 1990-2015) and laid over every origin. In-sample periods are shown too, because the point is how coverage moves with the market, not whether the fit is honest overall.
+
+| Origins | Period | Runs | Inside | Above | Below | Share inside |
+|---|---|---|---|---|---|---|
+| 1990-1999 | 1990s | 510 | 454 | 52 | 4 | 89% |
+| 2000-2004 | early 2000s | 255 | 244 | 9 | 2 | 96% |
+| 2005-2010 | the bust | 306 | 172 | 9 | 125 | 56% |
+| 2011-2015 | the recovery | 255 | 190 | 63 | 2 | 75% |
+| 2016-2020 | test window, never fitted | 255 | 251 | 3 | 1 | 98% |
+
+### Real-time test: refit the band each year on closed windows only
+
+At each origin t from 2000 to 2020 the 10th and 90th percentiles are refitted on origins 1990 to t-5, the only five-year windows a forecaster at t could already score, and applied to t. No year after t is used.
+
+| Origin | Fit runs | P10 | P90 | Runs | Inside | Above | Below | Share inside |
+|---|---|---|---|---|---|---|---|---|
+| 2000 | 306 | 0.852 | 1.775 | 51 | 49 | 2 | 0 | 96% |
+| 2001 | 357 | 0.884 | 1.686 | 51 | 47 | 3 | 1 | 92% |
+| 2002 | 408 | 0.900 | 1.662 | 51 | 44 | 2 | 5 | 86% |
+| 2003 | 459 | 0.913 | 1.630 | 51 | 31 | 0 | 20 | 61% |
+| 2004 | 510 | 0.920 | 1.603 | 51 | 9 | 0 | 42 | 18% |
+| 2005 | 561 | 0.925 | 1.584 | 51 | 0 | 0 | 51 | 0% |
+| 2006 | 612 | 0.927 | 1.579 | 51 | 1 | 0 | 50 | 2% |
+| 2007 | 663 | 0.925 | 1.566 | 51 | 2 | 0 | 49 | 4% |
+| 2008 | 714 | 0.901 | 1.545 | 51 | 0 | 2 | 49 | 0% |
+| 2009 | 765 | 0.836 | 1.521 | 51 | 23 | 2 | 26 | 45% |
+| 2010 | 816 | 0.703 | 1.498 | 51 | 41 | 10 | 0 | 80% |
+| 2011 | 867 | 0.586 | 1.487 | 51 | 23 | 28 | 0 | 45% |
+| 2012 | 918 | 0.500 | 1.479 | 51 | 23 | 28 | 0 | 45% |
+| 2013 | 969 | 0.489 | 1.472 | 51 | 28 | 23 | 0 | 55% |
+| 2014 | 1020 | 0.494 | 1.460 | 51 | 42 | 8 | 1 | 82% |
+| 2015 | 1071 | 0.501 | 1.478 | 51 | 45 | 5 | 1 | 88% |
+| 2016 | 1122 | 0.514 | 1.536 | 51 | 46 | 4 | 1 | 90% |
+| 2017 | 1173 | 0.523 | 1.584 | 51 | 50 | 1 | 0 | 98% |
+| 2018 | 1224 | 0.528 | 1.613 | 51 | 51 | 0 | 0 | 100% |
+| 2019 | 1275 | 0.532 | 1.603 | 51 | 51 | 0 | 0 | 100% |
+| 2020 | 1326 | 0.536 | 1.592 | 51 | 50 | 1 | 0 | 98% |
+
+Overall, origins 2000-2020: **656 of 1071 inside (61%)**, 119 above, 296 below.
+
+| Origins | Runs | Inside | Above | Below | Share inside |
+|---|---|---|---|---|---|
+| 2000-2004 | 255 | 180 | 7 | 68 | 71% |
+| 2005-2010 | 306 | 67 | 14 | 225 | 22% |
+| 2011-2015 | 255 | 161 | 92 | 2 | 63% |
+| 2016-2020 | 255 | 248 | 6 | 1 | 97% |
+
+Coverage was 56% at origins 2005-2010, the bust, and 75% at 2011-2015, the recovery, against 89% to 98% in other periods; a band fitted on history does not foresee a turn in the market. Refitted each year on closed windows only, the band covered 61% of 2000-2020 runs and under 5% at origins 2005-2008.
+
 ## 3. Band rule B (Adam Ruege's v2.0): slowest and fastest five-year totals of the prior 20 years
 
 Point = the last five years' total. Band = point × (slowest ÷ average) to point × (fastest ÷ average), over the rolling five-year totals of the 20 years up to the origin. Origins 2000, 2005, 2010, 2015, 2020, as in his run.

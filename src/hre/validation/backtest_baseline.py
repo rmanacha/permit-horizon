@@ -38,6 +38,7 @@ import numpy as np
 
 from hre.data import fetch_bps
 from hre.data.states import ALL_STATES, lookup
+from hre.model.drivers import band_period_reading, band_realtime_reading
 
 YEARS = tuple(range(1980, 2026))
 HORIZON = 5
@@ -47,6 +48,13 @@ TEST_ORIGINS = tuple(range(2016, 2021))
 ADAM_ORIGINS = (2000, 2005, 2010, 2015, 2020)
 ADAM_HISTORY = 20
 PERCENTILES = (10.0, 90.0)
+# Origin groups for coverage by period (decision 66): calm 1990s, early 2000s, the bust,
+# the recovery, the out-of-sample test window.
+PERIODS = ((1990, 1999), (2000, 2004), (2005, 2010), (2011, 2015), (2016, 2020))
+PERIOD_LABELS = {(1990, 1999): "1990s", (2000, 2004): "early 2000s", (2005, 2010): "the bust",
+                 (2011, 2015): "the recovery", (2016, 2020): "test window, never fitted"}
+REALTIME_ORIGINS = tuple(range(2000, 2021))
+REALTIME_GROUPS = ((2000, 2004), (2005, 2010), (2011, 2015), (2016, 2020))
 
 Panel = dict[str, dict[int, float]]   # state fips -> year -> total units authorised
 
@@ -219,6 +227,35 @@ def by_origin(runs: list[Run]) -> dict[int, dict[str, float]]:
     return {t: coverage([x for x in runs if x.origin == t]) for t in sorted({x.origin for x in runs})}
 
 
+def coverage_by_period(panel: Panel, lo: float, hi: float,
+                       periods: tuple[tuple[int, int], ...] = PERIODS) -> list[dict]:
+    """The fixed band (point x lo to x hi) applied to every origin, grouped by period."""
+    runs = apply_band(mean3_runs(panel, tuple(range(periods[0][0], periods[-1][1] + 1))), lo, hi)
+    out = []
+    for a, b in periods:
+        c = coverage([x for x in runs if a <= x.origin <= b])
+        out.append({"origins": [a, b], "label": PERIOD_LABELS.get((a, b), ""), **c})
+    return out
+
+
+def realtime_test(panel: Panel, origins: tuple[int, ...] = REALTIME_ORIGINS,
+                  first_fit: int = EST_ORIGINS[0]) -> dict:
+    """Refit P10/P90 at each origin t on origins first_fit..t-5 only (windows already closed).
+
+    This is what a forecaster standing at t could have drawn: the band uses no year after t.
+    """
+    rows, every = [], []
+    for t in origins:
+        fit = mean3_runs(panel, tuple(range(first_fit, t - HORIZON + 1)))
+        lo, hi = percentile_band(fit)
+        runs = apply_band(mean3_runs(panel, (t,)), lo, hi)
+        every += runs
+        rows.append({"origin": t, "fit_runs": len(fit), "p10": lo, "p90": hi, **coverage(runs)})
+    groups = [{"origins": [a, b], **coverage([x for x in every if a <= x.origin <= b])}
+              for a, b in REALTIME_GROUPS]
+    return {"by_origin": rows, "overall": coverage(every), "groups": groups}
+
+
 def run_backtest(panel: Panel) -> dict:
     """Everything docs/evidence/baseline_backtest.md reports."""
     est = mean3_runs(panel, EST_ORIGINS)
@@ -233,7 +270,8 @@ def run_backtest(panel: Panel) -> dict:
         "methods": method_table(panel),
         "methods_post2010": method_table(panel, tuple(range(2010, 2021))),
         "ours": {"p10": lo, "p90": hi, "estimation": coverage(est_b), "test": coverage(test),
-                 "estimation_by_origin": by_origin(est_b), "test_by_origin": by_origin(test)},
+                 "estimation_by_origin": by_origin(est_b), "test_by_origin": by_origin(test),
+                 "by_period": coverage_by_period(panel, lo, hi), "realtime": realtime_test(panel)},
         "adam": {"runs": coverage(adam), "by_origin": by_origin(adam),
                  "test": coverage(adam_test), "test_by_origin": by_origin(adam_test)},
     }
@@ -267,6 +305,13 @@ def write_register_band(r: dict, path: Path) -> None:
         f"\n    coverage: {{estimation_runs: {est['n']}, estimation_share_inside: {est['share_inside']:.4f}, "
         f"test_runs: {test['n']}, test_inside: {test['inside']}, test_share_inside: "
         f"{test['share_inside']:.4f}, test_median_width: {test['median_width']:.4f}}}"), block, count=1)
+    block = re.sub(r"\n    coverage_by_period: [^\n]+", "\n    coverage_by_period: " + _period_flow(o["by_period"]),
+                   block, count=1)
+    rec = realtime_record(o["realtime"])
+    block = re.sub(r"\n    coverage_realtime: [^\n]+", (
+        f"\n    coverage_realtime: {{origins: {rec['origins']}, runs: {rec['runs']}, inside: {rec['inside']}, "
+        f"share_inside: {rec['share_inside']:.4f}, origins_under_5pct: {rec['origins_under_5pct']}, "
+        f"groups: {_period_flow(o['realtime']['groups'])}}}"), block, count=1)
     text = text[:start] + block + text[end:]
     a, at = r["adam"]["runs"], r["adam"]["test"]
     start = text.index("  - id: baseline_alt_band_history_years")
@@ -276,6 +321,22 @@ def write_register_band(r: dict, path: Path) -> None:
         f"test_runs: {at['n']}, test_share_inside: {at['share_inside']:.4f}, test_median_width: "
         f"{at['median_width']:.4f}}}"), text[start:end], count=1)
     path.write_text(text[:start] + alt + text[end:], encoding="utf-8")
+
+
+def realtime_record(rt: dict) -> dict:
+    """The register's (and results file's) summary of the real-time test."""
+    ov = rt["overall"]
+    return {"origins": [REALTIME_ORIGINS[0], REALTIME_ORIGINS[-1]], "runs": ov["n"], "inside": ov["inside"],
+            "share_inside": ov["share_inside"],
+            "origins_under_5pct": [c["origin"] for c in rt["by_origin"] if c["share_inside"] < 0.05]}
+
+
+def _period_flow(rows: list[dict]) -> str:
+    """One-line YAML flow list of {origins, runs, inside, above, below, share_inside}."""
+    return "[" + ", ".join(
+        f"{{origins: [{r['origins'][0]}, {r['origins'][1]}], runs: {r['n']}, inside: {r['inside']}, "
+        f"above: {r['above']}, below: {r['below']}, share_inside: {r['share_inside']:.4f}}}"
+        for r in rows) + "]"
 
 
 def _wrap(text: str, indent: int, width: int = 96) -> str:
@@ -352,6 +413,33 @@ def render_markdown(r: dict, run_date: str) -> str:
         tag = " (test)" if t in TEST_ORIGINS else ""
         L.append(f"| {t}{tag} | {c['n']} | {c['inside']} | {c['above']} | {c['below']} | "
                  f"{c['share_inside']:.0%} | {_pct(c['mdape'])} |")
+    L += ["", "### Coverage by period: the same fixed band on every origin 1990-2020", "",
+          ("Decision 66. The band is fitted once (origins 1990-2015) and laid over every origin. "
+           "In-sample periods are shown too, because the point is how coverage moves with the market, "
+           "not whether the fit is honest overall."), "",
+          "| Origins | Period | Runs | Inside | Above | Below | Share inside |",
+          "|---|---|---|---|---|---|---|"]
+    for c in o["by_period"]:
+        L.append(f"| {c['origins'][0]}-{c['origins'][1]} | {c['label']} | {c['n']} | {c['inside']} | "
+                 f"{c['above']} | {c['below']} | {c['share_inside']:.0%} |")
+    rt = o["realtime"]
+    L += ["", "### Real-time test: refit the band each year on closed windows only", "",
+          ("At each origin t from 2000 to 2020 the 10th and 90th percentiles are refitted on origins "
+           f"{EST_ORIGINS[0]} to t-5, the only five-year windows a forecaster at t could already score, and "
+           "applied to t. No year after t is used."), "",
+          "| Origin | Fit runs | P10 | P90 | Runs | Inside | Above | Below | Share inside |",
+          "|---|---|---|---|---|---|---|---|---|"]
+    for c in rt["by_origin"]:
+        L.append(f"| {c['origin']} | {c['fit_runs']} | {c['p10']:.3f} | {c['p90']:.3f} | {c['n']} | "
+                 f"{c['inside']} | {c['above']} | {c['below']} | {c['share_inside']:.0%} |")
+    ov = rt["overall"]
+    L += ["", (f"Overall, origins 2000-2020: **{ov['inside']} of {ov['n']} inside ({ov['share_inside']:.0%})**, "
+               f"{ov['above']} above, {ov['below']} below."), "",
+          "| Origins | Runs | Inside | Above | Below | Share inside |", "|---|---|---|---|---|---|"]
+    for c in rt["groups"]:
+        L.append(f"| {c['origins'][0]}-{c['origins'][1]} | {c['n']} | {c['inside']} | {c['above']} | "
+                 f"{c['below']} | {c['share_inside']:.0%} |")
+    L += ["", band_period_reading(o["by_period"]) + " " + band_realtime_reading(realtime_record(rt))]
     ac = a["runs"]
     worst = min(a["by_origin"].items(), key=lambda kv: kv[1]["share_inside"])
     L += [

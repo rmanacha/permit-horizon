@@ -78,3 +78,20 @@ def alternative_band_narrative(alt: dict[str, Any], state_name: str) -> list[str
          f"{round_display(alt['low'])} to {round_display(alt['high'])}."),
         alt["how_it_did"],
     ]
+
+
+def band_period_reading(by_period: list[dict[str, Any]]) -> str:
+    """The second band sentence (decision 66), filled from the coverage-by-period table."""
+    d = {tuple(c["origins"]): c["share_inside"] for c in by_period}
+    calm = [v for k, v in d.items() if k not in ((2005, 2010), (2011, 2015))]
+    return (f"Coverage was {d[(2005, 2010)]:.0%} at origins 2005-2010, the bust, and {d[(2011, 2015)]:.0%} at "
+            f"2011-2015, the recovery, against {min(calm):.0%} to {max(calm):.0%} in other periods; a band "
+            "fitted on history does not foresee a turn in the market.")
+
+
+def band_realtime_reading(rt: dict[str, Any]) -> str:
+    """The real-time test in one sentence, from the register's ``coverage_realtime`` record."""
+    a, b = rt["origins"]
+    s = f"Refitted each year on closed windows only, the band covered {rt['share_inside']:.0%} of {a}-{b} runs"
+    w = rt.get("origins_under_5pct") or []
+    return s + (f" and under 5% at origins {w[0]}-{w[-1]}." if w else ".")

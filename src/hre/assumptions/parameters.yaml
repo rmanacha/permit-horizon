@@ -125,6 +125,8 @@ parameters:
     transferability: Pooled over all states; the test window shows how well it held out of sample.
     levels: {low: "P10 of actual/forecast", mid: "point", high: "P90 of actual/forecast"}
     coverage: {estimation_runs: 1326, estimation_share_inside: 0.7994, test_runs: 255, test_inside: 251, test_share_inside: 0.9843, test_median_width: 2.9725}
+    coverage_by_period: [{origins: [1990, 1999], runs: 510, inside: 454, above: 52, below: 4, share_inside: 0.8902}, {origins: [2000, 2004], runs: 255, inside: 244, above: 9, below: 2, share_inside: 0.9569}, {origins: [2005, 2010], runs: 306, inside: 172, above: 9, below: 125, share_inside: 0.5621}, {origins: [2011, 2015], runs: 255, inside: 190, above: 63, below: 2, share_inside: 0.7451}, {origins: [2016, 2020], runs: 255, inside: 251, above: 3, below: 1, share_inside: 0.9843}]
+    coverage_realtime: {origins: [2000, 2020], runs: 1071, inside: 656, share_inside: 0.6125, origins_under_5pct: [2005, 2006, 2007, 2008], groups: [{origins: [2000, 2004], runs: 255, inside: 180, above: 7, below: 68, share_inside: 0.7059}, {origins: [2005, 2010], runs: 306, inside: 67, above: 14, below: 225, share_inside: 0.2190}, {origins: [2011, 2015], runs: 255, inside: 161, above: 92, below: 2, share_inside: 0.6314}, {origins: [2016, 2020], runs: 255, inside: 248, above: 6, below: 1, share_inside: 0.9725}]}
 
   - id: baseline_alt_band_history_years
     label: Years of history for the 20-year swing band (shown beside the headline)

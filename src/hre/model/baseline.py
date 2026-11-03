@@ -33,6 +33,7 @@ from typing import Any
 
 import numpy as np
 
+from hre.model.drivers import band_period_reading, band_realtime_reading
 from hre.model.params import Params
 from hre.schema import PERMIT_KEYS, StateInputs
 
@@ -123,6 +124,11 @@ def baseline(state: StateInputs, params: Params) -> dict[str, Any]:
     state_mid = float(county_mid.sum())
     state_annual = annual.sum(axis=1)
     ours_cov = params.entry("baseline_band_ratio")["coverage"]
+    by_period = [{"origins": list(c["origins"]), "runs": c["runs"], "inside": c["inside"], "above": c["above"],
+                  "below": c["below"], "share_inside": c["share_inside"]}
+                 for c in params.entry("baseline_band_ratio")["coverage_by_period"]]
+    realtime = {k: v for k, v in params.entry("baseline_band_ratio")["coverage_realtime"].items()
+                if k != "groups"}
     alt_cov = params.entry("baseline_alt_band_history_years")["coverage"]
     hist_years = int(params["baseline_alt_band_history_years"])
     swing = swing_band(state.state_permits_history, hist_years, horizon)
@@ -177,6 +183,9 @@ def baseline(state: StateInputs, params: Params) -> dict[str, Any]:
                         "statement about history, not a probability."),
             "applied_to_counties": ("The ratios come from state totals and are applied to every "
                                     "county; a single county's past errors are larger."),
+            "coverage_by_period": by_period,
+            "coverage_realtime": realtime,
+            "reading_history": band_period_reading(by_period) + " " + band_realtime_reading(realtime),
             "source": "docs/evidence/baseline_backtest.md",
             "alternative": "see alternative_band (Adam's 20-year swing rule), shown separately",
         },

@@ -67,3 +67,13 @@ def test_cli_run_zz_offline(sample_dir, tmp_path):
     res = CliRunner().invoke(app, ["run", "--state", "ZZ", "--data-dir", str(sample_dir),
                                    "--scenarios", "baseline,fees", "--out", str(out)])
     assert res.exit_code == 2
+
+
+def test_band_history_is_in_every_results_file(zz_state, params):
+    r = run_state(zz_state, params, ["baseline"], {"build_id": "x", "vintages": {}, "git_sha": "x",
+                                                     "run_date": "2026-11-03"}, {})
+    rule = r["baseline"]["band_rule"]
+    assert [c["origins"] for c in rule["coverage_by_period"]][2] == [2005, 2010]
+    assert rule["coverage_realtime"]["share_inside"] < 0.8 and "the bust" in rule["reading_history"]
+    del rule["coverage_by_period"]
+    assert any("coverage_by_period" in p for p in validate_results(r))

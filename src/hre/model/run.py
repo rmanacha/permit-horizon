@@ -95,6 +95,8 @@ def validate_results(r: Any) -> list[str]:
         _band(f"baseline.state.by_year[{y.get('year')}]", y, p)
     if not isinstance(b.get("band_rule"), dict) or "reading" not in b["band_rule"]:
         p.append("baseline.band_rule must explain the band")
+    elif not b["band_rule"].get("coverage_by_period") or "reading_history" not in b["band_rule"]:
+        p.append("baseline.band_rule needs coverage_by_period and reading_history (decision 66)")
     if not b.get("narrative"):
         p.append("baseline.narrative is empty")
     alt = b.get("alternative_band")
