@@ -54,3 +54,22 @@ def test_bbox_margin(sample_dir):
     counties = fetch_gazetteer.load_counties("99", sample_dir)
     west, south, east, north = fetch_transit.bbox_for_counties(counties)
     assert (west, south, east, north) == (-102.1, 42.55, -98.55, 46.1)
+
+
+def test_stops_page_retries_a_transient_error(monkeypatch):
+    import pytest
+
+    from hre.data import fetch_transit
+
+    calls = []
+
+    def fake(url, params=None, **kw):
+        calls.append(params["resultOffset"])
+        return {"error": {"code": 400}} if len(calls) == 1 else {"features": [], "exceededTransferLimit": False}
+
+    monkeypatch.setattr(fetch_transit, "get_json", fake)
+    assert fetch_transit._stops_page({}, 4000, pause=0) == {"features": [], "exceededTransferLimit": False}
+    assert calls == ["4000", "4000"]
+    monkeypatch.setattr(fetch_transit, "get_json", lambda url, params=None, **kw: {"error": {"code": 400}})
+    with pytest.raises(RuntimeError, match="after 4 tries"):
+        fetch_transit._stops_page({}, 0, pause=0)

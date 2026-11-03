@@ -25,6 +25,7 @@ the query URL, the page count, and the SHA-256 of the saved file.
 from __future__ import annotations
 
 import json
+import time
 from pathlib import Path
 
 from hre.data.cache import get_json, raw_dir, record
@@ -64,6 +65,19 @@ def bbox_for_counties(counties: list[dict], margin: float = 1.5) -> tuple[float,
     return (min(lons) - margin, min(lats) - margin, max(lons) + margin, max(lats) + margin)
 
 
+def _stops_page(base: dict, offset: int, tries: int = 4, pause: float = 5.0) -> dict:
+    """One page of stops. The service sometimes answers a valid page with HTTP-200 JSON carrying
+    {"error": {"code": 400, ...}} (seen once each for LA and NY in Phase 3, on pages that then
+    worked); retry the same page a few times before giving up."""
+    for attempt in range(tries):
+        data = get_json(STOPS_URL, params={**base, "resultOffset": str(offset)})
+        if "error" not in data:
+            return data
+        if attempt < tries - 1:
+            time.sleep(pause * (attempt + 1))
+    raise RuntimeError(f"NTM stops query failed at offset {offset} after {tries} tries: {data['error']}")
+
+
 def fetch_ntm_stops(
     state: StateRef, counties: list[dict], data_dir: Path | None = None, force: bool = False,
 ) -> Path:
@@ -87,9 +101,7 @@ def fetch_ntm_stops(
     features: list[dict] = []
     offset, pages = 0, 0
     while True:
-        data = get_json(STOPS_URL, params={**base, "resultOffset": str(offset)})
-        if "error" in data:
-            raise RuntimeError(f"NTM stops query failed: {data['error']}")
+        data = _stops_page(base, offset)
         batch = [f["attributes"] for f in data.get("features", [])]
         features.extend(batch)
         pages += 1
