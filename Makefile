@@ -8,7 +8,7 @@
 # Requires: uv (https://docs.astral.sh/uv/). uv downloads the pinned Python
 # itself (.python-version) and never touches the system Python.
 
-.PHONY: setup test run lint demo data validate-aclf hcd results backtest adu-tiers nrc register-md
+.PHONY: setup test run lint demo data validate-aclf hcd results backtest adu-tiers nrc register-md results-all export
 
 STATE ?= NH
 
@@ -40,6 +40,12 @@ hcd:     ## Fetch California HCD Table A2 (295 MB) and build the de-duplicated A
 
 results: ## Run the engine for one state (baseline and five scenarios): make results STATE=NH
 	uv run hre run --state $(STATE)
+
+results-all: ## Run every jurisdiction with a processed file -> results/{ST}.json
+	uv run hre run --all --quiet
+
+export:  ## The web bundle for the front-end -> web/public/results/ (git-ignored)
+	uv run hre export --out web/public/results/
 
 backtest: ## Baseline backtest, both band rules -> docs/evidence/baseline_backtest.md
 	uv run hre validate --baseline --fetch

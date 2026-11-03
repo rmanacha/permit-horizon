@@ -12,6 +12,8 @@
     hre validate --adu-tiers        ADU value tiers + 1,000-split city check (needs make hcd)
     hre validate --nrc --fetch      completions per permit by structure type (Census NRC)
     hre run --state NH --scenarios baseline           results/NH.json (three-layer schema)
+    hre run --all                   results/{ST}.json for every jurisdiction with a processed file
+    hre export --out web/public/results/   the web bundle (results, index, registers, meta)
     hre export --register-md        the assumption register as a Markdown table
 
 ``DATA_DIR`` (or ``--data-dir``) moves the raw cache; manifests always go to
@@ -448,14 +450,23 @@ def _run_one(code: str, wanted: list[str], dest: Path, processed_dir: Path, data
 @app.command()
 def export(
     register_md: Annotated[bool, typer.Option("--register-md", help="the assumption register as Markdown")] = False,
-    out: Annotated[Path | None, typer.Option("--out", help="write here instead of printing")] = None,
+    out: Annotated[Path | None, typer.Option("--out", help="with --register-md: a file; otherwise the web bundle folder")] = None,
+    results_dir: Annotated[Path, typer.Option("--results-dir", help="folder of results/{ST}.json")] = Path("results"),
 ) -> None:
-    """Export registers for documentation (Phase 6 builds the full docs from these)."""
+    """The web bundle (results, index, registers, meta) or the register as Markdown."""
     from hre.assumptions.loader import register_markdown
 
     if not register_md:
-        typer.echo("nothing to do: pass --register-md", err=True)
-        raise typer.Exit(code=2)
+        from hre.export import export_bundle
+
+        dest = out or Path("web/public/results")
+        try:
+            meta = export_bundle(results_dir, dest)
+        except (FileNotFoundError, ValueError) as e:
+            typer.echo(str(e), err=True)
+            raise typer.Exit(code=1) from e
+        typer.echo(f"wrote {meta['jurisdictions']} results files, index.json, registers.json, meta.json -> {dest}/")
+        return
     text = register_markdown()
     if out is None:
         typer.echo(text)
