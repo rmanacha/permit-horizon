@@ -4,8 +4,9 @@ Reads every results/{ST}.json and writes the tables; the observations under the 
 are written by hand and kept when the tables are regenerated.
 
 Outlier rule: a state's default increment, as a percent of its baseline, more than three
-times or less than a third of the median across states (where the median is above zero),
-or a zero increment where most states have one.
+times or less than a third of the median across states. Scenarios whose median is below
+0.1% of baseline (TOD) are not flagged this way: the ratio test is meaningless near zero, and
+their zero-exposure states are counted in the distribution table instead.
 """
 
 from __future__ import annotations
@@ -18,6 +19,7 @@ from typing import Any
 from hre.data.states import lookup
 
 SCENARIOS = ("adu", "missing_middle", "tod", "parking", "fees")
+MIN_MEDIAN_PCT = 0.1
 MARKER = "<!-- observations below are written by hand; hre validate --overview keeps them -->"
 # Adam Ruege's v2.0 New Hampshire results (research/boss_version_review.md section 4)
 ADAM_NH = {"adu": (700, 2000, 4700, "completed homes"), "missing_middle": (0, 1600, 3800, "net permits"),
@@ -58,6 +60,8 @@ def outliers(rs: list[dict[str, Any]]) -> list[str]:
     for s in SCENARIOS:
         pcts = [r[s]["pct"] for r in rs]
         med = statistics.median(pcts)
+        if med < MIN_MEDIAN_PCT:
+            continue
         for r in rs:
             p = r[s]["pct"]
             if med > 0 and (p > 3 * med or p < med / 3):
@@ -102,7 +106,8 @@ def render(results: list[dict[str, Any]], run_date: str, keep: str = "") -> str:
         hi_st = max(rs, key=lambda r: r[s]["pct"])["state"]
         L.append(f"| {s} | {p[0]:.2f}% ({lo_st}) | {statistics.median(p):.2f}% | {p[-1]:.2f}% ({hi_st}) | {zero} |")
     fl = outliers(rs)
-    L += ["", f"Outlier flags (more than 3x or under 1/3 of the median): {len(fl)}.", ""]
+    L += ["", (f"Outlier flags (more than 3x or under 1/3 of the median; scenarios with a median under "
+               f"{MIN_MEDIAN_PCT}% of baseline are not flagged): {len(fl)}."), ""]
     L += [f"- {f}" for f in fl] or ["- none"]
     L += ["", "## 3. Orders of magnitude against the literature", ""]
     ca = next((r for r in rs if r["state"] == "CA"), None)
@@ -112,6 +117,10 @@ def render(results: list[dict[str, Any]], run_date: str, keep: str = "") -> str:
                  "a year in 2023-2025 (de-duplicated HCD) and permitted 30,000 to 40,000. The tier rates are "
                  "fitted on California, so this is a consistency check, not a test.")
     worst = max(rs, key=lambda r: (r["missing_middle"]["high"] + r["tod"]["high"]) / r["stock"] if r["stock"] else 0)
+    nat_b = sum(r["baseline"] for r in rs)
+    nat_c = sum(r["combined"]["mid"] for r in rs)
+    L.append(f"- **National scale.** All five together add {_f(nat_c)} permits at mid over five years, "
+             f"{100 * nat_c / nat_b:.1f}% of the {_f(nat_b)}-permit national baseline.")
     if worst["stock"]:
         share = 100 * (worst["missing_middle"]["high"] + worst["tod"]["high"]) / worst["stock"]
         L.append(f"- **Upzoning upper bound.** Auckland's upzoning added 4.1% of its stock in five years. Our "
