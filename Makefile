@@ -8,7 +8,7 @@
 # Requires: uv (https://docs.astral.sh/uv/). uv downloads the pinned Python
 # itself (.python-version) and never touches the system Python.
 
-.PHONY: setup test run lint demo data validate-aclf hcd results backtest adu-tiers register-md
+.PHONY: setup test run lint demo data validate-aclf hcd results backtest adu-tiers nrc register-md
 
 STATE ?= NH
 
@@ -46,6 +46,9 @@ backtest: ## Baseline backtest, both band rules -> docs/evidence/baseline_backte
 
 adu-tiers: ## ADU value tiers + city-split check (needs make hcd) -> docs/evidence/adu_tiers.md
 	uv run hre validate --adu-tiers
+
+nrc:     ## Completions per permit from Census NRC -> docs/evidence/completions_per_permit.md
+	uv run hre validate --nrc --fetch
 
 register-md: ## The assumption register as Markdown -> docs/methods/register.md
 	uv run hre export --register-md --out docs/methods/register.md

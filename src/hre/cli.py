@@ -10,6 +10,7 @@
     hre validate --processed data/processed/NH.json   check a file against the schema
     hre validate --baseline         the baseline backtest (both band rules) -> docs/evidence/
     hre validate --adu-tiers        ADU value tiers + 1,000-split city check (needs make hcd)
+    hre validate --nrc --fetch      completions per permit by structure type (Census NRC)
     hre run --state NH --scenarios baseline           results/NH.json (three-layer schema)
     hre export --register-md        the assumption register as a Markdown table
 
@@ -154,13 +155,40 @@ def validate(
     processed: Annotated[Path | None, typer.Option("--processed", help="a processed JSON to validate")] = None,
     baseline: Annotated[bool, typer.Option("--baseline", help="backtest the baseline under both band rules")] = False,
     adu_tiers: Annotated[bool, typer.Option("--adu-tiers", help="calibrate ADU value tiers from HCD Table A2 + ACS")] = False,
-    write_register: Annotated[bool, typer.Option("--write-register", help="with --baseline or --adu-tiers: write results into parameters.yaml")] = False,
+    nrc: Annotated[bool, typer.Option("--nrc", help="completions per permit from the Census NRC annual tables")] = False,
+    write_register: Annotated[bool, typer.Option("--write-register", help="with --baseline, --adu-tiers or --nrc: write results into parameters.yaml")] = False,
     data_dir: Annotated[Path | None, typer.Option("--data-dir")] = None,
 ) -> None:
     """Checks: the ACLF doubling ratio, a processed file against the schema, or the baseline backtest."""
     from hre.schema import validate as validate_schema
 
     dd = _data_dir(data_dir)
+    if nrc:
+        import datetime as dt
+
+        from hre.assumptions.loader import PARAMETERS_PATH
+        from hre.data import fetch_nrc
+        from hre.validation import completions_per_permit as cpp
+
+        today = dt.date.today().isoformat()
+        if do_fetch:
+            fetch_nrc.fetch_nrc(dd)
+        if not all(fetch_nrc.nrc_path(k, dd).exists() for k in fetch_nrc.FILES):
+            typer.echo("NRC tables not cached; run with --fetch", err=True)
+            raise typer.Exit(code=2)
+        data = fetch_nrc.load_nrc(dd)
+        table = cpp.ratio_table(data)
+        dest = write or Path("docs/evidence/completions_per_permit.md")
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(cpp.render_markdown(table, max(data["permits"]), today), encoding="utf-8")
+        for pid, v in cpp.register_values(table).items():
+            typer.echo(f"{pid}: low {v['low']:.2f}, mid {v['mid']:.2f}, high {v['high']:.2f} "
+                       f"(research {cpp.RESEARCH[pid][0]:.2f} / {cpp.RESEARCH[pid][1]:.2f})")
+        typer.echo(f"wrote {dest}")
+        if write_register:
+            cpp.write_register(table, PARAMETERS_PATH, today)
+            typer.echo(f"wrote 3 completions-per-permit entries into {PARAMETERS_PATH}")
+        return
     if adu_tiers:
         import datetime as dt
 
@@ -265,7 +293,7 @@ def validate(
             write.write_text("\n".join(lines) + "\n", encoding="utf-8")
             typer.echo(f"wrote {write}")
     if not aclf and processed is None:
-        typer.echo("nothing to do: pass --aclf, --processed, --baseline or --adu-tiers", err=True)
+        typer.echo("nothing to do: pass --aclf, --processed, --baseline, --adu-tiers or --nrc", err=True)
         raise typer.Exit(code=2)
 
 

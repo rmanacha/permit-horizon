@@ -17,6 +17,7 @@ Every source is a keyless public download; no API key or account is required.
 | Building Permits Survey, county and state annual files | U.S. Census Bureau, `https://www2.census.gov/econ/bps/County/co{YYYY}a.txt` and `.../State/st{YYYY}a.txt` | county 2016-2025, state 1990-2025 (2025 posted 2026-05-14) | 2026-11-03 | U.S. government work, public domain; no licence statement published | public |
 | American Community Survey 5-year, table-based summary files B25001, B25002, B25003, B25004, B25024, B25034, B25064, B25077 and the geography file | U.S. Census Bureau, `https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-{table}.dat` | 2020-2024 (2024 release) | 2026-11-03 | public domain; catalog entry tagged CC0 1.0 | public |
 | Population Estimates, housing units by county | U.S. Census Bureau, `https://www2.census.gov/programs-surveys/popest/tables/2020-2025/housing/totals/CO-EST2025-HU.xlsx` | Vintage 2025 (July 1 2020 to July 1 2025) | 2026-11-03 | public domain | public |
+| New Residential Construction, annual units authorized and completed (United States, by units in structure) | U.S. Census Bureau, `https://www.census.gov/construction/nrc/xls/permits_cust.xlsx`, `comps_permits_cust.xlsx`, `comps_cust.xlsx` | annual series through 2025 | 2026-11-03 | public domain | public |
 | Address Count Listing Files (block-level housing-unit counts from the Master Address File) | U.S. Census Bureau, `https://www2.census.gov/geo/pvs/addcountlisting/{year}/{FIPS}_{State}_AddressBlockCountList_{mmyyyy}.txt` | 062022, 072023, 122023, 072024, 122024, 072025, 122025, 072026 | 2026-11-03 | public domain | public |
 | 2020 centers of population by block group | U.S. Census Bureau, `https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG{SS}.txt` | 2020 Census | 2026-11-03 | public domain | public |
 | Gazetteer, counties | U.S. Census Bureau, `https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/2025_Gaz_counties_national.zip` | 2025 | 2026-11-03 | public domain | public |
@@ -124,6 +125,15 @@ HCD's own ADU handbook reports 30,354 ADU permits for 2024; the de-duplicated
 figure is 2.3 percent below it and the raw figure 29 percent above it. The
 2025 report year is provisional (jurisdictions revise). The output
 `data/processed/CA_hcd_adu.json` carries both series per jurisdiction-year.
+
+**New Residential Construction.** Only the `Annual` sheet's United States columns are read
+(thousands of units; `(NA)` becomes missing). Completions per permit = cumulative completions ÷
+cumulative permits over 1995-2024 and 2010-2024, with completions in permit-issuing areas so
+that both sides cover the same places as our BPS baseline; all-area completions are reported
+beside them. The 2-4 unit completion series is shown but not used: the Survey of Construction
+reclassifies townhouses that permit offices filed as multifamily into one-unit structures
+(Census, "Data Relationships between Permits, Starts, and Completions"). Output:
+`docs/evidence/completions_per_permit.md` and three register entries (`hre validate --nrc`).
 
 # Known Limitations
 

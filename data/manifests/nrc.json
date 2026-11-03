@@ -1,0 +1,28 @@
+{
+  "files": {
+    "nrc/comps_cust.xlsx": {
+      "bytes": 171699,
+      "fetched_at": "2026-11-03T20:19:36Z",
+      "sha256": "81370bd2c6bc139b18c9bb2d34a4b8669fd728ffed61e5fa5166da2ebda513bb",
+      "url": "https://www.census.gov/construction/nrc/xls/comps_cust.xlsx",
+      "vintage": "annual series through 2025, as posted 2026"
+    },
+    "nrc/comps_permits_cust.xlsx": {
+      "bytes": 102937,
+      "fetched_at": "2026-11-03T20:19:36Z",
+      "sha256": "e084267454c10703db08ff3023e4c58d793b3c9c4932da2992d289334163a6d9",
+      "url": "https://www.census.gov/construction/nrc/xls/comps_permits_cust.xlsx",
+      "vintage": "annual series through 2025, as posted 2026"
+    },
+    "nrc/permits_cust.xlsx": {
+      "bytes": 179462,
+      "fetched_at": "2026-11-03T20:19:36Z",
+      "sha256": "2ee63b991936c3ee117746a7fe5f19b89058ab13c58e994f8f9f2cc418721bea",
+      "url": "https://www.census.gov/construction/nrc/xls/permits_cust.xlsx",
+      "vintage": "annual series through 2025, as posted 2026"
+    }
+  },
+  "license": "U.S. Census Bureau, public domain (U.S. government work)",
+  "notes": "Annual sheet, United States columns. Permits cover permit-issuing places; completions come from the Survey of Construction, which reclassifies townhouses that permit offices filed as multifamily into one-unit structures (https://www.census.gov/construction/pdf/nrc_relationships.pdf).",
+  "source": "nrc"
+}

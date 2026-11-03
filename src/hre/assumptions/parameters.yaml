@@ -166,52 +166,78 @@ parameters:
     label: Completed homes per permitted home, single-family
     description: Cumulative completions divided by cumulative permits, one-unit structures.
     unit: completed homes per permitted home
-    low: 0.99
-    mid: 1.03
-    high: 1.03
+    low: 0.98
+    mid: 1.00
+    high: 1.00
     scope: global
     scenarios: [adu, missing_middle, tod, parking, fees]
     grade: A
     confidence: moderate
     direction: 1
     sources:
-      - title: Census Bureau, New Residential Construction, annual permits and completions
-        url: https://www.census.gov/construction/nrc/index.html
-        locator: "Annual series 1995-2024, units authorized and units completed, 1 unit"
-        accessed: "2026-11-02"
+      - title: Census Bureau, New Residential Construction, units completed in permit-issuing areas
+        url: https://www.census.gov/construction/nrc/xls/comps_permits_cust.xlsx
+        locator: "Sheet Annual, United States, 1 unit, 1995-2024"
+        accessed: "2026-11-03"
+      - title: Census Bureau, New Residential Construction, units authorized in permit-issuing places
+        url: https://www.census.gov/construction/nrc/xls/permits_cust.xlsx
+        locator: "Sheet Annual, United States, 1 unit, 1995-2024"
+        accessed: "2026-11-03"
     citation: >-
-      Research computation (planning/research/evidence_base.md section 7): cumulative completions
-      / cumulative permits, 1995-2024, one-unit structures = 1.03 (2010-2024: 0.99). Low uses the
-      2010-2024 ratio. Re-verify against newresconst.xlsx before Phase 3 uses it.
+      https://www.census.gov/construction/nrc/xls/comps_permits_cust.xlsx and permits_cust.xlsx,
+      sheet Annual, United States column '1 unit' (thousands): cumulative completions in permit-
+      issuing areas / cumulative units authorized, 1995-2024 29,138.7 / 29,061.3 = 1.0027 (mid,
+      high); 2010-2024 11,329.5 / 11,600.4 = 0.9766 (low). All-area completions
+      (comps_cust.xlsx) give 1.0250 for 1995-2024, the research value; they add homes built
+      where no permit is needed, which never enter our permit baseline. Computed by hre validate
+      --nrc (docs/evidence/completions_per_permit.md).
     rationale: Single-family permits almost all become homes, about a year later.
     transferability: National ratio applied to every state.
-    levels: {low: "0.99", mid: "1.03", high: "1.03"}
+    levels: {low: "0.98", mid: "1.00", high: "1.00"}
 
   - id: completions_per_permit_2to4
     label: Completed homes per permitted home, 2 to 4 units
     description: >-
-      Cumulative completions divided by cumulative permits; NRC does not publish 2-4 units
-      separately, so the all-structures ratio is used.
+      Cumulative completions divided by cumulative permits, all structures. NRC's own 2-4 unit
+      completion series is not used because townhouses permitted as multifamily are completed as
+      one-unit structures (see citation).
     unit: completed homes per permitted home
-    low: 0.89
-    mid: 0.94
-    high: 0.94
+    low: 0.88
+    mid: 0.92
+    high: 0.92
     scope: global
     scenarios: [missing_middle]
     grade: B
     confidence: low
     direction: 1
     sources:
-      - title: Census Bureau, New Residential Construction, annual permits and completions
-        url: https://www.census.gov/construction/nrc/index.html
-        locator: "Annual series 1995-2024, total units authorized and completed"
-        accessed: "2026-11-02"
+      - title: Census Bureau, New Residential Construction, units completed in permit-issuing areas
+        url: https://www.census.gov/construction/nrc/xls/comps_permits_cust.xlsx
+        locator: "Sheet Annual, United States, All structures, 1995-2024"
+        accessed: "2026-11-03"
+      - title: Census Bureau, New Residential Construction, units authorized in permit-issuing places
+        url: https://www.census.gov/construction/nrc/xls/permits_cust.xlsx
+        locator: "Sheet Annual, United States, All structures, 1995-2024"
+        accessed: "2026-11-03"
+      - title: Census Bureau, Data Relationships between Permits, Starts, and Completions
+        url: https://www.census.gov/construction/pdf/nrc_relationships.pdf
+        locator: "p. 1, Changes after the issuance of permits: Reclassification"
+        accessed: "2026-11-03"
     citation: >-
-      Research computation (evidence_base.md section 7): cumulative completions / cumulative
-      permits, all structures, 1995-2024 = 0.94 (2010-2024: 0.89).
-    rationale: No separate 2-4 unit series; the all-structures ratio sits between 1-unit and 5+.
+      https://www.census.gov/construction/nrc/xls/comps_permits_cust.xlsx and permits_cust.xlsx,
+      sheet Annual, United States column 'All structures' (thousands): cumulative completions in
+      permit-issuing areas / cumulative units authorized, 1995-2024 38,434.9 / 41,656.9 = 0.9227
+      (mid, high); 2010-2024 16,117.0 / 18,364.9 = 0.8776 (low). All-area completions
+      (comps_cust.xlsx) give 0.9385 for 1995-2024, the research value; they add homes built
+      where no permit is needed, which never enter our permit baseline. NRC does publish 2-4
+      unit completions, but the ratio (628.5 / 1,565.1 = 0.4016) is not a completion rate: the
+      Survey of Construction reclassifies townhouses that permit offices filed as multifamily
+      into one-unit structures (https://www.census.gov/construction/pdf/nrc_relationships.pdf),
+      so the all-structures ratio, which reclassification cannot move, is used. Computed by hre
+      validate --nrc (docs/evidence/completions_per_permit.md).
+    rationale: The all-structures ratio sits between 1-unit and 5+ and is immune to reclassification.
     transferability: National ratio applied to every state.
-    levels: {low: "0.89", mid: "0.94", high: "0.94"}
+    levels: {low: "0.88", mid: "0.92", high: "0.92"}
 
   - id: completions_per_permit_5plus
     label: Completed homes per permitted home, 5 or more units
@@ -226,13 +252,22 @@ parameters:
     confidence: moderate
     direction: 1
     sources:
-      - title: Census Bureau, New Residential Construction, annual permits and completions
-        url: https://www.census.gov/construction/nrc/index.html
-        locator: "Annual series 1995-2024, 5 units or more"
-        accessed: "2026-11-02"
+      - title: Census Bureau, New Residential Construction, units completed in permit-issuing areas
+        url: https://www.census.gov/construction/nrc/xls/comps_permits_cust.xlsx
+        locator: "Sheet Annual, United States, 5 units or more, 1995-2024"
+        accessed: "2026-11-03"
+      - title: Census Bureau, New Residential Construction, units authorized in permit-issuing places
+        url: https://www.census.gov/construction/nrc/xls/permits_cust.xlsx
+        locator: "Sheet Annual, United States, 5 units or more, 1995-2024"
+        accessed: "2026-11-03"
     citation: >-
-      Research computation (evidence_base.md section 7): cumulative completions / cumulative
-      permits, 5+ units, 1995-2024 = 0.79 (2010-2024: 0.75); completions lag permits about 2 years.
+      https://www.census.gov/construction/nrc/xls/comps_permits_cust.xlsx and permits_cust.xlsx,
+      sheet Annual, United States column '5 units or more' (thousands): cumulative completions
+      in permit-issuing areas / cumulative units authorized, 1995-2024 8,674.2 / 11,031.2 =
+      0.7863 (mid, high); 2010-2024 4,639.2 / 6,185.7 = 0.7500 (low). All-area completions
+      (comps_cust.xlsx) give 0.7867 for 1995-2024, the research value; they add homes built
+      where no permit is needed, which never enter our permit baseline. Computed by hre validate
+      --nrc (docs/evidence/completions_per_permit.md).
     rationale: About a fifth of apartment permits are never built or are re-permitted.
     transferability: National ratio applied to every state.
     levels: {low: "0.75", mid: "0.79", high: "0.79"}
