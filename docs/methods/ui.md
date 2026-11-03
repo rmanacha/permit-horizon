@@ -1,6 +1,6 @@
 # The website: pages, how changes are computed, when to use the command line
 
-The website in `web/` is a static site (Vite 7, React 19, TypeScript) that reads the precomputed
+The website in `web/` is a static site (Vite 7, React 19, TypeScript, in the Community Solutions design system) that reads the precomputed
 results bundle committed in `web/public/results/` (decisions 25 and 74). It has no server and no
 Python: the model runs ahead of time (`make results-all export`), and the page only reads its
 output. Live copy: https://rmanacha.github.io/permit-horizon/ (deployed by
@@ -43,6 +43,22 @@ the browser; nothing is sent anywhere.
   label only, because it reads high in states that build slowly.
 - **One place for styling**: colors, spacing and fonts live only in `web/src/styles/tokens.css`;
   components carry class names, never inline styles (`scripts/style_rules.test.mjs`).
+- **The Community Solutions design system** (2026 brand refresh, decision 76): `tokens.css` holds
+  its tokens, with the site's own names mapped onto them; Raleway (headings 900, body 400) and
+  Asap Condensed Bold (eyebrows, buttons, tags, labels) are self-hosted in `web/public/fonts/`
+  from the official Google Fonts files, with their SIL Open Font License texts and a manifest
+  (`scripts/fonts.test.mjs` checks every file's SHA-256); the components the pages use (Button, Tag,
+  Card, StatCallout, Tabs, Select, Input, Checkbox) are ported to TypeScript in
+  `web/src/components/ds/` with their props checked against the system's own declarations
+  (`scripts/ds-reference/index.d.ts`, `scripts/ds_props.test.mjs`). Square corners, flat surfaces,
+  2px navy form borders, 4px sky rules on section tops and the active tab, a 1200px container.
+  Contrast rule: running text is Charcoal or Navy; Sky is for fills, rules and large headings;
+  text on bright fills is Navy. No logos, slogans, photography or Biro Script.
+- **Charts** (`web/src/components/charts.tsx`): plain SVG, one series per chart (increments in
+  Sky, range lines in Navy, a solid baseline), the value as text on every bar, a hover readout,
+  and a table view. The palette was checked with the dataviz validator: Sky is 2.3:1 on white and
+  Lime too light to read as a mark, so the text labels and table carry the numbers and the
+  combined package is tagged in the compare table rather than drawn as a bar (decision 89).
 - **Licences**: every npm package, on every platform, must be MIT, ISC, BSD or Apache-2.0
   (`scripts/licenses.test.mjs` reads `package-lock.json`). `npx license-checker --summary` on the
   installed tree on 2026-11-03: MIT 19, Apache-2.0 2, ISC 1, BSD-3-Clause 1 (23 packages, plus the
@@ -106,4 +122,5 @@ text that is not a result lives in Markdown: the glossary in `docs/GLOSSARY.md` 
 | `src/data/bundle.test.ts` | every committed bundle file has the keys and types the site reads |
 | `src/lib/viewmodel.test.ts`, `route.test.ts`, `format.test.ts`, `downloads.test.ts` | cases, rankings and flip warnings; share links round-trip; number formats and labels; every download row has an outcome |
 | `scripts/style_rules.test.mjs`, `licenses.test.mjs`, `content.test.mjs` | no inline styles or stray colors; permissive licences only; glossary and limits in step with their Markdown |
+| `scripts/ds_props.test.mjs`, `fonts.test.mjs` | the design-system port keeps the system's props; the fonts are the manifest's files with their licences |
 | `scripts/rescale_equality.mjs` | the page's arithmetic against `hre run --set` |

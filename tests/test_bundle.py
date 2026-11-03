@@ -22,7 +22,7 @@ from hre.model.run import RESULTS_SCHEMA_VERSION
 REPO = Path(__file__).resolve().parents[1]
 BUNDLE = REPO / "web" / "public" / "results"
 # Everything that decides a number in the bundle and lives in git (decision 75, plus the CLI,
-# whose _run_one assembles meta, rounds and loads the current-law files: decision 77).
+# whose _run_one assembles meta, rounds and loads the current-law files: decision 78).
 WATCHED = ("src/hre/model/", "src/hre/assumptions/", "src/hre/current_law/", "src/hre/schema.py",
            "src/hre/export.py", "src/hre/cli.py")
 
