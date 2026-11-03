@@ -115,6 +115,11 @@ OUTCOME_WORDS = {"permits": "permits", "net_permits": "permits net of demolition
                  "cost_response_proxy": "additional permits (a cost-response proxy)"}
 
 
+def _lower_first(s: str) -> str:
+    """Lower-case the first letter for mid-sentence use, but keep acronyms (ADU, TOD) as they are."""
+    return s[0].lower() + s[1:] if len(s) > 1 and s[1].islower() else s
+
+
 def scenario_narrative(res: dict[str, Any], state_name: str) -> list[str]:
     """Four template sentences: benchmark, increment, the assumption that moves it most, one limit."""
     b, inc = res["benchmark"], res["increment"]
@@ -132,7 +137,7 @@ def scenario_narrative(res: dict[str, Any], state_name: str) -> list[str]:
     ]
     if res["tornado"]:
         t = res["tornado"][0]
-        out.append(f"The assumption that moves this most is {t['label'][0].lower() + t['label'][1:]}: from {t['low_text']} to "
+        out.append(f"The assumption that moves this most is {_lower_first(t['label'])}: from {t['low_text']} to "
                    f"{t['high_text']} the increment runs {round_display(t['at_low'])} to "
                    f"{round_display(t['at_high'])} permits.")
     out.append(res["limits"][0])
