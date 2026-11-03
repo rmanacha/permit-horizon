@@ -1,0 +1,4 @@
+Survey,FIPS,Region,Division,State,,1-unit,,,2-units,,,3-4 units,,,5+ units,,,1-unit rep,,,2-units rep,,,3-4 units rep       ,,,5+ units rep
+Date,State,Code,Code,Name,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,      Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,      Bldgs,Units,Value,Bldgs,Units,Value
+ 
+201699,99,4,8,Zetaland,140,140,42000,6,12,2400,2,6,900,1,50,6000,140,140,42000,6,12,2400,2,6,900,1,50,6000

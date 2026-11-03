@@ -21,7 +21,7 @@ import json
 from dataclasses import asdict, dataclass, field, fields
 from typing import Any
 
-SCHEMA_VERSION = "1"
+SCHEMA_VERSION = "2"  # 2: + state_permits_history (Phase 2, decision 66)
 
 METRO_ROLES = ("central", "outlying", "none")
 CBSA_TYPES = ("metropolitan", "micropolitan")
@@ -93,6 +93,7 @@ class StateInputs:
     counties: list[CountyInputs] = field(default_factory=list)
     block_groups: list[BlockGroupInputs] = field(default_factory=list)
     zoning_by_cbsa: dict[str, dict[str, Any]] = field(default_factory=dict)
+    state_permits_history: dict[str, int] = field(default_factory=dict)
     notes: list[str] = field(default_factory=list)
     schema_version: str = SCHEMA_VERSION
 
@@ -124,6 +125,7 @@ class StateInputs:
             counties=counties,
             block_groups=bgs,
             zoning_by_cbsa=dict(d.get("zoning_by_cbsa", {})),
+            state_permits_history=dict(d.get("state_permits_history", {})),
             notes=list(d.get("notes", [])),
             schema_version=str(d.get("schema_version", SCHEMA_VERSION)),
         )
@@ -185,6 +187,15 @@ def validate(d: dict[str, Any]) -> list[str]:
         p.append("notes must be a list")
     if not isinstance(d.get("zoning_by_cbsa", {}), dict):
         p.append("zoning_by_cbsa must be an object")
+    hist = d.get("state_permits_history", {})
+    if not isinstance(hist, dict):
+        p.append("state_permits_history must be an object")
+    else:
+        for year, units in hist.items():
+            if not (isinstance(year, str) and len(year) == 4 and year.isdigit()):
+                p.append(f"state_permits_history key {year!r} is not 'YYYY'")
+            if not (_is_int(units) and units >= 0):
+                p.append(f"state_permits_history[{year}] must be a non-negative int")
     if str(d.get("schema_version", SCHEMA_VERSION)) != SCHEMA_VERSION:
         p.append(f"schema_version {d.get('schema_version')!r} != {SCHEMA_VERSION!r}")
 

@@ -60,3 +60,21 @@ def baseline_narrative(b: dict[str, Any], state_name: str) -> list[str]:
             f"{d['top_county']} accounts for {d['top_county_share']:.0%} of the total, and "
             f"{TYPE_WORDS[d['lead_type']]} make up {d['lead_type_share']:.0%} of it.")
     return out
+
+
+def alternative_band_narrative(alt: dict[str, Any], state_name: str) -> list[str]:
+    """Sentences for the separate "another way to draw the range" section (Adam's swing rule)."""
+    if not alt.get("available"):
+        return [f"The 20-year swing range is not available for {state_name}: {alt['reason']}."]
+    p0, p1 = alt["point_years"]
+    h0, h1 = alt["history"]
+    s0, s1, _ = alt["slowest_window"]
+    f0, f1, _ = alt["fastest_window"]
+    return [
+        (f"Another way to draw the range, from a teammate's earlier prototype: start from "
+         f"{state_name}'s {p0}-{p1} permits ({round_display(alt['mid'])}) and stretch them by the "
+         f"state's own slowest five years ({s0}-{s1}, {alt['low_ratio']:.2f} times the {h0}-{h1} "
+         f"average) and fastest ({f0}-{f1}, {alt['high_ratio']:.2f} times): "
+         f"{round_display(alt['low'])} to {round_display(alt['high'])}."),
+        alt["how_it_did"],
+    ]

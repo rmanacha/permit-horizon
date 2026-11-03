@@ -262,7 +262,20 @@ def write_register_band(r: dict, path: Path) -> None:
     block = re.sub(r"\n    high: [^\n]+", f"\n    high: {o['p90']:.4f}", block, count=1)
     block = re.sub(r"(\n    citation: >-\n)(      [^\n]+\n)+",
                    lambda m: m.group(1) + _wrap(register_citation(r), 6), block, count=1)
-    path.write_text(text[:start] + block + text[end:], encoding="utf-8")
+    est, test = o["estimation"], o["test"]
+    block = re.sub(r"\n    coverage: [^\n]+", (
+        f"\n    coverage: {{estimation_runs: {est['n']}, estimation_share_inside: {est['share_inside']:.4f}, "
+        f"test_runs: {test['n']}, test_inside: {test['inside']}, test_share_inside: "
+        f"{test['share_inside']:.4f}, test_median_width: {test['median_width']:.4f}}}"), block, count=1)
+    text = text[:start] + block + text[end:]
+    a, at = r["adam"]["runs"], r["adam"]["test"]
+    start = text.index("  - id: baseline_alt_band_history_years")
+    end = text.index("\n  - id:", start + 10)
+    alt = re.sub(r"\n    coverage: [^\n]+", (
+        f"\n    coverage: {{runs: {a['n']}, inside: {a['inside']}, above: {a['above']}, below: {a['below']}, "
+        f"test_runs: {at['n']}, test_share_inside: {at['share_inside']:.4f}, test_median_width: "
+        f"{at['median_width']:.4f}}}"), text[start:end], count=1)
+    path.write_text(text[:start] + alt + text[end:], encoding="utf-8")
 
 
 def _wrap(text: str, indent: int, width: int = 96) -> str:
@@ -373,7 +386,18 @@ def render_markdown(r: dict, run_date: str) -> str:
         (f"| B, Adam's 20-year min/max | {at['n']} | {at['share_inside']:.0%} | {at['above']} | "
         f"{at['below']} | {at['median_width']:.2f} |"),
         "",
-        "## 5. Plain-language reading",
+        "## 5. Which band is the headline, and why both are shown",
+        "",
+        ("The tool's headline band is rule A. Rule B is shown beside it in every results file "
+        "(`baseline.alternative_band`), in its own section, computed exactly as tested here: the last "
+        "five years' total stretched by the state's own slowest and fastest five years of the past 20 "
+        "(decision 66). Rule A makes one checkable promise (inside in 80% of past periods) that held out "
+        "of sample and allows for a shock the size of 2008. Rule B is narrower and follows each state's "
+        "own history, but it promises no fixed coverage and missed most states after 2005. Showing both "
+        "lets a reader see the trade-off between a wide band that rarely misses and a tight band that "
+        "sometimes does."),
+        "",
+        "## 6. Plain-language reading",
         "",
         (f"- In {o['estimation']['share_inside']:.0%} of past five-year periods from origins 1990-2015, "
         f"the actual statewide permit total fell between {o['p10']:.2f} and {o['p90']:.2f} times the "

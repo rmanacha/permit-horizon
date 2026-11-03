@@ -24,11 +24,12 @@ Conventions:
 |---|---|---|
 | `state` | USPS code, e.g. `"NH"` | fixed table in `src/hre/data/states.py` |
 | `state_fips` | 2-digit FIPS, e.g. `"33"` | same |
-| `schema_version` | `"1"` | bumped when a field changes meaning |
+| `schema_version` | `"2"` | bumped when a field is added or changes meaning. Version 2 (Phase 2, 2026-11-03, decision 66) added `state_permits_history`; files written as version 1 fail validation and must be rebuilt with `hre build` |
 | `vintages` | which release of each source went in, e.g. `{"bps": "2025", "acs": "2020-2024 (2024 release)"}` | each fetcher |
 | `counties` | list of `CountyInputs` (below), one per county equivalent | |
 | `block_groups` | list of `BlockGroupInputs` (below) | |
 | `zoning_by_cbsa` | metro-level zoning survey values keyed by CBSA code (NZLUD) | `fetch_nzlud.py` |
+| `state_permits_history` | total units authorised in the state each year, 1980-2025 (NH: `{"1990": 4126, ...}`; 1 + 2 + 3-4 + 5+ units, estimates with imputation). Feeds the 20-year swing band shown beside the baseline | BPS state annual files, `fetch_bps.load_state_permits` |
 | `notes` | state-level caveats in plain English (Connecticut's county break, excluded series) | `build_state_inputs.py` |
 
 ## County (`CountyInputs`)

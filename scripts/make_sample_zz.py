@@ -139,6 +139,18 @@ def bps() -> None:
           "2-units rep,,,3-4 units rep       ,,,5+ units rep")
     s2 = ("Date,State,Code,Code,Name,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,      Bldgs,Units,Value,"
           "Bldgs,Units,Value,Bldgs,Units,Value,      Bldgs,Units,Value,Bldgs,Units,Value")
+    for y in range(1980, 2024):
+        # Synthetic Zetaland history: a 12-year building cycle before 2016, the county sums after.
+        if y in totals:
+            u1, u2, u34, u5 = totals[y]
+        else:
+            u1, u2, u34, u5 = 150 + 15 * ((y - 1980) % 12), 10, 6, 40 if (y - 1980) % 12 > 5 else 20
+        code = f"{y}99" if y >= 1999 else f"{y % 100:02d}99"
+        lines = [s1, s2, " ",
+                 (f"{code},99,4,8,Zetaland,{u1},{u1},{u1 * 300},{u2 // 2},{u2},{u2 * 200},{u34 // 3 if u34 else 0},"
+                  f"{u34},{u34 * 150},{u5 // 40 if u5 else 0},{u5},{u5 * 120},{u1},{u1},{u1 * 300},{u2 // 2},{u2},"
+                  f"{u2 * 200},{u34 // 3 if u34 else 0},{u34},{u34 * 150},{u5 // 40 if u5 else 0},{u5},{u5 * 120}")]
+        w(ROOT / "bps" / f"st{y}a.txt", "\n".join(lines) + "\n")
     for y in (2024, 2025):
         u1, u2, u34, u5 = totals[y]
         lines = [s1, s2, " ",

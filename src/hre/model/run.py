@@ -20,7 +20,7 @@ import math
 from typing import Any
 
 from hre.model.baseline import baseline
-from hre.model.drivers import NO_LLM_STATEMENT, baseline_narrative
+from hre.model.drivers import NO_LLM_STATEMENT, alternative_band_narrative, baseline_narrative
 from hre.model.params import Params
 from hre.schema import OUTCOMES, StateInputs
 
@@ -39,6 +39,8 @@ def run_state(state: StateInputs, params: Params, scenarios: list[str], meta: di
         raise NotImplementedError(f"scenario formulas arrive in Phase 3: {not_yet}")
     b = baseline(state, params)
     b["narrative"] = baseline_narrative(b, state_name or state.state)
+    b["alternative_band"]["narrative"] = alternative_band_narrative(b["alternative_band"],
+                                                                    state_name or state.state)
     return {
         "results_schema_version": RESULTS_SCHEMA_VERSION,
         "meta": {"state": state.state, "state_fips": state.state_fips, **meta},
@@ -95,6 +97,15 @@ def validate_results(r: Any) -> list[str]:
         p.append("baseline.band_rule must explain the band")
     if not b.get("narrative"):
         p.append("baseline.narrative is empty")
+    alt = b.get("alternative_band")
+    if not isinstance(alt, dict) or "available" not in alt:
+        p.append("baseline.alternative_band missing")
+    elif alt["available"]:
+        _band("baseline.alternative_band", alt, p)
+        if alt.get("outcome") not in OUTCOMES:
+            p.append("baseline.alternative_band.outcome not in the fixed set")
+        if alt.get("applied_to_counties") is not False:
+            p.append("baseline.alternative_band is state-level only")
     for name, s in r["scenarios"].items():
         if name not in KNOWN_SCENARIOS:
             p.append(f"unknown scenario {name}")

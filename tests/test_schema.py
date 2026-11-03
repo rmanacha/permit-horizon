@@ -130,3 +130,16 @@ def test_unknown_field_is_refused():
     d["counties"][0]["bogus"] = 1
     with pytest.raises(ValueError, match="unknown fields"):
         StateInputs.from_dict(d)
+
+
+def test_state_permits_history_field(sample_dir):
+    from hre.build.build_state_inputs import build_state
+    from hre.schema import SCHEMA_VERSION, validate
+
+    si, _ = build_state("ZZ", sample_dir)
+    d = si.to_dict()
+    assert SCHEMA_VERSION == "2" and len(d["state_permits_history"]) == 46
+    assert d["state_permits_history"]["1990"] == 356            # written as "9099" in the file
+    d["state_permits_history"]["90"] = -1
+    problems = " ".join(validate(d))
+    assert "'YYYY'" in problems and "non-negative" in problems

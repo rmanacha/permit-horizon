@@ -124,6 +124,43 @@ parameters:
       is state-level and applied to every county (county errors are larger; said on every page).
     transferability: Pooled over all states; the test window shows how well it held out of sample.
     levels: {low: "P10 of actual/forecast", mid: "point", high: "P90 of actual/forecast"}
+    coverage: {estimation_runs: 1326, estimation_share_inside: 0.7994, test_runs: 255, test_inside: 251, test_share_inside: 0.9843, test_median_width: 2.9725}
+
+  - id: baseline_alt_band_history_years
+    label: Years of history for the 20-year swing band (shown beside the headline)
+    description: >-
+      Adam Ruege's v2.0 band rule, shown in its own section next to the headline band (decision 66):
+      point = the state's last five years of permits; low and high = point x the slowest and fastest
+      rolling five-year totals of the last this-many years, each divided by their average. Coverage
+      below is from docs/evidence/baseline_backtest.md, band rule B.
+    unit: years of Building Permits Survey state history
+    low: 10
+    mid: 20
+    high: 30
+    scope: state
+    scenarios: [baseline]
+    grade: R
+    confidence: moderate
+    direction: 0
+    sources:
+      - title: Permit Horizon baseline backtest (docs/evidence/baseline_backtest.md), band rule B
+        url: https://github.com/rmanacha/permit-horizon/blob/main/docs/evidence/baseline_backtest.md
+        locator: "Section 3 (origins 2000, 2005, 2010, 2015, 2020) and section 4 (origins 2016-2020)"
+        accessed: "2026-11-03"
+      - title: Census Building Permits Survey, state annual files 1980-2025
+        url: https://www2.census.gov/econ/bps/State/
+        locator: "st1980a.txt to st2025a.txt, units 'estimates with imputation'"
+        accessed: "2026-11-03"
+    citation: >-
+      Adam's register: "Census Building Permits Survey annual state files, 1980 to 2025", 20 years,
+      tested from 10 to 30. Reproduced in docs/evidence/baseline_backtest.md: 181 of 255 state forecasts
+      inside (37 above, 37 below), as in his payload; NH today: 2021-2025 permits 24,225 x 0.67 and 1.31
+      (slowest and fastest five-year totals of 2006-2025 over their average) = 16,174 to 31,632.
+    rationale: Long enough to include past slow and fast building periods; each state's band reflects its own swings.
+    transferability: Each state's own history.
+    levels: {low: "10 years", mid: "20 years", high: "30 years"}
+    ported_from: adam-v2.0
+    coverage: {runs: 255, inside: 181, above: 37, below: 37, test_runs: 255, test_share_inside: 0.8745, test_median_width: 2.4411}
 
   - id: completions_per_permit_1unit
     label: Completed homes per permitted home, single-family

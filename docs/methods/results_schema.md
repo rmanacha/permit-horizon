@@ -23,6 +23,7 @@ Written by `hre run --state XX --scenarios baseline` (`src/hre/model/run.py`), c
 | `state` | `low`, `mid`, `high`, `by_type`, `by_year[{year, low, mid, high}]` (flat: point ÷ 5) |
 | `band_rule` | `name` (`empirical_p10_p90`), `low_ratio`, `high_ratio`, `reading`, `applied_to_counties`, `source`, `alternative` |
 | `method`, `notes[]`, `narrative[]` | one-line method; county-years with no BPS row; 2-3 template sentences |
+| `alternative_band` | the 20-year swing band (Adam Ruege's rule), shown in its own section: `available`; when true `outcome`, `credit`, `low`, `mid` (the last five years' total), `high`, `low_ratio`, `high_ratio`, `average_five_year_total`, `slowest_window` and `fastest_window` (`[first year, last year, total]`), `point_years`, `history`, `how_built`, `how_it_did`, `why_not_headline`, `applied_to_counties` (always false), `narrative[]`; when false, `reason` |
 
 ## Scenario block (Phase 3 fills it; the validator already enforces it)
 

@@ -87,6 +87,7 @@ def build_state(code: str, data_dir: Path | None = None, *, lenient: bool = Fals
     gaz = fetch_gazetteer.load_counties(state.fips, data_dir)
     cbsa = fetch_cbsa.load_cbsa(data_dir) if fetch_cbsa.cbsa_path(data_dir).exists() else {}
     permits, bps_notes = fetch_bps.load_county_permits(state.fips, data_dir)
+    history = {y: sum(v.values()) for y, v in sorted(fetch_bps.load_state_permits(state.fips, data_dir).items())}
     pep = fetch_pep.load_pep(state.name, gaz, data_dir) if fetch_pep.pep_path(data_dir).exists() else {}
     acs_county = fetch_acs.load_county_acs(state.fips, data_dir)
     fhfa = fetch_fhfa.load_fhfa(state.fips, data_dir) if fetch_fhfa.fhfa_path(data_dir).exists() else {}
@@ -169,7 +170,8 @@ def build_state(code: str, data_dir: Path | None = None, *, lenient: bool = Fals
             "nzlud": fetch_nzlud.VINTAGE, "gazetteer": fetch_gazetteer.GAZ_YEAR,
             "transit": "National Transit Map stops as cached (see data/manifests/transit.json)",
         },
-        counties=counties, block_groups=bgs, zoning_by_cbsa=zoning, notes=notes,
+        counties=counties, block_groups=bgs, zoning_by_cbsa=zoning, state_permits_history=history,
+        notes=notes,
     )
     problems = validate(si.to_dict())
     if problems:

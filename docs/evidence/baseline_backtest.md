@@ -86,7 +86,11 @@ Reproduction: **181 of 255 inside (71%), 37 above, 37 below**; worst origin 2005
 | A, ours (P10/P90 fitted 1990-2015) | 255 | 98% | 3 | 1 | 2.97 |
 | B, Adam's 20-year min/max | 255 | 87% | 29 | 3 | 2.44 |
 
-## 5. Plain-language reading
+## 5. Which band is the headline, and why both are shown
+
+The tool's headline band is rule A. Rule B is shown beside it in every results file (`baseline.alternative_band`), in its own section, computed exactly as tested here: the last five years' total stretched by the state's own slowest and fastest five years of the past 20 (decision 66). Rule A makes one checkable promise (inside in 80% of past periods) that held out of sample and allows for a shock the size of 2008. Rule B is narrower and follows each state's own history, but it promises no fixed coverage and missed most states after 2005. Showing both lets a reader see the trade-off between a wide band that rarely misses and a tight band that sometimes does.
+
+## 6. Plain-language reading
 
 - In 80% of past five-year periods from origins 1990-2015, the actual statewide permit total fell between 0.54 and 1.59 times the 3-year-mean baseline (80% by construction: that is how the band was fitted).
 - On origins 2016-2020, which the fit never saw, 98% of actual totals fell inside (251 of 255); 3 were above the band and 1 below.

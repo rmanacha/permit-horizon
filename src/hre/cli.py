@@ -368,6 +368,9 @@ def run(
                f"(low / mid / high); build {meta['build_id']} -> {dest}")
     for line in results["baseline"]["narrative"]:
         typer.echo("   " + line)
+    typer.echo("   Shown beside it (20-year swing band, alternative_band):")
+    for line in results["baseline"]["alternative_band"]["narrative"]:
+        typer.echo("     " + line)
 
 
 @app.command()

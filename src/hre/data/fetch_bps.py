@@ -30,7 +30,7 @@ from hre.schema import PERMIT_KEYS
 BPS_BASE = "https://www2.census.gov/econ/bps"
 LICENSE = "U.S. Census Bureau, public domain (U.S. government work); no license statement published"
 COUNTY_YEARS = tuple(range(2016, 2026))
-STATE_YEARS = tuple(range(1990, 2026))
+STATE_YEARS = tuple(range(1980, 2026))  # 1980s needed for the 20-year swing band (decision 66)
 VINTAGE = "annual files as posted 2026 (2025 posted 2026-05-14)"
 
 CT_LEGACY = tuple(f"09{c:03d}" for c in (1, 3, 5, 7, 9, 11, 13, 15))
