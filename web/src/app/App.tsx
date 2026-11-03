@@ -8,6 +8,7 @@ import { MethodsPage } from '../pages/Methods.tsx';
 import { ValidationPage } from '../pages/Validation.tsx';
 import { AboutPage } from '../pages/About.tsx';
 import { BriefPage } from '../pages/Brief.tsx';
+import { Select } from '../components/ds/Select.tsx';
 
 const NAV: Array<{ page: Page; label: string }> = [
   { page: 'explore', label: 'Explore' },
@@ -32,20 +33,14 @@ function StatePicker() {
   const { index } = useShared();
   const { view, update } = useView();
   return (
-    <label className="state-picker">
-      <span>State</span>
-      <select
-        value={view.state ?? ''}
-        onChange={(e) => update({ state: e.target.value || null }, { push: true })}
-      >
-        <option value="">Choose a state…</option>
-        {index.states.map((s) => (
-          <option key={s.state} value={s.state}>
-            {s.name}
-          </option>
-        ))}
-      </select>
-    </label>
+    <Select
+      className="state-picker"
+      label="State"
+      placeholder="Choose a state…"
+      value={view.state ?? ''}
+      options={index.states.map((s) => ({ value: s.state, label: s.name }))}
+      onChange={(e) => update({ state: e.target.value || null }, { push: true })}
+    />
   );
 }
 
@@ -81,11 +76,11 @@ function Shell() {
       </a>
       <header className="site-header no-print">
         <div className="site-header-inner">
-          <div>
+          <div className="site-brand">
+            <p className="ds-eyebrow site-tagline">Statewide housing reform estimator</p>
             <p className="site-title">
               <a href={href({ page: 'explore' })}>Permit Horizon</a>
             </p>
-            <p className="site-tagline">A statewide housing reform estimator: building permits, 2026-2030</p>
           </div>
           <StatePicker />
           <nav className="site-nav" aria-label="Pages">

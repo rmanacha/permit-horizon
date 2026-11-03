@@ -1,0 +1,65 @@
+{
+ "what": "Web fonts for the Community Solutions design system (decision 76), self-hosted so the page makes no third-party request.",
+ "source": "https://github.com/google/fonts at commit 2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc (the official Google Fonts repository)",
+ "license": "SIL Open Font License 1.1 (Raleway: The Raleway Project Authors; Asap Condensed: The Asap Project Authors / Omnibus-Type). The licence text travels beside the fonts.",
+ "fetched": "2026-11-03",
+ "not_included": "Biro Script (commercial, not redistributable).",
+ "files": {
+  "Raleway-VF.ttf": {
+   "family": "Raleway",
+   "weight": "variable 100-900, used at 400, 700, 900",
+   "style": "normal",
+   "bytes": 312352,
+   "sha256": "8bbcc3eb8275c388f4bcd998832f8a4b943eadbaf6a595205312774b5951aefb",
+   "url": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/raleway/Raleway[wght].ttf"
+  },
+  "Raleway-OFL.txt": {
+   "family": "Raleway",
+   "weight": "licence",
+   "style": null,
+   "bytes": 4497,
+   "sha256": "7e946cf1171784d1015279e7dc35f827957a6b5d1f1f659ae0c98e5f5e37ed9b",
+   "url": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/raleway/OFL.txt"
+  },
+  "AsapCondensed-Regular.ttf": {
+   "family": "Asap Condensed",
+   "weight": "400",
+   "style": "normal",
+   "bytes": 110332,
+   "sha256": "297336aba664e16c2c6aadb64a66fb31d63f048eae3d22409492cd2f1b4cdda0",
+   "url": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/asapcondensed/AsapCondensed-Regular.ttf"
+  },
+  "AsapCondensed-Italic.ttf": {
+   "family": "Asap Condensed",
+   "weight": "400",
+   "style": "italic",
+   "bytes": 116644,
+   "sha256": "e3d24bd65328b2906d3f076b84c7291e86799fa5e767890e7520303e71e28353",
+   "url": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/asapcondensed/AsapCondensed-Italic.ttf"
+  },
+  "AsapCondensed-Bold.ttf": {
+   "family": "Asap Condensed",
+   "weight": "700",
+   "style": "normal",
+   "bytes": 111544,
+   "sha256": "0ed4b4f29a0abed3a5049270f28d8e11c797edc7c0270cc51495c0578622f82a",
+   "url": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/asapcondensed/AsapCondensed-Bold.ttf"
+  },
+  "AsapCondensed-BoldItalic.ttf": {
+   "family": "Asap Condensed",
+   "weight": "700",
+   "style": "italic",
+   "bytes": 119980,
+   "sha256": "a67d4459760386ad033b452a1008f5f34a5b21c7b73445038589a176c00982a0",
+   "url": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/asapcondensed/AsapCondensed-BoldItalic.ttf"
+  },
+  "AsapCondensed-OFL.txt": {
+   "family": "Asap Condensed",
+   "weight": "licence",
+   "style": null,
+   "bytes": 4383,
+   "sha256": "a6f4d778db0d2a87c2c6e560f71eb018b4253505b2f23c108724dea5d4d74ed0",
+   "url": "https://raw.githubusercontent.com/google/fonts/2fe1e8c6b137fb13041a7cfca6fdcd8a910ea4dc/ofl/asapcondensed/OFL.txt"
+  }
+ }
+}

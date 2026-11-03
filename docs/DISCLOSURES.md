@@ -29,6 +29,17 @@ lock-file entries, every platform, are MIT, ISC, BSD-3-Clause or Apache-2.0
 (`web/scripts/licenses.test.mjs`). Hosting: GitHub Pages (free for public repositories);
 the site also runs locally (`make run`) or in Docker, so it does not depend on Pages.
 
+Visual design: Community Solutions design system (2026 brand refresh), ported with the
+team's permission (decision 76): its color, spacing and type tokens and the props of its
+Button, Tag, Card, StatCallout, Tabs, Select, Input and Checkbox components, rewritten in
+TypeScript with CSS classes (`web/src/components/ds/`, `web/src/styles/tokens.css`). No logos,
+photography, slogans or the commercial Biro Script typeface are used. Fonts (self-hosted in
+`web/public/fonts/`, so the page makes no third-party request; `manifest.json` records the
+source commit and SHA-256 of each file): **Raleway** (The Raleway Project Authors) and **Asap
+Condensed** (The Asap Project Authors), both under the **SIL Open Font License 1.1**, which
+allows bundling and redistribution with any software; the licence text travels with the
+fonts. OFL is a font licence, not a code licence; it is listed here for the Phase 6 SBOM review.
+
 # Pretrained Models, Weights, and Embeddings
 
 [List any pretrained models, model weights, embeddings, or model libraries your

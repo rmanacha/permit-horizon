@@ -2,91 +2,261 @@
  * Design tokens: the ONLY place colors, spacing, fonts, sizes, borders and radii are written.
  * Every other stylesheet uses var(--...) from this file, and components carry class names only
  * (no inline styles); scripts/style_rules.test.mjs fails if either rule is broken.
- * To restyle the site, edit this file.
+ *
+ * Source: the Community Solutions design system, 2026 brand refresh (decision 76), copied from
+ * planning/research/design_system/tokens.css and components/bundle.css. Sections 1 and 2 are the
+ * system's tokens unchanged (Biro Script left out: commercial font). Section 3 is the
+ * self-hosted fonts (web/public/fonts/, SIL Open Font License). Section 4 maps the names this
+ * site's stylesheet uses onto the system's tokens. To restyle the site, edit this file only.
  */
+
+/* --- 1. Community Solutions color tokens and semantic aliases --------------------------- */
+:root, [data-theme="light"] {
+  --cs-sky: #12b5ea;
+  --cs-navy: #003160;
+  --cs-sand: #eae7d9;
+  --cs-sunshine: #ffde59;
+  --cs-coral: #ff5757;
+  --cs-lime: #c0e850;
+  --cs-lemon: #fffa77;
+  --cs-marigold: #fdbd4c;
+  --cs-olive: #9fbd4c;
+  --cs-rust: #c46e3a;
+  --cs-taupe: #b9a492;
+  --cs-charcoal: #282726;
+  --cs-gray-200: #dddddd;
+  --cs-white: #ffffff;
+  --cs-paper: #fffdfd;
+  --cs-sky-700: #0b8fbc;
+  --cs-sky-100: #ddf3fc;
+  --cs-navy-800: #00264c;
+  --cs-navy-600: #1a4a78;
+  --cs-sand-300: #d9d4bf;
+  --cs-sand-50: #f6f4ec;
+  --cs-coral-700: #d93f3f;
+  --brand-primary: var(--cs-sky);
+  --brand-secondary: var(--cs-navy);
+  --surface-page: var(--cs-white);
+  --surface-warm: var(--cs-sand);
+  --surface-warm-subtle: var(--cs-sand-50);
+  --surface-brand: var(--cs-sky);
+  --surface-inverse: var(--cs-navy);
+  --surface-card: var(--cs-white);
+  --text-strong: var(--cs-charcoal);
+  --text-body: var(--cs-charcoal);
+  --text-muted: #5e5c58;
+  --text-heading: var(--cs-navy);
+  --text-on-dark: var(--cs-white);
+  --text-on-brand: var(--cs-navy);
+  --text-link: var(--cs-navy);
+  --text-link-hover: var(--cs-sky-700);
+  --accent-highlight: var(--cs-sunshine);
+  --accent-alert: var(--cs-coral);
+  --accent-fresh: var(--cs-lime);
+  --border-subtle: var(--cs-gray-200);
+  --border-strong: var(--cs-navy);
+  --border-warm: var(--cs-sand-300);
+  --focus-ring: var(--cs-sky);
+  --status-success: #5e7f12;
+  --status-danger: var(--cs-coral-700);
+  --status-warning: var(--cs-marigold);
+  --status-info: var(--cs-sky-700);
+  --scrim: rgba(0, 38, 76, 0.62);
+  --shadow-none: none;
+  --shadow-paper: 0 2px 4px rgba(40, 39, 38, 0.12), 0 10px 24px rgba(40, 39, 38, 0.1);
+  --shadow-overlay: 0 20px 48px rgba(0, 49, 96, 0.28);
+  --shadow-focus: 0 0 0 3px rgba(18, 181, 234, 0.45);
+}
+
+/* --- 2. Spacing, layout, radii, borders, type scale, motion ----------------------------- */
 :root {
-  /* Fonts (system fonts: nothing is downloaded) */
-  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.375rem;
-  --font-size-xxl: 1.75rem;
-  --font-size-hero: 2.25rem;
-  --font-weight-normal: 400;
-  --font-weight-medium: 600;
-  --font-weight-bold: 700;
-  --line-height-tight: 1.25;
-  --line-height-base: 1.5;
-
-  /* Colors */
-  --color-text: #1f2328;
-  --color-text-muted: #57606a;
-  --color-bg: #ffffff;
-  --color-surface: #f6f8fa;
-  --color-surface-strong: #eaeef2;
-  --color-border: #d0d7de;
-  --color-border-strong: #8c959f;
-  --color-link: #0a58b4;
-  --color-link-hover: #083f80;
-  --color-accent: #0a58b4;
-  --color-accent-text: #ffffff;
-  --color-focus: #e36209;
-  --color-warning-bg: #fff8c5;
-  --color-warning-border: #bf8700;
-  --color-note-bg: #ddf4ff;
-  --color-note-border: #54aeff;
-  --color-danger-text: #a40e26;
-
-  /* Badges: status of an increment and how a changed estimate was computed */
-  --color-badge-default-bg: #ddf4ff;
-  --color-badge-default-text: #0a3069;
-  --color-badge-user-bg: #fbefff;
-  --color-badge-user-text: #512a97;
-  --color-badge-zero-bg: #eaeef2;
-  --color-badge-zero-text: #24292f;
-  --color-badge-exact-bg: #dafbe1;
-  --color-badge-exact-text: #0f5323;
-  --color-badge-interp-bg: #fff8c5;
-  --color-badge-interp-text: #6c4400;
-  --color-badge-na-bg: #ffebe9;
-  --color-badge-na-text: #82071e;
-  --color-badge-review-bg: #fff1e5;
-  --color-badge-review-text: #762c00;
-
-  /* Charts (every bar also carries a text label, so color is never the only cue) */
-  --color-chart-bar: #4a90d9;
-  --color-chart-bar-alt: #8250df;
-  --color-chart-range: #24292f;
-  --color-chart-low: #cf6a00;
-  --color-chart-high: #1a7f37;
-  --color-chart-axis: #8c959f;
-  --color-chart-grid: #eaeef2;
-  --color-chart-label: #1f2328;
-
-  /* Spacing scale */
   --space-0: 0;
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
-  --space-7: 3rem;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --grid-gutter: 24px;
+  --container-max: 1200px;
+  --container-pad: 32px;
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-pill: 999px;
+  --border-thin: 1px;
+  --border-thick: 2px;
+  --border-heavy: 4px;
+  --grid-columns: 12;
+  --font-headline: "Raleway", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Asap Condensed", "Arial Narrow", Arial, sans-serif;
+  --font-body: "Raleway", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 
-  /* Layout */
-  --content-max: 74rem;
-  --measure: 48em;
-  --card-min: 20rem;
-  --label-col: 11rem;
-  --chart-height-row: 1.75rem;
-  --border-width: 1px;
-  --border-width-strong: 3px;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-black: 900;
+  --fs-display: 64px;
+  --fs-h1: 48px;
+  --fs-h2: 36px;
+  --fs-h3: 28px;
+  --fs-h4: 22px;
+  --fs-lead: 20px;
+  --fs-body: 17px;
+  --fs-small: 15px;
+  --fs-caption: 13px;
+  --fs-eyebrow: 14px;
+  --fs-stat: 56px;
+  --lh-tight: 0.95;
+  --lh-heading: 1.08;
+  --lh-snug: 1.25;
+  --lh-body: 1.6;
+  --ls-eyebrow: 0.14em;
+  --ls-caps: 0.04em;
+  --ls-tag: 0.06em;
+  --ls-tight: -0.01em;
+  --ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 360ms;
+}
+
+/* Smaller headings and stats on phones (values only; the layout uses the same names). */
+@media (max-width: 640px) {
+  :root {
+    --fs-h1: 34px;
+    --fs-h2: 28px;
+    --fs-h3: 22px;
+    --fs-h4: 19px;
+    --fs-stat: 40px;
+    --container-pad: 16px;
+  }
+}
+
+/* --- 3. Self-hosted fonts (web/public/fonts/, SIL Open Font License 1.1; manifest.json) --- */
+@font-face { font-family: "Raleway"; src: url("/fonts/Raleway-VF.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Asap Condensed"; src: url("/fonts/AsapCondensed-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Asap Condensed"; src: url("/fonts/AsapCondensed-Italic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Asap Condensed"; src: url("/fonts/AsapCondensed-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Asap Condensed"; src: url("/fonts/AsapCondensed-BoldItalic.ttf") format("truetype"); font-weight: 700; font-style: italic; font-display: swap; }
+
+/* --- 4. The names this site's stylesheet uses, mapped onto the system ------------------- */
+:root {
+  /* text and surfaces; contrast rule: running text is Charcoal or Navy, Sky is for fills,
+     rules and large headings only, and text on bright fills is Navy */
+  --color-text: var(--text-body);
+  --color-text-muted: var(--text-muted);
+  --color-heading: var(--text-heading);
+  --color-bg: var(--surface-page);
+  --color-surface: var(--surface-warm-subtle);
+  --color-surface-strong: var(--surface-warm);
+  --color-border: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  --color-link: var(--text-link);
+  --color-link-hover: var(--text-link-hover);
+  --color-accent: var(--cs-navy);
+  --color-accent-text: var(--cs-white);
+  --color-focus: var(--focus-ring);
+  --color-note-bg: var(--cs-sky-100);
+  --color-note-border: var(--cs-sky);
+  --color-warning-bg: var(--cs-sand);
+  --color-warning-border: var(--status-warning);
+  --color-danger-text: var(--status-danger);
+  --color-inverse-bg: var(--surface-inverse);
+  --color-inverse-text: var(--text-on-dark);
+
+  /* tags (badges): fill and text pairs from the system's Tag tones */
+  --tag-sky-bg: var(--cs-sky);
+  --tag-sky-fg: var(--cs-navy);
+  --tag-navy-bg: var(--cs-navy);
+  --tag-navy-fg: var(--cs-white);
+  --tag-sunshine-bg: var(--cs-sunshine);
+  --tag-sunshine-fg: var(--cs-navy);
+  --tag-coral-bg: var(--cs-coral);
+  --tag-coral-fg: var(--cs-charcoal);
+  --tag-lime-bg: var(--cs-lime);
+  --tag-lime-fg: var(--cs-navy);
+  --tag-sand-bg: var(--cs-sand);
+  --tag-sand-fg: var(--cs-navy);
+  --tag-outline-fg: var(--cs-navy);
+
+  /* buttons: hover tints from the system's Button variants */
+  --button-primary-hover: var(--cs-navy-600);
+  --button-brand-hover: #3cc3ee;
+  --button-highlight-hover: #fce77f;
+  --button-ghost-hover: rgba(0, 49, 96, 0.06);
+
+  /* charts (dataviz check: one series per chart, Sky marks with Navy range lines, every bar
+     labeled in text and a table view, because Sky is 2.3:1 on white) */
+  --color-chart-bar: var(--cs-sky);
+  --color-chart-bar-hover: var(--cs-sky-700);
+  --color-chart-range: var(--cs-navy);
+  --color-chart-base: var(--cs-navy);
+  --color-chart-axis: var(--cs-gray-200);
+  --color-chart-label: var(--text-body);
+  --color-chart-tooltip-bg: var(--cs-charcoal);
+  --color-chart-tooltip-fg: var(--cs-white);
+  --chart-line: 2px;
+  --chart-hairline: 1px;
+
+  /* type, by role */
+  --font-size-xs: var(--fs-caption);
+  --font-size-sm: var(--fs-small);
+  --font-size-base: var(--fs-body);
+  --font-size-lg: var(--fs-lead);
+  --font-size-xl: var(--fs-h3);
+  --font-size-xxl: var(--fs-h1);
+  --font-weight-normal: var(--fw-regular);
+  --font-weight-medium: var(--fw-bold);
+  --font-weight-bold: var(--fw-black);
+  --line-height-tight: var(--lh-heading);
+  --line-height-base: var(--lh-body);
+
+  /* page headings: a tool page carries more sections than a marketing page, so section
+     headings use the system's h3 size and card titles its h4 */
+  --page-h1: var(--fs-h1);
+  --page-h2: var(--fs-h3);
+  --page-h3: var(--fs-h4);
+
+  /* component sizes, from the system's component source (Button, Tag, Card, StatCallout,
+     Select, Input, Checkbox, Tabs) */
+  --button-sm-font: 14px;
+  --button-md-font: 16px;
+  --button-lg-font: 19px;
+  --tag-sm-font: 12px;
+  --tag-md-font: 14px;
+  --tag-sm-pad: 3px 10px;
+  --tag-md-pad: 6px 14px;
+  --tag-border: 1.5px;
+  --card-title-font: 22px;
+  --stat-label-font: 18px;
+  --stat-source-font: 12px;
+  --stat-pad: 24px 28px;
+  --tab-font: 16px;
+  --tab-gap: 28px;
+  --field-font: 16px;
+  --field-label-font: 14px;
+  --field-helper-font: 13px;
+  --field-pad: 12px 14px;
+  --select-pad-right: 40px;
+  --select-chevron-right: 14px;
+  --check-size: 22px;
+  --check-dot: 10px;
+  --focus-offset: 2px;
+
+  /* layout */
+  --content-max: var(--container-max);
+  --measure: 46em;
+  --card-min: 340px;
+  --border-width: var(--border-thin);
+  --border-width-strong: var(--border-heavy);
   --focus-width: 3px;
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-pill: 999rem;
-  --shadow-card: 0 1px 2px rgba(31, 35, 40, 0.08);
+  --cell-min: 64px;
+  --control-min: 44px;
 }

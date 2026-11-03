@@ -9,6 +9,8 @@ import { acceptsValue, relevantIds } from '../engine/rescale.ts';
 import { fmtCount, fmtShare } from '../lib/format.ts';
 import { SHORT } from '../lib/names.ts';
 import { EXCLUDED_PARCELS } from '../content/site.ts';
+import { Button } from '../components/ds/Button.tsx';
+import { Select } from '../components/ds/Select.tsx';
 import { SCENARIOS, type RegisterEntry, type Results, type ScenarioName } from '../types/results.ts';
 
 function levelsText(e: RegisterEntry): string {
@@ -49,23 +51,22 @@ function Register({ r }: { r: Results }) {
         <Term term="locator">locator</Term>, arithmetic and <Term term="grade">grade</Term>. For the {accepts.size} that move a
         result in {r.meta.state}, choose a level; the choice applies on every page.{' '}
         {changed > 0 && (
-          <button type="button" className="link-button" onClick={() => update({ settings: {} })}>
+          <Button variant="ghost" size="sm" onClick={() => update({ settings: {} })}>
             Reset all {changed} to the register
-          </button>
+          </Button>
         )}
       </p>
-      <label className="filter">
-        Show{' '}
-        <select value={filter} onChange={(e) => setFilter(e.target.value as typeof filter)}>
-          <option value="all">all assumptions</option>
-          <option value="baseline">the baseline and global rules</option>
-          {SCENARIOS.map((n) => (
-            <option key={n} value={n}>
-              {SHORT[n]}
-            </option>
-          ))}
-        </select>
-      </label>
+      <Select
+        className="filter"
+        label="Show"
+        value={filter}
+        onChange={(e) => setFilter(e.target.value as typeof filter)}
+        options={[
+          { value: 'all', label: 'All assumptions' },
+          { value: 'baseline', label: 'The baseline and global rules' },
+          ...SCENARIOS.map((n) => ({ value: n, label: SHORT[n] })),
+        ]}
+      />
       <div className="table-wrap">
         <table className="data-table register-table">
           <thead>

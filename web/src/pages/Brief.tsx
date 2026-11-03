@@ -7,6 +7,7 @@ import { fmtCount, fmtShare, outcomeLabel, statusLabel } from '../lib/format.ts'
 import { SHORT } from '../lib/names.ts';
 import { registerLookup, scenarioView } from '../lib/viewmodel.ts';
 import { SITE_URL } from '../content/site.ts';
+import { Button } from '../components/ds/Button.tsx';
 import type { Results } from '../types/results.ts';
 
 function BriefBody({ r }: { r: Results }) {
@@ -21,9 +22,9 @@ function BriefBody({ r }: { r: Results }) {
   return (
     <article className="brief">
       <p className="no-print">
-        <button type="button" className="button-primary" onClick={() => window.print()}>
+        <Button variant="primary" onClick={() => window.print()}>
           Print or save as PDF
-        </button>{' '}
+        </Button>{' '}
         <a href={href({ page: 'explore' })}>Back to Explore</a>
       </p>
       <header>

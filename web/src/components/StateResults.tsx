@@ -17,7 +17,7 @@ export function StateResults({ state, children }: { state: string; children: (r:
 /** A page that needs a state shows a short prompt until one is chosen. */
 export function NeedState({ what }: { what: string }) {
   return (
-    <div className="card">
+    <div className="note">
       <p>Choose a state at the top of the page to see {what}.</p>
     </div>
   );

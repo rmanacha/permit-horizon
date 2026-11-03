@@ -4,6 +4,9 @@ import { useView } from '../app/context.tsx';
 import type { CaseSel, Choice } from '../lib/route.ts';
 import type { Level, RegisterEntry } from '../types/results.ts';
 import { Term } from './Term.tsx';
+import { Button } from './ds/Button.tsx';
+import { Input } from './ds/Input.tsx';
+import { Select } from './ds/Select.tsx';
 
 const SHARES = [25, 50, 100] as const;
 const DELAYS = [0, 1, 2] as const;
@@ -30,23 +33,17 @@ function keyOf(c: CaseSel): string {
 
 export function CaseControl() {
   const { view, update } = useView();
-  const id = useId();
   return (
     <div className="case-control">
-      <label htmlFor={id}>
-        <Term term="register-default">Case</Term>: how much of each reform is new, and when it starts
-      </label>
-      <select
-        id={id}
+      <Select
+        label="Case: how much of each reform is new, and when it starts"
         value={keyOf(view.caseSel)}
+        options={CASE_OPTIONS.map((o) => ({ value: o.key, label: o.label }))}
         onChange={(e) => update({ caseSel: CASE_OPTIONS.find((o) => o.key === e.target.value)?.sel ?? { kind: 'register_default' } })}
-      >
-        {CASE_OPTIONS.map((o) => (
-          <option key={o.key} value={o.key}>
-            {o.label}
-          </option>
-        ))}
-      </select>
+      />
+      <p className="small muted">
+        <Term term="register-default">What is a case?</Term>
+      </p>
     </div>
   );
 }
@@ -103,17 +100,22 @@ export function LevelControl({ entry, accepts }: { entry: RegisterEntry; accepts
             if (draft.trim() !== '' && Number.isFinite(n)) set({ value: n });
           }}
         >
-          <label>
-            <span>Or type a value ({entry.unit}){accepts === 'interpolated' ? ', between low and high' : ''}</span>
-            <input type="number" step="any" inputMode="decimal" value={draft} onChange={(e) => setDraft(e.target.value)} />
-          </label>
-          <button type="submit" className="button-secondary">
+          <Input
+            label={`Or type a value${accepts === 'interpolated' ? ' (between low and high)' : ''}`}
+            helper={entry.unit}
+            type="number"
+            step="any"
+            inputMode="decimal"
+            value={draft}
+            onChange={(e) => setDraft(e.target.value)}
+          />
+          <Button type="submit" variant="outline" size="sm">
             Use this value
-          </button>
+          </Button>
           {choice && 'value' in choice && (
-            <button type="button" className="link-button" onClick={() => { setDraft(''); set(null); }}>
+            <Button variant="ghost" size="sm" onClick={() => { setDraft(''); set(null); }}>
               Clear
-            </button>
+            </Button>
           )}
         </form>
       )}

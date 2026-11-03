@@ -3,7 +3,10 @@ import { useShared, useView } from '../app/context.tsx';
 import { NeedState, StateResults } from '../components/StateResults.tsx';
 import { Num, RangeText } from '../components/Num.tsx';
 import { Term } from '../components/Term.tsx';
-import { ReviewBadge, StatusBadge } from '../components/Badge.tsx';
+import { PlainTag, ReviewBadge, StatusBadge } from '../components/Badge.tsx';
+import { Button } from '../components/ds/Button.tsx';
+import { Card } from '../components/ds/Card.tsx';
+import { Tabs, tabId } from '../components/ds/Tabs.tsx';
 import { AdjustedResult } from '../components/AdjustedResult.tsx';
 import { LevelControl } from '../components/Controls.tsx';
 import { ChartTable } from '../components/Figure.tsx';
@@ -16,20 +19,16 @@ import { caseKey, type CaseSel } from '../lib/route.ts';
 import { humanReviewText, registerLookup, scenarioView } from '../lib/viewmodel.ts';
 import { SCENARIOS, type Results, type Scenario, type ScenarioName } from '../types/results.ts';
 
-function Tabs({ state }: { state: string }) {
-  const { view, href } = useView();
+function ReformTabs() {
+  const { view, update } = useView();
   return (
-    <nav aria-label="Reforms">
-      <ul className="tabs">
-        {SCENARIOS.map((n) => (
-          <li key={n}>
-            <a href={href({ page: 'scenario', scenario: n, state })} aria-current={view.scenario === n ? 'page' : undefined}>
-              {SHORT[n]}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <Tabs
+      aria-label="Reforms"
+      idPrefix="reform"
+      tabs={SCENARIOS.map((n) => ({ value: n, label: SHORT[n] }))}
+      value={view.scenario}
+      onChange={(v) => update({ scenario: v as ScenarioName })}
+    />
   );
 }
 
@@ -77,7 +76,7 @@ function Chain({ r, s }: { r: Results; s: Scenario }) {
           return (
             <li key={id} className="chain-item">
               <h3 className="chain-title">
-                {e.label} {band && <span className="badge badge-default">band</span>}
+                {e.label} {band && <PlainTag tone="sky">band</PlainTag>}
               </h3>
               <p className="small">{e.description}</p>
               <LevelControl entry={e} accepts={acceptsValue(s, id)} />
@@ -153,25 +152,25 @@ function Cases({ s }: { s: Scenario }) {
       </div>
       <ul className="button-list">
         <li>
-          <button type="button" className="button-secondary" aria-pressed={key === 'register_default'} onClick={() => pick({ kind: 'register_default' })}>
+          <Button variant="outline" size="sm" aria-pressed={key === 'register_default'} onClick={() => pick({ kind: 'register_default' })}>
             Register default: {fmtCount(s.cases.register_default.estimate_permits.mid)} permits
-          </button>
+          </Button>
         </li>
         <li>
-          <button type="button" className="button-secondary" aria-pressed={key === 'after_horizon'} onClick={() => pick({ kind: 'after_horizon' })}>
+          <Button variant="outline" size="sm" aria-pressed={key === 'after_horizon'} onClick={() => pick({ kind: 'after_horizon' })}>
             Starts after the five years: 0 permits
-          </button>
+          </Button>
         </li>
         <li>
-          <button type="button" className="button-secondary" aria-pressed={key === 'no_change'} onClick={() => pick({ kind: 'no_change' })}>
+          <Button variant="outline" size="sm" aria-pressed={key === 'no_change'} onClick={() => pick({ kind: 'no_change' })}>
             No change to current policy: 0 permits
-          </button>
+          </Button>
         </li>
       </ul>
-      <div className="card">
-        <h3>
-          Selected: {sel.label} <StatusBadge status={sel.status} />
-        </h3>
+      <Card tone="sand" eyebrow="Selected case" title={sel.label} titleAs="h3">
+        <p>
+          <StatusBadge status={sel.status} />
+        </p>
         <p>
           <Num value={sel.estimate_permits.mid} outcome="permits" /> (<RangeText v={sel.estimate_permits} outcome="permits" />); in
           the source's unit <Num value={sel.estimate.mid} outcome={sel.outcome} linked={false} />.
@@ -182,7 +181,7 @@ function Cases({ s }: { s: Scenario }) {
             <li key={a}>{a}</li>
           ))}
         </ul>
-      </div>
+      </Card>
     </section>
   );
 }
@@ -197,10 +196,7 @@ function Joint({ s }: { s: Scenario }) {
         {(['favorable', 'unfavorable'] as const).map((d) => {
           const j = s.joint[d];
           return (
-            <div key={d} className="card">
-              <h3>
-                Every assumption at its {d === 'favorable' ? 'most' : 'least'} favorable end
-              </h3>
+            <Card key={d} eyebrow={d === 'favorable' ? 'Joint favorable' : 'Joint unfavorable'} title={`Every assumption at its ${d === 'favorable' ? 'most' : 'least'} favorable end`} titleAs="h3">
               <p className="headline-number">
                 <Num value={j.value} outcome="permits" />
               </p>
@@ -213,7 +209,7 @@ function Joint({ s }: { s: Scenario }) {
                   ))}
                 </ul>
               </details>
-            </div>
+            </Card>
           );
         })}
       </div>
@@ -234,7 +230,7 @@ function Tornado({ s }: { s: Scenario }) {
         title="Middle increment, permits over 2026-2030, with one assumption at a time at its low or high end"
         chart={
           <TornadoChart
-            rows={s.tornado.map((b) => ({ key: b.id, label: b.label, atLow: b.at_low, atHigh: b.at_high, base: b.base, note: note(b.id) }))}
+            rows={s.tornado.map((b) => ({ key: b.id, label: b.label, atLow: b.at_low, atHigh: b.at_high, base: b.base, lowText: b.low_text, highText: b.high_text, note: note(b.id) }))}
             unit="permits"
             ariaLabel={`Tornado: ${s.tornado.map((b) => `${b.label} ${fmtCount(b.at_low)} to ${fmtCount(b.at_high)} permits`).join('; ')}`}
           />
@@ -285,10 +281,8 @@ function CurrentLaw({ state, name, s }: { state: string; name: ScenarioName; s: 
       {!law ? (
         <p>{registers.current_law_default}</p>
       ) : (
-        <div className="card">
-          <p>
-            <strong>{law.record.law}</strong> {review && <ReviewBadge text={review} />}
-          </p>
+        <Card eyebrow="Statute on file" title={law.record.law} titleAs="h3">
+          <p>{review && <ReviewBadge text={review} />}</p>
           <p>{law.record.summary}</p>
           <blockquote className="quote-block">
             “{law.record.quote}” (<a href={law.record.url} target="_blank" rel="noreferrer">statute</a>, accessed {law.record.accessed})
@@ -326,7 +320,7 @@ function CurrentLaw({ state, name, s }: { state: string; name: ScenarioName; s: 
             <Term term="current-strength">Current strength</Term> {fmtNumber(law.current_strength)}, so{' '}
             {fmtShare(1 - law.current_strength)} is newly affected. {law.strength_rationale}
           </p>
-        </div>
+        </Card>
       )}
     </section>
   );
@@ -458,8 +452,10 @@ function ScenarioBody({ r, name }: { r: Results; name: ScenarioName }) {
           <li key={t}>{t}</li>
         ))}
       </ul>
-      <section className="card" aria-labelledby="layers-h">
-        <h2 id="layers-h">Three layers ({cs.label})</h2>
+      <section className="ds-card ds-card--white layers-card" aria-labelledby="layers-h">
+        <div className="ds-card__content">
+        <div className="ds-eyebrow">{cs.label}</div>
+        <h2 id="layers-h" className="ds-card__title">Three layers</h2>
         <dl className="layers">
           <div className="layer">
             <dt>
@@ -498,6 +494,7 @@ function ScenarioBody({ r, name }: { r: Results; name: ScenarioName }) {
           </div>
         </dl>
         <AdjustedResult a={v.adjusted} state={r.meta.state} settings={view.settings} />
+        </div>
       </section>
       <ChartTable
         title={`Increment by year, permits (${cs.label})`}
@@ -551,8 +548,10 @@ export function ScenarioPage() {
   if (!view.state) return <NeedState what="each reform in detail" />;
   return (
     <>
-      <Tabs state={view.state} />
-      <StateResults state={view.state}>{(r) => <ScenarioBody r={r} name={view.scenario} />}</StateResults>
+      <ReformTabs />
+      <div role="tabpanel" aria-labelledby={tabId('reform', view.scenario)}>
+        <StateResults state={view.state}>{(r) => <ScenarioBody r={r} name={view.scenario} />}</StateResults>
+      </div>
     </>
   );
 }

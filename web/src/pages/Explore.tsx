@@ -3,11 +3,14 @@ import { useShared, useView } from '../app/context.tsx';
 import { ScenarioCard } from '../components/ScenarioCard.tsx';
 import { StateResults } from '../components/StateResults.tsx';
 import { CaseControl } from '../components/Controls.tsx';
-import { Num, RangeText } from '../components/Num.tsx';
+import { Num } from '../components/Num.tsx';
 import { Term } from '../components/Term.tsx';
 import { ChartTable } from '../components/Figure.tsx';
 import { RangeChart } from '../components/charts.tsx';
-import { ExactBadge, StatusBadge } from '../components/Badge.tsx';
+import { ExactBadge, PlainTag, StatusBadge } from '../components/Badge.tsx';
+import { Button } from '../components/ds/Button.tsx';
+import { Checkbox } from '../components/ds/Checkbox.tsx';
+import { StatCallout } from '../components/ds/StatCallout.tsx';
 import { fmtCount, fmtShare } from '../lib/format.ts';
 import { SHORT } from '../lib/names.ts';
 import { rankIncrements, registerLookup, scenarioView, type ScenarioView } from '../lib/viewmodel.ts';
@@ -69,17 +72,29 @@ function Landing() {
 function BaselineCard({ r, name }: { r: Results; name: string }) {
   const { href } = useView();
   const b = r.baseline;
+  const years = `${b.forecast_years[0]}-${b.forecast_years[b.forecast_years.length - 1]}`;
   return (
-    <section className="card baseline-card" aria-labelledby="baseline-h">
-      <h2 id="baseline-h">
-        <Term term="baseline">Baseline</Term>: if nothing changes
+    <section aria-labelledby="baseline-h" className="baseline-block">
+      <h2 id="baseline-h" className="sr-only">
+        Baseline
       </h2>
-      <p className="headline-number">
-        <Num value={b.state.mid} outcome="permits" /> over {b.forecast_years[0]}-{b.forecast_years[b.forecast_years.length - 1]}
-      </p>
-      <p>
-        <Term term="band">Range from history</Term>: <RangeText v={b.state} outcome="permits" />.
-      </p>
+      <div className="stat-grid">
+        <StatCallout
+          tone="navy"
+          value={fmtCount(b.state.mid)}
+          label={
+            <>
+              permits over {years} if nothing changes (the <Term term="baseline">baseline</Term>)
+            </>
+          }
+          source={
+            <>
+              <Term term="band">Range from history</Term>: {fmtCount(b.state.low)} to {fmtCount(b.state.high)} permits.
+            </>
+          }
+        />
+        <CrossCheckPanel r={r} />
+      </div>
       <p>{b.band_rule.reading}</p>
       <p className="small">{b.band_rule.reading_history}</p>
       <p className="small muted">
@@ -93,16 +108,17 @@ function CrossCheckPanel({ r }: { r: Results }) {
   const p = r.cross_check.housing_units_pep;
   if (!p.available || !p.state) return null;
   return (
-    <section className="card note-card" aria-labelledby="pep-h">
-      <h2 id="pep-h">
-        <Term term="pep">{p.label}</Term>
-      </h2>
-      <p>
-        <Num value={p.state.net_change} outcome="stock_change" /> from April 2020 to July {p.end_year} ({fmtShare(p.state.change_share)} of
-        the April 2020 stock). Shown beside the forecast, never added to it.
-      </p>
-      <p className="small">{p.caveat}</p>
-    </section>
+    <StatCallout
+      tone="sand"
+      value={`+${fmtCount(p.state.net_change)}`}
+      label={
+        <>
+          homes added to the stock, April 2020 to July {p.end_year} (<Term term="pep">Census housing-unit estimates</Term>;{' '}
+          {fmtShare(p.state.change_share)} of the 2020 stock)
+        </>
+      }
+      source={<>Shown beside the forecast, never added to it. {p.caveat}</>}
+    />
   );
 }
 
@@ -181,7 +197,7 @@ function CompareTable({ r, views }: { r: Results; views: ScenarioView[] }) {
                 <td className="num-col">{fmtCount(combined.increment.estimate.high)}</td>
                 {anyAdjusted && <td className="num-col muted">not applied</td>}
                 <td>
-                  <StatusBadge status="register_default" />
+                  <PlainTag tone="lime">Illustration</PlainTag>
                 </td>
                 <td className="small">
                   Not ranked. {fmtCount(combined.overlap_removed.mid)} permits less than the sum of the five (
@@ -254,15 +270,15 @@ function Downloads({ r, views }: { r: Results; views: ScenarioView[] }) {
       <h2 id="dl-h">Downloads and sharing</h2>
       <ul className="button-list">
         <li>
-          <button type="button" className="button-secondary" onClick={() => {
+          <Button variant="outline" size="sm" onClick={() => {
             const t = viewTable(r, views, view.settings);
             saveFile(`permit-horizon-${st}-view.csv`, toCSV(t.header, t.rows), 'text/csv');
           }}>
             This view (CSV)
-          </button>
+          </Button>
         </li>
         <li>
-          <button type="button" className="button-secondary" onClick={() => {
+          <Button variant="outline" size="sm" onClick={() => {
             const out = {
               state: st, build_id: r.meta.build_id, link: window.location.href, case: views[0]?.caseKey,
               your_assumptions: view.settings,
@@ -277,20 +293,20 @@ function Downloads({ r, views }: { r: Results; views: ScenarioView[] }) {
             saveFile(`permit-horizon-${st}-view.json`, `${JSON.stringify(out, null, 1)}\n`, 'application/json');
           }}>
             This view (JSON)
-          </button>
+          </Button>
         </li>
         <li>
-          <button type="button" className="button-secondary" onClick={() => {
+          <Button variant="outline" size="sm" onClick={() => {
             const t = countyTable(r);
             saveFile(`permit-horizon-${st}-counties.csv`, toCSV(t.header, t.rows), 'text/csv');
           }}>
             County table (CSV, with outcome and caveats columns)
-          </button>
+          </Button>
         </li>
         <li>
-          <a className="button-secondary" href={href({ page: 'brief' })}>
+          <Button variant="primary" size="sm" href={href({ page: 'brief' })}>
             Printable one-page brief
-          </a>
+          </Button>
         </li>
       </ul>
       <p className="small muted">
@@ -309,11 +325,9 @@ function ShowFilter() {
   };
   return (
     <fieldset className="show-filter">
-      <legend>Reforms to show and compare</legend>
+      <legend className="ds-field__label">Reforms to show and compare</legend>
       {SCENARIOS.map((n) => (
-        <label key={n} className="checkbox">
-          <input type="checkbox" checked={view.show.includes(n)} onChange={() => toggle(n)} /> {SHORT[n]}
-        </label>
+        <Checkbox key={n} label={SHORT[n]} checked={view.show.includes(n)} onChange={() => toggle(n)} />
       ))}
     </fieldset>
   );
@@ -330,10 +344,7 @@ function ExploreState({ r }: { r: Results }) {
     <>
       <h1>{name}: building permits over 2026-2030</h1>
       <p className="lead">{r.baseline.narrative[0]}</p>
-      <div className="two-col">
-        <BaselineCard r={r} name={name} />
-        <CrossCheckPanel r={r} />
-      </div>
+      <BaselineCard r={r} name={name} />
       <section aria-labelledby="reforms-h">
         <h2 id="reforms-h">Five reforms, three layers each</h2>
         <p className="small muted">
@@ -350,9 +361,9 @@ function ExploreState({ r }: { r: Results }) {
             You changed {nChanged} assumption{nChanged > 1 ? 's' : ''} (on the{' '}
             <a href={href({ page: 'data' })}>Assumptions and data</a> or Scenario detail pages); cards show the result under
             "With your assumptions".{' '}
-            <button type="button" className="link-button" onClick={() => update({ settings: {} })}>
+            <Button variant="ghost" size="sm" onClick={() => update({ settings: {} })}>
               Reset to the register
-            </button>
+            </Button>
           </p>
         )}
         <div className="card-grid">

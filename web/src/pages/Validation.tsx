@@ -67,7 +67,7 @@ function Backtest({ r }: { r: Results }) {
 function SwingBand({ r, name }: { r: Results; name: string }) {
   const a = r.baseline.alternative_band;
   return (
-    <section aria-labelledby="alt-h" className="card note-card">
+    <section aria-labelledby="alt-h" className="swing-section">
       <h2 id="alt-h">
         Another way to draw the range (<Term term="swing-band">20-year swing range</Term>)
       </h2>

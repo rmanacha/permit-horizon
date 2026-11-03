@@ -1,7 +1,8 @@
 // One reform for one state, in three layers, each number with its outcome label.
 import { useView } from '../app/context.tsx';
 import { fmtCount, fmtShare } from '../lib/format.ts';
-import { SCENARIO_TERM } from '../lib/names.ts';
+import { SCENARIO_TERM, SHORT } from '../lib/names.ts';
+import { Card } from './ds/Card.tsx';
 import type { ScenarioView } from '../lib/viewmodel.ts';
 import { AdjustedResult } from './AdjustedResult.tsx';
 import { ReviewBadge, StatusBadge } from './Badge.tsx';
@@ -13,10 +14,12 @@ export function ScenarioCard({ v, state, stateName }: { v: ScenarioView; state: 
   const delayText = v.delay === 0 ? 'starting at once' : `after a ${v.delay}-year delay`;
   const isAfter = v.caseKey === 'after_horizon';
   return (
-    <article className="card scenario-card" aria-labelledby={`card-${v.name}`}>
-      <h3 id={`card-${v.name}`}>
-        <Term term={SCENARIO_TERM[v.name]}>{v.label}</Term>
-      </h3>
+    <Card
+      className="scenario-card"
+      labelId={`card-${v.name}`}
+      eyebrow={SHORT[v.name]}
+      title={<Term term={SCENARIO_TERM[v.name]}>{v.label}</Term>}
+    >
       <dl className="layers">
         <div className="layer">
           <dt>
@@ -93,8 +96,8 @@ export function ScenarioCard({ v, state, stateName }: { v: ScenarioView; state: 
       )}
       <AdjustedResult a={v.adjusted} state={state} settings={view.settings} compact />
       <p className="card-link">
-        <a href={href({ page: 'scenario', scenario: v.name })}>How this is computed, cases, the tornado and current law →</a>
+        <a href={href({ page: 'scenario', scenario: v.name })}>How this is computed, cases, the tornado and current law</a>
       </p>
-    </article>
+    </Card>
   );
 }
