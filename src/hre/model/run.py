@@ -23,6 +23,7 @@ from typing import Any
 import numpy as np
 
 from hre.model.baseline import baseline
+from hre.model.combine import combined as combined_package
 from hre.model.crosscheck import pep_cross_check
 from hre.model.drivers import (
     NO_LLM_STATEMENT,
@@ -85,6 +86,9 @@ def run_state(state: StateInputs, params: Params, scenarios: list[str], meta: di
         res = run_scenario(SPECS[sc], state, params, ctx, (law or {}).get(sc, DEFAULT_LAW))
         res["narrative"] = scenario_narrative(res, name)
         out_sc[sc] = res
+    combo = None
+    if combined and all(sc in out_sc for sc in SPECS):
+        combo = combined_package(state, params, ctx, {sc: (law or {}).get(sc, DEFAULT_LAW) for sc in SPECS})
     xc = pep_cross_check(state)
     xc["narrative"] = cross_check_narrative(xc, state_name or state.state)
     return {
@@ -93,6 +97,7 @@ def run_state(state: StateInputs, params: Params, scenarios: list[str], meta: di
         "baseline": b,
         "cross_check": {"housing_units_pep": xc},
         "scenarios": out_sc,
+        **({"combined": combo} if combo else {}),
         "registers_used": registers_used,
         "no_llm": NO_LLM_STATEMENT,
     }
@@ -162,6 +167,12 @@ def validate_results(r: Any) -> list[str]:
         p.append("cross_check.housing_units_pep is a stock_change view, never added to the baseline")
     elif xc.get("available") and not _finite(xc["state"]["net_change"]):
         p.append("cross_check.housing_units_pep.state.net_change must be a finite number")
+    if "combined" in r:
+        c = r["combined"]
+        _band("combined.increment.estimate", c.get("increment", {}).get("estimate"), p)
+        for lv in ("low", "mid", "high"):
+            if c["increment"]["estimate"][lv] > c["sum_of_parts"][lv] + 1e-6:
+                p.append(f"combined {lv} exceeds the sum of the parts")
     for name, s in r["scenarios"].items():
         if name not in KNOWN_SCENARIOS:
             p.append(f"unknown scenario {name}")

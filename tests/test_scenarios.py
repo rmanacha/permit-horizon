@@ -146,3 +146,15 @@ def test_level_sets_follow_direction(params):
     s = level_set(params, ("parking_built_share", "builder_response_override"), "high")
     assert s.level_of("parking_built_share") == "low"       # direction -1: fewer spaces built raises the result
     assert s.level_of("builder_response_override") == "high"
+
+
+def test_combined_is_at_most_the_sum_and_rules_bite(zz_results):
+    c = zz_results["combined"]
+    for lv in ("low", "mid", "high"):
+        assert c["increment"]["estimate"][lv] <= c["sum_of_parts"][lv] + 1e-9
+    # rule 1: Alder's detached homes within half a mile (360 + 270) leave missing middle
+    assert c["adjustments"]["mid"]["detached_homes_moved_from_missing_middle_to_tod"] == 630
+    assert c["overlap_removed"]["mid"] > 0
+    # rule 3: parking and fees are linear in the cut, so the package keeps them whole
+    assert c["parts_in_package"]["mid"]["fees"] == c["parts_alone"]["mid"]["fees"]
+    assert "cannot be added across reforms" in " ".join(c["limits"])
