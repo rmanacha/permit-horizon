@@ -4,11 +4,13 @@ No language model is used; all text comes from these templates. Each sentence is
 filled from numbers the engine already computed, so the words can never say
 something the numbers do not.
 
-Rounding for display: below 1,000 to the nearest 10; otherwise to the nearest 100.
+Rounding for display: below 1,000 to the nearest 10; otherwise to the nearest 100;
+halves round away from zero (24,250 shows as 24,300).
 """
 
 from __future__ import annotations
 
+import math
 from typing import Any
 
 NO_LLM_STATEMENT = "No language model is used; all text comes from fixed templates in src/hre/model/drivers.py."
@@ -18,7 +20,7 @@ TYPE_WORDS = {"u1": "single-family homes", "u2": "two-unit buildings", "u34": "t
 
 def round_display(x: float) -> str:
     step = 10 if abs(x) < 1000 else 100
-    return f"{round(x / step) * step:,.0f}"
+    return f"{math.copysign(math.floor(abs(x) / step + 0.5) * step, x):,.0f}"   # halves round up
 
 
 def baseline_decomposition(b: dict[str, Any]) -> dict[str, Any]:

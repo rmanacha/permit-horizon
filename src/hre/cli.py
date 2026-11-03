@@ -269,6 +269,17 @@ def validate(
         raise typer.Exit(code=2)
 
 
+def _round_floats(obj, digits: int = 4):
+    """Round every float for a readable results file (the engine itself never rounds)."""
+    if isinstance(obj, float):
+        return round(obj, digits)
+    if isinstance(obj, dict):
+        return {k: _round_floats(v, digits) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_round_floats(v, digits) for v in obj]
+    return obj
+
+
 def _git_sha() -> str:
     import subprocess
 
@@ -297,6 +308,7 @@ def run(
     from hre.assumptions.loader import ELASTICITIES_PATH, PARAMETERS_PATH, load_params
     from hre.current_law.loader import register_digest
     from hre.data.fetch_bps import VINTAGE as BPS_VINTAGE
+    from hre.data.fetch_hcd import VINTAGE as HCD_VINTAGE
     from hre.model.run import run_state, validate_results
     from hre.schema import StateInputs
 
@@ -323,7 +335,8 @@ def run(
     git_sha = _git_sha()
     meta = {
         "build_id": f"{git_sha[:7]}-{hashlib.sha256((input_sha + param_sha).encode()).hexdigest()[:8]}",
-        "vintages": {**inputs.vintages, "bps_state_backtest": BPS_VINTAGE},
+        "vintages": {**inputs.vintages, "bps_state_backtest": f"state annual files 1980-2025, {BPS_VINTAGE}",
+                     "hcd_adu_tiers": f"HCD APR Table A2, {HCD_VINTAGE} (tier rates in the register)"},
         "git_sha": git_sha,
         "run_date": dt.date.today().isoformat(),
         "input": input_ref,
@@ -348,7 +361,7 @@ def run(
         raise typer.Exit(code=1)
     dest = out or Path("results") / f"{code}.json"
     dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text(json.dumps(results, indent=1, sort_keys=False, allow_nan=False) + "\n", encoding="utf-8")
+    dest.write_text(json.dumps(_round_floats(results), indent=1, allow_nan=False) + "\n", encoding="utf-8")
     b = results["baseline"]["state"]
     typer.echo(f"{code}: baseline {b['low']:,.0f} / {b['mid']:,.0f} / {b['high']:,.0f} permits "
                f"{results['baseline']['forecast_years'][0]}-{results['baseline']['forecast_years'][-1]} "

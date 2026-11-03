@@ -46,7 +46,7 @@ def test_narrative_templates(zz_state, params):
     assert "not a probability" in text and "Alder County accounts for 83%" in text
     d = baseline_decomposition(r["baseline"])
     assert d["top_county_share"] == pytest.approx(1380 / 1670)
-    assert round_display(944) == "940" and round_display(24250) == "24,200"
+    assert round_display(944) == "940" and round_display(24250) == "24,300"
 
 
 def test_engine_is_fast(zz_state, params):

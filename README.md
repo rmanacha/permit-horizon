@@ -4,7 +4,7 @@ A statewide housing reform estimator. Permit Horizon estimates how five state-le
 
 ## What this tool does
 
-Status: Phase 1 (data pipeline) complete. `hre fetch --state NH` downloads every input a state needs from keyless public sources and records a provenance manifest; `hre build --state NH` writes `data/processed/NH.json`, the canonical input file (`docs/methods/schema.md`). The engine, scenarios and web app arrive in later phases; this section will list the scenarios implemented and the showcase states (Utah, New Hampshire, Arizona) as they land.
+Status: Phase 2 (baseline engine) complete. `hre fetch --state NH` downloads every input a state needs from keyless public sources and records a provenance manifest; `hre build --state NH` writes `data/processed/NH.json`, the canonical input file (`docs/methods/schema.md`). `hre run --state NH --scenarios baseline` writes `results/NH.json`: the five-year permit baseline by county and state with a band backtested on 35 years of permits (`docs/methods/baseline.md`, `docs/evidence/baseline_backtest.md`). Every assumption lives in one register with its source, page locator and arithmetic (`docs/methods/register.md`). The five scenario formulas arrive in Phase 3 and the web app in Phase 4.
 
 ## Command contract
 
@@ -13,8 +13,9 @@ Fill in the exact commands a stranger would run. These three commands are what r
 | Step  | Command                     | Notes |
 | ----- | --------------------------- | ----- |
 | Setup | `make setup` | Installs the exact pinned Python environment (`uv.lock`) into `.venv`; downloads Python 3.12 if needed |
-| Demo  | `make demo`  | Builds the synthetic state `ZZ` from committed fixtures, no network, about one second; validates the output |
+| Demo  | `make demo`  | Builds the synthetic state `ZZ` from committed fixtures, no network, about one second; validates the output and runs the baseline engine on it |
 | Data  | `make data STATE=NH` | Downloads every input one state needs (about 600 MB the first time, mostly ACS bulk files) and builds `data/processed/NH.json` |
+| Results | `make results STATE=NH` | Runs the engine for one state (`hre run`), writing `results/NH.json` (`docs/methods/results_schema.md`); `make demo` also runs the synthetic state |
 | Run   | `make run`   | Starts the tool (placeholder until the web app lands in Phase 4) |
 | Test  | `make test`  | Runs the automated tests with pytest (offline) |
 
@@ -33,6 +34,9 @@ Everything comes from keyless public downloads: Census Building Permits Survey, 
 - [Data Provenance](docs/DATA_PROVENANCE.md) — sources, licenses, and cleaning steps
 - [Input schema](docs/methods/schema.md) — every field of `data/processed/{ST}.json` and where it comes from
 - [Transit proximity](docs/methods/transit.md) — what counts as a major stop and how distance is measured
+- [Assumption register](docs/methods/register.md) — every parameter with low/mid/high, source, locator, arithmetic, grade and confidence (`make register-md`)
+- Methods: [baseline](docs/methods/baseline.md), [builder response](docs/methods/builder_response.md), [ADU value tiers](docs/methods/tiers.md), [cases](docs/methods/cases.md), [sensitivity](docs/methods/sensitivity.md), [results schema](docs/methods/results_schema.md)
+- Evidence: [baseline backtest](docs/evidence/baseline_backtest.md) (both band rules, `make backtest`), [ADU tiers and city-split check](docs/evidence/adu_tiers.md) (`make adu-tiers`)
 - [Disclosures](docs/DISCLOSURES.md) — AI tools, pretrained models, and external services
 - [Presentation Guide](docs/PRESENTATION_GUIDE.md) — slide deck and demo video guidance
 
