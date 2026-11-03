@@ -85,6 +85,20 @@ def _rows(text: str) -> list[list[str]]:
     return body
 
 
+def survey_year(code: str) -> str:
+    """Four-digit year from the BPS survey-date cell.
+
+    Three forms occur: ``202599`` (state files from 1999 on), ``2016`` (county
+    files), and ``9099`` (state files 1980 to 1998: two-digit year then ``99``).
+    Reading the first four characters of the last form gave ``"9099"`` for 1990,
+    which Phase 2 caught when the backtest needed 1990 to 1998.
+    """
+    code = code.strip()
+    if len(code) == 4 and code.isdigit() and code.endswith("99") and code[:2] not in ("19", "20"):
+        return "19" + code[:2]
+    return code[:4]
+
+
 def _to_int(s: str) -> int:
     return int(s) if s not in ("", ".") else 0
 
@@ -96,7 +110,7 @@ def parse_county_file(path: Path) -> list[dict]:
     for r in _rows(text):
         if len(r) < 18 or not r[1].isdigit():
             continue
-        year = r[0][:4]
+        year = survey_year(r[0])
         fips = r[1].zfill(2) + r[2].zfill(3)
         out.append({"year": year, "fips": fips, "name": r[5],
                     **{k: _to_int(r[i]) for k, i in _COUNTY_UNITS.items()}})
@@ -110,7 +124,7 @@ def parse_state_file(path: Path) -> list[dict]:
     for r in _rows(text):
         if len(r) < 17 or not r[1].isdigit():
             continue
-        out.append({"year": r[0][:4], "state_fips": r[1].zfill(2),
+        out.append({"year": survey_year(r[0]), "state_fips": r[1].zfill(2),
                     **{k: _to_int(r[i]) for k, i in _STATE_UNITS.items()}})
     return out
 

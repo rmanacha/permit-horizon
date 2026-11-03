@@ -8,6 +8,9 @@
     hre build --hcd                 write data/processed/CA_hcd_adu.json
     hre validate --aclf --states NH,UT,AZ,CA      the address-count doubling check
     hre validate --processed data/processed/NH.json   check a file against the schema
+    hre validate --baseline         the baseline backtest (both band rules) -> docs/evidence/
+    hre run --state NH --scenarios baseline           results/NH.json (three-layer schema)
+    hre export --register-md        the assumption register as a Markdown table
 
 ``DATA_DIR`` (or ``--data-dir``) moves the raw cache; manifests always go to
 ``data/manifests``. Nothing needs an API key.
@@ -148,12 +151,42 @@ def validate(
     do_fetch: Annotated[bool, typer.Option("--fetch", help="download missing ACLF and PEP files first")] = False,
     write: Annotated[Path | None, typer.Option("--write", help="write the ratio table as Markdown here")] = None,
     processed: Annotated[Path | None, typer.Option("--processed", help="a processed JSON to validate")] = None,
+    baseline: Annotated[bool, typer.Option("--baseline", help="backtest the baseline under both band rules")] = False,
+    write_register: Annotated[bool, typer.Option("--write-register", help="with --baseline: write P10/P90 into parameters.yaml")] = False,
     data_dir: Annotated[Path | None, typer.Option("--data-dir")] = None,
 ) -> None:
-    """Checks: the ACLF doubling ratio per state, or a processed file against the schema."""
+    """Checks: the ACLF doubling ratio, a processed file against the schema, or the baseline backtest."""
     from hre.schema import validate as validate_schema
 
     dd = _data_dir(data_dir)
+    if baseline:
+        import datetime as dt
+
+        from hre.assumptions.loader import PARAMETERS_PATH
+        from hre.validation import backtest_baseline as bt
+
+        if do_fetch:
+            bt.fetch_series(dd)
+        panel = bt.load_panel(dd)
+        if sum(len(s) for s in panel.values()) == 0:
+            typer.echo("no BPS state files cached; run with --fetch", err=True)
+            raise typer.Exit(code=2)
+        r = bt.run_backtest(panel)
+        dest = write or Path("docs/evidence/baseline_backtest.md")
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(bt.render_markdown(r, dt.date.today().isoformat()), encoding="utf-8")
+        o, a = r["ours"], r["adam"]["runs"]
+        m = r["methods"]["mean3"]
+        typer.echo(f"methods: 3-yr mean x 5, {m['n']} runs, median abs error {m['mdape']:.1%}")
+        typer.echo(f"rule A (ours): P10 {o['p10']:.4f}, P90 {o['p90']:.4f}; estimation "
+                   f"{o['estimation']['inside']}/{o['estimation']['n']} inside; test 2016-2020 "
+                   f"{o['test']['inside']}/{o['test']['n']} inside")
+        typer.echo(f"rule B (Adam): {a['inside']}/{a['n']} inside, {a['above']} above, {a['below']} below")
+        typer.echo(f"wrote {dest}")
+        if write_register:
+            bt.write_register_band(r, PARAMETERS_PATH)
+            typer.echo(f"wrote baseline_band_ratio into {PARAMETERS_PATH}")
+        return
     if processed is not None:
         problems = validate_schema(json.loads(Path(processed).read_text(encoding="utf-8")))
         if problems:
@@ -200,8 +233,28 @@ def validate(
             write.write_text("\n".join(lines) + "\n", encoding="utf-8")
             typer.echo(f"wrote {write}")
     if not aclf and processed is None:
-        typer.echo("nothing to do: pass --aclf or --processed", err=True)
+        typer.echo("nothing to do: pass --aclf, --processed or --baseline", err=True)
         raise typer.Exit(code=2)
+
+
+@app.command()
+def export(
+    register_md: Annotated[bool, typer.Option("--register-md", help="the assumption register as Markdown")] = False,
+    out: Annotated[Path | None, typer.Option("--out", help="write here instead of printing")] = None,
+) -> None:
+    """Export registers for documentation (Phase 6 builds the full docs from these)."""
+    from hre.assumptions.loader import register_markdown
+
+    if not register_md:
+        typer.echo("nothing to do: pass --register-md", err=True)
+        raise typer.Exit(code=2)
+    text = register_markdown()
+    if out is None:
+        typer.echo(text)
+    else:
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(text, encoding="utf-8")
+        typer.echo(f"wrote {out} ({text.count(chr(10)) - 6} parameters)")
 
 
 def main() -> None:  # pragma: no cover

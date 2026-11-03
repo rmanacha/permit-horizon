@@ -1,0 +1,616 @@
+# Permit Horizon assumption register (the evidence ledger).
+#
+# One entry per parameter. The engine never writes a number that belongs here;
+# it reads params["id"] (src/hre/model/params.py). tests/test_register.py fails
+# if code uses an id that is missing here, or if an entry lacks a locator, a URL,
+# a grade or a confidence. `hre export --register-md` renders this file as a table.
+#
+# Fields
+#   id, label (plain language), description, unit
+#   low, mid, high      the three assumption sets; for rule-fixed values all three are equal
+#   scope               global | state | county
+#   scenarios[]         baseline, adu, missing_middle, tod, parking, fees, all
+#   grade               A measured outcome from a comparable reform
+#                       B measured, less comparable
+#                       C projection, model or judgment
+#                       R set by the challenge rules or a model design choice (not an evidence grade; decision 58)
+#   confidence          high | moderate | low | set_by_rules
+#   sources[]           {title, url, locator, accessed}
+#   citation            the sentence a judge can check: page or table locator AND the arithmetic
+#   rationale, transferability
+#   levels{low,mid,high} display text for each end
+#   ported_from         adam-v2.0 where the entry (locator and arithmetic) comes from Adam Ruege's
+#                       Housing Reform Estimator v2.0 payload (decision 43); spot-checks in the Phase 2 report
+#   direction           +1 if a higher value raises the estimate it feeds, -1 if it lowers it, 0 if it
+#                       is not swung in sensitivity (fixed values, bounds); used by the joint cases
+#
+# Values are fractions unless the unit says otherwise (0.000828 = 0.0828% per year).
+
+parameters:
+
+  # ---------------------------------------------------------------- shared
+
+  - id: horizon_years
+    label: Time horizon
+    description: Number of years every estimate covers.
+    unit: years
+    low: 5
+    mid: 5
+    high: 5
+    scope: global
+    scenarios: [all]
+    grade: R
+    confidence: set_by_rules
+    direction: 0
+    sources:
+      - title: Housing Data and Technology Innovation Challenge, Participant Handbook
+        url: https://www.housingchallenge.turnout.rocks/handbook.html
+        locator: "Benchmark Policy Scenarios, first paragraph"
+        accessed: "2026-11-03"
+    citation: >-
+      Handbook, "Benchmark Policy Scenarios": "Teams should assume a five year time horizon."
+      Re-read on 2026-11-03.
+    rationale: The challenge fixes the horizon so results compare across teams.
+    transferability: Not applicable; a rule.
+    levels: {low: "5 years", mid: "5 years", high: "5 years"}
+    ported_from: adam-v2.0
+
+  # ---------------------------------------------------------------- baseline
+
+  - id: baseline_window_years
+    label: Years averaged for the baseline
+    description: >-
+      The baseline is the mean of the latest this-many years of Census Building Permits Survey
+      units, by county and structure type, times the horizon.
+    unit: years
+    low: 3
+    mid: 3
+    high: 3
+    scope: global
+    scenarios: [baseline]
+    grade: R
+    confidence: moderate
+    direction: 0
+    sources:
+      - title: Permit Horizon baseline backtest (docs/evidence/baseline_backtest.md)
+        url: https://github.com/rmanacha/permit-horizon/blob/main/docs/evidence/baseline_backtest.md
+        locator: "Method comparison table (origins 1999-2020, 1,122 state-origin runs)"
+        accessed: "2026-11-03"
+    citation: >-
+      Method comparison in docs/evidence/baseline_backtest.md, all 50 states and DC, forecast
+      origins 1999-2020: median absolute error of the five-year total is 19.7% for the last year x 5,
+      22.8% for the 3-year mean x 5, 26.0% for the 5-year mean x 5. The 3-year mean is kept: it is
+      within 3 points of the best method and one bad year moves it a third as much.
+    rationale: >-
+      A short window tracks the current pace; three years dampens a single unusual year (a large
+      apartment project, a storm rebuild).
+    transferability: Same series and method for every state.
+    levels: {low: "3 years", mid: "3 years", high: "3 years"}
+
+  - id: baseline_band_ratio
+    label: Baseline band (share of past periods inside)
+    description: >-
+      Multipliers on the baseline point. Low and high are the 10th and 90th percentiles of
+      actual / forecast five-year permits for the 3-year-mean method, pooled over the 50 states
+      and DC and forecast origins 1990-2015 (data through the origin year, the next five years
+      as the actual). Mid is 1 (the point itself). The band reads "in 80% of past five-year
+      periods the actual total fell inside this band"; it is not a probability.
+    unit: ratio of actual to forecast
+    low: 0.5357
+    mid: 1.0
+    high: 1.5924
+    scope: global
+    scenarios: [baseline]
+    grade: A
+    confidence: moderate
+    direction: 1
+    sources:
+      - title: Permit Horizon baseline backtest (docs/evidence/baseline_backtest.md, this document)
+        url: https://github.com/rmanacha/permit-horizon/blob/main/docs/evidence/baseline_backtest.md
+        locator: "Band rule A: estimation table, origins 1990-2015 (1,326 state-origin runs)"
+        accessed: "2026-11-03"
+      - title: Census Building Permits Survey, state annual files 1980-2025
+        url: https://www2.census.gov/econ/bps/State/
+        locator: "st1980a.txt to st2025a.txt, units 'estimates with imputation'"
+        accessed: "2026-11-03"
+    citation: >-
+      docs/evidence/baseline_backtest.md, band rule A: for the 50 states and DC and forecast
+      origins 1990-2015 (1,326 runs), actual five-year permits / (3-year mean x 5) has 10th
+      percentile 0.5357 and 90th percentile 1.5924 (numpy linear interpolation). Out of sample,
+      origins 2016-2020: 251 of 255 inside (98%). Example: a 10,000-permit point gives a band of
+      5,357 to 15,924.
+    rationale: >-
+      Percentiles of past errors are a statement about history that a reader can check; the band
+      is state-level and applied to every county (county errors are larger; said on every page).
+    transferability: Pooled over all states; the test window shows how well it held out of sample.
+    levels: {low: "P10 of actual/forecast", mid: "point", high: "P90 of actual/forecast"}
+
+  - id: completions_per_permit_1unit
+    label: Completed homes per permitted home, single-family
+    description: Cumulative completions divided by cumulative permits, one-unit structures.
+    unit: completed homes per permitted home
+    low: 0.99
+    mid: 1.03
+    high: 1.03
+    scope: global
+    scenarios: [adu, missing_middle, tod, parking, fees]
+    grade: A
+    confidence: moderate
+    direction: 1
+    sources:
+      - title: Census Bureau, New Residential Construction, annual permits and completions
+        url: https://www.census.gov/construction/nrc/index.html
+        locator: "Annual series 1995-2024, units authorized and units completed, 1 unit"
+        accessed: "2026-11-02"
+    citation: >-
+      Research computation (planning/research/evidence_base.md section 7): cumulative completions
+      / cumulative permits, 1995-2024, one-unit structures = 1.03 (2010-2024: 0.99). Low uses the
+      2010-2024 ratio. Re-verify against newresconst.xlsx before Phase 3 uses it.
+    rationale: Single-family permits almost all become homes, about a year later.
+    transferability: National ratio applied to every state.
+    levels: {low: "0.99", mid: "1.03", high: "1.03"}
+
+  - id: completions_per_permit_2to4
+    label: Completed homes per permitted home, 2 to 4 units
+    description: >-
+      Cumulative completions divided by cumulative permits; NRC does not publish 2-4 units
+      separately, so the all-structures ratio is used.
+    unit: completed homes per permitted home
+    low: 0.89
+    mid: 0.94
+    high: 0.94
+    scope: global
+    scenarios: [missing_middle]
+    grade: B
+    confidence: low
+    direction: 1
+    sources:
+      - title: Census Bureau, New Residential Construction, annual permits and completions
+        url: https://www.census.gov/construction/nrc/index.html
+        locator: "Annual series 1995-2024, total units authorized and completed"
+        accessed: "2026-11-02"
+    citation: >-
+      Research computation (evidence_base.md section 7): cumulative completions / cumulative
+      permits, all structures, 1995-2024 = 0.94 (2010-2024: 0.89).
+    rationale: No separate 2-4 unit series; the all-structures ratio sits between 1-unit and 5+.
+    transferability: National ratio applied to every state.
+    levels: {low: "0.89", mid: "0.94", high: "0.94"}
+
+  - id: completions_per_permit_5plus
+    label: Completed homes per permitted home, 5 or more units
+    description: Cumulative completions divided by cumulative permits, 5+ unit structures.
+    unit: completed homes per permitted home
+    low: 0.75
+    mid: 0.79
+    high: 0.79
+    scope: global
+    scenarios: [tod, parking, fees]
+    grade: A
+    confidence: moderate
+    direction: 1
+    sources:
+      - title: Census Bureau, New Residential Construction, annual permits and completions
+        url: https://www.census.gov/construction/nrc/index.html
+        locator: "Annual series 1995-2024, 5 units or more"
+        accessed: "2026-11-02"
+    citation: >-
+      Research computation (evidence_base.md section 7): cumulative completions / cumulative
+      permits, 5+ units, 1995-2024 = 0.79 (2010-2024: 0.75); completions lag permits about 2 years.
+    rationale: About a fifth of apartment permits are never built or are re-permitted.
+    transferability: National ratio applied to every state.
+    levels: {low: "0.75", mid: "0.79", high: "0.79"}
+
+  # ---------------------------------------------------------------- builder response (parking, fees)
+
+  - id: builder_response_override
+    label: Builder response to lower costs
+    description: >-
+      Percent more homes over five years per 1% fall in cost relative to the price of a new home.
+      The primary route (decision 61): a measured flow response, used directly instead of the
+      composite of elasticities.
+    unit: percent more homes over 5 years per 1% fall in cost relative to the new-home price
+    low: 0.0
+    mid: 0.75
+    high: 2.84
+    primary: true
+    scope: global
+    scenarios: [parking, fees]
+    grade: B
+    confidence: low
+    direction: 1
+    sources:
+      - title: Mayer and Somerville, Land use regulation and new construction, Regional Science and Urban Economics 30 (2000)
+        url: https://doi.org/10.1016/S0166-0462(00)00055-3
+        locator: "p. 651 (price response), p. 653 (impact fee coefficient)"
+        accessed: "2026-10-15"
+      - title: Baum-Snow and Han, The Microgeography of Housing Supply, Journal of Political Economy 132(6), 2024
+        url: https://doi.org/10.1086/728110
+        locator: "abstract: average housing-unit supply elasticity 0.3"
+        accessed: "2026-10-15"
+      - title: Census Bureau, Annual Estimates of Housing Units for the United States (NST-EST2025-HU)
+        url: https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-housing-units.html
+        locator: "United States, July 1, 2020 to July 1, 2025"
+        accessed: "2026-10-15"
+    citation: >-
+      Middle: Mayer and Somerville (2000), p. 651: a 1 percent increase in house prices results in a
+      temporary 15 percent increase in new construction over six quarters; read as 15% of one
+      quarter's construction spread over 20 quarters, 0.15 / 20 = 0.75% of 5 years' construction.
+      Low: the same paper, p. 653, finds the impact fee coefficient not statistically different from
+      zero. High: Baum-Snow and Han (2024) housing unit supply elasticity 0.3, half assumed to arrive
+      within 5 years, divided by U.S. housing unit growth of 5.29% from July 2020 to July 2025:
+      0.3 x 0.5 / 0.0529 = 2.84.
+    rationale: No study measures a cut near $25,000 per unit; the range runs from no response to a long-run supply response.
+    transferability: National; no state-specific estimate exists.
+    levels: {low: "0.00% per 1%", mid: "0.75% per 1%", high: "2.84% per 1%"}
+    ported_from: adam-v2.0
+
+  - id: supply_elasticity_metro_default
+    label: Housing supply elasticity, metro counties outside Saiz's sample
+    description: >-
+      Composite route only (diagnostic). Saiz (2010) gives 95 metro areas; their counties use
+      elasticities.yaml. Other metropolitan counties use this value. In the low and high
+      assumption sets every county's elasticity (Saiz or default) is scaled by low/mid or high/mid.
+    unit: percent change in housing stock per 1% change in price
+    low: 0.6
+    mid: 1.75
+    high: 3.0
+    scope: county
+    scenarios: [parking, fees]
+    grade: B
+    confidence: moderate
+    direction: 1
+    sources:
+      - title: Saiz, The Geographic Determinants of Housing Supply, Quarterly Journal of Economics 125(3), 2010
+        url: https://joeornstein.github.io/pols-4641/readings/Saiz%20-%202010%20-%20The%20Geographic%20Determinants%20of%20Housing%20Supply.pdf
+        locator: "Table VI, pp. 1283-1284; population-weighted mean 1.75"
+        accessed: "2026-11-03"
+    citation: >-
+      Saiz (2010) Table VI, pp. 1283-1284: the lowest metro elasticity is Miami 0.60 (low), the
+      population-weighted mean is 1.75 (mid), and Austin is 3.00 (high; Indianapolis, Fort Wayne and
+      Wichita run higher, 4.00 to 5.45).
+    rationale: Metros outside the 95 largest are smaller and on average less constrained than the mean.
+    transferability: Stock elasticities estimated on 1970-2000 data; applied to today's counties.
+    levels: {low: "0.6", mid: "1.75", high: "3.0"}
+
+  - id: supply_elasticity_nonmetro
+    label: Housing supply elasticity, non-metropolitan counties
+    description: Composite route only (diagnostic). Counties outside metropolitan areas.
+    unit: percent change in housing stock per 1% change in price
+    low: 1.75
+    mid: 3.0
+    high: 3.0
+    scope: county
+    scenarios: [parking, fees]
+    grade: C
+    confidence: low
+    direction: 1
+    sources:
+      - title: Saiz, The Geographic Determinants of Housing Supply, Quarterly Journal of Economics 125(3), 2010
+        url: https://joeornstein.github.io/pols-4641/readings/Saiz%20-%202010%20-%20The%20Geographic%20Determinants%20of%20Housing%20Supply.pdf
+        locator: "Table VI, pp. 1283-1284 (no non-metro estimates; judgment)"
+        accessed: "2026-11-03"
+    citation: >-
+      Judgment: Saiz estimates only metro areas. Non-metro land is less constrained, so the mid is
+      the high end of the metro range (3.00, Austin); the low is the metro mean 1.75.
+    rationale: Little land scarcity outside metros; the value only matters for the diagnostic.
+    transferability: Judgment.
+    levels: {low: "1.75", mid: "3.0", high: "3.0"}
+
+  - id: demand_elasticity
+    label: Price elasticity of housing demand
+    description: Percent change in housing demanded per 1% change in price (negative).
+    unit: percent per percent
+    low: -0.3
+    mid: -0.65
+    high: -1.0
+    scope: global
+    scenarios: [parking, fees]
+    grade: B
+    confidence: moderate
+    direction: 1
+    sources:
+      - title: Albouy, Ehrlich and Liu, Housing Demand, Cost-of-Living Inequality, and the Affordability Crisis, NBER w22816
+        url: https://www.nber.org/system/files/working_papers/w22816/w22816.pdf
+        locator: "PDF p. 5 (preferred, near two-thirds); PDF p. 6 (literature range -1 to -0.3)"
+        accessed: "2026-11-03"
+    citation: >-
+      Albouy et al., PDF p. 5: "the uncompensated own-price, income, and substitution elasticities are
+      all near two-thirds in absolute value" (mid -0.65); PDF p. 6: most studies estimate "price
+      elasticities ranging from -1 to -0.3" (low -0.3, high -1.0 in magnitude).
+    rationale: A more elastic demand passes more of a cost cut into quantity, so -1.0 is the high case.
+    transferability: Cross-metro estimate; national.
+    levels: {low: "-0.3", mid: "-0.65", high: "-1.0"}
+
+  - id: fee_pass_through
+    label: Price change per dollar of fee
+    description: Dollars of new-home price per dollar of development fee (pass-through).
+    unit: dollars of price per dollar of fee
+    low: 1.0
+    mid: 1.2
+    high: 1.66
+    scope: global
+    scenarios: [parking, fees]
+    grade: B
+    confidence: moderate
+    direction: 1
+    sources:
+      - title: UCLA Lewis Center and California YIMBY, The Impact of Fees on Housing (2024), literature review
+        url: https://cayimby.org/wp-content/uploads/2024/06/TheImpactofFees-Report-v3.pdf
+        locator: "literature review: NAHB $1.20 per $1; Mathur (2007) King County $1.66 new homes"
+        accessed: "2026-11-02"
+    citation: >-
+      NAHB: $1.20 of price per $1 of fee (mid); Mathur (2007), King County: $1.66 per $1 for new homes
+      (high); low 1.0 is full pass-through with no markup. As summarized in evidence_base.md section 5.
+    rationale: Builders mark fees up with financing and margin; at least full pass-through is the norm in the studies.
+    transferability: Mixed national and King County evidence.
+    levels: {low: "1.00", mid: "1.20", high: "1.66"}
+
+  - id: adjustment_share_5yr
+    label: Share of the long-run response that arrives within five years
+    description: Composite route only (diagnostic).
+    unit: share
+    low: 0.5
+    mid: 0.75
+    high: 1.0
+    scope: global
+    scenarios: [parking, fees]
+    grade: C
+    confidence: low
+    direction: 1
+    sources:
+      - title: Topel and Rosen, Housing Investment in the United States, Journal of Political Economy 96(4), 1988 (via evidence_base.md section 6)
+        url: https://doi.org/10.1086/261562
+        locator: "short-run flow elasticity about 1, long-run about 3 (secondary source)"
+        accessed: "2026-11-02"
+    citation: >-
+      Judgment informed by Topel and Rosen (1988): construction responds within a year at about a
+      third of its long-run strength (1.0 short run vs 3.0 long run), so most but not all of the
+      response is inside five years: 0.5 / 0.75 / 1.0.
+    rationale: Projects started in year 4 or 5 finish after the horizon.
+    transferability: National judgment.
+    levels: {low: "50%", mid: "75%", high: "100%"}
+
+  - id: new_home_price_ratio
+    label: New home price compared with the median home value
+    description: Converts a county's median owner-occupied value to a new-home price.
+    unit: price of a new home / median value of owned homes
+    low: 1.0
+    mid: 1.2546
+    high: 1.5744
+    scope: global
+    scenarios: [parking, fees]
+    grade: A
+    confidence: moderate
+    direction: -1
+    sources:
+      - title: Census Bureau, Highlights of 2025 Characteristics of New Housing
+        url: https://www.census.gov/construction/chars/highlights.html
+        locator: "Of the 678,000 new single-family homes sold in 2025: median $417,400, average $523,800"
+        accessed: "2026-11-03"
+      - title: ACS 2020-2024 five-year, table B25077, United States
+        url: https://data.census.gov/table/ACSDT5Y2024.B25077
+        locator: "United States median value of owner-occupied units, $332,700"
+        accessed: "2026-10-15"
+    citation: >-
+      Median price of new single-family homes sold in 2025, $417,400 (high: average price, $523,800),
+      divided by the U.S. median value of owned homes, $332,700 (ACS 2020 to 2024 five-year, B25077):
+      417,400 / 332,700 = 1.2546; 523,800 / 332,700 = 1.5744; low assumes new homes sell at the median
+      value. Census figures re-read 2026-11-03.
+    rationale: New homes sell for more than the typical owned home; the national ratio converts each state's median home value to a new home price.
+    transferability: National ratio; new homes are a larger premium where the stock is old.
+    levels: {low: "1.00", mid: "1.25", high: "1.57"}
+    ported_from: adam-v2.0
+
+  - id: stock_supply_elasticity
+    label: Published stock supply elasticity (diagnostic only)
+    description: Stock-elasticity diagnostic for the builder response; never in the band.
+    unit: percent change in housing stock per percent change in price
+    low: 0.3
+    mid: 0.3
+    high: 0.3
+    scope: global
+    scenarios: [fees]
+    grade: B
+    confidence: moderate
+    direction: 0
+    sources:
+      - title: Baum-Snow and Han, The Microgeography of Housing Supply, Journal of Political Economy 132(6), 2024
+        url: https://doi.org/10.1086/728110
+        locator: "abstract: average predicted housing-unit supply elasticity 0.3"
+        accessed: "2026-10-15"
+    citation: >-
+      The Microgeography of Housing Supply reports average predicted housing-unit supply elasticity
+      0.3 across urban neighborhoods.
+    rationale: Use a stock elasticity with a stock denominator in the diagnostic.
+    transferability: Urban neighborhoods; national.
+    levels: {low: "0.3", mid: "0.3", high: "0.3"}
+    ported_from: adam-v2.0
+
+  - id: stock_realization_share
+    label: Five-year realization share for the stock diagnostic
+    description: Assumed share of the published stock response realized in five years (diagnostic only).
+    unit: share
+    low: 0.5
+    mid: 0.5
+    high: 0.5
+    scope: global
+    scenarios: [fees]
+    grade: C
+    confidence: low
+    direction: 0
+    sources:
+      - title: Adam Ruege, Housing Reform Estimator v2.0, assumptions/fees.yaml (inherited assumption)
+        url: https://github.com/rmanacha/permit-horizon/blob/main/docs/methods/builder_response.md
+        locator: "register entry stock_realization_share (payload, build v2.0-a3d61961fd76)"
+        accessed: "2026-11-03"
+    citation: >-
+      The original assumptions/fees.yaml divided 0.3 x 0.5 by national five-year growth. The
+      half-within-five-years assumption was not estimated by the cited paper.
+    rationale: Hold the inherited assumption constant to isolate the stock-versus-flow denominator difference.
+    transferability: Judgment.
+    levels: {low: "0.5", mid: "0.5", high: "0.5"}
+    ported_from: adam-v2.0
+
+  - id: us_housing_growth_5yr
+    label: U.S. housing-unit growth, July 2020 to July 2025
+    description: Denominator that turns a stock elasticity into a share of five years' building.
+    unit: share of the 2020 stock
+    low: 0.0529
+    mid: 0.0529
+    high: 0.0529
+    scope: global
+    scenarios: [fees]
+    grade: A
+    confidence: high
+    direction: 0
+    sources:
+      - title: Census Bureau, Annual Estimates of Housing Units for the United States (NST-EST2025-HU)
+        url: https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-housing-units.html
+        locator: "United States, July 1, 2020 and July 1, 2025"
+        accessed: "2026-10-15"
+    citation: >-
+      U.S. housing units grew 5.29% from July 1, 2020 to July 1, 2025 (NST-EST2025-HU), the
+      denominator in 0.3 x 0.5 / 0.0529 = 2.84.
+    rationale: Converts a stock response into percent of five years' construction.
+    transferability: National.
+    levels: {low: "5.29%", mid: "5.29%", high: "5.29%"}
+    ported_from: adam-v2.0
+
+  - id: total_fee_per_unit
+    label: Total development fees per unit
+    description: The challenge's fee premise.
+    unit: dollars per unit
+    low: 50000
+    mid: 50000
+    high: 50000
+    scope: global
+    scenarios: [fees]
+    grade: R
+    confidence: set_by_rules
+    direction: 0
+    sources:
+      - title: Housing Data and Technology Innovation Challenge, Participant Handbook
+        url: https://www.housingchallenge.turnout.rocks/handbook.html
+        locator: "Benchmark Policy Scenarios, 5. Development Fee Reduction"
+        accessed: "2026-11-03"
+    citation: >-
+      Handbook, scenario 5: "Teams should assume development fees total $50,000 per unit across all
+      major fee categories." Re-read 2026-11-03.
+    rationale: Fixed by the challenge so results compare across teams.
+    transferability: Not applicable; a rule.
+    levels: {low: "$50,000", mid: "$50,000", high: "$50,000"}
+    ported_from: adam-v2.0
+
+  - id: fee_cut_share
+    label: Fee cut
+    description: Share of total fees removed by the reform.
+    unit: share
+    low: 0.5
+    mid: 0.5
+    high: 0.5
+    scope: global
+    scenarios: [fees]
+    grade: R
+    confidence: set_by_rules
+    direction: 0
+    sources:
+      - title: Housing Data and Technology Innovation Challenge, Participant Handbook
+        url: https://www.housingchallenge.turnout.rocks/handbook.html
+        locator: "Benchmark Policy Scenarios, 5. Development Fee Reduction"
+        accessed: "2026-11-03"
+    citation: >-
+      Handbook, scenario 5: reducing total development fees "by 50% across all major fee
+      categories"; with $50,000 in fees the cut is 0.5 x 50,000 = $25,000 per unit.
+    rationale: Fixed by the challenge.
+    transferability: Not applicable; a rule.
+    levels: {low: "50%", mid: "50%", high: "50%"}
+    ported_from: adam-v2.0
+
+  # ---------------------------------------------------------------- market adjustment (MM, TOD)
+
+  - id: value_ratio_exponent
+    label: Price adjustment exponent (gamma)
+    description: >-
+      Missing middle and TOD rates are scaled by (county median value / source city median value)
+      ^ gamma, bounded; gamma = 0 means no adjustment (decision 34).
+    unit: exponent
+    low: 0.0
+    mid: 0.5
+    high: 1.0
+    scope: global
+    scenarios: [missing_middle, tod]
+    grade: C
+    confidence: low
+    direction: 0
+    sources:
+      - title: Monkkonen, Manville and Lens, Built out cities? A new approach to measuring land use regulation, Journal of Housing Economics (2024)
+        url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12308518/
+        locator: "rent x zoned-capacity interaction (20th to 80th capacity percentile: 196 to 378 units at the 30th rent percentile, 240 to 960 at the 80th)"
+        accessed: "2026-11-02"
+    citation: >-
+      Monkkonen et al. (2024): the permit response to added zoned capacity rises with local rents;
+      the same capacity change gives (378 - 196) / 196 = 0.93x more permits at the 30th rent
+      percentile but (960 - 240) / 240 = 3.0x at the 80th. Gamma 0.5 (square-root scaling) is a
+      judgment between none (0) and proportional (1).
+    rationale: Upzoning yields more where homes are worth more; the exponent keeps that with one number whose low case is "none".
+    transferability: California cities 2014-2019.
+    levels: {low: "0 (no adjustment)", mid: "0.5", high: "1.0"}
+
+  # ---------------------------------------------------------------- ramps (cases module)
+
+  - id: ramp_adu
+    label: ADU ramp, share of the steady-state rate in years 1 to 5
+    description: >-
+      Activity in each year after a reform takes effect, as a share of the source rate. Low follows
+      California's statewide build-up, mid is the plan's middle path, high is Seattle's plateau by year 3.
+    unit: share of the steady-state rate, years 1 to 5
+    low: [0.12, 0.21, 0.36, 0.38, 0.59]
+    mid: [0.25, 0.40, 0.55, 0.70, 0.85]
+    high: [0.50, 0.80, 1.0, 1.0, 1.0]
+    scope: global
+    scenarios: [adu]
+    grade: B
+    confidence: low
+    direction: 1
+    sources:
+      - title: California HCD APR Table A2 (ADU rows) and HCD ADU handbook
+        url: https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year
+        locator: "statewide ADU permits by report year 2016-2025 (evidence_base.md section 1)"
+        accessed: "2026-11-02"
+      - title: Seattle OPCD ADU Annual Report 2024
+        url: https://www.seattle.gov/documents/Departments/OPCD/OngoingInitiatives/EncouragingBackyardCottages/OPCD-ADUAnnualReport2024.pdf
+        locator: "permits 283 (2019), 490, 771, 988, 987 (2023): plateau in year 3"
+        accessed: "2026-11-02"
+    citation: >-
+      Low: California statewide ADU activity as a share of its later level, years 1-5 = 12, 21, 36, 38,
+      59% (evidence_base.md parameter table). High: Seattle permits 490 / 771 / 988 after the 2019
+      reform = 50%, 78%, 100% of the plateau by year 3. Mid: 25, 40, 55, 70, 85% (master plan,
+      between the two).
+    rationale: Uptake builds as owners learn the rules, lenders adapt and plans are pre-approved.
+    transferability: California and Seattle had strong programs; slower states sit nearer the low.
+    levels: {low: "12/21/36/38/59%", mid: "25/40/55/70/85%", high: "50/80/100/100/100%"}
+
+  - id: ramp_immediate
+    label: No ramp (source rate from year 1)
+    description: Used by the user cases (25/50/100% affected, delay 0/1/2) where the source rate applies after the delay.
+    unit: share of the steady-state rate, years 1 to 5
+    low: [1.0, 1.0, 1.0, 1.0, 1.0]
+    mid: [1.0, 1.0, 1.0, 1.0, 1.0]
+    high: [1.0, 1.0, 1.0, 1.0, 1.0]
+    scope: global
+    scenarios: [adu, missing_middle, tod, parking, fees]
+    grade: R
+    confidence: set_by_rules
+    direction: 0
+    sources:
+      - title: Adam Ruege, Housing Reform Estimator v2.0, policy cases
+        url: https://github.com/rmanacha/permit-horizon/blob/main/docs/methods/cases.md
+        locator: "case text: 'no activity during the delay, then a constant rate from the source evidence'"
+        accessed: "2026-11-03"
+    citation: >-
+      Design choice from Adam's cases: no activity during the delay, then the source rate; a 1-year
+      delay keeps 4/5 of the benchmark (NH ADU middle 2,046 x 4/5 = 1,637).
+    rationale: The simplest case a legislator can check by hand.
+    transferability: Not applicable.
+    levels: {low: "100% from year 1", mid: "100% from year 1", high: "100% from year 1"}
+    ported_from: adam-v2.0

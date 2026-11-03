@@ -28,6 +28,10 @@ CBSA_TYPES = ("metropolitan", "micropolitan")
 PERMIT_KEYS = ("u1", "u2", "u34", "u5")
 PERMIT_YEARS = tuple(str(y) for y in range(2016, 2026))
 
+# Outcome labels (decision 30). Every number the engine returns carries exactly
+# one of these, so a permit is never silently added to a completed home.
+OUTCOMES = ("permits", "net_permits", "completed_homes", "stock_change", "cost_response_proxy")
+
 
 @dataclass
 class CountyInputs:

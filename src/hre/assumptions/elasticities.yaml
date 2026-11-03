@@ -1,0 +1,128 @@
+# Saiz (2010) Table VI: housing supply elasticities for the 95 metro areas with
+# population over 500,000 (1999 MSA/PMSA/NECMA definitions).
+#
+# Source: Albert Saiz, "The Geographic Determinants of Housing Supply", Quarterly
+# Journal of Economics 125(3), 2010, Table VI, pp. 1283-1284. Transcribed 2026-11-03
+# from https://joeornstein.github.io/pols-4641/readings/Saiz%20-%202010%20-%20The%20Geographic%20Determinants%20of%20Housing%20Supply.pdf
+# These are STOCK elasticities (percent change in housing stock per 1% change in
+# price, 1970-2000). They feed only the composite builder-response diagnostic
+# (docs/methods/builder_response.md); the primary route is builder_response_override.
+#
+# Mapping to today's counties (OMB 2023 delineation, Phase 1 `metro_role` data):
+#   1. `counties` (explicit county FIPS) wins: used where OMB 2023 merged several
+#      1999 metros into one CBSA (Fort Lauderdale and West Palm Beach inside Miami,
+#      Oakland inside San Francisco, Newark and Jersey City inside New York, Tacoma
+#      inside Seattle, Gary inside Chicago, Wilmington inside Philadelphia, Fort Worth
+#      inside Dallas). Counties are the 1999 PMSA's counties.
+#   2. otherwise every county of each listed `cbsa_2023` gets the value; where a
+#      1999 metro split into several 2023 CBSAs (Salt Lake City and Ogden, Raleigh
+#      and Durham, ...) each is listed.
+#   3. metropolitan counties in neither list use the register's
+#      supply_elasticity_metro_default; other counties supply_elasticity_nonmetro.
+# Known gaps: Orange County CA (Anaheim PMSA) and Bergen-Passaic NJ do not appear in
+# Table VI and inherit their 2023 CBSA's value (Los Angeles 0.63, New York 0.76).
+# tests/test_elasticities.py checks Salt Lake County 0.75 and Maricopa 1.61.
+
+source:
+  title: Saiz, The Geographic Determinants of Housing Supply, QJE 125(3), 2010
+  url: https://joeornstein.github.io/pols-4641/readings/Saiz%20-%202010%20-%20The%20Geographic%20Determinants%20of%20Housing%20Supply.pdf
+  locator: Table VI, pp. 1283-1284
+  accessed: "2026-11-03"
+  population_weighted_mean: 1.75
+
+metros:
+  - {rank: 1, name: "Miami, FL", elasticity: 0.60, cbsa_2023: ['33100'], counties: []}  # Miami-Fort Lauderdale-West Palm Beach, FL
+  - {rank: 2, name: "Los Angeles–Long Beach, CA", elasticity: 0.63, cbsa_2023: ['31080'], counties: []}  # Los Angeles-Long Beach-Anaheim, CA
+  - {rank: 3, name: "Fort Lauderdale, FL", elasticity: 0.65, cbsa_2023: [], counties: ['12011']}  # 
+  - {rank: 4, name: "San Francisco, CA", elasticity: 0.66, cbsa_2023: ['41860'], counties: []}  # San Francisco-Oakland-Fremont, CA
+  - {rank: 5, name: "San Diego, CA", elasticity: 0.67, cbsa_2023: ['41740'], counties: []}  # San Diego-Chula Vista-Carlsbad, CA
+  - {rank: 6, name: "Oakland, CA", elasticity: 0.70, cbsa_2023: [], counties: ['06001', '06013']}  # 
+  - {rank: 7, name: "Salt Lake City–Ogden, UT", elasticity: 0.75, cbsa_2023: ['41620', '36260'], counties: []}  # Salt Lake City-Murray, UT | Ogden, UT
+  - {rank: 8, name: "Ventura, CA", elasticity: 0.75, cbsa_2023: ['37100'], counties: []}  # Oxnard-Thousand Oaks-Ventura, CA
+  - {rank: 9, name: "New York, NY", elasticity: 0.76, cbsa_2023: ['35620'], counties: []}  # New York-Newark-Jersey City, NY-NJ
+  - {rank: 10, name: "San Jose, CA", elasticity: 0.76, cbsa_2023: ['41940'], counties: []}  # San Jose-Sunnyvale-Santa Clara, CA
+  - {rank: 11, name: "New Orleans, LA", elasticity: 0.81, cbsa_2023: ['35380'], counties: []}  # New Orleans-Metairie, LA
+  - {rank: 12, name: "Chicago, IL", elasticity: 0.81, cbsa_2023: ['16980'], counties: []}  # Chicago-Naperville-Elgin, IL-IN
+  - {rank: 13, name: "Norfolk–Virginia Beach–Newport News, VA–NC", elasticity: 0.82, cbsa_2023: ['47260'], counties: []}  # Virginia Beach-Chesapeake-Norfolk, VA-NC
+  - {rank: 14, name: "West Palm Beach–Boca Raton, FL", elasticity: 0.83, cbsa_2023: [], counties: ['12099']}  # 
+  - {rank: 15, name: "Boston–Worcester–Lawrence–Lowell–Brockton, MA–NH", elasticity: 0.86, cbsa_2023: ['14460', '49340'], counties: []}  # Boston-Cambridge-Newton, MA-NH | Worcester, MA
+  - {rank: 16, name: "Seattle–Bellevue–Everett, WA", elasticity: 0.88, cbsa_2023: ['42660'], counties: []}  # Seattle-Tacoma-Bellevue, WA
+  - {rank: 17, name: "Sarasota–Bradenton, FL", elasticity: 0.92, cbsa_2023: ['35840'], counties: []}  # North Port-Bradenton-Sarasota, FL
+  - {rank: 18, name: "Riverside–San Bernardino, CA", elasticity: 0.94, cbsa_2023: ['40140'], counties: []}  # Riverside-San Bernardino-Ontario, CA
+  - {rank: 19, name: "New Haven–Bridgeport–Stamford–Danbury–Waterbury, CT", elasticity: 0.98, cbsa_2023: ['35300', '14860', '47930'], counties: []}  # New Haven, CT | Bridgeport-Stamford-Danbury, CT | Waterbury-Shelton, CT
+  - {rank: 20, name: "Tampa–St. Petersburg–Clearwater, FL", elasticity: 1.00, cbsa_2023: ['45300'], counties: []}  # Tampa-St. Petersburg-Clearwater, FL
+  - {rank: 21, name: "Cleveland–Lorain–Elyria, OH", elasticity: 1.02, cbsa_2023: ['17410'], counties: []}  # Cleveland, OH
+  - {rank: 22, name: "Milwaukee–Waukesha, WI", elasticity: 1.03, cbsa_2023: ['33340'], counties: []}  # Milwaukee-Waukesha, WI
+  - {rank: 23, name: "Jacksonville, FL", elasticity: 1.06, cbsa_2023: ['27260'], counties: []}  # Jacksonville, FL
+  - {rank: 24, name: "Portland–Vancouver, OR–WA", elasticity: 1.07, cbsa_2023: ['38900'], counties: []}  # Portland-Vancouver-Hillsboro, OR-WA
+  - {rank: 25, name: "Orlando, FL", elasticity: 1.12, cbsa_2023: ['36740'], counties: []}  # Orlando-Kissimmee-Sanford, FL
+  - {rank: 26, name: "Vallejo–Fairfield–Napa, CA", elasticity: 1.14, cbsa_2023: ['46700', '34900'], counties: []}  # Vallejo, CA | Napa, CA
+  - {rank: 27, name: "Newark, NJ", elasticity: 1.16, cbsa_2023: [], counties: ['34013', '34027', '34037', '34039', '34041']}  # 
+  - {rank: 28, name: "Charleston–North Charleston, SC", elasticity: 1.20, cbsa_2023: ['16700'], counties: []}  # Charleston-North Charleston, SC
+  - {rank: 29, name: "Pittsburgh, PA", elasticity: 1.20, cbsa_2023: ['38300'], counties: []}  # Pittsburgh, PA
+  - {rank: 30, name: "Tacoma, WA", elasticity: 1.21, cbsa_2023: [], counties: ['53053']}  # 
+  - {rank: 31, name: "Baltimore, MD", elasticity: 1.23, cbsa_2023: ['12580'], counties: []}  # Baltimore-Columbia-Towson, MD
+  - {rank: 32, name: "Detroit, MI", elasticity: 1.24, cbsa_2023: ['19820'], counties: []}  # Detroit-Warren-Dearborn, MI
+  - {rank: 33, name: "Las Vegas, NV–AZ", elasticity: 1.39, cbsa_2023: ['29820'], counties: []}  # Las Vegas-Henderson-North Las Vegas, NV
+  - {rank: 34, name: "Rochester, NY", elasticity: 1.40, cbsa_2023: ['40380'], counties: []}  # Rochester, NY
+  - {rank: 35, name: "Tucson, AZ", elasticity: 1.42, cbsa_2023: ['46060'], counties: []}  # Tucson, AZ
+  - {rank: 36, name: "Knoxville, TN", elasticity: 1.42, cbsa_2023: ['28940'], counties: []}  # Knoxville, TN
+  - {rank: 37, name: "Jersey City, NJ", elasticity: 1.44, cbsa_2023: [], counties: ['34017']}  # 
+  - {rank: 38, name: "Minneapolis–St. Paul, MN–WI", elasticity: 1.45, cbsa_2023: ['33460'], counties: []}  # Minneapolis-St. Paul-Bloomington, MN-WI
+  - {rank: 39, name: "Hartford, CT", elasticity: 1.50, cbsa_2023: ['25540'], counties: []}  # Hartford-West Hartford-East Hartford, CT
+  - {rank: 40, name: "Springfield, MA", elasticity: 1.52, cbsa_2023: ['44140'], counties: []}  # Springfield, MA
+  - {rank: 41, name: "Denver, CO", elasticity: 1.53, cbsa_2023: ['19740'], counties: []}  # Denver-Aurora-Centennial, CO
+  - {rank: 42, name: "Providence–Warwick–Pawtucket, RI", elasticity: 1.61, cbsa_2023: ['39300'], counties: []}  # Providence-Warwick, RI-MA
+  - {rank: 43, name: "Washington, DC–MD–VA–WV", elasticity: 1.61, cbsa_2023: ['47900'], counties: []}  # Washington-Arlington-Alexandria, DC-VA-MD-WV
+  - {rank: 44, name: "Phoenix–Mesa, AZ", elasticity: 1.61, cbsa_2023: ['38060'], counties: []}  # Phoenix-Mesa-Chandler, AZ
+  - {rank: 45, name: "Scranton–Wilkes-Barre–Hazleton, PA", elasticity: 1.62, cbsa_2023: ['42540'], counties: []}  # Scranton--Wilkes-Barre, PA
+  - {rank: 46, name: "Harrisburg–Lebanon–Carlisle, PA", elasticity: 1.63, cbsa_2023: ['25420', '30140'], counties: []}  # Harrisburg-Carlisle, PA | Lebanon, PA
+  - {rank: 47, name: "Bakersfield, CA", elasticity: 1.64, cbsa_2023: ['12540'], counties: []}  # Bakersfield-Delano, CA
+  - {rank: 48, name: "Philadelphia, PA–NJ", elasticity: 1.65, cbsa_2023: ['37980'], counties: []}  # Philadelphia-Camden-Wilmington, PA-NJ-DE-MD
+  - {rank: 49, name: "Colorado Springs, CO", elasticity: 1.67, cbsa_2023: ['17820'], counties: []}  # Colorado Springs, CO
+  - {rank: 50, name: "Albany–Schenectady–Troy, NY", elasticity: 1.70, cbsa_2023: ['10580'], counties: []}  # Albany-Schenectady-Troy, NY
+  - {rank: 51, name: "Gary, IN", elasticity: 1.74, cbsa_2023: [], counties: ['18089', '18127', '18073', '18111']}  # 
+  - {rank: 52, name: "Baton Rouge, LA", elasticity: 1.74, cbsa_2023: ['12940'], counties: []}  # Baton Rouge, LA
+  - {rank: 53, name: "Memphis, TN–AR–MS", elasticity: 1.76, cbsa_2023: ['32820'], counties: []}  # Memphis, TN-MS-AR
+  - {rank: 54, name: "Buffalo–Niagara Falls, NY", elasticity: 1.83, cbsa_2023: ['15380'], counties: []}  # Buffalo-Cheektowaga, NY
+  - {rank: 55, name: "Fresno, CA", elasticity: 1.84, cbsa_2023: ['23420'], counties: []}  # Fresno, CA
+  - {rank: 56, name: "Allentown–Bethlehem–Easton, PA", elasticity: 1.86, cbsa_2023: ['10900'], counties: []}  # Allentown-Bethlehem-Easton, PA-NJ
+  - {rank: 57, name: "Wilmington–Newark, DE–MD", elasticity: 1.99, cbsa_2023: [], counties: ['10003', '24015']}  # 
+  - {rank: 58, name: "Mobile, AL", elasticity: 2.04, cbsa_2023: ['33660'], counties: []}  # Mobile, AL
+  - {rank: 59, name: "Stockton–Lodi, CA", elasticity: 2.07, cbsa_2023: ['44700'], counties: []}  # Stockton-Lodi, CA
+  - {rank: 60, name: "Raleigh–Durham–Chapel Hill, NC", elasticity: 2.11, cbsa_2023: ['39580', '20500'], counties: []}  # Raleigh-Cary, NC | Durham-Chapel Hill, NC
+  - {rank: 61, name: "Albuquerque, NM", elasticity: 2.11, cbsa_2023: ['10740'], counties: []}  # Albuquerque, NM
+  - {rank: 62, name: "Birmingham, AL", elasticity: 2.14, cbsa_2023: ['13820'], counties: []}  # Birmingham, AL
+  - {rank: 63, name: "Dallas, TX", elasticity: 2.18, cbsa_2023: ['19100'], counties: []}  # Dallas-Fort Worth-Arlington, TX
+  - {rank: 64, name: "Syracuse, NY", elasticity: 2.21, cbsa_2023: ['45060'], counties: []}  # Syracuse, NY
+  - {rank: 65, name: "Toledo, OH", elasticity: 2.21, cbsa_2023: ['45780'], counties: []}  # Toledo, OH
+  - {rank: 66, name: "Nashville, TN", elasticity: 2.24, cbsa_2023: ['34980'], counties: []}  # Nashville-Davidson--Murfreesboro--Franklin, TN
+  - {rank: 67, name: "Ann Arbor, MI", elasticity: 2.29, cbsa_2023: ['11460'], counties: []}  # Ann Arbor, MI
+  - {rank: 68, name: "Houston, TX", elasticity: 2.30, cbsa_2023: ['26420'], counties: []}  # Houston-Pasadena-The Woodlands, TX
+  - {rank: 69, name: "Louisville, KY–IN", elasticity: 2.34, cbsa_2023: ['31140'], counties: []}  # Louisville/Jefferson County, KY-IN
+  - {rank: 70, name: "El Paso, TX", elasticity: 2.35, cbsa_2023: ['21340'], counties: []}  # El Paso, TX
+  - {rank: 71, name: "St. Louis, MO–IL", elasticity: 2.36, cbsa_2023: ['41180'], counties: []}  # St. Louis, MO-IL
+  - {rank: 72, name: "Grand Rapids–Muskegon–Holland, MI", elasticity: 2.39, cbsa_2023: ['24340', '34740'], counties: []}  # Grand Rapids-Wyoming-Kentwood, MI | Muskegon-Norton Shores, MI
+  - {rank: 73, name: "Cincinnati, OH–KY–IN", elasticity: 2.46, cbsa_2023: ['17140'], counties: []}  # Cincinnati, OH-KY-IN
+  - {rank: 74, name: "Atlanta, GA", elasticity: 2.55, cbsa_2023: ['12060'], counties: []}  # Atlanta-Sandy Springs-Roswell, GA
+  - {rank: 75, name: "Akron, OH", elasticity: 2.59, cbsa_2023: ['10420'], counties: []}  # Akron, OH
+  - {rank: 76, name: "Richmond–Petersburg, VA", elasticity: 2.60, cbsa_2023: ['40060'], counties: []}  # Richmond, VA
+  - {rank: 77, name: "Youngstown–Warren, OH", elasticity: 2.63, cbsa_2023: ['49660'], counties: []}  # Youngstown-Warren, OH
+  - {rank: 78, name: "Columbia, SC", elasticity: 2.64, cbsa_2023: ['17900'], counties: []}  # Columbia, SC
+  - {rank: 79, name: "Columbus, OH", elasticity: 2.71, cbsa_2023: ['18140'], counties: []}  # Columbus, OH
+  - {rank: 80, name: "Greenville–Spartanburg–Anderson, SC", elasticity: 2.71, cbsa_2023: ['24860', '43900'], counties: []}  # Greenville-Anderson-Greer, SC | Spartanburg, SC
+  - {rank: 81, name: "Little Rock–North Little Rock, AR", elasticity: 2.79, cbsa_2023: ['30780'], counties: []}  # Little Rock-North Little Rock-Conway, AR
+  - {rank: 82, name: "Fort Worth–Arlington, TX", elasticity: 2.80, cbsa_2023: [], counties: ['48221', '48251', '48367', '48439']}  # 
+  - {rank: 83, name: "San Antonio, TX", elasticity: 2.98, cbsa_2023: ['41700'], counties: []}  # San Antonio-New Braunfels, TX
+  - {rank: 84, name: "Austin–San Marcos, TX", elasticity: 3.00, cbsa_2023: ['12420'], counties: []}  # Austin-Round Rock-San Marcos, TX
+  - {rank: 85, name: "Charlotte–Gastonia–Rock Hill, NC–SC", elasticity: 3.09, cbsa_2023: ['16740'], counties: []}  # Charlotte-Concord-Gastonia, NC-SC
+  - {rank: 86, name: "Greensboro–Winston–Salem–High Point, NC", elasticity: 3.10, cbsa_2023: ['24660', '49180'], counties: []}  # Greensboro-High Point, NC | Winston-Salem, NC
+  - {rank: 87, name: "Kansas City, MO–KS", elasticity: 3.19, cbsa_2023: ['28140'], counties: []}  # Kansas City, MO-KS
+  - {rank: 88, name: "Oklahoma City, OK", elasticity: 3.29, cbsa_2023: ['36420'], counties: []}  # Oklahoma City, OK
+  - {rank: 89, name: "Tulsa, OK", elasticity: 3.35, cbsa_2023: ['46140'], counties: []}  # Tulsa, OK
+  - {rank: 90, name: "Omaha, NE–IA", elasticity: 3.47, cbsa_2023: ['36540'], counties: []}  # Omaha, NE-IA
+  - {rank: 91, name: "McAllen–Edinburg–Mission, TX", elasticity: 3.68, cbsa_2023: ['32580'], counties: []}  # McAllen-Edinburg-Mission, TX
+  - {rank: 92, name: "Dayton–Springfield, OH", elasticity: 3.71, cbsa_2023: ['19430', '44220'], counties: []}  # Dayton-Kettering-Beavercreek, OH | Springfield, OH
+  - {rank: 93, name: "Indianapolis, IN", elasticity: 4.00, cbsa_2023: ['26900'], counties: []}  # Indianapolis-Carmel-Greenwood, IN
+  - {rank: 94, name: "Fort Wayne, IN", elasticity: 5.36, cbsa_2023: ['23060'], counties: []}  # Fort Wayne, IN
+  - {rank: 95, name: "Wichita, KS", elasticity: 5.45, cbsa_2023: ['48620'], counties: []}  # Wichita, KS
