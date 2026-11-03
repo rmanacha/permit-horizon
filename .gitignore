@@ -73,3 +73,8 @@ npm-debug.log*
 # --- Project exceptions -------------------------------------------------------
 # The organizers' curated data provider list is tracked despite data/* above.
 !data/DATA_SOURCES.md
+
+# Fixtures and provenance manifests are tracked; raw data is not.
+!data/sample/**
+!data/manifests/
+!data/manifests/**
