@@ -135,7 +135,7 @@ def run_scenario(spec: Spec, state: StateInputs, params: Params, ctx: dict[str, 
         cs["can_add_to_baseline"] = True       # after conversion to permits
 
     run_fn = lambda p: evaluate(spec, state, p, ctx, share)["permits"]
-    bars = tornado(params, run_fn, list(spec.ids), always=spec.always)
+    bars = tornado(params, run_fn, list(spec.ids) + list(spec.always), always=spec.always)
     base = ctx["baseline_state"]
     mid = ev["mid"]
     return {
@@ -166,8 +166,7 @@ def run_scenario(spec: Spec, state: StateInputs, params: Params, ctx: dict[str, 
                                    "probability is assigned to this range.")},
         "cases": cases,
         "tornado": bars,
-        "joint": {"favorable": joint_case(params, run_fn, "favorable", bars=bars),
-                  "unfavorable": joint_case(params, run_fn, "unfavorable", bars=bars)},
+        "joint": {d: joint(spec, params, run_fn, bars, d) for d in ("favorable", "unfavorable")},
         "factors": mid["core"].factors,
         "components": components(spec, state, params, mid, share),
         "grid": grid(spec, state, params, ctx, share) if spec.grid else None,
@@ -176,6 +175,25 @@ def run_scenario(spec: Spec, state: StateInputs, params: Params, ctx: dict[str, 
         "notes": list(mid["core"].factors.get("notes", [])),
         "levels_used": {lv: {pid: sets[lv].level_of(pid) for pid in spec.ids} for lv in LEVEL_KEYS},
     }
+
+
+def joint(spec: Spec, params: Params, run_fn: Callable[[Params], float], bars: list[dict[str, Any]],
+          direction: str) -> dict[str, Any]:
+    """Every assumption at its most (least) favorable end at once.
+
+    Starts from the high (low) assumption set, so an id that does not move the result at mid
+    (the net-new factor only bites on the gross high rate) still sits at its favorable end, then
+    takes each tornado bar's measured end, which also places gamma.
+    """
+    start = level_set(params, spec.ids, "high" if direction == "favorable" else "low")
+    levels = {pid: start.level_of(pid) for pid in spec.ids if params.entry(pid).get("direction", 0) != 0}
+    for b in bars:
+        fav = b["favorable_end"]
+        levels[b["id"]] = fav if direction == "favorable" else ("low" if fav == "high" else "high")
+    j = joint_case(params, run_fn, direction, bars=bars)
+    value = float(run_fn(params.all_at("mid").at(levels)))
+    return {**j, "value": value, "levels": levels,
+            "settings": [f"{params.entry(pid)['label']}: {params.display(pid, lv)}" for pid, lv in levels.items()]}
 
 
 def components(spec: Spec, state: StateInputs, params: Params, mid: dict[str, Any], share: float) -> dict[str, Any]:

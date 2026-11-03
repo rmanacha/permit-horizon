@@ -72,6 +72,10 @@ def check_properties(r: dict) -> list[str]:
             p.append(f"{name}: share 0 must give 0")
         if any(s["cases"]["after_horizon"]["estimate"][lv] != 0 for lv in LV):
             p.append(f"{name}: a reform after the horizon must give 0")
+        if s["joint"]["favorable"]["value"] < s["increment"]["estimate"]["high"] - 1e-6:
+            p.append(f"{name}: the joint favorable case must reach at least the high set")
+        if s["joint"]["unfavorable"]["value"] > s["increment"]["estimate"]["low"] + 1e-6:
+            p.append(f"{name}: the joint unfavorable case must sit at or below the low set")
         if any(s["increment"]["estimate"][lv] < 0 for lv in LV):
             p.append(f"{name}: negative increment")
     c = r.get("combined")
