@@ -20,6 +20,7 @@ Every source is a keyless public download; no API key or account is required.
 | New Residential Construction, annual units authorized and completed (United States, by units in structure) | U.S. Census Bureau, `https://www.census.gov/construction/nrc/xls/permits_cust.xlsx`, `comps_permits_cust.xlsx`, `comps_cust.xlsx` | annual series through 2025 | 2026-11-03 | public domain | public |
 | Address Count Listing Files (block-level housing-unit counts from the Master Address File) | U.S. Census Bureau, `https://www2.census.gov/geo/pvs/addcountlisting/{year}/{FIPS}_{State}_AddressBlockCountList_{mmyyyy}.txt` | 062022, 072023, 122023, 072024, 122024, 072025, 122025, 072026 | 2026-11-03 | public domain | public |
 | 2020 centers of population by block group | U.S. Census Bureau, `https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG{SS}.txt` | 2020 Census | 2026-11-03 | public domain | public |
+| Connecticut 2022 county subdivisions to 2020 block groups (relationship file) | U.S. Census Bureau, `https://www2.census.gov/geo/docs/maps-data/data/rel2022/acs22_cousub22_blkgrp20_st09.txt` | ACS 2022 relationship files (2022 towns, 2020 block groups) | 2026-11-03 | public domain | public |
 | Gazetteer, counties | U.S. Census Bureau, `https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/2025_Gaz_counties_national.zip` | 2025 | 2026-11-03 | public domain | public |
 | Core-based statistical area delineation | OMB Bulletin 23-01 via Census, `https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2023/delineation-files/list1_2023.xlsx` | July 2023 | 2026-11-03 | public domain | public |
 | House Price Index, county, annual, all-transactions | Federal Housing Finance Agency, `https://www.fhfa.gov/hpi/download/annual/hpi_at_county.xlsx` | through 2025 (updated 2026-03-31) | 2026-11-03 | freely available; cite "Source: FHFA HPI". **This product uses FHFA data but is neither endorsed nor certified by FHFA.** "FHFA HPI" is a registered trademark and is not part of our product name | public |
@@ -70,6 +71,21 @@ doubling finding and the decision it forced.
 
 **Centers of population.** The four code columns are concatenated to a 12-digit
 block-group GEOID; latitude, longitude and 2020 population are kept.
+
+**Connecticut block groups.** The 2020 centers of population carry Connecticut's
+eight legacy county codes (09001-09015); the 2025 Gazetteer and the ACS 2020-2024
+use the nine planning regions that replaced them in 2022 (09110-09190). Without a
+recode the county join drops every Connecticut block group. The Census
+relationship file `acs22_cousub22_blkgrp20_st09.txt` lists each piece of a 2020
+block group that falls in a 2022 town, with its land and water area; a town's
+GEOID starts with its planning region's county code. Tract and block-group codes
+did not change in 2022, so a block group's new GEOID is the planning-region code
+followed by its old tract and block group (09013 528100 1 becomes 09110 528100 1),
+which is how the ACS 2020-2024 names it. Three of the 2,716 block groups lie in
+two regions; each goes to the region holding more of its land (water area breaks
+the tie for the two water-only block groups in Long Island Sound). All 2,716
+recoded GEOIDs match an ACS 2020-2024 block-group row. Code:
+`src/hre/data/fetch_ct_crosswalk.py`, applied in `build_state_inputs.py`.
 
 **Transit.** Every stop in a bounding box 1.5 degrees around the state's
 county internal points is saved; at build time a stop is "major" when its GTFS
@@ -176,8 +192,8 @@ permits are an allocation, not an observation.
 **ACS block-group estimates carry large margins of error.** They are used only
 summed over many block groups (homes within half a mile of a major stop),
 never singly. Block groups are 2020 geography; the 2020-2024 ACS uses the same
-geography, and for New Hampshire and Utah every center-of-population block
-group has an ACS row.
+geography, and for New Hampshire, Utah and (after the planning-region recode
+above) Connecticut every center-of-population block group has an ACS row.
 
 **Block-group land area is not available** without the TIGER shapefiles we
 chose not to download (decision 36); `land_sqmi` is null for block groups and

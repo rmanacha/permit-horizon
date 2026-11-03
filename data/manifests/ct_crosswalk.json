@@ -1,0 +1,14 @@
+{
+  "files": {
+    "ct_crosswalk/acs22_cousub22_blkgrp20_st09.txt": {
+      "bytes": 394043,
+      "fetched_at": "2026-11-03T22:14:45Z",
+      "sha256": "06957a5e777dc96da4c678a79d27dce6617cfbd510c9611dbf7720c3cd16c5bd",
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2022/acs22_cousub22_blkgrp20_st09.txt",
+      "vintage": "2022 county subdivisions to 2020 block groups (ACS 2022 relationship files)"
+    }
+  },
+  "license": "U.S. Census Bureau, public domain (U.S. government work)",
+  "notes": "Maps each Connecticut 2020 block group (legacy county code) to the planning region it lies in, so it joins the Gazetteer and the ACS 2020-2024.",
+  "source": "ct_crosswalk"
+}

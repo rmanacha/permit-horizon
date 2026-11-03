@@ -20,6 +20,7 @@ from hre.data import (
     fetch_bps,
     fetch_cbsa,
     fetch_cenpop,
+    fetch_ct_crosswalk,
     fetch_fhfa,
     fetch_gazetteer,
     fetch_nzlud,
@@ -37,7 +38,7 @@ class MissingSource(RuntimeError):
 
 
 def required_files(state: StateRef, data_dir: Path | None) -> dict[str, Path]:
-    return {
+    files = {
         "gazetteer": fetch_gazetteer.gazetteer_path(data_dir),
         "cbsa": fetch_cbsa.cbsa_path(data_dir),
         "bps (latest county file)": fetch_bps.county_file(fetch_bps.COUNTY_YEARS[-1], data_dir),
@@ -50,6 +51,9 @@ def required_files(state: StateRef, data_dir: Path | None) -> dict[str, Path]:
         "nzlud": fetch_nzlud.nzlud_dir(data_dir) / "nzlud_msa.csv",
         "aclf (latest)": fetch_aclf.aclf_path(state, fetch_aclf.VINTAGES[-1][1], data_dir),
     }
+    if state.fips == fetch_ct_crosswalk.CT_FIPS:
+        files["ct block-group crosswalk"] = fetch_ct_crosswalk.crosswalk_path(data_dir)
+    return files
 
 
 def _check_required(state: StateRef, data_dir: Path | None, lenient: bool) -> list[str]:
@@ -119,6 +123,13 @@ def build_state(code: str, data_dir: Path | None = None, *, lenient: bool = Fals
         counties.append(c)
 
     bg_rows = fetch_cenpop.load_cenpop(state.fips, data_dir)
+    if state.fips == fetch_ct_crosswalk.CT_FIPS and fetch_ct_crosswalk.crosswalk_path(data_dir).exists():
+        bg_rows, unmatched = fetch_ct_crosswalk.remap_block_groups(
+            bg_rows, fetch_ct_crosswalk.load_block_group_regions(data_dir))
+        notes.append(f"block groups: {len(bg_rows) - len(unmatched)} of {len(bg_rows)} 2020 block groups "
+                     "recoded from the legacy counties to the planning regions with the Census 2022 "
+                     "town-to-2020-block-group relationship file (tract and block-group codes unchanged; "
+                     "a block group in two regions goes to the one with more land).")
     acs_bg = fetch_acs.load_block_group_acs(state.fips, data_dir)
     stops = fetch_transit.load_major_stops(state.fips, data_dir)
     county_fips = {c.fips for c in counties}

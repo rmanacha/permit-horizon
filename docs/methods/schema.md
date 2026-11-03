@@ -64,8 +64,8 @@ exposure, where they are summed over many block groups.
 
 | Field | Meaning | Source and rule |
 |---|---|---|
-| `geoid` | 12-digit block-group code (state 2 + county 3 + tract 6 + block group 1) | 2020 centers of population |
-| `county_fips` | first five digits of `geoid` | |
+| `geoid` | 12-digit block-group code (state 2 + county 3 + tract 6 + block group 1) | 2020 centers of population; for Connecticut the county part is recoded from the legacy county to the planning region with the Census relationship file `acs22_cousub22_blkgrp20_st09.txt` (tract and block group unchanged; a block group in two regions goes to the one with more land), so it matches the Gazetteer and the ACS 2020-2024 |
+| `county_fips` | first five digits of `geoid` (a planning region in Connecticut) | |
 | `pop_center_lat`, `pop_center_lon` | the 2020 **center of population**: the point where the block group's residents balance, which is where a half-mile transit test should be measured from (a geometric centroid of a large rural block group can be miles from anyone) | Census `CenPop2020_Mean_BG{SS}.txt` |
 | `population` | 2020 Census population | same file |
 | `housing_units`, `sf_detached`, `units_5plus` | as for counties (B25001, B25024) for the block group, 2020-2024 ACS; `null` when the ACS has no row for a 2020 block group | ACS bulk, rows `1500000US...` |

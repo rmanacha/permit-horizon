@@ -70,6 +70,7 @@ def fetch(
         fetch_bps,
         fetch_cbsa,
         fetch_cenpop,
+        fetch_ct_crosswalk,
         fetch_fhfa,
         fetch_gazetteer,
         fetch_hcd,
@@ -96,6 +97,8 @@ def fetch(
             raise typer.BadParameter(f"{st.usps} is the synthetic demo state; nothing to fetch")
         typer.echo(f"{st.usps}: cenpop, aclf ({len(fetch_aclf.VINTAGES)} vintages), transit stops, ntd")
         fetch_cenpop.fetch_cenpop(st.fips, dd, force=force)
+        if st.fips == fetch_ct_crosswalk.CT_FIPS:
+            fetch_ct_crosswalk.fetch_ct_crosswalk(dd, force=force)
         fetch_aclf.fetch_aclf(st, dd, force=force)
         counties = fetch_gazetteer.load_counties(st.fips, dd)
         fetch_transit.fetch_ntm_stops(st, counties, dd, force=force)
