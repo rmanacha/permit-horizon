@@ -1,0 +1,14 @@
+{
+  "files": {
+    "rail_supplement/ct_hartford_line_gtfs.zip": {
+      "bytes": 5765335,
+      "fetched_at": "2026-11-03T22:37:31Z",
+      "sha256": "03e8bc27defd6b3a501c760592ad0ed196b5b88db0a5380ba855e55c999f9d0d",
+      "url": "https://ctrides.com/hlgtfs.zip",
+      "vintage": "feed current on the fetch date (service dates in its feed_info.txt or calendar.txt)"
+    }
+  },
+  "license": "CTtransit GTFS Data Terms of Use: non-exclusive, limited, revocable right to use, reproduce and redistribute; no use of CTtransit trademarks; provided as is",
+  "notes": "Operator GTFS feed used only for the CTrail Hartford Line stations, which the National Transit Map lacks; see src/hre/data/fetch_rail_supplement.py.",
+  "source": "gtfs_ct_hartford_line"
+}

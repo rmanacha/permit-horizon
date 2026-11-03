@@ -43,6 +43,26 @@ Hampshire no agency reports a rail mode; the three rail stops inside the state
 (Dover, Durham, Exeter) belong to Amtrak's Downeaster, which appears in the
 National Transit Map through the Northern New England Passenger Rail Authority feed.
 
+Supplement: the National Transit Map has no feed for Connecticut's CTrail
+Hartford Line (New Haven to Springfield) or Shore Line East (New Haven to New
+London); Metro-North is the only rail operator whose stops it has inside the
+state. For Connecticut the build adds the 9 Hartford Line stations from CTDOT's
+GTFS feed and the 11 Shore Line East stations from Amtrak's feed (agency 1230),
+keeping only stops that a rail trip of that line serves
+(`src/hre/data/fetch_rail_supplement.py`). With them, 119 Connecticut block
+groups (77,789 homes, 5.0%) are within half a mile of a major stop, against 93
+(61,965) on the National Transit Map alone; Hartford, Meriden, Wallingford, Old
+Saybrook and New London now count.
+
+The same cross-check run for every state (an agency reporting a rail or ferry
+mode to the NTD, but no major stop of that agency in the cached stops) found
+no other missing commuter-rail feed. It did find streetcars that the map has
+under the bus route type (Memphis Main Street trolley, El Paso streetcar,
+Milwaukee's The Hop) or not at all (DC's H Street streetcar), plus small items
+excluded by design or too small to matter (inclined planes in Johnstown and
+Chattanooga, the Cranberry Isles and Quad Cities ferries, the Seattle Center Monorail). Those streetcars
+are short downtown lines; they are listed under Limitations rather than patched.
+
 ## Where distance is measured from
 
 From each block group's **2020 center of population** (the mean location of its
@@ -76,6 +96,11 @@ of the same definition agree.
   not schedules, so "major" cannot mean "frequent"; a once-a-day commuter
   stop counts the same as a subway station. Rail is used as the proxy for
   frequent, permanent service.
+- **Some streetcars read as bus.** The Memphis, El Paso and Milwaukee
+  streetcars are in the National Transit Map with the bus route type, and DC's
+  H Street streetcar is absent, so homes near them are not counted. Amtrak is
+  not in the map either; an Amtrak-only station (for example Mystic,
+  Connecticut) does not count, which fits the rail-as-frequent-service proxy.
 - **Planned lines are not included.** Only stops in agencies' current GTFS
   feeds appear; a line under construction counts only after it opens.
 - **A whole block group is in or out.** Homes are assigned by the center of

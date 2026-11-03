@@ -25,6 +25,8 @@ Every source is a keyless public download; no API key or account is required.
 | Core-based statistical area delineation | OMB Bulletin 23-01 via Census, `https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2023/delineation-files/list1_2023.xlsx` | July 2023 | 2026-11-03 | public domain | public |
 | House Price Index, county, annual, all-transactions | Federal Housing Finance Agency, `https://www.fhfa.gov/hpi/download/annual/hpi_at_county.xlsx` | through 2025 (updated 2026-03-31) | 2026-11-03 | freely available; cite "Source: FHFA HPI". **This product uses FHFA data but is neither endorsed nor certified by FHFA.** "FHFA HPI" is a registered trademark and is not part of our product name | public |
 | National Transit Map, stops | Bureau of Transportation Statistics (NTAD), `https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0` | feeds compiled September 2026 (per-stop `download_date` in the manifest) | 2026-11-03 | public domain for 1,237 of 1,239 agency feeds, CC-BY-3.0 US for 2; attribution to BTS/NTAD | public |
+| CTrail Hartford Line GTFS (stations only) | Connecticut DOT, `https://ctrides.com/hlgtfs.zip` (linked from `https://www.cttransit.com/about/developers`) | feed current on the fetch date (service 2026-10-05 to 2027-10-04) | 2026-11-03 | CTtransit GTFS Data Terms of Use: non-exclusive, limited, revocable right to use, reproduce and redistribute; no CTtransit trademarks; as is | public (state) |
+| Amtrak GTFS, Shore Line East stations only (agency 1230) | Amtrak, `https://content.amtrak.com/content/gtfs/GTFS.zip` (named by CTtransit as the current Shore Line East feed) | feed current on the fetch date (service 2026-11-04 to 2027-11-01) | 2026-11-03 | no licence or terms published for the feed; only station coordinates are used and the file is not redistributed | public (federal corporation) |
 | National Transit Database, annual service by mode | U.S. DOT, `https://data.transportation.gov/resource/wwdp-t4re.json` | report year 2024 | 2026-11-03 | public domain | public |
 | National Zoning and Land Use Database (NZLUD), metro and municipal tables | Mleczko and Desmond, `https://github.com/mtmleczko/nzlud` (`nzlud_msa.csv`, `nzlud_muni.csv`) | 2019-2022 survey, repository main branch | 2026-11-03 | MIT | third-party (academic) |
 | Housing Element Annual Progress Report, Table A2 | California HCD via data.ca.gov, `https://publish.data.ca.gov/dataset/81b0841f-2802-403e-b48e-2ef4b751f77c/resource/fe505d9b-8c36-42ba-ba30-08bc4f34e022/download/tablea2.csv` | resource last modified 2026-10-30 (report years 2018-2025) | 2026-11-03 | data.ca.gov shows "License not specified"; HCD's APR data page states the data are public with no restrictions on use; provenance retained | public (state) |
@@ -94,6 +96,16 @@ route types include 0 (tram, streetcar, light rail), 1 (subway), 2 (rail) or 4
 nodes and boarding areas dropped). Distance from each block group's center of
 population to the nearest major stop is the haversine great-circle distance in
 statute miles. Method and limits: `docs/methods/transit.md`.
+
+**Rail stops the National Transit Map lacks.** The map has no feed for
+Connecticut's CTrail Hartford Line or Shore Line East, so for Connecticut the
+build adds the stations served by those lines' trips from the operators' own
+GTFS feeds (9 Hartford Line stations from CTDOT's feed, 11 Shore Line East
+stations from Amtrak's feed, where Shore Line East is agency 1230). Code:
+`src/hre/data/fetch_rail_supplement.py`; one manifest per feed
+(`gtfs_ct_hartford_line.json`, `gtfs_amtrak.json`). CTDOT's feed also lists
+Shore Line East stops, but with no trips, the bus route type and station names
+attached to the wrong points, which is why Amtrak's feed is used for that line.
 
 **OMB delineation.** County to CBSA, with `metro_role` "central" or "outlying"
 only inside metropolitan statistical areas; micropolitan counties are "none".

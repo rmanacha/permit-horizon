@@ -25,6 +25,7 @@ from hre.data import (
     fetch_gazetteer,
     fetch_nzlud,
     fetch_pep,
+    fetch_rail_supplement,
     fetch_transit,
 )
 from hre.data.states import StateRef, lookup
@@ -53,6 +54,8 @@ def required_files(state: StateRef, data_dir: Path | None) -> dict[str, Path]:
     }
     if state.fips == fetch_ct_crosswalk.CT_FIPS:
         files["ct block-group crosswalk"] = fetch_ct_crosswalk.crosswalk_path(data_dir)
+    for feed in fetch_rail_supplement.feeds_for(state.fips):
+        files[f"rail supplement ({feed.line})"] = fetch_rail_supplement.feed_path(feed, data_dir)
     return files
 
 
@@ -132,6 +135,9 @@ def build_state(code: str, data_dir: Path | None = None, *, lenient: bool = Fals
                      "a block group in two regions goes to the one with more land).")
     acs_bg = fetch_acs.load_block_group_acs(state.fips, data_dir)
     stops = fetch_transit.load_major_stops(state.fips, data_dir)
+    extra_stops, extra_notes = fetch_rail_supplement.load_supplement_stops(state.fips, data_dir)
+    stops += extra_stops
+    notes.extend(extra_notes)
     county_fips = {c.fips for c in counties}
     bgs: list[BlockGroupInputs] = []
     for r in bg_rows:

@@ -76,6 +76,7 @@ def fetch(
         fetch_hcd,
         fetch_nzlud,
         fetch_pep,
+        fetch_rail_supplement,
         fetch_transit,
     )
 
@@ -103,6 +104,7 @@ def fetch(
         counties = fetch_gazetteer.load_counties(st.fips, dd)
         fetch_transit.fetch_ntm_stops(st, counties, dd, force=force)
         fetch_transit.fetch_ntd_modes(st, dd, force=force)
+        fetch_rail_supplement.fetch_rail_supplement(st.fips, dd, force=force)
     if hcd:
         typer.echo("hcd: California APR Table A2 (about 295 MB)")
         fetch_hcd.fetch_hcd(dd, force=force)

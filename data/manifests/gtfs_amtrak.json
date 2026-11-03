@@ -1,0 +1,14 @@
+{
+  "files": {
+    "rail_supplement/amtrak_gtfs.zip": {
+      "bytes": 18572364,
+      "fetched_at": "2026-11-03T22:37:31Z",
+      "sha256": "6e9a327fff2e9dc0c2c6667fb64bd60013a57bc02f03fda3b00eff0b52dbcd93",
+      "url": "https://content.amtrak.com/content/gtfs/GTFS.zip",
+      "vintage": "feed current on the fetch date (service dates in its feed_info.txt or calendar.txt)"
+    }
+  },
+  "license": "Amtrak publishes no licence or terms for its GTFS feed; public download, station locations only are used and the file is not redistributed",
+  "notes": "Operator GTFS feed used only for the Shore Line East stations, which the National Transit Map lacks; see src/hre/data/fetch_rail_supplement.py.",
+  "source": "gtfs_amtrak"
+}
