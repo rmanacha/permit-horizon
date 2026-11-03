@@ -48,7 +48,7 @@ def combined(state: StateInputs, params: Params, ctx: dict[str, Any], law: dict[
     shares = {n: 1.0 - float(law.get(n, {}).get("current_strength", 0.0)) for n in SPECS}
     est, parts, solo, adj = {}, {}, {}, {}
     for lv in LEVEL_KEYS:
-        p = {n: level_set(params, s.ids, lv) for n, s in SPECS.items()}
+        p = {n: level_set(params, s.band, lv) for n, s in SPECS.items()}
         alone = {n: evaluate(s, state, p[n], ctx, shares[n])["permits"] for n, s in SPECS.items()}
         miles = float(p["tod"]["tod_distance_miles"])
         central = np.array([c.metro_role == "central" for c in state.counties])

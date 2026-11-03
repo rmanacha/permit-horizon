@@ -11,6 +11,7 @@
     hre validate --baseline         the baseline backtest (both band rules) -> docs/evidence/
     hre validate --adu-tiers        ADU value tiers + 1,000-split city check (needs make hcd)
     hre validate --nrc --fetch      completions per permit by structure type (Census NRC)
+    hre validate --overview         sanity review of results/*.json -> docs/evidence/results_overview.md
     hre run --state NH --scenarios baseline           results/NH.json (three-layer schema)
     hre run --all                   results/{ST}.json for every jurisdiction with a processed file
     hre export --out web/public/results/   the web bundle (results, index, registers, meta)
@@ -158,6 +159,7 @@ def validate(
     baseline: Annotated[bool, typer.Option("--baseline", help="backtest the baseline under both band rules")] = False,
     adu_tiers: Annotated[bool, typer.Option("--adu-tiers", help="calibrate ADU value tiers from HCD Table A2 + ACS")] = False,
     nrc: Annotated[bool, typer.Option("--nrc", help="completions per permit from the Census NRC annual tables")] = False,
+    overview: Annotated[bool, typer.Option("--overview", help="sanity review of results/*.json -> docs/evidence/results_overview.md")] = False,
     write_register: Annotated[bool, typer.Option("--write-register", help="with --baseline, --adu-tiers or --nrc: write results into parameters.yaml")] = False,
     data_dir: Annotated[Path | None, typer.Option("--data-dir")] = None,
 ) -> None:
@@ -165,6 +167,19 @@ def validate(
     from hre.schema import validate as validate_schema
 
     dd = _data_dir(data_dir)
+    if overview:
+        import datetime as dt
+
+        from hre.validation import results_overview as ov
+
+        dest = write or Path("docs/evidence/results_overview.md")
+        try:
+            n = ov.write(Path("results"), dest, dt.date.today().isoformat())
+        except FileNotFoundError as e:
+            typer.echo(str(e), err=True)
+            raise typer.Exit(code=2) from e
+        typer.echo(f"wrote {dest} ({n} jurisdictions)")
+        return
     if nrc:
         import datetime as dt
 
@@ -295,7 +310,7 @@ def validate(
             write.write_text("\n".join(lines) + "\n", encoding="utf-8")
             typer.echo(f"wrote {write}")
     if not aclf and processed is None:
-        typer.echo("nothing to do: pass --aclf, --processed, --baseline, --adu-tiers or --nrc", err=True)
+        typer.echo("nothing to do: pass --aclf, --processed, --baseline, --adu-tiers, --nrc or --overview", err=True)
         raise typer.Exit(code=2)
 
 

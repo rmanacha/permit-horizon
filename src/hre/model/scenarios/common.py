@@ -15,10 +15,13 @@ From that one function everything else follows, so the layers can never disagree
                  x conversion                                              (permits)
     total      = baseline + increment in permits, low with low, high with high
 
-Low, mid and high are assumption sets: every swung parameter of the scenario at the end
-that lowers (low) or raises (high) the result, using each register entry's ``direction``.
-Direction-0 entries stay at mid in the sets; the tornado swings them only when named in
-``Spec.always`` (the price exponent gamma, whose effect changes sign with the county's
+Low, mid and high are assumption sets (decision 72): the parameters that carry the source
+evidence's range (``Spec.band``: the source rate with its paired ramp, or the builder
+response) move to the end that lowers (low) or raises (high) the result, using each register
+entry's ``direction``; every other parameter stays at mid. The tornado swings every id one at
+a time, and the joint cases move all of them at once, so the joint favorable case is the
+widest view and the band is the evidence range. Direction-0 entries are swung only when named
+in ``Spec.always`` (the price exponent gamma, whose effect changes sign with the county's
 value). Nothing here is a probability.
 """
 
@@ -52,6 +55,7 @@ class Spec:
     label: str
     outcome: str
     ids: tuple[str, ...]
+    band: tuple[str, ...]
     ramp_id: str
     formula: str
     interpretation: str
@@ -111,7 +115,7 @@ def run_scenario(spec: Spec, state: StateInputs, params: Params, ctx: dict[str, 
     """One scenario's block of the results file (docs/methods/results_schema.md)."""
     strength = float(law.get("current_strength", 0.0))
     share = 1.0 - strength
-    sets = {lv: level_set(params, spec.ids, lv) for lv in LEVEL_KEYS}
+    sets = {lv: level_set(params, spec.band, lv) for lv in LEVEL_KEYS}
     ev = {lv: evaluate(spec, state, sets[lv], ctx, share) for lv in LEVEL_KEYS}
     years = ctx["forecast_years"]
     names = [(c.fips, c.name) for c in state.counties]
@@ -173,6 +177,7 @@ def run_scenario(spec: Spec, state: StateInputs, params: Params, ctx: dict[str, 
         "diagnostics": spec.diagnostics(state, params, ctx) if spec.diagnostics else {},
         "limits": list(spec.limits),
         "notes": list(mid["core"].factors.get("notes", [])),
+        "band_ids": list(spec.band),
         "levels_used": {lv: {pid: sets[lv].level_of(pid) for pid in spec.ids} for lv in LEVEL_KEYS},
     }
 

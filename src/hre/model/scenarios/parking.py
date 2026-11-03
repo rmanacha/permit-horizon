@@ -80,6 +80,7 @@ SPEC = Spec(
     label="No minimum parking requirements",
     outcome="cost_response_proxy",
     ids=IDS,
+    band=("builder_response_override",),
     ramp_id="ramp_immediate",
     core=core,
     formula=("permits = baseline 5+ permits x builder response x (required spaces x (1 - share still built) x "

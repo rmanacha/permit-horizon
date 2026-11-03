@@ -32,11 +32,11 @@ validator checks it again.
 
 | Set | ADU | Missing middle | TOD | Parking | Fees | Sum of parts | Package |
 |---|---|---|---|---|---|---|---|
-| Low | 34.8 | 0 | 0 | 0 | 0 | 34.8 | 34.8 |
+| Low | 41.1 | 0 | 0 | 0 | 0 | 41.1 | 41.1 |
 | Mid, alone | 276.9 | 1,034.9 | 3.0 | 157.3 | 933.5 | 2,405.6 | |
 | Mid, in the package | 276.6 | 1,033.1 | 3.0 | 157.3 | 933.5 | | **2,403.6** |
-| High, alone | 1,846.5 | 2,518.9 | 34.7 | 2,476.6 | 4,435.0 | 11,311.6 | |
-| High, in the package | 1,840.9 | 2,514.7 | 34.7 | 2,476.6 | 4,435.0 | | **11,301.9** |
+| High, alone | 1,556.3 | 1,845.1 | 34.7 | 595.6 | 3,535.0 | 7,566.8 | |
+| High, in the package | 1,552.9 | 1,842.1 | 34.7 | 595.6 | 3,535.0 | | **7,560.3** |
 
 At mid, rule 1 moves 302 detached homes near New Hampshire's few rail and ferry stops out of the
 missing-middle exposure (1,034.9 to 1,033.1 permits), and rule 2 removes about 308 redeveloped

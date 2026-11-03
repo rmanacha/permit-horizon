@@ -31,7 +31,7 @@ metros respond less (Rockingham 0.33, Hillsborough 0.43, non-metro 0.48% per 1%)
 - 7,260 baseline permits in 5+ unit buildings. Hillsborough: NZLUD Manchester-Nashua 1.795 spaces ×
   0.21 × $52,000 = $19,606, which is 3.71% of a $528,312 new home (421,100 × 1.2546); its 2,205
   baseline 5+ permits × 0.75 × 0.0371 = **61 permits**. Rockingham (Boston metro, 1.91 spaces) 58; Strafford (outlying,
-  density 0.5) 25. State: **157 permits** (0 to 2,477); total 24,407.
+  density 0.5) 25. State: **157 permits** (0 to 596, the builder response alone; joint favorable 2,477); total 24,407.
 - Adam's v2.0 NH: 0 / 100 / 400, with 1 space per home everywhere and no density factor.
 - Grid: `scenarios.parking.grid` has the increment for all 81 combinations of response, share still
   built, cost per space and price ratio, for the front-end's toggles.

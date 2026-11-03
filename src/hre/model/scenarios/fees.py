@@ -102,6 +102,7 @@ SPEC = Spec(
     label="Development and impact fees cut in half",
     outcome="cost_response_proxy",
     ids=IDS,
+    band=("builder_response_override",),
     ramp_id="ramp_immediate",
     core=core,
     formula="permits = baseline permits x builder response x (fee cut / new-home price); fee cut = $50,000 x 50%",

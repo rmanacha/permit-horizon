@@ -83,6 +83,7 @@ SPEC = Spec(
     label="Missing middle: two to four homes on single-family lots",
     outcome="net_permits",
     ids=IDS,
+    band=("mm_rate_per_lot", "ramp_missing_middle"),
     ramp_id="ramp_missing_middle",
     core=core,
     formula=("net permits = detached homes in central metro counties x single-family-only share x rate per lot "

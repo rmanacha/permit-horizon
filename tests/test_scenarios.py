@@ -58,8 +58,11 @@ def test_missing_middle_by_hand(zz_results, params):
     market = (350000 / 581500) ** 0.5
     assert s["increment"]["estimate"]["mid"] == pytest.approx(bench * market)
     assert s["benchmark"]["by_county"][1]["mid"] == 0.0     # Birch is not in a metro
-    # high: the gross ceiling times the net-new factor (0.83), code penalty 1.0, share 0.9
-    assert s["benchmark"]["high"] == pytest.approx(12000 * 0.9 * 0.004 * 0.83 * 1.0 * 5)
+    # high set moves only the band (rate and ramp): the gross ceiling x the mid net-new factor 0.76,
+    # with the single-family-only share (0.8) and code penalty (0.9) at mid (decision 72)
+    assert s["benchmark"]["high"] == pytest.approx(12000 * 0.8 * 0.004 * 0.76 * 0.9 * 5)
+    # the joint favorable case moves everything: share 0.9, net 0.83, penalty 1.0, gamma 0 (Alder is below Portland)
+    assert s["joint"]["favorable"]["value"] == pytest.approx(12000 * 0.9 * 0.004 * 0.83 * 1.0 * 5)
 
 
 def test_tod_by_hand(zz_results, params):
@@ -140,6 +143,13 @@ def test_monotone_in_the_rate(zz_state, params, ctx):
                       (SPECS["fees"], "builder_response_override")):
         lo, hi = (evaluate(spec, zz_state, params.with_values({pid: v}), ctx, 1.0)["permits"] for v in (0.001, 0.002))
         assert hi >= lo
+
+
+def test_band_moves_only_the_evidence_range(zz_results):
+    s = zz_results["scenarios"]["parking"]
+    assert s["band_ids"] == ["builder_response_override"]
+    assert s["levels_used"]["high"]["parking_cost_per_space"] == "mid"
+    assert s["joint"]["favorable"]["value"] > s["increment"]["estimate"]["high"]
 
 
 def test_level_sets_follow_direction(params):

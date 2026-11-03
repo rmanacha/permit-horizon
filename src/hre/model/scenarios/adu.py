@@ -66,6 +66,7 @@ SPEC = Spec(
     label="Accessory dwelling units by right",
     outcome="completed_homes",
     ids=(*TIER_IDS, "ramp_adu", "adu_permits_per_completion"),
+    band=(*TIER_IDS, "ramp_adu"),
     ramp_id="ramp_adu",
     core=core,
     formula=("ADUs completed = detached homes x tier rate x 5 years; increment = that x newly affected "

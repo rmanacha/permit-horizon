@@ -25,9 +25,9 @@ result; dearer: it lowers it); the tornado swings it from 0 to 1 (decision 71).
 ## New Hampshire, worked
 
 - Central metropolitan counties: Hillsborough (100,545 detached homes) and Rockingham (89,774):
-  190,319. Benchmark mid: 190,319 × 0.8 × 0.001705 × 0.9 × 5 = **1,168** net permits (0 to 2,843).
+  190,319. Benchmark mid: 190,319 × 0.8 × 0.001705 × 0.9 × 5 = **1,168** net permits (0 to 2,083; the high is the gross ceiling × 0.76 net-new).
 - Market adjustment: Hillsborough (421,100 ÷ 581,500)^0.5 = 0.851, Rockingham 0.925. Increment
-  mid: 617.1 × 0.851 + 551.0 × 0.925 = **1,035 permits** (0 to 2,519). Total 25,285.
+  mid: 617.1 × 0.851 + 551.0 × 0.925 = **1,035 permits** (0 to 1,845; joint favorable 2,843). Total 25,285.
 - No current-law file for missing middle in NH yet (Phase 5), so the newly affected share is 1.
 - Diagnostics on the same chain, never in the band: Minneapolis gross 430, the
   Spokane/Austin/Charlotte cluster 1,302, Arlington 178; all metropolitan counties as the

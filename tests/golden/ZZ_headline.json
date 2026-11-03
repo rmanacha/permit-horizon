@@ -6,8 +6,8 @@
    "mid": 61.9
   },
   "increment": {
-   "high": 418.8418,
-   "low": 3.486,
+   "high": 353.0238,
+   "low": 4.1135,
    "mid": 40.1731
   },
   "outcome": "completed_homes",
@@ -19,18 +19,18 @@
   "mid": 1670.0
  },
  "combined": {
-  "high": 1059.3895,
-  "low": 3.486,
+  "high": 785.4583,
+  "low": 4.1135,
   "mid": 182.2165
  },
  "fees": {
   "benchmark": {
-   "high": 362.3029,
+   "high": 288.7796,
    "low": 0.0,
    "mid": 76.2622
   },
   "increment": {
-   "high": 362.3029,
+   "high": 288.7796,
    "low": 0.0,
    "mid": 76.2622
   },
@@ -39,12 +39,12 @@
  },
  "missing_middle": {
   "benchmark": {
-   "high": 179.28,
+   "high": 131.328,
    "low": 0.0,
    "mid": 73.656
   },
   "increment": {
-   "high": 139.0884,
+   "high": 101.8865,
    "low": 0.0,
    "mid": 57.1436
   },
@@ -53,12 +53,12 @@
  },
  "parking": {
   "benchmark": {
-   "high": 142.1623,
+   "high": 42.3759,
    "low": 0.0,
    "mid": 11.1908
   },
   "increment": {
-   "high": 142.1623,
+   "high": 42.3759,
    "low": 0.0,
    "mid": 11.1908
   },

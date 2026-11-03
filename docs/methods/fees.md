@@ -22,7 +22,7 @@ price (decision 61), so the fee pass-through (NAHB $1.20 per $1) belongs to the 
 ## New Hampshire, worked
 
 - 24,250 baseline permits. Hillsborough: $25,000 ÷ $528,312 = 4.73%; × 0.75 = 3.55% of its 4,810
-  permits ≈ 171. State: **934 permits** (0 to 4,435); total 25,184.
+  permits ≈ 171. State: **934 permits** (0 to 3,535; joint favorable 4,435); total 25,184.
 - **Reproducing Adam's number:** with his inputs (22,690 permits, statewide median $402,500 × 1.2546)
   the same formula gives 22,690 × 0.75 × 25,000 ÷ 504,977 = **842**, his published mid
   (`tests/test_scenarios.py::test_fees_reproduce_adams_nh_number`). Ours is higher because our

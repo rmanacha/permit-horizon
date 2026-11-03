@@ -27,3 +27,15 @@ At mid: 10,000 × 0.75 × 25,000 × 1.2 ÷ (400,000 × 1.2546) = 448.
 Joint favorable: response 2.84, pass-through 1.66, price ratio 1.00: 10,000 × 2.84 × 25,000 × 1.66 ÷ 400,000 = 2,947. Joint unfavorable: response 0, so 0.
 
 Phase 3 runs the tornado and joint cases for each scenario's five-year increment and stores them in the results file (`tornado[]`, `joint{favorable, unfavorable}`).
+
+## Which assumptions move in the low and high sets (Phase 3, decision 72)
+
+Each scenario names its **band** parameters, the ones that carry the source evidence's range:
+the source rate with its paired ramp (ADU tier rates and ramp, missing-middle rate and ramp,
+TOD rate and ramp) or the builder response (parking, fees). Only these move in the low and
+high sets; every other parameter (single-family-only share, code penalty, spaces still built,
+cost per space, price ratio, conversion factors, gamma) stays at mid there and is explored in
+the tornado and the joint cases. So the three views nest: the tornado shows one assumption at a
+time, the band shows the evidence range, and the joint favorable and unfavorable cases show
+every assumption at its extreme at once (always at least as wide as the band; a property test
+checks it). Adam Ruege's v2.0 reads the same way (NH parking high 400, joint favorable 1,300).

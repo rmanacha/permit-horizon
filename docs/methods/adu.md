@@ -33,7 +33,7 @@ challenge's terms, and a state's own rules enter through the current-law strengt
 - Current law: RSA 674:72 already provides three of the four benchmark features, so strength 0.75
   and a newly affected share of 0.25 (decision 62, human review pending).
 - Increment at mid: 1,707 ÷ 5 × 0.25 × (0.25 + 0.40 + 0.55 + 0.70 + 0.85) = 235 completed ADUs;
-  × 1.18 = **277 permits** (35 to 1,846). Total **24,527** permits at mid.
+  × 1.18 = **277 permits** (41 to 1,556; the joint favorable case, every assumption at its best end, is 1,846). Total **24,527** permits at mid.
 - The assumption that moves it most: the tier 1 rate (0.011% to 0.132% a year gives 140 to 750).
 - Adam Ruege's v2.0 NH benchmark was 700 / 2,000 / 4,700 with his tier rates (tier 1 mid 0.083%
   against our 0.062%, de-duplicated completions; `tiers.md`).

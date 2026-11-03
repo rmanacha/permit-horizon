@@ -76,6 +76,7 @@ SPEC = Spec(
     label="Transit-oriented density near rail and ferry stops",
     outcome="stock_change",
     ids=IDS,
+    band=("tod_rate_per_home", "ramp_tod"),
     ramp_id="ramp_tod",
     core=core,
     formula=("stock change = homes within half a mile of a rail or ferry stop x rate per home x 5 years; "
