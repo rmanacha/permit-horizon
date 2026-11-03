@@ -9,6 +9,7 @@
     hre validate --aclf --states NH,UT,AZ,CA      the address-count doubling check
     hre validate --processed data/processed/NH.json   check a file against the schema
     hre validate --baseline         the baseline backtest (both band rules) -> docs/evidence/
+    hre validate --adu-tiers        ADU value tiers + 1,000-split city check (needs make hcd)
     hre run --state NH --scenarios baseline           results/NH.json (three-layer schema)
     hre export --register-md        the assumption register as a Markdown table
 
@@ -152,13 +153,44 @@ def validate(
     write: Annotated[Path | None, typer.Option("--write", help="write the ratio table as Markdown here")] = None,
     processed: Annotated[Path | None, typer.Option("--processed", help="a processed JSON to validate")] = None,
     baseline: Annotated[bool, typer.Option("--baseline", help="backtest the baseline under both band rules")] = False,
-    write_register: Annotated[bool, typer.Option("--write-register", help="with --baseline: write P10/P90 into parameters.yaml")] = False,
+    adu_tiers: Annotated[bool, typer.Option("--adu-tiers", help="calibrate ADU value tiers from HCD Table A2 + ACS")] = False,
+    write_register: Annotated[bool, typer.Option("--write-register", help="with --baseline or --adu-tiers: write results into parameters.yaml")] = False,
     data_dir: Annotated[Path | None, typer.Option("--data-dir")] = None,
 ) -> None:
     """Checks: the ACLF doubling ratio, a processed file against the schema, or the baseline backtest."""
     from hre.schema import validate as validate_schema
 
     dd = _data_dir(data_dir)
+    if adu_tiers:
+        import datetime as dt
+
+        from hre.assumptions.loader import PARAMETERS_PATH
+        from hre.validation import calibrate_adu_tiers as cal
+
+        today = dt.date.today().isoformat()
+        cities = cal.load_cities(Path("data/processed"), dd)
+        fit = cal.fit_without_la(cities)
+        with_la, without_la = cal.split_check(cities, True), cal.split_check(cities, False)
+        dest = write or Path("docs/evidence/adu_tiers.md")
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(cal.render_markdown(cities, fit, with_la, without_la, today), encoding="utf-8")
+        typer.echo(f"cities: {len(cities.name)} (LA included in the count, excluded from the fit)")
+        typer.echo("bounds: " + ", ".join(f"${b:,.0f}" for b in fit.bounds))
+        for k in range(5):
+            typer.echo(f"   tier {k + 1}: {fit.n_cities[k]} cities, {100 * fit.low[k]:.3f}% / "
+                       f"{100 * fit.mid[k]:.3f}% / {100 * fit.high[k]:.3f}% a year")
+        typer.echo(f"split check: {with_la['inside']}/{with_la['splits']} inside with LA "
+                   f"(median {with_la['median_ratio']:.2f}x mid); {without_la['inside']}/"
+                   f"{without_la['splits']} without LA (median {without_la['median_ratio']:.2f}x)")
+        typer.echo(f"wrote {dest}")
+        if write_register:
+            names = cities.name
+            la = names.index(cal.LA)
+            la_rate = cities.completed[la] / (3 * cities.detached[la])
+            block = cal.register_block(fit, len(names) - 1, la_rate, today)
+            cal.write_register_tiers(block, PARAMETERS_PATH)
+            typer.echo(f"wrote 4 bounds and 15 rates into {PARAMETERS_PATH}")
+        return
     if baseline:
         import datetime as dt
 
@@ -233,7 +265,7 @@ def validate(
             write.write_text("\n".join(lines) + "\n", encoding="utf-8")
             typer.echo(f"wrote {write}")
     if not aclf and processed is None:
-        typer.echo("nothing to do: pass --aclf, --processed or --baseline", err=True)
+        typer.echo("nothing to do: pass --aclf, --processed, --baseline or --adu-tiers", err=True)
         raise typer.Exit(code=2)
 
 
