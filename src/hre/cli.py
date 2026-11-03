@@ -269,6 +269,94 @@ def validate(
         raise typer.Exit(code=2)
 
 
+def _git_sha() -> str:
+    import subprocess
+
+    try:
+        sha = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True,
+                             check=True).stdout.strip()
+        dirty = subprocess.run(["git", "status", "--porcelain", "--untracked-files=no"],
+                               capture_output=True, text=True, check=True).stdout.strip()
+        return sha + ("-dirty" if dirty else "")
+    except (OSError, subprocess.CalledProcessError):
+        return "unknown"
+
+
+@app.command()
+def run(
+    state: Annotated[str, typer.Option("--state", help="USPS code (ZZ is the synthetic demo state)")],
+    scenarios: Annotated[str, typer.Option("--scenarios", help="comma-separated; Phase 2: baseline")] = "baseline",
+    out: Annotated[Path | None, typer.Option("--out", help="results file (default results/{ST}.json)")] = None,
+    processed_dir: Annotated[Path, typer.Option("--processed-dir", help="folder with {ST}.json")] = Path("data/processed"),
+    data_dir: Annotated[Path | None, typer.Option("--data-dir", help="build the inputs in memory from this raw folder (e.g. data/sample) instead of reading the processed file")] = None,
+) -> None:
+    """Run the engine for one state and write the results JSON (docs/methods/results_schema.md)."""
+    import datetime as dt
+    import hashlib
+
+    from hre.assumptions.loader import ELASTICITIES_PATH, PARAMETERS_PATH, load_params
+    from hre.current_law.loader import register_digest
+    from hre.data.fetch_bps import VINTAGE as BPS_VINTAGE
+    from hre.model.run import run_state, validate_results
+    from hre.schema import StateInputs
+
+    code = state.strip().upper()
+    st = lookup(code)
+    if data_dir is not None:
+        from hre.build.build_state_inputs import build_state
+
+        si, _ = build_state(code, data_dir)
+        text = si.to_json()
+        input_ref = f"built in memory from {data_dir}"
+    else:
+        src = processed_dir / f"{code}.json"
+        if not src.exists():
+            typer.echo(f"{src} not found; run 'make data STATE={code}' first", err=True)
+            raise typer.Exit(code=2)
+        text = src.read_text(encoding="utf-8")
+        input_ref = str(src)
+    inputs = StateInputs.from_json(text)
+    params = load_params()
+    digest = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+    input_sha = hashlib.sha256(text.encode("utf-8")).hexdigest()
+    param_sha = digest(PARAMETERS_PATH)
+    git_sha = _git_sha()
+    meta = {
+        "build_id": f"{git_sha[:7]}-{hashlib.sha256((input_sha + param_sha).encode()).hexdigest()[:8]}",
+        "vintages": {**inputs.vintages, "bps_state_backtest": BPS_VINTAGE},
+        "git_sha": git_sha,
+        "run_date": dt.date.today().isoformat(),
+        "input": input_ref,
+        "input_sha256": input_sha,
+        "schema_version": inputs.schema_version,
+    }
+    registers = {
+        "parameters": {"path": "src/hre/assumptions/parameters.yaml", "sha256": param_sha,
+                       "entries": len(params.entries), "levels": "all mid unless a case says otherwise"},
+        "elasticities": {"path": "src/hre/assumptions/elasticities.yaml", "sha256": digest(ELASTICITIES_PATH)},
+        "current_law": {"path": f"src/hre/current_law/{code}.yaml", "sha256": register_digest(code)},
+    }
+    wanted = [s.strip() for s in scenarios.split(",") if s.strip()]
+    try:
+        results = run_state(inputs, params, wanted, meta, registers, state_name=st.name)
+    except NotImplementedError as e:
+        typer.echo(str(e), err=True)
+        raise typer.Exit(code=2) from e
+    problems = validate_results(results)
+    if problems:
+        typer.echo("results failed the schema check:\n  " + "\n  ".join(problems), err=True)
+        raise typer.Exit(code=1)
+    dest = out or Path("results") / f"{code}.json"
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(json.dumps(results, indent=1, sort_keys=False, allow_nan=False) + "\n", encoding="utf-8")
+    b = results["baseline"]["state"]
+    typer.echo(f"{code}: baseline {b['low']:,.0f} / {b['mid']:,.0f} / {b['high']:,.0f} permits "
+               f"{results['baseline']['forecast_years'][0]}-{results['baseline']['forecast_years'][-1]} "
+               f"(low / mid / high); build {meta['build_id']} -> {dest}")
+    for line in results["baseline"]["narrative"]:
+        typer.echo("   " + line)
+
+
 @app.command()
 def export(
     register_md: Annotated[bool, typer.Option("--register-md", help="the assumption register as Markdown")] = False,

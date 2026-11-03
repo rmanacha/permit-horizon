@@ -81,3 +81,6 @@ npm-debug.log*
 
 # The template's build/ rule is for build artifacts; the pipeline package is source.
 !src/hre/build/
+
+# Engine outputs (hre run): never commit results for real states
+results/
