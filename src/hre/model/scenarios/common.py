@@ -47,6 +47,10 @@ class Core:
     conversion: float
     homes_per_permit: float
     factors: dict[str, Any] = field(default_factory=dict)
+    # Linear ids that multiply only some counties' terms (parking's density factor applies only
+    # outside central metropolitan counties): {id: one bool per county}. Ids not listed here
+    # multiply every county.
+    linear_counties: dict[str, list[bool]] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
@@ -75,6 +79,8 @@ def level_set(params: Params, ids: tuple[str, ...], level: str) -> Params:
         return base
     want = {}
     for pid in ids:
+        if pid in params.values:       # a user value (hre run --set) holds in the low and high sets too
+            continue
         d = params.entry(pid).get("direction", 0)
         if d == 0:
             continue
@@ -188,11 +194,15 @@ def joint(spec: Spec, params: Params, run_fn: Callable[[Params], float], bars: l
 
     Starts from the high (low) assumption set, so an id that does not move the result at mid
     (the net-new factor only bites on the gross high rate) still sits at its favorable end, then
-    takes each tornado bar's measured end, which also places gamma.
+    takes each tornado bar's measured end, which also places gamma. Ids with a user value
+    (``hre run --set``) keep it.
     """
     start = level_set(params, spec.ids, "high" if direction == "favorable" else "low")
-    levels = {pid: start.level_of(pid) for pid in spec.ids if params.entry(pid).get("direction", 0) != 0}
+    levels = {pid: start.level_of(pid) for pid in spec.ids
+              if params.entry(pid).get("direction", 0) != 0 and pid not in params.values}
     for b in bars:
+        if b["id"] in params.values:   # a user value (hre run --set) stays fixed in the joint cases too
+            continue
         fav = b["favorable_end"]
         levels[b["id"]] = fav if direction == "favorable" else ("low" if fav == "high" else "high")
     j = joint_case(params, run_fn, direction, bars=bars)
@@ -204,14 +214,19 @@ def joint(spec: Spec, params: Params, run_fn: Callable[[Params], float], bars: l
 def components(spec: Spec, state: StateInputs, params: Params, mid: dict[str, Any], share: float) -> dict[str, Any]:
     """What the front-end needs to rescale the mid increment exactly when one parameter moves.
 
-    For every id in ``linear`` the increment is proportional to the value, so
-    new = old x new_value / old_value. Other ids need a grid cell or a rerun.
+    For every id in ``linear`` each county's increment is proportional to the value, so
+    new = old x new_value / old_value, county by county. An id in ``linear_counties`` multiplies
+    only the counties listed there (FIPS); every other linear id multiplies all of them. Other
+    ids need a grid cell, a tornado bar or a rerun. ``hre run`` writes this block unrounded so
+    the front-end's rescale is exact (tests/test_rescale_contract.py, web/scripts/rescale_equality.mjs).
     """
     c = mid["core"]
     return {
         "formula": spec.formula,
         "increment_mid_permits": mid["permits"],
         "linear_in": {pid: params[pid] for pid in spec.linear},
+        "linear_counties": {pid: [s.fips for s, keep in zip(state.counties, mask, strict=True) if keep]
+                            for pid, mask in c.linear_counties.items()},
         "newly_affected_share": share,
         "ramp_mid": list(params[spec.ramp_id]),
         "conversion_mid": c.conversion,

@@ -7,7 +7,8 @@ writes, from the results files ``hre run --all`` produced:
     {ST}.json        the results file as written by hre run (baseline, cross_check, five
                      scenarios with components and the parking and fee grids, combined)
     index.json       one row per jurisdiction: baseline and every scenario's mid and range
-    registers.json   the assumption register, every current-law file, the validation ledger
+    registers.json   the assumption register, every current-law file, the validation ledger,
+                     and every data source from data/manifests/ (licence, access dates, URLs)
     meta.json        vintages, run date, git sha, schema versions, counts
 
 Every results file is validated first; one that fails stops the export. The bundle is
@@ -30,6 +31,56 @@ from hre.data.states import lookup
 from hre.model.run import RESULTS_SCHEMA_VERSION, validate_results
 
 LEVELS = ("low", "mid", "high")
+MANIFESTS = Path(__file__).resolve().parents[2] / "data" / "manifests"
+
+# Display names for the data sources page (one per manifest in data/manifests/), and which
+# key of a results file's meta.vintages carries that source's vintage for the state.
+SOURCE_TITLES = {
+    "bps": ("Census Building Permits Survey, county and state annual files", "bps"),
+    "acs": ("American Community Survey 5-year summary files", "acs"),
+    "pep": ("Census Population Estimates, housing units by county", "pep"),
+    "nrc": ("Census New Residential Construction, completions per permit", "nrc"),
+    "cenpop": ("2020 Census centers of population by block group", "cenpop"),
+    "gazetteer": ("Census Gazetteer, counties", "gazetteer"),
+    "cbsa": ("OMB metropolitan and micropolitan area delineation", "cbsa"),
+    "fhfa": ("FHFA House Price Index, county, annual", "fhfa"),
+    "transit": ("National Transit Map stops and National Transit Database modes", "transit"),
+    "nzlud": ("National Zoning and Land Use Database (NZLUD)", "nzlud"),
+    "hcd": ("California HCD Annual Progress Report, Table A2 (ADU rates)", "hcd_adu_tiers"),
+    "ct_crosswalk": ("Connecticut towns to 2020 block groups (Census relationship file)", None),
+    "gtfs_ct_hartford_line": ("CTrail Hartford Line GTFS feed, stations only", None),
+    "gtfs_amtrak": ("Amtrak GTFS feed, Shore Line East stations only", None),
+    "aclf": ("Census Address Count Listing Files", "aclf"),
+}
+ONLY_FOR = {"ct_crosswalk": ["CT"], "gtfs_ct_hartford_line": ["CT"], "gtfs_amtrak": ["CT"]}
+NOT_IN_MODEL = {"aclf": ("Downloaded and checked, then excluded (decision 46): from July 2023 the published "
+                         "count reads about double the Census housing-unit estimates.")}
+
+
+def _sources(manifest_dir: Path = MANIFESTS) -> list[dict[str, Any]]:
+    """One row per manifest: what the data sources page shows (no file contents, no data)."""
+    rows = []
+    for p in sorted(manifest_dir.glob("*.json")):
+        m = json.loads(p.read_text(encoding="utf-8"))
+        files = m.get("files", {}) or {}
+        title, vintage_key = SOURCE_TITLES.get(p.stem, (p.stem, None))
+        where = []
+        for f in files.values():
+            url = str(f.get("url", "")).split("?")[0]
+            base = url.rsplit("/", 1)[0] + "/" if url.count("/") > 3 else url
+            if base and base not in where:
+                where.append(base)
+        fetched = sorted(str(f["fetched_at"])[:10] for f in files.values() if f.get("fetched_at"))
+        rows.append({
+            "id": p.stem, "title": title, "license": m.get("license"), "notes": m.get("notes"),
+            "files": len(files), "where": where[:4],
+            "accessed": [fetched[0], fetched[-1]] if fetched else None,
+            "vintages": sorted({str(f["vintage"]) for f in files.values() if f.get("vintage")})[:6],
+            "vintage_key": vintage_key, "only_for": ONLY_FOR.get(p.stem),
+            "in_model": p.stem not in NOT_IN_MODEL, "why_not": NOT_IN_MODEL.get(p.stem),
+            "manifest": f"data/manifests/{p.name}",
+        })
+    return rows
 
 
 def _row(r: dict[str, Any]) -> dict[str, Any]:
@@ -65,6 +116,7 @@ def registers() -> dict[str, Any]:
         "current_law_default": "States and scenarios with no file default to current strength 0: "
                                "\"No statewide law found; local permissions unverified.\"",
         "validation_ledger": {"status": "placeholder; Phase 5 fills it (decision 37)", "entries": []},
+        "sources": _sources(),
     }
 
 

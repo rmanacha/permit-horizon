@@ -1,13 +1,13 @@
 # Results schema (`results/{ST}.json`)
 
-Written by `hre run --state XX` (or `hre run --all`) (`src/hre/model/run.py`), checked by `validate_results` before it is written; the web front-end (Phase 4) reads only this file. `results_schema_version` is `"1"`. Floats are rounded to 4 decimals when written; the engine never rounds. Every number sits under an `outcome` label from the fixed set in `src/hre/schema.py`: `permits`, `net_permits`, `completed_homes`, `stock_change`, `cost_response_proxy`.
+Written by `hre run --state XX` (or `hre run --all`) (`src/hre/model/run.py`), checked by `validate_results` before it is written; the web front-end (Phase 4) reads only this file. `results_schema_version` is `"1"`. Floats are rounded to 4 decimals when written, except inside each scenario's `components` block, which is written unrounded so the web page's rescale is exact; the engine never rounds. `hre run --set id=value` and `--level id=low|mid|high` (repeatable) run the engine with user values held in every assumption set; such a file carries `meta.overrides` and a different `build_id`. Every number sits under an `outcome` label from the fixed set in `src/hre/schema.py`: `permits`, `net_permits`, `completed_homes`, `stock_change`, `cost_response_proxy`.
 
 ## Top level
 
 | Field | Meaning |
 |---|---|
 | `results_schema_version` | `"1"` |
-| `meta` | `state`, `state_fips`, `build_id` (git short sha + hash of input and register), `git_sha` (`-dirty` if tracked files were modified), `run_date`, `input` and `input_sha256` (the processed file), `schema_version` (input schema), `vintages` (every input vintage, including the BPS backtest files and the HCD file behind the ADU tiers) |
+| `meta` | `state`, `state_fips`, `build_id` (git short sha + hash of input and register, and of the user values when there are any), `git_sha` (`-dirty` if tracked files were modified), `run_date`, `input` and `input_sha256` (the processed file), `schema_version` (input schema), `vintages` (every input vintage, including the BPS backtest files and the HCD file behind the ADU tiers); `overrides` {`set`, `level`, `reading`} only when `hre run --set` or `--level` was used |
 | `baseline` | the baseline block below |
 | `scenarios` | `{name: scenario block}` for `adu`, `missing_middle`, `tod`, `parking`, `fees` (below); `cross_check` and `combined` sit beside it |
 | `registers_used` | path and sha256 of `parameters.yaml` (and how many entries), `elasticities.yaml`, and `current_law/{ST}.yaml` (`sha256: null` when the state has no file) |
@@ -62,7 +62,7 @@ function evaluated at the low, mid and high assumption sets, so the layers canno
 | `tornado[]` | one bar per assumption that moves the mid increment, largest swing first (`sensitivity.md`); gamma is swung for missing middle and TOD |
 | `joint` | `favorable` and `unfavorable`: every assumption at its best (worst) end at once; starts from the high (low) set |
 | `factors` | per-county inputs of the mid run (exposure, rate, tier, overlay, market, spaces, prices, response, `geography_check` for parking and fees, `notes`) |
-| `components` | for exact in-page rescaling: `linear_in` {id: mid value} (the increment is proportional to these), `increment_mid_permits`, `newly_affected_share`, `ramp_mid`, `conversion_mid`, `by_county[]` {fips, benchmark_mid, market, increment_mid_permits}. New increment = old × new value ÷ old value for any `linear_in` id |
+| `components` | for exact in-page rescaling, written unrounded: `linear_in` {id: mid value} (each county's increment is proportional to these), `linear_counties` {id: [fips]} (ids that multiply only the listed counties' terms: parking's `parking_low_density_factor` applies only outside central metropolitan counties; ids not listed multiply every county), `increment_mid_permits`, `newly_affected_share`, `ramp_mid`, `conversion_mid`, `by_county[]` {fips, benchmark_mid, market, increment_mid_permits}. New increment = Σ over counties of the county's increment × new value ÷ old value (only for the listed counties when the id is in `linear_counties`); `tests/test_rescale_contract.py` and `web/scripts/rescale_equality.mjs` check it against `hre run --set` |
 | `grid` | parking and fees only: `params`, `levels`, `cells` {"id=lv|id=lv|...": increment in permits} for every low/mid/high combination (parking 81 cells, fees 9) |
 | `diagnostics` | outside every band: missing-middle comparison rates and the all-metro sensitivity; TOD quarter-mile count and boundary rate; fees actual-fee variant and stock route |
 | `limits[]`, `notes[]`, `narrative[]` | the sentences a legislator must hear; data notes; four template sentences |
@@ -86,7 +86,7 @@ Present when all five scenarios ran: `label` ("If all five passed together (illu
 |---|---|
 | `{ST}.json` | the results file exactly as `hre run` wrote it (compact JSON), for the 50 states and DC; the synthetic ZZ only when it is the only file (the demo) |
 | `index.json` | `states[]`: state, name, fips, `baseline` {low, mid, high}, `pep_net_change_since_2020`, `scenarios` {name: {increment{low, mid, high}, status, newly_affected_share, benchmark_mid, benchmark_outcome}}, `combined` {low, mid, high} |
-| `registers.json` | `assumptions[]` (every register entry), `current_law` {ST: file}, `current_law_default`, `validation_ledger` (placeholder until Phase 5) |
+| `registers.json` | `assumptions[]` (every register entry), `current_law` {ST: file}, `current_law_default`, `validation_ledger` (placeholder until Phase 5), `sources[]` (one row per `data/manifests/*.json`: `id`, `title`, `license`, `notes`, `files`, `where` (the download folders), `accessed` [first, last date], `vintages`, `vintage_key` (the key of a results file's `meta.vintages`), `only_for` (states, when not all), `in_model`, `why_not`, `manifest`) |
 | `meta.json` | results schema version, jurisdictions, export date, run dates, git shas, input schema versions, register sha256, vintages, the no-language-model statement |
 
 The bundle is committed (decision 74): after any change to the engine, the register or the

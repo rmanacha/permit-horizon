@@ -24,7 +24,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      # Full history: tests/test_bundle.py diffs the engine files between the commit the web
+      # bundle was built from (web/public/results/meta.json) and HEAD (decision 75).
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v7
         with:

@@ -60,9 +60,13 @@ class Params:
         return Params(self.entries, {**self.levels, **levels}, vals)
 
     def all_at(self, level: str, ids: list[str] | None = None) -> Params:
-        """Every id (or the listed ids) at one level: the low, mid or high assumption set."""
+        """Every id (or the listed ids) at one level: the low, mid or high assumption set.
+
+        A user value (``with_values``, ``hre run --set``) holds in every set: those ids keep it.
+        Only ``at({id: level})`` for that id itself replaces it (a tornado swing, a joint case).
+        """
         chosen = ids if ids is not None else list(self.entries)
-        return self.at({pid: level for pid in chosen})
+        return self.at({pid: level for pid in chosen if pid not in self.values})
 
     def with_values(self, values: dict[str, Any]) -> Params:
         """A copy with user values for some ids (shown as level ``user``)."""

@@ -27,7 +27,7 @@ import json
 import sys
 import time
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Any
 
 import typer
 
@@ -319,12 +319,19 @@ def validate(
         raise typer.Exit(code=2)
 
 
+UNROUNDED = ("components",)   # the exact-rescale block the web page multiplies (results_schema.md)
+
+
 def _round_floats(obj, digits: int = 4):
-    """Round every float for a readable results file (the engine itself never rounds)."""
+    """Round every float for a readable results file (the engine itself never rounds).
+
+    ``components`` stays unrounded: the web page rescales from it, and rounding there would turn
+    an exact rescale into an approximate one (tod_rate_per_home 0.000117 would read 0.0001).
+    """
     if isinstance(obj, float):
         return round(obj, digits)
     if isinstance(obj, dict):
-        return {k: _round_floats(v, digits) for k, v in obj.items()}
+        return {k: (v if k in UNROUNDED else _round_floats(v, digits)) for k, v in obj.items()}
     if isinstance(obj, list):
         return [_round_floats(v, digits) for v in obj]
     return obj
@@ -353,10 +360,17 @@ def run(
     processed_dir: Annotated[Path, typer.Option("--processed-dir", help="folder with {ST}.json")] = Path("data/processed"),
     data_dir: Annotated[Path | None, typer.Option("--data-dir", help="build the inputs in memory from this raw folder (e.g. data/sample) instead of reading the processed file")] = None,
     quiet: Annotated[bool, typer.Option("--quiet", help="one line per state")] = False,
+    set_values: Annotated[list[str] | None, typer.Option(
+        "--set", help="a user value for one register id, held in every assumption set: --set fee_cut_share=0.3 "
+                      "(repeatable; the page's 'run any value' route)")] = None,
+    set_levels: Annotated[list[str] | None, typer.Option(
+        "--level", help="one register id at its low, mid or high value in every set: --level ramp_adu=high "
+                        "(repeatable)")] = None,
 ) -> None:
     """Run the engine for one state (or all) and write the results JSON (docs/methods/results_schema.md)."""
     from hre.model.run import KNOWN_SCENARIOS
 
+    overrides = _parse_overrides(set_values or [], set_levels or [])
     wanted = list(KNOWN_SCENARIOS) if scenarios.strip() == "all" else [s.strip() for s in scenarios.split(",") if s.strip()]
     if all_states:
         codes = [c for c in ALL_STATES if (processed_dir / f"{c}.json").exists()]
@@ -368,7 +382,8 @@ def run(
         t0 = time.time()
         for code in codes:
             try:
-                _run_one(code, wanted, out_dir / f"{code}.json", processed_dir, None, quiet=True)
+                _run_one(code, wanted, out_dir / f"{code}.json", processed_dir, None, quiet=True,
+                         overrides=overrides)
             except typer.Exit:
                 failed.append(code)
         typer.echo(f"ran {len(codes) - len(failed)} of {len(codes)} jurisdictions in {time.time() - t0:.1f}s "
@@ -379,11 +394,41 @@ def run(
     if not state:
         raise typer.BadParameter("pass --state XX or --all")
     code = state.strip().upper()
-    _run_one(code, wanted, out or out_dir / f"{code}.json", processed_dir, data_dir, quiet=quiet)
+    _run_one(code, wanted, out or out_dir / f"{code}.json", processed_dir, data_dir, quiet=quiet,
+             overrides=overrides)
+
+
+def _parse_overrides(values: list[str], levels: list[str]) -> dict[str, dict[str, Any]]:
+    """``--set id=number`` and ``--level id=low|mid|high`` -> {"set": {...}, "level": {...}}."""
+    from hre.assumptions.loader import load_entries
+
+    entries = load_entries()
+    out: dict[str, dict[str, Any]] = {"set": {}, "level": {}}
+    for kind, items in (("set", values), ("level", levels)):
+        for item in items:
+            pid, sep, raw = item.partition("=")
+            pid, raw = pid.strip(), raw.strip()
+            if not sep or not pid or not raw:
+                raise typer.BadParameter(f"--{kind} takes id=value, got {item!r}")
+            if pid not in entries:
+                raise typer.BadParameter(f"--{kind}: {pid!r} is not in the register (src/hre/assumptions/parameters.yaml)")
+            if pid in out["set"] or pid in out["level"]:
+                raise typer.BadParameter(f"{pid!r} is given twice")
+            if kind == "level":
+                if raw not in ("low", "mid", "high"):
+                    raise typer.BadParameter(f"--level {pid}: the level must be low, mid or high, got {raw!r}")
+                out["level"][pid] = raw
+            else:
+                try:
+                    out["set"][pid] = float(raw)
+                except ValueError as e:
+                    raise typer.BadParameter(f"--set {pid}: {raw!r} is not a number (use --level for a "
+                                             "named level, e.g. a ramp)") from e
+    return out
 
 
 def _run_one(code: str, wanted: list[str], dest: Path, processed_dir: Path, data_dir: Path | None,
-             quiet: bool = False) -> None:
+             quiet: bool = False, overrides: dict[str, dict[str, Any]] | None = None) -> None:
     import datetime as dt
     import hashlib
 
@@ -417,12 +462,20 @@ def _run_one(code: str, wanted: list[str], dest: Path, processed_dir: Path, data
         input_ref = str(src)
     inputs = StateInputs.from_json(text)
     params = load_params()
+    user = {k: v for k, v in (overrides or {}).items() if v}
+    if user:
+        # A named level becomes that level's register value, so it holds in every assumption set
+        # exactly as a --set value does (Params.all_at keeps user values).
+        values = {**{pid: params.level_value(pid, lv) for pid, lv in user.get("level", {}).items()},
+                  **user.get("set", {})}
+        params = params.with_values(values)
     digest = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
     input_sha = hashlib.sha256(text.encode("utf-8")).hexdigest()
     param_sha = digest(PARAMETERS_PATH)
     git_sha = _git_sha()
+    user_key = json.dumps(user, sort_keys=True) if user else ""
     meta = {
-        "build_id": f"{git_sha[:7]}-{hashlib.sha256((input_sha + param_sha).encode()).hexdigest()[:8]}",
+        "build_id": f"{git_sha[:7]}-{hashlib.sha256((input_sha + param_sha + user_key).encode()).hexdigest()[:8]}",
         "vintages": {**inputs.vintages, "bps_state_backtest": f"state annual files 1980-2025, {BPS_VINTAGE}",
                      "hcd_adu_tiers": f"HCD APR Table A2, {HCD_VINTAGE} (tier rates in the register)",
                      "nrc": f"Census New Residential Construction, {NRC_VINTAGE} (completions per permit in the register)"},
@@ -432,9 +485,14 @@ def _run_one(code: str, wanted: list[str], dest: Path, processed_dir: Path, data
         "input_sha256": input_sha,
         "schema_version": inputs.schema_version,
     }
+    if user:
+        meta["overrides"] = {**user, "reading": ("User values from hre run --set / --level, held in every "
+                                                 "assumption set; not the register default.")}
     registers = {
         "parameters": {"path": "src/hre/assumptions/parameters.yaml", "sha256": param_sha,
-                       "entries": len(params.entries), "levels": "all mid unless a case says otherwise"},
+                       "entries": len(params.entries),
+                       "levels": ("all mid unless a case says otherwise" if not user else
+                                  "all mid unless a case says otherwise, except the user values in meta.overrides")},
         "elasticities": {"path": "src/hre/assumptions/elasticities.yaml", "sha256": digest(ELASTICITIES_PATH)},
         "current_law": {"path": f"src/hre/current_law/{code}.yaml", "sha256": register_digest(code)},
     }

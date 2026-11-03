@@ -64,6 +64,7 @@ def core(state: StateInputs, params: Params, ctx: dict[str, Any]) -> Core:
                  "saving_share_of_price": np.divide(saving, price, out=np.zeros_like(price), where=price > 0).tolist(),
                  "density_factor": density.tolist(), "response": resp["value"], "response_route": resp["route"],
                  "geography_check": _composite(resp), "notes": notes},
+        linear_counties={"parking_low_density_factor": [c.metro_role != "central" for c in state.counties]},
     )
 
 
