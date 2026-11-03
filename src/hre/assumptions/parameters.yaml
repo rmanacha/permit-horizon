@@ -313,6 +313,12 @@ parameters:
       zero. High: Baum-Snow and Han (2024) housing unit supply elasticity 0.3, half assumed to arrive
       within 5 years, divided by U.S. housing unit growth of 5.29% from July 2020 to July 2025:
       0.3 x 0.5 / 0.0529 = 2.84.
+      What the team re-read (decision 67): the 5.29% growth, 148,260,882 / 140,817,690 - 1 =
+      0.0529 (United States row of the Census county housing-unit file CO-EST2025-HU.xlsx, July 1
+      2020 and 2025, re-read 2026-11-03); Albouy et al.'s demand elasticity and the Census new-home
+      prices used beside this entry. Carried from Adam Ruege's v2.0 record and not yet re-read: the
+      Mayer and Somerville quotes on pp. 651 and 653 (paywalled) and Baum-Snow and Han's 0.3 (the
+      publisher returned HTTP 403 and no open abstract was found on 2026-11-03).
     rationale: No study measures a cut near $25,000 per unit; the range runs from no response to a long-run supply response.
     transferability: National; no state-specific estimate exists.
     levels: {low: "0.00% per 1%", mid: "0.75% per 1%", high: "2.84% per 1%"}
@@ -495,6 +501,8 @@ parameters:
     citation: >-
       The Microgeography of Housing Supply reports average predicted housing-unit supply elasticity
       0.3 across urban neighborhoods.
+      Carried from Adam Ruege's v2.0 record and not yet re-read by the team (decision 67): the
+      publisher returned HTTP 403 and no open abstract or working paper was found on 2026-11-03.
     rationale: Use a stock elasticity with a stock denominator in the diagnostic.
     transferability: Urban neighborhoods; national.
     levels: {low: "0.3", mid: "0.3", high: "0.3"}
