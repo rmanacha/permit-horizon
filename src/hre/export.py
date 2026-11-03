@@ -11,7 +11,7 @@ writes, from the results files ``hre run --all`` produced:
     meta.json        vintages, run date, git sha, schema versions, counts
 
 Every results file is validated first; one that fails stops the export. The bundle is
-git-ignored (results for real states are never committed); CI or ``make export`` rebuilds it.
+committed (decision 74); ``tests/test_bundle.py`` fails when it was built from an older register.
 """
 
 from __future__ import annotations

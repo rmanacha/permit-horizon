@@ -89,8 +89,9 @@ Present when all five scenarios ran: `label` ("If all five passed together (illu
 | `registers.json` | `assumptions[]` (every register entry), `current_law` {ST: file}, `current_law_default`, `validation_ledger` (placeholder until Phase 5) |
 | `meta.json` | results schema version, jurisdictions, export date, run dates, git shas, input schema versions, register sha256, vintages, the no-language-model statement |
 
-The bundle is git-ignored (results for real states are never committed); `make results-all
-export` rebuilds it, and Phase 4's build does the same in CI.
+The bundle is committed (decision 74): after any change to the engine, the register or the
+inputs, run `make results-all export` from a clean checkout and commit it; `tests/test_bundle.py`
+fails CI when it is stale. Phase 4's Pages build only copies it.
 
 ## New Hampshire scenario example (trimmed from `results/NH.json`, 2026-11-03)
 

@@ -44,7 +44,7 @@ results: ## Run the engine for one state (baseline and five scenarios): make res
 results-all: ## Run every jurisdiction with a processed file -> results/{ST}.json
 	uv run hre run --all --quiet
 
-export:  ## The web bundle for the front-end -> web/public/results/ (git-ignored)
+export:  ## The web bundle for the front-end -> web/public/results/ (committed, decision 74)
 	uv run hre export --out web/public/results/
 
 backtest: ## Baseline backtest, both band rules -> docs/evidence/baseline_backtest.md

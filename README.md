@@ -15,7 +15,7 @@ Fill in the exact commands a stranger would run. These three commands are what r
 | Setup | `make setup` | Installs the exact pinned Python environment (`uv.lock`) into `.venv`; downloads Python 3.12 if needed |
 | Demo  | `make demo`  | Builds the synthetic state `ZZ` from committed fixtures, no network, a few seconds; validates the output and runs the baseline and all five scenarios on it |
 | Data  | `make data STATE=NH` | Downloads every input one state needs (about 600 MB the first time, mostly ACS bulk files) and builds `data/processed/NH.json` |
-| Results | `make results STATE=NH` | Runs the engine for one state (`hre run`), writing `results/NH.json` (`docs/methods/results_schema.md`); `make results-all export` runs every state with a processed file and writes the web bundle to `web/public/results/` (git-ignored) |
+| Results | `make results STATE=NH` | Runs the engine for one state (`hre run`), writing `results/NH.json` (`docs/methods/results_schema.md`); `make results-all export` runs every state with a processed file and writes the web bundle to `web/public/results/`, which is committed (rerun from a clean checkout after any engine or register change; a test catches a stale bundle) |
 | Run   | `make run`   | Starts the tool (placeholder until the web app lands in Phase 4) |
 | Test  | `make test`  | Runs the automated tests with pytest (offline) |
 
