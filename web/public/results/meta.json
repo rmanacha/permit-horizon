@@ -1,0 +1,31 @@
+{
+ "results_schema_version": "1",
+ "jurisdictions": 51,
+ "export_date": "2026-11-03",
+ "run_dates": [
+  "2026-11-03"
+ ],
+ "git_shas": [
+  "4a54ee7a8ac755f68f1b7bc27ed715bd9f936029"
+ ],
+ "input_schema_versions": [
+  "3"
+ ],
+ "parameters_sha256": "acb3f781f097ab9bbebbc9b49cc421b6b894f607c7d42eccbe1b14dc8cb69aa8",
+ "vintages": {
+  "aclf": "excluded",
+  "acs": "ACS 5-year 2020-2024 (2024 release)",
+  "bps": "annual files as posted 2026 (2025 posted 2026-05-14)",
+  "cbsa": "2023-07",
+  "cenpop": "2020 Census",
+  "fhfa": "annual through 2025 (file updated 2026-03-31)",
+  "gazetteer": "2025",
+  "nzlud": "2019-2022 survey, repository main branch",
+  "pep": "2025 (Vintage 2025 estimates, July 1 2020 to July 1 2025)",
+  "transit": "National Transit Map stops as cached (see data/manifests/transit.json)",
+  "bps_state_backtest": "state annual files 1980-2025, annual files as posted 2026 (2025 posted 2026-05-14)",
+  "hcd_adu_tiers": "HCD APR Table A2, resource last modified 2026-10-30 (tier rates in the register)",
+  "nrc": "Census New Residential Construction, annual series through 2025, as posted 2026 (completions per permit in the register)"
+ },
+ "no_llm": "No language model is used; all text comes from fixed templates in src/hre/model/drivers.py."
+}

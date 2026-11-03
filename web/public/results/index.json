@@ -1,0 +1,3727 @@
+{
+ "states": [
+  {
+   "state": "AK",
+   "name": "Alaska",
+   "fips": "02",
+   "baseline": {
+    "low": 2515.1115,
+    "mid": 4695.0,
+    "high": 7476.318
+   },
+   "pep_net_change_since_2020": 5018,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 51.2709,
+      "mid": 447.3698,
+      "high": 3058.9164
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 689.3216,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 401.5901,
+      "high": 716.0316
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 507.4714,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.9301,
+      "high": 10.5966
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1.1232,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 22.9921,
+      "high": 87.0633
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 22.9921,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 208.6845,
+      "high": 790.2188
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 208.6845,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 51.2709,
+    "mid": 1080.9866,
+    "high": 4656.8954
+   }
+  },
+  {
+   "state": "AL",
+   "name": "Alabama",
+   "fips": "01",
+   "baseline": {
+    "low": 53679.8185,
+    "mid": 100205.0,
+    "high": 159566.442
+   },
+   "pep_net_change_since_2020": 117968,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 332.267,
+      "mid": 3244.9882,
+      "high": 31796.3026
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4999.9818,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 4479.9756,
+      "high": 7987.757
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 7054.6796,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 690.3294,
+      "high": 2614.0474
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 690.3294,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 6107.1129,
+      "high": 23125.6009
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 6107.1129,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 332.267,
+    "mid": 14519.7199,
+    "high": 65464.2408
+   }
+  },
+  {
+   "state": "AR",
+   "name": "Arkansas",
+   "fips": "05",
+   "baseline": {
+    "low": 37515.071,
+    "mid": 70030.0,
+    "high": 111515.772
+   },
+   "pep_net_change_since_2020": 70379,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 200.736,
+      "mid": 1960.4292,
+      "high": 15679.3218
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3020.6921,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1943.257,
+      "high": 3464.8101
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3072.916,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1.0593,
+      "high": 12.0687
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1.6737,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 603.9942,
+      "high": 2287.1247
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 603.9942,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 4306.6734,
+      "high": 16307.9364
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4306.6734,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 200.736,
+    "mid": 8812.9135,
+    "high": 37723.104
+   }
+  },
+  {
+   "state": "AZ",
+   "name": "Arizona",
+   "fips": "04",
+   "baseline": {
+    "low": 151407.5695,
+    "mid": 282635.0,
+    "high": 450067.974
+   },
+   "pep_net_change_since_2020": 291742,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 1536.8592,
+      "mid": 8063.0552,
+      "high": 48968.7561
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 12423.8139,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 9868.5535,
+      "high": 17595.5441
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 11858.4994,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 51.5923,
+      "high": 587.7994
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 58.9738,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2696.4793,
+      "high": 10210.6683
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2696.4793,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 10949.7255,
+      "high": 41462.9606
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 10949.7255,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 1536.8592,
+    "mid": 31486.2885,
+    "high": 118462.8842
+   }
+  },
+  {
+   "state": "CA",
+   "name": "California",
+   "fips": "06",
+   "baseline": {
+    "low": 283171.9128,
+    "mid": 528601.6667,
+    "high": 841745.294
+   },
+   "pep_net_change_since_2020": 603269,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 10768.3573,
+      "mid": 56306.2863,
+      "high": 204477.2502
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 86758.5305,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 52876.9275,
+      "high": 94279.0965
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 46895.744,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1041.8551,
+      "high": 11870.0244
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 779.7705,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2855.3464,
+      "high": 10812.245
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2855.3464,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 12065.5144,
+      "high": 45688.0813
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 12065.5144,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 10768.3573,
+    "mid": 122544.7099,
+    "high": 362010.097
+   }
+  },
+  {
+   "state": "CO",
+   "name": "Colorado",
+   "fips": "08",
+   "baseline": {
+    "low": 94053.7418,
+    "mid": 175571.6667,
+    "high": 279580.322
+   },
+   "pep_net_change_since_2020": 215140,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 1743.4207,
+      "mid": 8688.7617,
+      "high": 36952.2897
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 13387.9225,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 7750.2908,
+      "high": 13818.7003
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 7970.5245,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 67.0499,
+      "high": 763.9101
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 65.9248,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1460.7767,
+      "high": 5531.4745
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1460.7767,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 4900.2722,
+      "high": 18555.6975
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4900.2722,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 1743.4207,
+    "mid": 22660.9546,
+    "high": 75177.6389
+   }
+  },
+  {
+   "state": "CT",
+   "name": "Connecticut",
+   "fips": "09",
+   "baseline": {
+    "low": 17384.3578,
+    "mid": 32451.6667,
+    "high": 51676.034
+   },
+   "pep_net_change_since_2020": 28011,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 383.2599,
+      "mid": 2665.692,
+      "high": 21184.7005
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4107.3837,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 4168.3165,
+      "high": 7432.0717
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 5093.0669,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 569.1603,
+      "high": 2155.2204
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 569.1603,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1235.426,
+      "high": 4678.1463
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1235.426,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 383.2599,
+    "mid": 8634.4407,
+    "high": 35394.8089
+   }
+  },
+  {
+   "state": "DC",
+   "name": "District of Columbia",
+   "fips": "11",
+   "baseline": {
+    "low": 5667.706,
+    "mid": 10580.0,
+    "high": 16847.592
+   },
+   "pep_net_change_since_2020": 21241,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 62.6763,
+      "mid": 314.943,
+      "high": 991.2154
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 485.2742,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 274.6546,
+      "high": 489.7067
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 243.9487,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 131.5232,
+      "high": 1498.4653
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 116.1564,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 195.78,
+      "high": 741.3535
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 195.78,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 214.5138,
+      "high": 812.2923
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 214.5138,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 62.6763,
+    "mid": 1050.4193,
+    "high": 4386.8613
+   }
+  },
+  {
+   "state": "DE",
+   "name": "Delaware",
+   "fips": "10",
+   "baseline": {
+    "low": 17297.753,
+    "mid": 32290.0,
+    "high": 51418.596
+   },
+   "pep_net_change_since_2020": 34712,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 56.4627,
+      "mid": 551.426,
+      "high": 5036.6234
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 849.6549,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 824.4973,
+      "high": 1470.0714
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1075.3346,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2.1195,
+      "high": 24.1478
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2.708,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 86.9443,
+      "high": 329.2292
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 86.9443,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1329.0088,
+      "high": 5032.5133
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1329.0088,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 56.4627,
+    "mid": 2790.1836,
+    "high": 11875.7654
+   }
+  },
+  {
+   "state": "FL",
+   "name": "Florida",
+   "fips": "12",
+   "baseline": {
+    "low": 486961.1212,
+    "mid": 909018.3333,
+    "high": 1447520.794
+   },
+   "pep_net_change_since_2020": 923689,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 2084.9271,
+      "mid": 14595.4255,
+      "high": 130161.0706
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 22489.0994,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 24550.4143,
+      "high": 43773.1727
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 30995.4392,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 85.3861,
+      "high": 972.8182
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 97.6283,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 8841.3742,
+      "high": 33479.3371
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 8841.3742,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 39573.1652,
+      "high": 149850.3857
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 39573.1652,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 2084.9271,
+    "mid": 87480.5548,
+    "high": 357653.3654
+   }
+  },
+  {
+   "state": "GA",
+   "name": "Georgia",
+   "fips": "13",
+   "baseline": {
+    "low": 172481.1147,
+    "mid": 321973.3333,
+    "high": 512710.336
+   },
+   "pep_net_change_since_2020": 323484,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 1018.8707,
+      "mid": 7465.2934,
+      "high": 59451.8723
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 11502.7634,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 10024.1009,
+      "high": 17872.8837
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 13206.9505,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 42.8122,
+      "high": 487.7658
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 49.3623,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2544.1888,
+      "high": 9633.9949
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2544.1888,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 16142.0909,
+      "high": 61124.7174
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 16142.0909,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 1018.8707,
+    "mid": 36132.2077,
+    "high": 148300.0688
+   }
+  },
+  {
+   "state": "HI",
+   "name": "Hawaii",
+   "fips": "15",
+   "baseline": {
+    "low": 10158.6577,
+    "mid": 18963.3333,
+    "high": 30197.212
+   },
+   "pep_net_change_since_2020": 13456,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 445.7884,
+      "mid": 2303.7357,
+      "high": 7442.3335
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3549.6698,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1624.6339,
+      "high": 2896.708
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1306.6513,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 7.9407,
+      "high": 90.4697
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 6.3554,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 42.768,
+      "high": 161.9482
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 42.768,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 384.1013,
+      "high": 1454.4637
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 384.1013,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 445.7884,
+    "mid": 4333.4893,
+    "high": 11978.8255
+   }
+  },
+  {
+   "state": "IA",
+   "name": "Iowa",
+   "fips": "19",
+   "baseline": {
+    "low": 33425.8943,
+    "mid": 62396.6667,
+    "high": 99360.452
+   },
+   "pep_net_change_since_2020": 56306,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 213.525,
+      "mid": 2085.3294,
+      "high": 15632.172
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3213.1423,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1873.1155,
+      "high": 3339.7484
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2916.3234,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 828.7762,
+      "high": 3138.2991
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 828.7762,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 4026.441,
+      "high": 15246.79
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4026.441,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 213.525,
+    "mid": 8812.5389,
+    "high": 37332.1457
+   }
+  },
+  {
+   "state": "ID",
+   "name": "Idaho",
+   "fips": "16",
+   "baseline": {
+    "low": 47760.3335,
+    "mid": 89155.0,
+    "high": 141970.422
+   },
+   "pep_net_change_since_2020": 97296,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 369.9803,
+      "mid": 2087.8363,
+      "high": 10434.1917
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3217.0051,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1702.4733,
+      "high": 3035.4949
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1924.1034,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 379.62,
+      "high": 1437.4943
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 379.62,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 3178.7459,
+      "high": 12036.8513
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3178.7459,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 369.9803,
+    "mid": 7346.4831,
+    "high": 26921.4337
+   }
+  },
+  {
+   "state": "IL",
+   "name": "Illinois",
+   "fips": "17",
+   "baseline": {
+    "low": 49766.53,
+    "mid": 92900.0,
+    "high": 147933.96
+   },
+   "pep_net_change_since_2020": 77863,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 653.7083,
+      "mid": 6384.2508,
+      "high": 65842.4579
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 9837.0582,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 10467.765,
+      "high": 18663.933
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 14986.3198,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 438.66,
+      "high": 4997.7252
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 581.9627,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1410.1759,
+      "high": 5339.8661
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1410.1759,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 5226.5914,
+      "high": 19791.3594
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 5226.5914,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 653.7083,
+    "mid": 22772.3794,
+    "high": 112462.1444
+   }
+  },
+  {
+   "state": "IN",
+   "name": "Indiana",
+   "fips": "18",
+   "baseline": {
+    "low": 73894.458,
+    "mid": 137940.0,
+    "high": 219655.656
+   },
+   "pep_net_change_since_2020": 129427,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 444.7649,
+      "mid": 4343.6662,
+      "high": 40509.4192
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 6692.8601,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 5605.3177,
+      "high": 9994.2322
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 8751.898,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 3.5593,
+      "high": 40.5515
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 5.6213,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1743.8366,
+      "high": 6603.3281
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1743.8366,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 8454.9528,
+      "high": 32016.0878
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 8454.9528,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 444.7649,
+    "mid": 20122.6295,
+    "high": 89044.3385
+   }
+  },
+  {
+   "state": "KS",
+   "name": "Kansas",
+   "fips": "20",
+   "baseline": {
+    "low": 25772.527,
+    "mid": 48110.0,
+    "high": 76610.364
+   },
+   "pep_net_change_since_2020": 43536,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 191.1331,
+      "mid": 1866.6451,
+      "high": 15353.3049
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2876.1866,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2062.1148,
+      "high": 3676.7325
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3068.7545,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 497.4185,
+      "high": 1883.5579
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 497.4185,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 3143.1444,
+      "high": 11902.04
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3143.1444,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 191.1331,
+    "mid": 7568.0863,
+    "high": 32788.2629
+   }
+  },
+  {
+   "state": "KY",
+   "name": "Kentucky",
+   "fips": "21",
+   "baseline": {
+    "low": 41622.9972,
+    "mid": 77698.3333,
+    "high": 123726.826
+   },
+   "pep_net_change_since_2020": 76187,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 280.8415,
+      "mid": 2742.7561,
+      "high": 20674.6197
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4226.1266,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2535.6112,
+      "high": 4520.9725
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3874.2013,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1168.672,
+      "high": 4425.3713
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1168.672,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 4955.3828,
+      "high": 18764.3827
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4955.3828,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 280.8415,
+    "mid": 11400.9018,
+    "high": 48351.6887
+   }
+  },
+  {
+   "state": "LA",
+   "name": "Louisiana",
+   "fips": "22",
+   "baseline": {
+    "low": 38177.5533,
+    "mid": 71266.6667,
+    "high": 113485.04
+   },
+   "pep_net_change_since_2020": 83401,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 283.4169,
+      "mid": 2767.9085,
+      "high": 27998.7168
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4264.8821,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 4020.8193,
+      "high": 7169.0855
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 6312.9514,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 27.7953,
+      "high": 316.6766
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 37.5219,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 515.7315,
+      "high": 1952.9034
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 515.7315,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 4849.6706,
+      "high": 18364.0859
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4849.6706,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 283.4169,
+    "mid": 12100.044,
+    "high": 55607.3715
+   }
+  },
+  {
+   "state": "MA",
+   "name": "Massachusetts",
+   "fips": "25",
+   "baseline": {
+    "low": 35739.2255,
+    "mid": 66715.0,
+    "high": 106236.966
+   },
+   "pep_net_change_since_2020": 73741,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 1731.9928,
+      "mid": 9038.4261,
+      "high": 38084.59
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 13926.6965,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 9008.1058,
+      "high": 16061.3734
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 9212.3953,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 358.6546,
+      "high": 4086.2098
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 327.9475,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 800.3224,
+      "high": 3030.554
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 800.3224,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1729.7219,
+      "high": 6549.8804
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1729.7219,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 1731.9928,
+    "mid": 20243.4127,
+    "high": 66495.2525
+   }
+  },
+  {
+   "state": "MD",
+   "name": "Maryland",
+   "fips": "24",
+   "baseline": {
+    "low": 43422.0563,
+    "mid": 81056.6667,
+    "high": 129074.636
+   },
+   "pep_net_change_since_2020": 83088,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 859.3488,
+      "mid": 4920.9273,
+      "high": 28331.2954
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 7582.3225,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 5080.7418,
+      "high": 9058.918
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 5828.6141,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 100.3485,
+      "high": 1143.2867
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 121.1781,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 947.2679,
+      "high": 3586.9877
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 947.2679,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2989.0332,
+      "high": 11318.4726
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2989.0332,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 859.3488,
+    "mid": 13833.9386,
+    "high": 53020.7839
+   }
+  },
+  {
+   "state": "ME",
+   "name": "Maine",
+   "fips": "23",
+   "baseline": {
+    "low": 16841.5152,
+    "mid": 31438.3333,
+    "high": 50062.402
+   },
+   "pep_net_change_since_2020": 32421,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 194.7419,
+      "mid": 1363.0704,
+      "high": 8181.4614
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2100.2625,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1229.8454,
+      "high": 2192.8035
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1565.2514,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 5.9484,
+      "high": 67.7715
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 7.003,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 184.3259,
+      "high": 697.9807
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 184.3259,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1583.3045,
+      "high": 5995.4462
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1583.3045,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 194.7419,
+    "mid": 4349.4193,
+    "high": 17091.0728
+   }
+  },
+  {
+   "state": "MI",
+   "name": "Michigan",
+   "fips": "26",
+   "baseline": {
+    "low": 58115.4145,
+    "mid": 108485.0,
+    "high": 172751.514
+   },
+   "pep_net_change_since_2020": 123975,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 696.4964,
+      "mid": 6726.9258,
+      "high": 63699.1838
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 10365.0628,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 8802.3374,
+      "high": 15694.4901
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 13851.6614,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 8.4022,
+      "high": 95.7271
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 13.2754,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1246.6978,
+      "high": 4720.8289
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1246.6978,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 6953.4596,
+      "high": 26330.4337
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 6953.4596,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 696.4964,
+    "mid": 23729.2039,
+    "high": 110417.9057
+   }
+  },
+  {
+   "state": "MN",
+   "name": "Minnesota",
+   "fips": "27",
+   "baseline": {
+    "low": 60290.3565,
+    "mid": 112545.0,
+    "high": 179216.658
+   },
+   "pep_net_change_since_2020": 131346,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 372.6469,
+      "mid": 3470.7486,
+      "high": 30956.8179
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 5347.8406,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 5146.6255,
+      "high": 9176.388
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 6625.5106,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 31.0721,
+      "high": 354.0096
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 38.8645,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1415.4415,
+      "high": 5359.805
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1415.4415,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 5134.0286,
+      "high": 19440.8549
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 5134.0286,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 372.6469,
+    "mid": 15124.8928,
+    "high": 65095.9899
+   }
+  },
+  {
+   "state": "MO",
+   "name": "Missouri",
+   "fips": "29",
+   "baseline": {
+    "low": 47069.2805,
+    "mid": 87865.0,
+    "high": 139916.226
+   },
+   "pep_net_change_since_2020": 89723,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 409.383,
+      "mid": 3998.1193,
+      "high": 36279.9868
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 6160.4304,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 5095.9548,
+      "high": 9086.0425
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 7716.5217,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 24.2324,
+      "high": 276.0833
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 37.3838,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1006.304,
+      "high": 3810.5377
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1006.304,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 5630.9804,
+      "high": 21322.6457
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 5630.9804,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 409.383,
+    "mid": 15694.1497,
+    "high": 70604.2645
+   }
+  },
+  {
+   "state": "MS",
+   "name": "Mississippi",
+   "fips": "28",
+   "baseline": {
+    "low": 21417.286,
+    "mid": 39980.0,
+    "high": 63664.152
+   },
+   "pep_net_change_since_2020": 49593,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 191.1512,
+      "mid": 1866.8219,
+      "high": 12434.4545
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2876.459,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1286.692,
+      "high": 2294.1605
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2085.3548,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 80.2799,
+      "high": 303.9934
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 80.2799,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2901.411,
+      "high": 10986.6765
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2901.411,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 191.1512,
+    "mid": 6134.4333,
+    "high": 26002.2054
+   }
+  },
+  {
+   "state": "MT",
+   "name": "Montana",
+   "fips": "30",
+   "baseline": {
+    "low": 13331.7873,
+    "mid": 24886.6667,
+    "high": 39629.528
+   },
+   "pep_net_change_since_2020": 29480,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 213.0608,
+      "mid": 1255.3261,
+      "high": 6589.7349
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1934.2467,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 854.9573,
+      "high": 1524.3814
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1004.4776,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 103.3205,
+      "high": 391.2403
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 103.3205,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 823.9053,
+      "high": 3119.8548
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 823.9053,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 213.0608,
+    "mid": 3036.4388,
+    "high": 11613.8628
+   }
+  },
+  {
+   "state": "NC",
+   "name": "North Carolina",
+   "fips": "37",
+   "baseline": {
+    "low": 250156.7218,
+    "mid": 466971.6667,
+    "high": 743605.682
+   },
+   "pep_net_change_since_2020": 459334,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 998.1195,
+      "mid": 7625.8325,
+      "high": 57800.0109
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 11750.1271,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 9056.3042,
+      "high": 16147.3107
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 12082.0024,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 24.4464,
+      "high": 278.5219
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 29.0622,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 4281.1788,
+      "high": 16211.3971
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4281.1788,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 22857.5064,
+      "high": 86553.7576
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 22857.5064,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 998.1195,
+    "mid": 43789.2598,
+    "high": 176784.446
+   }
+  },
+  {
+   "state": "ND",
+   "name": "North Dakota",
+   "fips": "38",
+   "baseline": {
+    "low": 6586.4315,
+    "mid": 12295.0,
+    "high": 19578.558
+   },
+   "pep_net_change_since_2020": 15037,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 44.0233,
+      "mid": 429.9406,
+      "high": 3345.9888
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 662.4662,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 452.8137,
+      "high": 807.3628
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 642.7161,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 111.9124,
+      "high": 423.7748
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 111.9124,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 676.4684,
+      "high": 2561.5605
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 676.4684,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 44.0233,
+    "mid": 1670.8635,
+    "high": 7132.6763
+   }
+  },
+  {
+   "state": "NE",
+   "name": "Nebraska",
+   "fips": "31",
+   "baseline": {
+    "low": 26742.144,
+    "mid": 49920.0,
+    "high": 79492.608
+   },
+   "pep_net_change_since_2020": 47033,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 126.6312,
+      "mid": 1236.7068,
+      "high": 10076.2904
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1905.5575,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1370.0712,
+      "high": 2442.8249
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2000.8959,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 887.0523,
+      "high": 3358.9714
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 887.0523,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2984.9988,
+      "high": 11303.1953
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2984.9988,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 126.6312,
+    "mid": 6478.0076,
+    "high": 27163.0958
+   }
+  },
+  {
+   "state": "NH",
+   "name": "New Hampshire",
+   "fips": "33",
+   "baseline": {
+    "low": 12990.725,
+    "mid": 24250.0,
+    "high": 38615.7
+   },
+   "pep_net_change_since_2020": 23360,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 41.1071,
+      "mid": 276.898,
+      "high": 1556.3309
+     },
+     "status": "register_default",
+     "newly_affected_share": 0.25,
+     "benchmark_mid": 1706.6134,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1034.8581,
+      "high": 1845.1429
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1168.178,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 3.0487,
+      "high": 34.734
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3.727,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 157.2944,
+      "high": 595.6216
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 157.2944,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 933.53,
+      "high": 3534.9669
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 933.53,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 41.1071,
+    "mid": 2403.6402,
+    "high": 7560.3107
+   }
+  },
+  {
+   "state": "NJ",
+   "name": "New Jersey",
+   "fips": "34",
+   "baseline": {
+    "low": 85205.7635,
+    "mid": 159055.0,
+    "high": 253279.182
+   },
+   "pep_net_change_since_2020": 66490,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 1540.4187,
+      "mid": 8213.156,
+      "high": 48753.3636
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 12655.094,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 10324.7669,
+      "high": 18408.9686
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 11698.8868,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 293.2243,
+      "high": 3340.7517
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 308.9794,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1815.7689,
+      "high": 6875.7115
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1815.7689,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 5150.2762,
+      "high": 19502.3791
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 5150.2762,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 1540.4187,
+    "mid": 25024.2517,
+    "high": 95398.0256
+   }
+  },
+  {
+   "state": "NM",
+   "name": "New Mexico",
+   "fips": "35",
+   "baseline": {
+    "low": 14071.9462,
+    "mid": 26268.3333,
+    "high": 41829.694
+   },
+   "pep_net_change_since_2020": 40803,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 175.8121,
+      "mid": 1412.5097,
+      "high": 11102.8032
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2176.4402,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1646.3326,
+      "high": 2935.3965
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2313.627,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 3.6765,
+      "high": 41.8871
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4.7239,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 187.225,
+      "high": 708.9588
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 187.225,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1475.5858,
+      "high": 5587.5517
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1475.5858,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 175.8121,
+    "mid": 4713.2143,
+    "high": 20335.4712
+   }
+  },
+  {
+   "state": "NV",
+   "name": "Nevada",
+   "fips": "32",
+   "baseline": {
+    "low": 50878.1075,
+    "mid": 94975.0,
+    "high": 151238.19
+   },
+   "pep_net_change_since_2020": 103939,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 818.3718,
+      "mid": 3921.5466,
+      "high": 18708.5999
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 6042.4447,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 3857.8428,
+      "high": 6878.4997
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4384.7785,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 438.203,
+      "high": 1659.3288
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 438.203,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 3178.6973,
+      "high": 12036.6673
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3178.6973,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 818.3718,
+    "mid": 11390.3443,
+    "high": 39231.8869
+   }
+  },
+  {
+   "state": "NY",
+   "name": "New York",
+   "fips": "36",
+   "baseline": {
+    "low": 119660.2018,
+    "mid": 223371.6667,
+    "high": 355697.042
+   },
+   "pep_net_change_since_2020": 250793,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 2397.8346,
+      "mid": 13920.8535,
+      "high": 74653.2179
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 21449.6972,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 14643.9198,
+      "high": 26109.9801
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 17151.4748,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2246.2505,
+      "high": 25591.8971
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1870.1853,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 3034.0734,
+      "high": 11489.0248
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3034.0734,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 7813.2761,
+      "high": 29586.2723
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 7813.2761,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 2397.8346,
+    "mid": 39843.239,
+    "high": 164055.9212
+   }
+  },
+  {
+   "state": "OH",
+   "name": "Ohio",
+   "fips": "39",
+   "baseline": {
+    "low": 82470.1222,
+    "mid": 153948.3333,
+    "high": 245147.326
+   },
+   "pep_net_change_since_2020": 125297,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 805.739,
+      "mid": 7513.1686,
+      "high": 71214.3175
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 11576.531,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 9763.4335,
+      "high": 17408.116
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 15751.8144,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 27.3306,
+      "high": 311.3814
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 42.9987,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2484.1485,
+      "high": 9406.6424
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2484.1485,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 9272.6071,
+      "high": 35112.2724
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 9272.6071,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 805.739,
+    "mid": 28977.6196,
+    "high": 133186.9746
+   }
+  },
+  {
+   "state": "OK",
+   "name": "Oklahoma",
+   "fips": "40",
+   "baseline": {
+    "low": 38023.0932,
+    "mid": 70978.3333,
+    "high": 113025.898
+   },
+   "pep_net_change_since_2020": 69432,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 265.4961,
+      "mid": 2592.8904,
+      "high": 22044.8481
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3995.2086,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2779.5753,
+      "high": 4955.9584
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4504.5923,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2.1282,
+      "high": 24.2471
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3.3626,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 568.3458,
+      "high": 2152.1363
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 568.3458,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 4932.9652,
+      "high": 18679.4949
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4932.9652,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 265.4961,
+    "mid": 10871.9254,
+    "high": 47815.6931
+   }
+  },
+  {
+   "state": "OR",
+   "name": "Oregon",
+   "fips": "41",
+   "baseline": {
+    "low": 41692.6382,
+    "mid": 77828.3333,
+    "high": 123933.838
+   },
+   "pep_net_change_since_2020": 95470,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 1009.0905,
+      "mid": 5150.6145,
+      "high": 25229.818
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 7936.2318,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 5156.5871,
+      "high": 9194.1494
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 5453.3429,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 88.8004,
+      "high": 1011.7172
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 89.7829,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 614.4732,
+      "high": 2326.8051
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 614.4732,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2395.6564,
+      "high": 9071.5523
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2395.6564,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 1009.0905,
+    "mid": 13116.7778,
+    "high": 46266.2941
+   }
+  },
+  {
+   "state": "PA",
+   "name": "Pennsylvania",
+   "fips": "42",
+   "baseline": {
+    "low": 67711.5872,
+    "mid": 126398.3333,
+    "high": 201276.706
+   },
+   "pep_net_change_since_2020": 139386,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 1100.7604,
+      "mid": 8106.0919,
+      "high": 67253.1122
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 12490.1261,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 10463.7501,
+      "high": 18656.7745
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 15214.6166,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 280.3662,
+      "high": 3194.2579
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 403.7342,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1699.2655,
+      "high": 6434.5521
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1699.2655,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 7356.4716,
+      "high": 27856.5058
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 7356.4716,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 1100.7604,
+    "mid": 27349.8465,
+    "high": 122286.6663
+   }
+  },
+  {
+   "state": "RI",
+   "name": "Rhode Island",
+   "fips": "44",
+   "baseline": {
+    "low": 4164.1747,
+    "mid": 7773.3333,
+    "high": 12378.256
+   },
+   "pep_net_change_since_2020": 5609,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 138.7063,
+      "mid": 837.7327,
+      "high": 6754.1012
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1290.8054,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1422.2667,
+      "high": 2535.889
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1662.2563,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 7.8505,
+      "high": 89.4423
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 9.2664,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 85.0954,
+      "high": 322.2279
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 85.0954,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 283.1091,
+      "high": 1072.0397
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 283.1091,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 138.7063,
+    "mid": 2617.3373,
+    "high": 10724.0947
+   }
+  },
+  {
+   "state": "SC",
+   "name": "South Carolina",
+   "fips": "45",
+   "baseline": {
+    "low": 120896.776,
+    "mid": 225680.0,
+    "high": 359372.832
+   },
+   "pep_net_change_since_2020": 234776,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 492.0513,
+      "mid": 3761.0087,
+      "high": 29827.1835
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 5795.0828,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 4587.4314,
+      "high": 8179.3498
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 6478.7695,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 839.7414,
+      "high": 3179.8209
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 839.7414,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 12614.2452,
+      "high": 47765.9417
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 12614.2452,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 492.0513,
+    "mid": 21798.691,
+    "high": 88891.4025
+   }
+  },
+  {
+   "state": "SD",
+   "name": "South Dakota",
+   "fips": "46",
+   "baseline": {
+    "low": 16422.7763,
+    "mid": 30656.6667,
+    "high": 48817.676
+   },
+   "pep_net_change_since_2020": 36327,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 56.1899,
+      "mid": 548.7625,
+      "high": 3793.9204
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 845.5509,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 475.6014,
+      "high": 847.9932
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 659.7368,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 457.7688,
+      "high": 1733.4178
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 457.7688,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1681.0944,
+      "high": 6365.7443
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1681.0944,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 56.1899,
+    "mid": 3162.942,
+    "high": 12734.7625
+   }
+  },
+  {
+   "state": "TN",
+   "name": "Tennessee",
+   "fips": "47",
+   "baseline": {
+    "low": 121157.4833,
+    "mid": 226166.6667,
+    "high": 360147.8
+   },
+   "pep_net_change_since_2020": 259607,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 544.4523,
+      "mid": 4754.8574,
+      "high": 37714.6876
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 7326.4366,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 5822.1814,
+      "high": 10380.8983
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 7848.5256,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2.8858,
+      "high": 32.8779
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3.3819,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2054.7297,
+      "high": 7780.5765
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2054.7297,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 10863.6698,
+      "high": 41137.0963
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 10863.6698,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 544.4523,
+    "mid": 23485.3357,
+    "high": 96953.6769
+   }
+  },
+  {
+   "state": "TX",
+   "name": "Texas",
+   "fips": "48",
+   "baseline": {
+    "low": 596721.587,
+    "mid": 1113910.0,
+    "high": 1773790.284
+   },
+   "pep_net_change_since_2020": 1258931,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 2585.2571,
+      "mid": 19153.6421,
+      "high": 162491.7027
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 29512.5455,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 25066.0509,
+      "high": 44692.5483
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 35451.3141,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 99.4912,
+      "high": 1133.519
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 132.554,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 12277.1473,
+      "high": 46489.4645
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 12277.1473,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 55389.5963,
+      "high": 209741.9381
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 55389.5963,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 2585.2571,
+    "mid": 111749.9699,
+    "high": 463832.7108
+   }
+  },
+  {
+   "state": "UT",
+   "name": "Utah",
+   "fips": "49",
+   "baseline": {
+    "low": 67889.261,
+    "mid": 126730.0,
+    "high": 201804.852
+   },
+   "pep_net_change_since_2020": 155674,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 753.602,
+      "mid": 3750.5179,
+      "high": 18313.4857
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 5778.9181,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 3759.6114,
+      "high": 6703.354
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 4017.6647,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 46.1756,
+      "high": 526.0866
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 48.4052,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 936.2086,
+      "high": 3545.1097
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 936.2086,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 3802.1074,
+      "high": 14397.3133
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3802.1074,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 753.602,
+    "mid": 12155.78,
+    "high": 43199.0134
+   }
+  },
+  {
+   "state": "VA",
+   "name": "Virginia",
+   "fips": "51",
+   "baseline": {
+    "low": 92184.1488,
+    "mid": 172081.6667,
+    "high": 274022.846
+   },
+   "pep_net_change_since_2020": 161300,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 1140.8619,
+      "mid": 7280.7785,
+      "high": 43846.1626
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 11218.4568,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 7858.7144,
+      "high": 14012.0186
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 9266.9867,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 86.5023,
+      "high": 985.5349
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 77.5523,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1720.3165,
+      "high": 6514.2651
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1720.3165,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 7129.0498,
+      "high": 26995.3354
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 7129.0498,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 1140.8619,
+    "mid": 23954.9308,
+    "high": 92052.7012
+   }
+  },
+  {
+   "state": "VT",
+   "name": "Vermont",
+   "fips": "50",
+   "baseline": {
+    "low": 6610.538,
+    "mid": 12340.0,
+    "high": 19650.216
+   },
+   "pep_net_change_since_2020": 11994,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 81.3822,
+      "mid": 580.2699,
+      "high": 2237.3041
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 894.0985,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 206.1894,
+      "high": 367.6339
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 237.2521,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 98.6016,
+      "high": 373.3716
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 98.6016,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 564.3686,
+      "high": 2137.0759
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 564.3686,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 81.3822,
+    "mid": 1449.1119,
+    "high": 5112.6486
+   }
+  },
+  {
+   "state": "WA",
+   "name": "Washington",
+   "fips": "53",
+   "baseline": {
+    "low": 98022.386,
+    "mid": 182980.0,
+    "high": 291377.352
+   },
+   "pep_net_change_since_2020": 234689,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 2094.7871,
+      "mid": 10995.8198,
+      "high": 46942.517
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 16942.7116,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 10919.1676,
+      "high": 19468.7798
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 10726.2041,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 145.7145,
+      "high": 1660.1488
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 122.203,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1323.2478,
+      "high": 5010.6983
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1323.2478,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 5056.14,
+      "high": 19145.9169
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 5056.14,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 2094.7871,
+    "mid": 28176.0421,
+    "high": 91650.0111
+   }
+  },
+  {
+   "state": "WI",
+   "name": "Wisconsin",
+   "fips": "55",
+   "baseline": {
+    "low": 63292.0622,
+    "mid": 118148.3333,
+    "high": 188139.406
+   },
+   "pep_net_change_since_2020": 113234,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 378.3515,
+      "mid": 3695.0595,
+      "high": 30940.5814
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 5693.4661,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 4321.7204,
+      "high": 7705.5895
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 6259.3912,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1.6057,
+      "high": 18.2937
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 2.3628,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1422.6836,
+      "high": 5387.2287
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1422.6836,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 6386.9572,
+      "high": 24185.278
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 6386.9572,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 378.3515,
+    "mid": 15821.4435,
+    "high": 68172.5366
+   }
+  },
+  {
+   "state": "WV",
+   "name": "West Virginia",
+   "fips": "54",
+   "baseline": {
+    "low": 10863.996,
+    "mid": 20280.0,
+    "high": 32293.872
+   },
+   "pep_net_change_since_2020": 16228,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 125.6238,
+      "mid": 1226.8684,
+      "high": 9390.6547
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1890.3981,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 986.9824,
+      "high": 1759.7809
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1781.0266,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 2.5497,
+      "high": 29.0488
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 3.7382,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 68.6857,
+      "high": 260.09
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 68.6857,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 1355.6586,
+      "high": 5133.4274
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 1355.6586,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 125.6238,
+    "mid": 3632.2123,
+    "high": 16545.8392
+   }
+  },
+  {
+   "state": "WY",
+   "name": "Wyoming",
+   "fips": "56",
+   "baseline": {
+    "low": 5405.213,
+    "mid": 10090.0,
+    "high": 16067.316
+   },
+   "pep_net_change_since_2020": 11902,
+   "scenarios": {
+    "adu": {
+     "increment": {
+      "low": 50.457,
+      "mid": 436.0622,
+      "high": 2406.6892
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 671.8986,
+     "benchmark_outcome": "completed_homes"
+    },
+    "missing_middle": {
+     "increment": {
+      "low": 0.0,
+      "mid": 255.7796,
+      "high": 456.0527
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 349.0987,
+     "benchmark_outcome": "net_permits"
+    },
+    "tod": {
+     "increment": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 0.0,
+     "benchmark_outcome": "stock_change"
+    },
+    "parking": {
+     "increment": {
+      "low": 0.0,
+      "mid": 18.6161,
+      "high": 70.4931
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 18.6161,
+     "benchmark_outcome": "cost_response_proxy"
+    },
+    "fees": {
+     "increment": {
+      "low": 0.0,
+      "mid": 427.5692,
+      "high": 1619.0619
+     },
+     "status": "register_default",
+     "newly_affected_share": 1.0,
+     "benchmark_mid": 427.5692,
+     "benchmark_outcome": "cost_response_proxy"
+    }
+   },
+   "combined": {
+    "low": 50.457,
+    "mid": 1137.8737,
+    "high": 4548.9016
+   }
+  }
+ ]
+}

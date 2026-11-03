@@ -85,4 +85,4 @@ npm-debug.log*
 # Engine outputs: results/ is the working folder (never committed). The web bundle
 # web/public/results/ IS committed (decision 74): regenerate with `make results-all export`
 # after any change to the engine, the register or the inputs; tests/test_bundle.py fails if stale.
-results/
+/results/
