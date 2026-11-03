@@ -2329,5 +2329,359 @@
  "validation_ledger": {
   "status": "placeholder; Phase 5 fills it (decision 37)",
   "entries": []
- }
+ },
+ "sources": [
+  {
+   "id": "aclf",
+   "title": "Census Address Count Listing Files",
+   "license": "U.S. Census Bureau, public domain (U.S. government work)",
+   "notes": "Block-level housing-unit counts from the Master Address File. From July 2023 on the published TOTAL HOUSING UNITS column sums to about twice the housing stock; see docs/DATA_PROVENANCE.md and hre validate --aclf. The July 2023 and 2024 files exclude transitory units.",
+   "files": 408,
+   "where": [
+    "https://www2.census.gov/geo/pvs/addcountlisting/2020/",
+    "https://www2.census.gov/geo/pvs/addcountlisting/2023/",
+    "https://www2.census.gov/geo/pvs/addcountlisting/2024/",
+    "https://www2.census.gov/geo/pvs/addcountlisting/2025/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "2022-06",
+    "2023-07",
+    "2023-12",
+    "2024-07",
+    "2024-12",
+    "2025-07"
+   ],
+   "vintage_key": "aclf",
+   "only_for": null,
+   "in_model": false,
+   "why_not": "Downloaded and checked, then excluded (decision 46): from July 2023 the published count reads about double the Census housing-unit estimates.",
+   "manifest": "data/manifests/aclf.json"
+  },
+  {
+   "id": "acs",
+   "title": "American Community Survey 5-year summary files",
+   "license": "U.S. Census Bureau, public domain; catalog entry tagged CC0 1.0",
+   "notes": "Table-based 5-year summary files; block-group margins of error are large and are not stored; tracts and block groups are 2020 vintage; Connecticut in planning regions.",
+   "files": 9,
+   "where": [
+    "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/documentation/",
+    "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "ACS 5-year 2020-2024 (2024 release)"
+   ],
+   "vintage_key": "acs",
+   "only_for": null,
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/acs.json"
+  },
+  {
+   "id": "bps",
+   "title": "Census Building Permits Survey, county and state annual files",
+   "license": "U.S. Census Bureau, public domain (U.S. government work); no license statement published",
+   "notes": "Annual county and state files, 'estimates with imputation' block. Permits are authorisations, not completions; counties with no permit-issuing place are absent, not zero; Connecticut switches from counties to planning regions in 2023.",
+   "files": 56,
+   "where": [
+    "https://www2.census.gov/econ/bps/County/",
+    "https://www2.census.gov/econ/bps/State/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "annual files as posted 2026 (2025 posted 2026-05-14)"
+   ],
+   "vintage_key": "bps",
+   "only_for": null,
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/bps.json"
+  },
+  {
+   "id": "cbsa",
+   "title": "OMB metropolitan and micropolitan area delineation",
+   "license": "OMB Bulletin 23-01 delineations distributed by the U.S. Census Bureau; public domain",
+   "notes": "County membership in metropolitan and micropolitan statistical areas, with the central/outlying flag that defines the missing-middle exposure.",
+   "files": 1,
+   "where": [
+    "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2023/delineation-files/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "2023-07"
+   ],
+   "vintage_key": "cbsa",
+   "only_for": null,
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/cbsa.json"
+  },
+  {
+   "id": "cenpop",
+   "title": "2020 Census centers of population by block group",
+   "license": "U.S. Census Bureau, public domain (U.S. government work)",
+   "notes": "Population-weighted mean centre of each 2020 block group; the origin of every transit-distance measurement.",
+   "files": 51,
+   "where": [
+    "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "2020 Census"
+   ],
+   "vintage_key": "cenpop",
+   "only_for": null,
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/cenpop.json"
+  },
+  {
+   "id": "ct_crosswalk",
+   "title": "Connecticut towns to 2020 block groups (Census relationship file)",
+   "license": "U.S. Census Bureau, public domain (U.S. government work)",
+   "notes": "Maps each Connecticut 2020 block group (legacy county code) to the planning region it lies in, so it joins the Gazetteer and the ACS 2020-2024.",
+   "files": 1,
+   "where": [
+    "https://www2.census.gov/geo/docs/maps-data/data/rel2022/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "2022 county subdivisions to 2020 block groups (ACS 2022 relationship files)"
+   ],
+   "vintage_key": null,
+   "only_for": [
+    "CT"
+   ],
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/ct_crosswalk.json"
+  },
+  {
+   "id": "fhfa",
+   "title": "FHFA House Price Index, county, annual",
+   "license": "Freely available from FHFA; cite 'Source: FHFA HPI'. This product uses FHFA data but is neither endorsed nor certified by FHFA.",
+   "notes": "County all-transactions index, developmental, not seasonally adjusted; base 100 at the county's first recorded year; missing cells dropped.",
+   "files": 1,
+   "where": [
+    "https://www.fhfa.gov/hpi/download/annual/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "annual through 2025 (file updated 2026-03-31)"
+   ],
+   "vintage_key": "fhfa",
+   "only_for": null,
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/fhfa.json"
+  },
+  {
+   "id": "gazetteer",
+   "title": "Census Gazetteer, counties",
+   "license": "U.S. Census Bureau, public domain (U.S. government work)",
+   "notes": "County names, land area (sq mi) and internal points; used as the county index every other source is joined to by FIPS.",
+   "files": 1,
+   "where": [
+    "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "2025"
+   ],
+   "vintage_key": "gazetteer",
+   "only_for": null,
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/gazetteer.json"
+  },
+  {
+   "id": "gtfs_amtrak",
+   "title": "Amtrak GTFS feed, Shore Line East stations only",
+   "license": "Amtrak publishes no licence or terms for its GTFS feed; public download, station locations only are used and the file is not redistributed",
+   "notes": "Operator GTFS feed used only for the Shore Line East stations, which the National Transit Map lacks; see src/hre/data/fetch_rail_supplement.py.",
+   "files": 1,
+   "where": [
+    "https://content.amtrak.com/content/gtfs/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "feed current on the fetch date (service dates in its feed_info.txt or calendar.txt)"
+   ],
+   "vintage_key": null,
+   "only_for": [
+    "CT"
+   ],
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/gtfs_amtrak.json"
+  },
+  {
+   "id": "gtfs_ct_hartford_line",
+   "title": "CTrail Hartford Line GTFS feed, stations only",
+   "license": "CTtransit GTFS Data Terms of Use: non-exclusive, limited, revocable right to use, reproduce and redistribute; no use of CTtransit trademarks; provided as is",
+   "notes": "Operator GTFS feed used only for the CTrail Hartford Line stations, which the National Transit Map lacks; see src/hre/data/fetch_rail_supplement.py.",
+   "files": 1,
+   "where": [
+    "https://ctrides.com/hlgtfs.zip"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "feed current on the fetch date (service dates in its feed_info.txt or calendar.txt)"
+   ],
+   "vintage_key": null,
+   "only_for": [
+    "CT"
+   ],
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/gtfs_ct_hartford_line.json"
+  },
+  {
+   "id": "hcd",
+   "title": "California HCD Annual Progress Report, Table A2 (ADU rates)",
+   "license": "California HCD open data; data.ca.gov lists 'License not specified'; HCD's APR data page states no restrictions on use. Provenance retained.",
+   "notes": "Table A2 by project and report year; ADU rows only are used; projects repeat across report years and are de-duplicated by (jurisdiction, APN | tracking id | address).",
+   "files": 1,
+   "where": [
+    "https://publish.data.ca.gov/dataset/81b0841f-2802-403e-b48e-2ef4b751f77c/resource/fe505d9b-8c36-42ba-ba30-08bc4f34e022/download/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "resource last modified 2026-10-30"
+   ],
+   "vintage_key": "hcd_adu_tiers",
+   "only_for": null,
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/hcd.json"
+  },
+  {
+   "id": "nrc",
+   "title": "Census New Residential Construction, completions per permit",
+   "license": "U.S. Census Bureau, public domain (U.S. government work)",
+   "notes": "Annual sheet, United States columns. Permits cover permit-issuing places; completions come from the Survey of Construction, which reclassifies townhouses that permit offices filed as multifamily into one-unit structures (https://www.census.gov/construction/pdf/nrc_relationships.pdf).",
+   "files": 3,
+   "where": [
+    "https://www.census.gov/construction/nrc/xls/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "annual series through 2025, as posted 2026"
+   ],
+   "vintage_key": "nrc",
+   "only_for": null,
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/nrc.json"
+  },
+  {
+   "id": "nzlud",
+   "title": "National Zoning and Land Use Database (NZLUD)",
+   "license": "MIT (https://github.com/mtmleczko/nzlud/blob/main/LICENSE)",
+   "notes": "Zoning-code extraction, 2019; MSA file keyed by 2010 CBSA codes, municipal file by place GEOID (leading zeros restored). No multifamily-share column at MSA level.",
+   "files": 2,
+   "where": [
+    "https://raw.githubusercontent.com/mtmleczko/nzlud/main/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "2019-2022 survey, repository main branch"
+   ],
+   "vintage_key": "nzlud",
+   "only_for": null,
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/nzlud.json"
+  },
+  {
+   "id": "pep",
+   "title": "Census Population Estimates, housing units by county",
+   "license": "U.S. Census Bureau, public domain (U.S. government work)",
+   "notes": "Housing-unit estimates are built partly from building permits, so they are not independent of BPS; used as stock denominators and as the reference for the Address Count Listing File ratio check.",
+   "files": 1,
+   "where": [
+    "https://www2.census.gov/programs-surveys/popest/tables/2020-2025/housing/totals/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "2025 (Vintage 2025 estimates, July 1 2020 to July 1 2025)"
+   ],
+   "vintage_key": "pep",
+   "only_for": null,
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/pep.json"
+  },
+  {
+   "id": "transit",
+   "title": "National Transit Map stops and National Transit Database modes",
+   "license": "National Transit Database, U.S. DOT, public domain",
+   "notes": "Agencies and the modes they report; rail/ferry modes cross-check the stop filter.",
+   "files": 102,
+   "where": [
+    "https://data.transportation.gov/resource/",
+    "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/"
+   ],
+   "accessed": [
+    "2026-11-03",
+    "2026-11-03"
+   ],
+   "vintages": [
+    "feeds downloaded 2025-03-19 to 2026-09-23",
+    "feeds downloaded 2025-06-02 to 2026-09-23",
+    "feeds downloaded 2025-09-02 to 2026-09-23",
+    "feeds downloaded 2025-12-02 to 2026-09-23",
+    "feeds downloaded 2026-03-09 to 2026-09-23",
+    "feeds downloaded 2026-09-23 to 2026-09-23"
+   ],
+   "vintage_key": "transit",
+   "only_for": null,
+   "in_model": true,
+   "why_not": null,
+   "manifest": "data/manifests/transit.json"
+  }
+ ]
 }
