@@ -67,7 +67,7 @@ web-dev: ## Development server with live reload at http://localhost:5173 (after 
 	cd web && npm run dev
 
 test-web: ## Web checks: unit tests, style and licence rules, the rescale equality test vs hre run --set
-	cd web && npm test
+	cd web && npm test && npm run equality
 
 run:     ## Build the site when Node is installed, then serve web/dist at http://localhost:8080
 	@if command -v npm >/dev/null 2>&1; then $(MAKE) web; \
