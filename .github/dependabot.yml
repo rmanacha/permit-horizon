@@ -19,10 +19,13 @@ updates:
     schedule:
       interval: "weekly"
 
-  # Web front-end (Vite + React) under /web, added in Phase 4. Commented out
-  # until web/package.json exists, because Dependabot fails a weekly job for a
-  # directory with no manifest. Phase 4: uncomment this block.
-  # - package-ecosystem: "npm"
-  #   directory: "/web"
-  #   schedule:
-  #     interval: "weekly"
+  # Web front-end (Vite + React + TypeScript) under /web, from Phase 4.
+  - package-ecosystem: "npm"
+    directory: "/web"
+    schedule:
+      interval: "weekly"
+    ignore:
+      # Vite 8 depends on lightningcss, which is MPL-2.0 (copyleft, not allowed for
+      # dependencies); the site stays on Vite 7, which uses esbuild and rollup (MIT).
+      - dependency-name: "vite"
+        update-types: ["version-update:semver-major"]

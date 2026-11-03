@@ -52,3 +52,18 @@ jobs:
 
       - name: Offline demo build
         run: make demo
+
+      # Web front-end (Phase 4): the locked npm packages, a type-checked build of web/dist, and
+      # the web tests. The results bundle in web/public/results/ is committed (decision 74) and
+      # only copied into the build; nothing here regenerates it.
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Web build (npm ci, type check, vite build)
+        run: make web
+
+      - name: Web tests
+        run: make test-web

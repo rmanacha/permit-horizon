@@ -1,0 +1,92 @@
+/*
+ * Design tokens: the ONLY place colors, spacing, fonts, sizes, borders and radii are written.
+ * Every other stylesheet uses var(--...) from this file, and components carry class names only
+ * (no inline styles); scripts/style_rules.test.mjs fails if either rule is broken.
+ * To restyle the site, edit this file.
+ */
+:root {
+  /* Fonts (system fonts: nothing is downloaded) */
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.375rem;
+  --font-size-xxl: 1.75rem;
+  --font-size-hero: 2.25rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.25;
+  --line-height-base: 1.5;
+
+  /* Colors */
+  --color-text: #1f2328;
+  --color-text-muted: #57606a;
+  --color-bg: #ffffff;
+  --color-surface: #f6f8fa;
+  --color-surface-strong: #eaeef2;
+  --color-border: #d0d7de;
+  --color-border-strong: #8c959f;
+  --color-link: #0a58b4;
+  --color-link-hover: #083f80;
+  --color-accent: #0a58b4;
+  --color-accent-text: #ffffff;
+  --color-focus: #e36209;
+  --color-warning-bg: #fff8c5;
+  --color-warning-border: #bf8700;
+  --color-note-bg: #ddf4ff;
+  --color-note-border: #54aeff;
+  --color-danger-text: #a40e26;
+
+  /* Badges: status of an increment and how a changed estimate was computed */
+  --color-badge-default-bg: #ddf4ff;
+  --color-badge-default-text: #0a3069;
+  --color-badge-user-bg: #fbefff;
+  --color-badge-user-text: #512a97;
+  --color-badge-zero-bg: #eaeef2;
+  --color-badge-zero-text: #24292f;
+  --color-badge-exact-bg: #dafbe1;
+  --color-badge-exact-text: #0f5323;
+  --color-badge-interp-bg: #fff8c5;
+  --color-badge-interp-text: #6c4400;
+  --color-badge-na-bg: #ffebe9;
+  --color-badge-na-text: #82071e;
+  --color-badge-review-bg: #fff1e5;
+  --color-badge-review-text: #762c00;
+
+  /* Charts (every bar also carries a text label, so color is never the only cue) */
+  --color-chart-bar: #4a90d9;
+  --color-chart-bar-alt: #8250df;
+  --color-chart-range: #24292f;
+  --color-chart-low: #cf6a00;
+  --color-chart-high: #1a7f37;
+  --color-chart-axis: #8c959f;
+  --color-chart-grid: #eaeef2;
+  --color-chart-label: #1f2328;
+
+  /* Spacing scale */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  /* Layout */
+  --content-max: 74rem;
+  --measure: 48em;
+  --card-min: 20rem;
+  --label-col: 11rem;
+  --chart-height-row: 1.75rem;
+  --border-width: 1px;
+  --border-width-strong: 3px;
+  --focus-width: 3px;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-pill: 999rem;
+  --shadow-card: 0 1px 2px rgba(31, 35, 40, 0.08);
+}

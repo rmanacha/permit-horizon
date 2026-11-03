@@ -28,6 +28,7 @@ secrets.*
 Thumbs.db
 .idea/
 .vscode/
+.claude/
 *.swp
 *.log
 

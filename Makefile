@@ -8,9 +8,10 @@
 # Requires: uv (https://docs.astral.sh/uv/). uv downloads the pinned Python
 # itself (.python-version) and never touches the system Python.
 
-.PHONY: setup test run lint demo data validate-aclf hcd results backtest adu-tiers nrc register-md results-all export
+.PHONY: setup test run lint demo data validate-aclf hcd results backtest adu-tiers nrc register-md results-all export web web-dev test-web
 
 STATE ?= NH
+PORT ?= 8080
 
 setup:   ## Install the exact pinned environment from uv.lock into .venv
 	uv sync --frozen --all-extras
@@ -59,5 +60,18 @@ nrc:     ## Completions per permit from Census NRC -> docs/evidence/completions_
 register-md: ## The assumption register as Markdown -> docs/methods/register.md
 	uv run hre export --register-md --out docs/methods/register.md
 
-run:     ## Start the tool (the web app arrives in Phase 4)
-	@echo "Permit Horizon: the web app arrives in Phase 4. For now, run 'make demo' or 'make test'."
+web:     ## Build the static site -> web/dist (Node 22.18+; installs the locked npm packages first)
+	cd web && npm ci --no-audit --no-fund && npm run build
+
+web-dev: ## Development server with live reload at http://localhost:5173 (after make web once)
+	cd web && npm run dev
+
+test-web: ## Web checks: unit tests, style and licence rules, the rescale equality test vs hre run --set
+	cd web && npm test
+
+run:     ## Build the site when Node is installed, then serve web/dist at http://localhost:8080
+	@if command -v npm >/dev/null 2>&1; then $(MAKE) web; \
+	elif [ -f web/dist/index.html ]; then echo "Node not found: serving the web/dist already built"; \
+	else echo "Node is not installed and web/dist does not exist: install Node 22.18+ (https://nodejs.org), or run 'docker compose up', or open https://rmanacha.github.io/permit-horizon/"; exit 1; fi
+	@echo "Permit Horizon: open http://localhost:$(PORT)/ (Ctrl-C stops the server)"
+	uv run python -m http.server $(PORT) --bind 127.0.0.1 --directory web/dist
