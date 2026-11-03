@@ -24,7 +24,7 @@ def test_every_id_used_in_code_is_in_the_register():
 
 
 def test_code_uses_the_register_at_all():
-    assert {"horizon_years", "baseline_window_years", "baseline_band_ratio"} <= _used_ids()
+    assert {"horizon_years", "baseline_band_ratio", "builder_response_override"} <= _used_ids()
 
 
 def test_every_entry_has_locator_url_grade_confidence():
