@@ -79,7 +79,14 @@ export function LevelControl({ entry, accepts }: { entry: RegisterEntry; accepts
         <div className="segmented" role="radiogroup" aria-label={`${entry.label}: assumption level`}>
           {(['low', 'mid', 'high'] as Level[]).map((lv) => (
             <label key={lv} className={current === lv ? 'segment segment-on' : 'segment'}>
-              <input type="radio" name={name} checked={current === lv} onChange={() => set({ level: lv })} />
+              <input
+                type="radio"
+                name={name}
+                value={lv}
+                aria-label={`${entry.label}: ${lv === 'mid' ? 'middle' : lv}, ${levelText(entry, lv)}`}
+                checked={current === lv}
+                onChange={() => set({ level: lv })}
+              />
               <span className="segment-level">{lv === 'mid' ? 'middle' : lv}</span>
               <span className="segment-text">{levelText(entry, lv)}</span>
             </label>

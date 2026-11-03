@@ -149,3 +149,41 @@ main { max-width: var(--content-max); margin: var(--space-0) auto; padding: var(
   .card { box-shadow: none; break-inside: avoid; }
   a { color: var(--color-text); }
 }
+
+/* Scenario detail */
+.formula { display: block; white-space: pre-wrap; background: var(--color-surface); padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); }
+.narrative { padding-left: var(--space-5); }
+.narrative li { margin: var(--space-1) var(--space-0); }
+.chain { list-style: none; padding: var(--space-0); display: grid; gap: var(--space-3); }
+.chain-item { border: var(--border-width) solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); }
+.chain-title { margin: var(--space-0) var(--space-0) var(--space-1); font-size: var(--font-size-base); }
+.source-list { font-size: var(--font-size-sm); padding-left: var(--space-5); margin: var(--space-2) var(--space-0); }
+.quote { display: block; color: var(--color-text-muted); }
+.quote-block { margin: var(--space-2) var(--space-0); padding: var(--space-2) var(--space-3); border-left: var(--border-width-strong) solid var(--color-border-strong); background: var(--color-surface); }
+.cell-button { font: inherit; font-variant-numeric: tabular-nums; background: var(--color-bg); border: var(--border-width) solid var(--color-border); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-2); cursor: pointer; min-width: var(--space-7); }
+.cell-on { border-color: var(--color-accent); background: var(--color-note-bg); font-weight: var(--font-weight-medium); }
+.button-secondary[aria-pressed="true"] { border-color: var(--color-accent); background: var(--color-note-bg); }
+
+/* Data, methods, validation, about */
+.filter { display: inline-flex; gap: var(--space-2); align-items: center; font-size: var(--font-size-sm); margin: var(--space-2) var(--space-0); }
+.filter select { font: inherit; padding: var(--space-1) var(--space-2); }
+.register-table .level-control { margin: var(--space-0); }
+.plain-list { list-style: none; padding: var(--space-0); margin: var(--space-0); }
+.total-row th, .total-row td { font-weight: var(--font-weight-medium); background: var(--color-surface); }
+.formula-list > div { margin: var(--space-3) var(--space-0); }
+.formula-list dt { font-weight: var(--font-weight-medium); }
+.formula-list dd { margin: var(--space-1) var(--space-0); }
+.glossary > div { margin: var(--space-2) var(--space-0); }
+.glossary dt { font-weight: var(--font-weight-medium); }
+.glossary dd { margin: var(--space-0) var(--space-0) var(--space-0) var(--space-4); }
+.limits-list li { margin: var(--space-2) var(--space-0); }
+
+/* One-page brief */
+.brief h1 { font-size: var(--font-size-xl); }
+.brief h2 { font-size: var(--font-size-base); margin: var(--space-3) var(--space-0) var(--space-1); }
+.brief p, .brief li { margin: var(--space-1) var(--space-0); }
+.brief-table { font-size: var(--font-size-xs); }
+@media print {
+  .brief { font-size: var(--font-size-xs); }
+  .brief .data-table th, .brief .data-table td { padding: var(--space-0) var(--space-1); }
+}
