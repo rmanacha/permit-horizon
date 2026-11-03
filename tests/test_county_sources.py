@@ -31,7 +31,9 @@ def test_pep_joins_by_name(sample_dir):
     counties = fetch_gazetteer.load_counties("99", sample_dir)
     pep = fetch_pep.load_pep("Zetaland", counties, sample_dir)
     assert pep["99001"]["2025"] == 21000 and pep["99003"]["2020"] == 10000
-    assert sorted(pep["99001"]) == [str(y) for y in range(2020, 2026)]  # the April 1 base is not a year key
+    # July 1 estimates under year keys; the April 1 2020 base under its own key (schema 3)
+    assert sorted(pep["99001"]) == ["2020", fetch_pep.APRIL_2020_KEY] + [str(y) for y in range(2021, 2026)]
+    assert pep["99001"][fetch_pep.APRIL_2020_KEY] == 20000
 
 
 def test_bps_county_total_matches_state_file(sample_dir):

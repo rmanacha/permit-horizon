@@ -4,7 +4,7 @@ Pure: the caller (``hre run``) reads the processed input with
 ``StateInputs.from_json``, loads the registers, collects meta (git sha, run date,
 digests) and writes the file. Layout and field meanings: docs/methods/results_schema.md.
 
-    {results_schema_version, meta{...}, baseline{...},
+    {results_schema_version, meta{...}, baseline{...}, cross_check{housing_units_pep{...}},
      scenarios{<name>{benchmark{low,mid,high,outcome,interpretation},
                       increment{status,estimate,assumptions[],outcome,can_add_to_baseline},
                       total{estimate,pairing_rule}, cases{...}, tornado[],
@@ -20,7 +20,13 @@ import math
 from typing import Any
 
 from hre.model.baseline import baseline
-from hre.model.drivers import NO_LLM_STATEMENT, alternative_band_narrative, baseline_narrative
+from hre.model.crosscheck import pep_cross_check
+from hre.model.drivers import (
+    NO_LLM_STATEMENT,
+    alternative_band_narrative,
+    baseline_narrative,
+    cross_check_narrative,
+)
 from hre.model.params import Params
 from hre.schema import OUTCOMES, StateInputs
 
@@ -41,10 +47,13 @@ def run_state(state: StateInputs, params: Params, scenarios: list[str], meta: di
     b["narrative"] = baseline_narrative(b, state_name or state.state)
     b["alternative_band"]["narrative"] = alternative_band_narrative(b["alternative_band"],
                                                                     state_name or state.state)
+    xc = pep_cross_check(state)
+    xc["narrative"] = cross_check_narrative(xc, state_name or state.state)
     return {
         "results_schema_version": RESULTS_SCHEMA_VERSION,
         "meta": {"state": state.state, "state_fips": state.state_fips, **meta},
         "baseline": b,
+        "cross_check": {"housing_units_pep": xc},
         "scenarios": {},
         "registers_used": registers_used,
         "no_llm": NO_LLM_STATEMENT,
@@ -108,6 +117,13 @@ def validate_results(r: Any) -> list[str]:
             p.append("baseline.alternative_band.outcome not in the fixed set")
         if alt.get("applied_to_counties") is not False:
             p.append("baseline.alternative_band is state-level only")
+    xc = r.get("cross_check", {}).get("housing_units_pep") if isinstance(r.get("cross_check"), dict) else None
+    if not isinstance(xc, dict) or "caveat" not in xc:
+        p.append("cross_check.housing_units_pep missing (decision 68)")
+    elif xc.get("can_add_to_baseline") or xc.get("outcome") != "stock_change":
+        p.append("cross_check.housing_units_pep is a stock_change view, never added to the baseline")
+    elif xc.get("available") and not _finite(xc["state"]["net_change"]):
+        p.append("cross_check.housing_units_pep.state.net_change must be a finite number")
     for name, s in r["scenarios"].items():
         if name not in KNOWN_SCENARIOS:
             p.append(f"unknown scenario {name}")

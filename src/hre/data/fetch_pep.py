@@ -22,6 +22,7 @@ PEP_URL = (
 )
 LICENSE = "U.S. Census Bureau, public domain (U.S. government work)"
 VINTAGE = "2025 (Vintage 2025 estimates, July 1 2020 to July 1 2025)"
+APRIL_2020_KEY = "2020-04"   # the April 1 2020 estimates base (2020 Census count, adjusted)
 
 
 def pep_path(data_dir: Path | None = None) -> Path:
@@ -38,10 +39,14 @@ def fetch_pep(data_dir: Path | None = None, force: bool = False) -> Path:
 
 
 def read_pep(data_dir: Path | None = None) -> dict[tuple[str, str], dict[str, int]]:
-    """(normalised county name, normalised state name) -> {"2020": n, ..., "2025": n}."""
+    """(normalised county name, normalised state name) -> {"2020-04": base, "2020": n, ..., "2025": n}.
+
+    "2020-04" is the April 1 2020 estimates base; "2020" to "2025" are July 1 estimates.
+    """
     wb = openpyxl.load_workbook(pep_path(data_dir), read_only=True)
     ws = wb[wb.sheetnames[0]]
     years: list[str] | None = None
+    header: tuple = ()
     out: dict[tuple[str, str], dict[str, int]] = {}
     for row in ws.iter_rows(values_only=True):
         if not row:
@@ -49,6 +54,11 @@ def read_pep(data_dir: Path | None = None) -> dict[tuple[str, str], dict[str, in
         if years is None:
             if row[0] is None and any(isinstance(v, int) for v in row):
                 years = [str(v) if isinstance(v, int) else "" for v in row]
+                for j, h in enumerate(header):   # the April 1 2020 base column has no year cell
+                    if j < len(years) and not years[j] and isinstance(h, str) and h.startswith("April 1, 2020"):
+                        years[j] = APRIL_2020_KEY
+            else:
+                header = row
             continue
         label = row[0]
         if not isinstance(label, str) or not label.startswith("."):

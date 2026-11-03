@@ -95,3 +95,16 @@ def band_realtime_reading(rt: dict[str, Any]) -> str:
     s = f"Refitted each year on closed windows only, the band covered {rt['share_inside']:.0%} of {a}-{b} runs"
     w = rt.get("origins_under_5pct") or []
     return s + (f" and under 5% at origins {w[0]}-{w[-1]}." if w else ".")
+
+
+def cross_check_narrative(xc: dict[str, Any], state_name: str) -> list[str]:
+    """One sentence for the "net change since April 2020" panel, plus the caveat."""
+    if not xc.get("available"):
+        return [f"Census housing-unit estimates are not available for {state_name} in this input."]
+    s = xc["state"]
+    return [
+        (f"Census housing-unit estimates put {state_name}'s housing stock at {s['end']:,} in July "
+         f"{xc['end_year']}, {round_display(s['net_change'])} more than in April 2020 "
+         f"({s['change_share']:+.1%})."),
+        xc["caveat"],
+    ]

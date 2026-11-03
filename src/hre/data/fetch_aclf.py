@@ -127,6 +127,7 @@ def pep_reference(pep_by_year: dict[str, int], vintage: str) -> tuple[float | No
     5/12 of the way to the next July 1 estimate (interpolated). Dates after the
     last PEP year extend the last annual change (extrapolated).
     """
+    pep_by_year = {y: v for y, v in pep_by_year.items() if y.isdigit()}   # July 1 keys only
     if not pep_by_year:
         return None, "no PEP"
     year, month = int(vintage[:4]), int(vintage[5:7])

@@ -24,7 +24,7 @@ Conventions:
 |---|---|---|
 | `state` | USPS code, e.g. `"NH"` | fixed table in `src/hre/data/states.py` |
 | `state_fips` | 2-digit FIPS, e.g. `"33"` | same |
-| `schema_version` | `"2"` | bumped when a field is added or changes meaning. Version 2 (Phase 2, 2026-11-03, decision 69) added `state_permits_history`; files written as version 1 fail validation and must be rebuilt with `hre build` |
+| `schema_version` | `"3"` | bumped when a field is added or changes meaning. Version 2 (Phase 2, 2026-11-03, decision 69) added `state_permits_history`; version 3 (Phase 3 step 0, 2026-11-03, decision 68) adds the April 1 2020 estimates base to `housing_units_pep` under the key `"2020-04"`; files written as an older version fail validation and must be rebuilt with `hre build` |
 | `vintages` | which release of each source went in, e.g. `{"bps": "2025", "acs": "2020-2024 (2024 release)"}` | each fetcher |
 | `counties` | list of `CountyInputs` (below), one per county equivalent | |
 | `block_groups` | list of `BlockGroupInputs` (below) | |
@@ -42,7 +42,7 @@ Conventions:
 | `metro_role` | `"central"` or `"outlying"` **within a metropolitan statistical area**, else `"none"`. Micropolitan counties are `"none"` because the missing-middle scenario transfers a rate measured in metropolitan central counties. | same |
 | `permits` | `{"2016": {"u1", "u2", "u34", "u5"}, ...}`: housing units authorised by building permits, by structure size (1 unit, 2 units, 3 to 4 units, 5 or more), "estimates with imputation" block | Census Building Permits Survey county annual files `co{YYYY}a.txt` |
 | `permits_5plus_share_5yr` | share of permitted units in 5+ unit buildings over the latest five years with data (the parking-scenario exposure); `null` if the county permitted nothing | computed from `permits` |
-| `housing_units_pep` | `{"2020": n, ..., "2025": n}`: July 1 housing-unit estimates | Census Population Estimates `CO-EST2025-HU.xlsx` (the `"2020"` key is the July 1 2020 estimate, not the April 1 base) |
+| `housing_units_pep` | `{"2020-04": n, "2020": n, ..., "2025": n}`: the April 1 2020 estimates base and the July 1 housing-unit estimates | Census Population Estimates `CO-EST2025-HU.xlsx` (`"2020-04"` is the April 1 base column; `"2020"` is the July 1 2020 estimate) |
 | `address_units` | `{"2022-06": n, "2023-07": n, ...}`: housing units on the Census master address list, summed from blocks. **From July 2023 on the published column is divided by two** (see `docs/DATA_PROVENANCE.md`, "Address Count Listing Files"); when the state fails the ratio check the dictionary is empty and `notes` says why | Census Address Count Listing Files |
 | `housing_units` | total housing units (ACS B25001) | ACS 5-year 2020-2024 bulk files |
 | `sf_detached`, `sf_attached`, `units_2_4`, `units_5plus`, `mobile` | units in structure: 1 detached; 1 attached; 2 to 4 (B25024 columns 4 + 5); 5 or more (columns 6 to 9); mobile homes (column 10). Boats, RVs and vans (column 11) are not stored | ACS B25024 |

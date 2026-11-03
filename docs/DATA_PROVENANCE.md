@@ -59,8 +59,9 @@ structure: detached, attached, 2 to 4 (columns 4 and 5 summed), 5 or more
 (columns 6 to 9 summed), mobile; boats, RVs and vans are not stored. Margins of
 error are not stored.
 
-**PEP.** Rows with a leading dot are counties; the April 1 2020 base column is
-dropped and the July 1 estimates for 2020 to 2025 are kept.
+**PEP.** Rows with a leading dot are counties; the April 1 2020 estimates base
+is kept under the key `2020-04` (input schema version 3, for the "net change since
+April 2020" cross-check) beside the July 1 estimates for 2020 to 2025.
 
 **Address Count Listing Files.** Summed from blocks to counties for each
 vintage, with the header normalised (the 2026 file uses underscores; the 2022

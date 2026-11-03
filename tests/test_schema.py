@@ -138,7 +138,7 @@ def test_state_permits_history_field(sample_dir):
 
     si, _ = build_state("ZZ", sample_dir)
     d = si.to_dict()
-    assert SCHEMA_VERSION == "2" and len(d["state_permits_history"]) == 46
+    assert SCHEMA_VERSION == "3" and len(d["state_permits_history"]) == 46
     assert d["state_permits_history"]["1990"] == 356            # written as "9099" in the file
     d["state_permits_history"]["90"] = -1
     problems = " ".join(validate(d))

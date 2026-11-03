@@ -25,6 +25,27 @@ Written by `hre run --state XX --scenarios baseline` (`src/hre/model/run.py`), c
 | `method`, `notes[]`, `narrative[]` | one-line method; county-years with no BPS row; 2-3 template sentences |
 | `alternative_band` | the 20-year swing band (Adam Ruege's rule), shown in its own section: `available`; when true `outcome`, `credit`, `low`, `mid` (the last five years' total), `high`, `low_ratio`, `high_ratio`, `average_five_year_total`, `slowest_window` and `fastest_window` (`[first year, last year, total]`), `point_years`, `history`, `how_built`, `how_it_did`, `why_not_headline`, `applied_to_counties` (always false), `narrative[]`; when false, `reason` |
 
+## `cross_check.housing_units_pep` (decisions 56, 68)
+
+"Census housing-unit estimates: net change since April 2020", shown beside the permit
+baseline and never added to it (`outcome` `stock_change`, `can_add_to_baseline` false).
+Built by `hre.model.crosscheck.pep_cross_check` from the processed input's
+`housing_units_pep` (input schema 3 keeps the April 1 2020 estimates base as `"2020-04"`).
+
+| Field | Meaning |
+|---|---|
+| `label`, `measure`, `source` | what the panel shows and where it comes from |
+| `available` | false when no county has both an April 2020 base and a July estimate |
+| `end_year` | the latest July 1 estimate used (2025 for Vintage 2025) |
+| `county[]` | `fips`, `name`, `april_2020`, `july_{end_year}`, `end_year`, `net_change`, `change_share` |
+| `state` | `april_2020`, `end`, `net_change`, `change_share`, summed over the counties listed |
+| `caveat` | "These estimates are built partly from building permits, so they are a consistency view, not an independent measurement of homes added." |
+| `narrative[]` | one template sentence plus the caveat |
+| `notes[]` | counties left out and why |
+
+NH (Vintage 2025): 638,800 in April 2020, 662,160 in July 2025, +23,360 (+3.7%); the 2021-2025
+permit total was 24,225.
+
 ## Scenario block (Phase 3 fills it; the validator already enforces it)
 
     {benchmark{low, mid, high, outcome, interpretation},
