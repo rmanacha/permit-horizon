@@ -1,0 +1,60 @@
+# New Hampshire current-law register.
+#
+# ADU entry seeded from Adam Ruege's Housing Reform Estimator v2.0 current-law
+# record for NH (payload build v2.0-a3d61961fd76; his review as of 2026-10-21,
+# official text checked, human review pending), ported with attribution (decision
+# 43). Re-checked against the official statute page on 2026-11-03: paragraphs I,
+# IV, VI and VII and the source note match (Phase 2 report, spot-checks).
+# Other scenarios are not yet assessed (Phase 5) and default to strength 0.
+
+state: NH
+scenarios:
+  adu:
+    record:
+      law: "RSA 674:71 to 674:73, as amended by H.B. 577 (2025, chapter 197) and H.B. 1079 (2026, chapter 210); first enacted by S.B. 146 (2016, chapter 6)"
+      summary: "Every New Hampshire town or city with zoning must allow one attached or detached ADU by right in every district that allows single-family homes, and may require the owner to live in one of the two units."
+      quote: "One accessory dwelling unit, which may be either attached or detached, shall be allowed as a matter of right."
+      url: https://gc.nh.gov/rsa/html/LXIV/674/674-72.htm
+      accessed: "2026-11-03"
+      in_effect: "2025 changes effective July 1, 2025; 2026 chapter 210 effective August 31, 2026 (ADUs required in some form since June 1, 2017)"
+    features:
+      - id: adu_per_lot
+        challenge_requirement: "Allow one ADU on a parcel with an existing single-family building."
+        observed_position: "The section requires one attached or detached ADU as of right on covered single-family lots, subject to specified exceptions."
+        status: supported_with_limits
+        sources:
+          - {title: "New Hampshire RSA 674:72", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-72.htm", locator: "paragraph I", quote: "One accessory dwelling unit, which may be either attached or detached", accessed: "2026-11-03"}
+        limitations:
+          - "Municipal owner-occupancy (paragraph VI), dimensional, utility and other permitted conditions remain."
+          - "The number of affected parcels has not been measured."
+      - id: adu_forms
+        challenge_requirement: "Allow detached and semi-detached ADUs."
+        observed_position: "The current text expressly includes attached or detached ADUs."
+        status: supported_with_limits
+        sources:
+          - {title: "New Hampshire RSA 674:72", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-72.htm", locator: "paragraph I", quote: "either attached or detached", accessed: "2026-11-03"}
+        limitations:
+          - "Municipal dimensional and utility conditions remain."
+      - id: adu_size
+        challenge_requirement: "Allow ADUs of at least 600 square feet."
+        observed_position: "Municipalities may not set the maximum below 750 square feet; the general cap is 950 unless the municipality allows more. This supports 600 on covered sites."
+        status: supported_with_limits
+        sources:
+          - {title: "New Hampshire RSA 674:72", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-72.htm", locator: "paragraph VII", quote: "may not restrict the total living space to less than 750 square feet", accessed: "2026-11-03"}
+        limitations:
+          - "Covered sites only."
+      - id: adu_parking
+        challenge_requirement: "Require no added parking for the ADU."
+        observed_position: "A municipality may require one additional space, so the statute does not supply the challenge zero-parking rule."
+        status: differs
+        sources:
+          - {title: "New Hampshire RSA 674:72", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-72.htm", locator: "paragraph IV", quote: "it may require up to one additional parking space for each accessory dwelling unit", accessed: "2026-11-03"}
+        limitations:
+          - "Whether towns use the option has not been surveyed."
+    current_strength: 0.75
+    strength_rationale: >-
+      Starting rule (decision 62): three of the four benchmark features (one ADU per lot,
+      attached or detached, at least 600 square feet) are supported with limits and one (no
+      added parking) differs, so 3 / 4 = 0.75 of the benchmark is already in law and 0.25 is
+      newly affected. Owner-occupancy may still be required (paragraph VI); human review pending.
+    human_review: {status: pending, by: null, date: null}
