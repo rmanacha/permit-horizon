@@ -1,10 +1,31 @@
 {
   "files": {
+    "transit/ntd_modes_01.json": {
+      "bytes": 4886,
+      "fetched_at": "2026-11-03T20:33:16Z",
+      "sha256": "5fde9978099a28799d8194809208a8b0cc3cae1f359602e005bb3a3ced0ddc7d",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=AL&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_02.json": {
+      "bytes": 2982,
+      "fetched_at": "2026-11-03T20:33:17Z",
+      "sha256": "5ae75b3a13a21f8cf8ef6c0ff92129320560ed713e7753678f572983fe0efecc",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=AK&report_year=2024",
+      "vintage": "report year 2024"
+    },
     "transit/ntd_modes_04.json": {
       "bytes": 5191,
       "fetched_at": "2026-11-03T15:46:23Z",
       "sha256": "63d5e3c0fb440cfbe88d97fd922aa7bdf2f170b989148b0f3c73d694371c4e4e",
       "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=AZ&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_05.json": {
+      "bytes": 2027,
+      "fetched_at": "2026-11-03T20:33:22Z",
+      "sha256": "dea8634807c460ad27f3b9eae2fe0b52cb4a4bcf203c81ab662556d8c32c19a3",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=AR&report_year=2024",
       "vintage": "report year 2024"
     },
     "transit/ntd_modes_06.json": {
@@ -14,11 +35,277 @@
       "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=CA&report_year=2024",
       "vintage": "report year 2024"
     },
+    "transit/ntd_modes_08.json": {
+      "bytes": 6109,
+      "fetched_at": "2026-11-03T20:33:32Z",
+      "sha256": "16718f5fdf6be09ebd46c502ba53248df39f001ea539f25c368018a0a6541b5e",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=CO&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_09.json": {
+      "bytes": 2499,
+      "fetched_at": "2026-11-03T20:36:15Z",
+      "sha256": "de00ebc8219cdbf33af2db674a4a0be43f4eff1d37db61bec1a59d250d0e6d31",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=CT&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_10.json": {
+      "bytes": 198,
+      "fetched_at": "2026-11-03T20:38:17Z",
+      "sha256": "9a6ffb11652874880c6db158f937c163541ff4527636278545d4e33a83493f20",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=DE&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_11.json": {
+      "bytes": 457,
+      "fetched_at": "2026-11-03T20:38:41Z",
+      "sha256": "7c8afc8f8f0217d4b1896e7e8190104fd6297dde9dd356f8076e33df59c2242f",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=DC&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_12.json": {
+      "bytes": 8573,
+      "fetched_at": "2026-11-03T20:40:12Z",
+      "sha256": "211ddc57f8f831afce76326302d3f5c898069ef381a144f6a49aca07def0f1ff",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=FL&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_13.json": {
+      "bytes": 8576,
+      "fetched_at": "2026-11-03T20:40:26Z",
+      "sha256": "6e211af829cbb9ec4939a1cdc088f5d552df87c907ee3796b2e5c71b19fe2775",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=GA&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_15.json": {
+      "bytes": 455,
+      "fetched_at": "2026-11-03T20:40:32Z",
+      "sha256": "dc654df480a6d4508a7a3ee10777e6cd87042b69e6ad5ac2dbf7f42cb77ce3fa",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=HI&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_16.json": {
+      "bytes": 1571,
+      "fetched_at": "2026-11-03T20:40:36Z",
+      "sha256": "397e2fc08eef74e79aee74de4343c99f5ecf15049bc44595b4a67787cb05b97f",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=ID&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_17.json": {
+      "bytes": 10766,
+      "fetched_at": "2026-11-03T20:41:43Z",
+      "sha256": "ccbb11088ae6c742e3aced8833574270dc76ef5b800dffb01ed753342e75fbb2",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=IL&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_18.json": {
+      "bytes": 8714,
+      "fetched_at": "2026-11-03T20:42:54Z",
+      "sha256": "a098f80f0b8b2e921f493b4d939a07ffb9fedb8d953a01edefc087cec33278c0",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=IN&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_19.json": {
+      "bytes": 4803,
+      "fetched_at": "2026-11-03T20:45:26Z",
+      "sha256": "e7ebbd3d9ebf4d98f5612c89053de4f5adff6bd4cf76d5a73c3f4a47ee43db58",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=IA&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_20.json": {
+      "bytes": 10309,
+      "fetched_at": "2026-11-03T20:46:07Z",
+      "sha256": "e3650a0f45643cf39a81e3761390cc89523cda9121b7cbd9652ba359403541aa",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=KS&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_21.json": {
+      "bytes": 3606,
+      "fetched_at": "2026-11-03T20:47:51Z",
+      "sha256": "16b799194f5d6fa91e1bed2220a7da74b8928d69368dfb76c380c6d61a796187",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=KY&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_22.json": {
+      "bytes": 5318,
+      "fetched_at": "2026-11-03T20:50:00Z",
+      "sha256": "d2c4c4c854bf644814b9f31aaea0d5533cae1029ae0ac4f930a7ae60dde02715",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=LA&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_23.json": {
+      "bytes": 2605,
+      "fetched_at": "2026-11-03T20:50:37Z",
+      "sha256": "dc774faed647700d4d80a299056451e89081e435f248626c67b32708594f3de5",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=ME&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_24.json": {
+      "bytes": 3019,
+      "fetched_at": "2026-11-03T20:52:22Z",
+      "sha256": "30d85e32cd6b4de7e4674a15f69b76a9f37e78e37d3095679b6a322eb8dfc9eb",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=MD&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_25.json": {
+      "bytes": 2852,
+      "fetched_at": "2026-11-03T20:53:24Z",
+      "sha256": "21bad931c63986690c0af82b7c0cebf3a70ee8f64c0852ef930117d144c3ad23",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=MA&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_26.json": {
+      "bytes": 9712,
+      "fetched_at": "2026-11-03T20:54:38Z",
+      "sha256": "a687693a0e117e1c81a6d51b4544205fa56d5c146202dc7976864b39a8937568",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=MI&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_27.json": {
+      "bytes": 5582,
+      "fetched_at": "2026-11-03T20:54:44Z",
+      "sha256": "0ba9a45a27ea867df8b916f2bc632dfe6b2dfbc32f6a0f4d3c4ff4c60a9e41ac",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=MN&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_28.json": {
+      "bytes": 2649,
+      "fetched_at": "2026-11-03T20:54:50Z",
+      "sha256": "9aa15b493ccc2ffe762c2de00c5368f94c58f2f99cd04fa82c42db2872f5beb7",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=MS&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_29.json": {
+      "bytes": 3678,
+      "fetched_at": "2026-11-03T20:56:53Z",
+      "sha256": "d9517283b26a09966c81c041c842ecae61d26d0adb8d5848d4f1b8446757ef3e",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=MO&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_30.json": {
+      "bytes": 5548,
+      "fetched_at": "2026-11-03T20:57:18Z",
+      "sha256": "ae54dfb53a60cdba9d428c07c61209aea0315fae02a528e8b88667b59fd6d57c",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=MT&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_31.json": {
+      "bytes": 6929,
+      "fetched_at": "2026-11-03T20:57:50Z",
+      "sha256": "15a1108a97512a4458e5dea06e0a3c4df726262b4eb379abf3679a23d5d0e116",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=NE&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_32.json": {
+      "bytes": 2364,
+      "fetched_at": "2026-11-03T20:57:55Z",
+      "sha256": "9f33afe9378d08515241059a833c82079b53a0222443c5129079267c61c77281",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=NV&report_year=2024",
+      "vintage": "report year 2024"
+    },
     "transit/ntd_modes_33.json": {
       "bytes": 1469,
       "fetched_at": "2026-11-03T15:45:56Z",
       "sha256": "b4aa2a5c2daa6f0c61710d6912df165395f63d0f33e6ee49cf72bc167961284e",
       "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=NH&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_34.json": {
+      "bytes": 3084,
+      "fetched_at": "2026-11-03T21:03:22Z",
+      "sha256": "b7c485017924ad9ea2f8b8e1f24f82774a98990f8df36d88bf039b634ce34aa9",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=NJ&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_35.json": {
+      "bytes": 3100,
+      "fetched_at": "2026-11-03T21:03:25Z",
+      "sha256": "e65b21ce217a6a720a5c1fe52040a0611e7f97c7330d52b3728a6553a03b3b8e",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=NM&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_36.json": {
+      "bytes": 8899,
+      "fetched_at": "2026-11-03T21:14:38Z",
+      "sha256": "1edb6ed336363076c547280734790aead1414d47f50976274217d362a27d33d9",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=NY&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_37.json": {
+      "bytes": 11448,
+      "fetched_at": "2026-11-03T21:17:59Z",
+      "sha256": "943222754b89637470aff8f75c453ff912749d343a75748c81b8f10f9738c569",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=NC&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_38.json": {
+      "bytes": 3263,
+      "fetched_at": "2026-11-03T21:18:06Z",
+      "sha256": "fed65d5f32a3db1150308dbfccd744d97764512d7a91bf58f2a4b8f4be9a07a3",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=ND&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_39.json": {
+      "bytes": 7725,
+      "fetched_at": "2026-11-03T21:22:55Z",
+      "sha256": "6761bd6de3fabe73a43500cdee50ccf31680738441434450a142bae6c179c045",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=OH&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_40.json": {
+      "bytes": 4516,
+      "fetched_at": "2026-11-03T21:23:03Z",
+      "sha256": "39cc1663855c78befd10166172f61780dfe69c599ebf9011e84a7ac6429238ff",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=OK&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_41.json": {
+      "bytes": 5382,
+      "fetched_at": "2026-11-03T21:23:25Z",
+      "sha256": "1dc2576943e2f003cd81828d3dff370628d3bbcd3b6e0004ecb1b9184b7abd63",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=OR&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_42.json": {
+      "bytes": 6050,
+      "fetched_at": "2026-11-03T21:31:28Z",
+      "sha256": "3ba54a2774c7de3e27a2475f6e288034179ddb34f1f04b11083e6ce1790c7689",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=PA&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_44.json": {
+      "bytes": 282,
+      "fetched_at": "2026-11-03T21:35:21Z",
+      "sha256": "a329474c78d210f0cc566c62bd0316b3f66a30d7213efbfae591fc6d7c452570",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=RI&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_45.json": {
+      "bytes": 3088,
+      "fetched_at": "2026-11-03T21:36:41Z",
+      "sha256": "924ff64d4928a893fbc2bc39318d9c809696a032cf9f4725a69ae0e87538f124",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=SC&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_46.json": {
+      "bytes": 2283,
+      "fetched_at": "2026-11-03T21:36:43Z",
+      "sha256": "09661bd0ca5e9f1547a1e4ceceb0a007483f124ab094b39f5b41e431214a20f2",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=SD&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_47.json": {
+      "bytes": 3328,
+      "fetched_at": "2026-11-03T21:38:45Z",
+      "sha256": "1840fb3ee7019c95dd24e84996818c668676ec02a2d0757c4d42f1bff7218ddd",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=TN&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_48.json": {
+      "bytes": 8428,
+      "fetched_at": "2026-11-03T21:42:41Z",
+      "sha256": "19cbb58286de08c48cf8d91b7de6c79ea49681ae223d80dd3c5e8363558095ba",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=TX&report_year=2024",
       "vintage": "report year 2024"
     },
     "transit/ntd_modes_49.json": {
@@ -28,6 +315,62 @@
       "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=UT&report_year=2024",
       "vintage": "report year 2024"
     },
+    "transit/ntd_modes_50.json": {
+      "bytes": 1010,
+      "fetched_at": "2026-11-03T21:42:58Z",
+      "sha256": "4b7260c19b9fe4f52864471df5024a5d5b5693ea7394f7dc1cd4e16d4d214fe4",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=VT&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_51.json": {
+      "bytes": 4905,
+      "fetched_at": "2026-11-03T21:52:11Z",
+      "sha256": "5b816292c4169d92b8f1572812e0f7b86fcecdfcad16511d83a8758abf439976",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=VA&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_53.json": {
+      "bytes": 7047,
+      "fetched_at": "2026-11-03T21:52:23Z",
+      "sha256": "111296fddd0853b84f9903b85db995521506c07110eb7dfbcc4495ce6e9e55e6",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=WA&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_54.json": {
+      "bytes": 2265,
+      "fetched_at": "2026-11-03T21:55:46Z",
+      "sha256": "eac090940c38e20e5332f59c1e4d54a27fdeb3647a4d2f7d9ef8368098a5f938",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=WV&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_55.json": {
+      "bytes": 9386,
+      "fetched_at": "2026-11-03T21:56:24Z",
+      "sha256": "02d1b2c6a9d21381512a45edde6afaa2a06fe93ee166deedaa2913c3003a2504",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=WI&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_56.json": {
+      "bytes": 3370,
+      "fetched_at": "2026-11-03T21:56:29Z",
+      "sha256": "9bdf75c131ba6acdb2ae6f1659d50293b8042ac17f26662e73593def001b934c",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=WY&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntm_stops_01.json": {
+      "bytes": 4786513,
+      "fetched_at": "2026-11-03T20:33:16Z",
+      "sha256": "f191f111ebfd5b720a19713944cd258e66f1eb051b52e65957aba347fe5c8201",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-89.748889,29.159218,-83.68698,36.404168&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_02.json": {
+      "bytes": 331874,
+      "fetched_at": "2026-11-03T20:33:17Z",
+      "sha256": "10911352f229540e38a4b81d532099039d0d50c98fc174c5b96732f6ce5dd4e4",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-165.688912,50.448964,181.121188,70.949343&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2026-09-23 to 2026-09-23"
+    },
     "transit/ntm_stops_04.json": {
       "bytes": 3476952,
       "fetched_at": "2026-11-03T15:46:22Z",
@@ -35,11 +378,186 @@
       "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-115.538806,30.025733,-107.742323,37.329692&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
       "vintage": "feeds downloaded 2026-03-09 to 2026-09-23"
     },
+    "transit/ntm_stops_05.json": {
+      "bytes": 3704678,
+      "fetched_at": "2026-11-03T20:33:22Z",
+      "sha256": "9bb0241b9b27eef49048b013b275eb5b0ee317d67b38e05295ca30c4d342403c",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-95.774989,31.668219,-88.552207,37.881322&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
     "transit/ntm_stops_06.json": {
       "bytes": 18579571,
       "fetched_at": "2026-11-03T15:48:09Z",
       "sha256": "77c3be018cc1284203c46e70d8d4cc04d4040120fafe673634d4c4037d161759",
       "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-125.480998,31.523604,-113.8554,43.249903&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_08.json": {
+      "bytes": 2649567,
+      "fetched_at": "2026-11-03T20:33:29Z",
+      "sha256": "da06f2d4fec35a0668d9107dc42dffced50ef63a0a4ed57297cb3e794c13b930",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-110.095786,35.702395,-100.845105,42.371568&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-09-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_09.json": {
+      "bytes": 16456753,
+      "fetched_at": "2026-11-03T20:36:14Z",
+      "sha256": "20b0fbd1c39543a67ee8fccb4e494d9d43a176fc43bb190a4301b65bfb7e8217",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-74.94655,39.684558,-70.472655,43.354809&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_10.json": {
+      "bytes": 15497899,
+      "fetched_at": "2026-11-03T20:38:17Z",
+      "sha256": "ba3d8b18987a04adfd2d23f065f4412c19583da999f1fe80a3cd1d1768835e1b",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-77.144132,37.173227,-73.837024,41.075915&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_11.json": {
+      "bytes": 7935402,
+      "fetched_at": "2026-11-03T20:38:40Z",
+      "sha256": "0bc0d8db904a92b089c3013fa51419c51c9575ad235727dfe96620691727d429",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-78.516524,37.404243,-75.516524,40.404243&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2026-09-23 to 2026-09-23"
+    },
+    "transit/ntm_stops_12.json": {
+      "bytes": 9629016,
+      "fetched_at": "2026-11-03T20:40:11Z",
+      "sha256": "5b988131c2bac50c9344ec742d14878d9f794a11fa754d2ea59569aac79aae5d",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-88.820322,24.08612,-78.898201,32.362007&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_13.json": {
+      "bytes": 8268533,
+      "fetched_at": "2026-11-03T20:40:26Z",
+      "sha256": "71d7c0beacc01e785cc6c73b95927f25272bfec27ec24d965692f1f4eb1a6842",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-87.006201,29.214008,-79.585184,36.402529&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_15.json": {
+      "bytes": 940743,
+      "fetched_at": "2026-11-03T20:40:32Z",
+      "sha256": "5289e524738dc26c6723c8ad1522245c1c78d5a06183a45a505b57531175ab13",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-161.205965,18.097764,-154.002443,23.512038&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2026-09-23 to 2026-09-23"
+    },
+    "transit/ntm_stops_16.json": {
+      "bytes": 1665001,
+      "fetched_at": "2026-11-03T20:40:36Z",
+      "sha256": "9f849ff6de225cb26632fcf3b2c0e3cf0f3a936c9afe2aac18e58794df0507c7",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-118.297792,40.673609,-109.711765,50.273131&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-06-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_17.json": {
+      "bytes": 12485850,
+      "fetched_at": "2026-11-03T20:41:42Z",
+      "sha256": "c17238cb71c47f380e31b9db586a757e02861400c7a6c27d690075c368f09a5a",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-92.694961,35.683658,-86.145455,43.862391&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_18.json": {
+      "bytes": 13171836,
+      "fetched_at": "2026-11-03T20:42:45Z",
+      "sha256": "30daec5aea3e974da626127a32e4f8ee8ed727190136ca1db835948c0bc61fd2",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-89.368653,36.509697,-83.425145,43.143467&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2026-09-23 to 2026-09-23"
+    },
+    "transit/ntm_stops_19.json": {
+      "bytes": 4277729,
+      "fetched_at": "2026-11-03T20:45:23Z",
+      "sha256": "1d077b922495a40676f5dcd7af45fca3b5d652d2662206bf75a127cf565365e7",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-97.715973,39.147588,-89.034243,44.889611&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-06-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_20.json": {
+      "bytes": 2530475,
+      "fetched_at": "2026-11-03T20:46:07Z",
+      "sha256": "efa01416bb9e473599719edf9512525623d8dc691148cfb4b79e218f8cfdc737",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-103.309516,35.654259,-93.263087,41.328906&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2026-03-09 to 2026-09-23"
+    },
+    "transit/ntm_stops_21.json": {
+      "bytes": 9516554,
+      "fetched_at": "2026-11-03T20:47:50Z",
+      "sha256": "bcee9b2fb58a2b60b113d0edde91fe4b286f56c3c1ce12c70cdb94cf2306a78b",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-90.687659,35.052511,-80.910912,40.4589&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_22.json": {
+      "bytes": 3557569,
+      "fetched_at": "2026-11-03T20:49:59Z",
+      "sha256": "2194b33bde91414940185ee756c78e72e0dfa0cf82de8a5b9c8f9715a9e55645",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-95.38497,27.782447,-87.763494,34.329349&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-06-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_23.json": {
+      "bytes": 3988567,
+      "fetched_at": "2026-11-03T20:50:34Z",
+      "sha256": "5432a82ada9c768ebe351e05a641a4b7c0bb543a271b05c3d6970086e4bfb7b5",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-72.234421,41.926019,-66.109354,48.209193&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-12-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_24.json": {
+      "bytes": 21584981,
+      "fetched_at": "2026-11-03T20:52:21Z",
+      "sha256": "8c4e06a614e11075c3d46dc8daf837acc19fb57afd72dedfbaa00d40c75499a7",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-80.774619,36.57445,-73.809931,41.112313&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_25.json": {
+      "bytes": 16773972,
+      "fetched_at": "2026-11-03T20:53:24Z",
+      "sha256": "7bd9c9ac1d79419bcba67e6da8858975d3681d97b16de308be55ee3c87b0e82c",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-74.717928,39.793392,-68.602164,44.142708&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_26.json": {
+      "bytes": 15635063,
+      "fetched_at": "2026-11-03T20:54:37Z",
+      "sha256": "77f720cd1f244ca393efd9b8b281fdc80e6923a706b8a4128889012c4b1e4bea",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-91.288314,40.291382,-81.142815,48.867297&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2026-03-09 to 2026-09-23"
+    },
+    "transit/ntm_stops_27.json": {
+      "bytes": 4345693,
+      "fetched_at": "2026-11-03T20:54:43Z",
+      "sha256": "35b5f7ca833799ddbaadf4c9f79190615e115ecf5d66312eff21cc551257c264",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-98.280349,42.166249,-88.844319,50.27604&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-06-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_28.json": {
+      "bytes": 5128516,
+      "fetched_at": "2026-11-03T20:54:49Z",
+      "sha256": "c1cec801f324cdf9dd03e6be3c47cda43d0c46af709ac22673df6c19d8d1e2fa",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-92.851797,28.891641,-86.734827,36.386569&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_29.json": {
+      "bytes": 9178230,
+      "fetched_at": "2026-11-03T20:56:53Z",
+      "sha256": "a72db893e768563a8ca0770e35c743f1eab9c35bb1d9a2b08944c9b9dcecf298",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-96.937555,34.653025,-87.795929,41.980499&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_30.json": {
+      "bytes": 499361,
+      "fetched_at": "2026-11-03T20:57:18Z",
+      "sha256": "394f2cbd7ace2ceb434465fdd55e43ba63725fe474435b33a34054fd69e5eac2",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-116.963185,43.633863,-102.774518,50.294429&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_31.json": {
+      "bytes": 3652976,
+      "fetched_at": "2026-11-03T20:57:50Z",
+      "sha256": "79280e87f26a45a19e75c631e2104a85b06f3ba0b3240fb136089ad67a7c2ccf",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-105.23217,38.623743,-94.218603,44.394448&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-06-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_32.json": {
+      "bytes": 2790001,
+      "fetched_at": "2026-11-03T20:57:55Z",
+      "sha256": "b767eb9cae75ddf7033cef74ae575742eca99e9c90f4248e6db3cddf5b8a20d7",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-121.247368,34.71413,-113.363037,42.907914&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
       "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
     },
     "transit/ntm_stops_33.json": {
@@ -49,12 +567,152 @@
       "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-73.748183,41.411532,-69.535589,46.152548&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
       "vintage": "feeds downloaded 2025-12-02 to 2026-09-23"
     },
+    "transit/ntm_stops_34.json": {
+      "bytes": 18326706,
+      "fetched_at": "2026-11-03T21:03:22Z",
+      "sha256": "a2ed13bb8bbbb3d9f4310c5456701127e46708be1a20858f9a1d5e4a79dc4071",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-76.857356,37.585841,-72.574727,42.637461&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_35.json": {
+      "bytes": 1569150,
+      "fetched_at": "2026-11-03T21:03:24Z",
+      "sha256": "62d5ee4c766d15aaebd4106f3749799bd49b64224ab64ae19db479b78eb39238",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-110.251929,30.398052,-101.846055,38.112964&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2026-09-23 to 2026-09-23"
+    },
+    "transit/ntm_stops_36.json": {
+      "bytes": 27977166,
+      "fetched_at": "2026-11-03T21:14:37Z",
+      "sha256": "37951db8d28fe230fd166eee8b8f97073c523076abc6c96a5d646e60220294be",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-80.907595,39.061263,-71.192218,46.252712&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_37.json": {
+      "bytes": 8899187,
+      "fetched_at": "2026-11-03T21:17:59Z",
+      "sha256": "b5ab044b6b92d7803b50f3064bae07693fa40e0bf02af2f92548d752ffff7903",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-85.561449,32.538754,-74.267536,37.989356&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_38.json": {
+      "bytes": 268155,
+      "fetched_at": "2026-11-03T21:18:06Z",
+      "sha256": "fea9879ef84233a7f7fbdc559fdcae99aaae16892ab9ea75d351988cbc4bf53d",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-105.344612,44.595986,-95.43796,50.314754&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_39.json": {
+      "bytes": 12471937,
+      "fetched_at": "2026-11-03T21:22:55Z",
+      "sha256": "9633446103716440bfc9d40a12aafa70a8a94f0e60022e63c54bc588081f61d5",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-86.144758,37.103866,-79.245592,43.406637&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-09-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_40.json": {
+      "bytes": 3697116,
+      "fetched_at": "2026-11-03T21:23:02Z",
+      "sha256": "5ddd524e655e2ed41b6aa553570b7770867f0b67874f2901c29f6cdd16ab57d5",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-104.017698,32.457804,-93.151026,38.335764&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-06-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_41.json": {
+      "bytes": 4646942,
+      "fetched_at": "2026-11-03T21:23:25Z",
+      "sha256": "54fa14346ddb22d22d1f16f2eb57ffd0531792246cf04ac575115a481cbe2675",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-125.710929,40.886983,-115.68558,47.524509&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_42.json": {
+      "bytes": 27687958,
+      "fetched_at": "2026-11-03T21:31:28Z",
+      "sha256": "b5ec64d2f97626d1625aea5ec9708a3325ea4082a5a52faeadd169d27fd0eba5",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-81.850721,38.347707,-73.531514,43.617952&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_44.json": {
+      "bytes": 7250217,
+      "fetched_at": "2026-11-03T21:35:21Z",
+      "sha256": "f0ac3eda141cc5babd091670d5a258cf40ad64120db1cb30833bd8037c0f792a",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-73.120282,39.896792,-69.783063,43.369768&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-06-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_45.json": {
+      "bytes": 6811215,
+      "fetched_at": "2026-11-03T21:36:41Z",
+      "sha256": "7311c36efb43dc876cc4c4a1d3272966601dec3a09c009e83ad83c382bbbeac3",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-84.56154,30.858112,-77.476675,36.549796&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_46.json": {
+      "bytes": 456426,
+      "fetched_at": "2026-11-03T21:36:43Z",
+      "sha256": "ad4f300c4c2fc4fb90507da78495360c0ba1411f5acd21ba8c05d4b2c13df002",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-105.306362,41.331106,-95.150829,47.285575&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-06-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_47.json": {
+      "bytes": 7236861,
+      "fetched_at": "2026-11-03T21:38:44Z",
+      "sha256": "43e0e2ff40585b2f0b679dfa033633f912ec90c69f33c0eef6217a2f4305bf61",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-91.394612,33.609437,-80.361247,38.059364&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_48.json": {
+      "bytes": 10878302,
+      "fetched_at": "2026-11-03T21:42:41Z",
+      "sha256": "69c76edc63138c1f82f09797b5f4a5683be17374a3f383fef400b59913314705",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-107.74152,24.602923,-92.23925,37.78637&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
     "transit/ntm_stops_49.json": {
       "bytes": 1536626,
       "fetched_at": "2026-11-03T15:46:05Z",
       "sha256": "8ae7954ae74590cdb66dee028f26c29e52ad01b341ca250ac248edae5d261817",
       "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-114.9878,35.762531,-108.005785,43.234118&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
       "vintage": "feeds downloaded 2026-03-09 to 2026-09-23"
+    },
+    "transit/ntm_stops_50.json": {
+      "bytes": 7898497,
+      "fetched_at": "2026-11-03T21:42:58Z",
+      "sha256": "06249e9f6a5f8205032124dd52d34cc6f4c6fdcf1ddea5295de5c39b59f4c096",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-74.800759,41.495304,-70.232736,46.358964&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-12-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_51.json": {
+      "bytes": 21889177,
+      "fetched_at": "2026-11-03T21:52:03Z",
+      "sha256": "dbc241e73eaf130b08f3d300b0d58bc80206e5b81b4efd07b7a53fb1324d7527",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-84.630112,35.083334,-74.257807,40.70366&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_53.json": {
+      "bytes": 6272060,
+      "fetched_at": "2026-11-03T21:52:22Z",
+      "sha256": "2b972462addb6b97fdf7f700cfeb2173834699c598f48edb35f11c541e0f005d",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-125.38986,44.27173,-115.727781,50.342653&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2026-09-23 to 2026-09-23"
+    },
+    "transit/ntm_stops_54.json": {
+      "bytes": 15853129,
+      "fetched_at": "2026-11-03T21:55:45Z",
+      "sha256": "4be00ea9e6c45dc8143c58426b5eb27d3213cb15f261f5c62e071f8e3032f05a",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-83.922666,35.88276,-76.36322,42.016958&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-09-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_55.json": {
+      "bytes": 12596215,
+      "fetched_at": "2026-11-03T21:56:24Z",
+      "sha256": "a49afb20f8bd5b387b029efaf8f16b90387b2c2c7a00c8c3e97604072065774b",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-93.947284,41.087526,-85.548683,48.134199&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2026-03-09 to 2026-09-23"
+    },
+    "transit/ntm_stops_56.json": {
+      "bytes": 2382251,
+      "fetched_at": "2026-11-03T21:56:29Z",
+      "sha256": "da262d27761a86883ca1c72477027292d929614ec49b7797a25d021a18ce43a8",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-112.182961,39.784726,-102.85354,46.281369&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2026-09-23 to 2026-09-23"
     }
   },
   "license": "National Transit Database, U.S. DOT, public domain",

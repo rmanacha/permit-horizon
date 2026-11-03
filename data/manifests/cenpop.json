@@ -1,10 +1,31 @@
 {
   "files": {
+    "cenpop/CenPop2020_Mean_BG01.txt": {
+      "bytes": 171286,
+      "fetched_at": "2026-11-03T20:30:02Z",
+      "sha256": "efaaaf93f3eb3c92b3888c495c22fb0056efd6dd2ea8bd1d1125e3ff1ce4498e",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG01.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG02.txt": {
+      "bytes": 22078,
+      "fetched_at": "2026-11-03T20:33:16Z",
+      "sha256": "132dbf114ee340fce350b7dcf25c13dded22d807ab7d149d0775ce4f63c0ca4e",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG02.txt",
+      "vintage": "2020 Census"
+    },
     "cenpop/CenPop2020_Mean_BG04.txt": {
       "bytes": 208919,
       "fetched_at": "2026-11-03T15:46:05Z",
       "sha256": "90a673a9bbaeb044597cd64a48581b5bb76fe642625385e96e121617a916f698",
       "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG04.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG05.txt": {
+      "bytes": 100157,
+      "fetched_at": "2026-11-03T20:33:18Z",
+      "sha256": "53d220b6dcf59b6a20263c4ffc0fb8f6cc80be53a5bacb67fa4e33385708dbda",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG05.txt",
       "vintage": "2020 Census"
     },
     "cenpop/CenPop2020_Mean_BG06.txt": {
@@ -14,6 +35,174 @@
       "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG06.txt",
       "vintage": "2020 Census"
     },
+    "cenpop/CenPop2020_Mean_BG08.txt": {
+      "bytes": 177359,
+      "fetched_at": "2026-11-03T20:33:23Z",
+      "sha256": "c89242a4817258de1d383416e25787ee254b090e515eb537f316b2595349d9c3",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG08.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG09.txt": {
+      "bytes": 118771,
+      "fetched_at": "2026-11-03T20:33:32Z",
+      "sha256": "2aebd28748c928506ab55679ebc4083d79b51c44ccdaf016498ca137eddd864a",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG09.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG10.txt": {
+      "bytes": 30893,
+      "fetched_at": "2026-11-03T20:36:15Z",
+      "sha256": "89f31c52f99b7ec23c184d654549bbb4e72b4753f9e71347a2a55a3fe011ed05",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG10.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG11.txt": {
+      "bytes": 24951,
+      "fetched_at": "2026-11-03T20:38:18Z",
+      "sha256": "89b49adb2454c1628bd028c3f88aa2e50d79beda1b82b7b83dd47867c55c4bda",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG11.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG12.txt": {
+      "bytes": 585855,
+      "fetched_at": "2026-11-03T20:38:41Z",
+      "sha256": "ecb3faac4c7914dd2d238af17de08a9f942b78f00ca31ad66ead96c2bdf91bd6",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG12.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG13.txt": {
+      "bytes": 325773,
+      "fetched_at": "2026-11-03T20:40:12Z",
+      "sha256": "236ec1a771933a49637742052f554f24d385c3984662b246bd273d48c4e08ced",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG13.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG15.txt": {
+      "bytes": 47288,
+      "fetched_at": "2026-11-03T20:40:26Z",
+      "sha256": "ab8f8342fd69e05b774c9c82c2556732bf2b7975bdeda4efe33ad8b135c945f9",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG15.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG16.txt": {
+      "bytes": 56207,
+      "fetched_at": "2026-11-03T20:40:32Z",
+      "sha256": "9ab11c50755cb68f14da23cabc036da49b90540c8aca81327d2069779e634474",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG16.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG17.txt": {
+      "bytes": 431963,
+      "fetched_at": "2026-11-03T20:40:36Z",
+      "sha256": "8c10de65cddaa5ac2d98193a01a5eb194c39617ae69df73cdeb14531935458a6",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG17.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG18.txt": {
+      "bytes": 230703,
+      "fetched_at": "2026-11-03T20:41:43Z",
+      "sha256": "837f23a13730ddb8a82ccb4a69d83922d317c0a69e5ecd7fca43116277f23a0d",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG18.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG19.txt": {
+      "bytes": 117683,
+      "fetched_at": "2026-11-03T20:42:54Z",
+      "sha256": "4bbe52d4aabe65fe7e4d4bbf2716e9bcb22e7990f5671c8092888704b7853722",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG19.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG20.txt": {
+      "bytes": 107237,
+      "fetched_at": "2026-11-03T20:45:26Z",
+      "sha256": "22d853800578dde6133ec30c34f0d7d8ffcab323942f90c22858ba0f5ff9ba75",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG20.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG21.txt": {
+      "bytes": 156250,
+      "fetched_at": "2026-11-03T20:46:08Z",
+      "sha256": "36e908836ec60e9d4cd3985a754dcc2ddc27543603741759c1b1468a98ac05f2",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG21.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG22.txt": {
+      "bytes": 186629,
+      "fetched_at": "2026-11-03T20:47:51Z",
+      "sha256": "6262df038b5099f30cee6e814b5c37d825911b55990ca5de4eb60f6bdd319b2b",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG22.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG23.txt": {
+      "bytes": 51607,
+      "fetched_at": "2026-11-03T20:50:00Z",
+      "sha256": "301fcd351429d033fd18298542d1d95fcc10ee4d3114b2dc5dd62008fda81a22",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG23.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG24.txt": {
+      "bytes": 178391,
+      "fetched_at": "2026-11-03T20:50:38Z",
+      "sha256": "a56417eab736fdec33e130e1a8ef73294385aa2c59122cdebf97567341d28ce3",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG24.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG25.txt": {
+      "bytes": 223582,
+      "fetched_at": "2026-11-03T20:52:22Z",
+      "sha256": "2c48077ad92eb862e55dcd8488e49ad5f25c863aa0ddc35439970cbd2658d3e2",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG25.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG26.txt": {
+      "bytes": 365304,
+      "fetched_at": "2026-11-03T20:53:25Z",
+      "sha256": "0c492ffa8b6c6c33eff1fc3b40a825514eb95a5ad3e4921774ef3c5870882491",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG26.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG27.txt": {
+      "bytes": 205174,
+      "fetched_at": "2026-11-03T20:54:38Z",
+      "sha256": "aa18757e93c4a9bce59c44f3466c7ebc6368882841b8c7e3574faa4460cd6bd6",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG27.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG28.txt": {
+      "bytes": 106652,
+      "fetched_at": "2026-11-03T20:54:44Z",
+      "sha256": "721a7907bd9a98c8215c92ddb6445d729e83359b18f003ff66d44202a5f73c1e",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG28.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG29.txt": {
+      "bytes": 219285,
+      "fetched_at": "2026-11-03T20:54:50Z",
+      "sha256": "aea3712a189e3896c46cc8e2c37b25831d96625cd1a9de7bf0819f8325e1bb94",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG29.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG30.txt": {
+      "bytes": 39294,
+      "fetched_at": "2026-11-03T20:56:53Z",
+      "sha256": "b4ec6db2b42e60e518287cb9bb351fa10200bdd2cffe2e55663c9e4350551348",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG30.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG31.txt": {
+      "bytes": 71933,
+      "fetched_at": "2026-11-03T20:57:18Z",
+      "sha256": "1063f06a4345d1e2b34035814466b93b8277a714e392a88a27a161be061ed461",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG31.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG32.txt": {
+      "bytes": 85951,
+      "fetched_at": "2026-11-03T20:57:51Z",
+      "sha256": "5624f3d86edd86ffc7c229c45153f4906b3870189eea695d21cf8463633558a8",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG32.txt",
+      "vintage": "2020 Census"
+    },
     "cenpop/CenPop2020_Mean_BG33.txt": {
       "bytes": 43625,
       "fetched_at": "2026-11-03T15:45:29Z",
@@ -21,11 +210,151 @@
       "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG33.txt",
       "vintage": "2020 Census"
     },
+    "cenpop/CenPop2020_Mean_BG34.txt": {
+      "bytes": 288500,
+      "fetched_at": "2026-11-03T20:57:56Z",
+      "sha256": "12406129b19eb6f2c9be57c357b891bce6920505866ecebe1029ee9b7f56b21e",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG34.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG35.txt": {
+      "bytes": 70531,
+      "fetched_at": "2026-11-03T21:03:23Z",
+      "sha256": "28ba01b6b4b069f480952d85165a03aef7280810ce2233639183a01a790549fa",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG35.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG36.txt": {
+      "bytes": 700782,
+      "fetched_at": "2026-11-03T21:03:25Z",
+      "sha256": "28140a7d893be3f3d8a84f941d2b70cd71254e0417925f469cb6ee336e8a97d7",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG36.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG37.txt": {
+      "bytes": 310861,
+      "fetched_at": "2026-11-03T21:14:38Z",
+      "sha256": "2c509b5a736d8e75a4baed40f7fbb727ef77e8c86b62003566cc3b389cb35d72",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG37.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG38.txt": {
+      "bytes": 27586,
+      "fetched_at": "2026-11-03T21:17:59Z",
+      "sha256": "968a6c232a984f07c8181d07b95a26713e956691a24a2ce631a7c473479d5696",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG38.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG39.txt": {
+      "bytes": 412933,
+      "fetched_at": "2026-11-03T21:18:07Z",
+      "sha256": "ca6e3344ed678e3ac448edf67f151353559fb85cb040266a1dac8868d11805ef",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG39.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG40.txt": {
+      "bytes": 146899,
+      "fetched_at": "2026-11-03T21:22:56Z",
+      "sha256": "7f3561745d4c1158620188cb15503021b884f1b85d83bb88b93673be2a8fc8b7",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG40.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG41.txt": {
+      "bytes": 129946,
+      "fetched_at": "2026-11-03T21:23:03Z",
+      "sha256": "344133007c2d1dcc3c0d2bfab43a421730fd6605904c5989c3b6792edac90f74",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG41.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG42.txt": {
+      "bytes": 443827,
+      "fetched_at": "2026-11-03T21:23:25Z",
+      "sha256": "b8eacc866249a33b52cd0c19a941f66fa2e70f4cc7cc43da42b741fadb9b3e1d",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG42.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG44.txt": {
+      "bytes": 34685,
+      "fetched_at": "2026-11-03T21:31:29Z",
+      "sha256": "10d3d0b34ccf565ad2cb8bc8af7e56462ab80bfb5f2ba9b70a6527aad903fcce",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG44.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG45.txt": {
+      "bytes": 148985,
+      "fetched_at": "2026-11-03T21:35:22Z",
+      "sha256": "374211739eac0131882a04c27fb9667119ac7f624157d5ee997f62daa2431b3d",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG45.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG46.txt": {
+      "bytes": 30319,
+      "fetched_at": "2026-11-03T21:36:41Z",
+      "sha256": "e6314481c85f5f4b6316d93cb2acacdf1c7883514f46bb5d22baa29efd4dc711",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG46.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG47.txt": {
+      "bytes": 199757,
+      "fetched_at": "2026-11-03T21:36:43Z",
+      "sha256": "e3d86c708fcdeaa38e0216e4ecd32a80219e9944ae5ceef846791c1220321009",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG47.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG48.txt": {
+      "bytes": 815278,
+      "fetched_at": "2026-11-03T21:38:45Z",
+      "sha256": "f4b0c7e64580af850d09806582e4f5bb865af04c5af19a1aae36c47e8b6252ef",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG48.txt",
+      "vintage": "2020 Census"
+    },
     "cenpop/CenPop2020_Mean_BG49.txt": {
       "bytes": 88549,
       "fetched_at": "2026-11-03T15:45:56Z",
       "sha256": "b69876d2932392d1863f3ae01690a4998392bc9571b10d9cc84242b1ca730320",
       "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG49.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG50.txt": {
+      "bytes": 24101,
+      "fetched_at": "2026-11-03T21:42:42Z",
+      "sha256": "c9d9888ee3a78cabf2a49ef41667302d8ff6ab1d246d1ec66ac4675410655d61",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG50.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG51.txt": {
+      "bytes": 260747,
+      "fetched_at": "2026-11-03T21:42:59Z",
+      "sha256": "4ac571ad59cb99b2543b720b3f40fe0ce97378af526edfd46a192c944c27ac64",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG51.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG53.txt": {
+      "bytes": 232957,
+      "fetched_at": "2026-11-03T21:52:12Z",
+      "sha256": "e301cbef2b9e0cf9f20f1798b1384b00cd52b33666d57070f7ae08d0c8f04d89",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG53.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG54.txt": {
+      "bytes": 71363,
+      "fetched_at": "2026-11-03T21:52:23Z",
+      "sha256": "f562e552af0ea0ac0c5575d6c52acf766d836fd05364b8cb76a68c8bfb2e9c21",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG54.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG55.txt": {
+      "bytes": 204677,
+      "fetched_at": "2026-11-03T21:55:46Z",
+      "sha256": "bf671b501d9a84dc5f66c21599381eccb89da33d6b1c97acdfcf155783c4a398",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG55.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG56.txt": {
+      "bytes": 20007,
+      "fetched_at": "2026-11-03T21:56:25Z",
+      "sha256": "06e6935749930075d32d81b83ba5e7cafdd62a1949972552e140154e3d82b61a",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG56.txt",
       "vintage": "2020 Census"
     }
   },
