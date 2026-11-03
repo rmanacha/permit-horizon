@@ -1,0 +1,5 @@
+Survey,FIPS,Region,Division,State,,1-unit,,,2-units,,,3-4 units,,,5+ units,,,1-unit rep,,,2-units rep,,,3-4 units rep       ,,,5+ units rep
+Date,State,Code,Code,Name,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,      Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,      Bldgs,Units,Value,Bldgs,Units,Value
+ 
+202599,33,1,1,New Hampshire,3279,3279,1296819,83,166,34508,46,157,29731,87,1428,291671,2784,2784,1123431,72,144,29173,31,112,21638,50,1045,213804
+202599,99,4,8,Zetaland,248,248,74400,6,12,2400,2,6,900,2,80,9600,248,248,74400,6,12,2400,2,6,900,2,80,9600

@@ -1,0 +1,17 @@
+[
+ {
+  "agency": "Alder Transit",
+  "modes": [
+   "LR",
+   "MB"
+  ],
+  "ntd_id": "99001"
+ },
+ {
+  "agency": "Birch Ferries",
+  "modes": [
+   "FB"
+  ],
+  "ntd_id": "99002"
+ }
+]

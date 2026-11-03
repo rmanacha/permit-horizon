@@ -1,0 +1,6 @@
+Survey,FIPS,FIPS,Region,Division,County,,1-unit,,,2-units,,,3-4 units,,,5+ units,,,1-unit rep,,,2-units rep,,,3-4 units rep,,, 5+units rep
+Date,State,County,Code,Code,Name,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value,Bldgs,Units,Value
+ 
+2018,33,001,1,1,Belknap County                ,300,300,100000000,10,20,4000000,2,8,2000000,3,30,5000000,290,290,97000000,10,20,4000000,2,8,2000000,3,30,5000000
+2018,99,001,4,8,Alder County                  ,120,120,36000000,5,10,2000000,2,6,900000,1,50,6000000,120,120,36000000,5,10,2000000,2,6,900000,1,50,6000000
+2018,99,003,4,8,Birch County                  ,44,44,13200000,1,2,400000,0,0,0,0,0,0,44,44,13200000,1,2,400000,0,0,0,0,0,0
