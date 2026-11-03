@@ -65,6 +65,10 @@ remain freely available to end users.]
 | Dependency | License | Runtime or dev-only | Notes |
 | ---------- | ------- | ------------------- | ----- |
 | [name] | [license] | [runtime / dev] | [ok / flagged] |
+| react, react-dom (website) | MIT | runtime | ok |
+| vite 7, typescript, @types/* (website build) | MIT, Apache-2.0 | dev | ok (Vite 8 avoided: it requires lightningcss, MPL-2.0) |
+| Raleway font (`web/public/fonts/`) | SIL Open Font License 1.1 | runtime (served font file) | font licence; allows bundling with any software; licence text shipped beside the file |
+| Asap Condensed font (`web/public/fonts/`) | SIL Open Font License 1.1 | runtime (served font file) | font licence; allows bundling with any software; licence text shipped beside the file |
 
 # Generated or Copied Code
 
