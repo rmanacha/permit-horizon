@@ -18,7 +18,16 @@ as a coding assistant for the pipeline (Phase 1) and the baseline engine, regist
 and validation code (Phase 2); every function has hand-computed tests and the team
 reviews each phase report. Commits made with it carry a `Co-Authored-By: Claude`
 line. No language model runs inside the tool: narrative text comes from fixed
-templates in `src/hre/model/drivers.py`.
+templates in `src/hre/model/drivers.py`. Phases 3 (scenarios) and 4 (the website in
+`web/`) were built the same way; the website's arithmetic is tested against the engine
+(`web/scripts/rescale_equality.mjs`).
+
+Running note on the website's npm packages (Phase 6 completes the table from the SBOM):
+runtime `react`, `react-dom` (MIT); build-only `vite` 7 (MIT; Vite 8 is avoided because it
+requires lightningcss, MPL-2.0), `typescript` (Apache-2.0), `@types/*` (MIT). All 94
+lock-file entries, every platform, are MIT, ISC, BSD-3-Clause or Apache-2.0
+(`web/scripts/licenses.test.mjs`). Hosting: GitHub Pages (free for public repositories);
+the site also runs locally (`make run`) or in Docker, so it does not depend on Pages.
 
 # Pretrained Models, Weights, and Embeddings
 
