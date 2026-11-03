@@ -1,0 +1,19 @@
+# Keep the build context small and free of local state: no environments, caches, raw data,
+# working results or git history.
+.git
+.github
+.claude
+.venv
+**/__pycache__
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.env
+.env.*
+results/
+data/raw/
+data/processed/
+web/node_modules/
+web/dist/
+*.log
+.DS_Store

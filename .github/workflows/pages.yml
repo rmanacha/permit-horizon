@@ -1,0 +1,76 @@
+# Deploys the website (web/dist) to GitHub Pages on every push to main, and on demand.
+# The results bundle in web/public/results/ is committed (decision 74); Vite copies it into the
+# build and this workflow never regenerates results.
+#
+# One-time repository setting: Settings > Pages > Build and deployment > Source: GitHub Actions
+# (https://github.com/rmanacha/permit-horizon/settings/pages). Until that is set, the build job
+# still runs and the deploy job is skipped with a notice, so the workflow stays green.
+
+name: Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      enabled: ${{ steps.pages.outputs.enabled }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Build web/dist (npm ci, type check, vite build)
+        working-directory: web
+        run: npm ci --no-audit --no-fund && npm run build
+
+      - name: Is GitHub Pages set to deploy from Actions?
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          body=$(curl -s -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages")
+          build_type=$(printf '%s' "$body" | python3 -c "import json,sys; print(json.load(sys.stdin).get('build_type') or '')" 2>/dev/null || true)
+          if [ "$build_type" = "workflow" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=GitHub Pages not enabled::Set Settings > Pages > Source to 'GitHub Actions' (https://github.com/${{ github.repository }}/settings/pages), then rerun this workflow. The site built fine; only the deploy was skipped."
+          fi
+
+      - uses: actions/upload-pages-artifact@v5
+        if: steps.pages.outputs.enabled == 'true'
+        with:
+          path: web/dist
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.enabled == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

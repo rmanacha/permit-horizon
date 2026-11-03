@@ -29,3 +29,9 @@ updates:
       # dependencies); the site stays on Vite 7, which uses esbuild and rollup (MIT).
       - dependency-name: "vite"
         update-types: ["version-update:semver-major"]
+
+  # Base images in the Dockerfile (pinned by digest).
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"

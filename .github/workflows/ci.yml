@@ -67,3 +67,30 @@ jobs:
 
       - name: Web tests
         run: make test-web
+
+  # Docker convenience path (Phase 4 step 8), verified here because the team's Mac has no
+  # Docker: build the image, start it with compose, and request the site, the bundle and a
+  # state file; then run the engine inside the container on the demo state.
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Build and start (docker compose up)
+        run: docker compose up --build --detach --wait --wait-timeout 180
+
+      - name: Smoke requests against the served site
+        run: |
+          set -eu
+          curl -fsS http://localhost:8080/ | grep -q "Permit Horizon"
+          js=$(curl -fsS http://localhost:8080/ | grep -o 'assets/[^"]*\.js' | head -1)
+          curl -fsS -o /dev/null "http://localhost:8080/$js"
+          curl -fsS http://localhost:8080/results/meta.json | python3 -c "import json,sys; m=json.load(sys.stdin); assert m['jurisdictions'] == 51, m; print('bundle', m['git_shas'])"
+          curl -fsS http://localhost:8080/results/NH.json | python3 -c "import json,sys; r=json.load(sys.stdin); print('NH baseline', r['baseline']['state']['mid'])"
+
+      - name: The engine runs inside the container
+        run: docker compose run --rm app hre run --state ZZ --data-dir data/sample --out /tmp/ZZ.json --quiet
+
+      - name: Stop
+        if: always()
+        run: docker compose down

@@ -1,0 +1,7 @@
+# docker compose up  ->  Permit Horizon at http://localhost:8080 (see Dockerfile).
+services:
+  app:
+    build: .
+    image: permit-horizon:local
+    ports:
+      - "8080:8080"
