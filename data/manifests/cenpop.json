@@ -1,0 +1,35 @@
+{
+  "files": {
+    "cenpop/CenPop2020_Mean_BG04.txt": {
+      "bytes": 208919,
+      "fetched_at": "2026-11-03T15:46:05Z",
+      "sha256": "90a673a9bbaeb044597cd64a48581b5bb76fe642625385e96e121617a916f698",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG04.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG06.txt": {
+      "bytes": 1121417,
+      "fetched_at": "2026-11-03T15:46:23Z",
+      "sha256": "dec7901b491fb43e84de015336e8a517301f81130bead29f90de4a1baefc34fc",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG06.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG33.txt": {
+      "bytes": 43625,
+      "fetched_at": "2026-11-03T15:45:29Z",
+      "sha256": "ae86786baa4d539e45ff242771e237b0ea72a6bb04f7b323270248e69f223518",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG33.txt",
+      "vintage": "2020 Census"
+    },
+    "cenpop/CenPop2020_Mean_BG49.txt": {
+      "bytes": 88549,
+      "fetched_at": "2026-11-03T15:45:56Z",
+      "sha256": "b69876d2932392d1863f3ae01690a4998392bc9571b10d9cc84242b1ca730320",
+      "url": "https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG49.txt",
+      "vintage": "2020 Census"
+    }
+  },
+  "license": "U.S. Census Bureau, public domain (U.S. government work)",
+  "notes": "Population-weighted mean centre of each 2020 block group; the origin of every transit-distance measurement.",
+  "source": "cenpop"
+}

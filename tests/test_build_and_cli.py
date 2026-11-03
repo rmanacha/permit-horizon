@@ -34,16 +34,27 @@ def test_build_zz_end_to_end(sample_dir, tmp_path):
     assert any("no ACS" in n for n in si.notes)
 
 
-def test_aclf_decision_on_fixture(sample_dir):
+def test_aclf_excluded_by_decision_46(sample_dir):
+    from hre.data import fetch_aclf
+
+    assert fetch_aclf.SERIES_APPROVED is False
     si, summary = build_state("ZZ", sample_dir)
     rows = summary["aclf_ratios"]
-    assert rows[0]["vintage"] == "2022-06" and rows[-1]["vintage"] == "2026-07"
+    assert rows[0]["vintage"] == "2022-06" and rows[-1]["vintage"] == "2026-07"  # still computed and reported
+    assert si.county("99001").address_units == {} and summary["aclf"] == "excluded"
+    assert any("decision 46" in n for n in si.notes)
+
+
+def test_aclf_halved_when_approved(sample_dir, monkeypatch):
+    """If the series is ever re-approved, a passing state gets the halved values and the note."""
+    from hre.data import fetch_aclf
+
+    monkeypatch.setattr(fetch_aclf, "SERIES_APPROVED", True)
+    si, summary = build_state("ZZ", sample_dir)
     alder = si.county("99001")
-    if summary["aclf"].startswith("stored"):
-        assert alder.address_units["2026-07"] == 42500 // 2 and alder.address_units["2022-06"] == 20350
-        assert any("divided by two" in n for n in si.notes)
-    else:
-        assert alder.address_units == {} and any("excluded" in n for n in si.notes)
+    assert summary["aclf"].startswith("stored")
+    assert alder.address_units["2026-07"] == 42500 // 2 and alder.address_units["2022-06"] == 20350
+    assert any("divided by two" in n for n in si.notes)
 
 
 def test_write_is_deterministic_and_small(sample_dir, tmp_path):

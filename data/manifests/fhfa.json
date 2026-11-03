@@ -1,0 +1,14 @@
+{
+  "files": {
+    "fhfa/hpi_at_county.xlsx": {
+      "bytes": 5334194,
+      "fetched_at": "2026-11-03T15:45:28Z",
+      "sha256": "534e9fd3224c4d9365300cc1be471bcfe4455b72311263a35e9cb50adf79afd1",
+      "url": "https://www.fhfa.gov/hpi/download/annual/hpi_at_county.xlsx",
+      "vintage": "annual through 2025 (file updated 2026-03-31)"
+    }
+  },
+  "license": "Freely available from FHFA; cite 'Source: FHFA HPI'. This product uses FHFA data but is neither endorsed nor certified by FHFA.",
+  "notes": "County all-transactions index, developmental, not seasonally adjusted; base 100 at the county's first recorded year; missing cells dropped.",
+  "source": "fhfa"
+}

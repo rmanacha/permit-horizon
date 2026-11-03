@@ -1,0 +1,63 @@
+{
+  "files": {
+    "transit/ntd_modes_04.json": {
+      "bytes": 5191,
+      "fetched_at": "2026-11-03T15:46:23Z",
+      "sha256": "63d5e3c0fb440cfbe88d97fd922aa7bdf2f170b989148b0f3c73d694371c4e4e",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=AZ&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_06.json": {
+      "bytes": 23998,
+      "fetched_at": "2026-11-03T15:48:10Z",
+      "sha256": "f7cdea66886a7a69b38482ec934d228139cc18cffaf3eb776993018d69601d45",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=CA&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_33.json": {
+      "bytes": 1469,
+      "fetched_at": "2026-11-03T15:45:56Z",
+      "sha256": "b4aa2a5c2daa6f0c61710d6912df165395f63d0f33e6ee49cf72bc167961284e",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=NH&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntd_modes_49.json": {
+      "bytes": 909,
+      "fetched_at": "2026-11-03T15:46:05Z",
+      "sha256": "93d0a78d9298bd55e76ed52abea248161dd39a212a391004fa76c60189438538",
+      "url": "https://data.transportation.gov/resource/wwdp-t4re.json?state=UT&report_year=2024",
+      "vintage": "report year 2024"
+    },
+    "transit/ntm_stops_04.json": {
+      "bytes": 3476952,
+      "fetched_at": "2026-11-03T15:46:22Z",
+      "sha256": "7400dfd715603e5234e4b8fbd2ca377008bee9d69f37a784f6ee28d3f574161c",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-115.538806,30.025733,-107.742323,37.329692&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2026-03-09 to 2026-09-23"
+    },
+    "transit/ntm_stops_06.json": {
+      "bytes": 18579571,
+      "fetched_at": "2026-11-03T15:48:09Z",
+      "sha256": "77c3be018cc1284203c46e70d8d4cc04d4040120fafe673634d4c4037d161759",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-125.480998,31.523604,-113.8554,43.249903&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-03-19 to 2026-09-23"
+    },
+    "transit/ntm_stops_33.json": {
+      "bytes": 7593684,
+      "fetched_at": "2026-11-03T15:45:48Z",
+      "sha256": "0be097e876c7755ff29d792c8437b9538983d932849649bfe24353d9872eb913",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-73.748183,41.411532,-69.535589,46.152548&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2025-12-02 to 2026-09-23"
+    },
+    "transit/ntm_stops_49.json": {
+      "bytes": 1536626,
+      "fetched_at": "2026-11-03T15:46:05Z",
+      "sha256": "8ae7954ae74590cdb66dee028f26c29e52ad01b341ca250ac248edae5d261817",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0/query?geometry=-114.9878,35.762531,-108.005785,43.234118&outFields=stop_id,stop_name,stop_lat,stop_lon,stop_type,location_type,parent_station,ntd_id,download_date",
+      "vintage": "feeds downloaded 2026-03-09 to 2026-09-23"
+    }
+  },
+  "license": "National Transit Database, U.S. DOT, public domain",
+  "notes": "Agencies and the modes they report; rail/ferry modes cross-check the stop filter.",
+  "source": "transit"
+}

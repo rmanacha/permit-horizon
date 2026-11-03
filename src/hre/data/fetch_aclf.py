@@ -41,6 +41,22 @@ VINTAGES: tuple[tuple[str, str], ...] = (
 DOUBLED_FROM = "2023-07"      # first vintage whose published column reads double
 RATIO_LOW, RATIO_HIGH = 1.95, 2.05
 
+# The decision (2026-11-03, decision 46): the halved series is stored only when the
+# doubling check passed for EVERY state. It did not: 37 of 51 states passed, the July
+# 2023 ratio ranged from 1.894 (UT) to 2.013 (WV) and the July 2026 ratio from 1.979
+# (SD) to 2.110 (DC), rising over time in fast-growing states and drifting above 2 in
+# slow-growing ones. So the series is excluded everywhere. Evidence:
+# docs/evidence/aclf_ratio_check_all_states.md. Flip this to True only after rerunning
+# `hre validate --aclf --all --fetch` and finding every state within the band.
+SERIES_APPROVED = False
+EXCLUDED_NOTE = (
+    "address_units: Address Count Listing Files excluded (decision 46). The published "
+    "TOTAL HOUSING UNITS column reads about double from July 2023 on, but the ratio to "
+    "Census Population Estimates was not a constant 2.0 across states (1.894 to 2.110; 37 of "
+    "51 states within 2.0 +/- 0.05), so halving it is not a safe correction. See "
+    "docs/DATA_PROVENANCE.md and docs/evidence/aclf_ratio_check_all_states.md."
+)
+
 
 def vintage_key(mmyyyy: str) -> str:
     return f"{mmyyyy[2:]}-{mmyyyy[:2]}"

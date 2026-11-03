@@ -70,6 +70,8 @@ def _aclf_block(state: StateRef, data_dir: Path | None, pep: dict[str, dict[str,
     pep_state = {y: sum(s.get(y, 0) for s in pep.values()) for y in years}
     rows = fetch_aclf.ratio_table(aclf, pep_state)
     ok, why = fetch_aclf.doubling_check(rows)
+    if not fetch_aclf.SERIES_APPROVED:
+        return {}, rows, fetch_aclf.EXCLUDED_NOTE
     if ok:
         return fetch_aclf.halved_series(aclf), rows, fetch_aclf.HALVED_NOTE
     return {}, rows, (f"address_units: Address Count Listing Files excluded for this state because the "

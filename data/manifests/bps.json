@@ -1,0 +1,329 @@
+{
+  "files": {
+    "bps/co2016a.txt": {
+      "bytes": 369295,
+      "fetched_at": "2026-11-03T15:45:08Z",
+      "sha256": "6ff9421bd21ce5f0a3d4c986b20ef07118325871570e0aa3f97983ee7e1a5613",
+      "url": "https://www2.census.gov/econ/bps/County/co2016a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/co2017a.txt": {
+      "bytes": 366973,
+      "fetched_at": "2026-11-03T15:45:08Z",
+      "sha256": "1e0d55f4706598f8971eba452a2fd2855a2d7b0ec1262c3dd246194968654456",
+      "url": "https://www2.census.gov/econ/bps/County/co2017a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/co2018a.txt": {
+      "bytes": 366773,
+      "fetched_at": "2026-11-03T15:45:08Z",
+      "sha256": "7804746d2fd77346b6d981a607c12897051025741f1d17c29653bb5dde032e04",
+      "url": "https://www2.census.gov/econ/bps/County/co2018a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/co2019a.txt": {
+      "bytes": 368766,
+      "fetched_at": "2026-11-03T15:45:08Z",
+      "sha256": "4ea529befaa1d93f8a20fe79c2aa4430456e91766e5ecf07ad4840457703b25b",
+      "url": "https://www2.census.gov/econ/bps/County/co2019a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/co2020a.txt": {
+      "bytes": 369908,
+      "fetched_at": "2026-11-03T15:45:08Z",
+      "sha256": "04efba6d3ffecd19340dece9d76d01343f8b97647617c79422c04e227e2d7293",
+      "url": "https://www2.census.gov/econ/bps/County/co2020a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/co2021a.txt": {
+      "bytes": 372012,
+      "fetched_at": "2026-11-03T15:45:09Z",
+      "sha256": "ce2c9aa7b7c036ddbc99d6dc398ddf71e4a0ad0fc2782db883b559ca264f14b6",
+      "url": "https://www2.census.gov/econ/bps/County/co2021a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/co2022a.txt": {
+      "bytes": 374937,
+      "fetched_at": "2026-11-03T15:45:09Z",
+      "sha256": "0a88c16861ede81b04f8785e1c626e772510f33f1de9452f7592d86d308e2b5c",
+      "url": "https://www2.census.gov/econ/bps/County/co2022a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/co2023a.txt": {
+      "bytes": 374707,
+      "fetched_at": "2026-11-03T15:45:09Z",
+      "sha256": "fab11d759e905ff61838b8dfa41c0f2082e150cad07a20c65ddd620a007aa158",
+      "url": "https://www2.census.gov/econ/bps/County/co2023a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/co2024a.txt": {
+      "bytes": 375214,
+      "fetched_at": "2026-11-03T15:45:09Z",
+      "sha256": "a64c2dd19be96c469763c10d637575a584ef16a6878f451bba80c847bcafc8c6",
+      "url": "https://www2.census.gov/econ/bps/County/co2024a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/co2025a.txt": {
+      "bytes": 375314,
+      "fetched_at": "2026-11-03T15:45:09Z",
+      "sha256": "5d523b1ff172c886ee7f2bc770c82c8c5470b5aaaec5f63441a18c621c80b30e",
+      "url": "https://www2.census.gov/econ/bps/County/co2025a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st1990a.txt": {
+      "bytes": 9808,
+      "fetched_at": "2026-11-03T15:45:10Z",
+      "sha256": "1dd8e13a21cd1236269e26187150ea291e05fbb9b14b6aa80520dd803bb9f09f",
+      "url": "https://www2.census.gov/econ/bps/State/st1990a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st1991a.txt": {
+      "bytes": 9664,
+      "fetched_at": "2026-11-03T15:45:10Z",
+      "sha256": "d8670a2e6625aca6600f70b5d45649862776ff3f71f36a3e68491b6ccc248357",
+      "url": "https://www2.census.gov/econ/bps/State/st1991a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st1992a.txt": {
+      "bytes": 9769,
+      "fetched_at": "2026-11-03T15:45:10Z",
+      "sha256": "b34df3bc7536607b5847ff64f67b26b06fd06fbc95575139bbb6ef2be5c477bc",
+      "url": "https://www2.census.gov/econ/bps/State/st1992a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st1993a.txt": {
+      "bytes": 9896,
+      "fetched_at": "2026-11-03T15:45:10Z",
+      "sha256": "de390ecd834252e846e0bf667631d4fbf133a997dd9bc61c82973614e23ed6ba",
+      "url": "https://www2.census.gov/econ/bps/State/st1993a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st1994a.txt": {
+      "bytes": 10129,
+      "fetched_at": "2026-11-03T15:45:10Z",
+      "sha256": "2f7e1e2b503de6457e395c36aef3b6f2a75395e6f8aff3cb68e147f8616649b0",
+      "url": "https://www2.census.gov/econ/bps/State/st1994a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st1995a.txt": {
+      "bytes": 10112,
+      "fetched_at": "2026-11-03T15:45:11Z",
+      "sha256": "0bbec9d9480b40ef211a4b230194b451c6951c31e4e19d1e9137ddbc0972a458",
+      "url": "https://www2.census.gov/econ/bps/State/st1995a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st1996a.txt": {
+      "bytes": 10135,
+      "fetched_at": "2026-11-03T15:45:11Z",
+      "sha256": "9698c48b3abbbd72b88c479650d401fb3bcc565eca26a181dd1b0378e12a6f09",
+      "url": "https://www2.census.gov/econ/bps/State/st1996a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st1997a.txt": {
+      "bytes": 10186,
+      "fetched_at": "2026-11-03T15:45:11Z",
+      "sha256": "ede4e02e28aa2d60a55e5c54c1de2008e52125a0e746bd2944a3a265f2dbb7f7",
+      "url": "https://www2.census.gov/econ/bps/State/st1997a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st1998a.txt": {
+      "bytes": 10364,
+      "fetched_at": "2026-11-03T15:45:11Z",
+      "sha256": "f135dadedf53bdcb136367b39358543e1953e37107987613d65e71956bc51266",
+      "url": "https://www2.census.gov/econ/bps/State/st1998a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st1999a.txt": {
+      "bytes": 10528,
+      "fetched_at": "2026-11-03T15:45:12Z",
+      "sha256": "bab19f99f77af47f2250893a8898a9110e9b2904f46b9956204d86bfda61a00e",
+      "url": "https://www2.census.gov/econ/bps/State/st1999a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2000a.txt": {
+      "bytes": 10473,
+      "fetched_at": "2026-11-03T15:45:12Z",
+      "sha256": "492fe46b3ea8e5b8f61a369abe3b641051b4e92e07565733ce86d30484dd8209",
+      "url": "https://www2.census.gov/econ/bps/State/st2000a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2001a.txt": {
+      "bytes": 10502,
+      "fetched_at": "2026-11-03T15:45:12Z",
+      "sha256": "ad78c46145fa82d29a0218b63324c0ffb635750ea16404bbd4fa2d202b3e38bc",
+      "url": "https://www2.census.gov/econ/bps/State/st2001a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2002a.txt": {
+      "bytes": 10602,
+      "fetched_at": "2026-11-03T15:45:13Z",
+      "sha256": "2925631aa9027c591443bc5e76e4acac954a504e76c0c4146c36f9aab1a8db1f",
+      "url": "https://www2.census.gov/econ/bps/State/st2002a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2003a.txt": {
+      "bytes": 10675,
+      "fetched_at": "2026-11-03T15:45:13Z",
+      "sha256": "7c8e03db4d49d17b68a07d10b7fe23eef4e95a22cb885e118447d9e874324fb1",
+      "url": "https://www2.census.gov/econ/bps/State/st2003a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2004a.txt": {
+      "bytes": 10701,
+      "fetched_at": "2026-11-03T15:45:13Z",
+      "sha256": "d0a24ace330ac2655d5ffa6e01ed2b535b9197827d1e13c9e9ac04cb85d587a3",
+      "url": "https://www2.census.gov/econ/bps/State/st2004a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2005a.txt": {
+      "bytes": 10747,
+      "fetched_at": "2026-11-03T15:45:13Z",
+      "sha256": "f8c2d654a94dcd71261ae6fd74b572950935ab0e521e860413d87e257ef959d8",
+      "url": "https://www2.census.gov/econ/bps/State/st2005a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2006a.txt": {
+      "bytes": 10718,
+      "fetched_at": "2026-11-03T15:45:13Z",
+      "sha256": "14e58d1458bcd370410c97147aec105343b2d801d804234aa919f5c56b895593",
+      "url": "https://www2.census.gov/econ/bps/State/st2006a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2007a.txt": {
+      "bytes": 10710,
+      "fetched_at": "2026-11-03T15:45:14Z",
+      "sha256": "46d0d7c4cd00a72833c1e83e05d375b11fa048e01d80fca3a38e06430b882729",
+      "url": "https://www2.census.gov/econ/bps/State/st2007a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2008a.txt": {
+      "bytes": 10444,
+      "fetched_at": "2026-11-03T15:45:14Z",
+      "sha256": "1e84decea6f171eec0be301bdcec8ad01ca6ee916f6d236e9957e3af407e0a75",
+      "url": "https://www2.census.gov/econ/bps/State/st2008a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2009a.txt": {
+      "bytes": 10140,
+      "fetched_at": "2026-11-03T15:45:14Z",
+      "sha256": "9288088440aff8822644ce3549b62997a29f047821d1986108399ac1267be7d8",
+      "url": "https://www2.census.gov/econ/bps/State/st2009a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2010a.txt": {
+      "bytes": 10086,
+      "fetched_at": "2026-11-03T15:45:14Z",
+      "sha256": "7887ce2f50156541ad93195046e0caeda3167bdbbe2564708d63623afa1e5414",
+      "url": "https://www2.census.gov/econ/bps/State/st2010a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2011a.txt": {
+      "bytes": 10181,
+      "fetched_at": "2026-11-03T15:45:15Z",
+      "sha256": "d5b541a11e7e7162b6c24ae74412ea3106824bd3ab8d81b654013c6da8e047e4",
+      "url": "https://www2.census.gov/econ/bps/State/st2011a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2012a.txt": {
+      "bytes": 10168,
+      "fetched_at": "2026-11-03T15:45:15Z",
+      "sha256": "f70954ed1798780dda57d8185d8861db5981835742422a8c39595c4993b6555e",
+      "url": "https://www2.census.gov/econ/bps/State/st2012a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2013a.txt": {
+      "bytes": 10300,
+      "fetched_at": "2026-11-03T15:45:15Z",
+      "sha256": "88887e655f3dd7252bd1c04737b3a7fa379509773ca772ea0795d6cfa7980c1f",
+      "url": "https://www2.census.gov/econ/bps/State/st2013a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2014a.txt": {
+      "bytes": 10448,
+      "fetched_at": "2026-11-03T15:45:15Z",
+      "sha256": "9c4010b4b655e3b04ce12c1659c2ab370a5346d86f87f0110f2190ba64e63e98",
+      "url": "https://www2.census.gov/econ/bps/State/st2014a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2015a.txt": {
+      "bytes": 10491,
+      "fetched_at": "2026-11-03T15:45:16Z",
+      "sha256": "4086d9ea081850509000a0cefedd9e524d5f94db61d847f6ea4658ed243c6489",
+      "url": "https://www2.census.gov/econ/bps/State/st2015a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2016a.txt": {
+      "bytes": 10542,
+      "fetched_at": "2026-11-03T15:45:16Z",
+      "sha256": "18eb867896567740aeeb73a35486f59b44888db639a1b05a652996a43fd9c4f3",
+      "url": "https://www2.census.gov/econ/bps/State/st2016a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2017a.txt": {
+      "bytes": 10344,
+      "fetched_at": "2026-11-03T15:45:16Z",
+      "sha256": "f8c780ad19a3fe6c3f5c7803e27a63f6ceb4c4f2b3537d83c83dda8780f16933",
+      "url": "https://www2.census.gov/econ/bps/State/st2017a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2018a.txt": {
+      "bytes": 10463,
+      "fetched_at": "2026-11-03T15:45:16Z",
+      "sha256": "94fe186b27aa8cbc37eb4b4cff8e11dfe5dd0e33693c6399bb1f0f301f57790c",
+      "url": "https://www2.census.gov/econ/bps/State/st2018a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2019a.txt": {
+      "bytes": 10535,
+      "fetched_at": "2026-11-03T15:45:16Z",
+      "sha256": "b257d0c7094af2ea0c0a6bd83d1d2fcf324bbe2b13da7261b9e4e3d93b7edfa1",
+      "url": "https://www2.census.gov/econ/bps/State/st2019a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2020a.txt": {
+      "bytes": 10432,
+      "fetched_at": "2026-11-03T15:45:16Z",
+      "sha256": "446533087cb10997e488f081d05a2f04179468a04bd543316c0167763965cfd4",
+      "url": "https://www2.census.gov/econ/bps/State/st2020a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2021a.txt": {
+      "bytes": 10616,
+      "fetched_at": "2026-11-03T15:45:16Z",
+      "sha256": "82fea768a93c91a702c91727d8dea64d2573f835dc9858b11d0e63a4092c524b",
+      "url": "https://www2.census.gov/econ/bps/State/st2021a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2022a.txt": {
+      "bytes": 10731,
+      "fetched_at": "2026-11-03T15:45:16Z",
+      "sha256": "c973dde1f227de2c825ac0ce20b604979291080c7a1f70e9c953bf5a13980790",
+      "url": "https://www2.census.gov/econ/bps/State/st2022a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2023a.txt": {
+      "bytes": 10676,
+      "fetched_at": "2026-11-03T15:45:17Z",
+      "sha256": "c3915919cc2b58ccb2be6c9e6000f064236aeaa9d032f9352d60c0f484b4a583",
+      "url": "https://www2.census.gov/econ/bps/State/st2023a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2024a.txt": {
+      "bytes": 10681,
+      "fetched_at": "2026-11-03T15:45:17Z",
+      "sha256": "8dd34fb3bc362a0d6c1e6832161432dd833aff9be49ebebc128335635c59e7d0",
+      "url": "https://www2.census.gov/econ/bps/State/st2024a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    },
+    "bps/st2025a.txt": {
+      "bytes": 10744,
+      "fetched_at": "2026-11-03T15:45:17Z",
+      "sha256": "eab29258ada8389b9f469c566eb6eb074cf128aa94c471e89f818a20a4d83afb",
+      "url": "https://www2.census.gov/econ/bps/State/st2025a.txt",
+      "vintage": "annual files as posted 2026 (2025 posted 2026-05-14)"
+    }
+  },
+  "license": "U.S. Census Bureau, public domain (U.S. government work); no license statement published",
+  "notes": "Annual county and state files, 'estimates with imputation' block. Permits are authorisations, not completions; counties with no permit-issuing place are absent, not zero; Connecticut switches from counties to planning regions in 2023.",
+  "source": "bps"
+}

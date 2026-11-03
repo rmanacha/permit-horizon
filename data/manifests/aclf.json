@@ -1,0 +1,2863 @@
+{
+  "files": {
+    "aclf/01_Alabama_AddressBlockCountList_062022.txt": {
+      "bytes": 10105322,
+      "fetched_at": "2026-11-03T15:49:46Z",
+      "sha256": "f2035f9aebe6657fa21f04d9980fc3198ac505a9c0db089b61f0695c872823d6",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/01_Alabama_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/01_Alabama_AddressBlockCountList_072023.txt": {
+      "bytes": 7597002,
+      "fetched_at": "2026-11-03T15:49:48Z",
+      "sha256": "89cf3a44a6e3cbbfbadd673c7b35e3d99a00ba10dba9980a724ba61ea28a1b6c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/01_Alabama_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/01_Alabama_AddressBlockCountList_072024.txt": {
+      "bytes": 7633158,
+      "fetched_at": "2026-11-03T15:49:51Z",
+      "sha256": "51e9f0b69ba1956b506e7dca1a889f621c470cc3528f73bca7143ad5c3a0d24c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/01_Alabama_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/01_Alabama_AddressBlockCountList_072025.txt": {
+      "bytes": 7665747,
+      "fetched_at": "2026-11-03T15:49:55Z",
+      "sha256": "ab8be8af4382d56c0cf720bc6c20b46ce5fe6c3ac58714af110d85340a990a34",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/01_Alabama_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/01_Alabama_AddressBlockCountList_072026.txt": {
+      "bytes": 7701842,
+      "fetched_at": "2026-11-03T15:49:59Z",
+      "sha256": "8804f0ddfe9be858dd8f960165bb79cfc7d101cdec385fb5710bf2cd4546aad6",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/01_Alabama_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/01_Alabama_AddressBlockCountList_122023.txt": {
+      "bytes": 7596987,
+      "fetched_at": "2026-11-03T15:49:50Z",
+      "sha256": "9ce1a17b926f010f9e0c7b300dec59dff6722ca33cb4f6a1e804aad08045d567",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/01_Alabama_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/01_Alabama_AddressBlockCountList_122024.txt": {
+      "bytes": 7633534,
+      "fetched_at": "2026-11-03T15:49:53Z",
+      "sha256": "fc18c85ac1ea740f344e3b70c334f7828125cfe4c873442e832a6545c6d76d35",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/01_Alabama_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/01_Alabama_AddressBlockCountList_122025.txt": {
+      "bytes": 7665981,
+      "fetched_at": "2026-11-03T15:49:57Z",
+      "sha256": "ab14fa73eb8e90ef686d56e494b10b9e0e304c74c105eacab31ae1a1fc784e6d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/01_Alabama_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/02_Alaska_AddressBlockCountList_062022.txt": {
+      "bytes": 1550722,
+      "fetched_at": "2026-11-03T15:50:00Z",
+      "sha256": "98d2c43a39743e5447a3ae8fc4783dd8276da6c9bb1ff5eed79d5c61c31afa2f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/02_Alaska_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/02_Alaska_AddressBlockCountList_072023.txt": {
+      "bytes": 1151999,
+      "fetched_at": "2026-11-03T15:50:00Z",
+      "sha256": "00bd7bd27c36bc8271b82fb40df1755f9c05cb50681f9df0961592f5c8bf5592",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/02_Alaska_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/02_Alaska_AddressBlockCountList_072024.txt": {
+      "bytes": 1155241,
+      "fetched_at": "2026-11-03T15:50:01Z",
+      "sha256": "75e4d1ece9ae02ef303a51f0c4a7a5a00697eb129a442cb2e82118abf7a5841c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/02_Alaska_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/02_Alaska_AddressBlockCountList_072025.txt": {
+      "bytes": 1155870,
+      "fetched_at": "2026-11-03T15:50:03Z",
+      "sha256": "366ff98b5c4953c5bf966ff2dca59e248d52b3918a67b74cf5a3f900cb6fc3dd",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/02_Alaska_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/02_Alaska_AddressBlockCountList_072026.txt": {
+      "bytes": 1156175,
+      "fetched_at": "2026-11-03T15:50:03Z",
+      "sha256": "4c95e4e40f3c647e9cdba59bf30b708484da0061366b63cda94d656f2a733a26",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/02_Alaska_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/02_Alaska_AddressBlockCountList_122023.txt": {
+      "bytes": 1151975,
+      "fetched_at": "2026-11-03T15:50:01Z",
+      "sha256": "692d65af5018f319cef20d89d593a0daafbe880ce7dd1970567ca281c931edd1",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/02_Alaska_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/02_Alaska_AddressBlockCountList_122024.txt": {
+      "bytes": 1155269,
+      "fetched_at": "2026-11-03T15:50:02Z",
+      "sha256": "d9ed49df23676a1a4908db8873748370c79668265d6a42cb21829950d50ee431",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/02_Alaska_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/02_Alaska_AddressBlockCountList_122025.txt": {
+      "bytes": 1155908,
+      "fetched_at": "2026-11-03T15:50:03Z",
+      "sha256": "02aab343838c31e4766a6c29185d55891ae60b7689929be8ddfc355b2708cd17",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/02_Alaska_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/04_Arizona_AddressBlockCountList_062022.txt": {
+      "bytes": 8474156,
+      "fetched_at": "2026-11-03T15:46:06Z",
+      "sha256": "0a73a6b5c9f4aa37a68f0a7d382dfabb338e14368d2f14ebdaef13023993d90e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/04_Arizona_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/04_Arizona_AddressBlockCountList_072023.txt": {
+      "bytes": 6338185,
+      "fetched_at": "2026-11-03T15:46:08Z",
+      "sha256": "9de07e0c6f4bff26189259f79415892cdfba948dbc8ba1fe33f466680b23639f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/04_Arizona_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/04_Arizona_AddressBlockCountList_072024.txt": {
+      "bytes": 6382389,
+      "fetched_at": "2026-11-03T15:46:11Z",
+      "sha256": "cc7fbe5cc126097697e1abdaa62cca3664e00338f538a8d7e5a4c5ff271c089b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/04_Arizona_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/04_Arizona_AddressBlockCountList_072025.txt": {
+      "bytes": 6460102,
+      "fetched_at": "2026-11-03T15:46:15Z",
+      "sha256": "14193cb4f0f5f74466b1639ee8fdc5764db7881de95c22c88a3e8ef158b2fc49",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/04_Arizona_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/04_Arizona_AddressBlockCountList_072026.txt": {
+      "bytes": 6478217,
+      "fetched_at": "2026-11-03T15:46:17Z",
+      "sha256": "fd4069cdc125f89a3bcf35d55de052487163f45e232cb93f52ed03d9b83860ae",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/04_Arizona_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/04_Arizona_AddressBlockCountList_122023.txt": {
+      "bytes": 6338462,
+      "fetched_at": "2026-11-03T15:46:10Z",
+      "sha256": "14f23f7bc452b789be525546a8d3e71ba0c222d833f68006bfe06e2a6bbdbe12",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/04_Arizona_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/04_Arizona_AddressBlockCountList_122024.txt": {
+      "bytes": 6382723,
+      "fetched_at": "2026-11-03T15:46:13Z",
+      "sha256": "f48246ddd457ebfa398f3e046453160ec2661d25d4c5f6b03d1aa52f92264cbc",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/04_Arizona_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/04_Arizona_AddressBlockCountList_122025.txt": {
+      "bytes": 6460383,
+      "fetched_at": "2026-11-03T15:46:16Z",
+      "sha256": "e15848db1258b3cd2cb854b598f98dc312a99493ec6df1c3490a6efa6459d2e9",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/04_Arizona_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/05_Arkansas_AddressBlockCountList_062022.txt": {
+      "bytes": 7405066,
+      "fetched_at": "2026-11-03T15:50:06Z",
+      "sha256": "a5cfd4da92a18a0f99cd3c3ace9a6ec9fe0213fc797d75198d612ddb422f5537",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/05_Arkansas_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/05_Arkansas_AddressBlockCountList_072023.txt": {
+      "bytes": 5610314,
+      "fetched_at": "2026-11-03T15:50:07Z",
+      "sha256": "cf45e045a97cab6ad5ae6a635e5432d4b233243f05fdc514dff7952a1a6984e9",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/05_Arkansas_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/05_Arkansas_AddressBlockCountList_072024.txt": {
+      "bytes": 5616535,
+      "fetched_at": "2026-11-03T15:50:14Z",
+      "sha256": "79af21a1b4ef86d6d448cc90056c942c212127baf886cdd96113b8dc345456bc",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/05_Arkansas_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/05_Arkansas_AddressBlockCountList_072025.txt": {
+      "bytes": 5623641,
+      "fetched_at": "2026-11-03T15:50:17Z",
+      "sha256": "74fd4e87d85cfadcc96f88e8ac087b6bb878bc7afee6c6e82b25525250bfdec8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/05_Arkansas_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/05_Arkansas_AddressBlockCountList_072026.txt": {
+      "bytes": 5632561,
+      "fetched_at": "2026-11-03T15:50:20Z",
+      "sha256": "935958ed362c71f11f4dbd8af1ebbc84c3fdfe61b156cd329a0230d2746513c8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/05_Arkansas_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/05_Arkansas_AddressBlockCountList_122023.txt": {
+      "bytes": 5610432,
+      "fetched_at": "2026-11-03T15:50:09Z",
+      "sha256": "65be6d7186e73126e72b542e4c6cd73cc7ac6e0698869bb90fb8b20422639d52",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/05_Arkansas_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/05_Arkansas_AddressBlockCountList_122024.txt": {
+      "bytes": 5616845,
+      "fetched_at": "2026-11-03T15:50:15Z",
+      "sha256": "884efca6f5ae799d054316f9fff2e9f65554f87e7c5e3141f3776fe13a27a4ab",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/05_Arkansas_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/05_Arkansas_AddressBlockCountList_122025.txt": {
+      "bytes": 5623869,
+      "fetched_at": "2026-11-03T15:50:19Z",
+      "sha256": "0c0986bc171825ac451b745bdf13a6944baa30b6a75975fdd714dc82ef43abbc",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/05_Arkansas_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/06_California_AddressBlockCountList_062022.txt": {
+      "bytes": 28379971,
+      "fetched_at": "2026-11-03T15:46:27Z",
+      "sha256": "fa7f0222813262d45606bcefd81d3884528d48320c4e2769fe8b9fcd535186aa",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/06_California_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/06_California_AddressBlockCountList_072023.txt": {
+      "bytes": 21178906,
+      "fetched_at": "2026-11-03T15:46:33Z",
+      "sha256": "b1df0ad9c6a97acdd587e71c16890368c6532d7973322628fb2f2a113d135c0b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/06_California_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/06_California_AddressBlockCountList_072024.txt": {
+      "bytes": 21195803,
+      "fetched_at": "2026-11-03T15:46:43Z",
+      "sha256": "b4be5f122a92dac65862260dea25ac0ed80642361999dacaed75b11112040833",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/06_California_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/06_California_AddressBlockCountList_072025.txt": {
+      "bytes": 21211667,
+      "fetched_at": "2026-11-03T15:46:52Z",
+      "sha256": "6344c00231380563bbceda6602018a45cbbe9b2502df6de5c2728dd390f7cbaf",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/06_California_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/06_California_AddressBlockCountList_072026.txt": {
+      "bytes": 21230751,
+      "fetched_at": "2026-11-03T15:46:59Z",
+      "sha256": "f641be0c9de0b3bd785303195527425a96586d6a5fd0ea7a307d904cf8f847fb",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/06_California_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/06_California_AddressBlockCountList_122023.txt": {
+      "bytes": 21178743,
+      "fetched_at": "2026-11-03T15:46:37Z",
+      "sha256": "f9c93b9733206593ea06e06197e84e06264443c2526cab137f81b212163d1917",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/06_California_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/06_California_AddressBlockCountList_122024.txt": {
+      "bytes": 21196383,
+      "fetched_at": "2026-11-03T15:46:47Z",
+      "sha256": "4a6f3f7628057eb3a4bc4f1afa3c5e210d557660920fb46be2f1aaf3d1e7310c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/06_California_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/06_California_AddressBlockCountList_122025.txt": {
+      "bytes": 21212168,
+      "fetched_at": "2026-11-03T15:46:56Z",
+      "sha256": "9d706ff5b8222c3f22e89ce578c65939e6d7332d2d960310afc0b09771f5020a",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/06_California_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/08_Colorado_AddressBlockCountList_062022.txt": {
+      "bytes": 7643798,
+      "fetched_at": "2026-11-03T15:50:24Z",
+      "sha256": "a924a3355451be1d4f155ee53eb5f79cbd0fa7825d7767d02e3ddf8f05423df8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/08_Colorado_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/08_Colorado_AddressBlockCountList_072023.txt": {
+      "bytes": 5748246,
+      "fetched_at": "2026-11-03T15:50:25Z",
+      "sha256": "5d0ae78ce5597828392920224abd6fff54072692af38045013e2fcd0df3aba53",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/08_Colorado_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/08_Colorado_AddressBlockCountList_072024.txt": {
+      "bytes": 5758690,
+      "fetched_at": "2026-11-03T15:50:28Z",
+      "sha256": "ab75517d0bfeb0682de8be7688fea3fd09380162c7834de665cfa799840a3f1b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/08_Colorado_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/08_Colorado_AddressBlockCountList_072025.txt": {
+      "bytes": 5776692,
+      "fetched_at": "2026-11-03T15:50:31Z",
+      "sha256": "423ed5490fb6a896c9e464664c839cbb22256bfb9230eaa5a858de99f4cedd7e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/08_Colorado_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/08_Colorado_AddressBlockCountList_072026.txt": {
+      "bytes": 5787184,
+      "fetched_at": "2026-11-03T15:50:34Z",
+      "sha256": "8a7a11946525dc67f2d59a55c85f1c7fee54ad04db1cdfae5feb4f62fd7916f5",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/08_Colorado_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/08_Colorado_AddressBlockCountList_122023.txt": {
+      "bytes": 5748330,
+      "fetched_at": "2026-11-03T15:50:26Z",
+      "sha256": "751857bb8666b5223c4ab1a94053c7b06a606c84d3591f67a38f16fcd726df52",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/08_Colorado_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/08_Colorado_AddressBlockCountList_122024.txt": {
+      "bytes": 5758957,
+      "fetched_at": "2026-11-03T15:50:29Z",
+      "sha256": "4f4cd19b0f7ccc93148b04ea164c368884c5889f894506620676e7d6cdf4615f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/08_Colorado_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/08_Colorado_AddressBlockCountList_122025.txt": {
+      "bytes": 5776876,
+      "fetched_at": "2026-11-03T15:50:32Z",
+      "sha256": "52697bdcced313e519241b58166aae14283512ae1eb7570b31d2efe5834d9396",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/08_Colorado_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/09_Connecticut_AddressBlockCountList_062022.txt": {
+      "bytes": 2730889,
+      "fetched_at": "2026-11-03T15:50:35Z",
+      "sha256": "ba04f646472c493c868b283fdc2f5ea04e7057595891322af1e0d6527a8e7950",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/09_Connecticut_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/09_Connecticut_AddressBlockCountList_072023.txt": {
+      "bytes": 2032298,
+      "fetched_at": "2026-11-03T15:50:36Z",
+      "sha256": "2af5a211d4329b27b61a44fca812fc81705fc158c044e14faa2b4c2349d614ae",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/09_Connecticut_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/09_Connecticut_AddressBlockCountList_072024.txt": {
+      "bytes": 2032365,
+      "fetched_at": "2026-11-03T15:50:37Z",
+      "sha256": "a8216c9dd21e8de618afe881adf42840357b821c395078af7815d98c50053728",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/09_Connecticut_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/09_Connecticut_AddressBlockCountList_072025.txt": {
+      "bytes": 2032925,
+      "fetched_at": "2026-11-03T15:50:38Z",
+      "sha256": "f0b9638f113dcbed32172c24972ec11696af23040d29ccf9c548d9d41c15f965",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/09_Connecticut_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/09_Connecticut_AddressBlockCountList_072026.txt": {
+      "bytes": 2033392,
+      "fetched_at": "2026-11-03T15:50:40Z",
+      "sha256": "955ecf8b5edf1eaccea0b1b49e591c47c0c05164ef40ef14f084d205e5ef31a4",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/09_Connecticut_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/09_Connecticut_AddressBlockCountList_122023.txt": {
+      "bytes": 2032285,
+      "fetched_at": "2026-11-03T15:50:36Z",
+      "sha256": "f5175fbb8a3f1380efc506c037758c541e3945cf153a5782f2c477e1ca152e29",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/09_Connecticut_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/09_Connecticut_AddressBlockCountList_122024.txt": {
+      "bytes": 2032422,
+      "fetched_at": "2026-11-03T15:50:38Z",
+      "sha256": "b4528dbf669f18de07d785914e1e2c409ba5c9445bd48c6f1817ae3f2a3a5da1",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/09_Connecticut_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/09_Connecticut_AddressBlockCountList_122025.txt": {
+      "bytes": 2032963,
+      "fetched_at": "2026-11-03T15:50:39Z",
+      "sha256": "ba6739816da8093ff33fff53eac5d764ab0301a7912ca89b8e7e6aa7fb984f1d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/09_Connecticut_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/10_Delaware_AddressBlockCountList_062022.txt": {
+      "bytes": 1102309,
+      "fetched_at": "2026-11-03T15:50:41Z",
+      "sha256": "81b027c5418420c01c05f1afb1f0047834b977791baed7592e717587e1e46fea",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/10_Delaware_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/10_Delaware_AddressBlockCountList_072023.txt": {
+      "bytes": 823418,
+      "fetched_at": "2026-11-03T15:50:42Z",
+      "sha256": "c0bd50172ac5fa08f4097655af5fc9bfd25ba77f44f32bb02ac31d6c113958f8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/10_Delaware_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/10_Delaware_AddressBlockCountList_072024.txt": {
+      "bytes": 826168,
+      "fetched_at": "2026-11-03T15:50:42Z",
+      "sha256": "ef7a4e578bd3fabc07e8646b5552843f22b6bb215427581537b017bc93b9f646",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/10_Delaware_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/10_Delaware_AddressBlockCountList_072025.txt": {
+      "bytes": 830649,
+      "fetched_at": "2026-11-03T15:50:43Z",
+      "sha256": "ae3bdf3fe295cf468129708c3a1f64a5fcbac6e41f164ecaf583f032724bb31a",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/10_Delaware_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/10_Delaware_AddressBlockCountList_072026.txt": {
+      "bytes": 831594,
+      "fetched_at": "2026-11-03T15:50:44Z",
+      "sha256": "6b59cd2a711524ede3d811dc60c391a4055b70f001e85cd430fe652aa4a26ffc",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/10_Delaware_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/10_Delaware_AddressBlockCountList_122023.txt": {
+      "bytes": 823477,
+      "fetched_at": "2026-11-03T15:50:42Z",
+      "sha256": "a039a153dade8b7693f5072720f5e77df9d4bfb6158fc121d28aa0dba8c5cc22",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/10_Delaware_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/10_Delaware_AddressBlockCountList_122024.txt": {
+      "bytes": 826231,
+      "fetched_at": "2026-11-03T15:50:43Z",
+      "sha256": "0c84d06e119f2ed3dd9b940049bcf83d493582a3aa8bc8de38c5a2dfb0f0d26a",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/10_Delaware_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/10_Delaware_AddressBlockCountList_122025.txt": {
+      "bytes": 830694,
+      "fetched_at": "2026-11-03T15:50:43Z",
+      "sha256": "d3c26c81fb7e0740209c73698bcab929b2100425a64722f1a618b1828448a4e1",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/10_Delaware_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/11_DistrictofColumbia_AddressBlockCountList_062022.txt": {
+      "bytes": 329862,
+      "fetched_at": "2026-11-03T15:50:45Z",
+      "sha256": "c0099f1cf707f4bc5104e0e1d5627d1bccaa40649a38d9367944890cac28f046",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/11_DistrictofColumbia_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/11_DistrictofColumbia_AddressBlockCountList_072023.txt": {
+      "bytes": 245516,
+      "fetched_at": "2026-11-03T15:50:45Z",
+      "sha256": "853eddfa210993fc48c8dcdc0d276543155c15726ce21750a1b89b6f8de9f58f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/11_DistrictofColumbia_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/11_DistrictofColumbia_AddressBlockCountList_072024.txt": {
+      "bytes": 245490,
+      "fetched_at": "2026-11-03T15:50:46Z",
+      "sha256": "483799be979abaf16a8b86491d41bda124efb275440d61eae63f990414c90fb8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/11_DistrictofColumbia_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/11_DistrictofColumbia_AddressBlockCountList_072025.txt": {
+      "bytes": 245575,
+      "fetched_at": "2026-11-03T15:50:47Z",
+      "sha256": "0ae5da04581e8be87f582fbb9310c106727a7a1128b7afd1aac5cfa8a9a73afc",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/11_DistrictofColumbia_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/11_DistrictofColumbia_AddressBlockCountList_072026.txt": {
+      "bytes": 245595,
+      "fetched_at": "2026-11-03T15:50:48Z",
+      "sha256": "32055f11bdceb6fabec9bc4d39d7e58aeb3ea7618baf174d0c100debed883c0f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/11_DistrictofColumbia_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/11_DistrictofColumbia_AddressBlockCountList_122023.txt": {
+      "bytes": 245485,
+      "fetched_at": "2026-11-03T15:50:46Z",
+      "sha256": "babe9b2cd7def1ec417b8ffc3ce0ed7308ebf47ab0f99437d2cf8052af0bb02b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/11_DistrictofColumbia_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/11_DistrictofColumbia_AddressBlockCountList_122024.txt": {
+      "bytes": 245510,
+      "fetched_at": "2026-11-03T15:50:47Z",
+      "sha256": "d55040a918be9f95d1e5b69d5024a0abfe4682b6a427cfcc3132422949b84276",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/11_DistrictofColumbia_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/11_DistrictofColumbia_AddressBlockCountList_122025.txt": {
+      "bytes": 245587,
+      "fetched_at": "2026-11-03T15:50:48Z",
+      "sha256": "988f4ff8b0c77d2b0b2a7e6b313ce4fa839851f60e1a34d7b96ab329d0d170b1",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/11_DistrictofColumbia_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/12_Florida_AddressBlockCountList_062022.txt": {
+      "bytes": 21282967,
+      "fetched_at": "2026-11-03T15:50:50Z",
+      "sha256": "10e87fead733afd85877a730c9e663025fe4c0dd70dd119d89f577ae49b0aa35",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/12_Florida_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/12_Florida_AddressBlockCountList_072023.txt": {
+      "bytes": 15967737,
+      "fetched_at": "2026-11-03T15:50:54Z",
+      "sha256": "0e4e08caab7322076a596f26821bbb1857112718734a3f2f02bc7d9dbf29a209",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/12_Florida_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/12_Florida_AddressBlockCountList_072024.txt": {
+      "bytes": 16004594,
+      "fetched_at": "2026-11-03T15:51:00Z",
+      "sha256": "6a358f9ccb2156a728ab0e0b10243d2f1a9bfd9a18ab194f22fda4d7cf2a8e29",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/12_Florida_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/12_Florida_AddressBlockCountList_072025.txt": {
+      "bytes": 16037638,
+      "fetched_at": "2026-11-03T15:51:06Z",
+      "sha256": "a1a88cae2c5fb423ba4aec304b9a3663a8479484b8ae1305a7e4db3f03f80c43",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/12_Florida_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/12_Florida_AddressBlockCountList_072026.txt": {
+      "bytes": 16077520,
+      "fetched_at": "2026-11-03T15:51:12Z",
+      "sha256": "ac36b081220798efa0979493ec4820c28be9989cbbc67aee83c0dbae1c09af47",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/12_Florida_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/12_Florida_AddressBlockCountList_122023.txt": {
+      "bytes": 15968425,
+      "fetched_at": "2026-11-03T15:50:57Z",
+      "sha256": "72544d45393c9682aa3adf3e81f3080a2bd81dde8aff9dfac9f01afcd004393a",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/12_Florida_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/12_Florida_AddressBlockCountList_122024.txt": {
+      "bytes": 16005729,
+      "fetched_at": "2026-11-03T15:51:03Z",
+      "sha256": "78a26c8717db37755e90d37e2259561e1cb18c03e074e38d98220840bdd7a3d3",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/12_Florida_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/12_Florida_AddressBlockCountList_122025.txt": {
+      "bytes": 16038700,
+      "fetched_at": "2026-11-03T15:51:09Z",
+      "sha256": "8c1f8c834281250ce8e16b03808ec3118d096b380d829247c32e6b9495e1f078",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/12_Florida_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/13_Georgia_AddressBlockCountList_062022.txt": {
+      "bytes": 12665143,
+      "fetched_at": "2026-11-03T15:51:16Z",
+      "sha256": "6486ab80ffe59e6fe4fdd7285df1f792c27365ef2ccee1f7d4abc2d45dfeb030",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/13_Georgia_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/13_Georgia_AddressBlockCountList_072023.txt": {
+      "bytes": 9548985,
+      "fetched_at": "2026-11-03T15:51:17Z",
+      "sha256": "9641bbd9cff97ce972224b0b32b8216824090b2a48605bd7d19ca70ce65dd432",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/13_Georgia_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/13_Georgia_AddressBlockCountList_072024.txt": {
+      "bytes": 9584481,
+      "fetched_at": "2026-11-03T15:51:22Z",
+      "sha256": "976489d93a35924ee9ff5487bf406b24b4604e82c6f6f6b58a0db969c4ddf594",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/13_Georgia_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/13_Georgia_AddressBlockCountList_072025.txt": {
+      "bytes": 9613629,
+      "fetched_at": "2026-11-03T15:51:26Z",
+      "sha256": "72f2121f6624b07577b79e41477b2b82816e3c6c2cbd83ed55c9b622300a1380",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/13_Georgia_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/13_Georgia_AddressBlockCountList_072026.txt": {
+      "bytes": 9642462,
+      "fetched_at": "2026-11-03T15:51:29Z",
+      "sha256": "f5acf8617833215083f2405db8e2c5abf2a4456c29a7aad138e97af091b820b5",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/13_Georgia_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/13_Georgia_AddressBlockCountList_122023.txt": {
+      "bytes": 9549098,
+      "fetched_at": "2026-11-03T15:51:20Z",
+      "sha256": "66660dacde66fc98c2f89991d627e7c2f6c792b8051b945736e8cab10cacf18e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/13_Georgia_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/13_Georgia_AddressBlockCountList_122024.txt": {
+      "bytes": 9584921,
+      "fetched_at": "2026-11-03T15:51:24Z",
+      "sha256": "89cb171083543494483a5f44af8f011e4cc9a93a90cfb67e509a40d6651a6797",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/13_Georgia_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/13_Georgia_AddressBlockCountList_122025.txt": {
+      "bytes": 9614220,
+      "fetched_at": "2026-11-03T15:51:27Z",
+      "sha256": "8788293a5a2f5fcab1c3088819cda0c1641046c23f87d9c2e039b4c93114fb21",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/13_Georgia_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/15_Hawaii_AddressBlockCountList_062022.txt": {
+      "bytes": 804813,
+      "fetched_at": "2026-11-03T15:51:30Z",
+      "sha256": "6e231b09f691888c2c1a70c9dbae4c483c80b1e7c569be58db9bc7269951ad7a",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/15_Hawaii_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/15_Hawaii_AddressBlockCountList_072023.txt": {
+      "bytes": 598481,
+      "fetched_at": "2026-11-03T15:51:30Z",
+      "sha256": "7ff1391837ba4e791c2be299775282c7777d4e376e7cb32461703caf06597f5e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/15_Hawaii_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/15_Hawaii_AddressBlockCountList_072024.txt": {
+      "bytes": 598469,
+      "fetched_at": "2026-11-03T15:51:31Z",
+      "sha256": "cd97eec721118a3817f66bb211642132e0cd20dc76b12e965b17b74522d41c26",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/15_Hawaii_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/15_Hawaii_AddressBlockCountList_072025.txt": {
+      "bytes": 598543,
+      "fetched_at": "2026-11-03T15:51:32Z",
+      "sha256": "730aa02dec238357f463117a838095d679f45ef5eede59659d19bca658c0e474",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/15_Hawaii_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/15_Hawaii_AddressBlockCountList_072026.txt": {
+      "bytes": 598559,
+      "fetched_at": "2026-11-03T15:51:33Z",
+      "sha256": "b9a21f41af94dec579b1e59533605c448ca376ba5788e139542a4661688789e6",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/15_Hawaii_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/15_Hawaii_AddressBlockCountList_122023.txt": {
+      "bytes": 598453,
+      "fetched_at": "2026-11-03T15:51:31Z",
+      "sha256": "39d84732d1b63fc1c369f574e4e02d2f7c4e9a3b3d71f31569cae61cec8a9948",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/15_Hawaii_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/15_Hawaii_AddressBlockCountList_122024.txt": {
+      "bytes": 598482,
+      "fetched_at": "2026-11-03T15:51:32Z",
+      "sha256": "3b872502bfc1c17e672ecf9f26682373dcb499adc350af6cdca293b91074f6ca",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/15_Hawaii_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/15_Hawaii_AddressBlockCountList_122025.txt": {
+      "bytes": 598550,
+      "fetched_at": "2026-11-03T15:51:32Z",
+      "sha256": "897fef6bad13b75e1691434875b2079df6a5943a8e0817f1a56e7cb766aae360",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/15_Hawaii_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/16_Idaho_AddressBlockCountList_062022.txt": {
+      "bytes": 4444053,
+      "fetched_at": "2026-11-03T15:51:34Z",
+      "sha256": "ab5c84603f105c26f0fa3f37294dfd6709769b62e2fdbadcf32f41aba16fe7cb",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/16_Idaho_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/16_Idaho_AddressBlockCountList_072023.txt": {
+      "bytes": 3337090,
+      "fetched_at": "2026-11-03T15:51:34Z",
+      "sha256": "0aecf1bb3163e8953d94c939d0654fa45719c43e6470549901a90ccef719e4b8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/16_Idaho_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/16_Idaho_AddressBlockCountList_072024.txt": {
+      "bytes": 3354205,
+      "fetched_at": "2026-11-03T15:51:36Z",
+      "sha256": "94d852d245b9004814a1fc925ed4d59e2619fc161cee0eda0251586dcba07b73",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/16_Idaho_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/16_Idaho_AddressBlockCountList_072025.txt": {
+      "bytes": 3360549,
+      "fetched_at": "2026-11-03T15:51:38Z",
+      "sha256": "ad5ca268c209ca8cdc2184f6052a95336c8034f9a02bc6eed4aa0b1232e58b81",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/16_Idaho_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/16_Idaho_AddressBlockCountList_072026.txt": {
+      "bytes": 3369539,
+      "fetched_at": "2026-11-03T15:51:39Z",
+      "sha256": "4910661a97a802f4d044865237eee9d3b70de15150518d895b4519862fe56224",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/16_Idaho_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/16_Idaho_AddressBlockCountList_122023.txt": {
+      "bytes": 3337132,
+      "fetched_at": "2026-11-03T15:51:35Z",
+      "sha256": "7f763b56bcbaa9ae99bb8d9bd9d3ac7383e62f4fa1dec02efa3ff80e1e187500",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/16_Idaho_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/16_Idaho_AddressBlockCountList_122024.txt": {
+      "bytes": 3354395,
+      "fetched_at": "2026-11-03T15:51:37Z",
+      "sha256": "0a09bab697887d28ba34c1b13a038ccdbda1afe343dff87db0f3748649bd19c5",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/16_Idaho_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/16_Idaho_AddressBlockCountList_122025.txt": {
+      "bytes": 3360764,
+      "fetched_at": "2026-11-03T15:51:39Z",
+      "sha256": "2a509f4fba463203fe1d74ae667e3db63bedcf59182b2a7776219740d5373fe2",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/16_Idaho_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/17_Illinois_AddressBlockCountList_062022.txt": {
+      "bytes": 20131642,
+      "fetched_at": "2026-11-03T15:51:43Z",
+      "sha256": "e9f6da9ca7b7189506f8e90ca5f1479b8802f8cd9272db0f6bb7d79bcc9db327",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/17_Illinois_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/17_Illinois_AddressBlockCountList_072023.txt": {
+      "bytes": 15097241,
+      "fetched_at": "2026-11-03T15:51:46Z",
+      "sha256": "0b54091fd05ed919eeda23fdc36c7e9ad9fc75980a0bb3ace1b78d9387f52a00",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/17_Illinois_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/17_Illinois_AddressBlockCountList_072024.txt": {
+      "bytes": 15122676,
+      "fetched_at": "2026-11-03T15:51:53Z",
+      "sha256": "80b19438809c68e5dec226796c8d83679ba3e7c94c81dee38535aa5dad9af963",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/17_Illinois_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/17_Illinois_AddressBlockCountList_072025.txt": {
+      "bytes": 15152163,
+      "fetched_at": "2026-11-03T15:51:59Z",
+      "sha256": "56c535e930d4fe711b587cd87ce4fd64c0378e58763dcead90e05d27b40a79a8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/17_Illinois_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/17_Illinois_AddressBlockCountList_072026.txt": {
+      "bytes": 15192068,
+      "fetched_at": "2026-11-03T15:52:05Z",
+      "sha256": "a7174793362127b748693aebdbe2e1e8418baaf323633c6a82cd785ec38c5119",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/17_Illinois_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/17_Illinois_AddressBlockCountList_122023.txt": {
+      "bytes": 15097080,
+      "fetched_at": "2026-11-03T15:51:49Z",
+      "sha256": "d67d9f3f8c43a47e57c9d3d5fd303e720d95f7e266b4da495fb07f88084ea82e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/17_Illinois_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/17_Illinois_AddressBlockCountList_122024.txt": {
+      "bytes": 15122940,
+      "fetched_at": "2026-11-03T15:51:56Z",
+      "sha256": "872425e0e106b49a1cff4f9b67753988a537538031d8545a65c31f34a3e420e1",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/17_Illinois_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/17_Illinois_AddressBlockCountList_122025.txt": {
+      "bytes": 15152334,
+      "fetched_at": "2026-11-03T15:52:02Z",
+      "sha256": "8e2649a254da9bb1be110c3705fd0bffaa200ffddf969de3033236ace0375531",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/17_Illinois_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/18_Indiana_AddressBlockCountList_062022.txt": {
+      "bytes": 11129994,
+      "fetched_at": "2026-11-03T15:52:08Z",
+      "sha256": "d6addd5a9cf88f27d27a9afa7acbaa57219ce19b5b8f4d608c999e92affb9d0b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/18_Indiana_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/18_Indiana_AddressBlockCountList_072023.txt": {
+      "bytes": 8394424,
+      "fetched_at": "2026-11-03T15:52:10Z",
+      "sha256": "fdd11beada3f3f7a103766dd663655f526a97579f9ad148381ecdbba71ddfd7b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/18_Indiana_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/18_Indiana_AddressBlockCountList_072024.txt": {
+      "bytes": 8408081,
+      "fetched_at": "2026-11-03T15:52:14Z",
+      "sha256": "66c57d6565d9de07b5953b4372ae47617fcd15cf961991cee8c087ffdf3849b5",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/18_Indiana_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/18_Indiana_AddressBlockCountList_072025.txt": {
+      "bytes": 8421802,
+      "fetched_at": "2026-11-03T15:52:18Z",
+      "sha256": "fa9fdb565241aa60def106b1fd68dc526dc2166daf84d92e8b12744a6e7aeb0b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/18_Indiana_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/18_Indiana_AddressBlockCountList_072026.txt": {
+      "bytes": 8435674,
+      "fetched_at": "2026-11-03T15:52:21Z",
+      "sha256": "e58f069e56f7c988de240874b62a850675060906afffb79c43fb57076aa92326",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/18_Indiana_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/18_Indiana_AddressBlockCountList_122023.txt": {
+      "bytes": 8394498,
+      "fetched_at": "2026-11-03T15:52:12Z",
+      "sha256": "35edbc8a7424075be5576a4168384f4d3ef4e39e0fc7f7327cf1215dd5fc888f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/18_Indiana_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/18_Indiana_AddressBlockCountList_122024.txt": {
+      "bytes": 8408340,
+      "fetched_at": "2026-11-03T15:52:16Z",
+      "sha256": "9d6c563539510fc98f11648cc3e6e6e3b8f081527a982a849f456a5130ee2182",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/18_Indiana_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/18_Indiana_AddressBlockCountList_122025.txt": {
+      "bytes": 8422032,
+      "fetched_at": "2026-11-03T15:52:20Z",
+      "sha256": "cee4abbe2de5942a272e3c7859f313c399d40234b3c97ee782db34d877d5e5f1",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/18_Indiana_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/19_Iowa_AddressBlockCountList_062022.txt": {
+      "bytes": 9498993,
+      "fetched_at": "2026-11-03T15:52:23Z",
+      "sha256": "3edc54112e6022fbd89278c7fbf759a1c3df8c90b7232250fc06fc5f72902e99",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/19_Iowa_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/19_Iowa_AddressBlockCountList_072023.txt": {
+      "bytes": 7088364,
+      "fetched_at": "2026-11-03T15:52:25Z",
+      "sha256": "05002492574cae890e92694b48afd4ef5ce6f17419de071fd6c9a61aa04e9cca",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/19_Iowa_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/19_Iowa_AddressBlockCountList_072024.txt": {
+      "bytes": 7097962,
+      "fetched_at": "2026-11-03T15:52:28Z",
+      "sha256": "febe472b6556a8905cdd8b0dafc4984af396460485893528026cb434fc5af652",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/19_Iowa_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/19_Iowa_AddressBlockCountList_072025.txt": {
+      "bytes": 7103130,
+      "fetched_at": "2026-11-03T15:52:31Z",
+      "sha256": "0e4ce533f697265a810ebbd212cfe2723d0e1f20e8bb37f7988e48533a471f37",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/19_Iowa_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/19_Iowa_AddressBlockCountList_072026.txt": {
+      "bytes": 7105881,
+      "fetched_at": "2026-11-03T15:52:35Z",
+      "sha256": "6d6295a320d790d92e3d0b2a3b11a86a8af1ce5100785001265470e9e5784e4c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/19_Iowa_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/19_Iowa_AddressBlockCountList_122023.txt": {
+      "bytes": 7088374,
+      "fetched_at": "2026-11-03T15:52:27Z",
+      "sha256": "c8a8d7241e7865a6b60d420d78f0e09180f3a9f6445a926801db1f948641d3b8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/19_Iowa_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/19_Iowa_AddressBlockCountList_122024.txt": {
+      "bytes": 7098115,
+      "fetched_at": "2026-11-03T15:52:29Z",
+      "sha256": "2532f8951fd17a4195debb9ca3026db61a95293c9c6282ff5fbcba08e3755f38",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/19_Iowa_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/19_Iowa_AddressBlockCountList_122025.txt": {
+      "bytes": 7103223,
+      "fetched_at": "2026-11-03T15:52:33Z",
+      "sha256": "7abdbf3a7e6c07345bbf8ad490e54e15b84d006c7b5fae8b223820e3ef8c5265",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/19_Iowa_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/20_Kansas_AddressBlockCountList_062022.txt": {
+      "bytes": 9351330,
+      "fetched_at": "2026-11-03T15:52:37Z",
+      "sha256": "6fe5da7b98ca106450d1bffd3ec0546d870f11bf1541fa00dd2043ffcafd5d44",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/20_Kansas_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/20_Kansas_AddressBlockCountList_072023.txt": {
+      "bytes": 6951879,
+      "fetched_at": "2026-11-03T15:52:39Z",
+      "sha256": "ee7dfe18d36ac1528ee5df7a82250c330e12ff64100a676080c11fbc581e75f2",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/20_Kansas_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/20_Kansas_AddressBlockCountList_072024.txt": {
+      "bytes": 6967549,
+      "fetched_at": "2026-11-03T15:52:42Z",
+      "sha256": "61f602e5d8eb80e46406f1969ee7abbd2a5a6c05a25cb37fa62424a838dcacd0",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/20_Kansas_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/20_Kansas_AddressBlockCountList_072025.txt": {
+      "bytes": 6974343,
+      "fetched_at": "2026-11-03T15:52:45Z",
+      "sha256": "026d7443e6fd46bec921a273d2e401db7a181d01865352d6be2a4c7fcfc89891",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/20_Kansas_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/20_Kansas_AddressBlockCountList_072026.txt": {
+      "bytes": 6980831,
+      "fetched_at": "2026-11-03T15:52:48Z",
+      "sha256": "2d97b049523f6959edc0c66a250643528736498ea74afd88e13591b4bd9adee8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/20_Kansas_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/20_Kansas_AddressBlockCountList_122023.txt": {
+      "bytes": 6951718,
+      "fetched_at": "2026-11-03T15:52:40Z",
+      "sha256": "4cb8729c105da82de3d6aba8146ba49c99a5b2cf6e2a7ffc94d5b827bea3bd48",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/20_Kansas_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/20_Kansas_AddressBlockCountList_122024.txt": {
+      "bytes": 6967706,
+      "fetched_at": "2026-11-03T15:52:44Z",
+      "sha256": "a998db19ac701a2660ac949bdaebb93052aa7dc7f4fc0026380007ee7491f0d1",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/20_Kansas_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/20_Kansas_AddressBlockCountList_122025.txt": {
+      "bytes": 6974446,
+      "fetched_at": "2026-11-03T15:52:47Z",
+      "sha256": "f5b41bbbe67e32c9aba416c19fb9216f458af8eefd36f27d0fbcb2880509ba0b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/20_Kansas_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/21_Kentucky_AddressBlockCountList_062022.txt": {
+      "bytes": 7215025,
+      "fetched_at": "2026-11-03T15:52:50Z",
+      "sha256": "6cbfa42892a47387e58bc1e6d5f0298c5a760075c4104c0f53f45dea57ce5d47",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/21_Kentucky_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/21_Kentucky_AddressBlockCountList_072023.txt": {
+      "bytes": 5392354,
+      "fetched_at": "2026-11-03T15:52:52Z",
+      "sha256": "e5b228d5ed85a0bbab77bdd56c829643cea8069bf11fe85365cb3355869ac386",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/21_Kentucky_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/21_Kentucky_AddressBlockCountList_072024.txt": {
+      "bytes": 5401915,
+      "fetched_at": "2026-11-03T15:52:55Z",
+      "sha256": "9fb3e28a2639c9aa40213fcb3df244e5d9af1d0e7c297cb3952230246c42e557",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/21_Kentucky_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/21_Kentucky_AddressBlockCountList_072025.txt": {
+      "bytes": 5411863,
+      "fetched_at": "2026-11-03T15:52:57Z",
+      "sha256": "c91586a735c1671c6f15ac7078129dd261350a0e8234d57cc93a5a0e8f6b3592",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/21_Kentucky_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/21_Kentucky_AddressBlockCountList_072026.txt": {
+      "bytes": 5423046,
+      "fetched_at": "2026-11-03T15:53:00Z",
+      "sha256": "4e315f203d18e3806fa947dda913983156894a400592373559fd890c8e370648",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/21_Kentucky_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/21_Kentucky_AddressBlockCountList_122023.txt": {
+      "bytes": 5392439,
+      "fetched_at": "2026-11-03T15:52:53Z",
+      "sha256": "9afb6a89a9731dfcec9461adc3a9bd9158dbae0299554ee2304d79f7102c0077",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/21_Kentucky_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/21_Kentucky_AddressBlockCountList_122024.txt": {
+      "bytes": 5402270,
+      "fetched_at": "2026-11-03T15:52:56Z",
+      "sha256": "313c7ae9e8aa1fbbd613ece859d81159ca71f2f71a59e4abfb40713b7a24b6cc",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/21_Kentucky_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/21_Kentucky_AddressBlockCountList_122025.txt": {
+      "bytes": 5412075,
+      "fetched_at": "2026-11-03T15:52:59Z",
+      "sha256": "b94252c9d7879cb24f7d85122537d29cf7cefcd50111ec79d6705dbce91f472d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/21_Kentucky_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/22_Louisiana_AddressBlockCountList_062022.txt": {
+      "bytes": 7772204,
+      "fetched_at": "2026-11-03T15:53:02Z",
+      "sha256": "0f0ab67b3a28b281d894e17ce1651ac9cf1b64abf42856ea45a25e4fc9ba5204",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/22_Louisiana_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/22_Louisiana_AddressBlockCountList_072023.txt": {
+      "bytes": 5799789,
+      "fetched_at": "2026-11-03T15:53:04Z",
+      "sha256": "4af33ac583983a34eaf76dadf6fe6fa2f8f3f68103bd9150e879d800569690c0",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/22_Louisiana_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/22_Louisiana_AddressBlockCountList_072024.txt": {
+      "bytes": 5810767,
+      "fetched_at": "2026-11-03T15:53:07Z",
+      "sha256": "84452a28cdb7a8fe39ac997330e68936cb07049f063b11dd4ae66d0332c79615",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/22_Louisiana_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/22_Louisiana_AddressBlockCountList_072025.txt": {
+      "bytes": 5820469,
+      "fetched_at": "2026-11-03T15:53:10Z",
+      "sha256": "cbfaaf4ac49bb4e7905a5e76933199f3a323ad0f8b59dceafd380fc00e802270",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/22_Louisiana_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/22_Louisiana_AddressBlockCountList_072026.txt": {
+      "bytes": 5824207,
+      "fetched_at": "2026-11-03T15:53:13Z",
+      "sha256": "7731e080833f715e3999048283258704a8997f872b732312eb90119ee4b255cd",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/22_Louisiana_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/22_Louisiana_AddressBlockCountList_122023.txt": {
+      "bytes": 5799608,
+      "fetched_at": "2026-11-03T15:53:06Z",
+      "sha256": "140811c96b14e9071c1c5db2607768dcefa6865dacc2d1a2b2a3673fe5007a2e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/22_Louisiana_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/22_Louisiana_AddressBlockCountList_122024.txt": {
+      "bytes": 5810947,
+      "fetched_at": "2026-11-03T15:53:09Z",
+      "sha256": "b86be930db30bb097dcddc59e98a8cd56e996c094f46e7b55b3b6e52eb1a4ff4",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/22_Louisiana_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/22_Louisiana_AddressBlockCountList_122025.txt": {
+      "bytes": 5820641,
+      "fetched_at": "2026-11-03T15:53:12Z",
+      "sha256": "79f20a7c7ae3c6980ab53405d80553e786776a6c4b728b831217e8846f5c3150",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/22_Louisiana_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/23_Maine_AddressBlockCountList_062022.txt": {
+      "bytes": 2564877,
+      "fetched_at": "2026-11-03T15:53:15Z",
+      "sha256": "e6faf07cbdabd413974a1ed29a42d24b89c16683c1964e7e49a990a5c7205691",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/23_Maine_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/23_Maine_AddressBlockCountList_072023.txt": {
+      "bytes": 1905336,
+      "fetched_at": "2026-11-03T15:53:16Z",
+      "sha256": "bf8b1fb37d815fda3ecc976a004fea171e31081c901177895acb80a3266224b9",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/23_Maine_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/23_Maine_AddressBlockCountList_072024.txt": {
+      "bytes": 1906411,
+      "fetched_at": "2026-11-03T15:53:17Z",
+      "sha256": "26017c39cebc7c72b6b5ec2ada4098e52e94b55b8f4cacb7fc12220289d1567a",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/23_Maine_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/23_Maine_AddressBlockCountList_072025.txt": {
+      "bytes": 1907206,
+      "fetched_at": "2026-11-03T15:53:19Z",
+      "sha256": "049ce75457abfb01ef272c776693bcab26c2169e07ec6b280ad1eef79a97abbe",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/23_Maine_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/23_Maine_AddressBlockCountList_072026.txt": {
+      "bytes": 1909998,
+      "fetched_at": "2026-11-03T15:53:20Z",
+      "sha256": "92b2cb2804aef5a19ab7b5a77742f9f36f9a6c0c0ce21bf5e47028b639fc61fe",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/23_Maine_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/23_Maine_AddressBlockCountList_122023.txt": {
+      "bytes": 1905377,
+      "fetched_at": "2026-11-03T15:53:16Z",
+      "sha256": "f7be4b38bdea09ccde097ebdf74c87fd3f523add4264bcf5cf9f6641d4cb0a9b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/23_Maine_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/23_Maine_AddressBlockCountList_122024.txt": {
+      "bytes": 1906496,
+      "fetched_at": "2026-11-03T15:53:18Z",
+      "sha256": "d5a45aa7b7c3d32ea738fc7bd2e4f27860f1fc247ca215c6517d260e35005bac",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/23_Maine_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/23_Maine_AddressBlockCountList_122025.txt": {
+      "bytes": 1907271,
+      "fetched_at": "2026-11-03T15:53:20Z",
+      "sha256": "54980eee96e62b1b9d33bcfb721c782e8162c335ececa7f49cf5385bd9252725",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/23_Maine_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/24_Maryland_AddressBlockCountList_062022.txt": {
+      "bytes": 4579877,
+      "fetched_at": "2026-11-03T15:53:22Z",
+      "sha256": "8143c8f1e72fba933156eb49514d22a2cb90e9745f1204fa4a4b1e2720057e0c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/24_Maryland_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/24_Maryland_AddressBlockCountList_072023.txt": {
+      "bytes": 3426507,
+      "fetched_at": "2026-11-03T15:53:23Z",
+      "sha256": "d1062cb137816ef0348ba3f8bf523aa1d8a5fdbf5ba59c21407ab69f66c9f4f5",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/24_Maryland_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/24_Maryland_AddressBlockCountList_072024.txt": {
+      "bytes": 3433814,
+      "fetched_at": "2026-11-03T15:53:25Z",
+      "sha256": "597e3f827117b2ce020d8827ae4940b1f3b3a0bdde1b0c8aab33064d01e62734",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/24_Maryland_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/24_Maryland_AddressBlockCountList_072025.txt": {
+      "bytes": 3439966,
+      "fetched_at": "2026-11-03T15:53:27Z",
+      "sha256": "e4360ca9e6120b334813ab8cc2fba16946fb5e607e256fae31bbcf53200addd3",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/24_Maryland_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/24_Maryland_AddressBlockCountList_072026.txt": {
+      "bytes": 3447868,
+      "fetched_at": "2026-11-03T15:53:29Z",
+      "sha256": "6de54448d769c537865b297c7c86877413318bd2e1776506bcf82e1841dd9dc3",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/24_Maryland_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/24_Maryland_AddressBlockCountList_122023.txt": {
+      "bytes": 3426566,
+      "fetched_at": "2026-11-03T15:53:25Z",
+      "sha256": "f793c67e2ab5ec033f627338077eff987bb42057441e8c87b7e5d14a4461ec93",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/24_Maryland_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/24_Maryland_AddressBlockCountList_122024.txt": {
+      "bytes": 3433901,
+      "fetched_at": "2026-11-03T15:53:27Z",
+      "sha256": "d08c228568a220e82efce57d165ab363c04137aefcbb8a7e6a5d2021765026b0",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/24_Maryland_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/24_Maryland_AddressBlockCountList_122025.txt": {
+      "bytes": 3440031,
+      "fetched_at": "2026-11-03T15:53:28Z",
+      "sha256": "b31266e78c1f86bae48342fab41305b8a7d95d8f1b521897dbf500430fc36ed9",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/24_Maryland_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/25_Massachusetts_AddressBlockCountList_062022.txt": {
+      "bytes": 5864436,
+      "fetched_at": "2026-11-03T15:53:31Z",
+      "sha256": "dcf50dbabe3bf3ae3bf1ced533dd4566f825442ae1d489edaaf0cb9bcdd3a37a",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/25_Massachusetts_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/25_Massachusetts_AddressBlockCountList_072023.txt": {
+      "bytes": 4369814,
+      "fetched_at": "2026-11-03T15:53:34Z",
+      "sha256": "0cbdf9b443264bb24e921dbd973ea096044a917acec9a6d60245afa6ad2bd3e3",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/25_Massachusetts_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/25_Massachusetts_AddressBlockCountList_072024.txt": {
+      "bytes": 4370070,
+      "fetched_at": "2026-11-03T15:53:36Z",
+      "sha256": "66120dde17b382a713b5b84213cb0c517b026a96fd521ee290a604850c04a3a7",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/25_Massachusetts_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/25_Massachusetts_AddressBlockCountList_072025.txt": {
+      "bytes": 4370721,
+      "fetched_at": "2026-11-03T15:53:44Z",
+      "sha256": "81ba6c6d30090e66c989df5eac354d17505ee196a07e9e08f6a2cc4fb1042f07",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/25_Massachusetts_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/25_Massachusetts_AddressBlockCountList_072026.txt": {
+      "bytes": 4370937,
+      "fetched_at": "2026-11-03T15:53:48Z",
+      "sha256": "df5d413d4af54bc23d4b819f4e40ba84a51ed4d5250f04126ad082bf4487b11e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/25_Massachusetts_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/25_Massachusetts_AddressBlockCountList_122023.txt": {
+      "bytes": 4369781,
+      "fetched_at": "2026-11-03T15:53:35Z",
+      "sha256": "38dd57c8861e03c5dc70c27e3c4f799c7b759e1629c0bc829a89b4d0db8cbe73",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/25_Massachusetts_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/25_Massachusetts_AddressBlockCountList_122024.txt": {
+      "bytes": 4370180,
+      "fetched_at": "2026-11-03T15:53:40Z",
+      "sha256": "fc01f4eb814365145599446b87f81b7e0d6127ade5003c0e0d77641f3e221d2f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/25_Massachusetts_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/25_Massachusetts_AddressBlockCountList_122025.txt": {
+      "bytes": 4370832,
+      "fetched_at": "2026-11-03T15:53:46Z",
+      "sha256": "ce03103c211da4ae10763b7c56ca8ad1861a855ebffb09b17a929e47992d0983",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/25_Massachusetts_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/26_Michigan_AddressBlockCountList_062022.txt": {
+      "bytes": 13884112,
+      "fetched_at": "2026-11-03T15:53:53Z",
+      "sha256": "5d2789a564779a57b55d840d271e05272e9294d53e09339d833e09e20048c7d8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/26_Michigan_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/26_Michigan_AddressBlockCountList_072023.txt": {
+      "bytes": 10328698,
+      "fetched_at": "2026-11-03T15:53:56Z",
+      "sha256": "441361e486a8703c5dbbc0feaa9d4dbaca813ce241eeec1f004280efbaf6ce77",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/26_Michigan_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/26_Michigan_AddressBlockCountList_072024.txt": {
+      "bytes": 10349731,
+      "fetched_at": "2026-11-03T15:54:00Z",
+      "sha256": "9d75fc731ab2b1412fa863379261fc5a4c567d0f8e30f26ad04dd5271b8dfeaa",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/26_Michigan_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/26_Michigan_AddressBlockCountList_072025.txt": {
+      "bytes": 10353812,
+      "fetched_at": "2026-11-03T15:54:05Z",
+      "sha256": "fa9b17981c9610d5608b7b2904e68d2f0a9dd986fcd5f2f844f5c16cdd86f72e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/26_Michigan_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/26_Michigan_AddressBlockCountList_072026.txt": {
+      "bytes": 10357077,
+      "fetched_at": "2026-11-03T15:54:10Z",
+      "sha256": "cf030d49117ecd4e575d0622d6be9124f8444b69f979bbb50adfa4da5fb2caa9",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/26_Michigan_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/26_Michigan_AddressBlockCountList_122023.txt": {
+      "bytes": 10328781,
+      "fetched_at": "2026-11-03T15:53:58Z",
+      "sha256": "6a58d9d1d9a82257dd66c2969b04470f8b140e46201adcaa186a7f481a4ab18b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/26_Michigan_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/26_Michigan_AddressBlockCountList_122024.txt": {
+      "bytes": 10349997,
+      "fetched_at": "2026-11-03T15:54:03Z",
+      "sha256": "8615bd7079aaec4a8eb5303b68079d73435cbb0af3fb53e6cc5e14ae1931509a",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/26_Michigan_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/26_Michigan_AddressBlockCountList_122025.txt": {
+      "bytes": 10354027,
+      "fetched_at": "2026-11-03T15:54:08Z",
+      "sha256": "7ed20973a81ed9e33973af53b38a89449fda547e04a0f76de7b4aaf4415d5c02",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/26_Michigan_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/27_Minnesota_AddressBlockCountList_062022.txt": {
+      "bytes": 10795988,
+      "fetched_at": "2026-11-03T15:54:13Z",
+      "sha256": "9d4c0d037dc3ee48424b615e1481fac0e3fd433c3133e3ed3957cc76ef27e5eb",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/27_Minnesota_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/27_Minnesota_AddressBlockCountList_072023.txt": {
+      "bytes": 8147304,
+      "fetched_at": "2026-11-03T15:54:15Z",
+      "sha256": "91fd9d32b01de882f7d82159ff53c5226d91038c15efd9c788dba4e8e44fd15d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/27_Minnesota_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/27_Minnesota_AddressBlockCountList_072024.txt": {
+      "bytes": 8175440,
+      "fetched_at": "2026-11-03T15:54:19Z",
+      "sha256": "24d7fae203ac47b0d70fff9db4d593ccdd43b531d2e2b73e3b31af764c619e08",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/27_Minnesota_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/27_Minnesota_AddressBlockCountList_072025.txt": {
+      "bytes": 8373542,
+      "fetched_at": "2026-11-03T15:54:22Z",
+      "sha256": "4fbc9164a0340af6b85fd3d38eb346b2ac9c350b42dfae69c620ad7771fa940f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/27_Minnesota_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/27_Minnesota_AddressBlockCountList_072026.txt": {
+      "bytes": 8384727,
+      "fetched_at": "2026-11-03T15:54:25Z",
+      "sha256": "02df41d71448b8c3acc30d0c5e8f569733219de7492bb5c6f87e76e76c1f6f96",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/27_Minnesota_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/27_Minnesota_AddressBlockCountList_122023.txt": {
+      "bytes": 8147328,
+      "fetched_at": "2026-11-03T15:54:17Z",
+      "sha256": "b015f5622bf31db5d636f7c45f399af1c488f9d314958bcafb17b4724bcf1490",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/27_Minnesota_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/27_Minnesota_AddressBlockCountList_122024.txt": {
+      "bytes": 8175693,
+      "fetched_at": "2026-11-03T15:54:20Z",
+      "sha256": "95b71f7029737d3f6dc3db78136cadb9895669b13d6a37b78fe17b7717b6aeaa",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/27_Minnesota_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/27_Minnesota_AddressBlockCountList_122025.txt": {
+      "bytes": 8373716,
+      "fetched_at": "2026-11-03T15:54:24Z",
+      "sha256": "f053945a5212c732a982ca370617a738a97e03ed98b178bac30405549e492b3b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/27_Minnesota_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/28_Mississippi_AddressBlockCountList_062022.txt": {
+      "bytes": 6099561,
+      "fetched_at": "2026-11-03T15:54:27Z",
+      "sha256": "e86f50435306d3ae480244c294fe390865c5db351bc79e4b8020d40ef7e4b92e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/28_Mississippi_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/28_Mississippi_AddressBlockCountList_072023.txt": {
+      "bytes": 4539701,
+      "fetched_at": "2026-11-03T15:54:28Z",
+      "sha256": "dac3dba9d2c486a7fda8d7085bb2ca6f52db155c2dea6e35819f5f9971b986d9",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/28_Mississippi_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/28_Mississippi_AddressBlockCountList_072024.txt": {
+      "bytes": 4548258,
+      "fetched_at": "2026-11-03T15:54:31Z",
+      "sha256": "495f72af3c9781d7fdd9a5ef4739346e7077305f78fb8026eeb5052229e6eede",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/28_Mississippi_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/28_Mississippi_AddressBlockCountList_072025.txt": {
+      "bytes": 4553241,
+      "fetched_at": "2026-11-03T15:54:33Z",
+      "sha256": "4d2f7abff37b5eb01e7d97bf1373c60cad95c27e68b624e8bc328650e8a7dca3",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/28_Mississippi_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/28_Mississippi_AddressBlockCountList_072026.txt": {
+      "bytes": 4556774,
+      "fetched_at": "2026-11-03T15:54:35Z",
+      "sha256": "8e98dee317d7f9160671c3743d1ef8243adc7559296ed30c050c5d9a5034a281",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/28_Mississippi_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/28_Mississippi_AddressBlockCountList_122023.txt": {
+      "bytes": 4539765,
+      "fetched_at": "2026-11-03T15:54:29Z",
+      "sha256": "bcc8fe19fc925594f86959c272ff552a0e084e44a011941c2c9b08dc134b61d8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/28_Mississippi_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/28_Mississippi_AddressBlockCountList_122024.txt": {
+      "bytes": 4548400,
+      "fetched_at": "2026-11-03T15:54:32Z",
+      "sha256": "aea1867bc754203b1ff3628fbb157495095adcd8cf6b4c56f5e14c4807345ecd",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/28_Mississippi_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/28_Mississippi_AddressBlockCountList_122025.txt": {
+      "bytes": 4553403,
+      "fetched_at": "2026-11-03T15:54:34Z",
+      "sha256": "e9743cf4ee3876982fdf156e3d59e7e0f9ecbb8da083066d8ff456a3fe315865",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/28_Mississippi_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/29_Missouri_AddressBlockCountList_062022.txt": {
+      "bytes": 13771164,
+      "fetched_at": "2026-11-03T15:54:38Z",
+      "sha256": "1f0e112303f2ad619fa1b47a2f8529f90f6ed39f0e7d9830b4f27f356738cd0a",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/29_Missouri_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/29_Missouri_AddressBlockCountList_072023.txt": {
+      "bytes": 10284570,
+      "fetched_at": "2026-11-03T15:54:41Z",
+      "sha256": "cfe7ef56ea879b62061afbc73c31484f5ff5ef226f820e99021db6e1ce01c9da",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/29_Missouri_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/29_Missouri_AddressBlockCountList_072024.txt": {
+      "bytes": 10311685,
+      "fetched_at": "2026-11-03T15:54:45Z",
+      "sha256": "b0d36cb65290d0f0b55e27ab1821b15a7009080e687b470e5ed5813eff251761",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/29_Missouri_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/29_Missouri_AddressBlockCountList_072025.txt": {
+      "bytes": 10333496,
+      "fetched_at": "2026-11-03T15:54:49Z",
+      "sha256": "93d0b4efe4d302355befc813e5a9893fe1d9d5b19868369970865394cded6a1c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/29_Missouri_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/29_Missouri_AddressBlockCountList_072026.txt": {
+      "bytes": 10347070,
+      "fetched_at": "2026-11-03T15:54:53Z",
+      "sha256": "7090abcd0cc95d42cb9ffc958cc7b663f776668ef66bf41f4f5acf5c10e072c4",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/29_Missouri_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/29_Missouri_AddressBlockCountList_122023.txt": {
+      "bytes": 10284622,
+      "fetched_at": "2026-11-03T15:54:42Z",
+      "sha256": "807fbae7de904814edcb366c9bee30a7510d616faaf7cfd1c2bcf5fdae1b315a",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/29_Missouri_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/29_Missouri_AddressBlockCountList_122024.txt": {
+      "bytes": 10312051,
+      "fetched_at": "2026-11-03T15:54:47Z",
+      "sha256": "71164bf289e796880e7b0d1f21d3dc00d017f1bebd3756644ab5ea0a2f91ecd7",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/29_Missouri_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/29_Missouri_AddressBlockCountList_122025.txt": {
+      "bytes": 10333823,
+      "fetched_at": "2026-11-03T15:54:51Z",
+      "sha256": "d0febbf85331fdf7abb7cfdde39f028ae55e11c046b7437be07a893858caa2dd",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/29_Missouri_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/30_Montana_AddressBlockCountList_062022.txt": {
+      "bytes": 4790096,
+      "fetched_at": "2026-11-03T15:54:55Z",
+      "sha256": "f3c34a5cc9ba6245bb4f22b15ae9e6a13c11ff5e3a334ab6d428c7aa9cede027",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/30_Montana_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/30_Montana_AddressBlockCountList_072023.txt": {
+      "bytes": 3571636,
+      "fetched_at": "2026-11-03T15:54:56Z",
+      "sha256": "03c23563ed07af07a8556071bd7e639990502bf344cdc3752b70e6dce9b17317",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/30_Montana_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/30_Montana_AddressBlockCountList_072024.txt": {
+      "bytes": 3578135,
+      "fetched_at": "2026-11-03T15:54:58Z",
+      "sha256": "5386f0759686f460c27cd9ba5342ec3352e57ca04f2112dd0d0d2068a84ba020",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/30_Montana_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/30_Montana_AddressBlockCountList_072025.txt": {
+      "bytes": 3586068,
+      "fetched_at": "2026-11-03T15:55:00Z",
+      "sha256": "5e3d7f57eb0820157b7c5045c891262212165911e780600ff22ebc41c94d4f3f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/30_Montana_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/30_Montana_AddressBlockCountList_072026.txt": {
+      "bytes": 3589480,
+      "fetched_at": "2026-11-03T15:55:02Z",
+      "sha256": "b8452e7fc53d2a189d36f3d15cb2c4e7b1ce2c9ba468b675c7b4f77df13066dd",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/30_Montana_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/30_Montana_AddressBlockCountList_122023.txt": {
+      "bytes": 3571716,
+      "fetched_at": "2026-11-03T15:54:57Z",
+      "sha256": "feeee2d8c796b3d4082929a06d68bb539246d28904fb4342b545a997d6d303de",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/30_Montana_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/30_Montana_AddressBlockCountList_122024.txt": {
+      "bytes": 3578270,
+      "fetched_at": "2026-11-03T15:54:59Z",
+      "sha256": "e96c1c9ef5f5176bcb40ec6a4d32e6620abae65e79fc5733b3ca6f1c9a721c7e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/30_Montana_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/30_Montana_AddressBlockCountList_122025.txt": {
+      "bytes": 3586172,
+      "fetched_at": "2026-11-03T15:55:01Z",
+      "sha256": "b9a4b1941ad8c8e9e71e64e46176a150d8933a259b867926fc168c90e53244bd",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/30_Montana_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/31_Nebraska_AddressBlockCountList_062022.txt": {
+      "bytes": 6454840,
+      "fetched_at": "2026-11-03T15:55:03Z",
+      "sha256": "234616ca732e59741686f20fb7fa3fd284855fdb82b1a54587e8b8a85f68d8c8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/31_Nebraska_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/31_Nebraska_AddressBlockCountList_072023.txt": {
+      "bytes": 4941514,
+      "fetched_at": "2026-11-03T15:55:04Z",
+      "sha256": "2f37c50af94f2aae7c027906574b14199e3f104736d26a8db2ec1117813d0189",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/31_Nebraska_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/31_Nebraska_AddressBlockCountList_072024.txt": {
+      "bytes": 4972053,
+      "fetched_at": "2026-11-03T15:55:06Z",
+      "sha256": "8a6445c981566d30cb8074b77078aaa9120d56bafa878b2e8f4901946266b108",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/31_Nebraska_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/31_Nebraska_AddressBlockCountList_072025.txt": {
+      "bytes": 4985177,
+      "fetched_at": "2026-11-03T15:55:09Z",
+      "sha256": "0e071b2dd64a4e0ee5d47e9040c7b988760e3068a1d8f4bcf319c94da40c4652",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/31_Nebraska_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/31_Nebraska_AddressBlockCountList_072026.txt": {
+      "bytes": 4995476,
+      "fetched_at": "2026-11-03T15:55:11Z",
+      "sha256": "32166a1a89bda4694fd0ab31c1a62e3654f3a8eef379c00b4b171f117a498083",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/31_Nebraska_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/31_Nebraska_AddressBlockCountList_122023.txt": {
+      "bytes": 4941518,
+      "fetched_at": "2026-11-03T15:55:05Z",
+      "sha256": "bf1e12d5a0c3f69500dfac3b7463df179632c0df0763530c421ab15da90662d5",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/31_Nebraska_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/31_Nebraska_AddressBlockCountList_122024.txt": {
+      "bytes": 4972146,
+      "fetched_at": "2026-11-03T15:55:08Z",
+      "sha256": "a5d8798a4ba7c75c51c73af151515fbdecddc4d269f3f93dda6be9a7a4df896c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/31_Nebraska_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/31_Nebraska_AddressBlockCountList_122025.txt": {
+      "bytes": 4985273,
+      "fetched_at": "2026-11-03T15:55:10Z",
+      "sha256": "eee66d92ecb307bd75cadb91712cb9c40831e5be7c49f154db785111b861fa6e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/31_Nebraska_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/32_Nevada_AddressBlockCountList_062022.txt": {
+      "bytes": 3127370,
+      "fetched_at": "2026-11-03T15:55:12Z",
+      "sha256": "bf761b7396e69fa191555b2817bb1114f6c04beb8681095b825cc9c4d8866fe5",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/32_Nevada_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/32_Nevada_AddressBlockCountList_072023.txt": {
+      "bytes": 2329875,
+      "fetched_at": "2026-11-03T15:55:13Z",
+      "sha256": "fab047cb0045d9d8a5c8a8bab27127c693fa7e10d930efeb933065cd0bcd4505",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/32_Nevada_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/32_Nevada_AddressBlockCountList_072024.txt": {
+      "bytes": 2330691,
+      "fetched_at": "2026-11-03T15:55:15Z",
+      "sha256": "16a45ea95325e61c46435c9ab4d6a6eee2d7e8a36ea113d69163038b2a05c464",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/32_Nevada_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/32_Nevada_AddressBlockCountList_072025.txt": {
+      "bytes": 2334398,
+      "fetched_at": "2026-11-03T15:55:17Z",
+      "sha256": "936145ba00036b58c59efe46338a96da0d51404860b4dd34c54831200b66a05d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/32_Nevada_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/32_Nevada_AddressBlockCountList_072026.txt": {
+      "bytes": 2335721,
+      "fetched_at": "2026-11-03T15:55:18Z",
+      "sha256": "50de672112bdb924a47732cb4545fc31039f1bcf4ff19db8b1192d4c4c918441",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/32_Nevada_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/32_Nevada_AddressBlockCountList_122023.txt": {
+      "bytes": 2329842,
+      "fetched_at": "2026-11-03T15:55:14Z",
+      "sha256": "7e68a60784072ce6e99390cb005a1302f9da2ca5efcee055b786ceaa35b1929c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/32_Nevada_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/32_Nevada_AddressBlockCountList_122024.txt": {
+      "bytes": 2330782,
+      "fetched_at": "2026-11-03T15:55:16Z",
+      "sha256": "c29a982cdace133f58768e4904b6e41f2204ae69637df469f008b13f7f1379a5",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/32_Nevada_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/32_Nevada_AddressBlockCountList_122025.txt": {
+      "bytes": 2334472,
+      "fetched_at": "2026-11-03T15:55:17Z",
+      "sha256": "5af7bd7674543e556240f4cbb8f0f238ed7b694209e7eba6f13b80b8671f3de4",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/32_Nevada_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/33_NewHampshire_AddressBlockCountList_062022.txt": {
+      "bytes": 1741804,
+      "fetched_at": "2026-11-03T15:45:29Z",
+      "sha256": "1ec779882858fd8e52c73e40d81d567684c79c692d0b86d5bc37db6f911566b0",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/33_NewHampshire_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/33_NewHampshire_AddressBlockCountList_072023.txt": {
+      "bytes": 1294431,
+      "fetched_at": "2026-11-03T15:45:29Z",
+      "sha256": "6cbdf62ca897ce54294d39da9751448af4a96b797e8dc8701d6ac006241d56b2",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/33_NewHampshire_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/33_NewHampshire_AddressBlockCountList_072024.txt": {
+      "bytes": 1294503,
+      "fetched_at": "2026-11-03T15:45:31Z",
+      "sha256": "4f705eeaa474b4b8fe7e3049483a53ea2f4535fb8bbaf337ba1ef4381e91fd32",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/33_NewHampshire_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/33_NewHampshire_AddressBlockCountList_072025.txt": {
+      "bytes": 1294647,
+      "fetched_at": "2026-11-03T15:45:32Z",
+      "sha256": "ed764a9e85889c46ae825cd21461e6867a4cac0b24a8e48b9f76c709a8069974",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/33_NewHampshire_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/33_NewHampshire_AddressBlockCountList_072026.txt": {
+      "bytes": 1294727,
+      "fetched_at": "2026-11-03T15:45:33Z",
+      "sha256": "34a572ce4d3401a23e77db25dbd4958ca804df1d1b62751c0d49044cdc646ac2",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/33_NewHampshire_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/33_NewHampshire_AddressBlockCountList_122023.txt": {
+      "bytes": 1294461,
+      "fetched_at": "2026-11-03T15:45:30Z",
+      "sha256": "121272d921868eec9969d8c2e177256ed10efaba2c3a51f93d4ede6b4228e559",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/33_NewHampshire_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/33_NewHampshire_AddressBlockCountList_122024.txt": {
+      "bytes": 1294555,
+      "fetched_at": "2026-11-03T15:45:31Z",
+      "sha256": "671a7b3f280e79612b131c6a001d3e1f33364faf7fade894afc27fa3d71e249d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/33_NewHampshire_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/33_NewHampshire_AddressBlockCountList_122025.txt": {
+      "bytes": 1294685,
+      "fetched_at": "2026-11-03T15:45:32Z",
+      "sha256": "6e1680e4a7705239a542d20d9fed54948aeaf04fa6397c2adb458eb45f07a2c5",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/33_NewHampshire_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/34_NewJersey_AddressBlockCountList_062022.txt": {
+      "bytes": 7545438,
+      "fetched_at": "2026-11-03T15:55:20Z",
+      "sha256": "4dd2c963db11f29c0057b82325512530e91328cd02f68ffd370d1bcf32f817aa",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/34_NewJersey_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/34_NewJersey_AddressBlockCountList_072023.txt": {
+      "bytes": 5616730,
+      "fetched_at": "2026-11-03T15:55:21Z",
+      "sha256": "c96e9b699ef0f59bf5b610ac4c8daa038c387cd86b1138c8f3f0ba9f71f4e40a",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/34_NewJersey_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/34_NewJersey_AddressBlockCountList_072024.txt": {
+      "bytes": 5616879,
+      "fetched_at": "2026-11-03T15:55:25Z",
+      "sha256": "283cdaf92f3e58dae0ab03b59263dfc1a8da76732617368571863ca43d664ec1",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/34_NewJersey_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/34_NewJersey_AddressBlockCountList_072025.txt": {
+      "bytes": 5617383,
+      "fetched_at": "2026-11-03T15:55:27Z",
+      "sha256": "1359e06a6a6101653ea8ca6b7ffd82ef1ea30ac7e217a49b5c152b1c1fc84d35",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/34_NewJersey_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/34_NewJersey_AddressBlockCountList_072026.txt": {
+      "bytes": 5617946,
+      "fetched_at": "2026-11-03T15:55:30Z",
+      "sha256": "7142162803a0eb3b2cecff6a5667a515d19d244b96118909d7a714ed3486f3b5",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/34_NewJersey_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/34_NewJersey_AddressBlockCountList_122023.txt": {
+      "bytes": 5616754,
+      "fetched_at": "2026-11-03T15:55:23Z",
+      "sha256": "36871940367dbc9b13838d743858a2c4e62ce2464003b7d6484671efdb1c233d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/34_NewJersey_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/34_NewJersey_AddressBlockCountList_122024.txt": {
+      "bytes": 5616976,
+      "fetched_at": "2026-11-03T15:55:26Z",
+      "sha256": "b1f60841d0441e3bc6b8ffe375a93d7e9ab69549f2a18835b109e2ff9524b80b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/34_NewJersey_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/34_NewJersey_AddressBlockCountList_122025.txt": {
+      "bytes": 5617488,
+      "fetched_at": "2026-11-03T15:55:29Z",
+      "sha256": "76e98e58cfbd2da75b55c282e1712645ffc2a3c54caeac3087f6a0aecc8249ab",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/34_NewJersey_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/35_NewMexico_AddressBlockCountList_062022.txt": {
+      "bytes": 5817455,
+      "fetched_at": "2026-11-03T15:55:32Z",
+      "sha256": "f91ede88045868f7d613445934400b19019366266be746a6e450a5406295a155",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/35_NewMexico_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/35_NewMexico_AddressBlockCountList_072023.txt": {
+      "bytes": 4329152,
+      "fetched_at": "2026-11-03T15:55:32Z",
+      "sha256": "b501fa659a6e0b574e8a9f3e394d14a3ec44b0243623f20829ba3a56d13dc8a6",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/35_NewMexico_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/35_NewMexico_AddressBlockCountList_072024.txt": {
+      "bytes": 4408585,
+      "fetched_at": "2026-11-03T15:55:35Z",
+      "sha256": "45dc0da998f48a2f0f58ab6b04fb46345981cb60975f70ee7ab1ebb9f0c920c8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/35_NewMexico_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/35_NewMexico_AddressBlockCountList_072025.txt": {
+      "bytes": 4423864,
+      "fetched_at": "2026-11-03T15:55:37Z",
+      "sha256": "98445f52947afc5f84ae5a6fcc2fc79d28a8898df2e14613af6cf0fb47f2b93d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/35_NewMexico_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/35_NewMexico_AddressBlockCountList_072026.txt": {
+      "bytes": 4435613,
+      "fetched_at": "2026-11-03T15:55:39Z",
+      "sha256": "53e0ac7adbb6c208c9e54e5b6ed747fffd179974d584680c476002ea2458cd26",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/35_NewMexico_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/35_NewMexico_AddressBlockCountList_122023.txt": {
+      "bytes": 4329165,
+      "fetched_at": "2026-11-03T15:55:34Z",
+      "sha256": "9864219d10421270a54132f181d03c1434c50a33278164165789ce1e88afb610",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/35_NewMexico_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/35_NewMexico_AddressBlockCountList_122024.txt": {
+      "bytes": 4408671,
+      "fetched_at": "2026-11-03T15:55:36Z",
+      "sha256": "b8934b08b8e0c35b55a8c9ff9f447662d37f8baa03013173d2f906e32c8c2d11",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/35_NewMexico_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/35_NewMexico_AddressBlockCountList_122025.txt": {
+      "bytes": 4423918,
+      "fetched_at": "2026-11-03T15:55:38Z",
+      "sha256": "c9a6c1b863bd36a9c4088c87d1bfef2ce3e35795800d0cfdc1dd9f86ed3aed26",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/35_NewMexico_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/36_NewYork_AddressBlockCountList_062022.txt": {
+      "bytes": 15769799,
+      "fetched_at": "2026-11-03T15:55:42Z",
+      "sha256": "7ef619976edb807c8b21252952de7577f02eff1eb97d4d982dc8f3f185e0b00a",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/36_NewYork_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/36_NewYork_AddressBlockCountList_072023.txt": {
+      "bytes": 11755969,
+      "fetched_at": "2026-11-03T15:55:44Z",
+      "sha256": "7e67a5f37dcf86473118f0e4e8d6bb35647406b4cc25dead930150cce781d820",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/36_NewYork_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/36_NewYork_AddressBlockCountList_072024.txt": {
+      "bytes": 11756773,
+      "fetched_at": "2026-11-03T15:55:50Z",
+      "sha256": "716e4deba98041d55cf3237dc0521c4c0c8810c0cc9091cf5d4ed77e665a4306",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/36_NewYork_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/36_NewYork_AddressBlockCountList_072025.txt": {
+      "bytes": 11760142,
+      "fetched_at": "2026-11-03T15:55:55Z",
+      "sha256": "4b078391145cdc2ef78c273aa64702c8f2c347db03dc6429e927d957d53eb84f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/36_NewYork_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/36_NewYork_AddressBlockCountList_072026.txt": {
+      "bytes": 11761910,
+      "fetched_at": "2026-11-03T15:56:00Z",
+      "sha256": "9a89290213bc1940f2bb48c83935b591c14f361bdc27a696485082e9d3228603",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/36_NewYork_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/36_NewYork_AddressBlockCountList_122023.txt": {
+      "bytes": 11755928,
+      "fetched_at": "2026-11-03T15:55:47Z",
+      "sha256": "532991549e1478e91ef86508731dd9a8c199417250961285da83d0315882b0dd",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/36_NewYork_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/36_NewYork_AddressBlockCountList_122024.txt": {
+      "bytes": 11756942,
+      "fetched_at": "2026-11-03T15:55:53Z",
+      "sha256": "9fc4f745e712d671c1b55cd63b50c7851421d29580e2e9b2d9073f7681541919",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/36_NewYork_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/36_NewYork_AddressBlockCountList_122025.txt": {
+      "bytes": 11760380,
+      "fetched_at": "2026-11-03T15:55:58Z",
+      "sha256": "62659d96a226c07164084e09b141627572b62d68a72f678adc780e66bdd91c45",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/36_NewYork_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/37_NorthCarolina_AddressBlockCountList_062022.txt": {
+      "bytes": 12892375,
+      "fetched_at": "2026-11-03T15:56:04Z",
+      "sha256": "d2edfe55f5f350604568a07a75a1b3a8a8f2a1fc7dee19374b46759dafda70af",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/37_NorthCarolina_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/37_NorthCarolina_AddressBlockCountList_072023.txt": {
+      "bytes": 9792155,
+      "fetched_at": "2026-11-03T15:56:07Z",
+      "sha256": "3bdad57019181acadab38eb8b21364ca0bd416e92ea53f62dc1a81b88561739b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/37_NorthCarolina_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/37_NorthCarolina_AddressBlockCountList_072024.txt": {
+      "bytes": 9859306,
+      "fetched_at": "2026-11-03T15:56:11Z",
+      "sha256": "7d3d764e1f51a8e612d07f0785853c922e0d9cfaa77ae53f1aa437999b86e88f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/37_NorthCarolina_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/37_NorthCarolina_AddressBlockCountList_072025.txt": {
+      "bytes": 9923295,
+      "fetched_at": "2026-11-03T15:56:14Z",
+      "sha256": "8af12f5e7955ab3fd3ab1f8271c177068600848eadc0cd27812048c5c4d52bdf",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/37_NorthCarolina_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/37_NorthCarolina_AddressBlockCountList_072026.txt": {
+      "bytes": 10009513,
+      "fetched_at": "2026-11-03T15:56:18Z",
+      "sha256": "20f96f5affd5a3ca761390a93460bcdc7242a1a0e74916b83619bf251d3b4b96",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/37_NorthCarolina_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/37_NorthCarolina_AddressBlockCountList_122023.txt": {
+      "bytes": 9792434,
+      "fetched_at": "2026-11-03T15:56:08Z",
+      "sha256": "491945fe204fe9479c10b87782b5a652e45d9cb6e817485bf6d142782f3deca9",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/37_NorthCarolina_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/37_NorthCarolina_AddressBlockCountList_122024.txt": {
+      "bytes": 9860074,
+      "fetched_at": "2026-11-03T15:56:12Z",
+      "sha256": "b1bff5f2e45d858933ee4939b8a3c01e20de464b9f61e4eb39335dbcb5b74222",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/37_NorthCarolina_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/37_NorthCarolina_AddressBlockCountList_122025.txt": {
+      "bytes": 9923902,
+      "fetched_at": "2026-11-03T15:56:16Z",
+      "sha256": "f2d12d4b29f61b1a17df9d8bc72620a6fb60f3d4cf8f52c8d5b062eafa33c08d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/37_NorthCarolina_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/38_NorthDakota_AddressBlockCountList_062022.txt": {
+      "bytes": 4575546,
+      "fetched_at": "2026-11-03T15:56:21Z",
+      "sha256": "90ebf816a15629d9a3ce0215a693a23f9bd4b0dafbd1e249b763d1a59f6e26d9",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/38_NorthDakota_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/38_NorthDakota_AddressBlockCountList_072023.txt": {
+      "bytes": 3411396,
+      "fetched_at": "2026-11-03T15:56:21Z",
+      "sha256": "a5b6cf175cd5d9ec6116e37744c0f23a8aefc349c41a7d0de439740d49f9c814",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/38_NorthDakota_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/38_NorthDakota_AddressBlockCountList_072024.txt": {
+      "bytes": 3415890,
+      "fetched_at": "2026-11-03T15:56:23Z",
+      "sha256": "9bcfe22dc55b2059e48907cafa4de2567f0fdef259702d034273982bfe58a383",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/38_NorthDakota_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/38_NorthDakota_AddressBlockCountList_072025.txt": {
+      "bytes": 3418986,
+      "fetched_at": "2026-11-03T15:56:25Z",
+      "sha256": "3acc49e3f33522aeec34f573c5ffd36c82c20052a5ca4fd4d356ceb6886eef4b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/38_NorthDakota_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/38_NorthDakota_AddressBlockCountList_072026.txt": {
+      "bytes": 3421507,
+      "fetched_at": "2026-11-03T15:56:26Z",
+      "sha256": "3459bf163c495ce80f718bc41227999920ecbee56b01742a5948eca99cdc4da3",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/38_NorthDakota_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/38_NorthDakota_AddressBlockCountList_122023.txt": {
+      "bytes": 3411418,
+      "fetched_at": "2026-11-03T15:56:22Z",
+      "sha256": "13bc461b9f13301c5858db4fb82464731d40dec21f08445ee09053d4c368f0a3",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/38_NorthDakota_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/38_NorthDakota_AddressBlockCountList_122024.txt": {
+      "bytes": 3415937,
+      "fetched_at": "2026-11-03T15:56:23Z",
+      "sha256": "a80d3a26a560d436a482e96df44532e44c7675bb126f3d72456bb4cc4206aa4f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/38_NorthDakota_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/38_NorthDakota_AddressBlockCountList_122025.txt": {
+      "bytes": 3419005,
+      "fetched_at": "2026-11-03T15:56:25Z",
+      "sha256": "1bf17d93dcaabf8e0533e6f40452fa41b602a9224e8b8bf75d4f6cf62d38f774",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/38_NorthDakota_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/39_Ohio_AddressBlockCountList_062022.txt": {
+      "bytes": 15064258,
+      "fetched_at": "2026-11-03T15:56:29Z",
+      "sha256": "7a00e18043c98a2bc9417519aec96693f29792b22c46092371f2032ccd15bf71",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/39_Ohio_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/39_Ohio_AddressBlockCountList_072023.txt": {
+      "bytes": 11278022,
+      "fetched_at": "2026-11-03T15:56:31Z",
+      "sha256": "9069f4e4adfcd171eff7b1ecf840261169bf29389f3315da41dbeb2fbb11d56e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/39_Ohio_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/39_Ohio_AddressBlockCountList_072024.txt": {
+      "bytes": 11293397,
+      "fetched_at": "2026-11-03T15:56:35Z",
+      "sha256": "c540db7bdb85520423d641bb757ff4dc200f919ff55b40bd9feb834638ad9d14",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/39_Ohio_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/39_Ohio_AddressBlockCountList_072025.txt": {
+      "bytes": 11319005,
+      "fetched_at": "2026-11-03T15:56:40Z",
+      "sha256": "a3465847a6db527d97b762335bd58a66eae131ffacdb177d32b89b79e0ca1350",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/39_Ohio_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/39_Ohio_AddressBlockCountList_072026.txt": {
+      "bytes": 11419572,
+      "fetched_at": "2026-11-03T15:56:45Z",
+      "sha256": "30478f53c610466049bcafd4638a02705962c28fed73c7fcddef32d271ba5812",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/39_Ohio_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/39_Ohio_AddressBlockCountList_122023.txt": {
+      "bytes": 11278173,
+      "fetched_at": "2026-11-03T15:56:33Z",
+      "sha256": "9dde91787a6c1ac98aeca33b8103e7ed3c69638d393a102bcda06952cda1fd52",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/39_Ohio_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/39_Ohio_AddressBlockCountList_122024.txt": {
+      "bytes": 11293683,
+      "fetched_at": "2026-11-03T15:56:38Z",
+      "sha256": "2f1893d78637e19d9347bec57d7f85e4565eabdccff6333a238141b3b4599b79",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/39_Ohio_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/39_Ohio_AddressBlockCountList_122025.txt": {
+      "bytes": 11319239,
+      "fetched_at": "2026-11-03T15:56:43Z",
+      "sha256": "3e363293a1b2c44dee6752b7986d2d61a2f6837423ae812515c95f84c8586912",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/39_Ohio_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/40_Oklahoma_AddressBlockCountList_062022.txt": {
+      "bytes": 9776523,
+      "fetched_at": "2026-11-03T15:56:48Z",
+      "sha256": "64abbf20a9be20089d0c76bcfe0f06f071231ef75d0622725ced46a8d6d10247",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/40_Oklahoma_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/40_Oklahoma_AddressBlockCountList_072023.txt": {
+      "bytes": 7296206,
+      "fetched_at": "2026-11-03T15:56:49Z",
+      "sha256": "ffba0fa91bae2fd60c1c6cfc8658a94d9880ea6fac54f7409ff31f252b2e934d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/40_Oklahoma_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/40_Oklahoma_AddressBlockCountList_072024.txt": {
+      "bytes": 7308085,
+      "fetched_at": "2026-11-03T15:56:53Z",
+      "sha256": "5abbdefaff53654ca0c731fb72409d39e2f975f03ef39432d3e27878eed2893c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/40_Oklahoma_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/40_Oklahoma_AddressBlockCountList_072025.txt": {
+      "bytes": 7312978,
+      "fetched_at": "2026-11-03T15:56:56Z",
+      "sha256": "46478b12479d3d27d9f856e40e0d0ab723bfcdb2d72f3c758b7c162ce822d0f8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/40_Oklahoma_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/40_Oklahoma_AddressBlockCountList_072026.txt": {
+      "bytes": 7359172,
+      "fetched_at": "2026-11-03T15:56:59Z",
+      "sha256": "6da91f04967d5ead9415f0f8d0aa890190b67b0677171bb8f5d09efc268f9b3c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/40_Oklahoma_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/40_Oklahoma_AddressBlockCountList_122023.txt": {
+      "bytes": 7296206,
+      "fetched_at": "2026-11-03T15:56:51Z",
+      "sha256": "31582dcca6c4ffc385f8d56e38fcba389090e9b998cc0996c50bf4c6fc306134",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/40_Oklahoma_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/40_Oklahoma_AddressBlockCountList_122024.txt": {
+      "bytes": 7308450,
+      "fetched_at": "2026-11-03T15:56:54Z",
+      "sha256": "cf84891ae0c6533a310bf4127338c6f8516c266782bf5f71e59fee15ed2d0298",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/40_Oklahoma_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/40_Oklahoma_AddressBlockCountList_122025.txt": {
+      "bytes": 7313236,
+      "fetched_at": "2026-11-03T15:56:57Z",
+      "sha256": "3e965db9d99e1e85457646d96e3a317f578e1b4b9524e3219118736fada7917d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/40_Oklahoma_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/41_Oregon_AddressBlockCountList_062022.txt": {
+      "bytes": 7111309,
+      "fetched_at": "2026-11-03T15:57:01Z",
+      "sha256": "fe27a4b2a06ed0096f272b16c25f87b3fa49a864d90da844f7864a8db6af34b0",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/41_Oregon_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/41_Oregon_AddressBlockCountList_072023.txt": {
+      "bytes": 5329939,
+      "fetched_at": "2026-11-03T15:57:02Z",
+      "sha256": "8d685f0231ad27fdbdabd15bff2dbab6a723c96a87c923655a62f166bf9d748b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/41_Oregon_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/41_Oregon_AddressBlockCountList_072024.txt": {
+      "bytes": 5346722,
+      "fetched_at": "2026-11-03T15:57:04Z",
+      "sha256": "e9513a64856e83c91e7a13478afa97b96f7376a55432c8379350264a1785d8d2",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/41_Oregon_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/41_Oregon_AddressBlockCountList_072025.txt": {
+      "bytes": 5358695,
+      "fetched_at": "2026-11-03T15:57:07Z",
+      "sha256": "edc62864ff34530527b8665474455a446fcddb0452acd7a353e34ccee9a02c25",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/41_Oregon_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/41_Oregon_AddressBlockCountList_072026.txt": {
+      "bytes": 5367522,
+      "fetched_at": "2026-11-03T15:57:09Z",
+      "sha256": "038045c7904af1240f0e43336a29001c65e158504b443262978e8714bc86ce8b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/41_Oregon_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/41_Oregon_AddressBlockCountList_122023.txt": {
+      "bytes": 5330004,
+      "fetched_at": "2026-11-03T15:57:03Z",
+      "sha256": "ea101147867dec646bc030661833263a0dd1ae4116ab562026a3a2fd076fc671",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/41_Oregon_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/41_Oregon_AddressBlockCountList_122024.txt": {
+      "bytes": 5346849,
+      "fetched_at": "2026-11-03T15:57:06Z",
+      "sha256": "c7636ab933107f66e28ee24f3f22897ee2f696eb3af37d4dcd4408b2a38501e2",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/41_Oregon_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/41_Oregon_AddressBlockCountList_122025.txt": {
+      "bytes": 5358832,
+      "fetched_at": "2026-11-03T15:57:08Z",
+      "sha256": "af87b950a7290fbf68793714ff670a9118a7ec0257ad278519681f81ec84cf7e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/41_Oregon_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/42_Pennsylvania_AddressBlockCountList_062022.txt": {
+      "bytes": 18362377,
+      "fetched_at": "2026-11-03T15:57:42Z",
+      "sha256": "07e1ea184e25c107bb083b6748ef9961f33259eb09aab338ca46911435624484",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/42_Pennsylvania_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/42_Pennsylvania_AddressBlockCountList_072023.txt": {
+      "bytes": 13715663,
+      "fetched_at": "2026-11-03T15:57:45Z",
+      "sha256": "27e76ddbf3a6e69bda95e6741709c323135c47d683c2f7d3bc600d145dd97efd",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/42_Pennsylvania_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/42_Pennsylvania_AddressBlockCountList_072024.txt": {
+      "bytes": 13717418,
+      "fetched_at": "2026-11-03T15:57:51Z",
+      "sha256": "1c46d269b142da5d30104c32b64692f5c044619f48e69e307b4f6893b070fc70",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/42_Pennsylvania_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/42_Pennsylvania_AddressBlockCountList_072025.txt": {
+      "bytes": 13720457,
+      "fetched_at": "2026-11-03T15:57:56Z",
+      "sha256": "d452bd29bb401452f82730b7d16227a9a65612d4ef07564c9fc2f9024142c8c3",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/42_Pennsylvania_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/42_Pennsylvania_AddressBlockCountList_072026.txt": {
+      "bytes": 13735034,
+      "fetched_at": "2026-11-03T15:58:02Z",
+      "sha256": "1b03a63740650d46c49fa3df2eb5653b83ec52fb112dd3b99181af429aeeff88",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/42_Pennsylvania_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/42_Pennsylvania_AddressBlockCountList_122023.txt": {
+      "bytes": 13715481,
+      "fetched_at": "2026-11-03T15:57:48Z",
+      "sha256": "46511002bacb9ff90208ab0f32fc06bc1431bd6ebb967c6ab5e8960aa270e067",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/42_Pennsylvania_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/42_Pennsylvania_AddressBlockCountList_122024.txt": {
+      "bytes": 13717756,
+      "fetched_at": "2026-11-03T15:57:54Z",
+      "sha256": "6891d93677bff975bb735ebb77e90bc1411b066baa0911e69b7431f318771eb5",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/42_Pennsylvania_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/42_Pennsylvania_AddressBlockCountList_122025.txt": {
+      "bytes": 13720756,
+      "fetched_at": "2026-11-03T15:57:59Z",
+      "sha256": "2c028a9e7b8f33a702b25d869b59ebda6f5c848198b8ba40ddd1657e8f5917e0",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/42_Pennsylvania_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/44_RhodeIsland_AddressBlockCountList_062022.txt": {
+      "bytes": 1401055,
+      "fetched_at": "2026-11-03T15:58:04Z",
+      "sha256": "a3b56d26c0ffecb1641e9158fa0d7be154e1f9df82343c6a8cbfdc20e91cbb79",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/44_RhodeIsland_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/44_RhodeIsland_AddressBlockCountList_072023.txt": {
+      "bytes": 1042007,
+      "fetched_at": "2026-11-03T15:58:04Z",
+      "sha256": "b4a72c4b3912bd5416982a219aabcfe44511fc9c5271dc20614d950d4cc5a049",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/44_RhodeIsland_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/44_RhodeIsland_AddressBlockCountList_072024.txt": {
+      "bytes": 1042032,
+      "fetched_at": "2026-11-03T15:58:06Z",
+      "sha256": "5cd0345d7bf0ac59ea37f6d13a9d7361af4d647882823e897d1b450a84b83569",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/44_RhodeIsland_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/44_RhodeIsland_AddressBlockCountList_072025.txt": {
+      "bytes": 1042097,
+      "fetched_at": "2026-11-03T15:58:07Z",
+      "sha256": "9f7784c93d0c49c5aad6d2a11073266e7a4b96cf831f3f1a750bc936c66723ab",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/44_RhodeIsland_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/44_RhodeIsland_AddressBlockCountList_072026.txt": {
+      "bytes": 1042132,
+      "fetched_at": "2026-11-03T15:58:08Z",
+      "sha256": "18cc774ad3a769250ac0faf5396617bef0ee977a3eec0898ab7b711f05a07064",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/44_RhodeIsland_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/44_RhodeIsland_AddressBlockCountList_122023.txt": {
+      "bytes": 1042018,
+      "fetched_at": "2026-11-03T15:58:05Z",
+      "sha256": "9e8e4c8390546759a0559d6adc2fdd7ceb2a9481512e39d858ed635d693b7fa2",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/44_RhodeIsland_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/44_RhodeIsland_AddressBlockCountList_122024.txt": {
+      "bytes": 1042059,
+      "fetched_at": "2026-11-03T15:58:06Z",
+      "sha256": "0d73399e029e0a8ef0367c4383da22e5f11fe7df078cc8a259082c69feca42aa",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/44_RhodeIsland_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/44_RhodeIsland_AddressBlockCountList_122025.txt": {
+      "bytes": 1042115,
+      "fetched_at": "2026-11-03T15:58:08Z",
+      "sha256": "23da54163f935dd8a0d1fff8893b30a46fe74c6809b5d7e487ef1753bc4c026b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/44_RhodeIsland_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/45_SouthCarolina_AddressBlockCountList_062022.txt": {
+      "bytes": 7989825,
+      "fetched_at": "2026-11-03T15:58:10Z",
+      "sha256": "7c6747ae405534dbea8941c49be5955479d5494d4e72ec90446ccd5551a592fb",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/45_SouthCarolina_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/45_SouthCarolina_AddressBlockCountList_072023.txt": {
+      "bytes": 6072295,
+      "fetched_at": "2026-11-03T15:58:12Z",
+      "sha256": "1c34f033880496e05a76407fcf5a1e95fbc61bb24bc209c816a46bcd271d2277",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/45_SouthCarolina_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/45_SouthCarolina_AddressBlockCountList_072024.txt": {
+      "bytes": 6115845,
+      "fetched_at": "2026-11-03T15:58:15Z",
+      "sha256": "8f939acefd4cb8441d959d2b0e3361e658d1324cd41bc27a621d0c358f3c6a5e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/45_SouthCarolina_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/45_SouthCarolina_AddressBlockCountList_072025.txt": {
+      "bytes": 6173005,
+      "fetched_at": "2026-11-03T15:58:18Z",
+      "sha256": "62431cc2fe4a0d078b43a79719ff9daf9ada206c064d4c3a268c70a212565262",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/45_SouthCarolina_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/45_SouthCarolina_AddressBlockCountList_072026.txt": {
+      "bytes": 6352905,
+      "fetched_at": "2026-11-03T15:58:20Z",
+      "sha256": "eee9efd5fa22e5dab87713049b66d1782f4e226a917feec32a03faa00e7d9c2b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/45_SouthCarolina_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/45_SouthCarolina_AddressBlockCountList_122023.txt": {
+      "bytes": 6072403,
+      "fetched_at": "2026-11-03T15:58:13Z",
+      "sha256": "cc9d39ecfa227da051371a9d864ea9a2fdc59767c356533607c8aa1daf9cbf5d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/45_SouthCarolina_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/45_SouthCarolina_AddressBlockCountList_122024.txt": {
+      "bytes": 6116180,
+      "fetched_at": "2026-11-03T15:58:16Z",
+      "sha256": "ec084980e8591748d387e3029239306deff5acbca992f8c24ac5d4f2b42e46ac",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/45_SouthCarolina_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/45_SouthCarolina_AddressBlockCountList_122025.txt": {
+      "bytes": 6173532,
+      "fetched_at": "2026-11-03T15:58:19Z",
+      "sha256": "26575e667de125c3c1f768cb1befd022c351b6b2311858fb6dd6c20958d82ded",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/45_SouthCarolina_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/46_SouthDakota_AddressBlockCountList_062022.txt": {
+      "bytes": 3865620,
+      "fetched_at": "2026-11-03T15:58:22Z",
+      "sha256": "177ff09d1e0d5612f2655da2a0d56cf4f49a0fe1acbba2e00acf1b22172856b8",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/46_SouthDakota_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/46_SouthDakota_AddressBlockCountList_072023.txt": {
+      "bytes": 2918041,
+      "fetched_at": "2026-11-03T15:58:23Z",
+      "sha256": "10a562a0372a431f7db0e801af111b08688931b4ae50a19a8108ad61aa54f3ef",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/46_SouthDakota_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/46_SouthDakota_AddressBlockCountList_072024.txt": {
+      "bytes": 2926273,
+      "fetched_at": "2026-11-03T15:58:24Z",
+      "sha256": "006d3993973f5a5023879b0bc71bf30fb708ee1be45b6946cfed04c574c6a41b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/46_SouthDakota_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/46_SouthDakota_AddressBlockCountList_072025.txt": {
+      "bytes": 2930635,
+      "fetched_at": "2026-11-03T15:58:26Z",
+      "sha256": "ec24b723b2ea04d8b028bd120fe0b9b7a01584d98d14edf56318c929df1eb95b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/46_SouthDakota_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/46_SouthDakota_AddressBlockCountList_072026.txt": {
+      "bytes": 2933232,
+      "fetched_at": "2026-11-03T15:58:28Z",
+      "sha256": "9224dadadde90f45c2d508d2c9df4c38446b681ca2ef1b3e07f4266f2fe5ab4d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/46_SouthDakota_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/46_SouthDakota_AddressBlockCountList_122023.txt": {
+      "bytes": 2918085,
+      "fetched_at": "2026-11-03T15:58:24Z",
+      "sha256": "bb9d5812282542447f0a7b161a1f1363fafc30a4392f0a7f81d8e47375a71906",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/46_SouthDakota_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/46_SouthDakota_AddressBlockCountList_122024.txt": {
+      "bytes": 2926330,
+      "fetched_at": "2026-11-03T15:58:25Z",
+      "sha256": "18c5fbaecea430e657280f9d6006726cc15ecfc93475b5276c3088f66128a650",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/46_SouthDakota_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/46_SouthDakota_AddressBlockCountList_122025.txt": {
+      "bytes": 2930684,
+      "fetched_at": "2026-11-03T15:58:27Z",
+      "sha256": "6b0d3629131e77b378657c270589003cb9aab1e2da574f3fef1958465902e5b1",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/46_SouthDakota_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/47_Tennessee_AddressBlockCountList_062022.txt": {
+      "bytes": 9783625,
+      "fetched_at": "2026-11-03T15:58:30Z",
+      "sha256": "e1406e3d68d52312afcb74aca374bdb93aabce8ad583cee4a925929b705ac9f7",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/47_Tennessee_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/47_Tennessee_AddressBlockCountList_072023.txt": {
+      "bytes": 7326457,
+      "fetched_at": "2026-11-03T15:58:32Z",
+      "sha256": "71ffaf4a2ba5878cc02935cf8928abd5507b7636f1b9eef08a664acbdba734a9",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/47_Tennessee_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/47_Tennessee_AddressBlockCountList_072024.txt": {
+      "bytes": 7347599,
+      "fetched_at": "2026-11-03T15:58:35Z",
+      "sha256": "cce51b925861f0b5dc04d74af602e5ad66055584f13313d0ee4abb6021f97a8e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/47_Tennessee_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/47_Tennessee_AddressBlockCountList_072025.txt": {
+      "bytes": 7362753,
+      "fetched_at": "2026-11-03T15:58:39Z",
+      "sha256": "1b6bdabb83af2013635382e3f0c74e26e3a88bd79dd7b0c882b3624e79a6b0d1",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/47_Tennessee_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/47_Tennessee_AddressBlockCountList_072026.txt": {
+      "bytes": 7374857,
+      "fetched_at": "2026-11-03T15:58:42Z",
+      "sha256": "4ab96f2ced7b8d4ed9de470d0aa40354830a48e8f06afe15d85f5fafa3fe12fa",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/47_Tennessee_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/47_Tennessee_AddressBlockCountList_122023.txt": {
+      "bytes": 7326599,
+      "fetched_at": "2026-11-03T15:58:33Z",
+      "sha256": "032ecf0b024465c4ff4d2efc22fb86945b14e0363a2ee068bc777bd0985259fd",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/47_Tennessee_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/47_Tennessee_AddressBlockCountList_122024.txt": {
+      "bytes": 7348048,
+      "fetched_at": "2026-11-03T15:58:37Z",
+      "sha256": "19582577600a30db8d651c578f2e199c360619664c47dc9ec5ecea12560e9925",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/47_Tennessee_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/47_Tennessee_AddressBlockCountList_122025.txt": {
+      "bytes": 7363252,
+      "fetched_at": "2026-11-03T15:58:40Z",
+      "sha256": "5646ff05d382c919d6c3c4d27db66059e91c3e57e0e815f0812d8d8325558801",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/47_Tennessee_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/48_Texas_AddressBlockCountList_062022.txt": {
+      "bytes": 36394084,
+      "fetched_at": "2026-11-03T15:58:46Z",
+      "sha256": "26e378e73716c83a057a2a79e565172c016a6ce1e5490770e68a3433140081f2",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/48_Texas_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/48_Texas_AddressBlockCountList_072023.txt": {
+      "bytes": 27329106,
+      "fetched_at": "2026-11-03T15:58:51Z",
+      "sha256": "d3b8dc9a6293be237e068a6dc15df09ddbc41f3e59633090350832ed74717561",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/48_Texas_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/48_Texas_AddressBlockCountList_072024.txt": {
+      "bytes": 27380798,
+      "fetched_at": "2026-11-03T15:59:03Z",
+      "sha256": "0a5b7d56af229cd75b1c20089ba6a37075b3d88719612fe00ed06ce3d0cbca83",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/48_Texas_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/48_Texas_AddressBlockCountList_072025.txt": {
+      "bytes": 27441919,
+      "fetched_at": "2026-11-03T15:59:14Z",
+      "sha256": "2f9ea9fd50b9b9e9aae7b372d5b86542de054df169b39107f560415dfb4cbbe3",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/48_Texas_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/48_Texas_AddressBlockCountList_072026.txt": {
+      "bytes": 27503363,
+      "fetched_at": "2026-11-03T15:59:23Z",
+      "sha256": "144483135e62e55f89b4854db350574c53fc8a6b188e6ec5113f93be6f346ab4",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/48_Texas_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/48_Texas_AddressBlockCountList_122023.txt": {
+      "bytes": 27329230,
+      "fetched_at": "2026-11-03T15:58:58Z",
+      "sha256": "6f396bf809ef252c50b4d85e073f5af813da46a1d0901b40390c5252ee332358",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/48_Texas_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/48_Texas_AddressBlockCountList_122024.txt": {
+      "bytes": 27382619,
+      "fetched_at": "2026-11-03T15:59:09Z",
+      "sha256": "0dd831e9e144eeca9909c1efdbfe3134478c1575c43a1bd1592de6611f43e9e6",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/48_Texas_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/48_Texas_AddressBlockCountList_122025.txt": {
+      "bytes": 27443348,
+      "fetched_at": "2026-11-03T15:59:18Z",
+      "sha256": "c936f4c1c02f617254530f5251e86f9b2c13d37186dee4819e399d509a90d465",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/48_Texas_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/49_Utah_AddressBlockCountList_062022.txt": {
+      "bytes": 3878689,
+      "fetched_at": "2026-11-03T15:45:57Z",
+      "sha256": "83b74f22fec00c0ce161c2d313cd683c4ee8861b0c713f90e5e11d0f31270cb0",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/49_Utah_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/49_Utah_AddressBlockCountList_072023.txt": {
+      "bytes": 2935356,
+      "fetched_at": "2026-11-03T15:45:58Z",
+      "sha256": "6b84988bd10189d8ee7966fd93074a41ad1fecc2466daa040fb5e377ad54e087",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/49_Utah_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/49_Utah_AddressBlockCountList_072024.txt": {
+      "bytes": 2939163,
+      "fetched_at": "2026-11-03T15:45:59Z",
+      "sha256": "985bbc87e39f6159d52cdf1ebab4afad791cb707d9e48ed2de3b19547ffc494a",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/49_Utah_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/49_Utah_AddressBlockCountList_072025.txt": {
+      "bytes": 2951681,
+      "fetched_at": "2026-11-03T15:46:01Z",
+      "sha256": "c757e66803a4a04d181c893e3f944ed312831d26e6c30788ec6b495dfc24407c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/49_Utah_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/49_Utah_AddressBlockCountList_072026.txt": {
+      "bytes": 2956577,
+      "fetched_at": "2026-11-03T15:46:02Z",
+      "sha256": "77f40cec837183e2767df858b4150c06c825bd52ad25cddeb84112363dd9daa2",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/49_Utah_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/49_Utah_AddressBlockCountList_122023.txt": {
+      "bytes": 2935429,
+      "fetched_at": "2026-11-03T15:45:59Z",
+      "sha256": "d2dc582d19165a589445c061fe020acdc1e00dfe3fee61b7f722e05772c3c4dd",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/49_Utah_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/49_Utah_AddressBlockCountList_122024.txt": {
+      "bytes": 2939353,
+      "fetched_at": "2026-11-03T15:46:00Z",
+      "sha256": "b934518dea776e519aca2751f26e33464c0dceb016ae4d30a8755b93769a435e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/49_Utah_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/49_Utah_AddressBlockCountList_122025.txt": {
+      "bytes": 2951824,
+      "fetched_at": "2026-11-03T15:46:02Z",
+      "sha256": "e595e950ac434b4ed6dcfc96fd03bb4e6427db1fcd0dea8143dd84a39b929636",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/49_Utah_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/50_Vermont_AddressBlockCountList_062022.txt": {
+      "bytes": 1338313,
+      "fetched_at": "2026-11-03T15:59:26Z",
+      "sha256": "60da940c8023a919d1c420129d28a648b08ad482a2725847408b5d5105d79fd2",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/50_Vermont_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/50_Vermont_AddressBlockCountList_072023.txt": {
+      "bytes": 1025421,
+      "fetched_at": "2026-11-03T15:59:26Z",
+      "sha256": "e0d26578af97c263da78de709fa56efaad6be9fd1dbdeeaae0d8cade19d7e28d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/50_Vermont_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/50_Vermont_AddressBlockCountList_072024.txt": {
+      "bytes": 1025902,
+      "fetched_at": "2026-11-03T15:59:28Z",
+      "sha256": "5be9a68677f840fa2a8387c8f5fb37b06b9a50aa7b1889a794f0747a159b0f01",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/50_Vermont_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/50_Vermont_AddressBlockCountList_072025.txt": {
+      "bytes": 1026063,
+      "fetched_at": "2026-11-03T15:59:29Z",
+      "sha256": "b802f46fd4669cb1e83909cc6e48777aa91edf6560080b4a683587c485b828ea",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/50_Vermont_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/50_Vermont_AddressBlockCountList_072026.txt": {
+      "bytes": 1037539,
+      "fetched_at": "2026-11-03T15:59:30Z",
+      "sha256": "15d4666c15d732aafaa2b4c8ea2e09f5ab3aed9c31aeff81fcb70eb91cf5a161",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/50_Vermont_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/50_Vermont_AddressBlockCountList_122023.txt": {
+      "bytes": 1025404,
+      "fetched_at": "2026-11-03T15:59:27Z",
+      "sha256": "81f12097752f4f10513762cec72c7120b53c86c61f6470704f098cee93dda008",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/50_Vermont_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/50_Vermont_AddressBlockCountList_122024.txt": {
+      "bytes": 1025976,
+      "fetched_at": "2026-11-03T15:59:28Z",
+      "sha256": "fa41685eea0d5e384ce53a11db18cbf44d5eace800bcfaa8fe8f3b30e339374c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/50_Vermont_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/50_Vermont_AddressBlockCountList_122025.txt": {
+      "bytes": 1026086,
+      "fetched_at": "2026-11-03T15:59:30Z",
+      "sha256": "fa1d1fc37bd05a0161477d0b73bbd9a29dbe4916df8e57d54be6ac11925820dd",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/50_Vermont_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/51_Virginia_AddressBlockCountList_062022.txt": {
+      "bytes": 8909972,
+      "fetched_at": "2026-11-03T15:59:32Z",
+      "sha256": "d0ca65f47c2c2cdfc178862ef25daa2f1a2c7b434d5d583576b5a271bb2a7209",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/51_Virginia_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/51_Virginia_AddressBlockCountList_072023.txt": {
+      "bytes": 6636738,
+      "fetched_at": "2026-11-03T15:59:33Z",
+      "sha256": "2736097d436ccaaf78eb0d238f2c68280e6464ae51cd31a09232bed4bcb72fd6",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/51_Virginia_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/51_Virginia_AddressBlockCountList_072024.txt": {
+      "bytes": 6641189,
+      "fetched_at": "2026-11-03T15:59:37Z",
+      "sha256": "0277d71a5e2ecab4ddbdbd03fc3cac77360c128cc1c01df115fef7425ed93913",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/51_Virginia_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/51_Virginia_AddressBlockCountList_072025.txt": {
+      "bytes": 6646753,
+      "fetched_at": "2026-11-03T15:59:41Z",
+      "sha256": "560fbef7387dd04740b2a89a841d562a61d65c125c85f62099fb45bfb4356d3b",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/51_Virginia_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/51_Virginia_AddressBlockCountList_072026.txt": {
+      "bytes": 6651027,
+      "fetched_at": "2026-11-03T15:59:45Z",
+      "sha256": "30263865ca1f4a8bdf7ffcb7f6b5aa4d2bc448aa339c8d2d55974af96eaf59d5",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/51_Virginia_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/51_Virginia_AddressBlockCountList_122023.txt": {
+      "bytes": 6636827,
+      "fetched_at": "2026-11-03T15:59:35Z",
+      "sha256": "e75a397dd427bb5e4240a5ace48636cdfe704233fd6855e4e3f1ac7790637e67",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/51_Virginia_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/51_Virginia_AddressBlockCountList_122024.txt": {
+      "bytes": 6641498,
+      "fetched_at": "2026-11-03T15:59:39Z",
+      "sha256": "2a99b9e8cfc5048702e4b77ede1a82cedc695762813289456eb860a59cac5007",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/51_Virginia_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/51_Virginia_AddressBlockCountList_122025.txt": {
+      "bytes": 6646952,
+      "fetched_at": "2026-11-03T15:59:43Z",
+      "sha256": "addea29f0a940a16a820678efd6bf201fce4ace85deb00d11da469216bc2ffa9",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/51_Virginia_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/53_Washington_AddressBlockCountList_062022.txt": {
+      "bytes": 8613375,
+      "fetched_at": "2026-11-03T15:59:47Z",
+      "sha256": "0118f4c19a121747850da8a12147525c0cd601d2e69977061d051937c33dc020",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/53_Washington_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/53_Washington_AddressBlockCountList_072023.txt": {
+      "bytes": 6411696,
+      "fetched_at": "2026-11-03T15:59:48Z",
+      "sha256": "77fdee98631d12b4906d02269bc42ee35067d08241ab3bdffee597173b6c305e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/53_Washington_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/53_Washington_AddressBlockCountList_072024.txt": {
+      "bytes": 6417418,
+      "fetched_at": "2026-11-03T15:59:52Z",
+      "sha256": "5b8456687d72ceb5a5089264b2159f5ba51dda5455567226101fdfc27ec24c39",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/53_Washington_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/53_Washington_AddressBlockCountList_072025.txt": {
+      "bytes": 6424621,
+      "fetched_at": "2026-11-03T15:59:55Z",
+      "sha256": "327acedef825bd9c7e2242897d7be679a2fd5f1b12cfb02385c91a88fe7fa039",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/53_Washington_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/53_Washington_AddressBlockCountList_072026.txt": {
+      "bytes": 6430880,
+      "fetched_at": "2026-11-03T15:59:58Z",
+      "sha256": "acd5859e92bfa0f347c0272fa0c093499b7c74ef7b4430eb35d43c36dcf49238",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/53_Washington_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/53_Washington_AddressBlockCountList_122023.txt": {
+      "bytes": 6411797,
+      "fetched_at": "2026-11-03T15:59:51Z",
+      "sha256": "f35874dd1a35a49c46bea3befb328e45affff878865c14e832a190782f743257",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/53_Washington_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/53_Washington_AddressBlockCountList_122024.txt": {
+      "bytes": 6417678,
+      "fetched_at": "2026-11-03T15:59:53Z",
+      "sha256": "dbf1d547c8b1da34170327b32596fbacd4371e34935eeb85c66681ec8848e9e9",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/53_Washington_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/53_Washington_AddressBlockCountList_122025.txt": {
+      "bytes": 6424820,
+      "fetched_at": "2026-11-03T15:59:56Z",
+      "sha256": "7c8035772e92fea8e3b7d47fbc1c61bc823c4ac054b40d7b1e5678af6258ffb2",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/53_Washington_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/54_WestVirginia_AddressBlockCountList_062022.txt": {
+      "bytes": 3942334,
+      "fetched_at": "2026-11-03T15:59:59Z",
+      "sha256": "6f9748ae4beb193e527a6f93b82e459b072ff3c5e33c97676219b3daa665aaad",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/54_WestVirginia_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/54_WestVirginia_AddressBlockCountList_072023.txt": {
+      "bytes": 2963089,
+      "fetched_at": "2026-11-03T16:00:00Z",
+      "sha256": "bdd78e7120f8f19995a6fa42a45297cc00a5de7e194f11a015a585d05f424b7f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/54_WestVirginia_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/54_WestVirginia_AddressBlockCountList_072024.txt": {
+      "bytes": 2982529,
+      "fetched_at": "2026-11-03T16:00:02Z",
+      "sha256": "d0a0e37b0c6cfa8419d007eba77eaffc44ddafaaaedf9a7852dc652028ba1097",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/54_WestVirginia_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/54_WestVirginia_AddressBlockCountList_072025.txt": {
+      "bytes": 2994498,
+      "fetched_at": "2026-11-03T16:00:04Z",
+      "sha256": "208a67f739dce44fc1a0e10bfb506fcf4425d7aaee74127cb7dc634904dd6f43",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/54_WestVirginia_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/54_WestVirginia_AddressBlockCountList_072026.txt": {
+      "bytes": 3003260,
+      "fetched_at": "2026-11-03T16:00:06Z",
+      "sha256": "5bd9f2600def01cd552422c1f6b8b6c6626c959a201774d62353862f8bf9ac0c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/54_WestVirginia_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/54_WestVirginia_AddressBlockCountList_122023.txt": {
+      "bytes": 2963091,
+      "fetched_at": "2026-11-03T16:00:01Z",
+      "sha256": "2fa816613186d062b82b12d1970cf8f12edf065bf4ad745f0a68a6b157054ec6",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/54_WestVirginia_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/54_WestVirginia_AddressBlockCountList_122024.txt": {
+      "bytes": 2982687,
+      "fetched_at": "2026-11-03T16:00:03Z",
+      "sha256": "23efd4023e64801781f35d437b2b61099380bf707956dc75224dee4f71d2a201",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/54_WestVirginia_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/54_WestVirginia_AddressBlockCountList_122025.txt": {
+      "bytes": 2994584,
+      "fetched_at": "2026-11-03T16:00:06Z",
+      "sha256": "87a30b9c21196485a73dabe3c55af43290ac6f509ad9718257916a3239e68054",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/54_WestVirginia_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/55_Wisconsin_AddressBlockCountList_062022.txt": {
+      "bytes": 11044946,
+      "fetched_at": "2026-11-03T16:00:08Z",
+      "sha256": "25a032d30ca058e06b8d039fa6e7b3848e7df6f8bb88504002a5e4a8694bdba2",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/55_Wisconsin_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/55_Wisconsin_AddressBlockCountList_072023.txt": {
+      "bytes": 8275123,
+      "fetched_at": "2026-11-03T16:00:10Z",
+      "sha256": "22e2a53aceb2ce432aca12d134ef4d308f50b4416f0a70ce790c3298e6c6594e",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/55_Wisconsin_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/55_Wisconsin_AddressBlockCountList_072024.txt": {
+      "bytes": 8296796,
+      "fetched_at": "2026-11-03T16:00:14Z",
+      "sha256": "b9c033fb304e458588793c124d8a6c6f49e1147b76eb41040dd98421673ff7ed",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/55_Wisconsin_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/55_Wisconsin_AddressBlockCountList_072025.txt": {
+      "bytes": 8319547,
+      "fetched_at": "2026-11-03T16:00:18Z",
+      "sha256": "5b190dfb4456b11696128778fbf04397ae9e38b71e292656a2edccdba9c4b17f",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/55_Wisconsin_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/55_Wisconsin_AddressBlockCountList_072026.txt": {
+      "bytes": 8338977,
+      "fetched_at": "2026-11-03T16:00:22Z",
+      "sha256": "1024dade31627d2c4352bcd02b3e518d7b2e80b3f5fe5086f59bc22b3a3e14ee",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/55_Wisconsin_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/55_Wisconsin_AddressBlockCountList_122023.txt": {
+      "bytes": 8275038,
+      "fetched_at": "2026-11-03T16:00:12Z",
+      "sha256": "fbdf03fb4f0559426a83423c48132de19976e3bb86d7e891737866dc71989e6c",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/55_Wisconsin_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/55_Wisconsin_AddressBlockCountList_122024.txt": {
+      "bytes": 8297030,
+      "fetched_at": "2026-11-03T16:00:16Z",
+      "sha256": "ad8383157480d008ac3bfe8227f3bd4bb7f9d2d07f508263f8552d88b7b17723",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/55_Wisconsin_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/55_Wisconsin_AddressBlockCountList_122025.txt": {
+      "bytes": 8319781,
+      "fetched_at": "2026-11-03T16:00:20Z",
+      "sha256": "61f845a5a6805a7a0157197c0ef1d6a184b83dd904eaad4f94f97fd4fb81228d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/55_Wisconsin_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    },
+    "aclf/56_Wyoming_AddressBlockCountList_062022.txt": {
+      "bytes": 2912328,
+      "fetched_at": "2026-11-03T16:00:23Z",
+      "sha256": "d831dcd6510feb08ef54c2d0ddf962359868d246ec4b6a62f2877adc679678cf",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2020/56_Wyoming_AddressBlockCountList_062022.txt",
+      "vintage": "2022-06"
+    },
+    "aclf/56_Wyoming_AddressBlockCountList_072023.txt": {
+      "bytes": 2166910,
+      "fetched_at": "2026-11-03T16:00:24Z",
+      "sha256": "73e7df6c6b0f43dcf7b1bce9ed053f9736c5b7b46fe1853b79e61bc3b8cf2c48",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/56_Wyoming_AddressBlockCountList_072023.txt",
+      "vintage": "2023-07"
+    },
+    "aclf/56_Wyoming_AddressBlockCountList_072024.txt": {
+      "bytes": 2171095,
+      "fetched_at": "2026-11-03T16:00:25Z",
+      "sha256": "e77981af9af5c7731a1d17221c84f0ca7db0ffd01ff3feebaf67827608c5495d",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/56_Wyoming_AddressBlockCountList_072024.txt",
+      "vintage": "2024-07"
+    },
+    "aclf/56_Wyoming_AddressBlockCountList_072025.txt": {
+      "bytes": 2179121,
+      "fetched_at": "2026-11-03T16:00:26Z",
+      "sha256": "f35f13d8be06d874eeea29f02a11376284da81c950a6379ab6e3f93986733d21",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/56_Wyoming_AddressBlockCountList_072025.txt",
+      "vintage": "2025-07"
+    },
+    "aclf/56_Wyoming_AddressBlockCountList_072026.txt": {
+      "bytes": 2182822,
+      "fetched_at": "2026-11-03T16:00:28Z",
+      "sha256": "1bd0a36951d6a30fbefae808988285d657ffe6fa649402beecfaa63c0887f2c1",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2026/56_Wyoming_AddressBlockCountList_072026.txt",
+      "vintage": "2026-07"
+    },
+    "aclf/56_Wyoming_AddressBlockCountList_122023.txt": {
+      "bytes": 2166891,
+      "fetched_at": "2026-11-03T16:00:24Z",
+      "sha256": "3c25e4a587d3fc2570ec9b787c81051f8fcc7c4ecd5c18371e65628f60501546",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2023/56_Wyoming_AddressBlockCountList_122023.txt",
+      "vintage": "2023-12"
+    },
+    "aclf/56_Wyoming_AddressBlockCountList_122024.txt": {
+      "bytes": 2171135,
+      "fetched_at": "2026-11-03T16:00:26Z",
+      "sha256": "8c21a1c758eb2fea327139d58ec96136f1bb8d8faaf4fac4b86ee986c3c02bc5",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2024/56_Wyoming_AddressBlockCountList_122024.txt",
+      "vintage": "2024-12"
+    },
+    "aclf/56_Wyoming_AddressBlockCountList_122025.txt": {
+      "bytes": 2179153,
+      "fetched_at": "2026-11-03T16:00:27Z",
+      "sha256": "9b47024cd9df00b94551b51ba58792def8e1485a810e3541dd1f1bb12a8dbd23",
+      "url": "https://www2.census.gov/geo/pvs/addcountlisting/2025/56_Wyoming_AddressBlockCountList_122025.txt",
+      "vintage": "2025-12"
+    }
+  },
+  "license": "U.S. Census Bureau, public domain (U.S. government work)",
+  "notes": "Block-level housing-unit counts from the Master Address File. From July 2023 on the published TOTAL HOUSING UNITS column sums to about twice the housing stock; see docs/DATA_PROVENANCE.md and hre validate --aclf. The July 2023 and 2024 files exclude transitory units.",
+  "source": "aclf"
+}

@@ -1,0 +1,14 @@
+{
+  "files": {
+    "cbsa/list1_2023.xlsx": {
+      "bytes": 143798,
+      "fetched_at": "2026-11-03T15:45:07Z",
+      "sha256": "952c4b1e78acbb54e6ec9412434b7602fedacbf021736351a63c181bdb753629",
+      "url": "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2023/delineation-files/list1_2023.xlsx",
+      "vintage": "2023-07"
+    }
+  },
+  "license": "OMB Bulletin 23-01 delineations distributed by the U.S. Census Bureau; public domain",
+  "notes": "County membership in metropolitan and micropolitan statistical areas, with the central/outlying flag that defines the missing-middle exposure.",
+  "source": "cbsa"
+}

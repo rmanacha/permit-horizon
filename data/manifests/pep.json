@@ -1,0 +1,14 @@
+{
+  "files": {
+    "pep/CO-EST2025-HU.xlsx": {
+      "bytes": 199656,
+      "fetched_at": "2026-11-03T15:45:17Z",
+      "sha256": "a98bde3629dee32daa69d65e53a09100feb1eb93b9a2dfbf66b737d8577c31b6",
+      "url": "https://www2.census.gov/programs-surveys/popest/tables/2020-2025/housing/totals/CO-EST2025-HU.xlsx",
+      "vintage": "2025 (Vintage 2025 estimates, July 1 2020 to July 1 2025)"
+    }
+  },
+  "license": "U.S. Census Bureau, public domain (U.S. government work)",
+  "notes": "Housing-unit estimates are built partly from building permits, so they are not independent of BPS; used as stock denominators and as the reference for the Address Count Listing File ratio check.",
+  "source": "pep"
+}

@@ -1,0 +1,21 @@
+{
+  "files": {
+    "nzlud/nzlud_msa.csv": {
+      "bytes": 104482,
+      "fetched_at": "2026-11-03T15:45:28Z",
+      "sha256": "83ccbc3428faa3b81849ff0bed379f0ad3838bbc986216623381c60781c4b4fe",
+      "url": "https://raw.githubusercontent.com/mtmleczko/nzlud/main/nzlud_msa.csv",
+      "vintage": "2019-2022 survey, repository main branch"
+    },
+    "nzlud/nzlud_muni.csv": {
+      "bytes": 827091,
+      "fetched_at": "2026-11-03T15:45:28Z",
+      "sha256": "994b7b672a4da2fa5d5cfd85ef78f0f4fa2a144f18448aaaffdd64641292310f",
+      "url": "https://raw.githubusercontent.com/mtmleczko/nzlud/main/nzlud_muni.csv",
+      "vintage": "2019-2022 survey, repository main branch"
+    }
+  },
+  "license": "MIT (https://github.com/mtmleczko/nzlud/blob/main/LICENSE)",
+  "notes": "Zoning-code extraction, 2019; MSA file keyed by 2010 CBSA codes, municipal file by place GEOID (leading zeros restored). No multifamily-share column at MSA level.",
+  "source": "nzlud"
+}
