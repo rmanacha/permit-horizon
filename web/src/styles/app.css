@@ -187,3 +187,4 @@ main { max-width: var(--content-max); margin: var(--space-0) auto; padding: var(
   .brief { font-size: var(--font-size-xs); }
   .brief .data-table th, .brief .data-table td { padding: var(--space-0) var(--space-1); }
 }
+.data-table th .small, .data-table th .muted { font-weight: var(--font-weight-normal); }

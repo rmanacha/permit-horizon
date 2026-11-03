@@ -67,8 +67,9 @@ export interface TornadoRow {
 export function TornadoChart({ rows, unit, ariaLabel }: { rows: TornadoRow[]; unit: string; ariaLabel: string }) {
   const rowH = 40;
   const top = 10;
-  const labelW = 300;
-  const valueW = 150;
+  const labelW = 330;
+  const valueW = 130;
+  const MAX_LABEL = 38; // characters that fit the label column at the chart's type size
   const x0 = labelW;
   const x1 = W - valueW;
   const values = rows.flatMap((r) => [r.atLow, r.atHigh, r.base]);
@@ -87,7 +88,8 @@ export function TornadoChart({ rows, unit, ariaLabel }: { rows: TornadoRow[]; un
         return (
           <g key={r.key}>
             <text className="chart-label" x={labelW - 10} y={cy - 6} textAnchor="end" dominantBaseline="middle">
-              {r.label.length > 46 ? `${r.label.slice(0, 44)}…` : r.label}
+              {r.label.length > MAX_LABEL ? `${r.label.slice(0, MAX_LABEL - 1).trimEnd()}…` : r.label}
+              <title>{r.label}</title>
             </text>
             {r.note && (
               <text className="chart-sublabel" x={labelW - 10} y={cy + 9} textAnchor="end" dominantBaseline="middle">
