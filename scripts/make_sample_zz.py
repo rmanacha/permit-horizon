@@ -302,6 +302,9 @@ def hcd() -> None:
         ["ZETA CITY", "Alder", 2021, "", "001-001-001", "1 Main St", "", "B21-1", "ADU", "Renter", 1, "2021-03-01", 1, "", 0, ""],
         ["ZETA CITY", "Alder", 2022, "", "001-001-001", "1 Main St", "", "B21-1", "ADU", "Renter", 0, "2021-03-01", 1, "2022-06-01", 1, ""],
         ["ZETA CITY", "Alder", 2023, "", "001-001-001", "1 Main St", "", "B21-1", "ADU", "Renter", 0, "", 0, "2022-06-01", 1, ""],
+        # 1b. a second project in the same jurisdiction and year (a join on jurisdiction-year would double count)
+        ["ZETA CITY", "Alder", 2021, "", "005-005-005", "9 Pine St", "", "B21-5", "ADU", "Owner", 1, "2021-08-01", 1, "", 0, ""],
+        ["ZETA CITY", "Alder", 2022, "", "005-005-005", "9 Pine St", "", "B21-5", "ADU", "Owner", 0, "", 0, "2022-09-01", 1, ""],
         # 2. no APN, tracked by local id; permit repeated
         ["ZETA CITY", "Alder", 2022, "", "", "2 Side St", "", "T-9", "ADU", "Owner", 0, "2022-04-01", 1, "", 0, ""],
         ["ZETA CITY", "Alder", 2023, "", "", "2 Side St", "", "T-9", "ADU", "Owner", 0, "2022-04-01", 1, "", 0, ""],

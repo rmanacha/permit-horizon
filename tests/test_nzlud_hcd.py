@@ -22,12 +22,12 @@ def test_hcd_dedup_rule(sample_dir):
     table = fetch_hcd.build_hcd_table(sample_dir / "hcd" / "tablea2.csv")
     s, raw = table["statewide"], table["statewide_raw"]
     # Raw report-year sums double count the repeated permit and completion rows.
-    assert {y: v["permitted"] for y, v in raw.items() if v["permitted"]} == {"2021": 1, "2022": 2, "2023": 3, "2024": 2}
-    assert {y: v["completed"] for y, v in raw.items() if v["completed"]} == {"2022": 1, "2023": 1, "2025": 1}
+    assert {y: v["permitted"] for y, v in raw.items() if v["permitted"]} == {"2021": 2, "2022": 2, "2023": 3, "2024": 2}
+    assert {y: v["completed"] for y, v in raw.items() if v["completed"]} == {"2022": 2, "2023": 1, "2025": 1}
     # De-duplicated: each project counted once per stage, at its first active year.
-    assert {y: v["permitted"] for y, v in s.items() if v["permitted"]} == {"2021": 1, "2022": 1, "2023": 2, "2024": 2}
-    assert {y: v["completed"] for y, v in s.items() if v["completed"]} == {"2022": 1, "2025": 1}
-    assert {y: v["entitled"] for y, v in s.items() if v["entitled"]} == {"2021": 1}
+    assert {y: v["permitted"] for y, v in s.items() if v["permitted"]} == {"2021": 2, "2022": 1, "2023": 2, "2024": 2}
+    assert {y: v["completed"] for y, v in s.items() if v["completed"]} == {"2022": 2, "2025": 1}
+    assert {y: v["entitled"] for y, v in s.items() if v["entitled"]} == {"2021": 2}
     rows = {(r["jurisdiction"], r["year"]): r for r in table["rows"]}
     assert rows[("ALDER COUNTY", 2025)]["completed"] == 1 and rows[("ZETA CITY", 2023)]["permitted"] == 2
     assert all(r["jurisdiction"] != "SFD" for r in table["rows"])

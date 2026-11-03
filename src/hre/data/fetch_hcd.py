@@ -98,17 +98,19 @@ def dedupe_adu(df):
     # Step 3: sum within (key, year). Step 4: first year with activity per stage.
     per_year = keyed.groupby(["key", "JURIS_NAME", "CNTY_NAME", "YEAR"], as_index=False)[stages].sum()
     per_year = per_year.sort_values(["key", "YEAR"])
+    group = ["JURIS_NAME", "CNTY_NAME", "YEAR"]
     parts = []
     for stage in stages:
         active = per_year[per_year[stage] > 0]
         first = active.drop_duplicates(subset=["key"], keep="first")
-        parts.append(first[["JURIS_NAME", "CNTY_NAME", "YEAR", stage]])
-    out = parts[0]
-    for part in parts[1:]:
-        out = out.merge(part, how="outer", on=["JURIS_NAME", "CNTY_NAME", "YEAR"])
-    out = pd.concat([out, unkeyed[["JURIS_NAME", "CNTY_NAME", "YEAR", *stages]]], ignore_index=True)
-    out[stages] = out[stages].fillna(0).astype(int)
-    dedup = out.groupby(["JURIS_NAME", "CNTY_NAME", "YEAR"], as_index=False)[stages].sum()
+        parts.append(first.groupby(group, as_index=False)[stage].sum())
+    parts.append(unkeyed.groupby(group, as_index=False)[stages].sum())
+    # Concatenate the per-stage aggregates (never merge: a join on jurisdiction-year would
+    # multiply rows) and sum again; absent stage columns are zero.
+    out = pd.concat(parts, ignore_index=True)
+    for stage in stages:
+        out[stage] = out[stage].fillna(0).astype(int) if stage in out else 0
+    dedup = out.groupby(group, as_index=False)[stages].sum()
     return dedup, raw
 
 

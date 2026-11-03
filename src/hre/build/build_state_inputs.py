@@ -14,8 +14,18 @@ from pathlib import Path
 import numpy as np
 
 from hre.build.transit_proximity import nearest_stop_miles
-from hre.data import fetch_acs, fetch_aclf, fetch_bps, fetch_cbsa, fetch_cenpop, fetch_fhfa, fetch_gazetteer
-from hre.data import fetch_nzlud, fetch_pep, fetch_transit
+from hre.data import (
+    fetch_aclf,
+    fetch_acs,
+    fetch_bps,
+    fetch_cbsa,
+    fetch_cenpop,
+    fetch_fhfa,
+    fetch_gazetteer,
+    fetch_nzlud,
+    fetch_pep,
+    fetch_transit,
+)
 from hre.data.states import StateRef, lookup
 from hre.schema import BlockGroupInputs, CountyInputs, StateInputs, validate
 
