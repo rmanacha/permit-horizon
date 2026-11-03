@@ -29,17 +29,17 @@ from hre.schema import StateInputs
 
 LABEL = "If all five passed together (illustration)"
 RULES = (
-    "Detached homes within the transit distance of a rail or ferry stop count under transit-oriented "
-    "density, not missing middle.",
+    ("Detached homes within the transit distance of a rail or ferry stop count under transit-oriented "
+    "density, not missing middle."),
     "Lots redeveloped as missing middle (net units / 3.35 units per lot) cannot also get an ADU.",
-    "The parking saving and the fee cut are one cost cut on each apartment permit, applied once "
-    "(the response is proportional to the cut, so this equals the sum of the two).",
+    ("The parking saving and the fee cut are one cost cut on each apartment permit, applied once "
+    "(the response is proportional to the cut, so this equals the sum of the two)."),
     "Totals are added only in permits, after each scenario's conversion.",
 )
 LIMITS = (
-    "An illustration, not a forecast of a package: reforms interact in ways no study has measured "
+    ("An illustration, not a forecast of a package: reforms interact in ways no study has measured "
     "together. A teammate's earlier prototype does not combine them at all: \"the results cannot be "
-    "added across reforms.\"",
+    "added across reforms.\""),
     "Results are statewide; the model does not say which places will build.",
 )
 
