@@ -26,7 +26,7 @@ At mid: 10,000 × 0.75 × 25,000 × 1.2 ÷ (400,000 × 1.2546) = 448.
 
 Joint favorable: response 2.84, pass-through 1.66, price ratio 1.00: 10,000 × 2.84 × 25,000 × 1.66 ÷ 400,000 = 2,947. Joint unfavorable: response 0, so 0.
 
-Phase 3 runs the tornado and joint cases for each scenario's five-year increment and stores them in the results file (`tornado[]`, `joint{favorable, unfavorable}`).
+Every scenario runs the tornado and joint cases for each scenario's five-year increment and stores them in the results file (`tornado[]`, `joint{favorable, unfavorable}`).
 
 ## Which assumptions move in the low and high sets (Phase 3, decision 72)
 

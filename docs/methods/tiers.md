@@ -30,7 +30,7 @@ Nine counties are in tier 1 (median values $188,900 to $421,100) and Rockingham 
     tier 2:  89,774 × 0.001591 × 5 =   714
     NH benchmark, mid                = 1,707 ADUs completed over five years (low 420, high 4,167)
 
-This is the benchmark layer (what California's rates would produce on NH's detached homes). Phase 3 subtracts what NH's current law already allows (current strength 0.75, `src/hre/current_law/NH.yaml`) and applies the ramp. Adam's v2.0 gave 700 / 2,000 / 4,700 with his tier rates.
+This is the benchmark layer (what California's rates would produce on NH's detached homes). The ADU scenario (`adu.md`) keeps a quarter of it as newly affected (NH current strength 0.75, `src/hre/current_law/NH.yaml`), applies the ramp and converts to permits: 277 at mid. Adam's v2.0 gave 700 / 2,000 / 4,700 with his tier rates.
 
 ## Check: fit on half the cities, test on the other half
 

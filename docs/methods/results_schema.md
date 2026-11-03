@@ -1,6 +1,6 @@
 # Results schema (`results/{ST}.json`)
 
-Written by `hre run --state XX --scenarios baseline` (`src/hre/model/run.py`), checked by `validate_results` before it is written; the web front-end (Phase 4) reads only this file. `results_schema_version` is `"1"`. Floats are rounded to 4 decimals when written; the engine never rounds. Every number sits under an `outcome` label from the fixed set in `src/hre/schema.py`: `permits`, `net_permits`, `completed_homes`, `stock_change`, `cost_response_proxy`.
+Written by `hre run --state XX` (or `hre run --all`) (`src/hre/model/run.py`), checked by `validate_results` before it is written; the web front-end (Phase 4) reads only this file. `results_schema_version` is `"1"`. Floats are rounded to 4 decimals when written; the engine never rounds. Every number sits under an `outcome` label from the fixed set in `src/hre/schema.py`: `permits`, `net_permits`, `completed_homes`, `stock_change`, `cost_response_proxy`.
 
 ## Top level
 
@@ -9,7 +9,7 @@ Written by `hre run --state XX --scenarios baseline` (`src/hre/model/run.py`), c
 | `results_schema_version` | `"1"` |
 | `meta` | `state`, `state_fips`, `build_id` (git short sha + hash of input and register), `git_sha` (`-dirty` if tracked files were modified), `run_date`, `input` and `input_sha256` (the processed file), `schema_version` (input schema), `vintages` (every input vintage, including the BPS backtest files and the HCD file behind the ADU tiers) |
 | `baseline` | the baseline block below |
-| `scenarios` | `{name: scenario block}`; empty in Phase 2, filled by Phase 3 for `adu`, `missing_middle`, `tod`, `parking`, `fees` |
+| `scenarios` | `{name: scenario block}` for `adu`, `missing_middle`, `tod`, `parking`, `fees` (below); `cross_check` and `combined` sit beside it |
 | `registers_used` | path and sha256 of `parameters.yaml` (and how many entries), `elasticities.yaml`, and `current_law/{ST}.yaml` (`sha256: null` when the state has no file) |
 | `no_llm` | "No language model is used; all text comes from fixed templates in src/hre/model/drivers.py." |
 
