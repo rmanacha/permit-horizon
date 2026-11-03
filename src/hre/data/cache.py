@@ -1,0 +1,244 @@
+"""Download cache and provenance manifests.
+
+Every fetcher calls :func:`fetch` (one URL, one file) or :func:`record` (a file
+the fetcher assembled itself, for example paged API results). Both write one
+entry into ``data/manifests/<source>.json``:
+
+    {
+      "files": {
+        "bps/co2025a.txt": {"bytes": 375314, "fetched_at": "2026-11-03T15:00:00Z",
+                            "sha256": "...", "url": "https://...", "vintage": "2025"}
+      },
+      "license": "...", "notes": "...", "source": "bps"
+    }
+
+Manifests are tracked in git; the files they describe are not. A reviewer can
+re-run ``hre fetch`` and compare SHA-256 digests to prove they hold the same
+bytes we used. Keys are sorted so diffs are stable.
+
+Environment:
+- ``DATA_DIR``: where raw files are cached (default ``data/raw``). Only the raw
+  cache moves with this variable; manifests always go to ``data/manifests``
+  (override with ``HRE_MANIFEST_DIR`` for tests).
+- ``HRE_CONTACT_EMAIL``: optional; appended to the User-Agent so a host that
+  rate-limits us can reach a human. Read from ``.env`` if present.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+import time
+from datetime import UTC, datetime
+from pathlib import Path
+from typing import Any
+
+import requests
+
+from hre import __version__
+
+_RETRY_STATUSES = {429, 500, 502, 503, 504}
+_PART_SUFFIX = ".part"
+
+
+# -- environment -----------------------------------------------------------------
+
+
+def load_dotenv(path: str | os.PathLike[str] = ".env") -> None:
+    """Load KEY=VALUE lines from a .env file into os.environ without overriding."""
+    p = Path(path)
+    if not p.is_file():
+        return
+    for raw in p.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        key, value = key.strip(), value.strip().strip("'\"")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
+def raw_dir() -> Path:
+    """Raw cache root; read at call time so tests and the CLI can override it."""
+    return Path(os.environ.get("DATA_DIR", "data/raw"))
+
+
+def manifest_dir() -> Path:
+    return Path(os.environ.get("HRE_MANIFEST_DIR", "data/manifests"))
+
+
+def user_agent() -> str:
+    contact = os.environ.get("HRE_CONTACT_EMAIL", "").strip()
+    base = f"permit-horizon/{__version__} (+https://github.com/rmanacha/permit-horizon"
+    return f"{base}; {contact})" if contact else f"{base})"
+
+
+# -- hashing and manifests ---------------------------------------------------------
+
+
+def sha256_of(path: Path) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def _utc_now() -> str:
+    return datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def manifest_path(source: str, mdir: Path | None = None) -> Path:
+    return (mdir or manifest_dir()) / f"{source}.json"
+
+
+def read_manifest(source: str, mdir: Path | None = None) -> dict[str, Any]:
+    p = manifest_path(source, mdir)
+    if p.is_file():
+        return json.loads(p.read_text(encoding="utf-8"))
+    return {"source": source, "files": {}}
+
+
+def write_manifest(source: str, manifest: dict[str, Any], mdir: Path | None = None) -> Path:
+    p = manifest_path(source, mdir)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    manifest["source"] = source
+    manifest.setdefault("files", {})
+    text = json.dumps(manifest, sort_keys=True, indent=2) + "\n"
+    p.write_text(text, encoding="utf-8")
+    return p
+
+
+def record(
+    source: str,
+    rel_path: str,
+    path: Path,
+    *,
+    url: str,
+    license: str,
+    vintage: str,
+    notes: str | None = None,
+    fetched_at: str | None = None,
+    mdir: Path | None = None,
+) -> dict[str, Any]:
+    """Add or replace the manifest entry for ``path`` (keyed by ``rel_path``)."""
+    manifest = read_manifest(source, mdir)
+    entry = {
+        "bytes": path.stat().st_size,
+        "fetched_at": fetched_at or _utc_now(),
+        "sha256": sha256_of(path),
+        "url": url,
+        "vintage": vintage,
+    }
+    manifest["files"][rel_path] = entry
+    manifest["license"] = license
+    if notes is not None:
+        manifest["notes"] = notes
+    write_manifest(source, manifest, mdir)
+    return entry
+
+
+# -- download ------------------------------------------------------------------------
+
+
+def _rel(dest: Path) -> str:
+    """Manifest key: the path relative to the raw cache (falls back to the last two parts)."""
+    try:
+        return dest.resolve().relative_to(raw_dir().resolve()).as_posix()
+    except ValueError:
+        return "/".join(dest.parts[-2:])
+
+
+def fetch(
+    url: str,
+    dest: Path,
+    *,
+    source: str,
+    license: str,
+    vintage: str,
+    notes: str | None = None,
+    params: dict[str, Any] | None = None,
+    force: bool = False,
+    retries: int = 4,
+    timeout: tuple[float, float] = (15.0, 180.0),
+    mdir: Path | None = None,
+    session: requests.Session | None = None,
+) -> Path:
+    """Download ``url`` to ``dest`` (streaming, retried, hashed) and record it.
+
+    Idempotent: when ``dest`` exists and its SHA-256 matches the manifest entry
+    for the same URL, nothing is downloaded. Returns ``dest``.
+    """
+    dest = Path(dest)
+    rel = _rel(dest)
+    manifest = read_manifest(source, mdir)
+    prior = manifest["files"].get(rel)
+    if dest.is_file() and not force:
+        if prior and prior.get("url") == url and prior.get("sha256") == sha256_of(dest):
+            return dest
+        if prior is None:
+            # File present from an earlier run without a manifest: record, don't refetch.
+            record(source, rel, dest, url=url, license=license, vintage=vintage, notes=notes,
+                   mdir=mdir)
+            return dest
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    part = dest.with_name(dest.name + _PART_SUFFIX)
+    sess = session or requests.Session()
+    headers = {"User-Agent": user_agent()}
+    last_error: Exception | None = None
+    for attempt in range(retries + 1):
+        try:
+            with sess.get(url, params=params, headers=headers, stream=True, timeout=timeout) as r:
+                if r.status_code in _RETRY_STATUSES:
+                    raise requests.HTTPError(f"{r.status_code} for {url}", response=r)
+                r.raise_for_status()
+                with open(part, "wb") as f:
+                    for chunk in r.iter_content(chunk_size=1 << 20):
+                        if chunk:
+                            f.write(chunk)
+            part.replace(dest)
+            break
+        except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
+            last_error = e
+            resp = getattr(e, "response", None)
+            if resp is not None and resp.status_code not in _RETRY_STATUSES:
+                raise
+            if attempt == retries:
+                raise
+            time.sleep(min(2**attempt, 30))
+    else:  # pragma: no cover - loop always breaks or raises
+        raise RuntimeError(f"download failed: {last_error}")
+
+    record(source, rel, dest, url=url, license=license, vintage=vintage, notes=notes, mdir=mdir)
+    return dest
+
+
+def get_json(
+    url: str,
+    *,
+    params: dict[str, Any] | None = None,
+    retries: int = 4,
+    timeout: tuple[float, float] = (15.0, 180.0),
+    session: requests.Session | None = None,
+) -> Any:
+    """GET a JSON document with the same retry policy as :func:`fetch` (no caching)."""
+    sess = session or requests.Session()
+    headers = {"User-Agent": user_agent(), "Accept": "application/json"}
+    for attempt in range(retries + 1):
+        try:
+            r = sess.get(url, params=params, headers=headers, timeout=timeout)
+            if r.status_code in _RETRY_STATUSES:
+                raise requests.HTTPError(f"{r.status_code} for {url}", response=r)
+            r.raise_for_status()
+            return r.json()
+        except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
+            resp = getattr(e, "response", None)
+            if resp is not None and resp.status_code not in _RETRY_STATUSES:
+                raise
+            if attempt == retries:
+                raise
+            time.sleep(min(2**attempt, 30))
+    raise RuntimeError("unreachable")  # pragma: no cover
