@@ -15,6 +15,7 @@ export function fmtCount(n: number | null | undefined): string {
 export function fmtShare(x: number | null | undefined): string {
   if (x === null || x === undefined || Number.isNaN(x)) return 'n/a';
   const pct = x * 100;
+  if (pct !== 0 && Math.abs(pct) < 0.05) return pct > 0 ? 'under 0.1%' : 'about −0%';
   const digits = Math.abs(pct) < 10 ? 1 : 0;
   return `${pct.toFixed(digits)}%`;
 }
@@ -29,12 +30,8 @@ export const OUTCOME_LABELS: Record<Outcome, { short: string; plural: string; gl
   permits: { short: 'permits', plural: 'permits', glossary: 'outcome-permits' },
   net_permits: { short: 'net permits', plural: 'net permits', glossary: 'outcome-net-permits' },
   completed_homes: { short: 'completed homes', plural: 'completed homes', glossary: 'outcome-completed-homes' },
-  stock_change: { short: 'homes added (stock change)', plural: 'homes added (stock change)', glossary: 'outcome-stock-change' },
-  cost_response_proxy: {
-    short: 'permits (cost-response proxy)',
-    plural: 'permits (cost-response proxy)',
-    glossary: 'outcome-cost-response-proxy',
-  },
+  stock_change: { short: 'homes added to the stock', plural: 'homes added to the stock', glossary: 'outcome-stock-change' },
+  cost_response_proxy: { short: 'cost-response permits', plural: 'cost-response permits', glossary: 'outcome-cost-response-proxy' },
 };
 
 export function outcomeLabel(o: Outcome | string): string {
