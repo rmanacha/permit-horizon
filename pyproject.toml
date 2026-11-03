@@ -36,6 +36,7 @@ packages = ["src/hre"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = ["slow: runs every jurisdiction with a processed file (skipped when none are present)"]
 
 [tool.ruff]
 line-length = 100
