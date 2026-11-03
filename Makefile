@@ -24,7 +24,7 @@ lint:    ## Static checks (style and common bugs)
 demo:    ## Build the synthetic demo state ZZ from committed fixtures, no network
 	uv run hre build --state ZZ --data-dir data/sample
 	uv run hre validate --processed data/processed/ZZ.json
-	uv run hre run --state ZZ --data-dir data/sample --scenarios baseline --out results/ZZ.json
+	uv run hre run --state ZZ --data-dir data/sample --out results/ZZ.json
 
 data:    ## Fetch and build one state: make data STATE=NH
 	uv run hre fetch --state $(STATE)
@@ -38,8 +38,8 @@ hcd:     ## Fetch California HCD Table A2 (295 MB) and build the de-duplicated A
 	uv run hre fetch --hcd
 	uv run hre build --hcd
 
-results: ## Run the engine for one state: make results STATE=NH (baseline in Phase 2)
-	uv run hre run --state $(STATE) --scenarios baseline
+results: ## Run the engine for one state (baseline and five scenarios): make results STATE=NH
+	uv run hre run --state $(STATE)
 
 backtest: ## Baseline backtest, both band rules -> docs/evidence/baseline_backtest.md
 	uv run hre validate --baseline --fetch

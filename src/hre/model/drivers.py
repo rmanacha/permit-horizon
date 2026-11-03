@@ -108,3 +108,32 @@ def cross_check_narrative(xc: dict[str, Any], state_name: str) -> list[str]:
          f"({s['change_share']:+.1%})."),
         xc["caveat"],
     ]
+
+
+OUTCOME_WORDS = {"permits": "permits", "net_permits": "permits net of demolitions",
+                 "completed_homes": "completed homes", "stock_change": "homes added to the housing stock",
+                 "cost_response_proxy": "additional permits (a cost-response proxy)"}
+
+
+def scenario_narrative(res: dict[str, Any], state_name: str) -> list[str]:
+    """Four template sentences: benchmark, increment, the assumption that moves it most, one limit."""
+    b, inc = res["benchmark"], res["increment"]
+    e = inc["estimate"]
+    share = inc["newly_affected_share"]
+    out = [
+        (f"{res['label']}: the source policy's activity, transferred to {state_name}, comes to about "
+         f"{round_display(b['mid'])} {OUTCOME_WORDS[b['outcome']]} over five years "
+         f"({round_display(b['low'])} to {round_display(b['high'])} across the low and high assumption sets)."),
+        (f"Over current law the register default counts {share:.0%} of it as newly affected"
+         + ("" if share == 1 else f" (current strength {1 - share:.2f})")
+         + f", which gives about {round_display(e['mid'])} more permits "
+         f"({round_display(e['low'])} to {round_display(e['high'])}), labeled as an assumption set, not a "
+         "probability."),
+    ]
+    if res["tornado"]:
+        t = res["tornado"][0]
+        out.append(f"The assumption that moves this most is {t['label'][0].lower() + t['label'][1:]}: from {t['low_text']} to "
+                   f"{t['high_text']} the increment runs {round_display(t['at_low'])} to "
+                   f"{round_display(t['at_high'])} permits.")
+    out.append(res["limits"][0])
+    return out

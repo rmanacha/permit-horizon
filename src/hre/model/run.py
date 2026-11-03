@@ -11,13 +11,16 @@ digests) and writes the file. Layout and field meanings: docs/methods/results_sc
                       joint{favorable,unfavorable}, narrative[]}},
      registers_used{...}, no_llm}
 
-Phase 2 fills the baseline; ``scenarios`` is empty until Phase 3 adds the formulas.
+Phase 2 filled the baseline; Phase 3 fills ``scenarios`` (one module per scenario under
+``hre.model.scenarios``) and the combined package.
 """
 
 from __future__ import annotations
 
 import math
 from typing import Any
+
+import numpy as np
 
 from hre.model.baseline import baseline
 from hre.model.crosscheck import pep_cross_check
@@ -26,8 +29,12 @@ from hre.model.drivers import (
     alternative_band_narrative,
     baseline_narrative,
     cross_check_narrative,
+    scenario_narrative,
 )
 from hre.model.params import Params
+from hre.model.response import county_supply_elasticity
+from hre.model.scenarios import SPECS
+from hre.model.scenarios.common import run_scenario
 from hre.schema import OUTCOMES, StateInputs
 
 RESULTS_SCHEMA_VERSION = "1"
@@ -35,18 +42,49 @@ KNOWN_SCENARIOS = ("baseline", "adu", "missing_middle", "tod", "parking", "fees"
 SCENARIO_KEYS = ("benchmark", "increment", "total", "cases", "tornado", "joint", "narrative")
 
 
+DEFAULT_LAW = {"current_strength": 0.0, "newly_affected_share": 1.0, "source": "default",
+               "note": "No statewide law found; local permissions unverified.", "human_review": None, "file": None}
+
+
+def scenario_context(state: StateInputs, params: Params, b: dict[str, Any],
+                     elasticities: tuple[dict[str, float], dict[str, float]] | None = None) -> dict[str, Any]:
+    """What every scenario reads besides the inputs: baseline arrays, elasticities, stock."""
+    from hre.schema import PERMIT_KEYS
+
+    ctx: dict[str, Any] = {
+        "forecast_years": b["forecast_years"],
+        "baseline_state": {k: b["state"][k] for k in ("low", "mid", "high")},
+        "baseline_by_type": np.array([[c["by_type"][k] for k in PERMIT_KEYS] for c in b["county"]], dtype=float),
+        "stock": {c.fips: c.housing_units_pep[max(k for k in c.housing_units_pep if k.isdigit())]
+                  for c in state.counties if any(k.isdigit() for k in c.housing_units_pep)},
+        "eps_s": None,
+    }
+    if elasticities is not None:
+        ctx["eps_s"], ctx["eps_origin"] = county_supply_elasticity(state, params, *elasticities)
+    return ctx
+
+
 def run_state(state: StateInputs, params: Params, scenarios: list[str], meta: dict[str, Any],
-              registers_used: dict[str, Any], state_name: str | None = None) -> dict[str, Any]:
+              registers_used: dict[str, Any], state_name: str | None = None,
+              law: dict[str, dict[str, Any]] | None = None,
+              elasticities: tuple[dict[str, float], dict[str, float]] | None = None,
+              combined: bool = True) -> dict[str, Any]:
+    """``law`` maps scenario -> current_law.loader.current_strength(...) (missing -> strength 0);
+    ``elasticities`` is (saiz_by_cbsa, saiz_by_county) for the composite geography check."""
     unknown = [s for s in scenarios if s not in KNOWN_SCENARIOS]
     if unknown:
         raise ValueError(f"unknown scenarios {unknown}; known: {KNOWN_SCENARIOS}")
-    not_yet = [s for s in scenarios if s != "baseline"]
-    if not_yet:
-        raise NotImplementedError(f"scenario formulas arrive in Phase 3: {not_yet}")
     b = baseline(state, params)
     b["narrative"] = baseline_narrative(b, state_name or state.state)
     b["alternative_band"]["narrative"] = alternative_band_narrative(b["alternative_band"],
                                                                     state_name or state.state)
+    ctx = scenario_context(state, params, b, elasticities)
+    name = state_name or state.state
+    out_sc: dict[str, Any] = {}
+    for sc in (s for s in KNOWN_SCENARIOS if s in scenarios and s != "baseline"):
+        res = run_scenario(SPECS[sc], state, params, ctx, (law or {}).get(sc, DEFAULT_LAW))
+        res["narrative"] = scenario_narrative(res, name)
+        out_sc[sc] = res
     xc = pep_cross_check(state)
     xc["narrative"] = cross_check_narrative(xc, state_name or state.state)
     return {
@@ -54,7 +92,7 @@ def run_state(state: StateInputs, params: Params, scenarios: list[str], meta: di
         "meta": {"state": state.state, "state_fips": state.state_fips, **meta},
         "baseline": b,
         "cross_check": {"housing_units_pep": xc},
-        "scenarios": {},
+        "scenarios": out_sc,
         "registers_used": registers_used,
         "no_llm": NO_LLM_STATEMENT,
     }

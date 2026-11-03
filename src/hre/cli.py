@@ -323,24 +323,62 @@ def _git_sha() -> str:
 
 @app.command()
 def run(
-    state: Annotated[str, typer.Option("--state", help="USPS code (ZZ is the synthetic demo state)")],
-    scenarios: Annotated[str, typer.Option("--scenarios", help="comma-separated; Phase 2: baseline")] = "baseline",
-    out: Annotated[Path | None, typer.Option("--out", help="results file (default results/{ST}.json)")] = None,
+    state: Annotated[str | None, typer.Option("--state", help="USPS code (ZZ is the synthetic demo state)")] = None,
+    all_states: Annotated[bool, typer.Option("--all", help="every state and DC with a processed file")] = False,
+    scenarios: Annotated[str, typer.Option("--scenarios", help="comma-separated, or 'all' (baseline + five)")] = "all",
+    out: Annotated[Path | None, typer.Option("--out", help="results file (default results/{ST}.json; one state only)")] = None,
+    out_dir: Annotated[Path, typer.Option("--out-dir", help="folder for results/{ST}.json")] = Path("results"),
     processed_dir: Annotated[Path, typer.Option("--processed-dir", help="folder with {ST}.json")] = Path("data/processed"),
     data_dir: Annotated[Path | None, typer.Option("--data-dir", help="build the inputs in memory from this raw folder (e.g. data/sample) instead of reading the processed file")] = None,
+    quiet: Annotated[bool, typer.Option("--quiet", help="one line per state")] = False,
 ) -> None:
-    """Run the engine for one state and write the results JSON (docs/methods/results_schema.md)."""
+    """Run the engine for one state (or all) and write the results JSON (docs/methods/results_schema.md)."""
+    from hre.model.run import KNOWN_SCENARIOS
+
+    wanted = list(KNOWN_SCENARIOS) if scenarios.strip() == "all" else [s.strip() for s in scenarios.split(",") if s.strip()]
+    if all_states:
+        codes = [c for c in ALL_STATES if (processed_dir / f"{c}.json").exists()]
+        missing = [c for c in ALL_STATES if c not in codes]
+        if missing:
+            typer.echo(f"no processed file for {len(missing)} jurisdictions: {', '.join(missing)} "
+                       "(run 'hre fetch --all' and 'hre build --all')", err=True)
+        failed = []
+        t0 = time.time()
+        for code in codes:
+            try:
+                _run_one(code, wanted, out_dir / f"{code}.json", processed_dir, None, quiet=True)
+            except typer.Exit:
+                failed.append(code)
+        typer.echo(f"ran {len(codes) - len(failed)} of {len(codes)} jurisdictions in {time.time() - t0:.1f}s "
+                   f"-> {out_dir}/")
+        if failed or missing:
+            raise typer.Exit(code=1)
+        return
+    if not state:
+        raise typer.BadParameter("pass --state XX or --all")
+    code = state.strip().upper()
+    _run_one(code, wanted, out or out_dir / f"{code}.json", processed_dir, data_dir, quiet=quiet)
+
+
+def _run_one(code: str, wanted: list[str], dest: Path, processed_dir: Path, data_dir: Path | None,
+             quiet: bool = False) -> None:
     import datetime as dt
     import hashlib
 
-    from hre.assumptions.loader import ELASTICITIES_PATH, PARAMETERS_PATH, load_params
-    from hre.current_law.loader import register_digest
+    from hre.assumptions.loader import (
+        ELASTICITIES_PATH,
+        PARAMETERS_PATH,
+        load_elasticities,
+        load_params,
+    )
+    from hre.current_law.loader import current_strength, register_digest
+    from hre.current_law.schema import SCENARIOS as LAW_SCENARIOS
     from hre.data.fetch_bps import VINTAGE as BPS_VINTAGE
     from hre.data.fetch_hcd import VINTAGE as HCD_VINTAGE
+    from hre.data.fetch_nrc import VINTAGE as NRC_VINTAGE
     from hre.model.run import run_state, validate_results
     from hre.schema import StateInputs
 
-    code = state.strip().upper()
     st = lookup(code)
     if data_dir is not None:
         from hre.build.build_state_inputs import build_state
@@ -364,7 +402,8 @@ def run(
     meta = {
         "build_id": f"{git_sha[:7]}-{hashlib.sha256((input_sha + param_sha).encode()).hexdigest()[:8]}",
         "vintages": {**inputs.vintages, "bps_state_backtest": f"state annual files 1980-2025, {BPS_VINTAGE}",
-                     "hcd_adu_tiers": f"HCD APR Table A2, {HCD_VINTAGE} (tier rates in the register)"},
+                     "hcd_adu_tiers": f"HCD APR Table A2, {HCD_VINTAGE} (tier rates in the register)",
+                     "nrc": f"Census New Residential Construction, {NRC_VINTAGE} (completions per permit in the register)"},
         "git_sha": git_sha,
         "run_date": dt.date.today().isoformat(),
         "input": input_ref,
@@ -377,28 +416,33 @@ def run(
         "elasticities": {"path": "src/hre/assumptions/elasticities.yaml", "sha256": digest(ELASTICITIES_PATH)},
         "current_law": {"path": f"src/hre/current_law/{code}.yaml", "sha256": register_digest(code)},
     }
-    wanted = [s.strip() for s in scenarios.split(",") if s.strip()]
-    try:
-        results = run_state(inputs, params, wanted, meta, registers, state_name=st.name)
-    except NotImplementedError as e:
-        typer.echo(str(e), err=True)
-        raise typer.Exit(code=2) from e
+    law = {s: current_strength(code, s) for s in LAW_SCENARIOS}
+    results = run_state(inputs, params, wanted, meta, registers, state_name=st.name, law=law,
+                        elasticities=load_elasticities())
     problems = validate_results(results)
     if problems:
-        typer.echo("results failed the schema check:\n  " + "\n  ".join(problems), err=True)
+        typer.echo(f"{code}: results failed the schema check:\n  " + "\n  ".join(problems), err=True)
         raise typer.Exit(code=1)
-    dest = out or Path("results") / f"{code}.json"
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(json.dumps(_round_floats(results), indent=1, allow_nan=False) + "\n", encoding="utf-8")
     b = results["baseline"]["state"]
     typer.echo(f"{code}: baseline {b['low']:,.0f} / {b['mid']:,.0f} / {b['high']:,.0f} permits "
                f"{results['baseline']['forecast_years'][0]}-{results['baseline']['forecast_years'][-1]} "
                f"(low / mid / high); build {meta['build_id']} -> {dest}")
+    if quiet:
+        return
     for line in results["baseline"]["narrative"]:
         typer.echo("   " + line)
     typer.echo("   Shown beside it (20-year swing band, alternative_band):")
     for line in results["baseline"]["alternative_band"]["narrative"]:
         typer.echo("     " + line)
+    for name, s in results["scenarios"].items():
+        e = s["increment"]["estimate"]
+        typer.echo(f"   {name}: increment {e['low']:,.0f} / {e['mid']:,.0f} / {e['high']:,.0f} permits "
+                   f"(benchmark {s['benchmark']['mid']:,.0f} {s['benchmark']['outcome']})")
+    if "combined" in results:
+        e = results["combined"]["increment"]["estimate"]
+        typer.echo(f"   combined (illustration): {e['low']:,.0f} / {e['mid']:,.0f} / {e['high']:,.0f} permits")
 
 
 @app.command()

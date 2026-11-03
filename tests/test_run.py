@@ -35,8 +35,8 @@ def test_validator_catches_problems(zz_state, params):
 def test_unknown_and_future_scenarios(zz_state, params):
     with pytest.raises(ValueError):
         run_state(zz_state, params, ["housing_vouchers"], META, {})
-    with pytest.raises(NotImplementedError):
-        run_state(zz_state, params, ["baseline", "adu"], META, {})
+    r = run_state(zz_state, params, ["baseline", "adu"], META, {})      # Phase 3: scenarios run
+    assert list(r["scenarios"]) == ["adu"]
 
 
 def test_narrative_templates(zz_state, params):
@@ -64,9 +64,12 @@ def test_cli_run_zz_offline(sample_dir, tmp_path):
     r = json.loads(out.read_text())
     assert validate_results(r) == [] and r["meta"]["build_id"]
     assert r["registers_used"]["parameters"]["entries"] >= 30
+    res = CliRunner().invoke(app, ["run", "--state", "ZZ", "--data-dir", str(sample_dir), "--out", str(out)])
+    assert res.exit_code == 0, res.output                     # default: baseline and all five scenarios
+    assert set(json.loads(out.read_text())["scenarios"]) == {"adu", "missing_middle", "tod", "parking", "fees"}
     res = CliRunner().invoke(app, ["run", "--state", "ZZ", "--data-dir", str(sample_dir),
-                                   "--scenarios", "baseline,fees", "--out", str(out)])
-    assert res.exit_code == 2
+                                   "--scenarios", "baseline,vouchers", "--out", str(out)])
+    assert res.exit_code != 0
 
 
 def test_band_history_is_in_every_results_file(zz_state, params):

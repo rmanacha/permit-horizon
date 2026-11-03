@@ -21,23 +21,27 @@ from typing import Any, Callable  # noqa: UP035 (decision 42: the engine imports
 from hre.model.params import Params
 
 
-def swingable(params: Params, ids: list[str] | None = None) -> list[str]:
-    """Register ids whose low and high differ and whose direction is not 0."""
+def swingable(params: Params, ids: list[str] | None = None, always: tuple[str, ...] = ()) -> list[str]:
+    """Register ids whose low and high differ and whose direction is not 0.
+
+    ``always`` names direction-0 ids that are still swung (the price exponent gamma, whose
+    effect changes sign with the county's home value, so no fixed direction fits it).
+    """
     chosen = ids if ids is not None else list(params.entries)
     out = []
     for pid in chosen:
         e = params.entry(pid)
-        if e.get("direction", 0) != 0 and e["low"] != e["high"]:
+        if (e.get("direction", 0) != 0 or pid in always) and e["low"] != e["high"]:
             out.append(pid)
     return out
 
 
 def tornado(params: Params, run_fn: Callable[[Params], float], ids: list[str] | None = None,
-            tol: float = 1e-9) -> list[dict[str, Any]]:
+            tol: float = 1e-9, always: tuple[str, ...] = ()) -> list[dict[str, Any]]:
     base_params = params.all_at("mid")
     base = float(run_fn(base_params))
     bars = []
-    for pid in swingable(params, ids):
+    for pid in swingable(params, ids, always):
         lo = float(run_fn(base_params.at({pid: "low"})))
         hi = float(run_fn(base_params.at({pid: "high"})))
         if abs(hi - lo) <= tol and abs(lo - base) <= tol:
@@ -59,10 +63,12 @@ def tornado(params: Params, run_fn: Callable[[Params], float], ids: list[str] | 
 
 
 def joint_case(params: Params, run_fn: Callable[[Params], float], direction: str = "favorable",
-               ids: list[str] | None = None) -> dict[str, Any]:
+               ids: list[str] | None = None, always: tuple[str, ...] = (),
+               bars: list[dict[str, Any]] | None = None) -> dict[str, Any]:
+    """``bars`` lets a caller reuse a tornado it already computed."""
     if direction not in ("favorable", "unfavorable"):
         raise ValueError("direction must be 'favorable' or 'unfavorable'")
-    bars = tornado(params, run_fn, ids)
+    bars = bars if bars is not None else tornado(params, run_fn, ids, always=always)
     levels = {}
     for b in bars:
         fav = b["favorable_end"]

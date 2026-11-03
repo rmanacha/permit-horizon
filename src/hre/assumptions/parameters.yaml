@@ -1007,3 +1007,685 @@ parameters:
     transferability: California's mature ADU law and high prices; other states start slower (ramp) and the Seattle and Maine overlays bracket it.
     levels: {low: "0.132%", mid: "0.271%", high: "0.379%"}
   # ---- end ADU value tiers
+
+  # ---------------------------------------------------------------- Phase 3: scenario entries
+
+  - id: adu_permits_per_completion
+    label: ADU permits per completed ADU (converts the ADU benchmark to permits)
+    description: >-
+      California ADU permits divided by ADU completions with completions lagged behind permits.
+      Converts completed ADUs (the tier rates' unit) into the headline unit, permits.
+    unit: permits per completed ADU
+    low: 1.00
+    mid: 1.18
+    high: 1.40
+    scope: global
+    scenarios: [adu]
+    grade: B
+    confidence: low
+    direction: 1
+    sources:
+      - title: California HCD APR Table A2, ADU rows, de-duplicated (data/processed/CA_hcd_adu.json, decision 50)
+        url: https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year
+        locator: "statewide de-duplicated permitted and completed ADUs by report year 2018-2025"
+        accessed: "2026-11-03"
+      - title: Terner Center, Reaching California's ADU Potential (2020)
+        url: https://ternercenter.berkeley.edu/wp-content/uploads/pdfs/Reaching_Californias_ADU_Potential_2020.pdf
+        locator: "completions lag permits 1 to 2 years (5,911 and 15,571 permits in 2018 and 2019; 1,984 and 6,668 completions)"
+        accessed: "2026-11-02"
+    citation: >-
+      De-duplicated statewide ADU permits / completions with completions lagged: two years, permits
+      2018-2023 / completions 2020-2025 = 108,839 / 92,442 = 1.1774 (mid); one year, permits
+      2018-2024 / completions 2019-2025 = 138,486 / 98,799 = 1.4017 (high); low 1.00 assumes every
+      permit is completed (a three-year lag gives 81,090 / 84,221 = 0.96, below one because earlier
+      permits finish inside the window). Same-year 2023-2025 is 88,624 / 60,075 = 1.48, inflated by
+      the program's growth. Terner reports a 1 to 2 year lag.
+    rationale: The tier rates count completed ADUs; the headline counts permits, and some permits are never built.
+    transferability: California 2018-2025, a program still growing; the lag choice moves the value more than anything else.
+    levels: {low: "1.00 (all permits built)", mid: "1.18 (2-year lag)", high: "1.40 (1-year lag)"}
+
+  - id: adu_overlay_seattle
+    label: Seattle ADU plateau (high overlay, central metropolitan counties)
+    description: >-
+      Seattle's ADU permits per single-family home per year once the 2019 reform plateaued. In the
+      high assumption set a central metropolitan county takes the larger of its tier's high rate and
+      this rate, converted to completions with the mid HCD permits per completion.
+    unit: ADU permits per single-family home per year
+    low: 0.0058
+    mid: 0.0058
+    high: 0.0058
+    scope: global
+    scenarios: [adu]
+    grade: A
+    confidence: moderate
+    direction: 0
+    sources:
+      - title: Seattle OPCD, ADU Annual Report 2024
+        url: https://www.seattle.gov/documents/Departments/OPCD/OngoingInitiatives/EncouragingBackyardCottages/OPCD-ADUAnnualReport2024.pdf
+        locator: "permits 988 (2022) and 987 (2023); ACS 2023 1-unit homes 169,497 (evidence_base.md section 1)"
+        accessed: "2026-11-02"
+    citation: >-
+      988 / 169,497 = 0.00583 and 987 / 169,497 = 0.00582 permits per single-family home in 2022
+      and 2023, years 3 and 4 after the reform: 5.8 per 1,000. As completions: 0.0058 / 1.18 =
+      0.0049 per home per year. Adam's frozen Seattle holdout under-predicted Seattle by 59%,
+      which is why this sets the high in places like Seattle (decision 33).
+    rationale: A dense central city with pre-approved plans and an active program; the upper end of measured uptake.
+    transferability: Applied only to central counties of metropolitan areas (decision 71); rural counties keep their tier high.
+    levels: {low: "5.8 per 1,000", mid: "5.8 per 1,000", high: "5.8 per 1,000"}
+
+  - id: adu_overlay_maine
+    label: Maine first-year ADU rate (low overlay)
+    description: >-
+      Maine's ADUs as a share of single-family homes in the first full year of its statewide law.
+      In the low assumption set each county takes the smaller of its tier's low rate and this rate
+      (converted to completions).
+    unit: ADU permits per single-family home per year
+    low: 0.00095
+    mid: 0.00095
+    high: 0.00095
+    scope: global
+    scenarios: [adu]
+    grade: B
+    confidence: low
+    direction: 0
+    sources:
+      - title: Maine State Housing Authority, housing data blog on 2025 permits
+        url: https://www.mainestatehousingdata.org/permits/blog
+        locator: "ADUs 7% of 2025 permits (evidence_base.md section 1)"
+        accessed: "2026-11-02"
+    citation: >-
+      ADUs were 7% of Maine's 2025 permits, about 525 ADUs; 525 / 550,321 single-family homes =
+      0.00095 per home per year (evidence_base.md section 1, computed). As completions: 0.00095 /
+      1.18 = 0.00081.
+    rationale: A statewide law in a low-price, rural state in its first year; the low end of measured uptake.
+    transferability: Statewide; rural and small-town housing like much of New England.
+    levels: {low: "0.95 per 1,000", mid: "0.95 per 1,000", high: "0.95 per 1,000"}
+
+  - id: mm_rate_per_lot
+    label: Missing-middle units permitted per single-family lot each year
+    description: >-
+      Net permitted units per single-family lot per year after a middle-housing reform. The high end
+      is a gross-permit ceiling and is multiplied by mm_net_new_factor.
+    unit: permitted units net of known demolitions per single-family lot per year (high is gross)
+    low: 0.0
+    mid: 0.001705
+    high: 0.004
+    gross_at: [high]
+    scope: global
+    scenarios: [missing_middle]
+    grade: B
+    confidence: low
+    direction: 1
+    sources:
+      - title: City of Portland, Residential Infill Project Year-One Report (June 2023)
+        url: https://www.portland.gov/bps/planning/rip/news/2023/7/5/new-study-shows-promising-housing-production-results-residential
+        locator: "PDF p. 28: 81 lots, 46 houses demolished, 271 units permitted, August 2021 to July 2022"
+        accessed: "2026-10-15"
+      - title: City of Portland, Middle Housing in the Single-Dwelling Zones Progress Report 2018-2024 (January 2025)
+        url: https://www.sightline.org/wp-content/uploads/2025/02/Monitoring-reports-Middle-Housing-in-the-Single-Dwelling-Zones-Progress-Report-2018-2024-January-2025.pdf
+        locator: "p. 25: 26K + 74K + 32K lots in R2.5 to R7; just over 4 gross permitted units per 1,000 lots a year in R2.5"
+        accessed: "2026-10-15"
+    citation: >-
+      Middle: City of Portland, Residential Infill Project Year-One Report (June 2023), PDF p. 28:
+      81 lots, 46 houses demolished, 271 units permitted, August 2021 to July 2022; denominator
+      132,000 lots from Middle Housing in the Single-Dwelling Zones Progress Report 2018-2024
+      (January 2025), p. 25; (271 - 46) / 132,000 = 0.001705 rounded. Low zero is an explicit
+      no-activity stress case, not an estimated lower confidence limit. High: the Progress Report,
+      p. 25, records just over 4 gross permitted units per 1,000 lots annually in R2.5; this is
+      retained only as a ceiling for net permitted activity.
+    rationale: Preserve the permit stage and distinguish known demolition subtraction from a gross-permit ceiling.
+    transferability: One city with a strong program and a hot market in its first year; the market adjustment scales it.
+    levels: {low: "0 (stress case)", mid: "0.17 per 100 lots (Portland net)", high: "0.40 per 100 lots (Portland R2.5 gross)"}
+    ported_from: adam-v2.0
+
+  - id: mm_sf_only_share
+    label: Share of single-family lots zoned for single-family homes only
+    description: >-
+      The reform only adds rights where single-family-only zoning applies today; the rest of the
+      detached homes already sit in districts that allow more.
+    unit: share of detached homes in central metropolitan counties
+    low: 0.7
+    mid: 0.8
+    high: 0.9
+    scope: global
+    scenarios: [missing_middle]
+    grade: C
+    confidence: low
+    direction: 1
+    sources:
+      - title: Mleczko and Desmond, National Zoning and Land Use Database (NZLUD), nzlud_muni.csv and data dictionary
+        url: https://github.com/mtmleczko/nzlud
+        locator: "column mf_per: 'Proportion of residential districts (including mixed use) in municipality that permit multi-family housing by right'"
+        accessed: "2026-11-03"
+    citation: >-
+      Check, not derivation: across 2,607 NZLUD municipalities with mf_per, the median municipality
+      permits multifamily by right in 37.5% of its residential districts (quartiles 23.1% and 50.0%),
+      so 50 to 77% of districts are single-family only. Districts are not lots, and single-family
+      districts hold most residential lots, so the lot share is set higher: 0.7 / 0.8 / 0.9
+      (judgment, master plan seed).
+    rationale: Lots already zoned for more homes are not newly affected by a middle-housing law.
+    transferability: National municipal survey 2019-2022; state averages vary.
+    levels: {low: "70%", mid: "80%", high: "90%"}
+
+  - id: mm_net_new_factor
+    label: Net new homes per gross permitted unit (applied to the gross high rate)
+    description: Converts the gross-permit ceiling to net units, leaving out homes demolished or replaced.
+    unit: net units per gross permitted unit
+    low: 0.69
+    mid: 0.76
+    high: 0.83
+    scope: global
+    scenarios: [missing_middle]
+    grade: B
+    confidence: low
+    direction: 1
+    sources:
+      - title: Arlington County, Expanded Housing Option Annual Data Report (March 2026)
+        url: https://www.arlingtonva.us/files/sharedassets/public/v/1/housing/documents/missing-middle/eho-annual-data-report-march-2026.pdf
+        locator: "47 properties, 190 units, 132 net new"
+        accessed: "2026-11-02"
+      - title: City of Portland, Residential Infill Project Year-One Report (June 2023)
+        url: https://www.portland.gov/bps/planning/rip/news/2023/7/5/new-study-shows-promising-housing-production-results-residential
+        locator: "PDF p. 28: 271 units permitted, 46 houses demolished"
+        accessed: "2026-10-15"
+    citation: >-
+      Low: Arlington 132 net new / 190 units = 0.6947. High: Portland (271 - 46) / 271 = 0.8303.
+      Mid: the midpoint, 0.76. Replaces the master plan seed 0.6 / 0.67 / 0.75, which had no
+      recorded arithmetic.
+    rationale: Middle housing often replaces an existing house; the gross count overstates the addition.
+    transferability: Two programs; Arlington's lots were costlier.
+    levels: {low: "0.69 (Arlington)", mid: "0.76", high: "0.83 (Portland)"}
+
+  - id: mm_code_penalty
+    label: Building-code penalty for three or more units
+    description: >-
+      Share of the source rate kept where three or more units trigger the commercial building code
+      (sprinklers, accessibility, separate review), which slows small projects.
+    unit: multiplier on the missing-middle rate
+    low: 0.8
+    mid: 0.9
+    high: 1.0
+    scope: global
+    scenarios: [missing_middle]
+    grade: C
+    confidence: low
+    direction: 1
+    sources:
+      - title: Terner Center, Missing Middle Development Math (June 2024) and construction-cost figures (2023 dollars)
+        url: https://ternercenter.berkeley.edu/wp-content/uploads/2024/06/Missing-Middle-Development-Math-Final-June-2024.pdf
+        locator: "about a 10% commercial-code cost premium for 3+ units (evidence_base.md section 8)"
+        accessed: "2026-11-02"
+      - title: Arlington County, Expanded Housing Option Annual Data Report (March 2026)
+        url: https://www.arlingtonva.us/files/sharedassets/public/v/1/housing/documents/missing-middle/eho-annual-data-report-march-2026.pdf
+        locator: "commercial code at 4+ units and the subdivision step slowed projects; 8 building permits from 47 approvals"
+        accessed: "2026-11-02"
+    citation: >-
+      Judgment anchored on Terner's ~10% cost premium for 3+ units: mid 0.9 keeps 90% of the source
+      rate; low 0.8 doubles the penalty; high 1.0 assumes the source city's code already applied (Portland's
+      rate was measured under the same code).
+    rationale: The source rate came from a place under a similar code, so the penalty is small and its high end is none.
+    transferability: Varies with each state's residential code for triplexes and fourplexes.
+    levels: {low: "0.8", mid: "0.9", high: "1.0 (no penalty)"}
+
+  - id: mm_source_city_value
+    label: Median home value in the missing-middle source city (Portland, OR)
+    description: Denominator of the market adjustment for missing middle (decision 34).
+    unit: dollars (ACS median value of owner-occupied homes)
+    low: 581500
+    mid: 581500
+    high: 581500
+    scope: global
+    scenarios: [missing_middle]
+    grade: A
+    confidence: high
+    direction: 0
+    sources:
+      - title: ACS 5-year 2020-2024, table B25077, Portland city, Oregon (place 4159000)
+        url: https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b25077.dat
+        locator: "row 1600000US4159000, B25077_E001 = 581,500 (margin 5,945)"
+        accessed: "2026-11-03"
+    citation: >-
+      ACS 2020-2024 B25077, Portland city, OR: median value $581,500 (+/- 5,945). A county's market
+      adjustment is clip((county median / 581,500) ^ gamma, bounds).
+    rationale: The rate was measured in Portland; places where homes are worth less get less of it.
+    transferability: Not applicable (a measured value).
+    levels: {low: "$581,500", mid: "$581,500", high: "$581,500"}
+
+  - id: tod_source_city_value
+    label: Median home value in the TOD source city (Los Angeles)
+    description: Denominator of the market adjustment for transit-oriented density (decision 34).
+    unit: dollars (ACS median value of owner-occupied homes)
+    low: 921200
+    mid: 921200
+    high: 921200
+    scope: global
+    scenarios: [tod]
+    grade: A
+    confidence: high
+    direction: 0
+    sources:
+      - title: ACS 5-year 2020-2024, table B25077, Los Angeles city, California (place 0644000)
+        url: https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b25077.dat
+        locator: "row 1600000US0644000, B25077_E001 = 921,200 (margin 4,782)"
+        accessed: "2026-11-03"
+    citation: >-
+      ACS 2020-2024 B25077, Los Angeles city: median value $921,200 (+/- 4,782); the mid rate is
+      Kestelman's Los Angeles estimate.
+    rationale: The rate was measured in Los Angeles; places where homes are worth less get less of it.
+    transferability: Not applicable (a measured value).
+    levels: {low: "$921,200", mid: "$921,200", high: "$921,200"}
+
+  - id: market_adjustment_bounds
+    label: Bounds on the market adjustment
+    description: The value-ratio multiplier for missing middle and TOD is clipped to [low, high].
+    unit: multiplier
+    low: 0.5
+    mid: 1.0
+    high: 1.5
+    scope: global
+    scenarios: [missing_middle, tod]
+    grade: R
+    confidence: set_by_rules
+    direction: 0
+    sources:
+      - title: Permit Horizon decision 34 (Phase 3 brief, shared conventions)
+        url: https://github.com/rmanacha/permit-horizon/blob/main/docs/methods/missing_middle.md
+        locator: "market adjustment = clip((county_value / source_city_value) ^ gamma, 0.5, 1.5)"
+        accessed: "2026-11-03"
+    citation: >-
+      Design choice: a county can get at most half again, and at least half, of the source city's
+      rate from price differences alone, so one parameter (gamma) cannot dominate the result.
+    rationale: Keeps the price scaling from overriding the measured rate.
+    transferability: Not applicable.
+    levels: {low: "x0.5 floor", mid: "1.0", high: "x1.5 cap"}
+
+  - id: ramp_missing_middle
+    label: Missing-middle ramp, share of the source rate in years 1 to 5
+    description: >-
+      The mid rate is Portland's first-year rate, so mid and high apply it from year 1; low follows
+      Auckland's build-up after its 2016 upzoning.
+    unit: share of the source rate, years 1 to 5
+    low: [0.13, 0.37, 0.50, 0.67, 1.0]
+    mid: [1.0, 1.0, 1.0, 1.0, 1.0]
+    high: [1.0, 1.0, 1.0, 1.0, 1.0]
+    scope: global
+    scenarios: [missing_middle]
+    grade: B
+    confidence: low
+    direction: 1
+    sources:
+      - title: Greenaway-McGrevy and Phillips, The impact of upzoning on housing construction in Auckland, Journal of Urban Economics (2023)
+        url: https://gwern.net/doc/economics/georgism/2023-greenawaymcgrevy.pdf
+        locator: "spillover-adjusted additional permits per 1,000 dwellings, 2017-2021: 2.1, 6.1, 8.1, 10.9, 16.3 (evidence_base.md section 2)"
+        accessed: "2026-11-02"
+    citation: >-
+      Low: Auckland's added permits by year over the fifth year: 2.1 / 16.3 = 0.13, 6.1 / 16.3 =
+      0.37, 8.1 / 16.3 = 0.50, 10.9 / 16.3 = 0.67, 1.0. Mid and high: Portland's rate was measured
+      in the reform's first year (and its later years ran higher, about 400 middle homes in year 3
+      against 271), so no ramp is applied below it.
+    rationale: A first-year rate already includes the start-up period.
+    transferability: Auckland upzoned 75% of residential land in a high-growth market.
+    levels: {low: "13/37/50/67/100% (Auckland)", mid: "100% from year 1", high: "100% from year 1"}
+
+  - id: tod_rate_per_home
+    label: Whole-area housing response each year per home near transit
+    description: Housing-stock response per existing home within the transit distance, per year.
+    unit: housing-stock response per existing home near transit per year
+    low: 0.0
+    mid: 0.000117
+    high: 0.001333
+    scope: global
+    scenarios: [tod]
+    grade: B
+    confidence: low
+    direction: 1
+    sources:
+      - title: Kestelman, Effects of Transit-Oriented Incentive Programs, Harvard JCHS working paper (May 2025)
+        url: https://www.jchs.harvard.edu/research-areas/working-papers/effects-transit-oriented-incentive-programs-evidence-los-angeles
+        locator: "562.01 additional Los Angeles units over six years; 308,866 near-transit parcels (pp. 8-11)"
+        accessed: "2026-10-15"
+      - title: Stacy and others, Urban Studies (2023)
+        url: https://doi.org/10.1177/00420980231159500
+        locator: "0.8% more housing within three to nine years"
+        accessed: "2026-10-15"
+      - title: Freemark, Upzoning Chicago, Urban Affairs Review (2020)
+        url: https://yonahfreemark.com/wp-content/uploads/2019/01/Freemark-Upzoning-Chicago.pdf
+        locator: "no effect on new-dwelling permits over about five years"
+        accessed: "2026-11-02"
+    citation: >-
+      Low zero reflects the possibility of no aggregate response, supported by Freemark (2020) for
+      Chicago and the limited aggregate effect described by Kestelman. Middle: Kestelman reports
+      562.01 additional Los Angeles units over six years; 308,866 near-transit parcels x 2.6 homes =
+      803,052 homes; 562.01 / 803,052 / 6 = 0.000117. High is an indirect broad-reform association:
+      Stacy and others find 0.8% more housing within three to nine years; the retained six-year
+      annualization is 0.008 / 6 = 0.001333.
+    rationale: Applications rose sharply in Los Angeles but supply did not (Kestelman), so the middle is small.
+    transferability: Los Angeles and US metros; rail-served places only (bus rapid transit cannot be identified).
+    levels: {low: "0 (Chicago)", mid: "0.012 per 100 homes (Kestelman LA)", high: "0.133 per 100 homes (Stacy et al.)"}
+    ported_from: adam-v2.0
+
+  - id: tod_distance_miles
+    label: Distance from a major transit stop
+    description: >-
+      Straight-line distance from a rail, streetcar or ferry stop to a block group's 2020 center of
+      population; the low case uses a quarter mile (sensitivity).
+    unit: miles
+    low: 0.25
+    mid: 0.5
+    high: 0.5
+    scope: global
+    scenarios: [tod]
+    grade: R
+    confidence: high
+    direction: 1
+    sources:
+      - title: Massachusetts General Laws chapter 40A section 3A
+        url: https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVII/Chapter40A/Section3A
+        locator: "(a)(1): 'not more than 0.5 miles from a commuter rail station, subway station, ferry terminal or bus station'"
+        accessed: "2026-10-15"
+      - title: California SB 79 summary (MTC, April 2026)
+        url: https://mtc.ca.gov/sites/default/files/documents/2026-04/SB79-Summary-040826_0.pdf
+        locator: "TOD zone within 1/2 mile; inner tier within 1/4 mile"
+        accessed: "2026-11-02"
+    citation: >-
+      Massachusetts 40A section 3A(a)(1): a district must 'be located not more than 0.5 miles from a
+      commuter rail station, subway station, ferry terminal or bus station'. FTA, 76 FR 52049:
+      pedestrians walk about half a mile in fifteen minutes. Los Angeles's program, the source of
+      the rates, uses the same distance (Kestelman 2025, p. 8). The quarter mile is SB 79's inner
+      tier (sensitivity only).
+    rationale: Half a mile is the distance most US transit zoning laws use and the distance at which the rates were measured.
+    transferability: Rail and ferry stops only.
+    levels: {low: "0.25 miles", mid: "0.5 miles", high: "0.5 miles"}
+    ported_from: adam-v2.0
+
+  - id: ramp_tod
+    label: TOD ramp, share of the source rate in years 1 to 5
+    description: >-
+      The mid rate is a six-year average from Los Angeles, so mid and high apply it from year 1; low
+      follows Auckland's build-up.
+    unit: share of the source rate, years 1 to 5
+    low: [0.13, 0.37, 0.50, 0.67, 1.0]
+    mid: [1.0, 1.0, 1.0, 1.0, 1.0]
+    high: [1.0, 1.0, 1.0, 1.0, 1.0]
+    scope: global
+    scenarios: [tod]
+    grade: B
+    confidence: low
+    direction: 1
+    sources:
+      - title: Greenaway-McGrevy and Phillips, Journal of Urban Economics (2023)
+        url: https://gwern.net/doc/economics/georgism/2023-greenawaymcgrevy.pdf
+        locator: "spillover-adjusted additional permits per 1,000 dwellings, 2017-2021: 2.1, 6.1, 8.1, 10.9, 16.3"
+        accessed: "2026-11-02"
+    citation: >-
+      Low: 2.1 / 16.3 = 0.13, 6.1 / 16.3 = 0.37, 8.1 / 16.3 = 0.50, 10.9 / 16.3 = 0.67, 1.0 (Auckland).
+      Mid and high: Kestelman's rate already averages six years of the Los Angeles program.
+    rationale: An average over the program's first years already includes the start-up period.
+    transferability: Auckland upzoned 75% of residential land in a high-growth market.
+    levels: {low: "13/37/50/67/100% (Auckland)", mid: "100% from year 1", high: "100% from year 1"}
+
+  - id: parking_required_spaces
+    label: Parking spaces required per home before the reform (fallback)
+    description: >-
+      Used where NZLUD has no metro row for the county's CBSA; elsewhere the metro's median
+      required spaces (NZLUD parking_median) is used.
+    unit: spaces per home
+    low: 1
+    mid: 1
+    high: 1
+    scope: global
+    scenarios: [parking]
+    grade: B
+    confidence: moderate
+    direction: 0
+    sources:
+      - title: UCLA Center for Parking Policy, The Impacts of Minimum Parking Requirements, A Research Synthesis (February 2026)
+        url: https://www.its.ucla.edu/publication/impacts-minimum-parking-requirements-research-synthesis
+        locator: "p. 38: Seattle areas kept a requirement of 1 space per unit; London's minimum was 1.1"
+        accessed: "2026-10-15"
+    citation: >-
+      The Impacts of Minimum Parking Requirements: A Research Synthesis, p. 38: Seattle areas kept a
+      requirement of 1 space per unit, and London's minimum was 1.1 spaces per unit; Seattle's prior
+      requirement was at least one space per housing unit (Gabbe, Pierce, and Clowers, Transfers
+      Magazine, 2020).
+    rationale: One space per home is the minimum in the cities the parking evidence comes from.
+    transferability: Local minimums vary; NZLUD replaces this where the metro is covered.
+    levels: {low: "1 per home", mid: "1 per home", high: "1 per home"}
+    ported_from: adam-v2.0
+
+  - id: parking_built_share
+    label: Parking builders still provide, as a share of the former minimum
+    description: After repeal builders keep building some parking; the saving is on the rest.
+    unit: share of the spaces formerly required
+    low: 0.6
+    mid: 0.79
+    high: 1.0
+    scope: global
+    scenarios: [parking]
+    grade: B
+    confidence: moderate
+    direction: -1
+    sources:
+      - title: UCLA Center for Parking Policy, The Impacts of Minimum Parking Requirements, A Research Synthesis (February 2026)
+        url: https://www.its.ucla.edu/publication/impacts-minimum-parking-requirements-research-synthesis
+        locator: "Table 7, p. 47"
+        accessed: "2026-10-15"
+    citation: >-
+      The Impacts of Minimum Parking Requirements: A Research Synthesis (February 2026), Table 7, p.
+      47: Buffalo, citywide repeal, all development types, 21% less parking than the former minimum
+      (middle, 0.79); Seattle urban centers and villages, 868 developments, 40% less (low, 0.60);
+      high 1.0 where the minimum did not bind, as in Washington, D.C. (139% more) and Grand Rapids
+      (23% more).
+    rationale: A statewide reform covers mostly places less dense than Seattle's urban villages, so Buffalo's citywide result is the middle.
+    transferability: City studies; low-density places are handled by parking_low_density_factor.
+    levels: {low: "60%", mid: "79%", high: "100%"}
+    ported_from: adam-v2.0
+
+  - id: parking_cost_per_space
+    label: Construction cost per parking space
+    description: Cost of a structured space, excluding land; the spaces a minimum forces are mostly structured.
+    unit: dollars per space, excluding land
+    low: 29000
+    mid: 52000
+    high: 73000
+    scope: global
+    scenarios: [parking]
+    grade: B
+    confidence: moderate
+    direction: 1
+    sources:
+      - title: UCLA ITS, No Such Thing as Free Parking, Construction Costs in 17 U.S. Cities (Schwartz, February 2026)
+        url: https://www.its.ucla.edu/publication/no-such-thing-as-free-parking/
+        locator: "p. 10"
+        accessed: "2026-10-15"
+    citation: >-
+      No Such Thing as Free Parking: Construction Costs in 17 U.S. Cities, p. 10: aboveground
+      structures average $52,000 per space ($29,000 in Phoenix and Washington, D.C., to $99,000 in
+      Portland); underground parking averages $73,000; both exclude land.
+    rationale: Minimums bind mainly where parking is built in structures, so the spaces left unbuilt are mostly structured.
+    transferability: 17 large cities; surface lots cost far less (decision 71 drops the surface tier).
+    levels: {low: "$29,000", mid: "$52,000", high: "$73,000"}
+    ported_from: adam-v2.0
+
+  - id: parking_low_density_factor
+    label: Share of the parking response outside central metropolitan counties
+    description: >-
+      Where parking is cheap surface parking and demand is car-oriented, builders keep building it,
+      so repeal changes little; counties that are not central to a metropolitan area get this share
+      of the response.
+    unit: multiplier on the response outside central metropolitan counties
+    low: 0.0
+    mid: 0.5
+    high: 1.0
+    scope: global
+    scenarios: [parking]
+    grade: C
+    confidence: low
+    direction: 1
+    sources:
+      - title: Sohoni and Lee, Parking the Minimum Parking Requirement, Evidence from Nine U.S. Cities, Journal of Planning Education and Research 46(1), 2026 (online June 2025)
+        url: https://doi.org/10.1177/0739456X251343047
+        locator: "abstract: car-oriented, low-density cities saw little to no change in parking supplied (evidence_base.md section 4)"
+        accessed: "2026-11-02"
+    citation: >-
+      Judgment: the nine-city study finds little to no change in car-oriented low-density cities
+      (low 0); high 1.0 treats every county like the cities measured; mid 0.5 halves the response
+      outside central metropolitan counties.
+    rationale: Parking minimums bind where land is dear; elsewhere builders supply the parking anyway.
+    transferability: Nine US cities; the county split is a proxy for density (decision 57's rule).
+    levels: {low: "0 (no response)", mid: "50%", high: "100% (same as central)"}
+
+  - id: actual_fee_per_unit
+    label: Typical actual impact fee per single-family home (variant)
+    description: >-
+      National average non-utility impact fee per single-family home, for the "actual fees" variant
+      of the fee scenario (the headline uses the challenge's $50,000 premise). State overrides go here.
+    unit: dollars per home
+    low: 13627
+    mid: 13627
+    high: 13627
+    scope: state
+    scenarios: [fees]
+    grade: B
+    confidence: low
+    direction: 0
+    sources:
+      - title: NAHB, Impact Fee Primer (citing Duncan Associates' 2019 national survey)
+        url: https://www.nahb.org/-/media/NAHB/advocacy/docs/industry-issues/land-use-101/infrastructure/impact-fee-primer.pdf
+        locator: "2019 average single-family non-utility impact fee $13,627 (California $37,471)"
+        accessed: "2026-11-02"
+    citation: >-
+      Duncan Associates 2019 survey as quoted in NAHB's primer: average single-family fee $13,627
+      nationally ($37,471 in California). Secondary source; the original survey was not re-read.
+      The actual-fee variant cuts half of it: 0.5 x 13,627 = $6,814.
+    rationale: Shows how the answer changes when the cut is half of a typical fee rather than half of $50,000.
+    transferability: National average of jurisdictions that charge fees; many charge none.
+    levels: {low: "$13,627", mid: "$13,627", high: "$13,627"}
+
+  - id: mm_units_per_lot
+    label: Missing-middle units per redeveloped lot (combined package only)
+    description: Turns missing-middle units into lots used, so those lots leave the ADU exposure in the combined package.
+    unit: permitted units per lot
+    low: 3.35
+    mid: 3.35
+    high: 3.35
+    scope: global
+    scenarios: [missing_middle, adu]
+    grade: B
+    confidence: moderate
+    direction: 0
+    sources:
+      - title: City of Portland, Residential Infill Project Year-One Report (June 2023)
+        url: https://www.portland.gov/bps/planning/rip/news/2023/7/5/new-study-shows-promising-housing-production-results-residential
+        locator: "PDF p. 28: 271 units permitted on 81 lots"
+        accessed: "2026-10-15"
+    citation: >-
+      Portland's first year: 271 units / 81 lots = 3.35 units per lot (Adam's ported numerator,
+      Residential Infill Project Year-One Report PDF p. 28).
+    rationale: A lot redeveloped as a triplex or fourplex is no longer a candidate for a backyard ADU.
+    transferability: Portland's mix of duplexes to sixplexes.
+    levels: {low: "3.35", mid: "3.35", high: "3.35"}
+
+  - id: mm_diag_minneapolis_gross
+    label: Minneapolis gross permitted activity (diagnostic only)
+    description: Comparison rate kept outside the band.
+    unit: gross permitted units per single-family detached home per year
+    low: 0.000628
+    mid: 0.000628
+    high: 0.000628
+    scope: global
+    scenarios: [missing_middle]
+    grade: B
+    confidence: low
+    direction: 0
+    sources:
+      - title: Federal Reserve Bank of Minneapolis, Minneapolis 2040 Plan indicators point to stable rents, stalled development (2026)
+        url: https://www.minneapolisfed.org/article/2026/minneapolis-2040-plan-indicators-point-to-stable-rents-stalled-development
+        locator: "317 units in 2 to 4 unit buildings over 2020 to 2025"
+        accessed: "2026-10-15"
+    citation: >-
+      317 units in 2 to 4 unit buildings over 2020 to 2025 on any parcel; 317 / 84,075 detached
+      homes / 6 = 0.000628 rounded.
+    rationale: Gross permits on all parcels cannot establish a low bound for net additional homes.
+    transferability: One city whose plan was paired with height and floor-area limits.
+    levels: {low: "0.000628", mid: "0.000628", high: "0.000628"}
+    ported_from: adam-v2.0
+
+  - id: mm_diag_cluster
+    label: Spokane, Austin and Charlotte middle-housing rates (diagnostic only)
+    description: Comparison rates kept outside the band (about 1.8 to 2.0 units per 1,000 single-family lots a year).
+    unit: units per single-family lot per year
+    low: 0.0018
+    mid: 0.0019
+    high: 0.0020
+    scope: global
+    scenarios: [missing_middle]
+    grade: C
+    confidence: low
+    direction: 0
+    sources:
+      - title: Spokane Journal of Business, Missing middle housing gains traction in Spokane
+        url: https://www.spokanejournal.com/articles/18294-missing-middle-housing-gains-traction-in-spokane
+        locator: "2024: 140 of 1,394 units were middle housing (about 1.9 per 1,000 lots)"
+        accessed: "2026-11-02"
+      - title: City of Austin, HOME initiative memo (November 2025)
+        url: https://services.austintexas.gov/edims/document.cfm?id=463145
+        locator: "436 new units approved in year 1 (about 1.8 per 1,000)"
+        accessed: "2026-11-02"
+    citation: >-
+      evidence_base.md section 2: Spokane 2024 about 1.9 per 1,000 single-family lots; Austin HOME
+      phase 1 about 1.8 per 1,000 [computed]; Charlotte about 1.8 annualized [secondary]. Approvals
+      and permits, not completions.
+    rationale: A second cluster of cities, kept as a check on the Portland rate.
+    transferability: Approvals in the first year or two.
+    levels: {low: "1.8 per 1,000", mid: "1.9 per 1,000", high: "2.0 per 1,000"}
+
+  - id: mm_diag_arlington
+    label: Arlington completed or under-construction middle housing (diagnostic only)
+    description: Comparison rate kept outside the band.
+    unit: units per single-family lot per year
+    low: 0.00026
+    mid: 0.00026
+    high: 0.00026
+    scope: global
+    scenarios: [missing_middle]
+    grade: B
+    confidence: low
+    direction: 0
+    sources:
+      - title: Arlington County, Expanded Housing Option Annual Data Report (March 2026)
+        url: https://www.arlingtonva.us/files/sharedassets/public/v/1/housing/documents/missing-middle/eho-annual-data-report-march-2026.pdf
+        locator: "3 projects (6 units) complete, 5 (21 units) under construction"
+        accessed: "2026-11-02"
+    citation: >-
+      evidence_base.md section 2: about 0.26 units per 1,000 single-family lots a year completed or
+      under construction under Arlington's capped program [computed].
+    rationale: Shows how far approvals can sit from homes built.
+    transferability: A capped program, interrupted by litigation.
+    levels: {low: "0.26 per 1,000", mid: "0.26 per 1,000", high: "0.26 per 1,000"}
+
+  - id: tod_boundary_rate
+    label: Local transit-boundary response (diagnostic only)
+    description: Kestelman's local estimate at the program boundary; may include relocation, so outside the band.
+    unit: local stock response per existing home per year
+    low: 0.003378
+    mid: 0.003378
+    high: 0.003378
+    scope: global
+    scenarios: [tod]
+    grade: B
+    confidence: low
+    direction: 0
+    sources:
+      - title: Kestelman, Effects of Transit-Oriented Incentive Programs, Harvard JCHS working paper (May 2025)
+        url: https://www.jchs.harvard.edu/research-areas/working-papers/effects-transit-oriented-incentive-programs-evidence-los-angeles
+        locator: "p. 11: 33.54 units over a baseline 1,654.80 on the treated side, 2017 to 2023"
+        accessed: "2026-10-15"
+    citation: >-
+      Page 11 reports 33.54 units over a baseline 1,654.80 on the treated side, 2017 to 2023;
+      33.54 / 1654.80 / 6 = 0.003378. Negative spillovers to controls can inflate this local effect
+      relative to aggregate supply.
+    rationale: Keep local reallocation separate from the statewide evidence.
+    transferability: Los Angeles program boundary.
+    levels: {low: "0.003378", mid: "0.003378", high: "0.003378"}
+    ported_from: adam-v2.0
