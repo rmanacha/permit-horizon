@@ -4,8 +4,11 @@
 #
 # Kept script-based (the organizers' default) so CI runs the exact
 # scripts/setup.sh and scripts/test.sh a reviewer would run by hand.
-# Python 3.12 on purpose: Pyodide runs CPython 3.13, so testing on the
-# oldest supported version catches syntax the browser runtime lacks.
+# Python 3.12 on purpose: it is the oldest version we support, so a green run
+# here proves the code needs nothing newer. `uv lock --check` fails the build
+# if pyproject.toml and uv.lock drift apart (setup uses --frozen, which never
+# checks). Nothing in CI touches the network except package installs: the
+# tests and `make demo` run on committed fixtures.
 
 name: CI
 
@@ -34,8 +37,14 @@ jobs:
       - name: Set up
         run: bash scripts/setup.sh
 
+      - name: Lock file matches pyproject
+        run: uv lock --check
+
       - name: Lint
         run: make lint
 
       - name: Test
         run: bash scripts/test.sh
+
+      - name: Offline demo build
+        run: make demo

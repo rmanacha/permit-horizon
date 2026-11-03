@@ -78,3 +78,6 @@ npm-debug.log*
 !data/sample/**
 !data/manifests/
 !data/manifests/**
+
+# The template's build/ rule is for build artifacts; the pipeline package is source.
+!src/hre/build/

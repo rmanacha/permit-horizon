@@ -6,8 +6,8 @@ readme = "README.md"
 license = "Apache-2.0"
 requires-python = ">=3.12,<3.15"
 authors = [{ name = "Permit Horizon team (Community Solutions)" }]
-# Runtime dependencies. The engine itself (src/hre/engine, from Phase 2) must
-# import only numpy so it can run unchanged in the browser via Pyodide.
+# Runtime dependencies. The engine itself (src/hre/model, from Phase 2) imports
+# only numpy (decision 42); pandas is a pipeline-only extra.
 dependencies = [
   "numpy>=2.3",
   "pyyaml>=6.0",
@@ -16,6 +16,9 @@ dependencies = [
   "openpyxl>=3.1",
   "typer>=0.16",
 ]
+
+[project.scripts]
+hre = "hre.cli:app"
 
 [project.optional-dependencies]
 # Used only by the data pipeline (fetch and clean scripts), never by the engine.
@@ -36,5 +39,4 @@ testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 100
-# Pyodide runs CPython 3.13, so the code must stay valid on 3.12 and 3.13.
 target-version = "py312"
