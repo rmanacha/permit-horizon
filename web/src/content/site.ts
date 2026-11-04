@@ -25,4 +25,4 @@ export const DOCS = [
 ];
 
 export const EXCLUDED_PARCELS =
-  'This version uses no parcel data: every count of homes and lots comes from Census surveys (the American Community Survey and the 2020 Census).';
+  "Parcel counts replace the Census count of detached homes only where a county's parcel data agree with it within 30%: seven Utah counties (Utah Housing Unit Inventory) and Maricopa and Pinal counties in Arizona (county assessors). Only county totals are used; no parcel records, owner names or addresses. Every other county uses Census surveys (the American Community Survey and the 2020 Census). New Hampshire's statewide parcel data wait on confirmation of their terms of use.";

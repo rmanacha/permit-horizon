@@ -21,5 +21,5 @@ def fetch(adapter: Adapter, processed_dir: Path) -> Path:
     path = adapter.summary_path(processed_dir)
     write_summary(path, counts, arcgis.query_text(r["layer"], r["where"], r["group_by"]), adapter.sources[0].dataset)
     record(MANIFEST, f"processed/{path.name}", path, url=r["layer"], license=adapter.sources[0].license_text,
-           vintage="live service, as fetched", notes=adapter.sources[0].rule + " Counts only.")
+           vintage="live service, as fetched", notes=adapter.sources[0].rule + ". Counts only.")
     return path

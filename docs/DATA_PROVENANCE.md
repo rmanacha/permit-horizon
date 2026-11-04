@@ -15,13 +15,13 @@ Every source is a keyless public download; no API key or account is required.
 | Dataset | Source | Version / vintage | Access date | License / terms | Category |
 | ------- | ------ | ----------------- | ----------- | --------------- | -------- |
 | Building Permits Survey, county and state annual files | U.S. Census Bureau, `https://www2.census.gov/econ/bps/County/co{YYYY}a.txt` and `.../State/st{YYYY}a.txt` | county 2016-2025, state 1990-2025 (2025 posted 2026-05-14) | 2026-11-03 | U.S. government work, public domain; no licence statement published | public |
-| American Community Survey 5-year, table-based summary files B25001, B25002, B25003, B25004, B25024, B25034, B25064, B25077 and the geography file | U.S. Census Bureau, `https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-{table}.dat` | 2020-2024 (2024 release) | 2026-11-03 | public domain; catalog entry tagged CC0 1.0 | public |
+| American Community Survey 5-year, table-based summary files B01003 (population, current-law coverage thresholds only), B25001, B25002, B25003, B25004, B25024, B25034, B25064, B25077 and the geography file | U.S. Census Bureau, `https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-{table}.dat` | 2020-2024 (2024 release) | 2026-11-03 | public domain; catalog entry tagged CC0 1.0 | public |
 | Population Estimates, housing units by county | U.S. Census Bureau, `https://www2.census.gov/programs-surveys/popest/tables/2020-2025/housing/totals/CO-EST2025-HU.xlsx` | Vintage 2025 (July 1 2020 to July 1 2025) | 2026-11-03 | public domain | public |
 | New Residential Construction, annual units authorized and completed (United States, by units in structure) | U.S. Census Bureau, `https://www.census.gov/construction/nrc/xls/permits_cust.xlsx`, `comps_permits_cust.xlsx`, `comps_cust.xlsx` | annual series through 2025 | 2026-11-03 | public domain | public |
 | Address Count Listing Files (block-level housing-unit counts from the Master Address File) | U.S. Census Bureau, `https://www2.census.gov/geo/pvs/addcountlisting/{year}/{FIPS}_{State}_AddressBlockCountList_{mmyyyy}.txt` | 062022, 072023, 122023, 072024, 122024, 072025, 122025, 072026 | 2026-11-03 | public domain | public |
 | 2020 centers of population by block group | U.S. Census Bureau, `https://www2.census.gov/geo/docs/reference/cenpop2020/blkgrp/CenPop2020_Mean_BG{SS}.txt` | 2020 Census | 2026-11-03 | public domain | public |
 | Connecticut 2022 county subdivisions to 2020 block groups (relationship file) | U.S. Census Bureau, `https://www2.census.gov/geo/docs/maps-data/data/rel2022/acs22_cousub22_blkgrp20_st09.txt` | ACS 2022 relationship files (2022 towns, 2020 block groups) | 2026-11-03 | public domain | public |
-| Gazetteer, counties | U.S. Census Bureau, `https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/2025_Gaz_counties_national.zip` | 2025 | 2026-11-03 | public domain | public |
+| Gazetteer, counties and places | U.S. Census Bureau, `https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/2025_Gaz_counties_national.zip` and `.../2025_Gaz_place_national.zip` (place land area, used only for the near-downtown upper bound in current-law coverage) | 2025 | 2026-11-03 | public domain | public |
 | Core-based statistical area delineation | OMB Bulletin 23-01 via Census, `https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2023/delineation-files/list1_2023.xlsx` | July 2023 | 2026-11-03 | public domain | public |
 | House Price Index, county, annual, all-transactions | Federal Housing Finance Agency, `https://www.fhfa.gov/hpi/download/annual/hpi_at_county.xlsx` | through 2025 (updated 2026-03-31) | 2026-11-03 | freely available; cite "Source: FHFA HPI". **This product uses FHFA data but is neither endorsed nor certified by FHFA.** "FHFA HPI" is a registered trademark and is not part of our product name | public |
 | National Transit Map, stops | Bureau of Transportation Statistics (NTAD), `https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_National_Transit_Map_Stops/FeatureServer/0` | feeds compiled September 2026 (per-stop `download_date` in the manifest) | 2026-11-03 | public domain for 1,237 of 1,239 agency feeds, CC-BY-3.0 US for 2; attribution to BTS/NTAD | public |
@@ -30,6 +30,12 @@ Every source is a keyless public download; no API key or account is required.
 | National Transit Database, annual service by mode | U.S. DOT, `https://data.transportation.gov/resource/wwdp-t4re.json` | report year 2024 | 2026-11-03 | public domain | public |
 | National Zoning and Land Use Database (NZLUD), metro and municipal tables | Mleczko and Desmond, `https://github.com/mtmleczko/nzlud` (`nzlud_msa.csv`, `nzlud_muni.csv`) | 2019-2022 survey, repository main branch | 2026-11-03 | MIT | third-party (academic) |
 | Housing Element Annual Progress Report, Table A2 | California HCD via data.ca.gov, `https://publish.data.ca.gov/dataset/81b0841f-2802-403e-b48e-2ef4b751f77c/resource/fe505d9b-8c36-42ba-ba30-08bc4f34e022/download/tablea2.csv` | resource last modified 2026-10-30 (report years 2018-2025) | 2026-11-03 | data.ca.gov shows "License not specified"; HCD's APR data page states the data are public with no restrictions on use; provenance retained | public (state) |
+| Utah Housing Unit Inventory (parcel adapter, counts only) | Wasatch Front Regional Council, Mountainland Association of Governments, Utah Geospatial Resource Center, `https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/HousingUnitInventory/FeatureServer/0` (one grouped count query; manifest `ut_hui`) | live service as fetched | 2026-11-03 | Creative Commons Attribution 4.0 International (stated on the ArcGIS item); attribution WFRC, MAG, UGRC | public (regional) |
+| Maricopa County Assessor parcels (parcel adapter, county total only) | Maricopa County Assessor's Office, `https://gis.mcassessor.maricopa.gov/arcgis/rest/services/Parcels/MapServer/0` (one distinct-count query; manifest `az_assessors`) | live service as fetched | 2026-11-03 | no licence stated; the data page says files are free to download, which is not a licence, and commercial resale needs a sublicence; only the county total is used | public (county) |
+| Pinal County TaxParcels (parcel adapter, county total only) | Pinal County GIS, `https://gis.pinal.gov/mapping/rest/services/TaxParcels/FeatureServer/3` (one distinct-count query; manifest `az_assessors`) | live service as fetched | 2026-11-03 | no licence stated; disclaimer only; only the county total is used | public (county) |
+| NH Parcel Mosaic CAMA table (parcel adapter, **disabled**) | NH Department of Revenue Administration via NH GRANIT, `https://nhgeodata.unh.edu/nhgeodata/rest/services/CAD/ParcelMosaic/MapServer/3` | not fetched | n/a | no licence stated; "estimation/planning purposes only"; publication of county counts asked of GRANIT (`docs/evidence/nh_granit_terms.md`) | public (state), not used |
+| State statutes and session laws (current-law register) | official legislature and code sites cited in each `src/hre/current_law/{ST}.yaml` (quotes checked by `hre validate --law-quotes`; pages cached under `data/raw/law_pages/`, never committed) | as of each file's access date | 2026-11-03 | government edicts, not subject to copyright; HCD's ADU Handbook (California) and the DC Office of Zoning's compilation are official agency publications | public |
+| City of Austin, Issued Construction Permits (frozen ADU holdout, counts only) | City of Austin, `https://data.austintexas.gov/resource/3syk-w9eu.json` (SoQL grouped counts by year; `validation/austin_adu_2023_2025/`) | dataset as of the fetch | 2026-11-04 | Public Domain U.S. Government (stated on the dataset) | public (city) |
 | Synthetic demo state `ZZ` | this repository, `scripts/make_sample_zz.py` | n/a | n/a | Apache-2.0 (invented numbers, no real place) | team-created |
 
 Tables B25004 (vacancy status) and B25034 (year built) are downloaded and
@@ -236,9 +242,15 @@ No dataset in Phase 1 involves individuals or households. The processed files
 hold county and block-group aggregates from published Census tables. HCD
 Table A2 lists projects with street addresses and coordinates; only
 jurisdiction-year sums of ADU units leave the raw cache, and the raw file is
-never committed. No parcel data is used yet; when parcel adapters arrive
-(Phase 5), owner and mailing columns are dropped at ingest and only counts are
-written, as the working agreement requires.
+never committed.
+
+Parcel adapters (Phase 5, `docs/methods/adapters.md`) never download parcel
+rows. The Utah, Maricopa and Pinal services, and New Hampshire's CAMA table,
+carry owner names and mailing or street addresses; each adapter sends one count
+query (grouped or distinct counts computed by the server) that names none of
+those fields, and only the resulting county totals are written
+(`data/processed/{st}_parcels_summary.json`). Austin's permit dataset lists
+applicants and contractors; the frozen holdout asked only for counts by year.
 
 # Excluded Sources
 

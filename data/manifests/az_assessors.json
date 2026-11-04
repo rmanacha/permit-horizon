@@ -1,0 +1,14 @@
+{
+  "files": {
+    "processed/az_parcels_summary.json": {
+      "bytes": 634,
+      "fetched_at": "2026-11-04T01:16:38Z",
+      "sha256": "cf58e0eace384e3138143e75f424a137a07570268a35d1c8afaa84575c30936a",
+      "url": "https://gis.mcassessor.maricopa.gov/arcgis/rest/services/Parcels/MapServer/0",
+      "vintage": "live services, as fetched"
+    }
+  },
+  "license": "Maricopa County Assessor parcels (Parcels map service): No licence stated. The Assessor's data page says its files are free to download; free to download is not a licence, and the county bars commercial resale without a sublicence. Only county totals are used and published.; Pinal County TaxParcels (Pinal County GIS, with Assessor use codes): No licence stated; a disclaimer only (the user must verify accuracy). Only the county total is used and published.",
+  "notes": "Arizona Department of Revenue use codes 0100 to 0179 counted once per parcel in Maricopa and Pinal. Counts only.",
+  "source": "az_assessors"
+}

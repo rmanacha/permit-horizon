@@ -1,0 +1,14 @@
+{
+  "files": {
+    "processed/ut_parcels_summary.json": {
+      "bytes": 712,
+      "fetched_at": "2026-11-04T01:16:07Z",
+      "sha256": "1942e594d091e354a0e2e3d93a1fb62c494a657dbfc4912ed2fcd5e27280a2c4",
+      "url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/HousingUnitInventory/FeatureServer/0",
+      "vintage": "live service, as fetched"
+    }
+  },
+  "license": "Creative Commons Attribution 4.0 International (stated on the ArcGIS item)",
+  "notes": "Features with type single_family and subtype single_family (single-family homes with an ADU, townhomes, duplexes, condominiums and mobile home parks left out), counted once per feature, per county. Counts only.",
+  "source": "ut_hui"
+}
