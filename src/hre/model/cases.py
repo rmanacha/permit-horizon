@@ -26,9 +26,8 @@ from typing import Any
 import numpy as np
 
 from hre.model.drivers import OUTCOME_WORDS
+from hre.model.params import LEVELS as LEVEL_KEYS
 from hre.model.params import Params
-
-LEVEL_KEYS = ("low", "mid", "high")
 
 
 def increment(benchmark_by_year: Any, newly_affected_share: float, delay_years: int, ramp: Any) -> np.ndarray:

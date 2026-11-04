@@ -24,6 +24,7 @@ import numpy as np
 from hre.model.params import Params
 
 N_TIERS = 5
+TIER_IDS = tuple(f"adu_rate_tier_{k}" for k in range(1, N_TIERS + 1))
 
 
 def tier_bounds(params: Params) -> np.ndarray:
@@ -45,10 +46,9 @@ def tier_for(values: Any, bounds: Any) -> Any:
 
 def tier_rates(params: Params, level: str | None = None) -> np.ndarray:
     """The five tier rates at the selected level (or a named level)."""
-    ids = [f"adu_rate_tier_{k}" for k in range(1, N_TIERS + 1)]
     if level is None:
-        return np.array([params[i] for i in ids], dtype=float)
-    return np.array([params.level_value(i, level) for i in ids], dtype=float)
+        return np.array([params[i] for i in TIER_IDS], dtype=float)
+    return np.array([params.level_value(i, level) for i in TIER_IDS], dtype=float)
 
 
 def county_adu_rates(median_values: list[int | None], params: Params,

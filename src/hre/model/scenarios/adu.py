@@ -23,10 +23,8 @@ import numpy as np
 
 from hre.model.params import Params
 from hre.model.scenarios.common import Core, Spec, flat_years
-from hre.model.tiers import N_TIERS, county_adu_rates
+from hre.model.tiers import TIER_IDS, county_adu_rates
 from hre.schema import StateInputs
-
-TIER_IDS = tuple(f"adu_rate_tier_{k}" for k in range(1, N_TIERS + 1))
 
 
 def core(state: StateInputs, params: Params, ctx: dict[str, Any]) -> Core:

@@ -33,11 +33,10 @@ from typing import Any, Callable  # noqa: UP035 (decision 42: the engine imports
 import numpy as np
 
 from hre.model.cases import increment, named_cases
+from hre.model.params import LEVELS as LEVEL_KEYS
 from hre.model.params import Params
 from hre.model.sensitivity import joint_case, tornado
 from hre.schema import StateInputs
-
-LEVEL_KEYS = ("low", "mid", "high")
 
 
 @dataclass

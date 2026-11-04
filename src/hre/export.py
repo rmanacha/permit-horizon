@@ -28,10 +28,11 @@ import yaml
 from hre.assumptions.loader import PARAMETERS_PATH, load_entries
 from hre.current_law.loader import HERE as LAW_DIR
 from hre.data.states import lookup
+from hre.model.drivers import NO_LLM_STATEMENT
+from hre.model.params import LEVELS
 from hre.model.run import RESULTS_SCHEMA_VERSION, validate_results
 from hre.validation import ledger
 
-LEVELS = ("low", "mid", "high")
 MANIFESTS = Path(__file__).resolve().parents[2] / "data" / "manifests"
 
 # Display names for the data sources page (one per manifest in data/manifests/), and which
@@ -152,7 +153,7 @@ def export_bundle(results_dir: Path, out_dir: Path) -> dict[str, Any]:
         "input_schema_versions": sorted({str(m.get("schema_version")) for m in metas}),
         "parameters_sha256": hashlib.sha256(PARAMETERS_PATH.read_bytes()).hexdigest(),
         "vintages": metas[0]["vintages"],
-        "no_llm": "No language model is used; all text comes from fixed templates in src/hre/model/drivers.py.",
+        "no_llm": NO_LLM_STATEMENT,
     }
     (out_dir / "meta.json").write_text(json.dumps(meta, indent=1), encoding="utf-8")
     return meta
