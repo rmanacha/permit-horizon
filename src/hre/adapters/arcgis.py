@@ -12,13 +12,12 @@ from __future__ import annotations
 import json
 from typing import Any
 
-import requests
-
+from hre.data import net
 from hre.data.cache import user_agent
 
 
 def grouped_counts(layer_url: str, where: str, group_by: str, count_field: str = "OBJECTID",
-                   session: requests.Session | None = None, timeout: float = 120.0) -> dict[str, int]:
+                   timeout: float = 120.0) -> dict[str, int]:
     params = {
         "where": where,
         "groupByFieldsForStatistics": group_by,
@@ -27,11 +26,8 @@ def grouped_counts(layer_url: str, where: str, group_by: str, count_field: str =
         "returnGeometry": "false",
         "f": "json",
     }
-    sess = session or requests.Session()
-    r = sess.get(layer_url.rstrip("/") + "/query", params=params,
-                 headers={"User-Agent": user_agent()}, timeout=timeout)
-    r.raise_for_status()
-    d: dict[str, Any] = r.json()
+    d: dict[str, Any] = net.get_json(layer_url.rstrip("/") + "/query", params=params,
+                                     headers={"User-Agent": user_agent()}, timeout=timeout)
     if "error" in d:
         raise RuntimeError(f"ArcGIS query failed: {d['error']}")
     out: dict[str, int] = {}
@@ -48,17 +44,13 @@ def query_text(layer_url: str, where: str, group_by: str) -> str:
     return f"{layer_url}/query: count of features where {where}, grouped by {group_by}"
 
 
-def count(layer_url: str, where: str, distinct_field: str | None = None,
-          session: requests.Session | None = None, timeout: float = 300.0) -> int:
+def count(layer_url: str, where: str, distinct_field: str | None = None, timeout: float = 300.0) -> int:
     """One number: features matching ``where``, or distinct values of ``distinct_field`` among them."""
     params = {"where": where, "returnCountOnly": "true", "returnGeometry": "false", "f": "json"}
     if distinct_field:
         params.update({"outFields": distinct_field, "returnDistinctValues": "true"})
-    sess = session or requests.Session()
-    r = sess.get(layer_url.rstrip("/") + "/query", params=params,
-                 headers={"User-Agent": user_agent()}, timeout=timeout)
-    r.raise_for_status()
-    d: dict[str, Any] = r.json()
+    d: dict[str, Any] = net.get_json(layer_url.rstrip("/") + "/query", params=params,
+                                     headers={"User-Agent": user_agent()}, timeout=timeout)
     if "error" in d or "count" not in d:
         raise RuntimeError(f"ArcGIS count failed: {d.get('error', d)}")
     return int(d["count"])

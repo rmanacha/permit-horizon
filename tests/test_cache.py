@@ -73,9 +73,9 @@ def test_fetch_is_idempotent_and_refetches_on_change(local_server, dirs):
 def test_fetch_404_raises_without_retry_loop(local_server, dirs):
     _, base = local_server
     raw, _ = dirs
-    import requests
+    from hre.data.net import HTTPError
 
-    with pytest.raises(requests.HTTPError):
+    with pytest.raises(HTTPError, match="404"):
         cache.fetch(f"{base}/missing.txt", raw / "demo" / "missing.txt", source="demo",
                     license="x", vintage="1", retries=1)
     assert not (raw / "demo" / "missing.txt").exists()

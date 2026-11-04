@@ -29,16 +29,13 @@ from __future__ import annotations
 import hashlib
 import json
 import os
-import time
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-import requests
-
 from hre import __version__
+from hre.data import net
 
-_RETRY_STATUSES = {429, 500, 502, 503, 504}
 _PART_SUFFIX = ".part"
 
 
@@ -164,7 +161,6 @@ def fetch(
     retries: int = 4,
     timeout: tuple[float, float] = (15.0, 180.0),
     mdir: Path | None = None,
-    session: requests.Session | None = None,
 ) -> Path:
     """Download ``url`` to ``dest`` (streaming, retried, hashed) and record it.
 
@@ -186,31 +182,16 @@ def fetch(
 
     dest.parent.mkdir(parents=True, exist_ok=True)
     part = dest.with_name(dest.name + _PART_SUFFIX)
-    sess = session or requests.Session()
     headers = {"User-Agent": user_agent()}
-    last_error: Exception | None = None
-    for attempt in range(retries + 1):
-        try:
-            with sess.get(url, params=params, headers=headers, stream=True, timeout=timeout) as r:
-                if r.status_code in _RETRY_STATUSES:
-                    raise requests.HTTPError(f"{r.status_code} for {url}", response=r)
-                r.raise_for_status()
-                with open(part, "wb") as f:
-                    for chunk in r.iter_content(chunk_size=1 << 20):
-                        if chunk:
-                            f.write(chunk)
-            part.replace(dest)
-            break
-        except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
-            last_error = e
-            resp = getattr(e, "response", None)
-            if resp is not None and resp.status_code not in _RETRY_STATUSES:
-                raise
-            if attempt == retries:
-                raise
-            time.sleep(min(2**attempt, 30))
-    else:  # pragma: no cover - loop always breaks or raises
-        raise RuntimeError(f"download failed: {last_error}")
+
+    def attempt() -> None:
+        net.download(url, part, params=params, headers=headers, timeout=timeout)
+        part.replace(dest)
+
+    try:
+        net.with_retries(attempt, retries=retries)
+    finally:
+        part.unlink(missing_ok=True)
 
     record(source, rel, dest, url=url, license=license, vintage=vintage, notes=notes, mdir=mdir)
     return dest
@@ -222,23 +203,8 @@ def get_json(
     params: dict[str, Any] | None = None,
     retries: int = 4,
     timeout: tuple[float, float] = (15.0, 180.0),
-    session: requests.Session | None = None,
 ) -> Any:
     """GET a JSON document with the same retry policy as :func:`fetch` (no caching)."""
-    sess = session or requests.Session()
-    headers = {"User-Agent": user_agent(), "Accept": "application/json"}
-    for attempt in range(retries + 1):
-        try:
-            r = sess.get(url, params=params, headers=headers, timeout=timeout)
-            if r.status_code in _RETRY_STATUSES:
-                raise requests.HTTPError(f"{r.status_code} for {url}", response=r)
-            r.raise_for_status()
-            return r.json()
-        except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
-            resp = getattr(e, "response", None)
-            if resp is not None and resp.status_code not in _RETRY_STATUSES:
-                raise
-            if attempt == retries:
-                raise
-            time.sleep(min(2**attempt, 30))
-    raise RuntimeError("unreachable")  # pragma: no cover
+    headers = {"User-Agent": user_agent()}
+    return net.with_retries(lambda: net.get_json(url, params=params, headers=headers, timeout=timeout),
+                            retries=retries)

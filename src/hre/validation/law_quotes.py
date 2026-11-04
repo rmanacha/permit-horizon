@@ -18,13 +18,12 @@ from __future__ import annotations
 import hashlib
 import html
 import re
-import time
 from pathlib import Path
 from typing import Any
 
-import requests
 import yaml
 
+from hre.data import net
 from hre.data.cache import raw_dir, user_agent
 
 UTAH_VERSION = re.compile(r'versionDefault="([^"]+)"')
@@ -70,17 +69,10 @@ def _cache_path(url: str, cache: Path) -> Path:
     return cache / (hashlib.sha256(url.encode()).hexdigest()[:20] + ".page")
 
 
-def _get(url: str, session: requests.Session) -> bytes:
-    for attempt in range(3):
-        try:
-            r = session.get(url, headers={"User-Agent": user_agent()}, timeout=(15, 60))
-            r.raise_for_status()
-            return r.content
-        except requests.RequestException:
-            if attempt == 2:
-                raise
-            time.sleep(2 * (attempt + 1))
-    raise RuntimeError("unreachable")
+def _get(url: str) -> bytes:
+    """One page, retried twice on a 429/5xx status or a network failure (2 then 4 seconds apart)."""
+    return net.with_retries(lambda: net.get_bytes(url, headers={"User-Agent": user_agent()}, timeout=60.0),
+                            retries=2, pause=lambda attempt: 2.0 * (attempt + 1))
 
 
 LINE_NUMBER = re.compile(r"(?m)^\s*\d{1,3}\s+")
@@ -101,19 +93,18 @@ def pdf_text(data: bytes) -> str | None:
     return GLUED_LINE_NUMBER.sub("", text).replace("-\n", "")
 
 
-def page_text(url: str, cache: Path, fetch: bool, session: requests.Session | None = None) -> tuple[str | None, str]:
+def page_text(url: str, cache: Path, fetch: bool) -> tuple[str | None, str]:
     """(plain text or None, status) for one URL; status explains a None."""
     path = _cache_path(url, cache)
     if not path.exists():
         if not fetch:
             return None, "not cached (run with --fetch)"
-        sess = session or requests.Session()
         try:
-            raw = _get(url, sess)
+            raw = _get(url)
             m = UTAH_VERSION.search(raw.decode("utf-8", "replace"))
             if "le.utah.gov/xcode/" in url and m and m.group(1):
-                raw = _get(url.rsplit("/", 1)[0] + f"/{m.group(1)}.html", sess)
-        except requests.RequestException as e:
+                raw = _get(url.rsplit("/", 1)[0] + f"/{m.group(1)}.html")
+        except net.ERRORS as e:
             return None, f"fetch failed ({type(e).__name__})"
         cache.mkdir(parents=True, exist_ok=True)
         path.write_bytes(raw)
@@ -140,11 +131,10 @@ def check(law_dir: Path, fetch: bool = False, data_dir: Path | None = None,
     cache = (data_dir or raw_dir()) / "law_pages"
     hand = hand_checks(hand_path)
     texts: dict[str, tuple[str | None, str]] = {}
-    session = requests.Session()
     out = []
     for row in collect(law_dir):
         if row["url"] not in texts:
-            t, status = page_text(row["url"], cache, fetch, session)
+            t, status = page_text(row["url"], cache, fetch)
             texts[row["url"]] = (normalize(t) if t is not None else None, status)
         text, status = texts[row["url"]]
         found = None if text is None else normalize(row["quote"]) in text
