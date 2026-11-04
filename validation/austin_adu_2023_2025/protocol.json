@@ -1,0 +1,67 @@
+{
+ "check": "austin_adu_2023_2025",
+ "denominator": "ACS 2020-2024 detached single-family homes in Austin city (B25024): 209,772; median value (B25077): $555,300",
+ "frozen_on": "2026-11-03",
+ "hit_rule": "Each year is inside when low <= permits <= high. The check is scored on the three-year mean: a hit when the mean is inside [low, high]. Every year is reported either way.",
+ "model": {
+  "code": "hre.validation.hindcasts.adu_place_prediction, which calls hre.model.scenarios.adu.core at the register's low, mid and high sets (level_set over the scenario's band ids)",
+  "commit": "c187ddc91367bd44bfd6af37c2b88b9ac3801198",
+  "current_law": "not applied: the benchmark is a reform in place, compared with a city that allows ADUs",
+  "ramp": "steady state (ramp 1): Austin allowed secondary apartments for years before 2023",
+  "register_sha256": "acb3f781f097ab9bbebbc9b49cc421b6b894f607c7d42eccbe1b14dc8cb69aa8"
+ },
+ "outcome": {
+  "dataset": "City of Austin, Issued Construction Permits, data.austintexas.gov dataset 3syk-w9eu (Public Domain U.S. Government)",
+  "definition": "Building permits issued for new secondary apartments (accessory dwelling units) in the City of Austin's full-purpose jurisdiction, counted by calendar year issued.",
+  "query": "SoQL count(*) grouped by calendar_year_issued, where permittype = 'BP' AND permit_class = 'R- 102 Secondary Apartment' AND work_class = 'New' AND jurisdiction = 'AUSTIN FULL PURPOSE' AND calendar_year_issued in (2023, 2024, 2025)",
+  "sensitivity_reported_not_scored": "The same count plus new single-family permits (R- 101) whose description mentions a secondary apartment, garage apartment, accessory dwelling or ADU, since a house and its ADU can share one permit."
+ },
+ "place": {
+  "census_place": "4805000",
+  "county": "48453 Travis County (central county of the Austin metro)",
+  "name": "Austin city, Texas"
+ },
+ "prediction": {
+  "detail": {
+   "detached_homes": 209772,
+   "high": {
+    "completions_per_year": 1031.0827118644067,
+    "overlay": "Seattle plateau",
+    "permits_per_completion": 1.18,
+    "permits_per_year": 1216.6776,
+    "rate": 0.004915254237288135,
+    "tier": 2
+   },
+   "low": {
+    "completions_per_year": 117.47232,
+    "overlay": "",
+    "permits_per_completion": 1.18,
+    "permits_per_year": 138.61733759999998,
+    "rate": 0.00056,
+    "tier": 2
+   },
+   "median_value": 555300,
+   "metro_role": "central",
+   "mid": {
+    "completions_per_year": 333.747252,
+    "overlay": "",
+    "permits_per_completion": 1.18,
+    "permits_per_year": 393.82175736,
+    "rate": 0.001591,
+    "tier": 2
+   },
+   "place": "Austin city, Texas"
+  },
+  "high": 1216.7,
+  "low": 138.6,
+  "mid": 393.8,
+  "unit": "ADU permits a year"
+ },
+ "question": "Does the ADU benchmark (California's completion rates by home value, transferred at steady state, in permits) predict how many ADU building permits Austin issued in 2023, 2024 and 2025?",
+ "seen_before_freezing": "Only the dataset's column names and its lists of residential permit classes, work classes and jurisdictions (no counts). No Austin ADU count appears in this project's research notes or in Adam Ruege's v2.0.",
+ "years": [
+  2023,
+  2024,
+  2025
+ ]
+}

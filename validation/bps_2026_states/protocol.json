@@ -1,0 +1,290 @@
+{
+ "check": "bps_2026_states",
+ "frozen_on": "2026-11-03",
+ "hit_rule": "A state is inside when low <= actual <= high. The check is a hit when at least 41 of the 51 (80%) are inside. The range was built for five-year totals and is divided evenly by year; a single year varies more, so this is a harsher test than the range promises, and that is said here before the outcome exists.",
+ "model": {
+  "bundle": "web/public/results/{ST}.json, baseline.state.by_year[2026]",
+  "bundle_git_shas": [
+   "31ec1850fd3e905b3cb101ef511d9a0a2118ab17"
+  ],
+  "parameters_sha256": "acb3f781f097ab9bbebbc9b49cc421b6b894f607c7d42eccbe1b14dc8cb69aa8"
+ },
+ "outcome": {
+  "definition": "Housing units authorized by building permits in calendar 2026, all structure types, the series the baseline is fitted on (Census Building Permits Survey annual state file, read by hre.data.fetch_bps.load_state_permits).",
+  "source": "https://www2.census.gov/econ/bps/State/st2026a.txt (expected in the first half of 2027)"
+ },
+ "place": "50 states and DC",
+ "prediction": {
+  "by_state": {
+   "AK": {
+    "high": 1495.2636,
+    "low": 503.0223,
+    "mid": 939.0
+   },
+   "AL": {
+    "high": 31913.2884,
+    "low": 10735.9637,
+    "mid": 20041.0
+   },
+   "AR": {
+    "high": 22303.1544,
+    "low": 7503.0142,
+    "mid": 14006.0
+   },
+   "AZ": {
+    "high": 90013.5948,
+    "low": 30281.5139,
+    "mid": 56527.0
+   },
+   "CA": {
+    "high": 168349.0588,
+    "low": 56634.3826,
+    "mid": 105720.3333
+   },
+   "CO": {
+    "high": 55916.0644,
+    "low": 18810.7484,
+    "mid": 35114.3333
+   },
+   "CT": {
+    "high": 10335.2068,
+    "low": 3476.8716,
+    "mid": 6490.3333
+   },
+   "DC": {
+    "high": 3369.5184,
+    "low": 1133.5412,
+    "mid": 2116.0
+   },
+   "DE": {
+    "high": 10283.7192,
+    "low": 3459.5506,
+    "mid": 6458.0
+   },
+   "FL": {
+    "high": 289504.1588,
+    "low": 97392.2242,
+    "mid": 181803.6667
+   },
+   "GA": {
+    "high": 102542.0672,
+    "low": 34496.2229,
+    "mid": 64394.6667
+   },
+   "HI": {
+    "high": 6039.4424,
+    "low": 2031.7315,
+    "mid": 3792.6667
+   },
+   "IA": {
+    "high": 19872.0904,
+    "low": 6685.1789,
+    "mid": 12479.3333
+   },
+   "ID": {
+    "high": 28394.0844,
+    "low": 9552.0667,
+    "mid": 17831.0
+   },
+   "IL": {
+    "high": 29586.792,
+    "low": 9953.306,
+    "mid": 18580.0
+   },
+   "IN": {
+    "high": 43931.1312,
+    "low": 14778.8916,
+    "mid": 27588.0
+   },
+   "KS": {
+    "high": 15322.0728,
+    "low": 5154.5054,
+    "mid": 9622.0
+   },
+   "KY": {
+    "high": 24745.3652,
+    "low": 8324.5994,
+    "mid": 15539.6667
+   },
+   "LA": {
+    "high": 22697.008,
+    "low": 7635.5107,
+    "mid": 14253.3333
+   },
+   "MA": {
+    "high": 21247.3932,
+    "low": 7147.8451,
+    "mid": 13343.0
+   },
+   "MD": {
+    "high": 25814.9272,
+    "low": 8684.4113,
+    "mid": 16211.3333
+   },
+   "ME": {
+    "high": 10012.4804,
+    "low": 3368.303,
+    "mid": 6287.6667
+   },
+   "MI": {
+    "high": 34550.3028,
+    "low": 11623.0829,
+    "mid": 21697.0
+   },
+   "MN": {
+    "high": 35843.3316,
+    "low": 12058.0713,
+    "mid": 22509.0
+   },
+   "MO": {
+    "high": 27983.2452,
+    "low": 9413.8561,
+    "mid": 17573.0
+   },
+   "MS": {
+    "high": 12732.8304,
+    "low": 4283.4572,
+    "mid": 7996.0
+   },
+   "MT": {
+    "high": 7925.9056,
+    "low": 2666.3575,
+    "mid": 4977.3333
+   },
+   "NC": {
+    "high": 148721.1364,
+    "low": 50031.3444,
+    "mid": 93394.3333
+   },
+   "ND": {
+    "high": 3915.7116,
+    "low": 1317.2863,
+    "mid": 2459.0
+   },
+   "NE": {
+    "high": 15898.5216,
+    "low": 5348.4288,
+    "mid": 9984.0
+   },
+   "NH": {
+    "high": 7723.14,
+    "low": 2598.145,
+    "mid": 4850.0
+   },
+   "NJ": {
+    "high": 50655.8364,
+    "low": 17041.1527,
+    "mid": 31811.0
+   },
+   "NM": {
+    "high": 8365.9388,
+    "low": 2814.3892,
+    "mid": 5253.6667
+   },
+   "NV": {
+    "high": 30247.638,
+    "low": 10175.6215,
+    "mid": 18995.0
+   },
+   "NY": {
+    "high": 71139.4084,
+    "low": 23932.0404,
+    "mid": 44674.3333
+   },
+   "OH": {
+    "high": 49029.4652,
+    "low": 16494.0244,
+    "mid": 30789.6667
+   },
+   "OK": {
+    "high": 22605.1796,
+    "low": 7604.6186,
+    "mid": 14195.6667
+   },
+   "OR": {
+    "high": 24786.7676,
+    "low": 8338.5276,
+    "mid": 15565.6667
+   },
+   "PA": {
+    "high": 40255.3412,
+    "low": 13542.3174,
+    "mid": 25279.6667
+   },
+   "RI": {
+    "high": 2475.6512,
+    "low": 832.8349,
+    "mid": 1554.6667
+   },
+   "SC": {
+    "high": 71874.5664,
+    "low": 24179.3552,
+    "mid": 45136.0
+   },
+   "SD": {
+    "high": 9763.5352,
+    "low": 3284.5553,
+    "mid": 6131.3333
+   },
+   "TN": {
+    "high": 72029.56,
+    "low": 24231.4967,
+    "mid": 45233.3333
+   },
+   "TX": {
+    "high": 354758.0568,
+    "low": 119344.3174,
+    "mid": 222782.0
+   },
+   "UT": {
+    "high": 40360.9704,
+    "low": 13577.8522,
+    "mid": 25346.0
+   },
+   "VA": {
+    "high": 54804.5692,
+    "low": 18436.8298,
+    "mid": 34416.3333
+   },
+   "VT": {
+    "high": 3930.0432,
+    "low": 1322.1076,
+    "mid": 2468.0
+   },
+   "WA": {
+    "high": 58275.4704,
+    "low": 19604.4772,
+    "mid": 36596.0
+   },
+   "WI": {
+    "high": 37627.8812,
+    "low": 12658.4124,
+    "mid": 23629.6667
+   },
+   "WV": {
+    "high": 6458.7744,
+    "low": 2172.7992,
+    "mid": 4056.0
+   },
+   "WY": {
+    "high": 3213.4632,
+    "low": 1081.0426,
+    "mid": 2018.0
+   }
+  },
+  "high": 51,
+  "low": 41,
+  "mid": null,
+  "national": {
+   "high": 2341640.1,
+   "low": 787752.2,
+   "mid": 1470510.0
+  },
+  "unit": "states inside their 2026 range, of 51"
+ },
+ "question": "Does each state's 2026 building permit total fall inside the 2026 baseline range the tool publishes?",
+ "seen_before_freezing": "Nothing: the 2026 annual totals had not been published on 2026-11-03.",
+ "years": [
+  2026
+ ]
+}
