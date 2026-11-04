@@ -76,9 +76,9 @@ def _aclf_block(state: StateRef, data_dir: Path | None, pep: dict[str, dict[str,
     years = sorted({y for s in pep.values() for y in s})
     pep_state = {y: sum(s.get(y, 0) for s in pep.values()) for y in years}
     rows = fetch_aclf.ratio_table(aclf, pep_state)
-    ok, why = fetch_aclf.doubling_check(rows)
     if not fetch_aclf.SERIES_APPROVED:
         return {}, rows, fetch_aclf.EXCLUDED_NOTE
+    ok, why = fetch_aclf.doubling_check(rows)
     if ok:
         return fetch_aclf.halved_series(aclf), rows, fetch_aclf.HALVED_NOTE
     return {}, rows, (f"address_units: Address Count Listing Files excluded for this state because the "
@@ -110,7 +110,7 @@ def build_state(code: str, data_dir: Path | None = None, *, lenient: bool = Fals
             c.cbsa, c.cbsa_title, c.cbsa_type, c.metro_role = (
                 meta["cbsa"], meta["cbsa_title"], meta["cbsa_type"], meta["metro_role"])
         c.permits = permits.get(f, {})
-        c.permits_5plus_share_5yr = fetch_bps.five_plus_share(c.permits) if c.permits else None
+        c.permits_5plus_share_5yr = fetch_bps.five_plus_share(c.permits)
         absent = [str(y) for y in fetch_bps.COUNTY_YEARS if str(y) not in c.permits]
         if absent and fetch_bps.county_file(fetch_bps.COUNTY_YEARS[-1], data_dir).exists():
             c.notes.append("permits: no BPS row (no permit-issuing place reported) for "
@@ -161,8 +161,8 @@ def build_state(code: str, data_dir: Path | None = None, *, lenient: bool = Fals
                 b.near_transit_quarter_mile = False
             else:
                 b.dist_major_stop_miles = round(float(d), 3)
-                b.near_transit_half_mile = bool(b.dist_major_stop_miles <= HALF_MILE)
-                b.near_transit_quarter_mile = bool(b.dist_major_stop_miles <= QUARTER_MILE)
+                b.near_transit_half_mile = b.dist_major_stop_miles <= HALF_MILE
+                b.near_transit_quarter_mile = b.dist_major_stop_miles <= QUARTER_MILE
     bg_acs_missing = sum(1 for b in bgs if b.housing_units is None)
     if bg_acs_missing:
         notes.append(f"{bg_acs_missing} of {len(bgs)} 2020 block groups have no ACS 2020-2024 row "
