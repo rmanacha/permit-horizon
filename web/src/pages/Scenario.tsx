@@ -14,7 +14,7 @@ import { TornadoChart, YearChart } from '../components/charts.tsx';
 import { GradeLine, SourceList } from '../components/Sources.tsx';
 import { acceptsValue, isMultiplicative, relevantIds } from '../engine/rescale.ts';
 import { fmtCount, fmtNumber, fmtShare, outcomeLabel } from '../lib/format.ts';
-import { SCENARIO_TERM, SHORT } from '../lib/names.ts';
+import { SCENARIO_TERM, SHORT, stateName } from '../lib/names.ts';
 import { DELAYS, SHARES, caseKey, type CaseSel } from '../lib/route.ts';
 import { humanReviewText, registerLookup, scenarioView } from '../lib/viewmodel.ts';
 import { SCENARIOS, type Results, type Scenario, type ScenarioName } from '../types/results.ts';
@@ -430,7 +430,7 @@ function ScenarioBody({ r, name }: { r: Results; name: ScenarioName }) {
   const reg = useMemo(() => registerLookup(registers.assumptions), [registers]);
   const s = r.scenarios[name];
   const v = scenarioView(r, name, reg, view.settings, view.caseSel);
-  const stateName = index.states.find((x) => x.state === r.meta.state)?.name ?? r.meta.state;
+  const stateLabel = stateName(index, r.meta.state);
   const cs = s.cases[v.caseKey] ?? s.cases.register_default;
   const byYear = v.caseKey === 'register_default' ? s.increment.by_year : cs.by_year;
   const conv = s.increment.conversion.factor;
@@ -442,7 +442,7 @@ function ScenarioBody({ r, name }: { r: Results; name: ScenarioName }) {
   return (
     <>
       <h1>
-        {stateName}: <Term term={SCENARIO_TERM[name]}>{s.label}</Term>
+        {stateLabel}: <Term term={SCENARIO_TERM[name]}>{s.label}</Term>
       </h1>
       <ul className="narrative">
         {s.narrative.map((t) => (

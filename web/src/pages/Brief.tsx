@@ -4,7 +4,7 @@ import { useShared, useView } from '../app/context.tsx';
 import { NeedState, StateResults } from '../components/StateResults.tsx';
 import { cliCommand } from '../engine/rescale.ts';
 import { fmtCount, fmtShare, outcomeLabel, statusLabel } from '../lib/format.ts';
-import { SHORT } from '../lib/names.ts';
+import { SHORT, stateName } from '../lib/names.ts';
 import { registerLookup, scenarioView } from '../lib/viewmodel.ts';
 import { SITE_URL } from '../content/site.ts';
 import { Button } from '../components/ds/Button.tsx';
@@ -14,7 +14,7 @@ function BriefBody({ r }: { r: Results }) {
   const { registers, index, meta } = useShared();
   const { view, href } = useView();
   const reg = useMemo(() => registerLookup(registers.assumptions), [registers]);
-  const name = index.states.find((s) => s.state === r.meta.state)?.name ?? r.meta.state;
+  const name = stateName(index, r.meta.state);
   const views = view.show.map((n) => scenarioView(r, n, reg, view.settings, view.caseSel));
   const b = r.baseline;
   const changed = Object.keys(view.settings);

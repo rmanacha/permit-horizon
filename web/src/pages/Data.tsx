@@ -7,7 +7,7 @@ import { Num } from '../components/Num.tsx';
 import { Term } from '../components/Term.tsx';
 import { acceptsValue, relevantIds } from '../engine/rescale.ts';
 import { fmtCount, fmtShare } from '../lib/format.ts';
-import { SHORT } from '../lib/names.ts';
+import { SHORT, stateName } from '../lib/names.ts';
 import { EXCLUDED_PARCELS } from '../content/site.ts';
 import { Button } from '../components/ds/Button.tsx';
 import { Select } from '../components/ds/Select.tsx';
@@ -236,7 +236,7 @@ function CrossCheck({ r }: { r: Results }) {
 
 function DataBody({ r }: { r: Results }) {
   const { index } = useShared();
-  const name = index.states.find((s) => s.state === r.meta.state)?.name ?? r.meta.state;
+  const name = stateName(index, r.meta.state);
   return (
     <>
       <h1>{name}: assumptions and data</h1>

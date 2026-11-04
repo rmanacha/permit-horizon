@@ -12,7 +12,7 @@ import { Button } from '../components/ds/Button.tsx';
 import { Checkbox } from '../components/ds/Checkbox.tsx';
 import { StatCallout } from '../components/ds/StatCallout.tsx';
 import { fmtCount, fmtShare } from '../lib/format.ts';
-import { SHORT } from '../lib/names.ts';
+import { SHORT, stateName } from '../lib/names.ts';
 import { rankIncrements, registerLookup, scenarioView, type ScenarioView } from '../lib/viewmodel.ts';
 import { countyTable, saveFile, toCSV, viewTable } from '../lib/downloads.ts';
 import { SCENARIOS, type Results, type ScenarioName } from '../types/results.ts';
@@ -336,7 +336,7 @@ function ShowFilter() {
 function ExploreState({ r }: { r: Results }) {
   const { registers, index } = useShared();
   const { view, update, href } = useView();
-  const name = index.states.find((s) => s.state === r.meta.state)?.name ?? r.meta.state;
+  const name = stateName(index, r.meta.state);
   const reg = useMemo(() => registerLookup(registers.assumptions), [registers]);
   const views = view.show.map((n) => scenarioView(r, n, reg, view.settings, view.caseSel));
   const nChanged = Object.keys(view.settings).length;
