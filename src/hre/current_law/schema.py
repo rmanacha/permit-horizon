@@ -29,7 +29,7 @@ The strength rule (docs/methods/current_law.md; decisions 62 and 91):
   statute that lets towns allow ADUs but requires nothing scores 0);
 * feature share: each benchmark feature counts equally; ``supported_with_limits``
   counts the share of the horizon it is in force (1 when in force before 2026), every
-  other status 0 (``strength_from_features`` without dates is decision 62's rule);
+  other status 0 (``feature_share`` without dates is decision 62's starting rule);
 * coverage share: the share of the state's detached single-family homes in the places
   the law binds (``hre.current_law.coverage``), 1 when it binds every jurisdiction.
 
@@ -66,13 +66,6 @@ def horizon_share(in_effect_from: str | None) -> float:
     if start >= HORIZON_END:
         return 0.0
     return (HORIZON_END - start).days / (HORIZON_END - HORIZON_START).days
-
-
-def strength_from_features(features: list[dict[str, Any]]) -> float:
-    """Decision 62's starting rule: the share of features supported with limits."""
-    if not features:
-        return 0.0
-    return sum(STATUS_WEIGHT[f["status"]] for f in features) / len(features)
 
 
 def feature_share(features: list[dict[str, Any]]) -> float:

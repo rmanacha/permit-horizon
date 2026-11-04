@@ -18,7 +18,6 @@ from hre.current_law.schema import (
     rule_problems,
     shown_text,
     strength_by_rule,
-    strength_from_features,
     validate_state,
 )
 
@@ -35,7 +34,6 @@ def test_nh_adu_worked_example():
     assert r["source"] == "register" and r["current_strength"] == 0.75
     assert r["newly_affected_share"] == 0.25
     assert r["human_review"]["status"] == "pending"
-    assert strength_from_features(r["features"]) == 0.75
     assert "674-72" in r["record"]["url"]
     assert register_digest("NH") is not None
 
