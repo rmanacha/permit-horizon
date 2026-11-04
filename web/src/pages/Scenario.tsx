@@ -15,7 +15,7 @@ import { GradeLine, SourceList } from '../components/Sources.tsx';
 import { acceptsValue, isMultiplicative, relevantIds } from '../engine/rescale.ts';
 import { fmtCount, fmtNumber, fmtShare, outcomeLabel } from '../lib/format.ts';
 import { SCENARIO_TERM, SHORT } from '../lib/names.ts';
-import { caseKey, type CaseSel } from '../lib/route.ts';
+import { DELAYS, SHARES, caseKey, type CaseSel } from '../lib/route.ts';
 import { humanReviewText, registerLookup, scenarioView } from '../lib/viewmodel.ts';
 import { SCENARIOS, type Results, type Scenario, type ScenarioName } from '../types/results.ts';
 
@@ -99,9 +99,6 @@ function Chain({ r, s }: { r: Results; s: Scenario }) {
     </section>
   );
 }
-
-const SHARES = [25, 50, 100] as const;
-const DELAYS = [0, 1, 2] as const;
 
 function Cases({ s }: { s: Scenario }) {
   const { view, update } = useView();

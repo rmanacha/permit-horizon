@@ -1,20 +1,25 @@
 // The view lives in the URL hash, so a link restores it exactly (share links, step 5):
 //   #/<page>?st=NH&sc=adu&case=50-1&set=builder_response_override:high,fee_cut_share:0.3&show=adu,fees
 // Hash routing needs no server rewrite rules, so it works on GitHub Pages, Docker and http.server.
+import type { Choice } from '../engine/rescale.ts';
 import { LEVELS, SCENARIOS, type Level, type ScenarioName } from '../types/results.ts';
 
 export const PAGES = ['explore', 'scenario', 'data', 'methods', 'validation', 'about', 'brief'] as const;
 export type Page = (typeof PAGES)[number];
 
-/** A user's choice for one register id: a named level or (for multiplicative ids) any number. */
-export type Choice = { level: Level } | { value: number };
+/** A user's choice for one register id: a named level or (for multiplicative ids) any number (the engine's type). */
+export type { Choice };
 export type Settings = Record<string, Choice>;
+
+/** The user-case grid: share newly affected (percent) by delay (years), as the engine's cases block names them. */
+export const SHARES = [25, 50, 100] as const;
+export const DELAYS = [0, 1, 2] as const;
 
 export type CaseSel =
   | { kind: 'register_default' }
   | { kind: 'no_change' }
   | { kind: 'after_horizon' }
-  | { kind: 'eligible'; share: 25 | 50 | 100; delay: 0 | 1 | 2 };
+  | { kind: 'eligible'; share: (typeof SHARES)[number]; delay: (typeof DELAYS)[number] };
 
 export interface View {
   page: Page;
@@ -48,7 +53,8 @@ export function caseKey(c: CaseSel): string {
   }
 }
 
-function encodeCase(c: CaseSel): string | null {
+/** The case as the `case=` query value; null for the register default (left out of the link). */
+export function encodeCase(c: CaseSel): string | null {
   switch (c.kind) {
     case 'register_default':
       return null;

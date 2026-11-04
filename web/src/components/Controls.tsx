@@ -1,15 +1,12 @@
 // Controls for the view: the case (share and delay), and one assumption's level or value.
 import { useId, useState } from 'react';
 import { useView } from '../app/context.tsx';
-import type { CaseSel, Choice } from '../lib/route.ts';
+import { DELAYS, SHARES, encodeCase, type CaseSel, type Choice } from '../lib/route.ts';
 import type { Level, RegisterEntry } from '../types/results.ts';
 import { Term } from './Term.tsx';
 import { Button } from './ds/Button.tsx';
 import { Input } from './ds/Input.tsx';
 import { Select } from './ds/Select.tsx';
-
-const SHARES = [25, 50, 100] as const;
-const DELAYS = [0, 1, 2] as const;
 
 type CaseOption = { key: string; label: string; sel: CaseSel };
 
@@ -26,18 +23,13 @@ const CASE_OPTIONS: CaseOption[] = [
   { key: 'none', label: 'No change to current policy (zero)', sel: { kind: 'no_change' } },
 ];
 
-function keyOf(c: CaseSel): string {
-  if (c.kind === 'eligible') return `${c.share}-${c.delay}`;
-  return { register_default: 'register_default', after_horizon: 'after', no_change: 'none' }[c.kind];
-}
-
 export function CaseControl() {
   const { view, update } = useView();
   return (
     <div className="case-control">
       <Select
         label="Case: how much of each reform is new, and when it starts"
-        value={keyOf(view.caseSel)}
+        value={encodeCase(view.caseSel) ?? 'register_default'}
         options={CASE_OPTIONS.map((o) => ({ value: o.key, label: o.label }))}
         onChange={(e) => update({ caseSel: CASE_OPTIONS.find((o) => o.key === e.target.value)?.sel ?? { kind: 'register_default' } })}
       />
