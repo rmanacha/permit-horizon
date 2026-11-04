@@ -711,7 +711,7 @@ parameters:
     confidence: high
     direction: 0
     sources:
-      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)
+      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated
         url: https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year
         locator: "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json"
         accessed: "2026-11-03"
@@ -743,7 +743,7 @@ parameters:
     confidence: high
     direction: 0
     sources:
-      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)
+      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated
         url: https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year
         locator: "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json"
         accessed: "2026-11-03"
@@ -775,7 +775,7 @@ parameters:
     confidence: high
     direction: 0
     sources:
-      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)
+      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated
         url: https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year
         locator: "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json"
         accessed: "2026-11-03"
@@ -807,7 +807,7 @@ parameters:
     confidence: high
     direction: 0
     sources:
-      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)
+      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated
         url: https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year
         locator: "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json"
         accessed: "2026-11-03"
@@ -839,7 +839,7 @@ parameters:
     confidence: moderate
     direction: 1
     sources:
-      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)
+      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated
         url: https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year
         locator: "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json"
         accessed: "2026-11-03"
@@ -875,7 +875,7 @@ parameters:
     confidence: moderate
     direction: 1
     sources:
-      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)
+      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated
         url: https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year
         locator: "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json"
         accessed: "2026-11-03"
@@ -911,7 +911,7 @@ parameters:
     confidence: moderate
     direction: 1
     sources:
-      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)
+      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated
         url: https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year
         locator: "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json"
         accessed: "2026-11-03"
@@ -947,7 +947,7 @@ parameters:
     confidence: moderate
     direction: 1
     sources:
-      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)
+      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated
         url: https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year
         locator: "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json"
         accessed: "2026-11-03"
@@ -983,7 +983,7 @@ parameters:
     confidence: moderate
     direction: 1
     sources:
-      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)
+      - title: California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated
         url: https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year
         locator: "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json"
         accessed: "2026-11-03"
@@ -1025,7 +1025,7 @@ parameters:
     confidence: low
     direction: 1
     sources:
-      - title: California HCD APR Table A2, ADU rows, de-duplicated (data/processed/CA_hcd_adu.json, decision 50)
+      - title: California HCD APR Table A2, ADU rows, de-duplicated (data/processed/CA_hcd_adu.json)
         url: https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year
         locator: "statewide de-duplicated permitted and completed ADUs by report year 2018-2025"
         accessed: "2026-11-03"
@@ -1288,7 +1288,7 @@ parameters:
     confidence: set_by_rules
     direction: 0
     sources:
-      - title: Permit Horizon decision 34 (Phase 3 brief, shared conventions)
+      - title: Permit Horizon method note, missing middle (market adjustment, a team convention)
         url: https://github.com/rmanacha/permit-horizon/blob/main/docs/methods/missing_middle.md
         locator: "market adjustment = clip((county_value / source_city_value) ^ gamma, 0.5, 1.5)"
         accessed: "2026-11-03"

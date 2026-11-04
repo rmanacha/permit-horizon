@@ -58,7 +58,7 @@ SOURCE_TITLES = {
 }
 ONLY_FOR = {"ct_crosswalk": ["CT"], "gtfs_ct_hartford_line": ["CT"], "gtfs_amtrak": ["CT"],
             "ut_hui": ["UT"], "az_assessors": ["AZ"], "nh_granit": ["NH"]}
-NOT_IN_MODEL = {"aclf": ("Downloaded and checked, then excluded (decision 46): from July 2023 the published "
+NOT_IN_MODEL = {"aclf": ("Downloaded and checked, then excluded: from July 2023 the published "   # decision 46
                          "count reads about double the Census housing-unit estimates.")}
 
 
