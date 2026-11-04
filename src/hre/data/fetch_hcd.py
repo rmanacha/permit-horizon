@@ -29,6 +29,7 @@ Raw (pre-rule) totals are kept beside the de-duplicated ones so the effect is vi
 
 from __future__ import annotations
 
+import csv
 import json
 import math
 import re
@@ -120,8 +121,6 @@ def read_adu_rows(path: Path):
     The file is about 295 MB with 70 columns; streaming row by row keeps memory
     near the size of the ADU subset (a few hundred thousand short rows).
     """
-    import csv
-
     import pandas as pd
 
     csv.field_size_limit(1 << 24)

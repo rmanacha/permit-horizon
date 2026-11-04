@@ -30,6 +30,8 @@ where the research script had 1,123.
 from __future__ import annotations
 
 import math
+import re
+import textwrap
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
@@ -289,8 +291,6 @@ def register_citation(r: dict) -> str:
 
 def write_register_band(r: dict, path: Path) -> None:
     """Write P10, P90 and the citation into the baseline_band_ratio entry, keeping comments."""
-    import re
-
     text = path.read_text(encoding="utf-8")
     start = text.index("  - id: baseline_band_ratio")
     end = text.index("\n  - id:", start + 10)
@@ -340,8 +340,6 @@ def _period_flow(rows: list[dict]) -> str:
 
 
 def _wrap(text: str, indent: int, width: int = 96) -> str:
-    import textwrap
-
     return "\n".join(textwrap.wrap(text, width=width, initial_indent=" " * indent,
                                     subsequent_indent=" " * indent)) + "\n"
 

@@ -26,7 +26,10 @@
 
 from __future__ import annotations
 
+import datetime as dt
 import json
+import os
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -49,8 +52,6 @@ def _states(state: str | None, all_states: bool) -> list[str]:
 
 
 def _data_dir(data_dir: Path | None) -> Path | None:
-    import os
-
     load_dotenv()
     if data_dir is not None:
         os.environ["DATA_DIR"] = str(data_dir)
@@ -190,8 +191,6 @@ def validate(
 
     dd = _data_dir(data_dir)
     if ledger:
-        import datetime as dt
-
         from hre.validation import ledger as lg
 
         doc = lg.load()
@@ -204,8 +203,6 @@ def validate(
         typer.echo(f"wrote {dest} ({n} checks)")
         return
     if law_quotes:
-        import datetime as dt
-
         from hre.current_law.loader import HERE as LAW_DIR
         from hre.validation import law_quotes as lq
 
@@ -222,8 +219,6 @@ def validate(
             raise typer.Exit(code=1)
         return
     if law_coverage:
-        import datetime as dt
-
         from hre.current_law import coverage as cov
         from hre.current_law.loader import HERE as LAW_DIR
         from hre.data.fetch_acs import fetch_acs
@@ -247,8 +242,6 @@ def validate(
             raise typer.Exit(code=1)
         return
     if overview:
-        import datetime as dt
-
         from hre.validation import results_overview as ov
 
         dest = write or Path("docs/evidence/results_overview.md")
@@ -260,8 +253,6 @@ def validate(
         typer.echo(f"wrote {dest} ({n} jurisdictions)")
         return
     if nrc:
-        import datetime as dt
-
         from hre.assumptions.loader import PARAMETERS_PATH
         from hre.data import fetch_nrc
         from hre.validation import completions_per_permit as cpp
@@ -286,8 +277,6 @@ def validate(
             typer.echo(f"wrote 3 completions-per-permit entries into {PARAMETERS_PATH}")
         return
     if adu_tiers:
-        import datetime as dt
-
         from hre.assumptions.loader import PARAMETERS_PATH
         from hre.validation import calibrate_adu_tiers as cal
 
@@ -316,8 +305,6 @@ def validate(
             typer.echo(f"wrote 4 bounds and 15 rates into {PARAMETERS_PATH}")
         return
     if baseline:
-        import datetime as dt
-
         from hre.assumptions.loader import PARAMETERS_PATH
         from hre.validation import backtest_baseline as bt
 
@@ -412,8 +399,6 @@ def _round_floats(obj, digits: int = 4):
 
 
 def _git_sha() -> str:
-    import subprocess
-
     try:
         sha = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True,
                              check=True).stdout.strip()
@@ -503,7 +488,6 @@ def _parse_overrides(values: list[str], levels: list[str]) -> dict[str, dict[str
 
 def _run_one(code: str, wanted: list[str], dest: Path, processed_dir: Path, data_dir: Path | None,
              quiet: bool = False, overrides: dict[str, dict[str, Any]] | None = None) -> None:
-    import datetime as dt
     import hashlib
 
     from hre.assumptions.loader import (

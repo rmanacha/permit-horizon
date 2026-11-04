@@ -36,6 +36,8 @@ from pathlib import Path
 
 import numpy as np
 
+from hre.data.fetch_acs import PREFIX_PLACE, load_geo_names, load_place_acs
+
 YEARS = (2023, 2024, 2025)
 LA = "LOS ANGELES"
 SEED = 20261103
@@ -62,8 +64,6 @@ def _key(s: str) -> str:
 
 def load_cities(processed_dir: Path = Path("data/processed"), data_dir: Path | None = None) -> Cities:
     """Join the HCD ADU table to ACS place values (needs `make hcd` and the ACS cache)."""
-    from hre.data.fetch_acs import PREFIX_PLACE, load_geo_names, load_place_acs
-
     table = json.loads((processed_dir / "CA_hcd_adu.json").read_text(encoding="utf-8"))
     names = load_geo_names(PREFIX_PLACE, "06", data_dir)
     acs = load_place_acs("06", data_dir)

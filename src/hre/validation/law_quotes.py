@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import hashlib
 import html
+import io
 import re
 from pathlib import Path
 from typing import Any
@@ -85,8 +86,6 @@ def pdf_text(data: bytes) -> str | None:
         from pypdf import PdfReader
     except ImportError:
         return None
-    import io
-
     reader = PdfReader(io.BytesIO(data))
     pages = [(pg.extract_text() or "") for pg in reader.pages]
     text = LINE_NUMBER.sub("", "\n".join(pages))

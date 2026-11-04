@@ -40,10 +40,13 @@ import math
 from pathlib import Path
 from typing import Any
 
+import yaml
+
 from hre.current_law.schema import horizon_share
 from hre.data.cache import fetch, raw_dir
 from hre.data.fetch_acs import PREFIX_COUNTY, PREFIX_PLACE, load_geo_names, read_table, table_path
 from hre.data.fetch_gazetteer import GAZ_YEAR, LICENSE, NOTES, _read_text
+from hre.data.states import lookup
 
 PREFIX_STATE = "0400000US"
 PREFIX_PLACE_IN_COUNTY = "1550000US"
@@ -254,10 +257,6 @@ def sentence(r: dict[str, Any]) -> str:
 
 def check_files(law_dir: Path, data_dir: Path | None = None) -> list[dict[str, Any]]:
     """Recompute every stored coverage share that carries a rule (``hre validate --law-coverage``)."""
-    import yaml
-
-    from hre.data.states import lookup
-
     rows = []
     for p in sorted(law_dir.glob("[A-Z][A-Z].yaml")):
         doc = yaml.safe_load(p.read_text(encoding="utf-8"))
