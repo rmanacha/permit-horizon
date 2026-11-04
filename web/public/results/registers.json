@@ -2792,7 +2792,7 @@
       "by": null,
       "date": null
      },
-     "notes": "New entry 2026-11-03; coverage is an upper bound (decision 91)."
+     "notes": "New entry 2026-11-03; coverage is an upper bound (decision 91). The denominator is all detached homes; against the scenario's exposed stock (central metropolitan counties, 1,963,420 homes) the share is 0.0546 and the strength still rounds to 0.04, erring toward a larger increment (planning window note, 2026-11-03)."
     },
     "tod": {
      "record": {
