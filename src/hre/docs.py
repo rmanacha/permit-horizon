@@ -22,6 +22,7 @@ import functools
 import json
 import re
 import sys
+import tomllib
 from collections.abc import Callable
 from pathlib import Path
 from typing import Any
@@ -37,7 +38,21 @@ BUNDLE = REPO / "web" / "public" / "results"
 LAW_DIR = REPO / "src" / "hre" / "current_law"
 REGISTER_MD = REPO / "docs" / "methods" / "register.md"
 VALIDATION_MD = REPO / "docs" / "evidence" / "validation.md"
-DOCUMENTS = ("docs/MODEL_AND_ASSUMPTIONS.md", "docs/POLICY_SCENARIO_COMPARISON.md")
+SBOM_PATH = REPO / "docs" / "sbom" / "sbom.spdx.json"
+UV_LOCK = REPO / "uv.lock"
+NPM_LOCK = REPO / "web" / "package-lock.json"
+DOCUMENTS = ("docs/MODEL_AND_ASSUMPTIONS.md", "docs/POLICY_SCENARIO_COMPARISON.md", "docs/DISCLOSURES.md")
+
+# Licences the project accepts for any dependency: permissive only, no copyleft (MPL, LGPL, GPL,
+# AGPL, EUPL, EPL, CDDL). Python-2.0 is the PSF-style licence; CC0-1.0 a public-domain dedication.
+PERMISSIVE = frozenset({"MIT", "ISC", "BSD-2-Clause", "BSD-3-Clause", "0BSD", "Apache-2.0", "Zlib",
+                        "CC0-1.0", "Python-2.0", "PSF-2.0", "Unlicense", "BlueOak-1.0.0"})
+# The SBOM asserts no licence for GitHub Actions; each one's repository states MIT (GitHub API,
+# /repos/{owner}/{repo}/license, read 2026-11-04). They run only on GitHub's CI machines.
+ACTION_LICENCES = {"actions/checkout": "MIT", "actions/setup-python": "MIT", "actions/setup-node": "MIT",
+                   "actions/upload-pages-artifact": "MIT", "actions/deploy-pages": "MIT",
+                   "astral-sh/setup-uv": "MIT"}
+PROJECT_NAMES = {"permit-horizon", "com.github.rmanacha/permit-horizon", "rmanacha/permit-horizon"}
 
 SHOWCASE = ("UT", "NH", "AZ")
 REFORMS = ("adu", "missing_middle", "tod", "parking", "fees")
@@ -338,6 +353,143 @@ def flips() -> str:
     return "\n".join(lines)
 
 
+# ------------------------------------------------------------------ Disclosures: dependencies from the SBOM
+
+
+def _norm(name: str) -> str:
+    return re.sub(r"[-_.]+", "-", name).lower()
+
+
+def sbom_packages(path: Path = SBOM_PATH) -> list[dict[str, str]]:
+    """Every package in the stored SBOM: ecosystem, name, version, licence as GitHub concluded it."""
+    doc = json.loads(path.read_text(encoding="utf-8"))
+    out = []
+    for p in doc["packages"]:
+        purl = next((r["referenceLocator"] for r in p.get("externalRefs") or []
+                     if r.get("referenceType") == "purl"), "")
+        eco = purl.split("/", 1)[0].removeprefix("pkg:") if purl else "github"
+        lic = p.get("licenseConcluded") or p.get("licenseDeclared") or "NOASSERTION"
+        out.append({"ecosystem": eco, "name": p["name"], "version": str(p.get("versionInfo", "")), "licence": lic})
+    return out
+
+
+def licence_tokens(expr: str) -> set[str]:
+    """The licence ids in an SPDX expression, without the AND, OR and WITH operators."""
+    return set(re.findall(r"[A-Za-z0-9.+-]+", expr)) - {"AND", "OR", "WITH"}
+
+
+def licence_for(pkg: dict[str, str]) -> tuple[str, str]:
+    """(licence shown, note): the SBOM's licence, or the stated one where the SBOM asserts none."""
+    if pkg["name"] in PROJECT_NAMES:
+        return "Apache-2.0", "this project"
+    if pkg["ecosystem"] == "githubactions":
+        return ACTION_LICENCES.get(pkg["name"], "NOASSERTION"), "licence from the action's repository"
+    return pkg["licence"], ""
+
+
+def licence_problems(path: Path = SBOM_PATH) -> list[str]:
+    bad = []
+    for pkg in sbom_packages(path):
+        lic, _ = licence_for(pkg)
+        if not licence_tokens(lic) <= PERMISSIVE:
+            bad.append(f"{pkg['ecosystem']}:{pkg['name']} {pkg['version']}: {lic}")
+    return bad
+
+
+def uv_packages() -> dict[str, tuple[str, str]]:
+    """uv.lock: normalized name -> (version, role) where role is runtime, an extra, or dev."""
+    lock = tomllib.loads(UV_LOCK.read_text(encoding="utf-8"))
+    pkgs = {_norm(p["name"]): p for p in lock["package"]}
+    root = next(p for p in lock["package"] if p["name"] == "permit-horizon")
+
+    def closure(names: list[str], seen: set[str]) -> set[str]:
+        todo, got = [_norm(n) for n in names], set()
+        while todo:
+            n = todo.pop()
+            if n in got or n in seen:
+                continue
+            got.add(n)
+            todo += [_norm(d["name"]) for d in pkgs[n].get("dependencies", [])]
+        return got
+
+    roles: dict[str, str] = {"permit-horizon": "this project"}
+    runtime = closure([d["name"] for d in root.get("dependencies", [])], set())
+    roles |= dict.fromkeys(runtime, "runtime (engine and command line)")
+    taken = set(roles)
+    for extra, deps in sorted(root.get("optional-dependencies", {}).items()):
+        got = closure([d["name"] for d in deps], taken)
+        roles |= dict.fromkeys(got, f"optional extra `{extra}`")
+        taken |= got
+    for group, deps in sorted(root.get("dev-dependencies", {}).items()):
+        got = closure([d["name"] for d in deps], taken)
+        roles |= dict.fromkeys(got, "development only (tests, lint)")
+        taken |= got
+    return {n: (str(pkgs[n]["version"]), roles.get(n, "not reached")) for n in pkgs}
+
+
+def npm_packages() -> dict[tuple[str, str], str]:
+    """web/package-lock.json: (name, version) -> role (served to the browser, or build only)."""
+    lock = json.loads(NPM_LOCK.read_text(encoding="utf-8"))
+    out = {}
+    for key, p in lock["packages"].items():
+        if not key:
+            continue
+        name = key.split("node_modules/")[-1]
+        out[(name, str(p["version"]))] = "website build only" if p.get("dev") else "website, served to the browser"
+    return out
+
+
+def dependencies() -> str:
+    """The dependency table for the disclosures: every SBOM package with its licence and where it runs."""
+    pkgs = sbom_packages()
+    py = uv_packages()
+    npm = npm_packages()
+    rows: list[tuple[int, str, str, str, str]] = []
+    groups: dict[str, list[dict[str, str]]] = {}
+    for pkg in pkgs:
+        lic, note = licence_for(pkg)
+        if pkg["ecosystem"] == "pypi":
+            role = py.get(_norm(pkg["name"]), ("", "not in uv.lock"))[1]
+            order = 0
+        elif pkg["ecosystem"] == "npm":
+            role = npm.get((pkg["name"], pkg["version"]), "not in package-lock.json")
+            order = 1 if "served" in role else 2
+            scope = pkg["name"].split("/")[0]
+            platform_build = scope == "@esbuild" or (
+                scope.startswith("@") and pkg["name"].split("/")[1].startswith(("rollup-", "typescript-", "lzma-")))
+            if platform_build:
+                groups.setdefault(scope, []).append(pkg)
+                continue
+        elif pkg["ecosystem"] == "githubactions":
+            role, order = "CI only (GitHub's machines); not shipped", 3
+        else:
+            role, order = "this repository", 4
+        shown = lic + (f" ({note})" if note and note != "this project" else "")
+        rows.append((order, pkg["name"].lower(), f"| {pkg['name']} | {pkg['version']} | {shown} | {role} |", lic, role))
+    for scope, members in sorted(groups.items()):
+        lics = sorted({m["licence"] for m in members})
+        vers = sorted({m["version"] for m in members})
+        builds = f"{len(members)} platform build" + ("s; one is installed per machine" if len(members) > 1 else "")
+        row = (f"| {scope}/* ({builds}) | "
+               f"{', '.join(vers)} | {', '.join(lics)} | website build only |")
+        rows.append((2, scope, row, ", ".join(lics), "build"))
+    lines = ["| Package | Version | Licence (from the SBOM) | Where it is used |", "|---|---|---|---|"]
+    lines += [r[2] for r in sorted(rows)]
+    eco: dict[str, int] = {}
+    for pkg in pkgs:
+        eco[pkg["ecosystem"]] = eco.get(pkg["ecosystem"], 0) + 1
+    counts = ", ".join(f"{v} {k}" for k, v in sorted(eco.items()))
+    lics: dict[str, int] = {}
+    for pkg in pkgs:
+        lic, _ = licence_for(pkg)
+        lics[lic] = lics.get(lic, 0) + 1
+    lic_text = "; ".join(f"{k} {v}" for k, v in sorted(lics.items(), key=lambda kv: (-kv[1], kv[0])))
+    problems = licence_problems()
+    lines += ["", (f"{len(pkgs)} packages in docs/sbom/sbom.spdx.json ({counts}). Licences: {lic_text}. "
+                   + ("Every licence is permissive." if not problems else f"Not permissive: {'; '.join(problems)}."))]
+    return "\n".join(lines)
+
+
 BLOCKS: dict[str, Callable[[], str]] = {
     "core-assumptions": core_assumptions,
     "formulas": formulas,
@@ -348,6 +500,7 @@ BLOCKS: dict[str, Callable[[], str]] = {
     "benchmarks": benchmarks,
     **{f"ranking-{st}": functools.partial(ranking, st) for st in SHOWCASE},
     "flips": flips,
+    "dependencies": dependencies,
 }
 
 

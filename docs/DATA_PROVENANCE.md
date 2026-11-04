@@ -38,8 +38,10 @@ Every source is a keyless public download; no API key or account is required.
 | City of Austin, Issued Construction Permits (frozen ADU holdout, counts only) | City of Austin, `https://data.austintexas.gov/resource/3syk-w9eu.json` (SoQL grouped counts by year; `validation/austin_adu_2023_2025/`) | dataset as of the fetch | 2026-11-04 | Public Domain U.S. Government (stated on the dataset) | public (city) |
 | Synthetic demo state `ZZ` | this repository, `scripts/make_sample_zz.py` | n/a | n/a | Apache-2.0 (invented numbers, no real place) | team-created |
 
-Tables B25004 (vacancy status) and B25034 (year built) are downloaded and
-cached for later phases but no field of the processed file is built from them yet.
+Tables B25004 (vacancy status) and B25034 (year built) are downloaded and cached,
+but no field of the processed file is built from them. The FHFA county index is
+carried in the processed file (`hpi`) and no estimate uses it in this version; the
+National Transit Database only flags rail agencies that have no stop on the map.
 
 # Cleaning and Preparation
 
@@ -180,13 +182,13 @@ housing stock (New Hampshire 1,295,974 in July 2023 and 1,334,294 in July
 2026, against Census Population Estimates of 653,193 and about 667,000). We
 computed, for every state and vintage, the ratio of the published total to the
 PEP housing-unit estimate for the same date (July files exact; December files
-interpolated; July 2026 extrapolated one year beyond PEP). Rule set in advance
-(Phase 1 brief, decision 28): store the series divided by two only if every
+interpolated; July 2026 extrapolated one year beyond PEP). Rule set in advance,
+before any ratio was computed: store the series divided by two only if every
 state's ratio from July 2023 on is 2.0 ± 0.05; otherwise store nothing.
 Result: the ratio is not a constant 2.0. It starts well below 2 in fast-growing
 states and rises toward 2.0 by 2026 (Utah 1.894 in July 2023, 2.001 in July
 2026; Arizona 1.938 to 1.991; New Hampshire 1.984 to 2.001; California 1.970
-to 1.993). Across all 50 states and DC, 37 pass the band and 14 do not: the July 2023 ratio runs from 1.894 (Utah) to 2.013 (West Virginia), and by July 2026 from 1.979 (South Dakota) to 2.110 (DC), low where housing grows fastest and above 2 where it grows slowest, while the June 2022 file matches the 2020 Census count in every state (ratio 0.94 to 1.00 against the 2022 estimate) A series whose halved value lags the estimated
+to 1.993). Across all 50 states and DC, 37 pass the band and 14 do not: the July 2023 ratio runs from 1.894 (Utah) to 2.013 (West Virginia), and by July 2026 from 1.979 (South Dakota) to 2.110 (DC), low where housing grows fastest and above 2 where it grows slowest, while the June 2022 file matches the 2020 Census count in every state (ratio 0.94 to 1.00 against the 2022 estimate). A series whose halved value lags the estimated
 stock by up to five percent and then catches up would overstate recent growth
 exactly where growth is fastest, so **the series is excluded from
 `data/processed/{ST}.json` for every state** (`address_units` is empty and the
@@ -214,7 +216,7 @@ geography, and for New Hampshire, Utah and (after the planning-region recode
 above) Connecticut every center-of-population block group has an ACS row.
 
 **Block-group land area is not available** without the TIGER shapefiles we
-chose not to download (decision 36); `land_sqmi` is null for block groups and
+chose not to download (no estimate needs it); `land_sqmi` is null for block groups and
 present for counties.
 
 **Transit:** bus rapid transit cannot be identified in GTFS and is not
@@ -238,13 +240,15 @@ County is the unincorporated area, not the county total).
 
 # Restricted, Sensitive, or Personal Data
 
-No dataset in Phase 1 involves individuals or households. The processed files
-hold county and block-group aggregates from published Census tables. HCD
-Table A2 lists projects with street addresses and coordinates; only
-jurisdiction-year sums of ADU units leave the raw cache, and the raw file is
-never committed.
+**No personal data is used, stored or published.** No dataset the tool uses is
+restricted or confidential, and none needed permission beyond its public terms.
+The processed files hold county and block-group totals from published Census
+tables; block-group figures are only ever summed over many block groups, so no
+small cell is shown. HCD Table A2 lists projects with street addresses and
+coordinates; only jurisdiction-year sums of ADU units leave the raw cache, and
+the raw file is never committed.
 
-Parcel adapters (Phase 5, `docs/methods/adapters.md`) never download parcel
+The parcel adapters (`docs/methods/adapters.md`) never download parcel
 rows. The Utah, Maricopa and Pinal services, and New Hampshire's CAMA table,
 carry owner names and mailing or street addresses; each adapter sends one count
 query (grouped or distinct counts computed by the server) that names none of
@@ -254,8 +258,17 @@ applicants and contractors; the frozen holdout asked only for counts by year.
 
 # Excluded Sources
 
-Considered and rejected on licence or access grounds (details in the planning
-workspace, `research/data_sources.md`):
+Downloaded and then excluded on quality grounds:
+
+- **Census Address Count Listing Files** (block-level housing-unit counts): from
+  July 2023 on the published total sums to about twice each state's housing
+  stock, and the ratio is not a constant 2 (1.89 in Utah to 2.11 in DC), so the
+  series can't be repaired by halving it. Excluded for every state; the check
+  reruns with `make validate-aclf` and the tables are in
+  `docs/evidence/aclf_ratio_check_all_states.md`. Census housing-unit estimates
+  take its place as the cross-check beside the baseline.
+
+Considered and rejected on licence or access grounds:
 
 - **National Zoning Atlas**: terms bar downloading, reproduction and
   scraping; bulk data is sold. Replaced by NZLUD (MIT).
@@ -268,6 +281,7 @@ workspace, `research/data_sources.md`):
 - **Wharton Residential Land Use Regulation Index 2018**: no stated terms;
   not redistributed.
 - **Impact-fee schedules**: no open national dataset; fees are a user-supplied
-  parameter with a documented default (Phase 2).
+  parameter with a documented default (the challenge's $50,000 a
+  home) and a variant with the national average fee.
 - **Census API**: requires a key since May 2026; every table we need exists as
   a keyless bulk file, so the key is not used.

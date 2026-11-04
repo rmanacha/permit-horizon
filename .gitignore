@@ -50,6 +50,8 @@ out/
 *.bom
 sbom.json
 sbom.spdx.json
+# ...except the submission SBOM, exported from GitHub's dependency graph (make sbom)
+!docs/sbom/sbom.spdx.json
 
 # ==============================================================================
 # Language-specific — paste rules for your stack here

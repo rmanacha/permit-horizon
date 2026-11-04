@@ -1,0 +1,2615 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "creationInfo": {
+    "created": "2026-11-04T14:35:37Z",
+    "creators": [
+      "Tool: protobom-v0.0.0-20261103234600-1ff5abc4633c+dirty",
+      "Tool: GitHub.com-Dependency-Graph",
+      "Tool: dependabot"
+    ]
+  },
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "https://spdx.org/spdxdocs/protobom/2f0a69a1-34e8-41ed-a7ea-14f3bf6772c2",
+  "name": "com.github.rmanacha/permit-horizon",
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-pypi-shellingham-1.5.4-dbcf19",
+      "copyrightText": "Copyright (c) 2018, Tzu-ping Chung <uranusjr@gmail.com>",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/shellingham@1.5.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "ISC",
+      "name": "shellingham",
+      "versionInfo": "1.5.4"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-python-dateutil-4.0.0-b101c8",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/python-dateutil@4.0.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "name": "python-dateutil",
+      "versionInfo": "4.0.0"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-permit-horizon-0.1.0-40affb",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/permit-horizon@0.1.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "permit-horizon",
+      "versionInfo": "0.1.0"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-pygments-2.21.0-6fda70",
+      "copyrightText": "(c) 2000-2003 by cYcnus visit www.cYcnus.de, (c) 2006-present by Georg Brandl, Matthaus Chajdas and contributors, (c) 2010 Jeremy Ashkenas, DocumentCloud Inc., (c) 2010 Jeremy Ashkenas, DocumentCloud Inc. Underscore, (c) 2014, (c) 2014 Comment.Multiline Text.Whitespace, (c) 2015 Andreas Rossberg, (c) Copyright 1999, Artran, Inc., (c) Copyright 2006 by myself, (c) Copyright 2006 Salvatore Filippone University of Rome Tor Vergata, (c) Copyright 2006-present, Georg Brandl and Pygments contributors, (c) FSF., (c) Justin Fletcher, (c) Justin Fletcher, 1998, (c) Justin Fletcher, 1998 40, (c) Name.Entity 1998-2009, Modelica Association, (c) Name.Entity Copyright 2006 by Text Punctuation, (c) openEHR Foundation, (c) V End, Copyright (c) 1984, 1985, 1988, 2010 Howard Trickey and Oren Patashnik, Copyright (c) 1984, 1985, 1988, 2010 Howard Trickey and Oren Patashnik. Unlimited, Copyright (c) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004 Free Software Foundation, Inc., Copyright (c) 1985-1986, 1992, 1994-1995, 1999-2015 Free Software, Copyright (c) 1985-1986, 1992, 1994-1995, 1999-2015 Free Software Foundation, Inc., Copyright (c) 1991, 1992, Jos van de Woude, jvdwoude@hut.nl, Copyright (c) 1991, Jos van der Woude, jvdwoude@hut.nl, Copyright (c) 1993-2003 Yukihiro Matsumoto, Copyright (c) 1994-5 by the Regents of the University of California, Copyright (c) 1995-2004 Functional Objects, Inc., Copyright (c) 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004 Free Software Foundation, Inc., Copyright (c) 1996-2016 by the PostgreSQL Global Development Group, Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005 Comment.Single, Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005 Free Software Foundation, Inc., Copyright (c) 1997 Borland International, Copyright (c) 1998 Comment, Copyright (c) 1998-2009, Modelica Association, Copyright (c) 1998,1999,2000,2001,2002 Tal Davidson, Copyright (c) 2000 Information-technology Promotion Agency, Japan, Copyright (c) 2000 Network Applied Communication Laboratory, Inc., Copyright (c) 2003, 04 by Johannes Barre, Copyright (c) 2003, MetaQuotes Software Corp., copyright (c) 2004 by Andre Simon, Copyright (c) 2004, 2005, 2006 Aelitis, Copyright (c) 2005 Free Software Foundation, Inc, Copyright (c) 2005-2006 by, Copyright (c) 2005-2007 Terence Parr, Copyright (c) 2006 Kashia Buch (kashia@vfemail.net), Fabian Buch (fabian@fabian-buch.de), Copyright (c) 2006-2022 by the, Copyright (c) 2006, Manni, Copyright (c) 2007-2008 - INRIA, Copyright (c) 2008 Silken, Copyright (c) 2008 Slava Pestov, Copyright (c) 2008 The Regents of the University of California, Copyright (c) 2008-2011 The Regents of the University of California, Copyright (c) 2008, Brian Frank and Andy Frank, Copyright (c) 2009 Benjamin Kowarsch, Copyright (c) 2009 The R Foundation for Statistical Computing, Copyright (c) 2009 The R Foundation for Statistical Computing ISBN, Copyright (c) 2009-2010, Gary L. Cutler, Copyright (c) 2009-2010, Gary L. Cutler GC0410, Copyright (c) 2010, Gary L. Cutler, Copyright (c) 2011 Nokia Corporation and/or its subsidiary(-ies), Copyright (c) 2012-2013 Nenad Rakocevic, Copyright (c) 2014 Fullstack.io, Copyright (c) 2015 DH electronics GmbH, Copyright (C) 2015 DH electronics GmbH, Copyright (c) 2015 Georg Brandl, Copyright (c) 2017 Johannes Holzl, Copyright (c) 2018 Marek Vasut <marex@denx.de>, Copyright (c) 2023 Roblox Corporation, Copyright (c) Curve.Fi, 2020-2023, Copyright (c) INRIA - Serge, Copyright (c) Rich Hickey, Copyright 1996 Institut National de Recherche en Informatique, Copyright 1997 University of Cambridge, Copyright 1999-2011, Copyright 1999-2011 Comment, Copyright 2004-2008 Jean Privat <jean@pryen.org>, Copyright 2005 Brian Alliet, copyright 2006-2014, MetaQuotes Software Corp, Copyright 2006-2014, MetaQuotes Software Corp., Copyright 2006-2014, MetaQuotes Software Corp. http://www.metaquotes.net, Copyright 2006-2020 by the Pygments team, Copyright 2006-2022 by the Pygments team, copyright 2006-2024, Georg Brandl and Pygments contributors, Copyright 2006-present by r'the Pygments team, Copyright 2006-present by the Pygments team, copyright 2006. Text, copyright 2006. Uploaded, Copyright 2007-2012 LassoSoft Inc., Copyright 2007-2013 by the Sphinx team, Copyright 2007-2021 by the Sphinx team, Copyright 2008, 280 North, Inc., Copyright 2009-2013, MetaQuotes Software Corp., Copyright 2009-2013, MetaQuotes Software Corp. http://www.mql4.com, Copyright 2012 by Luis Majano and Ortus Solutions, Corp www.gocontentbox.org www.luismajano.com www.ortussolutions.com, Copyright 2012 Nokia Siemens Networks Oyj, Copyright 2012-2013 Alexis Laferriere <alexis.laf@xymus.net>, Copyright 2012-2018 Manas Technology Solutions, Copyright 2013 Alexis Laferriere <alexis.laf@xymus.net>, Copyright 2013 Matthieu Lucas <lucasmatthieu@gmail.com>, Copyright 2013 Wikimedia, Copyright 2014 Alexis Laferriere <alexis.laf@xymus.net>, Copyright 2014 Lucas Bajolet <r4pass@hotmail.com>, Copyright 2015 Ruben De Smet, Copyright 2020 Microsoft Research, Copyright 2021 by the Pygments team, Copyright 2023 The Redblox Authors, Copyright content Knut Muller, Alexander Wolf, Uwe Ritzschke, Paul-Robert Achcenich, 2006, copyright Core CorrespondenceScrolls, Murphy (c) 2000-2003, Platform Copyright 2012 by Luis Majano and Ortus Solutions, Corp www.gocontentbox.org www.luismajano.com www.ortussolutions.com Apache, Portions (c) International Organization for Standardization 1986, Portions created by the Initial Developer are Copyright (c) 1998 the Initial Developer",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/pygments@2.21.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-2-Clause",
+      "name": "pygments",
+      "versionInfo": "2.21.0"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-pluggy-1.7.0-7fbb37",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/pluggy@1.7.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "pluggy",
+      "versionInfo": "1.7.0"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-tzdata-2026.6-0e9824",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/tzdata@2026.6",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "tzdata",
+      "versionInfo": "2026.6"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-ruff-0.17.3-2978a2",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/ruff@0.17.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "ruff",
+      "versionInfo": "0.17.3"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-pypdf-6.21.4-95e4cd",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/pypdf@6.21.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "name": "pypdf",
+      "versionInfo": "6.21.4"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-pyyaml-6.0.3-aaa169",
+      "copyrightText": "Copyright (c) 2006-2016 Kirill Simonov, Copyright (c) 2017-2021 Ingy",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/pyyaml@6.0.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "pyyaml",
+      "versionInfo": "6.0.3"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-annotated-doc-0.0.5-16401d",
+      "copyrightText": "Copyright (c) 2025 Sebastian Ramirez",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/annotated-doc@0.0.5",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "annotated-doc",
+      "versionInfo": "0.0.5"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-et-xmlfile-2.0.0-92e456",
+      "copyrightText": "Copyright (c) 1991 - 1995, Stichting Mathematisch Centrum Amsterdam, The Netherlands, Copyright (c) 1995-2001 Corporation for National Research Initiatives, Copyright (c) 1999-2008 by Fredrik Lundh, Copyright (c) 2001-2024 Python Software Foundation, Copyright (c) 2001-present Python Software Foundation, Copyright (c) 2010 openpyxl, Copyright (c) 2010-2015 openpyxl",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/et-xmlfile@2.0.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "0BSD AND BSD-3-Clause AND MIT AND Python-2.0",
+      "name": "et-xmlfile",
+      "versionInfo": "2.0.0"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-pytest-9.2.0-40bdb0",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/pytest@9.2.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "pytest",
+      "versionInfo": "9.2.0"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-pyshp-3.1.6-503045",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/pyshp@3.1.6",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "pyshp",
+      "versionInfo": "3.1.6"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-pandas-3.1.0-a8b7a2",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/pandas@3.1.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "name": "pandas",
+      "versionInfo": "3.1.0"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-packaging-26.3-3c9a08",
+      "copyrightText": "Copyright (c) 2017-present Ofek Lev <oss@ofek.dev>, Copyright (c) Donald Stufft and individual contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/packaging@26.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0 OR BSD-2-Clause",
+      "name": "packaging",
+      "versionInfo": "26.3"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-typer-0.27.3-6e44b0",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/typer@0.27.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "typer",
+      "versionInfo": "0.27.3"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-rich-15.0.0-388642",
+      "copyrightText": "Copyright (c) 2020 Will McGugan, Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/rich@15.0.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "rich",
+      "versionInfo": "15.0.0"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-mdurl-0.1.2-1db4b8",
+      "copyrightText": "Copyright (c) 2015 Vitaly Puzrin, Alex Kocharin, Copyright (c) 2021 Taneli Hukkinen, Copyright Joyent, Inc. and other Node contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/mdurl@0.1.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "mdurl",
+      "versionInfo": "0.1.2"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-iniconfig-2.3.1-6b33b0",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/iniconfig@2.3.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "iniconfig",
+      "versionInfo": "2.3.1"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-openpyxl-3.1.5-2db729",
+      "copyrightText": "Copyright (c) 2010 openpyxl, Copyright (c) 2010-2024 openpyxl, Copyright (c) 2010-2024 openpyxl from openpyxl.descriptors.serialisable, Copyright (c) 2010-2024 openpyxl from openpyxl.descriptors.serialisable import",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/openpyxl@3.1.5",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "openpyxl",
+      "versionInfo": "3.1.5"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-markdown-it-py-4.2.0-908e83",
+      "copyrightText": "Copyright (c) 2014 Vitaly Puzrin, Alex Kocharin, Copyright (c) 2020, Copyright 2014 Mathias Bynens https://mathiasbynens.be, Copyright 2021 Taneli Hukkinen",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/markdown-it-py@4.2.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "markdown-it-py",
+      "versionInfo": "4.2.0"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-numpy-2.5.4-69dded",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/numpy@2.5.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "name": "numpy",
+      "versionInfo": "2.5.4"
+    },
+    {
+      "SPDXID": "SPDXRef-pypi-colorama-0.4.6-a2947b",
+      "copyrightText": "Copyright (c) 2010 Jonathan Hartley, Copyright Jonathan Hartley & Arnon Yaari, 2013-2020, Copyright Jonathan Hartley 2013",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/colorama@0.4.6",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-2-Clause AND BSD-3-Clause",
+      "name": "colorama",
+      "versionInfo": "0.4.6"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-android-x64-0.28.2-1002e8",
+      "copyrightText": "Copyright 2018 The Go Authors, Copyright 2021 The Go Authors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/android-x64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/android-x64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-linux-ppc64-musl-4.67.4-23a579",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-linux-ppc64-musl@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-linux-ppc64-musl",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-linux-loong64-gnu-4.67.4-4b7dba",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-linux-loong64-gnu@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-linux-loong64-gnu",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-win32-x64-gnu-4.67.4-7a477b",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-win32-x64-gnu@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-win32-x64-gnu",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-linux-arm64-gnu-4.67.4-3ce608",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-linux-arm64-gnu@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-linux-arm64-gnu",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-linux-s390x-0.28.2-4507a4",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/linux-s390x@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/linux-s390x",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-types-react-19.3.0-6bba55",
+      "copyrightText": "Copyright (c) Microsoft Corporation",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40types/react@19.3.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@types/react",
+      "versionInfo": "19.3.0"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-linux-arm64-7.0.2-d91a7a",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-linux-arm64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-linux-arm64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-postcss-8.5.32-ab6249",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/postcss@8.5.32",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "postcss",
+      "versionInfo": "8.5.32"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-freebsd-arm64-7.0.2-564d44",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-freebsd-arm64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-freebsd-arm64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-openbsd-x64-0.28.2-e10af4",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/openbsd-x64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/openbsd-x64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-freebsd-arm64-4.67.4-4e1b56",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-freebsd-arm64@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-freebsd-arm64",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-openbsd-x64-7.0.2-841f4f",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-openbsd-x64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-openbsd-x64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-linux-ia32-0.28.2-d0624c",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/linux-ia32@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/linux-ia32",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-linux-x64-0.28.2-8b232b",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/linux-x64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/linux-x64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-linux-riscv64-7.0.2-cf057c",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-linux-riscv64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-linux-riscv64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-android-arm64-0.28.2-7137b5",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/android-arm64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/android-arm64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-aix-ppc64-0.28.2-2553fa",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/aix-ppc64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/aix-ppc64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-android-arm64-4.67.4-355bf7",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-android-arm64@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-android-arm64",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-win32-arm64-0.28.2-87678e",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/win32-arm64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/win32-arm64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-linux-loong64-musl-4.67.4-9a62aa",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-linux-loong64-musl@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-linux-loong64-musl",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-types-node-24.19.2-a1f163",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40types/node@24.19.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@types/node",
+      "versionInfo": "24.19.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-picomatch-4.0.7-3fd076",
+      "copyrightText": "Copyright (c) 2017-present, Jon Schlinkert, Copyright (c) 2017-present, Jon Schlinkert (https://github.com/jonschlinkert)",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/picomatch@4.0.7",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "picomatch",
+      "versionInfo": "4.0.7"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-linux-riscv64-gnu-4.67.4-78446a",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-linux-riscv64-gnu@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-linux-riscv64-gnu",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-aix-ppc64-7.0.2-014c44",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-aix-ppc64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-aix-ppc64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-fsevents-2.3.3-9e6a95",
+      "copyrightText": "(c) 2020 by Philipp Dunkel, Ben Noordhuis, Elan Shankar, Paul Miller, Copyright (c) 2010-2020 by Philipp Dunkel, Ben Noordhuis, Elan Shankar, Paul Miller",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/fsevents@2.3.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "fsevents",
+      "versionInfo": "2.3.3"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-darwin-x64-4.67.4-bcc6e1",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-darwin-x64@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-darwin-x64",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-android-arm-eabi-4.67.4-185217",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-android-arm-eabi@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-android-arm-eabi",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-linux-mips64el-7.0.2-6f37e4",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-linux-mips64el@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-linux-mips64el",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-netbsd-x64-0.28.2-df19e8",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/netbsd-x64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/netbsd-x64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-7.0.2-da8a96",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/typescript@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "typescript",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-linux-x64-gnu-4.67.4-1cca19",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-linux-x64-gnu",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-linux-x64-7.0.2-4f0345",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-linux-x64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-linux-x64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-4.67.4-4f6f9d",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/rollup@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "rollup",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-scheduler-0.28.0-cdf1c1",
+      "copyrightText": "Copyright (c) Meta Platforms, Inc. and affiliates",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/scheduler@0.28.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "scheduler",
+      "versionInfo": "0.28.0"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-tinyglobby-0.2.17-d29b9e",
+      "copyrightText": "Copyright (c) 2024 Madeline Gurriaran",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/tinyglobby@0.2.17",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "tinyglobby",
+      "versionInfo": "0.2.17"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-nanoid-3.3.20-2e1ad2",
+      "copyrightText": "Copyright 2017 Andrey Sitnik <andrey@sitnik.ru>",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/nanoid@3.3.20",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "nanoid",
+      "versionInfo": "3.3.20"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-freebsd-x64-4.67.4-85c1fb",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-freebsd-x64@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-freebsd-x64",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-openharmony-arm64-4.67.4-9d1462",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-openharmony-arm64@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-openharmony-arm64",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-linux-arm64-0.28.2-609359",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/linux-arm64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/linux-arm64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-linux-s390x-gnu-4.67.4-0716ce",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-linux-s390x-gnu@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-linux-s390x-gnu",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-win32-x64-0.28.2-b4e609",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/win32-x64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/win32-x64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-android-arm-0.28.2-52ea0a",
+      "copyrightText": "Copyright 2018 The Go Authors, Copyright 2021 The Go Authors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/android-arm@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/android-arm",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-linux-s390x-7.0.2-272447",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-linux-s390x@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-linux-s390x",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-linux-ppc64-gnu-4.67.4-18ab20",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-linux-ppc64-gnu@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-linux-ppc64-gnu",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-freebsd-x64-0.28.2-0fd548",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/freebsd-x64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/freebsd-x64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-linux-arm-0.28.2-885c39",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/linux-arm@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/linux-arm",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-win32-x64-7.0.2-69ac71",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-win32-x64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-win32-x64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-win32-x64-msvc-4.67.4-bda3d6",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-win32-x64-msvc",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-linux-riscv64-musl-4.67.4-70c8be",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-linux-riscv64-musl@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-linux-riscv64-musl",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-linux-arm64-musl-4.67.4-2c5922",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-linux-arm64-musl@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-linux-arm64-musl",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-napi-rs-lzma-linux-x64-gnu-1.5.1-251664",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40napi-rs/lzma-linux-x64-gnu@1.5.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@napi-rs/lzma-linux-x64-gnu",
+      "versionInfo": "1.5.1"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-win32-ia32-0.28.2-89c478",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/win32-ia32@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/win32-ia32",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-linux-loong64-7.0.2-1969e2",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-linux-loong64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-linux-loong64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-darwin-arm64-4.67.4-16df30",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-darwin-arm64@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-darwin-arm64",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-freebsd-x64-7.0.2-21b321",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-freebsd-x64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-freebsd-x64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-netbsd-arm64-7.0.2-d78903",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-netbsd-arm64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-netbsd-arm64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-openbsd-arm64-0.28.2-09ce9e",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/openbsd-arm64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/openbsd-arm64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-linux-loong64-0.28.2-d0387c",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/linux-loong64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/linux-loong64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-linux-mips64el-0.28.2-dbb8f5",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/linux-mips64el@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/linux-mips64el",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-openharmony-arm64-0.28.2-c7ab88",
+      "copyrightText": "Copyright 2018 The Go Authors, Copyright 2021 The Go Authors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/openharmony-arm64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/openharmony-arm64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-win32-ia32-msvc-4.67.4-3ddbd2",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-win32-ia32-msvc",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-darwin-x64-7.0.2-3ab577",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-darwin-x64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-darwin-x64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-freebsd-arm64-0.28.2-9cbee1",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/freebsd-arm64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/freebsd-arm64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-0.28.2-8796ac",
+      "copyrightText": "Copyright (c) 2020 Evan Wallace",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/esbuild@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "esbuild",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-react-19.3.1-3d37f9",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/react@19.3.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "react",
+      "versionInfo": "19.3.1"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-csstype-3.2.3-2b1127",
+      "copyrightText": "Copyright (c) 2017-2018 Fredrik Nicol",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/csstype@3.2.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "csstype",
+      "versionInfo": "3.2.3"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-android-x64-4.67.4-5f731d",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-android-x64@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-android-x64",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-sunos-x64-0.28.2-175c56",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/sunos-x64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/sunos-x64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-types-react-dom-19.3.0-64dbb5",
+      "copyrightText": "Copyright (c) Microsoft Corporation",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40types/react-dom@19.3.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@types/react-dom",
+      "versionInfo": "19.3.0"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-darwin-arm64-0.28.2-c3ac21",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/darwin-arm64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/darwin-arm64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-netbsd-x64-7.0.2-06b407",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-netbsd-x64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-netbsd-x64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-linux-ppc64-7.0.2-4aa2da",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-linux-ppc64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-linux-ppc64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-darwin-arm64-7.0.2-ce41d8",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-darwin-arm64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-darwin-arm64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-linux-arm-musleabihf-4.67.4-94b16d",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-linux-arm-musleabihf@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-linux-arm-musleabihf",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-linux-arm-7.0.2-d0ccc2",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-linux-arm@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-linux-arm",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-win32-arm64-msvc-4.67.4-5a4468",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-win32-arm64-msvc@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-win32-arm64-msvc",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-linux-x64-musl-4.67.4-32e6a3",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-linux-x64-musl@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-linux-x64-musl",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-sunos-x64-7.0.2-9e56f8",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-sunos-x64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-sunos-x64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-types-estree-1.0.10-b46bf5",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40types/estree@1.0.10",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@types/estree",
+      "versionInfo": "1.0.10"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-linux-riscv64-0.28.2-839221",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/linux-riscv64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/linux-riscv64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-fdir-6.5.0-08637d",
+      "copyrightText": "Copyright (c) 2024 Abdullah Atta, Copyright 2023 Abdullah Atta",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/fdir@6.5.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "fdir",
+      "versionInfo": "6.5.0"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-undici-types-7.24.6-4bc957",
+      "copyrightText": "Copyright (c) Matteo Collina and Undici contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/undici-types@7.24.6",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "undici-types",
+      "versionInfo": "7.24.6"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-source-map-js-1.2.2-e15c04",
+      "copyrightText": "Copyright (c) 2009-2011, Mozilla Foundation and contributors, Copyright 2009-2011 Mozilla Foundation and contributors, Copyright 2011 Mozilla Foundation and contributors, Copyright 2011 The Closure Compiler Authors, Copyright 2014 Mozilla Foundation and contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/source-map-js@1.2.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "name": "source-map-js",
+      "versionInfo": "1.2.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-win32-arm64-7.0.2-80c68b",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-win32-arm64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-win32-arm64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-picocolors-1.1.1-954b9f",
+      "copyrightText": "Copyright (c) 2021-2024 Oleksii Raspopov, Kostiantyn Denysov, Anton Verinov",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/picocolors@1.1.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "ISC",
+      "name": "picocolors",
+      "versionInfo": "1.1.1"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-typescript-typescript-openbsd-arm64-7.0.2-fe9783",
+      "copyrightText": "(c) (c) AAEE (c), (c) (c) EeAoq (c), (c) aA'AE (c) 1AE, (c) by W3C, (c) Copyright 2009 The Go Authors, (c) EAiE (c) A, (c) lEEe (c) AE, (c) oav!A (c) AY, Copyright (c) <owner>, Copyright (c) 1991-2017 Unicode, Inc., Copyright (c) 2012-2014, Yann Collet, Copyright (c) 2015 Klaus Post, Copyright (c) 2015 Microsoft, Copyright (c) 2015- Klaus Post & Contributors, Copyright (c) 2017-present Devon Govett, Copyright (c) 2018 The Khronos Group Inc., Copyright (c) 2018 WHATWG Apple, Google, Mozilla, Copyright (c) 2019, Jeff Wendling, Copyright (c) 2020 Klaus Post, Copyright (c) 2020 The Go Authors, Copyright (c) 2021 Klaus Post, Copyright (c) Microsoft Corporation, Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang) Disclaimers, Copyright 2009 The Go Authors, Copyright 2009,2010 The Go Authors, Copyright 2010 The Go Authors, Copyright 2011 The Go Authors, Copyright 2012 The Go Authors, Copyright 2012-2020 Facebook, Inc., Copyright 2013 The Go Authors, Copyright 2014 The Go Authors, Copyright 2015 The Go Authors, Copyright 2016 The Go Authors, Copyright 2017 The Go Authors, Copyright 2017-2019 Hatena Co., Ltd., Copyright 2018 The Go Authors, Copyright 2019 The Go Authors, Copyright 2020 The Go Authors, Copyright 2021 The Go Authors, Copyright 2022 The Go Authors, Copyright 2023 The Go Authors, Copyright 2024 The Go Authors, Copyright 2025 The Go Authors, Copyright Node.js contributors",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40typescript/typescript-openbsd-arm64@7.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "name": "@typescript/typescript-openbsd-arm64",
+      "versionInfo": "7.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-linux-arm-gnueabihf-4.67.4-87a459",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-linux-arm-gnueabihf@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-linux-arm-gnueabihf",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-netbsd-arm64-0.28.2-d2c192",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/netbsd-arm64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/netbsd-arm64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-vite-7.3.7-e03f11",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/vite@7.3.7",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "vite",
+      "versionInfo": "7.3.7"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-react-dom-19.3.1-28ab59",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/react-dom@19.3.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "react-dom",
+      "versionInfo": "19.3.1"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-rollup-rollup-openbsd-x64-4.67.4-264c1f",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rollup/rollup-openbsd-x64@4.67.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@rollup/rollup-openbsd-x64",
+      "versionInfo": "4.67.4"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-linux-ppc64-0.28.2-85afc4",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/linux-ppc64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/linux-ppc64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-npm-esbuild-darwin-x64-0.28.2-1bc45d",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40esbuild/darwin-x64@0.28.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "name": "@esbuild/darwin-x64",
+      "versionInfo": "0.28.2"
+    },
+    {
+      "SPDXID": "SPDXRef-githubactions-actions-checkout-7..-c5c952",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:githubactions/actions/checkout@7.%2A.%2A",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "actions/checkout",
+      "versionInfo": "7.*.*"
+    },
+    {
+      "SPDXID": "SPDXRef-githubactions-actions-setup-node-7..-123477",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:githubactions/actions/setup-node@7.%2A.%2A",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "actions/setup-node",
+      "versionInfo": "7.*.*"
+    },
+    {
+      "SPDXID": "SPDXRef-githubactions-actions-setup-python-7..-900e64",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:githubactions/actions/setup-python@7.%2A.%2A",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "actions/setup-python",
+      "versionInfo": "7.*.*"
+    },
+    {
+      "SPDXID": "SPDXRef-githubactions-astral-sh-setup-uv-10.3.3-6177f2",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:githubactions/astral-sh/setup-uv@10.3.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "astral-sh/setup-uv",
+      "versionInfo": "10.3.3"
+    },
+    {
+      "SPDXID": "SPDXRef-githubactions-actions-deploy-pages-5..-b802ea",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:githubactions/actions/deploy-pages@5.%2A.%2A",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "actions/deploy-pages",
+      "versionInfo": "5.*.*"
+    },
+    {
+      "SPDXID": "SPDXRef-githubactions-actions-upload-pages-artifact-5..-5f799a",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:githubactions/actions/upload-pages-artifact@5.%2A.%2A",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "name": "actions/upload-pages-artifact",
+      "versionInfo": "5.*.*"
+    },
+    {
+      "SPDXID": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb",
+      "downloadLocation": "git+https://github.com/rmanacha/permit-horizon",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/rmanacha/permit-horizon@main",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseDeclared": "Apache-2.0",
+      "name": "com.github.rmanacha/permit-horizon",
+      "versionInfo": "main"
+    }
+  ],
+  "relationships": [
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-tzdata-2026.6-0e9824",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-python-dateutil-4.0.0-b101c8"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-numpy-2.5.4-69dded",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-permit-horizon-0.1.0-40affb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-openpyxl-3.1.5-2db729",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-permit-horizon-0.1.0-40affb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-pyshp-3.1.6-503045",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-permit-horizon-0.1.0-40affb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-pyyaml-6.0.3-aaa169",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-permit-horizon-0.1.0-40affb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-typer-0.27.3-6e44b0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-permit-horizon-0.1.0-40affb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-pypdf-6.21.4-95e4cd",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-permit-horizon-0.1.0-40affb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-pandas-3.1.0-a8b7a2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-permit-horizon-0.1.0-40affb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-pytest-9.2.0-40bdb0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-permit-horizon-0.1.0-40affb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-ruff-0.17.3-2978a2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-permit-horizon-0.1.0-40affb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-colorama-0.4.6-a2947b",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-pytest-9.2.0-40bdb0"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-iniconfig-2.3.1-6b33b0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-pytest-9.2.0-40bdb0"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-packaging-26.3-3c9a08",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-pytest-9.2.0-40bdb0"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-pluggy-1.7.0-7fbb37",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-pytest-9.2.0-40bdb0"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-pygments-2.21.0-6fda70",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-pytest-9.2.0-40bdb0"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-numpy-2.5.4-69dded",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-pandas-3.1.0-a8b7a2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-python-dateutil-4.0.0-b101c8",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-pandas-3.1.0-a8b7a2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-tzdata-2026.6-0e9824",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-pandas-3.1.0-a8b7a2"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-annotated-doc-0.0.5-16401d",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-typer-0.27.3-6e44b0"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-colorama-0.4.6-a2947b",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-typer-0.27.3-6e44b0"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-rich-15.0.0-388642",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-typer-0.27.3-6e44b0"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-shellingham-1.5.4-dbcf19",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-typer-0.27.3-6e44b0"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-markdown-it-py-4.2.0-908e83",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-rich-15.0.0-388642"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-pygments-2.21.0-6fda70",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-rich-15.0.0-388642"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-et-xmlfile-2.0.0-92e456",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-openpyxl-3.1.5-2db729"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-mdurl-0.1.2-1db4b8",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-pypi-markdown-it-py-4.2.0-908e83"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-csstype-3.2.3-2b1127",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-types-react-19.3.0-6bba55"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-source-map-js-1.2.2-e15c04",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-postcss-8.5.32-ab6249"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-nanoid-3.3.20-2e1ad2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-postcss-8.5.32-ab6249"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-picocolors-1.1.1-954b9f",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-postcss-8.5.32-ab6249"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-undici-types-7.24.6-4bc957",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-types-node-24.19.2-a1f163"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-types-estree-1.0.10-b46bf5",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-rollup-4.67.4-4f6f9d"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-fdir-6.5.0-08637d",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-tinyglobby-0.2.17-d29b9e"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-picomatch-4.0.7-3fd076",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-tinyglobby-0.2.17-d29b9e"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-tinyglobby-0.2.17-d29b9e",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-vite-7.3.7-e03f11"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-0.28.2-8796ac",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-vite-7.3.7-e03f11"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-4.67.4-4f6f9d",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-vite-7.3.7-e03f11"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-fdir-6.5.0-08637d",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-vite-7.3.7-e03f11"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-picomatch-4.0.7-3fd076",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-vite-7.3.7-e03f11"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-postcss-8.5.32-ab6249",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-vite-7.3.7-e03f11"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-scheduler-0.28.0-cdf1c1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-npm-react-dom-19.3.1-28ab59"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-ruff-0.17.3-2978a2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-pypdf-6.21.4-95e4cd",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-pyyaml-6.0.3-aaa169",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-pytest-9.2.0-40bdb0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-pyshp-3.1.6-503045",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-pandas-3.1.0-a8b7a2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-typer-0.27.3-6e44b0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-openpyxl-3.1.5-2db729",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-numpy-2.5.4-69dded",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-pypi-permit-horizon-0.1.0-40affb",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-types-react-19.3.0-6bba55",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-types-node-24.19.2-a1f163",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-7.0.2-da8a96",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-react-19.3.1-3d37f9",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-types-react-dom-19.3.0-64dbb5",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-vite-7.3.7-e03f11",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-react-dom-19.3.1-28ab59",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-win32-ia32-0.28.2-89c478",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-win32-x64-gnu-4.67.4-7a477b",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-win32-x64-0.28.2-b4e609",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-linux-riscv64-musl-4.67.4-70c8be",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-aix-ppc64-0.28.2-2553fa",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-android-arm-0.28.2-52ea0a",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-napi-rs-lzma-linux-x64-gnu-1.5.1-251664",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-darwin-arm64-7.0.2-ce41d8",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-linux-loong64-0.28.2-d0387c",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-linux-riscv64-gnu-4.67.4-78446a",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-linux-mips64el-0.28.2-dbb8f5",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-freebsd-x64-7.0.2-21b321",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-android-x64-0.28.2-1002e8",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-freebsd-arm64-0.28.2-9cbee1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-sunos-x64-0.28.2-175c56",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-linux-ppc64-musl-4.67.4-23a579",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-openharmony-arm64-4.67.4-9d1462",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-win32-x64-7.0.2-69ac71",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-netbsd-x64-7.0.2-06b407",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-aix-ppc64-7.0.2-014c44",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-linux-arm64-0.28.2-609359",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-darwin-arm64-0.28.2-c3ac21",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-linux-x64-musl-4.67.4-32e6a3",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-linux-arm-gnueabihf-4.67.4-87a459",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-netbsd-arm64-0.28.2-d2c192",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-linux-arm64-7.0.2-d91a7a",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-freebsd-arm64-4.67.4-4e1b56",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-android-arm-eabi-4.67.4-185217",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-linux-mips64el-7.0.2-6f37e4",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-linux-arm-0.28.2-885c39",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-win32-ia32-msvc-4.67.4-3ddbd2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-openbsd-x64-4.67.4-264c1f",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-darwin-x64-0.28.2-1bc45d",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-freebsd-arm64-7.0.2-564d44",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-openbsd-x64-7.0.2-841f4f",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-android-arm64-4.67.4-355bf7",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-linux-loong64-musl-4.67.4-9a62aa",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-fsevents-2.3.3-9e6a95",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-win32-x64-msvc-4.67.4-bda3d6",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-android-x64-4.67.4-5f731d",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-linux-loong64-7.0.2-1969e2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-netbsd-arm64-7.0.2-d78903",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-linux-ia32-0.28.2-d0624c",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-linux-x64-0.28.2-8b232b",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-netbsd-x64-0.28.2-df19e8",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-linux-x64-gnu-4.67.4-1cca19",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-linux-x64-7.0.2-4f0345",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-openbsd-arm64-7.0.2-fe9783",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-openbsd-x64-0.28.2-e10af4",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-linux-riscv64-7.0.2-cf057c",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-android-arm64-0.28.2-7137b5",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-freebsd-x64-4.67.4-85c1fb",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-linux-ppc64-gnu-4.67.4-18ab20",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-freebsd-x64-0.28.2-0fd548",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-linux-arm-7.0.2-d0ccc2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-win32-arm64-msvc-4.67.4-5a4468",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-linux-s390x-0.28.2-4507a4",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-darwin-x64-7.0.2-3ab577",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-linux-ppc64-7.0.2-4aa2da",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-win32-arm64-0.28.2-87678e",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-darwin-x64-4.67.4-bcc6e1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-darwin-arm64-4.67.4-16df30",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-openharmony-arm64-0.28.2-c7ab88",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-win32-arm64-7.0.2-80c68b",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-linux-ppc64-0.28.2-85afc4",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-linux-s390x-gnu-4.67.4-0716ce",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-linux-s390x-7.0.2-272447",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-linux-arm64-musl-4.67.4-2c5922",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-linux-loong64-gnu-4.67.4-4b7dba",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-linux-arm64-gnu-4.67.4-3ce608",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-openbsd-arm64-0.28.2-09ce9e",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-rollup-rollup-linux-arm-musleabihf-4.67.4-94b16d",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-typescript-typescript-sunos-x64-7.0.2-9e56f8",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-npm-esbuild-linux-riscv64-0.28.2-839221",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-githubactions-actions-checkout-7..-c5c952",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-githubactions-actions-setup-node-7..-123477",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-githubactions-actions-setup-python-7..-900e64",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-githubactions-astral-sh-setup-uv-10.3.3-6177f2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-githubactions-actions-deploy-pages-5..-b802ea",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-githubactions-actions-upload-pages-artifact-5..-5f799a",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-github-rmanacha-permit-horizon-main-28aedb",
+      "relationshipType": "DESCRIBES",
+      "spdxElementId": "SPDXRef-DOCUMENT"
+    }
+  ],
+  "spdxVersion": "SPDX-2.3"
+}
