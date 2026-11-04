@@ -159,12 +159,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 200.736,
-      "mid": 1960.4292,
-      "high": 15679.3218
+      "low": 70.2576,
+      "mid": 686.1502,
+      "high": 5487.7626
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.35,
      "benchmark_mid": 3020.6921,
      "benchmark_outcome": "completed_homes"
     },
@@ -214,9 +214,9 @@
     }
    },
    "combined": {
-    "low": 200.736,
-    "mid": 8812.9135,
-    "high": 37723.104
+    "low": 70.2576,
+    "mid": 7539.3913,
+    "high": 27548.2999
    }
   },
   {
@@ -305,12 +305,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 10768.3573,
-      "mid": 56306.2863,
-      "high": 204477.2502
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.0,
      "benchmark_mid": 86758.5305,
      "benchmark_outcome": "completed_homes"
     },
@@ -360,9 +360,9 @@
     }
    },
    "combined": {
-    "low": 10768.3573,
-    "mid": 122544.7099,
-    "high": 362010.097
+    "low": 0.0,
+    "mid": 66345.0564,
+    "high": 158201.6204
    }
   },
   {
@@ -378,12 +378,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 1743.4207,
-      "mid": 8688.7617,
-      "high": 36952.2897
+      "low": 645.0657,
+      "mid": 3214.8418,
+      "high": 13672.3472
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.37,
      "benchmark_mid": 13387.9225,
      "benchmark_outcome": "completed_homes"
     },
@@ -433,9 +433,9 @@
     }
    },
    "combined": {
-    "low": 1743.4207,
-    "mid": 22660.9546,
-    "high": 75177.6389
+    "low": 645.0657,
+    "mid": 17195.3484,
+    "high": 51960.895
    }
   },
   {
@@ -451,12 +451,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 383.2599,
-      "mid": 2665.692,
-      "high": 21184.7005
+      "low": 302.7753,
+      "mid": 2105.8967,
+      "high": 16735.9134
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.79,
      "benchmark_mid": 4107.3837,
      "benchmark_outcome": "completed_homes"
     },
@@ -506,9 +506,9 @@
     }
    },
    "combined": {
-    "low": 383.2599,
-    "mid": 8560.2242,
-    "high": 35663.7519
+    "low": 302.7753,
+    "mid": 8001.2598,
+    "high": 31226.2607
    }
   },
   {
@@ -524,12 +524,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 62.6763,
-      "mid": 314.943,
-      "high": 991.2154
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.0,
      "benchmark_mid": 485.2742,
      "benchmark_outcome": "completed_homes"
     },
@@ -579,9 +579,9 @@
     }
    },
    "combined": {
-    "low": 62.6763,
-    "mid": 1050.4193,
-    "high": 4386.8613
+    "low": 0.0,
+    "mid": 735.9355,
+    "high": 3398.2227
    }
   },
   {
@@ -816,12 +816,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 445.7884,
-      "mid": 2303.7357,
-      "high": 7442.3335
+      "low": 356.6307,
+      "mid": 1842.9885,
+      "high": 5953.8668
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.8,
      "benchmark_mid": 3549.6698,
      "benchmark_outcome": "completed_homes"
     },
@@ -871,9 +871,9 @@
     }
    },
    "combined": {
-    "low": 445.7884,
-    "mid": 4333.4893,
-    "high": 11978.8255
+    "low": 356.6307,
+    "mid": 3873.5346,
+    "high": 10494.6036
    }
   },
   {
@@ -889,12 +889,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 213.525,
-      "mid": 2085.3294,
-      "high": 15632.172
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.0,
      "benchmark_mid": 3213.1423,
      "benchmark_outcome": "completed_homes"
     },
@@ -944,9 +944,9 @@
     }
    },
    "combined": {
-    "low": 213.525,
-    "mid": 8812.5389,
-    "high": 37332.1457
+    "low": 0.0,
+    "mid": 6728.3327,
+    "high": 21724.8375
    }
   },
   {
@@ -962,12 +962,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 369.9803,
-      "mid": 2087.8363,
-      "high": 10434.1917
+      "low": 255.2864,
+      "mid": 1440.6071,
+      "high": 7199.5923
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.69,
      "benchmark_mid": 3217.0051,
      "benchmark_outcome": "completed_homes"
     },
@@ -1017,9 +1017,9 @@
     }
    },
    "combined": {
-    "low": 369.9803,
-    "mid": 7346.4831,
-    "high": 26921.4337
+    "low": 255.2864,
+    "mid": 6699.9335,
+    "high": 23693.8398
    }
   },
   {
@@ -1400,12 +1400,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 1731.9928,
-      "mid": 9038.4261,
-      "high": 38084.59
+      "low": 467.6381,
+      "mid": 2440.375,
+      "high": 10282.8393
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.27,
      "benchmark_mid": 13926.6965,
      "benchmark_outcome": "completed_homes"
     },
@@ -1455,9 +1455,9 @@
     }
    },
    "combined": {
-    "low": 1731.9928,
-    "mid": 20243.4127,
-    "high": 66495.2525
+    "low": 467.6381,
+    "mid": 13656.3095,
+    "high": 38774.2319
    }
   },
   {
@@ -1546,12 +1546,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 194.7419,
-      "mid": 1363.0704,
-      "high": 8181.4614
+      "low": 48.6855,
+      "mid": 340.7676,
+      "high": 2045.3654
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.25,
      "benchmark_mid": 2100.2625,
      "benchmark_outcome": "completed_homes"
     },
@@ -1601,9 +1601,9 @@
     }
    },
    "combined": {
-    "low": 194.7419,
-    "mid": 4349.4193,
-    "high": 17091.0728
+    "low": 48.6855,
+    "mid": 3328.0288,
+    "high": 10967.0626
    }
   },
   {
@@ -1911,12 +1911,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 213.0608,
-      "mid": 1255.3261,
-      "high": 6589.7349
+      "low": 108.661,
+      "mid": 640.2163,
+      "high": 3360.7648
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.51,
      "benchmark_mid": 1934.2467,
      "benchmark_outcome": "completed_homes"
     },
@@ -1966,9 +1966,9 @@
     }
    },
    "combined": {
-    "low": 213.0608,
-    "mid": 3036.4388,
-    "high": 11613.8628
+    "low": 108.661,
+    "mid": 2421.8535,
+    "high": 8390.4535
    }
   },
   {
@@ -1984,12 +1984,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 998.1195,
-      "mid": 7625.8325,
-      "high": 57800.0109
+      "low": 778.5332,
+      "mid": 5948.1493,
+      "high": 45084.0085
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.78,
      "benchmark_mid": 11750.1271,
      "benchmark_outcome": "completed_homes"
     },
@@ -2039,9 +2039,9 @@
     }
    },
    "combined": {
-    "low": 998.1195,
-    "mid": 43789.2598,
-    "high": 176784.446
+    "low": 778.5332,
+    "mid": 42113.1654,
+    "high": 164094.748
    }
   },
   {
@@ -2422,12 +2422,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 818.3718,
-      "mid": 3921.5466,
-      "high": 18708.5999
+      "low": 507.3905,
+      "mid": 2431.3589,
+      "high": 11599.332
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.62,
      "benchmark_mid": 6042.4447,
      "benchmark_outcome": "completed_homes"
     },
@@ -2477,9 +2477,9 @@
     }
    },
    "combined": {
-    "low": 818.3718,
-    "mid": 11390.3443,
-    "high": 39231.8869
+    "low": 507.3905,
+    "mid": 9902.4159,
+    "high": 32142.0783
    }
   },
   {
@@ -2714,12 +2714,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 1009.0905,
-      "mid": 5150.6145,
-      "high": 25229.818
+      "low": 443.9998,
+      "mid": 2266.2704,
+      "high": 11101.1199
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.44,
      "benchmark_mid": 7936.2318,
      "benchmark_outcome": "completed_homes"
     },
@@ -2769,9 +2769,9 @@
     }
    },
    "combined": {
-    "low": 1009.0905,
-    "mid": 13116.7778,
-    "high": 46266.2941
+    "low": 443.9998,
+    "mid": 10236.4761,
+    "high": 32173.8298
    }
   },
   {
@@ -2860,12 +2860,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 138.7063,
-      "mid": 837.7327,
-      "high": 6754.1012
+      "low": 69.3532,
+      "mid": 418.8664,
+      "high": 3377.0506
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.5,
      "benchmark_mid": 1290.8054,
      "benchmark_outcome": "completed_homes"
     },
@@ -2915,9 +2915,9 @@
     }
    },
    "combined": {
-    "low": 138.7063,
-    "mid": 2617.3373,
-    "high": 10724.0947
+    "low": 69.3532,
+    "mid": 2199.1484,
+    "high": 7356.3685
    }
   },
   {
@@ -3298,12 +3298,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 1140.8619,
-      "mid": 7280.7785,
-      "high": 43846.1626
+      "low": 741.5603,
+      "mid": 4732.506,
+      "high": 28500.0057
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.65,
      "benchmark_mid": 11218.4568,
      "benchmark_outcome": "completed_homes"
     },
@@ -3353,9 +3353,9 @@
     }
    },
    "combined": {
-    "low": 1140.8619,
-    "mid": 23954.9308,
-    "high": 92052.7012
+    "low": 741.5603,
+    "mid": 21409.9867,
+    "high": 76742.5397
    }
   },
   {
@@ -3371,12 +3371,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 81.3822,
-      "mid": 580.2699,
-      "high": 2237.3041
+      "low": 20.3455,
+      "mid": 145.0675,
+      "high": 559.326
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.25,
      "benchmark_mid": 894.0985,
      "benchmark_outcome": "completed_homes"
     },
@@ -3426,9 +3426,9 @@
     }
    },
    "combined": {
-    "low": 81.3822,
-    "mid": 1449.1119,
-    "high": 5112.6486
+    "low": 20.3455,
+    "mid": 1014.1478,
+    "high": 3436.7232
    }
   },
   {
@@ -3444,12 +3444,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 2094.7871,
-      "mid": 10995.8198,
-      "high": 46942.517
+      "low": 963.602,
+      "mid": 5058.0771,
+      "high": 21593.5578
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.46,
      "benchmark_mid": 16942.7116,
      "benchmark_outcome": "completed_homes"
     },
@@ -3499,9 +3499,9 @@
     }
    },
    "combined": {
-    "low": 2094.7871,
-    "mid": 28176.0421,
-    "high": 91650.0111
+    "low": 963.602,
+    "mid": 22248.7291,
+    "high": 66377.5657
    }
   },
   {
@@ -3590,12 +3590,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 125.6238,
-      "mid": 1226.8684,
-      "high": 9390.6547
+      "low": 90.4492,
+      "mid": 883.3452,
+      "high": 6761.2713
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.72,
      "benchmark_mid": 1890.3981,
      "benchmark_outcome": "completed_homes"
     },
@@ -3645,9 +3645,9 @@
     }
    },
    "combined": {
-    "low": 125.6238,
-    "mid": 3632.2123,
-    "high": 16545.8392
+    "low": 90.4492,
+    "mid": 3288.8535,
+    "high": 13920.0947
    }
   },
   {
