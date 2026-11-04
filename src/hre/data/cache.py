@@ -87,19 +87,19 @@ def _utc_now() -> str:
     return datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def manifest_path(source: str, mdir: Path | None = None) -> Path:
-    return (mdir or manifest_dir()) / f"{source}.json"
+def manifest_path(source: str) -> Path:
+    return manifest_dir() / f"{source}.json"
 
 
-def read_manifest(source: str, mdir: Path | None = None) -> dict[str, Any]:
-    p = manifest_path(source, mdir)
+def read_manifest(source: str) -> dict[str, Any]:
+    p = manifest_path(source)
     if p.is_file():
         return json.loads(p.read_text(encoding="utf-8"))
     return {"source": source, "files": {}}
 
 
-def write_manifest(source: str, manifest: dict[str, Any], mdir: Path | None = None) -> Path:
-    p = manifest_path(source, mdir)
+def write_manifest(source: str, manifest: dict[str, Any]) -> Path:
+    p = manifest_path(source)
     p.parent.mkdir(parents=True, exist_ok=True)
     manifest["source"] = source
     manifest.setdefault("files", {})
@@ -117,14 +117,12 @@ def record(
     license: str,
     vintage: str,
     notes: str | None = None,
-    fetched_at: str | None = None,
-    mdir: Path | None = None,
 ) -> dict[str, Any]:
     """Add or replace the manifest entry for ``path`` (keyed by ``rel_path``)."""
-    manifest = read_manifest(source, mdir)
+    manifest = read_manifest(source)
     entry = {
         "bytes": path.stat().st_size,
-        "fetched_at": fetched_at or _utc_now(),
+        "fetched_at": _utc_now(),
         "sha256": sha256_of(path),
         "url": url,
         "vintage": vintage,
@@ -133,7 +131,7 @@ def record(
     manifest["license"] = license
     if notes is not None:
         manifest["notes"] = notes
-    write_manifest(source, manifest, mdir)
+    write_manifest(source, manifest)
     return entry
 
 
@@ -160,7 +158,6 @@ def fetch(
     force: bool = False,
     retries: int = 4,
     timeout: tuple[float, float] = (15.0, 180.0),
-    mdir: Path | None = None,
 ) -> Path:
     """Download ``url`` to ``dest`` (streaming, retried, hashed) and record it.
 
@@ -169,15 +166,14 @@ def fetch(
     """
     dest = Path(dest)
     rel = _rel(dest)
-    manifest = read_manifest(source, mdir)
+    manifest = read_manifest(source)
     prior = manifest["files"].get(rel)
     if dest.is_file() and not force:
         if prior and prior.get("url") == url and prior.get("sha256") == sha256_of(dest):
             return dest
         if prior is None:
             # File present from an earlier run without a manifest: record, don't refetch.
-            record(source, rel, dest, url=url, license=license, vintage=vintage, notes=notes,
-                   mdir=mdir)
+            record(source, rel, dest, url=url, license=license, vintage=vintage, notes=notes)
             return dest
 
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -193,7 +189,7 @@ def fetch(
     finally:
         part.unlink(missing_ok=True)
 
-    record(source, rel, dest, url=url, license=license, vintage=vintage, notes=notes, mdir=mdir)
+    record(source, rel, dest, url=url, license=license, vintage=vintage, notes=notes)
     return dest
 
 

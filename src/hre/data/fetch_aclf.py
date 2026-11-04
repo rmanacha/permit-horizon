@@ -12,10 +12,9 @@ published housing-unit column sums to about twice the state's housing stock
 (NH 639,087 in June 2022, then 1,295,974 in July 2023 and 1,334,294 in July
 2026, against a 2020 Census count of 638,795). This module computes, for every
 vintage, the ratio of the published total to the Census Population Estimates
-housing-unit figure for the matching date. The build stores the series only when
-every vintage from July 2023 on has a ratio of 2.0 +/- 0.05, and then stores
-the published value divided by two with a note saying so. Never used in the
-headline metric; it is the "homes actually added to the address list" panel.
+housing-unit figure for the matching date. The build no longer stores the series
+(``SERIES_APPROVED`` is False, decision 46); the halving path is kept so it can be
+re-approved after every state passes the check. Never used in the headline metric.
 """
 
 from __future__ import annotations

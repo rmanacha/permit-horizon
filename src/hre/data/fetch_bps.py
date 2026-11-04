@@ -81,8 +81,7 @@ def _rows(text: str) -> list[list[str]]:
     """Skip the two header rows and the blank row; strip padding from every cell."""
     reader = csv.reader(io.StringIO(text))
     rows = [[c.strip() for c in r] for r in reader]
-    body = [r for r in rows[2:] if r and any(r)]
-    return body
+    return [r for r in rows[2:] if r and any(r)]
 
 
 def survey_year(code: str) -> str:

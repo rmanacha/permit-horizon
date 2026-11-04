@@ -82,7 +82,6 @@ STATES: dict[str, StateRef] = {u: StateRef(u, f, n) for u, f, n in _TABLE}
 STATES["ZZ"] = StateRef("ZZ", "99", "Zetaland", synthetic=True)
 
 BY_FIPS: dict[str, StateRef] = {s.fips: s for s in STATES.values()}
-BY_NAME: dict[str, StateRef] = {s.name.lower(): s for s in STATES.values()}
 
 # The 50 states plus DC: what "--all" means. Puerto Rico is excluded from
 # "--all" because several sources (PEP county housing units, FHFA, NZLUD)
