@@ -1,0 +1,246 @@
+# The validation ledger (decision 37): every check of the model, hits and misses.
+# Field rules: src/hre/validation/ledger.py. Shown on the website's Validation page through
+# `hre export` (registers.json validation_ledger). Text here is shown verbatim: plain sentences.
+# Frozen checks: validation/<check>/protocol.json and protocol.sha256, committed before the
+# outcome was fetched (src/hre/validation/freeze.py); result.json written afterwards.
+
+status: "Checks to date; misses are kept, not tuned away."
+entries:
+  - id: baseline_test_2016_2020
+    title: "Baseline range, forecasts made in 2016 to 2020"
+    evidence_class: internal_historical_check
+    place: "50 states and DC"
+    years: "forecast origins 2016-2020, outcomes through 2025"
+    outcome: "five-year building permit totals that fell inside the baseline range"
+    unit: "runs inside, of 255; the range promises at least 80% (204)"
+    prediction: {low: 204, mid: null, high: 255}
+    actual: 251
+    actual_text: "251 of 255 (98%)"
+    result: hit
+    result_text: "251 of 255 five-year totals fell inside the range, against the 80% it promises; 3 were above it and 1 below."
+    source: {title: "Baseline backtest (docs/evidence/baseline_backtest.md)", url: "https://github.com/rmanacha/permit-horizon/blob/main/docs/evidence/baseline_backtest.md"}
+    independence: "The range's two numbers were fitted on forecasts made in 1990 to 2015; these later forecasts were never used in the fit. Their outcomes were already published, so this is a historical holdout, not a blind one."
+    supports: "The range holds the size of a typical five-year surprise in recent years."
+    does_not_support: "That the range will hold through a turn in the market (see the 2005-2010 row), or anything about the reforms."
+    next_check: "The 2026 permit totals, frozen before they are published."
+
+  - id: baseline_bust_2005_2010
+    title: "Baseline range, forecasts made in the 2005 to 2010 bust"
+    evidence_class: internal_historical_check
+    place: "50 states and DC"
+    years: "forecast origins 2005-2010"
+    outcome: "five-year building permit totals that fell inside the baseline range"
+    unit: "runs inside, of 306; the range promises at least 80% (245)"
+    prediction: {low: 245, mid: null, high: 306}
+    actual: 172
+    actual_text: "172 of 306 (56%)"
+    result: miss
+    result_text: "Only 56% of the forecasts made in the bust held the real total; 125 of the 134 misses were below the range, because a range fitted on history does not foresee a collapse."
+    source: {title: "Baseline backtest, coverage by period", url: "https://github.com/rmanacha/permit-horizon/blob/main/docs/evidence/baseline_backtest.md"}
+    independence: "These forecasts are inside the period the range was fitted on, so this measures how coverage moves with the market, not an out-of-sample test."
+    supports: "A plain warning shown beside every baseline: in a downturn the real total can fall below the range."
+    does_not_support: "A probability that 2026-2030 lands inside the range."
+    next_check: "Watch the 2026 totals against the range."
+
+  - id: baseline_recovery_2011_2015
+    title: "Baseline range, forecasts made in the 2011 to 2015 recovery"
+    evidence_class: internal_historical_check
+    place: "50 states and DC"
+    years: "forecast origins 2011-2015"
+    outcome: "five-year building permit totals that fell inside the baseline range"
+    unit: "runs inside, of 255; the range promises at least 80% (204)"
+    prediction: {low: 204, mid: null, high: 255}
+    actual: 190
+    actual_text: "190 of 255 (75%)"
+    result: miss
+    result_text: "75% of the forecasts made in the recovery held the real total, just short of the promise; 63 of the 65 misses were above the range."
+    source: {title: "Baseline backtest, coverage by period", url: "https://github.com/rmanacha/permit-horizon/blob/main/docs/evidence/baseline_backtest.md"}
+    independence: "In the fitting period; shown for how coverage moves with the market."
+    supports: "The range errs in both directions when the market turns."
+    does_not_support: "A probability for the forecast period."
+    next_check: "The 2026 totals."
+
+  - id: baseline_realtime_2000_2020
+    title: "Baseline range refitted each year with only the data available then"
+    evidence_class: internal_historical_check
+    place: "50 states and DC"
+    years: "forecast origins 2000-2020"
+    outcome: "five-year building permit totals inside a range refitted each year on closed windows only"
+    unit: "runs inside, of 1,071; the method promises 80% (857)"
+    prediction: {low: 857, mid: null, high: 1071}
+    actual: 656
+    actual_text: "656 of 1,071 (61%)"
+    result: miss
+    result_text: "Built the way a forecaster in each year could have built it, the range held 61% of totals, and under 5% of the forecasts made in 2005 to 2008."
+    source: {title: "Baseline backtest, real-time test", url: "https://github.com/rmanacha/permit-horizon/blob/main/docs/evidence/baseline_backtest.md"}
+    independence: "Each year's range uses only five-year windows that had closed by then."
+    supports: "A sober reading of the headline range: it describes past surprises, and a forecaster without hindsight would have been surprised more often."
+    does_not_support: "A coverage promise for 2026-2030."
+    next_check: "The 2026 totals."
+
+  - id: baseline_rule_b_comparison
+    title: "The 20-year swing range (Adam Ruege's rule), side by side"
+    evidence_class: internal_historical_check
+    place: "50 states and DC"
+    years: "Adam's 255 runs; and forecast origins 2016-2020"
+    outcome: "five-year permit totals inside the slowest-to-fastest range of each state's prior 20 years"
+    unit: "runs inside, of 255"
+    prediction: null
+    actual: 181
+    actual_text: "181 of 255 (71%); 87% on origins 2016-2020"
+    result: not_a_test
+    result_text: "Reproduced exactly from Adam's design: 181 of 255 inside, 37 above, 37 below. It promises no fixed coverage, so it is shown beside the headline range rather than scored against a promise."
+    source: {title: "Baseline backtest, rule B", url: "https://github.com/rmanacha/permit-horizon/blob/main/docs/evidence/baseline_backtest.md"}
+    independence: "A second way to draw the range on the same history."
+    supports: "The trade-off between a wide range that rarely misses and a tight one that follows each state's own swings."
+    does_not_support: "Choosing between them on one test window."
+    next_check: "Both rules on the 2026 totals."
+    credit: "Rule designed by Adam Ruege (Housing Reform Estimator v2.0); his counts reproduced in this repository."
+
+  - id: adu_california_splits
+    title: "ADU rates by home value, California city splits"
+    evidence_class: calibration
+    place: "457 California cities"
+    years: "ADU completions 2023-2025"
+    outcome: "a held-out half of the cities' completions inside the low-to-high range fitted on the other half"
+    unit: "splits inside, of 1,000"
+    prediction: null
+    actual: 1000
+    actual_text: "1,000 of 1,000 without Los Angeles; 975 with it"
+    result: not_a_test
+    result_text: "The range holds a held-out half of California's cities every time without Los Angeles; when Los Angeles, about three times its tier's rate, lands in the held-out half, the total can exceed the high."
+    source: {title: "ADU tiers and city-split check (docs/evidence/adu_tiers.md)", url: "https://github.com/rmanacha/permit-horizon/blob/main/docs/evidence/adu_tiers.md"}
+    independence: "The rates come from these cities, so this checks stability inside California, not transfer to other states."
+    supports: "The tier rates are stable across random halves of California."
+    does_not_support: "Accuracy in other states, or how many ADUs a new law adds."
+    next_check: "A frozen holdout outside California."
+    credit: "Split design from Adam Ruege's v2.0 (953 of 1,000 with Los Angeles in his version)."
+
+  - id: adu_seattle_adam_v2
+    title: "Seattle ADU completions, Adam Ruege's frozen check"
+    evidence_class: frozen_holdout
+    place: "Seattle, Washington"
+    years: "2023-2025"
+    outcome: "new attached and detached ADUs on finaled permits, by completion year"
+    unit: "ADUs a year"
+    prediction: {low: 206, mid: 361, high: 644}
+    actual: 880
+    actual_text: "851, 845 and 945 (880 a year)"
+    result: miss
+    result_text: "Seattle completed more than twice the middle estimate in each of the three years, and above the high every year (pooled 2,641 against 619 to 1,931). A city with Seattle's program outruns California's typical rate; this miss is why the high set now takes Seattle's plateau in central metropolitan counties, so Seattle is a calibration source from then on."
+    frozen: {sha256: b2a1649b5bc2c74c018321279f90dc866d4b89e88bb16f1fd554ee654dbf4259, protocol: "Adam Ruege's v2.0 archive: validation/seattle_adu_2023_2025/protocol.json (not in this repository)", commit: null}
+    source: {title: "City of Seattle, detached ADU layer (and the attached ADU layer)", url: "https://services.arcgis.com/ZOyb2t4B0UYuYNYH/arcgis/rest/services/Detached_Accessory_Dwelling_Units_(DADUs)/FeatureServer/0"}
+    independence: "Seattle outcomes were unused in Adam's calibration; his geography, years, outcome, denominator and predictions were frozen and hashed before he retrieved them. A convenience-selected retrospective holdout, not a pre-registered forecast."
+    supports: "An honest transfer miss for a strong local ADU program."
+    does_not_support: "A causal law effect, a statewide increment over current law, or a single correction factor."
+    next_check: "A frozen holdout in a place neither model has used (below)."
+    credit: "Designed, frozen and run by Adam Ruege (Housing Reform Estimator v2.0, October 2026). His archive is not in this repository, so the hash is recorded as he reported it."
+
+  - id: austin_adu_2023_2025
+    title: "Austin ADU permits, frozen before the count was fetched"
+    evidence_class: frozen_holdout
+    place: "Austin, Texas"
+    years: "2023-2025"
+    outcome: "building permits for new secondary apartments (ADUs), city full-purpose jurisdiction, by year issued"
+    unit: "ADU permits a year"
+    prediction: {low: 138.6, mid: 393.8, high: 1216.7}
+    actual: 116.7
+    actual_text: "247, 93 and 10 (117 a year)"
+    result: miss
+    result_text: "A miss on the frozen rule: 117 permits a year against a range of 139 to 1,217. The first year, 2023 (247 permits), was inside the range at 0.63 times the middle; 2024 and 2025 fell far below it. The fall coincides with Austin's 2024 changes to its residential code, so the permit class frozen in advance may have stopped capturing ADUs; that has not been checked, and the score stands as frozen. A corrected outcome definition would be a new check, not a re-score."
+    frozen: {sha256: a936174a1f8b321806c6fc648d6610a1ac82350c47db9a13e1d29db232fcfce9, protocol: "validation/austin_adu_2023_2025/protocol.json", commit: 199a9081213e283aaf4ed7bc89830772ce2ca935}
+    source: {title: "City of Austin, Issued Construction Permits (public domain)", url: "https://data.austintexas.gov/Building-and-Development/Issued-Construction-Permits/3syk-w9eu"}
+    independence: "Austin was used in no ADU number in the model or in Adam's version. The place, years, outcome rule and prediction (the ADU scenario's own code on Austin's ACS detached homes and median value) were hashed and published before the counts were fetched; only the dataset's column names and category lists were read beforehand."
+    supports: "An honest record that a California-rate benchmark sits above what one Texas city permitted, at least in the frozen permit class."
+    does_not_support: "A conclusion about Texas, a causal effect of a state law, or a new rate; the outcome definition itself is in doubt for 2024 and 2025."
+    next_check: "A second frozen check in Austin with a definition that follows the 2024 code (all new units on lots with an existing house), and one in another state."
+
+  - id: bps_2026_states
+    title: "2026 building permits in every state, frozen before they are published"
+    evidence_class: prospective_holdout
+    place: "50 states and DC"
+    years: "2026"
+    outcome: "housing units authorized by building permits in 2026, each state inside its published 2026 range"
+    unit: "states inside their 2026 range, of 51; a hit needs at least 41 (80%)"
+    prediction: {low: 41, mid: null, high: 51}
+    actual: null
+    actual_text: "not yet published (expected in the first half of 2027)"
+    result: pending
+    result_text: "Every state's 2026 low, middle and high (national middle 1,470,510 permits) was hashed and published on 2026-11-03, before any 2026 annual total existed. The range was built for five-year totals, so one year is a harsher test; that was written into the protocol in advance."
+    frozen: {sha256: d54a5013e7fb771f87e978a94f70cc636023bb77b339d476c7208cb40ccf85fc, protocol: "validation/bps_2026_states/protocol.json", commit: 199a9081213e283aaf4ed7bc89830772ce2ca935}
+    source: {title: "Census Building Permits Survey, annual state file for 2026", url: "https://www2.census.gov/econ/bps/State/"}
+    independence: "Fully blind: the outcome did not exist when the prediction was frozen."
+    supports: "When scored, a clean out-of-sample test of the baseline's first year."
+    does_not_support: "Anything about the reforms."
+    next_check: "Score it when the Census publishes the 2026 annual file."
+
+  - id: adu_seattle_overlay
+    title: "Seattle's plateau as the ADU high case"
+    evidence_class: calibration
+    place: "Seattle, Washington"
+    years: "2022-2023 plateau"
+    outcome: "ADU permits per single-family home a year at the plateau"
+    unit: "permits per 1,000 single-family homes a year"
+    prediction: null
+    actual: 5.8
+    actual_text: "5.8"
+    result: not_a_test
+    result_text: "The high set uses this rate in central metropolitan counties where it exceeds the tier's high, so Seattle shapes the high case and cannot also test it."
+    source: {title: "Seattle OPCD ADU annual report, 2024", url: "https://www.seattle.gov/documents/Departments/OPCD/OngoingInitiatives/EncouragingBackyardCottages/OPCD-ADUAnnualReport2024.pdf"}
+    independence: "Used to set a register value."
+    supports: "A high case that a strong program has actually reached."
+    does_not_support: "That other cities will reach it."
+    next_check: "The frozen holdout below."
+
+  - id: adu_maine_overlay
+    title: "Maine's first statewide year as the ADU low case"
+    evidence_class: calibration
+    place: "Maine"
+    years: "2025"
+    outcome: "ADU permits in the first full year of the statewide law"
+    unit: "permits per 1,000 single-family homes a year"
+    prediction: null
+    actual: 0.95
+    actual_text: "0.95 (about 525 permits, 7% of the state's 2025 permits)"
+    result: not_a_test
+    result_text: "The low set uses this rate wherever it is below the tier's low, so Maine shapes the low case and cannot also test it."
+    source: {title: "Maine State Housing Authority, permit data blog", url: "https://www.mainestatehousingdata.org/permits/blog"}
+    independence: "Used to set a register value."
+    supports: "A low case taken from a real first year of a statewide law."
+    does_not_support: "Later years in Maine or other states."
+    next_check: "Maine 2026, when published."
+
+  - id: missing_middle_rates_context
+    title: "Missing-middle rates and the cities they came from"
+    evidence_class: calibration_context
+    place: "Portland, Minneapolis, Arlington, Spokane, Austin, Charlotte"
+    years: "2020-2025"
+    outcome: "middle-housing units permitted per 1,000 detached homes a year"
+    unit: "units per 1,000 detached homes a year"
+    prediction: null
+    actual: null
+    actual_text: "0.3 to 0.6 (Minneapolis, Arlington); 1.8 to 2.0 (Spokane, Austin, Charlotte); 3.5 to 4 (Portland)"
+    result: not_a_test
+    result_text: "The middle rate is Portland's first year net of demolitions (1.7 per 1,000 a year) and the high is Portland's ceiling, so these cities are where the numbers came from; Minneapolis and Arlington show how low the outcome can be when other rules bind."
+    source: {title: "Missing-middle method (docs/methods/missing_middle.md)", url: "https://github.com/rmanacha/permit-horizon/blob/main/docs/methods/missing_middle.md"}
+    independence: "Calibration sources and their neighbors; no frozen test yet."
+    supports: "The range spans the outcomes measured so far."
+    does_not_support: "A test of transfer, or completions."
+    next_check: "A city whose 2026-2027 middle-housing permits are frozen before they are published."
+
+  - id: cost_and_transit_literature
+    title: "Parking, fees and transit density: borrowed responses"
+    evidence_class: literature_transfer
+    place: "Studies elsewhere (national builder-response estimates; Los Angeles for transit)"
+    years: "various"
+    outcome: "homes added per 1% cost cut; housing added near transit"
+    unit: "see each method page"
+    prediction: null
+    actual: null
+    result: not_a_test
+    result_text: "These three reforms use responses measured in other settings; no statewide outcome exists to test them against, and the tornado shows how much each assumption moves the result."
+    source: {title: "Builder response method (docs/methods/builder_response.md)", url: "https://github.com/rmanacha/permit-horizon/blob/main/docs/methods/builder_response.md"}
+    independence: "None: borrowed estimates."
+    supports: "A transparent mechanism with its sensitivity shown."
+    does_not_support: "A validated statewide effect of any of the three reforms."
+    next_check: "A measured fee or parking change with a comparison group."

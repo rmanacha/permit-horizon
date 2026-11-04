@@ -168,7 +168,9 @@ def render_markdown(rows: list[dict[str, Any]], today: str) -> str:
         "case ignored). Code: `src/hre/validation/law_quotes.py`."),
         "",
         (f"**{found} of {n} quotes found on their pages; {len(missing)} not found; {len(unchecked)} not "
-        "checked automatically** (PDFs and pages that refuse scripted access are checked by hand in review)."),
+         "checked automatically**, of which "
+         f"{sum(1 for r in unchecked if r['status'].startswith('checked by hand'))} were checked by hand on "
+         "pages a script cannot read (`docs/evidence/current_law_hand_checks.yaml`)."),
         "",
         "| State | Reform | Where | Result | Page |",
         "|---|---|---|---|---|",

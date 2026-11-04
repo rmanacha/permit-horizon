@@ -4,7 +4,8 @@ import { Num } from '../components/Num.tsx';
 import { Term } from '../components/Term.tsx';
 import { doc } from '../content/site.ts';
 import { fmtCount, fmtShare, joinWords } from '../lib/format.ts';
-import type { Results } from '../types/results.ts';
+import { Tag, type TagProps } from '../components/ds/Tag.tsx';
+import type { LedgerEntry, Results } from '../types/results.ts';
 
 function Backtest({ r }: { r: Results }) {
   const b = r.baseline.band_rule;
@@ -94,9 +95,28 @@ function SwingBand({ r, name }: { r: Results; name: string }) {
   );
 }
 
+const RESULT: Record<LedgerEntry['result'], { text: string; tone: TagProps['tone'] }> = {
+  hit: { text: 'hit', tone: 'lime' },
+  miss: { text: 'miss', tone: 'coral' },
+  pending: { text: 'pending', tone: 'sunshine' },
+  not_a_test: { text: 'not a test', tone: 'outline' },
+};
+
+function Range({ e }: { e: LedgerEntry }) {
+  const p = e.prediction;
+  if (!p || (p.mid === null && (p.low === null || p.high === null))) return <span className="muted">none</span>;
+  if (p.mid === null) return <>{fmtCount(p.low)} to {fmtCount(p.high)}</>;
+  return (
+    <>
+      {fmtCount(p.low)} / <strong>{fmtCount(p.mid)}</strong> / {fmtCount(p.high)}
+    </>
+  );
+}
+
 function Ledger() {
   const { registers } = useShared();
   const l = registers.validation_ledger;
+  const classes = l.classes ?? {};
   return (
     <section aria-labelledby="ledger-h">
       <h2 id="ledger-h">
@@ -108,7 +128,86 @@ function Ledger() {
           prediction written down before the outcome was looked at, and every hit and miss.
         </p>
       ) : (
-        <pre>{JSON.stringify(l.entries, null, 1)}</pre>
+        <>
+          <p>
+            Every check of the model, including the ones it failed. The <Term term="evidence-class">evidence class</Term> says how
+            much each one proves: a <Term term="frozen-holdout">frozen holdout</Term> was predicted and hashed before its outcome was
+            fetched; a calibration check is where a number came from, so it cannot also test it.
+          </p>
+          <div className="table-wrap">
+            <table className="data-table">
+              <caption>Checks, their predictions (low / middle / high) and what happened</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Check</th>
+                  <th scope="col">Evidence class</th>
+                  <th scope="col">Place and years</th>
+                  <th scope="col">Outcome measured</th>
+                  <th scope="col" className="num-col">Model, low / mid / high</th>
+                  <th scope="col" className="num-col">Actual</th>
+                  <th scope="col">Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                {l.entries.map((e) => (
+                  <tr key={e.id}>
+                    <th scope="row">{e.title}</th>
+                    <td>{classes[e.evidence_class] ?? e.evidence_class.replace(/_/g, ' ')}</td>
+                    <td>
+                      {e.place}, {e.years}
+                    </td>
+                    <td>
+                      {e.outcome} <span className="small muted">({e.unit})</span>
+                    </td>
+                    <td className="num-col">
+                      <Range e={e} />
+                    </td>
+                    <td className="num-col">{e.actual_text ?? (typeof e.actual === 'number' ? fmtCount(e.actual) : 'not yet')}</td>
+                    <td>
+                      <Tag tone={RESULT[e.result].tone} size="sm">
+                        {RESULT[e.result].text}
+                      </Tag>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <h3>What each check shows, and what it does not</h3>
+          {l.entries.map((e) => (
+            <details key={e.id} className="ledger-detail">
+              <summary>{e.title}</summary>
+              <p>{e.result_text}</p>
+              <p>
+                <strong>Independence:</strong> {e.independence}
+              </p>
+              <p>
+                <strong>Supports:</strong> {e.supports}
+              </p>
+              <p>
+                <strong>Does not support:</strong> {e.does_not_support}
+              </p>
+              <p>
+                <strong>Next check:</strong> {e.next_check}
+              </p>
+              {e.frozen && (
+                <p className="small">
+                  <strong>Frozen:</strong> protocol{' '}
+                  {e.frozen.protocol.startsWith('validation/') ? <a href={doc(e.frozen.protocol)}>{e.frozen.protocol}</a> : e.frozen.protocol}, SHA-256{' '}
+                  <code>{e.frozen.sha256.slice(0, 16)}…</code>
+                  {e.frozen.commit ? `, recorded in commit ${e.frozen.commit.slice(0, 7)}` : ''}.
+                </p>
+              )}
+              <p className="small">
+                <strong>Source:</strong>{' '}
+                <a href={e.source.url} target="_blank" rel="noreferrer">
+                  {e.source.title}
+                </a>
+                {e.credit ? `. ${e.credit}` : ''}
+              </p>
+            </details>
+          ))}
+        </>
       )}
     </section>
   );

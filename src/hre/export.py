@@ -29,6 +29,7 @@ from hre.assumptions.loader import PARAMETERS_PATH, load_entries
 from hre.current_law.loader import HERE as LAW_DIR
 from hre.data.states import lookup
 from hre.model.run import RESULTS_SCHEMA_VERSION, validate_results
+from hre.validation import ledger
 
 LEVELS = ("low", "mid", "high")
 MANIFESTS = Path(__file__).resolve().parents[2] / "data" / "manifests"
@@ -41,7 +42,7 @@ SOURCE_TITLES = {
     "pep": ("Census Population Estimates, housing units by county", "pep"),
     "nrc": ("Census New Residential Construction, completions per permit", "nrc"),
     "cenpop": ("2020 Census centers of population by block group", "cenpop"),
-    "gazetteer": ("Census Gazetteer, counties", "gazetteer"),
+    "gazetteer": ("Census Gazetteer, counties and places", "gazetteer"),
     "cbsa": ("OMB metropolitan and micropolitan area delineation", "cbsa"),
     "fhfa": ("FHFA House Price Index, county, annual", "fhfa"),
     "transit": ("National Transit Map stops and National Transit Database modes", "transit"),
@@ -51,8 +52,12 @@ SOURCE_TITLES = {
     "gtfs_ct_hartford_line": ("CTrail Hartford Line GTFS feed, stations only", None),
     "gtfs_amtrak": ("Amtrak GTFS feed, Shore Line East stations only", None),
     "aclf": ("Census Address Count Listing Files", "aclf"),
+    "ut_hui": ("Utah Housing Unit Inventory (WFRC, MAG, UGRC), single-family parcels per county", None),
+    "az_assessors": ("Maricopa and Pinal County assessor parcels, single-family parcels per county", None),
+    "nh_granit": ("NH Parcel Mosaic CAMA table (NH DRA via GRANIT), single-family parcels per county", None),
 }
-ONLY_FOR = {"ct_crosswalk": ["CT"], "gtfs_ct_hartford_line": ["CT"], "gtfs_amtrak": ["CT"]}
+ONLY_FOR = {"ct_crosswalk": ["CT"], "gtfs_ct_hartford_line": ["CT"], "gtfs_amtrak": ["CT"],
+            "ut_hui": ["UT"], "az_assessors": ["AZ"], "nh_granit": ["NH"]}
 NOT_IN_MODEL = {"aclf": ("Downloaded and checked, then excluded (decision 46): from July 2023 the published "
                          "count reads about double the Census housing-unit estimates.")}
 
@@ -115,7 +120,7 @@ def registers() -> dict[str, Any]:
         "current_law": laws,
         "current_law_default": "States and scenarios with no file default to current strength 0: "
                                "\"No statewide law found; local permissions unverified.\"",
-        "validation_ledger": {"status": "placeholder; Phase 5 fills it (decision 37)", "entries": []},
+        "validation_ledger": ledger.for_export(),
         "sources": _sources(),
     }
 

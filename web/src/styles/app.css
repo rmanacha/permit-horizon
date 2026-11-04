@@ -282,3 +282,7 @@ main section:not(.ds-card) > h2 { border-top: var(--border-heavy) solid var(--cs
   .brief { font-size: var(--fs-caption); }
   .brief .data-table th, .brief .data-table td { padding: var(--space-0) var(--space-1); }
 }
+
+/* Validation ledger: one disclosure per check under the table */
+.ledger-detail { border-left: var(--border-heavy) solid var(--cs-navy); background: var(--color-surface); padding: var(--space-2) var(--space-4); margin: var(--space-3) var(--space-0); }
+.ledger-detail summary { cursor: pointer; font-family: var(--font-display); font-weight: var(--fw-bold); color: var(--color-heading); }

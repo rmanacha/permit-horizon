@@ -122,6 +122,18 @@
    "section": "Assumptions and cases"
   },
   {
+   "id": "coverage-share",
+   "term": "Coverage share",
+   "definition": "The share of a state's detached single-family homes inside the cities, towns and counties a law binds. Arizona's ADU law binds cities of more than 75,000 people and the areas outside cities, which hold 80% of its homes.",
+   "section": "Assumptions and cases"
+  },
+  {
+   "id": "gate-feature",
+   "term": "Core feature",
+   "definition": "The one part of a reform without which nothing of it is in law: an ADU on every single-family lot, new rights for single-family lots, more density near transit, lower parking minimums, a fee cut. If a state's law lacks it, the current strength is 0 whatever else the law says.",
+   "section": "Assumptions and cases"
+  },
+  {
    "id": "delay",
    "term": "Delay",
    "definition": "Years with no activity before the reform starts producing homes; \"starts after the horizon\" means nothing within the five years.",
@@ -190,7 +202,31 @@
   {
    "id": "validation-ledger",
    "term": "Validation ledger",
-   "definition": "The list of checks of the model against real reforms whose outcomes were written down before the results were looked at.",
+   "definition": "The list of every check of the model, hits and misses, each with its evidence class, the prediction, what actually happened and where the outcome came from.",
+   "section": "Validation and data"
+  },
+  {
+   "id": "evidence-class",
+   "term": "Evidence class",
+   "definition": "How much a check can prove. A frozen holdout tests the model; a calibration check is where a number came from, so it cannot also test it; an external check whose outcome was known beforehand is a scale check, not a blind test.",
+   "section": "Validation and data"
+  },
+  {
+   "id": "frozen-holdout",
+   "term": "Frozen holdout",
+   "definition": "A check whose prediction (place, years, outcome, the model's range) was written down and fingerprinted (hashed) and the fingerprint committed before anyone fetched the outcome, so the prediction cannot be adjusted after the fact.",
+   "section": "Validation and data"
+  },
+  {
+   "id": "parcel-adapter",
+   "term": "Parcel adapter",
+   "definition": "State-specific code that counts single-family parcels per county from a state or county parcel source, so the count can replace the national Census estimate. Counts only: no parcel rows, owner names or addresses.",
+   "section": "Validation and data"
+  },
+  {
+   "id": "tolerance-rule",
+   "term": "Tolerance rule",
+   "definition": "A county's parcel count replaces the Census count only when the two are within 30% of each other; otherwise the Census count stays and the county is listed with its ratio, so one county's coding cannot drive a state result.",
    "section": "Validation and data"
   },
   {

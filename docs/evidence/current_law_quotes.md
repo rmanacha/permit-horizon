@@ -2,7 +2,7 @@
 
 Generated 2026-11-03 by `uv run hre validate --law-quotes --fetch`: every quote in `src/hre/current_law/*.yaml` (the record and every feature source) is searched for, word for word, in the text of the page it cites (white space, typographic quotes and dashes normalized; case ignored). Code: `src/hre/validation/law_quotes.py`.
 
-**252 of 269 quotes found on their pages; 0 not found; 17 not checked automatically** (PDFs and pages that refuse scripted access are checked by hand in review).
+**252 of 269 quotes found on their pages; 0 not found; 17 not checked automatically**, of which 17 were checked by hand on pages a script cannot read (`docs/evidence/current_law_hand_checks.yaml`).
 
 | State | Reform | Where | Result | Page |
 |---|---|---|---|---|

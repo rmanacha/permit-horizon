@@ -358,11 +358,34 @@ export interface DataSource {
   manifest: string;
 }
 
+/** One check in the validation ledger (src/hre/validation/ledger.py has the field rules). */
+export interface LedgerEntry {
+  id: string;
+  title: string;
+  evidence_class: string;
+  place: string;
+  years: string;
+  outcome: string;
+  unit: string;
+  prediction?: { low: number | null; mid: number | null; high: number | null } | null;
+  actual?: number | null;
+  actual_text?: string | null;
+  result: 'hit' | 'miss' | 'pending' | 'not_a_test';
+  result_text: string;
+  frozen?: { sha256: string; protocol: string; commit?: string | null } | null;
+  source: { title: string; url: string };
+  independence: string;
+  supports: string;
+  does_not_support: string;
+  next_check: string;
+  credit?: string | null;
+}
+
 export interface Registers {
   assumptions: RegisterEntry[];
   current_law: Record<string, LawFile>;
   current_law_default: string;
-  validation_ledger: { status: string; entries: unknown[] };
+  validation_ledger: { status: string; classes?: Record<string, string>; entries: LedgerEntry[] };
   sources: DataSource[];
 }
 

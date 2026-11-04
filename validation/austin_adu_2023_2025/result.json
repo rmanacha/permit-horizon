@@ -1,0 +1,32 @@
+{
+ "actual": 116.7,
+ "actual_by_year": {
+  "2023": 247,
+  "2024": 93,
+  "2025": 10
+ },
+ "actual_over_mid": 0.2963433214829863,
+ "check": "austin_adu_2023_2025",
+ "fetched_on": "2026-11-04",
+ "inside": false,
+ "protocol_sha256": "a936174a1f8b321806c6fc648d6610a1ac82350c47db9a13e1d29db232fcfce9",
+ "query_as_frozen": true,
+ "reading": "Miss on the frozen rule: the three-year mean, 117 permits a year, is below the low of 139. 2023 (247) was inside the range at 0.63 times the middle; 2024 (93) and 2025 (10) were below it. The fall coincides with Austin's 2024 changes to its residential code, so the frozen class may have stopped capturing ADUs; that has not been checked, and the score stands as frozen.",
+ "sensitivity_reported_not_scored": {
+  "combined_by_year": {
+   "2023": 260,
+   "2024": 104,
+   "2025": 24
+  },
+  "r101_with_adu_description": {
+   "2023": 13,
+   "2024": 11,
+   "2025": 14
+  }
+ },
+ "years_inside": {
+  "2023": true,
+  "2024": false,
+  "2025": false
+ }
+}
