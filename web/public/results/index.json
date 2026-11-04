@@ -232,24 +232,24 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 307.3718,
-      "mid": 1612.611,
-      "high": 9793.7512
+      "low": 310.626,
+      "mid": 1632.1808,
+      "high": 9950.569
      },
      "status": "register_default",
      "newly_affected_share": 0.2,
-     "benchmark_mid": 12423.8139,
+     "benchmark_mid": 12574.5825,
      "benchmark_outcome": "completed_homes"
     },
     "missing_middle": {
      "increment": {
       "low": 0.0,
-      "mid": 9473.8114,
-      "high": 16891.7223
+      "mid": 9624.3115,
+      "high": 17160.0627
      },
      "status": "register_default",
      "newly_affected_share": 0.96,
-     "benchmark_mid": 11858.4994,
+     "benchmark_mid": 12051.472,
      "benchmark_outcome": "net_permits"
     },
     "tod": {
@@ -287,9 +287,9 @@
     }
    },
    "combined": {
-    "low": 307.3718,
-    "mid": 24656.1258,
-    "high": 78697.8398
+    "low": 310.626,
+    "mid": 24826.1669,
+    "high": 79122.5983
    }
   },
   {
@@ -3225,24 +3225,24 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 376.801,
-      "mid": 1875.2589,
-      "high": 9156.7429
+      "low": 363.9027,
+      "mid": 1812.6816,
+      "high": 8825.3901
      },
      "status": "register_default",
      "newly_affected_share": 0.5,
-     "benchmark_mid": 5778.9181,
+     "benchmark_mid": 5586.0759,
      "benchmark_outcome": "completed_homes"
     },
     "missing_middle": {
      "increment": {
       "low": 0.0,
-      "mid": 3759.6114,
-      "high": 6703.354
+      "mid": 3599.616,
+      "high": 6418.0837
      },
      "status": "register_default",
      "newly_affected_share": 1.0,
-     "benchmark_mid": 4017.6647,
+     "benchmark_mid": 3845.4693,
      "benchmark_outcome": "net_permits"
     },
     "tod": {
@@ -3280,9 +3280,9 @@
     }
    },
    "combined": {
-    "low": 376.801,
-    "mid": 10283.1424,
-    "high": 34066.3364
+    "low": 363.9027,
+    "mid": 10060.6841,
+    "high": 33450.7752
    }
   },
   {
