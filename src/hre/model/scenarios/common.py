@@ -216,10 +216,7 @@ def joint(spec: Spec, params: Params, run_fn: Callable[[Params], float], bars: l
             continue
         fav = b["favorable_end"]
         levels[b["id"]] = fav if direction == "favorable" else ("low" if fav == "high" else "high")
-    j = joint_case(params, run_fn, direction, bars=bars)
-    value = float(run_fn(params.all_at("mid").at(levels)))
-    return {**j, "value": value, "levels": levels,
-            "settings": [f"{params.entry(pid)['label']}: {params.display(pid, lv)}" for pid, lv in levels.items()]}
+    return joint_case(params, run_fn, direction, levels=levels)
 
 
 def components(spec: Spec, state: StateInputs, params: Params, mid: dict[str, Any], share: float) -> dict[str, Any]:

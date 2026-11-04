@@ -64,15 +64,18 @@ def tornado(params: Params, run_fn: Callable[[Params], float], ids: list[str] | 
 
 def joint_case(params: Params, run_fn: Callable[[Params], float], direction: str = "favorable",
                ids: list[str] | None = None, always: tuple[str, ...] = (),
-               bars: list[dict[str, Any]] | None = None) -> dict[str, Any]:
-    """``bars`` lets a caller reuse a tornado it already computed."""
+               bars: list[dict[str, Any]] | None = None,
+               levels: dict[str, str] | None = None) -> dict[str, Any]:
+    """``bars`` lets a caller reuse a tornado it already computed; ``levels`` lets it choose the
+    ends itself (the scenario's joint case starts from the high or low assumption set)."""
     if direction not in ("favorable", "unfavorable"):
         raise ValueError("direction must be 'favorable' or 'unfavorable'")
-    bars = bars if bars is not None else tornado(params, run_fn, ids, always=always)
-    levels = {}
-    for b in bars:
-        fav = b["favorable_end"]
-        levels[b["id"]] = fav if direction == "favorable" else ("low" if fav == "high" else "high")
+    if levels is None:
+        bars = bars if bars is not None else tornado(params, run_fn, ids, always=always)
+        levels = {}
+        for b in bars:
+            fav = b["favorable_end"]
+            levels[b["id"]] = fav if direction == "favorable" else ("low" if fav == "high" else "high")
     value = float(run_fn(params.all_at("mid").at(levels)))
     return {
         "direction": direction,
