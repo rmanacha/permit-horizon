@@ -20,6 +20,9 @@ GAZ_URL = (
     f"{GAZ_YEAR}_Gazetteer/{GAZ_YEAR}_Gaz_counties_national.zip"
 )
 LICENSE = "U.S. Census Bureau, public domain (U.S. government work)"
+NOTES = ("County names, land area (sq mi) and internal points; used as the county index every other "
+         "source is joined to by FIPS. The place file's land area is used only for the upper bound on "
+         "homes near a downtown in the current-law coverage check.")
 
 
 def gazetteer_path(data_dir: Path | None = None) -> Path:
@@ -30,8 +33,7 @@ def fetch_gazetteer(data_dir: Path | None = None, force: bool = False) -> Path:
     return fetch(
         GAZ_URL, gazetteer_path(data_dir), source="gazetteer", license=LICENSE,
         vintage=GAZ_YEAR, force=force,
-        notes="County names, land area (sq mi) and internal points; used as the county "
-              "index every other source is joined to by FIPS.",
+        notes=NOTES,
     )
 
 

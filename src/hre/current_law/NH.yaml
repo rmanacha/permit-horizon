@@ -1,15 +1,20 @@
-# New Hampshire current-law register.
+# New Hampshire current-law register (all five scenarios).
 #
-# ADU entry seeded from Adam Ruege's Housing Reform Estimator v2.0 current-law
-# record for NH (payload build v2.0-a3d61961fd76; his review as of 2026-10-21,
-# official text checked, human review pending), ported with attribution (decision
-# 43). Re-checked against the official statute page on 2026-11-03: paragraphs I,
-# IV, VI and VII and the source note match (Phase 2 report, spot-checks).
-# Other scenarios are not yet assessed (Phase 5) and default to strength 0.
+# ADU entry seeded from Adam Ruege's Housing Reform Estimator v2.0 current-law record for NH
+# (payload build v2.0-a3d61961fd76; his review as of 2026-10-21, official text checked, human
+# review pending; ported_from: adam-v2.0, decision 43). Re-checked against the official statute
+# pages on 2026-11-03 twice: by the Phase 2 session (paragraphs I, IV, VI and VII and the source
+# note match) and in the Phase 5 re-review (RSA 674:72 as amended by 2026 chapter 210, which adds
+# paragraph XI on converting existing structures; RSA 674:73 detached ADUs). Feature statuses
+# unchanged; the rationale is rewritten in plain sentences (the 0.75 is decision 62's rule).
+# Missing middle, transit, parking and fees: new entries, checked 2026-11-03.
+# Strength rule: docs/methods/current_law.md (decisions 62 and 91; parking quantified, decision 93).
 
 state: NH
 scenarios:
   adu:
+    ported_from: adam-v2.0
+    rechecked: "2026-11-03"
     record:
       law: "RSA 674:71 to 674:73, as amended by H.B. 577 (2025, chapter 197) and H.B. 1079 (2026, chapter 210); first enacted by S.B. 146 (2016, chapter 6)"
       summary: "Every New Hampshire town or city with zoning must allow one attached or detached ADU by right in every district that allows single-family homes, and may require the owner to live in one of the two units."
@@ -20,12 +25,13 @@ scenarios:
     features:
       - id: adu_per_lot
         challenge_requirement: "Allow one ADU on a parcel with an existing single-family building."
-        observed_position: "The section requires one attached or detached ADU as of right on covered single-family lots, subject to specified exceptions."
+        observed_position: "The section requires one attached or detached ADU as of right on covered single-family lots, subject to specified exceptions. Since August 2026, towns must also allow ADUs in existing structures such as detached garages."
         status: supported_with_limits
         sources:
           - {title: "New Hampshire RSA 674:72", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-72.htm", locator: "paragraph I", quote: "One accessory dwelling unit, which may be either attached or detached", accessed: "2026-11-03"}
+          - {title: "New Hampshire RSA 674:72", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-72.htm", locator: "paragraph XI", quote: "A municipality shall allow accessory dwelling units to be converted from existing structures", accessed: "2026-11-03"}
         limitations:
-          - "Municipal owner-occupancy (paragraph VI), dimensional, utility and other permitted conditions remain."
+          - "Towns may still require the owner to live on site (paragraph VI), and dimensional, utility and other permitted conditions remain."
           - "The number of affected parcels has not been measured."
       - id: adu_forms
         challenge_requirement: "Allow detached and semi-detached ADUs."
@@ -33,6 +39,7 @@ scenarios:
         status: supported_with_limits
         sources:
           - {title: "New Hampshire RSA 674:72", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-72.htm", locator: "paragraph I", quote: "either attached or detached", accessed: "2026-11-03"}
+          - {title: "New Hampshire RSA 674:73", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-73.htm", locator: "single paragraph", quote: "A municipality shall permit one detached accessory dwelling unit.", accessed: "2026-11-03"}
         limitations:
           - "Municipal dimensional and utility conditions remain."
       - id: adu_size
@@ -53,8 +60,175 @@ scenarios:
           - "Whether towns use the option has not been surveyed."
     current_strength: 0.75
     strength_rationale: >-
-      Starting rule (decision 62): three of the four benchmark features (one ADU per lot,
-      attached or detached, at least 600 square feet) are supported with limits and one (no
-      added parking) differs, so 3 / 4 = 0.75 of the benchmark is already in law and 0.25 is
-      newly affected. Owner-occupancy may still be required (paragraph VI); human review pending.
+      Three of the four benchmark features are in New Hampshire law in every town with zoning:
+      one ADU per lot, attached or detached, of at least 600 square feet. The fourth, no added
+      parking, is not: towns may require one more space. So 3 / 4 = 0.75 of the benchmark is
+      already in law and 0.25 would be newly affected. Towns may also still require the owner to
+      live on site.
     human_review: {status: pending, by: null, date: null}
+    notes: "0.75 is decision 62's starting rule, unchanged under decision 91 (every town with zoning is bound, coverage 1). Re-reviewed 2026-11-03."
+
+  missing_middle:
+    record:
+      law: "No statewide middle-housing requirement found. Nearest: RSA 674:58 to 674:61 (workforce housing), which requires reasonable and realistic opportunities for workforce housing."
+      summary: "New Hampshire requires towns to allow workforce housing in a majority of their residential land, but it does not give single-family lots the right to two to six homes."
+      quote: "This paragraph shall not be construed to require a municipality to allow for the development of multifamily housing in a majority of its land zoned to permit residential uses."
+      url: https://gc.nh.gov/rsa/html/LXIV/674/674-59.htm
+      accessed: "2026-11-03"
+      in_effect: "Workforce housing law since January 1, 2010; the 2025 and 2026 lot-size bills were sent to interim study and did not pass."
+    features:
+      - id: mm_parcels
+        challenge_requirement: "Apply the reform to parcels currently limited to single-family use."
+        observed_position: "No statute gives single-family lots the right to two to six homes. The workforce housing law leaves each town to choose where such housing goes."
+        status: differs
+        sources:
+          - {title: "New Hampshire RSA 674:59", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-59.htm", locator: "paragraph I", quote: "Such a municipality shall have the discretion to determine what land areas are appropriate to meet this obligation.", accessed: "2026-11-03"}
+        limitations:
+          - "Local zoning that allows duplexes or more on single-family lots is not counted."
+      - id: mm_units
+        challenge_requirement: "Allow two to six homes on each affected parcel."
+        observed_position: "Not addressed by state law."
+        status: differs
+        sources:
+          - {title: "New Hampshire RSA 674:59", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-59.htm", locator: "paragraph I", quote: "This paragraph shall not be construed to require a municipality to allow for the development of multifamily housing in a majority of its land zoned to permit residential uses.", accessed: "2026-11-03"}
+        limitations: []
+      - id: mm_height
+        challenge_requirement: "Allow buildings of up to three stories."
+        observed_position: "Not addressed by state law."
+        status: differs
+        sources:
+          - {title: "New Hampshire RSA 674:16", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-16.htm", locator: "paragraph I(a)", quote: "The height, number of stories and size of buildings and other structures", accessed: "2026-11-03"}
+        limitations: []
+      - id: mm_envelope
+        challenge_requirement: "The model may assume setbacks and lot coverage do not prevent two to six homes."
+        observed_position: "Not addressed by state law; towns set lot sizes and coverage."
+        status: unknown
+        sources:
+          - {title: "New Hampshire RSA 674:16", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-16.htm", locator: "paragraph I(b)", quote: "Lot sizes, the percentage of a lot that may be occupied, and the size of yards", accessed: "2026-11-03"}
+        limitations: []
+    current_strength: 0.0
+    strength_rationale: >-
+      New Hampshire requires towns to make room for workforce housing but lets each town choose
+      where, and does not give single-family lots the right to two to six homes. So none of the
+      benchmark is in law and all of it would be newly affected.
+    human_review: {status: pending, by: null, date: null}
+    notes: "New entry 2026-11-03; zero by the gate rule (decision 91)."
+
+  tod:
+    record:
+      law: "No statewide transit-area density law found. Nearest: RSA 674:80 (multifamily housing on commercially zoned land), enacted by H.B. 631 (2025, chapter 201)."
+      summary: "New Hampshire does not raise allowed housing density near transit stops. From July 1, 2026, towns must allow apartments on commercially zoned land where roads, water and sewer are adequate, without regard to transit."
+      quote: "municipalities shall allow multi-family dwelling units, as defined in RSA 674:43, I on commercially zoned land, provided that adequate infrastructure, including roads, water, and sewage systems, shall be available to support the development"
+      url: https://gc.nh.gov/rsa/html/LXIV/674/674-80.htm
+      accessed: "2026-11-03"
+      in_effect: "Not applicable: no transit-area law. The commercial-land law is effective July 1, 2026."
+    features:
+      - id: tod_density
+        challenge_requirement: "Increase permitted building height, floor area ratio, or both near major transit stops."
+        observed_position: "No statute raises allowed height or density near transit. Apartments on commercial land are allowed statewide from July 2026, wherever infrastructure is adequate."
+        status: differs
+        sources:
+          - {title: "New Hampshire RSA 674:80", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-80.htm", locator: "paragraph I", quote: "municipalities shall allow multi-family dwelling units", accessed: "2026-11-03"}
+        limitations:
+          - "The state has few rail stops (three Amtrak Downeaster stations); the estimate's transit benchmark is small here for that reason."
+      - id: tod_geography
+        challenge_requirement: "Define major transit stops and justify the distance threshold."
+        observed_position: "No statute defines major transit stops or a distance for housing rules."
+        status: differs
+        sources:
+          - {title: "New Hampshire RSA 674:80", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-80.htm", locator: "paragraph I", quote: "on commercially zoned land", accessed: "2026-11-03"}
+        limitations: []
+      - id: tod_parking
+        challenge_requirement: "The model may assume parking requirements near transit are reduced or removed."
+        observed_position: "No transit-area rule; the statewide cap of one required space per home applies everywhere."
+        status: differs
+        sources:
+          - {title: "New Hampshire RSA 674:16", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-16.htm", locator: "paragraph VII", quote: "shall not require more than one residential parking space per unit", accessed: "2026-11-03"}
+        limitations: []
+    current_strength: 0.0
+    strength_rationale: >-
+      New Hampshire has no law that raises housing density near transit stops, so none of the
+      benchmark is in law and all of it would be newly affected. The 2025 law allowing apartments
+      on commercial land is not tied to transit and is not counted.
+    human_review: {status: pending, by: null, date: null}
+    notes: "New entry 2026-11-03; zero by the gate rule (decision 91)."
+
+  parking:
+    record:
+      law: "RSA 674:16, VII, added by S.B. 284 (2025, chapter 258) and amended by 2026 chapter 329"
+      summary: "Towns and cities may not require more than one parking space per home (and, from September 13, 2026, may not require that space to be in a garage)."
+      quote: "may regulate accessory parking for vehicles, but shall not require more than one residential parking space per unit"
+      url: https://gc.nh.gov/rsa/html/LXIV/674/674-16.htm
+      accessed: "2026-11-03"
+      in_effect: "September 13, 2025; garage rule September 13, 2026"
+    features:
+      - id: parking_minimum
+        challenge_requirement: "Reduce or remove parking minimums for new residential development."
+        observed_position: "Minimums are capped at one space per home statewide; one space may still be required."
+        status: supported_with_limits
+        sources:
+          - {title: "New Hampshire RSA 674:16", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-16.htm", locator: "paragraph VII", quote: "shall not require more than one residential parking space per unit", accessed: "2026-11-03"}
+        limitations:
+          - "The last required space is not removed."
+          - "Applicants may also propose shared or off-site parking that a planning board must consider (RSA 674:16-a)."
+      - id: parking_provision
+        challenge_requirement: "State how much parking developers provide without a mandate."
+        observed_position: "Not addressed by state law; the estimate's assumption about the share of parking still built covers this."
+        status: unknown
+        sources:
+          - {title: "New Hampshire RSA 674:16-a", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-16-a.htm", locator: "paragraph III", quote: "a planning board shall be required to approve the alternative parking solution", accessed: "2026-11-03"}
+        limitations: []
+    current_strength: 0.43
+    strength_method: quantified
+    strength_arithmetic: >-
+      The parking estimate removes each county's required spaces per home: 1.7955 in Hillsborough
+      (Manchester-Nashua metro), 1.9139 in Rockingham and Strafford (Boston metro), and the register's
+      1 elsewhere. The cap already removes the spaces above one, a share 1 - 1/spaces of each
+      county's benchmark: 0.4431 and 0.4775, and 0 where one space is required. Weighted by the mid
+      increment before the cap (Hillsborough 61.37, Rockingham 58.26, Strafford 25.00 of 157.29
+      permits): (61.37 x 0.4431 + 58.26 x 0.4775 + 25.00 x 0.4775) / 157.29 = 0.426.
+    strength_rationale: >-
+      Since September 2025 New Hampshire towns may require at most one parking space per home. The
+      parking estimate removes the spaces local codes require, about 1.8 to 1.9 per home in the
+      Manchester-Nashua and Boston-area counties and one elsewhere, so the cap has already removed
+      the part above one. Weighted by where the estimate's added homes are, that is 0.43 of the
+      benchmark; the remaining 0.57, the last required space, would be newly affected.
+    human_review: {status: pending, by: null, date: null}
+    notes: "Quantified strength (decision 93): the feature rule would give 0.50 (one of two features); the arithmetic is linear in required spaces, as the parking formula is."
+
+  fees:
+    record:
+      law: "RSA 674:21, V (impact fees)"
+      summary: "New Hampshire limits impact fees to a proportional share of the capital costs a development creates; it does not cut them."
+      quote: "The amount of any such fee shall be a proportional share of municipal capital improvement costs which is reasonably related to the capital needs created by the development"
+      url: https://gc.nh.gov/rsa/html/LXIV/674/674-21.htm
+      accessed: "2026-11-03"
+      in_effect: "In force; no fee reduction enacted."
+    features:
+      - id: fees_level
+        challenge_requirement: "Assume total fees of $50,000 per home for the challenge comparison."
+        observed_position: "State law does not set a fee level; fees are set by each town and are not measured here."
+        status: unknown
+        sources:
+          - {title: "New Hampshire RSA 674:21", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-21.htm", locator: "paragraph V(b)", quote: "In order for a municipality to adopt an impact fee ordinance, it must have enacted a capital improvements program", accessed: "2026-11-03"}
+        limitations: []
+      - id: fees_cut
+        challenge_requirement: "Reduce total fees by 50%."
+        observed_position: "No statute reduces development fees."
+        status: differs
+        sources:
+          - {title: "New Hampshire RSA 674:21", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-21.htm", locator: "paragraph V(a)", quote: "shall be a proportional share of municipal capital improvement costs", accessed: "2026-11-03"}
+        limitations: []
+      - id: fees_categories
+        challenge_requirement: "Cover planning, environmental review, building, and impact fees."
+        observed_position: "The statute governs impact fees only; planning and building permit fees are set locally."
+        status: differs
+        sources:
+          - {title: "New Hampshire RSA 674:21", url: "https://gc.nh.gov/rsa/html/LXIV/674/674-21.htm", locator: "paragraph V", quote: "\"impact fee\" means a fee or assessment imposed upon development", accessed: "2026-11-03"}
+        limitations: []
+    current_strength: 0.0
+    strength_rationale: >-
+      New Hampshire limits impact fees to a proportional share of new capital costs but has not cut
+      fees, so none of the 50% fee cut is in law and all of it would be newly affected.
+    human_review: {status: pending, by: null, date: null}
+    notes: "New entry 2026-11-03; zero by the gate rule (decision 91)."

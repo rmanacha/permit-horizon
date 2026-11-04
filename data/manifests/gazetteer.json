@@ -6,9 +6,16 @@
       "sha256": "4c90d0f805779923b5958ab13d0c1e9b99fe4932b786bfcf75dd739bb2dcb4ea",
       "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/2025_Gaz_counties_national.zip",
       "vintage": "2025"
+    },
+    "gazetteer/2025_Gaz_place_national.zip": {
+      "bytes": 1214053,
+      "fetched_at": "2026-11-04T00:18:41Z",
+      "sha256": "49644173a453469d9bd77fb7a493b027f87567e209edaf2078aac7543ac2ee29",
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/2025_Gaz_place_national.zip",
+      "vintage": "2025"
     }
   },
   "license": "U.S. Census Bureau, public domain (U.S. government work)",
-  "notes": "County names, land area (sq mi) and internal points; used as the county index every other source is joined to by FIPS.",
+  "notes": "County names, land area (sq mi) and internal points; used as the county index every other source is joined to by FIPS. The place file's land area is used only for the upper bound on homes near a downtown in the current-law coverage check.",
   "source": "gazetteer"
 }

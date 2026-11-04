@@ -12,6 +12,7 @@
     hre validate --adu-tiers        ADU value tiers + 1,000-split city check (needs make hcd)
     hre validate --nrc --fetch      completions per permit by structure type (Census NRC)
     hre validate --overview         sanity review of results/*.json -> docs/evidence/results_overview.md
+    hre validate --law-coverage     current-law coverage shares -> docs/evidence/current_law_coverage.md
     hre run --state NH --scenarios baseline           results/NH.json (three-layer schema)
     hre run --all                   results/{ST}.json for every jurisdiction with a processed file
     hre export --out web/public/results/   the web bundle (results, index, registers, meta)
@@ -165,6 +166,7 @@ def validate(
     adu_tiers: Annotated[bool, typer.Option("--adu-tiers", help="calibrate ADU value tiers from HCD Table A2 + ACS")] = False,
     nrc: Annotated[bool, typer.Option("--nrc", help="completions per permit from the Census NRC annual tables")] = False,
     overview: Annotated[bool, typer.Option("--overview", help="sanity review of results/*.json -> docs/evidence/results_overview.md")] = False,
+    law_coverage: Annotated[bool, typer.Option("--law-coverage", help="recompute current-law coverage shares -> docs/evidence/current_law_coverage.md")] = False,
     write_register: Annotated[bool, typer.Option("--write-register", help="with --baseline, --adu-tiers or --nrc: write results into parameters.yaml")] = False,
     data_dir: Annotated[Path | None, typer.Option("--data-dir")] = None,
 ) -> None:
@@ -172,6 +174,31 @@ def validate(
     from hre.schema import validate as validate_schema
 
     dd = _data_dir(data_dir)
+    if law_coverage:
+        import datetime as dt
+
+        from hre.current_law import coverage as cov
+        from hre.current_law.loader import HERE as LAW_DIR
+        from hre.data.fetch_acs import fetch_acs
+
+        if do_fetch:
+            fetch_acs(dd, tables=("b01003", "b25024"))
+            cov.fetch_place_gazetteer(dd)
+        try:
+            rows = cov.check_files(LAW_DIR, dd)
+        except FileNotFoundError as e:
+            typer.echo(str(e), err=True)
+            raise typer.Exit(code=2) from e
+        dest = write or Path("docs/evidence/current_law_coverage.md")
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(cov.render_markdown(rows, dt.date.today().isoformat()), encoding="utf-8")
+        for r in rows:
+            typer.echo(f"{r['state']} {r['scenario']}: {cov.sentence(r['detail'])} "
+                       f"(stored {r['stored']:.4f}: {'match' if r['ok'] else 'MISMATCH'})")
+        typer.echo(f"wrote {dest}")
+        if not all(r["ok"] for r in rows):
+            raise typer.Exit(code=1)
+        return
     if overview:
         import datetime as dt
 
@@ -315,7 +342,7 @@ def validate(
             write.write_text("\n".join(lines) + "\n", encoding="utf-8")
             typer.echo(f"wrote {write}")
     if not aclf and processed is None:
-        typer.echo("nothing to do: pass --aclf, --processed, --baseline, --adu-tiers, --nrc or --overview", err=True)
+        typer.echo("nothing to do: pass --aclf, --processed, --baseline, --adu-tiers, --nrc, --overview or --law-coverage", err=True)
         raise typer.Exit(code=2)
 
 

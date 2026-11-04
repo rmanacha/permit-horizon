@@ -10,7 +10,7 @@ Files are 16 to 48 MB each; they are streamed line by line and only the rows
 for the requested state are kept. Never commit them.
 
 Tables and the fields they feed (see docs/methods/schema.md):
-B25001 total units; B25002 occupancy (E003 vacant); B25003 tenure (E002 owner,
+B01003 total population (current-law coverage thresholds only); B25001 total units; B25002 occupancy (E003 vacant); B25003 tenure (E002 owner,
 E003 renter); B25004 vacancy status; B25024 units in structure (E002 detached,
 E003 attached, E004 2 units, E005 3-4, E006-E009 5+, E010 mobile); B25034 year
 built; B25064 median gross rent; B25077 median value.
@@ -24,7 +24,7 @@ from hre.data.cache import fetch, raw_dir
 
 ACS_YEAR = "2024"
 ACS_BASE = f"https://www2.census.gov/programs-surveys/acs/summary_file/{ACS_YEAR}/table-based-SF"
-ACS_TABLES = ("b25001", "b25002", "b25003", "b25004", "b25024", "b25034", "b25064", "b25077")
+ACS_TABLES = ("b01003", "b25001", "b25002", "b25003", "b25004", "b25024", "b25034", "b25064", "b25077")
 GEOS_FILE = f"Geos{ACS_YEAR}5YR.txt"
 LICENSE = "U.S. Census Bureau, public domain; catalog entry tagged CC0 1.0"
 VINTAGE = f"ACS 5-year 2020-{ACS_YEAR} ({ACS_YEAR} release)"

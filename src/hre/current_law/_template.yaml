@@ -1,11 +1,15 @@
 # Current-law register: template (copy to {ST}.yaml, e.g. NH.yaml).
-# Schema and rules: src/hre/current_law/schema.py; method: docs/methods/cases.md.
+# Schema and rules: src/hre/current_law/schema.py; method: docs/methods/current_law.md.
 # A scenario left out of the file means "no statewide law found": the engine uses
 # current_strength 0 (the whole benchmark is newly affected) with that note.
 # Scenarios: adu, missing_middle, tod, parking, fees.
 # Feature status: supported_with_limits | differs | not_yet_effective | unknown.
-# Starting rule for current_strength (decision 62): the share of benchmark features
-# whose status is supported_with_limits; a different value needs a rationale saying why.
+# Strength rule (decisions 62 and 91): gate x feature share x coverage share. The gate is the
+# scenario's core feature (adu_per_lot, mm_parcels, tod_density, parking_minimum, fees_cut);
+# a feature in force from a date inside 2026-2030 sets in_effect_from and counts that share of
+# the horizon. strength_method: quantified (with strength_arithmetic) replaces the rule only
+# with a stated reason. Text the website shows (record, features, strength_rationale) is plain
+# language: no decision numbers or ids; put those in notes or in comments.
 
 state: XX
 scenarios:
@@ -22,6 +26,7 @@ scenarios:
         challenge_requirement: "Allow one ADU on a parcel with an existing single-family building."
         observed_position: "What the statute actually says on this point."
         status: unknown
+        # in_effect_from: "YYYY-MM-DD"    only when it takes effect during 2026-2030
         sources:
           - title: "Official source title"
             url: https://example.gov/official-statute-page
@@ -30,6 +35,11 @@ scenarios:
             accessed: "YYYY-MM-DD"
         limitations:
           - "What the text does not establish."
+    # coverage:                           only when the law binds some places, not all
+    #   share: 0.0
+    #   rule: {above_population: 75000, unincorporated: all, exclude_tribal: true}
+    #   basis: "The arithmetic from docs/evidence/current_law_coverage.md."
     current_strength: 0.0
-    strength_rationale: "Why this number; which features count and how."
+    strength_rationale: "Plain sentences: which features count, the places covered, the arithmetic."
     human_review: {status: pending, by: null, date: null}
+    # notes: "Internal references the website does not show."

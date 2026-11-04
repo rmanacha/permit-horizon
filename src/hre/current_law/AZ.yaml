@@ -1,0 +1,236 @@
+# Arizona current-law register (all five scenarios).
+#
+# ADU entry seeded from Adam Ruege's Housing Reform Estimator v2.0 record for AZ (payload
+# build v2.0-a3d61961fd76, his review as of 2026-10-21; ported_from: adam-v2.0) and re-checked
+# against the official statute pages on 2026-11-03. One status changed on re-check: the size
+# feature (Adam: differs) is supported with limits, because the protected size of 75% of the
+# house or 1,000 square feet reaches 600 square feet whenever the house has at least 800.
+# Missing middle, transit, parking and fees: new entries, checked 2026-11-03.
+# Strength rule and coverage: docs/methods/current_law.md (decisions 62 and 91);
+# coverage arithmetic: docs/evidence/current_law_coverage.md.
+
+state: AZ
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: "2026-11-03"
+    record:
+      law: "A.R.S. 9-461.18 (cities and towns of more than 75,000 people), enacted by H.B. 2720 (2024, chapter 196) and amended by H.B. 2928 (2025, chapter 217); A.R.S. 11-810.01 (counties), added by H.B. 2928"
+      summary: "Cities and towns of more than 75,000 people, and every county outside cities, must allow one attached and one detached ADU as a permitted use on every lot where a single-family home is allowed, with no added parking."
+      quote: "A municipality shall adopt regulations that allow on any lot or parcel where a single-family dwelling is allowed all of the following: 1. At least one attached and one detached accessory dwelling unit as a permitted use."
+      url: https://www.azleg.gov/ars/9/00461-18.htm
+      accessed: "2026-11-03"
+      in_effect: "Cities: regulations due January 1, 2025. Counties: regulations due January 1, 2026. Where a city or county missed its deadline, ADUs are allowed on all residential lots without limits."
+    features:
+      - id: adu_per_lot
+        challenge_requirement: "Allow one ADU on a parcel with an existing single-family building."
+        observed_position: "Covered cities and every county must allow at least one attached and one detached ADU as a permitted use, approved without a public hearing, on any lot where a single-family home is allowed."
+        status: supported_with_limits
+        sources:
+          - {title: "Arizona Revised Statutes 9-461.18", url: "https://www.azleg.gov/ars/9/00461-18.htm", locator: "subsections A.1 and H", quote: "This section applies to a municipality with a population of more than seventy-five thousand persons.", accessed: "2026-11-03"}
+          - {title: "Arizona Revised Statutes 11-810.01", url: "https://www.azleg.gov/ars/11/00810-01.htm", locator: "subsection A.1", quote: "At least one attached and one detached accessory dwelling unit as a permitted use.", accessed: "2026-11-03"}
+        limitations:
+          - "Cities and towns of 75,000 people or fewer are not covered (by the 2020 Census count, which Arizona law uses); together they hold about one in five of the state's detached homes."
+          - "Tribal land and land near military and public airports are excluded."
+      - id: adu_forms
+        challenge_requirement: "Allow detached and semi-detached ADUs."
+        observed_position: "Both an attached and a detached ADU must be allowed on the same lot, and a second detached ADU on lots of an acre or more when one unit is rented as affordable housing."
+        status: supported_with_limits
+        sources:
+          - {title: "Arizona Revised Statutes 9-461.18", url: "https://www.azleg.gov/ars/9/00461-18.htm", locator: "subsection A.1 and A.2", quote: "At least one attached and one detached accessory dwelling unit as a permitted use.", accessed: "2026-11-03"}
+        limitations:
+          - "Covered cities and counties only."
+      - id: adu_size
+        challenge_requirement: "Allow ADUs of at least 600 square feet."
+        observed_position: "Cities and counties must allow an ADU of 75% of the house's floor area or 1,000 square feet, whichever is less. That reaches 600 square feet whenever the house has at least 800 square feet of living space."
+        status: supported_with_limits
+        sources:
+          - {title: "Arizona Revised Statutes 9-461.18", url: "https://www.azleg.gov/ars/9/00461-18.htm", locator: "subsection A.3", quote: "seventy-five percent of the gross floor area of the single-family dwelling on the same lot or parcel or one thousand square feet, whichever is less", accessed: "2026-11-03"}
+          - {title: "Arizona Revised Statutes 11-810.01", url: "https://www.azleg.gov/ars/11/00810-01.htm", locator: "subsection B", quote: "at least seventy-five percent of the gross floor area of the single-family dwelling on the same lot or parcel or one thousand square feet, whichever is less", accessed: "2026-11-03"}
+        limitations:
+          - "On lots with a house under 800 square feet, the protected size is below 600 square feet."
+      - id: adu_parking
+        challenge_requirement: "Require no added parking for the ADU."
+        observed_position: "Cities and counties may not require added parking, or a fee in place of parking, for an ADU."
+        status: supported_with_limits
+        sources:
+          - {title: "Arizona Revised Statutes 9-461.18", url: "https://www.azleg.gov/ars/9/00461-18.htm", locator: "subsection B.3", quote: "Require that a lot or parcel have additional parking to accommodate an accessory dwelling unit or require payment of fees instead of additional parking.", accessed: "2026-11-03"}
+        limitations:
+          - "Covered cities and counties only."
+    coverage:
+      share: 0.7989
+      rule: {above_population: 75000, unincorporated: all, exclude_tribal: true}
+      basis: "ACS 2020-2024: 1,203,063 detached homes in the 15 cities and towns of more than 75,000 people, plus 433,794 outside any city or town after removing 46,822 on tribal land, out of 2,048,854 in the state. The same 15 places exceed 75,000 in the 2020 Census."
+    current_strength: 0.80
+    strength_rationale: >-
+      All four benchmark features are in Arizona law, but only in the places the law covers:
+      cities and towns of more than 75,000 people and the areas outside any city or town, which
+      hold 80% of the state's detached single-family homes. So 1 × 0.80 = 0.80 of the benchmark
+      is already in law. The other 20% of homes, in smaller cities and towns, would be newly covered.
+    human_review: {status: pending, by: null, date: null}
+    notes: "Strength rule and coverage from decision 91; size status changed from Adam's record on re-check (decision 92)."
+
+  missing_middle:
+    record:
+      law: "A.R.S. 9-462.13 (middle housing), enacted by H.B. 2721 (2024, chapter 197)"
+      summary: "Cities of 75,000 people or more must allow duplexes, triplexes, fourplexes and townhomes as a permitted use on single-family lots within one mile of downtown, and on at least 20% of any new development of more than ten acres."
+      quote: "the development of duplexes, triplexes, fourplexes and townhomes as a permitted use on both of the following: 1. All lots zoned for single-family residential use within one mile of the municipality's central business district."
+      url: https://www.azleg.gov/ars/9/00462-13.htm
+      accessed: "2026-11-03"
+      in_effect: "Regulations due January 1, 2026; where a city missed the deadline, middle housing is allowed on all single-family lots without limits."
+    features:
+      - id: mm_parcels
+        challenge_requirement: "Apply the reform to parcels currently limited to single-family use."
+        observed_position: "Applies to single-family lots within one mile of downtown in cities of 75,000 or more, and to 20% of new developments over ten acres; other single-family lots are not covered."
+        status: supported_with_limits
+        in_effect_from: "2026-01-01"
+        sources:
+          - {title: "Arizona Revised Statutes 9-462.13", url: "https://www.azleg.gov/ars/9/00462-13.htm", locator: "subsection A", quote: "All lots zoned for single-family residential use within one mile of the municipality's central business district.", accessed: "2026-11-03"}
+        limitations:
+          - "Each city designates its own downtown area; the share of homes within a mile of it has not been mapped (the coverage figure is an upper bound)."
+          - "Unincorporated areas and land near airports are excluded."
+      - id: mm_units
+        challenge_requirement: "Allow two to six homes on each affected parcel."
+        observed_position: "Duplexes, triplexes, fourplexes and townhomes must be allowed; five- and six-unit buildings are not required."
+        status: supported_with_limits
+        sources:
+          - {title: "Arizona Revised Statutes 9-462.13", url: "https://www.azleg.gov/ars/9/00462-13.htm", locator: "subsections A and H.7", quote: "Includes duplexes, triplexes, fourplexes and townhouses.", accessed: "2026-11-03"}
+        limitations:
+          - "Up to four homes per lot, not six."
+      - id: mm_height
+        challenge_requirement: "Allow buildings of up to three stories."
+        observed_position: "Cities may not limit middle housing to fewer than two floors; three stories are not required."
+        status: differs
+        sources:
+          - {title: "Arizona Revised Statutes 9-462.13", url: "https://www.azleg.gov/ars/9/00462-13.htm", locator: "subsection B.2", quote: "Restrict middle housing types to less than two floors.", accessed: "2026-11-03"}
+        limitations: []
+      - id: mm_envelope
+        challenge_requirement: "The model may assume setbacks and lot coverage do not prevent two to six homes."
+        observed_position: "Rules for middle housing may not be stricter than for single-family homes in the same zone, and the floor area ratio may not be held below 50%."
+        status: supported_with_limits
+        sources:
+          - {title: "Arizona Revised Statutes 9-462.13", url: "https://www.azleg.gov/ars/9/00462-13.htm", locator: "subsection B.3 and B.4", quote: "Restrict middle housing types to a floor area ratio of less than fifty percent.", accessed: "2026-11-03"}
+        limitations:
+          - "Whether a 50% floor area ratio fits four homes depends on lot size."
+    coverage:
+      share: 0.0523
+      rule: {min_population: 75000, unincorporated: none, near_downtown_miles: 1}
+      basis: "Upper bound, ACS 2020-2024 and the 2025 Gazetteer: in each of the 15 cities of 75,000 or more, the detached homes in a circle of two miles' radius around downtown (a downtown up to a mile across plus the one-mile reach) at the city's average density, 107,133 in all, out of 2,048,854 in the state. Downtowns hold fewer detached homes than the city average, so the true share is lower."
+    current_strength: 0.04
+    strength_rationale: >-
+      Three of the four benchmark features are in Arizona law (lots gaining rights, two to four
+      homes, and a building envelope no stricter than for single-family homes); the three-story
+      height is not. But the law reaches only single-family lots within a mile of downtown in the
+      15 largest cities, at most 5% of the state's detached homes. So 0.75 × 0.05 = 0.04 of the
+      benchmark is in law at most, and almost all of it would be newly affected.
+    human_review: {status: pending, by: null, date: null}
+    notes: "New entry 2026-11-03; coverage is an upper bound (decision 91)."
+
+  tod:
+    record:
+      law: "No statewide transit-area density law found. Nearest statute: A.R.S. 9-462.10 (multifamily housing and conversions on commercial parcels in cities of 150,000 or more, 2024)."
+      summary: "Arizona law does not raise allowed housing density near transit stops. A separate law lets large cities' obsolete commercial buildings become apartments, without regard to transit."
+      quote: "shall establish objective standards to allow multifamily residential development or adaptive reuse of existing commercial, office or mixed use parcels within the municipality without requiring a conditional use permit, a planned unit development or rezoning application"
+      url: https://www.azleg.gov/ars/9/00462-10.htm
+      accessed: "2026-11-03"
+      in_effect: "Not applicable: no transit-area law. The commercial-parcel law applies to cities of 150,000 or more."
+    features:
+      - id: tod_density
+        challenge_requirement: "Increase permitted building height, floor area ratio, or both near major transit stops."
+        observed_position: "No statute raises allowed height or density near transit. The commercial-parcel law allows apartments on at least 10% of commercial parcels in cities of 150,000 or more, at the highest nearby multifamily density and up to five stories, wherever the buildings are obsolete."
+        status: differs
+        sources:
+          - {title: "Arizona Revised Statutes 9-462.10", url: "https://www.azleg.gov/ars/9/00462-10.htm", locator: "subsections A.1 and E.3 to E.4", quote: "The allowable height may not exceed five stories", accessed: "2026-11-03"}
+        limitations:
+          - "Searched the Arizona Revised Statutes and 2024 to 2026 session laws; local transit overlays (for example in Phoenix and Tempe) are not counted."
+      - id: tod_geography
+        challenge_requirement: "Define major transit stops and justify the distance threshold."
+        observed_position: "No statute defines major transit stops or a distance for housing rules."
+        status: differs
+        sources:
+          - {title: "Arizona Revised Statutes 9-462.10", url: "https://www.azleg.gov/ars/9/00462-10.htm", locator: "subsection A", quote: "a municipality with a population of one hundred fifty thousand or more persons", accessed: "2026-11-03"}
+        limitations: []
+      - id: tod_parking
+        challenge_requirement: "The model may assume parking requirements near transit are reduced or removed."
+        observed_position: "No transit-area parking rule. Conversions under the commercial-parcel law may not face more parking than existing multifamily rules require."
+        status: differs
+        sources:
+          - {title: "Arizona Revised Statutes 9-462.10", url: "https://www.azleg.gov/ars/9/00462-10.htm", locator: "subsection D", quote: "The objective standards may not contain parking space requirements that exceed the parking requirements that apply to multifamily residential buildings", accessed: "2026-11-03"}
+        limitations: []
+    current_strength: 0.0
+    strength_rationale: >-
+      Arizona has no statewide law that raises housing density near transit stops, so none of the
+      benchmark is in law and all of it would be newly affected. A 2024 law that lets large cities'
+      obsolete commercial buildings become apartments is not tied to transit and is not counted.
+    human_review: {status: pending, by: null, date: null}
+    notes: "New entry 2026-11-03; zero by the gate rule (decision 91)."
+
+  parking:
+    record:
+      law: "No statewide cap or repeal of residential parking minimums. Partial rules: A.R.S. 9-461.18 (no added parking for ADUs), 9-462.13 (at most one space per middle-housing unit), 9-462.10 (conversions)."
+      summary: "Arizona limits parking requirements only for ADUs, middle housing and commercial-to-residential conversions; minimums for apartment buildings are set by each city."
+      quote: "Require more than one off-street parking space per unit."
+      url: https://www.azleg.gov/ars/9/00462-13.htm
+      accessed: "2026-11-03"
+      in_effect: "Not applicable: no general law. The middle-housing cap applies from January 1, 2026."
+    features:
+      - id: parking_minimum
+        challenge_requirement: "Reduce or remove parking minimums for new residential development."
+        observed_position: "No statute reduces minimums for apartment buildings of five or more homes, the buildings the parking estimate covers. The caps for ADUs and for two- to four-unit middle housing do not reach them."
+        status: differs
+        sources:
+          - {title: "Arizona Revised Statutes 9-462.13", url: "https://www.azleg.gov/ars/9/00462-13.htm", locator: "subsection B.7", quote: "Require more than one off-street parking space per unit.", accessed: "2026-11-03"}
+          - {title: "Arizona Revised Statutes 9-461.18", url: "https://www.azleg.gov/ars/9/00461-18.htm", locator: "subsection B.3", quote: "Require that a lot or parcel have additional parking to accommodate an accessory dwelling unit", accessed: "2026-11-03"}
+        limitations:
+          - "Local parking reforms (for example Phoenix's near light rail) are not counted."
+      - id: parking_provision
+        challenge_requirement: "State how much parking developers provide without a mandate."
+        observed_position: "The statutes do not address how much parking builders provide; the estimate's assumption about the share of parking still built covers this."
+        status: unknown
+        sources:
+          - {title: "Arizona Revised Statutes 9-462.13", url: "https://www.azleg.gov/ars/9/00462-13.htm", locator: "subsection B.7", quote: "Require more than one off-street parking space per unit.", accessed: "2026-11-03"}
+        limitations: []
+    current_strength: 0.0
+    strength_rationale: >-
+      Arizona caps parking only for ADUs and small middle-housing buildings. Minimums for apartment
+      buildings, which the parking estimate covers, are untouched, so none of the benchmark is in
+      law and all of it would be newly affected.
+    human_review: {status: pending, by: null, date: null}
+    notes: "New entry 2026-11-03; zero by the gate rule (decision 91)."
+
+  fees:
+    record:
+      law: "A.R.S. 9-463.05 (development fees charged by cities and towns)"
+      summary: "Arizona law limits what development fees may pay for and requires them to be proportionate; it does not cut them."
+      quote: "The development fee shall not exceed a proportionate share of the cost of necessary public services, based on service units, needed to provide necessary public services to the development."
+      url: https://www.azleg.gov/ars/9/00463-05.htm
+      accessed: "2026-11-03"
+      in_effect: "In force; no fee reduction enacted."
+    features:
+      - id: fees_level
+        challenge_requirement: "Assume total fees of $50,000 per home for the challenge comparison."
+        observed_position: "State law does not set a fee level; fees are set by each city under the statute's rules and are not measured here."
+        status: unknown
+        sources:
+          - {title: "Arizona Revised Statutes 9-463.05", url: "https://www.azleg.gov/ars/9/00463-05.htm", locator: "subsection B.2", quote: "The municipality shall calculate the development fee based on the infrastructure improvements plan adopted pursuant to this section.", accessed: "2026-11-03"}
+        limitations: []
+      - id: fees_cut
+        challenge_requirement: "Reduce total fees by 50%."
+        observed_position: "No statute reduces development fees; the law caps each fee at a proportionate share of infrastructure costs."
+        status: differs
+        sources:
+          - {title: "Arizona Revised Statutes 9-463.05", url: "https://www.azleg.gov/ars/9/00463-05.htm", locator: "subsection B.3", quote: "The development fee shall not exceed a proportionate share of the cost of necessary public services", accessed: "2026-11-03"}
+        limitations: []
+      - id: fees_categories
+        challenge_requirement: "Cover planning, environmental review, building, and impact fees."
+        observed_position: "The statute governs development (impact) fees only; planning and building permit fees are not addressed."
+        status: differs
+        sources:
+          - {title: "Arizona Revised Statutes 9-463.05", url: "https://www.azleg.gov/ars/9/00463-05.htm", locator: "subsection A", quote: "A municipality may assess development fees to offset costs to the municipality associated with providing necessary public services to a development", accessed: "2026-11-03"}
+        limitations: []
+    current_strength: 0.0
+    strength_rationale: >-
+      Arizona regulates how development fees are set but has not cut them, so none of the 50%
+      fee cut is in law and all of it would be newly affected.
+    human_review: {status: pending, by: null, date: null}
+    notes: "New entry 2026-11-03; zero by the gate rule (decision 91)."

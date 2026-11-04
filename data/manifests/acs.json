@@ -7,6 +7,13 @@
       "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/documentation/Geos20245YR.txt",
       "vintage": "ACS 5-year 2020-2024 (2024 release)"
     },
+    "acs/acsdt5y2024-b01003.dat": {
+      "bytes": 18313708,
+      "fetched_at": "2026-11-04T00:12:08Z",
+      "sha256": "38d1a992bb058d184009b10b9b34987279aee575e4323165cfb5706c69b6ca90",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b01003.dat",
+      "vintage": "ACS 5-year 2020-2024 (2024 release)"
+    },
     "acs/acsdt5y2024-b25001.dat": {
       "bytes": 17790069,
       "fetched_at": "2026-11-03T15:45:18Z",
