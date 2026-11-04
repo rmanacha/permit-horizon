@@ -77,7 +77,7 @@ Rules the validator checks: low ≤ mid ≤ high in every layer; outcome labels 
 
 Present when all five scenarios ran: `label` ("If all five passed together (illustration)"),
 `increment` {estimate{low, mid, high}, outcome `permits`, can_add_to_baseline}, `total`,
-`parts_in_package` and `parts_alone` per level, `sum_of_parts`, `overlap_removed`, `adjustments`,
+`outcome` ("permits": every number in the block is in permits), `parts_in_package` and `parts_alone` per level, `sum_of_parts`, `overlap_removed`, `adjustments`,
 `rules[]`, `limits[]`. The validator refuses a package larger than the sum of its parts.
 
 ## The web bundle (`hre export --out web/public/results/`)
@@ -448,6 +448,7 @@ The fee scenario, the combined package and the cross-check (lists cut to their f
    "diagnostics": {
     "actual_fee_variant": {
      "fee_cut": 6813.5,
+     "outcome": "cost_response_proxy",
      "permits": {
       "low": 0.0,
       "mid": 254.4243,
@@ -456,6 +457,7 @@ The fee scenario, the combined package and the cross-check (lists cut to their f
      "reading": "The same formula with half of a typical actual fee (NAHB's $13,627) instead of half of the challenge's $50,000."
     },
     "stock_route": {
+     "outcome": "stock_change",
      "homes": 5228.4605,
      "flow_route_mid": 933.53,
      "ratio_to_flow": 5.6007,

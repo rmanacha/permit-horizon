@@ -86,10 +86,10 @@ def diagnostics(state: StateInputs, params: Params, ctx: dict[str, Any]) -> dict
     stock_route = float((stock * float(pm["stock_supply_elasticity"]) * float(pm["stock_realization_share"])
                          * share).sum())
     return {
-        "actual_fee_variant": {"fee_cut": actual_cut, "permits": actual,
+        "actual_fee_variant": {"fee_cut": actual_cut, "permits": actual, "outcome": "cost_response_proxy",
                                "reading": "The same formula with half of a typical actual fee (NAHB's $13,627) "
                                           "instead of half of the challenge's $50,000."},
-        "stock_route": {"homes": stock_route, "flow_route_mid": flow,
+        "stock_route": {"homes": stock_route, "flow_route_mid": flow, "outcome": "stock_change",
                         "ratio_to_flow": stock_route / flow if flow else None,
                         "reading": ("Stock route: housing stock x 0.3 x 0.5 x cut / price. It applies a long-run "
                                     "stock elasticity to the whole stock rather than to five years of building, "

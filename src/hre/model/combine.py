@@ -68,6 +68,7 @@ def combined(state: StateInputs, params: Params, ctx: dict[str, Any], law: dict[
     base = ctx["baseline_state"]
     return {
         "label": LABEL,
+        "outcome": "permits",     # every number in the block (parts, sums, overlaps) is in permits
         "increment": {"estimate": est, "outcome": "permits", "can_add_to_baseline": True,
                       "status": "register_default"},
         "total": {"estimate": {lv: base[lv] + est[lv] for lv in LEVEL_KEYS}, "outcome": "permits",
