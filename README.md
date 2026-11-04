@@ -1,5 +1,27 @@
 # Permit Horizon
 
+## What this tool tells you, in plain words
+
+If your state passed one of five housing reforms, how many more homes would get building permits over the next five years? That's the question Permit Horizon answers, for all 50 states and DC. We built it for state legislators and their staff, and you don't need a policy background to read it.
+
+The five reforms, as the challenge defines them:
+
+- **ADUs by right**: any homeowner can add a small second home on their lot (a backyard cottage, a garage apartment).
+- **Missing middle**: two to four homes on lots where only one house is allowed today.
+- **Transit-oriented density**: taller, denser buildings near train stations.
+- **No parking minimums**: new homes no longer have to come with a set number of parking spaces.
+- **Fees cut in half**: the fees a locality charges per new home ($50,000 in the challenge's setup) are halved.
+
+Pick a state and you get a baseline first: the permits it would issue over 2026-2030 if nothing changes. New Hampshire's is 24,250, with a range of 12,991 to 38,616. The range is as wide as history says it should be: in 80% of past five-year periods, the actual total landed inside a range that wide. It comes from history and carries no probability.
+
+Then one card per reform, each in three layers. The **benchmark** is what the reform produced where it was tried, scaled to your state (for ADUs, California's rate on New Hampshire's homes: about 1,700 finished homes). The **increment** is how much of that would be new, given what your state's law already allows: 277 permits for New Hampshire. The **total** is the baseline plus the increment. Every number carries its unit and its own low and high.
+
+Current law works like a dimmer switch. New Hampshire's ADU law already has three of the four features of the benchmark reform, so only a quarter of it would be new, and the card says so, with the statute quoted and linked. A state with no law gets the full reform. A state with the same law gets zero.
+
+What the tool can't tell you: which towns will build, what happens to prices or rents, or how likely any one number is. Permits aren't finished homes, and every estimate stops at 2030. The Validation page lists every check we ran against real places, including the one that missed.
+
+Where to click first: open the site, press **Take the tour** (five stops on New Hampshire, about three minutes), then pick your own state at the top of the page.
+
 A statewide housing reform estimator. Permit Horizon estimates how many more homes would get building permits over 2026-2030 if a state passed one of five reforms (accessory dwelling units by right, missing middle, transit-oriented density, no parking minimums, development fees cut in half), compared with the laws it has today. It covers all 50 states and DC, gives every number with its unit and a low-to-high range, and shows the source, the page and the arithmetic behind every assumption. Built for state legislators and their staff, for the Housing Data and Technology Innovation Challenge.
 
 **Open it:** https://rmanacha.github.io/permit-horizon/ (no account, nothing to install). Or run it yourself with the three commands below.
