@@ -14,6 +14,7 @@
     hre validate --overview         sanity review of results/*.json -> docs/evidence/results_overview.md
     hre validate --law-coverage     current-law coverage shares -> docs/evidence/current_law_coverage.md
     hre validate --law-quotes --fetch   every current-law quote checked against its page
+    hre validate --ledger           the validation ledger as tables -> docs/evidence/validation.md
     hre run --state NH --scenarios baseline           results/NH.json (three-layer schema)
     hre run --all                   results/{ST}.json for every jurisdiction with a processed file
     hre export --out web/public/results/   the web bundle (results, index, registers, meta)
@@ -178,6 +179,7 @@ def validate(
     nrc: Annotated[bool, typer.Option("--nrc", help="completions per permit from the Census NRC annual tables")] = False,
     overview: Annotated[bool, typer.Option("--overview", help="sanity review of results/*.json -> docs/evidence/results_overview.md")] = False,
     law_coverage: Annotated[bool, typer.Option("--law-coverage", help="recompute current-law coverage shares -> docs/evidence/current_law_coverage.md")] = False,
+    ledger: Annotated[bool, typer.Option("--ledger", help="the validation ledger as tables -> docs/evidence/validation.md")] = False,
     law_quotes: Annotated[bool, typer.Option("--law-quotes", help="check every current-law quote against its page -> docs/evidence/current_law_quotes.md")] = False,
     law_dir: Annotated[Path | None, typer.Option("--law-dir", help="with --law-quotes or --law-coverage: a folder of current-law files other than the register")] = None,
     write_register: Annotated[bool, typer.Option("--write-register", help="with --baseline, --adu-tiers or --nrc: write results into parameters.yaml")] = False,
@@ -187,6 +189,20 @@ def validate(
     from hre.schema import validate as validate_schema
 
     dd = _data_dir(data_dir)
+    if ledger:
+        import datetime as dt
+
+        from hre.validation import ledger as lg
+
+        doc = lg.load()
+        problems = lg.problems(doc)
+        if problems:
+            typer.echo("ledger problems:\n  " + "\n  ".join(problems), err=True)
+            raise typer.Exit(code=1)
+        dest = write or Path("docs/evidence/validation.md")
+        n = lg.write_markdown(dest, dt.date.today().isoformat())
+        typer.echo(f"wrote {dest} ({n} checks)")
+        return
     if law_quotes:
         import datetime as dt
 
@@ -373,7 +389,7 @@ def validate(
             write.write_text("\n".join(lines) + "\n", encoding="utf-8")
             typer.echo(f"wrote {write}")
     if not aclf and processed is None:
-        typer.echo("nothing to do: pass --aclf, --processed, --baseline, --adu-tiers, --nrc, --overview, --law-coverage or --law-quotes", err=True)
+        typer.echo("nothing to do: pass --aclf, --processed, --baseline, --adu-tiers, --nrc, --overview, --law-coverage, --law-quotes or --ledger", err=True)
         raise typer.Exit(code=2)
 
 

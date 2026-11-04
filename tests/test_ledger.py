@@ -48,3 +48,13 @@ def test_every_frozen_protocol_in_the_repo_still_has_its_hash():
         res = freeze.check_dir(c) / "result.json"
         if res.exists():
             assert json.loads(res.read_text())["protocol_sha256"] == sha
+
+
+def test_evidence_page_lists_every_check(tmp_path):
+    dest = tmp_path / "validation.md"
+    dest.write_text("old tables\n" + ledger.MARKER + "\nhand-written narrative\n")
+    n = ledger.write_markdown(dest, "2026-11-04")
+    text = dest.read_text()
+    assert n == len(ledger.load()["entries"])
+    assert all(e["title"] in text for e in ledger.load()["entries"])
+    assert text.endswith("hand-written narrative\n") and "old tables" not in text

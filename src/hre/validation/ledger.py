@@ -80,3 +80,61 @@ def problems(doc: dict[str, Any]) -> list[str]:
 def for_export(path: Path = LEDGER_PATH) -> dict[str, Any]:
     doc = load(path)
     return {"status": doc.get("status", ""), "classes": EVIDENCE_CLASSES, "entries": doc.get("entries") or []}
+
+
+MARKER = "<!-- narrative below is written by hand; hre validate --ledger keeps it -->"
+
+
+def _fmt(x: Any) -> str:
+    if x is None:
+        return ""
+    return f"{x:,.0f}" if isinstance(x, (int, float)) and abs(x) >= 10 else f"{x:g}"
+
+
+def render_markdown(doc: dict[str, Any], today: str, keep: str = "") -> str:
+    """docs/evidence/validation.md: the ledger as tables, then the hand-written narrative kept as is."""
+    rows = doc.get("entries") or []
+    out = [
+        "# Validation: every check of the model, hits and misses",
+        "",
+        (f"Generated {today} by `uv run hre validate --ledger` from `validation/ledger.yaml` (the same entries the "
+        "website's Validation page shows). Frozen checks keep their protocol and hash in `validation/<check>/`; "
+        "`tests/test_ledger.py` recomputes every hit and miss and re-hashes every protocol."),
+        "",
+        "| Check | Evidence class | Place and years | Outcome | Model low / mid / high | Actual | Result |",
+        "|---|---|---|---|---|---|---|",
+    ]
+    for e in rows:
+        p = e.get("prediction") or {}
+        pred = (f"{_fmt(p.get('low'))} / {_fmt(p.get('mid'))} / {_fmt(p.get('high'))}" if p.get("mid") is not None
+                else (f"{_fmt(p.get('low'))} to {_fmt(p.get('high'))}" if p else "none"))
+        actual = e.get("actual_text") or _fmt(e.get("actual")) or "not yet"
+        out.append(f"| {e['title']} | {EVIDENCE_CLASSES[e['evidence_class']]} | {e['place']}, {e['years']} | "
+                   f"{e['outcome']} ({e['unit']}) | {pred} | {actual} | {e['result'].replace('_', ' ')} |")
+    counts = {k: sum(1 for e in rows if e["result"] == k) for k in RESULTS}
+    out += ["", (f"Totals: {counts['hit']} hit, {counts['miss']} miss, {counts['pending']} pending, "
+            f"{counts['not_a_test']} not a test."), "", "## What each check shows and does not", ""]
+    for e in rows:
+        fz = e.get("frozen") or {}
+        out += [f"### {e['title']}", "", e["result_text"], "",
+                f"- Independence: {e['independence']}", f"- Supports: {e['supports']}",
+                f"- Does not support: {e['does_not_support']}", f"- Next check: {e['next_check']}",
+                f"- Source: [{e['source']['title']}]({e['source']['url']})"]
+        if fz:
+            out.append(f"- Frozen: `{fz['protocol']}`, SHA-256 `{fz['sha256']}`"
+                       + (f", committed in `{str(fz['commit'])[:7]}`" if fz.get("commit") else ""))
+        if e.get("credit"):
+            out.append(f"- Credit: {e['credit']}")
+        out.append("")
+    out += [MARKER, keep.strip() if keep.strip() else "## Narrative\n\n(to be written)", ""]
+    return "\n".join(out)
+
+
+def write_markdown(dest: Path, today: str, path: Path = LEDGER_PATH) -> int:
+    keep = ""
+    if dest.exists() and MARKER in dest.read_text(encoding="utf-8"):
+        keep = dest.read_text(encoding="utf-8").split(MARKER, 1)[1]
+    doc = load(path)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(render_markdown(doc, today, keep), encoding="utf-8")
+    return len(doc.get("entries") or [])

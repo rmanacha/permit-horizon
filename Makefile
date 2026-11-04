@@ -8,7 +8,7 @@
 # Requires: uv (https://docs.astral.sh/uv/). uv downloads the pinned Python
 # itself (.python-version) and never touches the system Python.
 
-.PHONY: setup test run lint demo data validate-aclf hcd results backtest adu-tiers nrc register-md results-all export web web-dev test-web
+.PHONY: setup test run lint demo data validate-aclf hcd results backtest adu-tiers nrc register-md results-all export web web-dev test-web law-check ledger
 
 STATE ?= NH
 PORT ?= 8080
@@ -56,6 +56,13 @@ adu-tiers: ## ADU value tiers + city-split check (needs make hcd) -> docs/eviden
 
 nrc:     ## Completions per permit from Census NRC -> docs/evidence/completions_per_permit.md
 	uv run hre validate --nrc --fetch
+
+law-check: ## Every current-law quote against its page, and every coverage share (network) -> docs/evidence/current_law_*.md
+	uv run hre validate --law-quotes --fetch
+	uv run hre validate --law-coverage --fetch
+
+ledger:  ## The validation ledger as tables -> docs/evidence/validation.md (no network)
+	uv run hre validate --ledger
 
 register-md: ## The assumption register as Markdown -> docs/methods/register.md
 	uv run hre export --register-md --out docs/methods/register.md
