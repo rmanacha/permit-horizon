@@ -35,9 +35,10 @@ def test_security_block_open_alerts_fail_unless_justified():
     assert judge(a="none") == "FAIL"
 
 
-def test_the_committed_security_block_is_pending_until_filled():
+def test_the_committed_security_block_never_fails_the_checklist():
     text = (REPO / "docs" / "evidence" / "security_gates.md").read_text(encoding="utf-8")
-    assert set(cs.security_block(text)) == set(cs.SECURITY_FIELDS)
+    status, detail = cs.judge_security(cs.security_block(text))
+    assert status in ("PASS", "PENDING"), detail
 
 
 def test_template_prompts_are_caught():

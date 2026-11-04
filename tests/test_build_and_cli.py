@@ -10,7 +10,7 @@ from hre.cli import app
 from hre.schema import StateInputs, validate
 
 
-def test_build_zz_end_to_end(sample_dir, tmp_path):
+def test_build_zz_end_to_end(sample_dir):
     si, summary = build_state("ZZ", sample_dir)
     assert validate(si.to_dict()) == []
     assert summary["counties"] == 2 and summary["block_groups"] == 10 and summary["major_stops"] == 3

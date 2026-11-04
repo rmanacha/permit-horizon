@@ -57,10 +57,6 @@ def test_bbox_margin(sample_dir):
 
 
 def test_stops_page_retries_a_transient_error(monkeypatch):
-    import pytest
-
-    from hre.data import fetch_transit
-
     calls = []
 
     def fake(url, params=None, **kw):

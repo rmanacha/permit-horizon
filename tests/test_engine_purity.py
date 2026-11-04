@@ -6,7 +6,8 @@ from pathlib import Path
 MODEL = Path(__file__).resolve().parents[1] / "src" / "hre" / "model"
 ALLOWED = {"numpy", "math", "json", "dataclasses", "typing", "__future__"}
 FORBIDDEN_CALLS = {"open"}
-FORBIDDEN_ATTRS = {"read_text", "write_text", "read_bytes", "write_bytes", "urlopen", "load", "dump"}
+FILE_IO = {"read_text", "write_text", "read_bytes", "write_bytes", "urlopen"}
+JSON_IO = {"load", "dump"}      # json.load and json.dump touch files; json.loads and json.dumps are fine
 
 
 def _modules():
@@ -50,11 +51,10 @@ def test_engine_does_no_file_io():
                 f = node.func
                 if isinstance(f, ast.Name):
                     assert f.id not in FORBIDDEN_CALLS, f"{py.name} calls {f.id}()"
-                if isinstance(f, ast.Attribute) and f.attr in FORBIDDEN_ATTRS:
+                if isinstance(f, ast.Attribute):
                     owner = f.value.id if isinstance(f.value, ast.Name) else ""
-                    assert owner != "json" or f.attr not in {"load", "dump"}, f"{py.name} json.{f.attr}"
-                    assert f.attr not in {"read_text", "write_text", "read_bytes", "write_bytes",
-                                          "urlopen"}, f"{py.name} calls .{f.attr}()"
+                    assert not (owner == "json" and f.attr in JSON_IO), f"{py.name} json.{f.attr}"
+                    assert f.attr not in FILE_IO, f"{py.name} calls .{f.attr}()"
 
 
 def test_engine_never_imports_the_pipeline():

@@ -51,7 +51,7 @@ def test_adu_by_hand(zz_results, params):
     assert alder_high == pytest.approx(12000 * 0.0058 / params["adu_permits_per_completion"] * 5)
 
 
-def test_missing_middle_by_hand(zz_results, params):
+def test_missing_middle_by_hand(zz_results):
     s = zz_results["scenarios"]["missing_middle"]
     bench = 12000 * 0.8 * 0.001705 * 0.9 * 5               # only Alder is central
     assert s["benchmark"]["mid"] == pytest.approx(bench)
@@ -65,7 +65,7 @@ def test_missing_middle_by_hand(zz_results, params):
     assert s["joint"]["favorable"]["value"] == pytest.approx(12000 * 0.9 * 0.004 * 0.83 * 1.0 * 5)
 
 
-def test_tod_by_hand(zz_results, params):
+def test_tod_by_hand(zz_results):
     s = zz_results["scenarios"]["tod"]
     homes = 600 + 450                                        # Alder block groups within 0.5 mile
     assert s["benchmark"]["mid"] == pytest.approx(homes * 0.000117 * 5)
@@ -73,7 +73,7 @@ def test_tod_by_hand(zz_results, params):
     assert s["increment"]["estimate"]["mid"] == pytest.approx(homes * 0.000117 * 5 * market / 0.79)
 
 
-def test_parking_by_hand(zz_results, params, ctx):
+def test_parking_by_hand(zz_results, ctx):
     s = zz_results["scenarios"]["parking"]
     u5 = ctx["baseline_by_type"][:, 3]
     alder = u5[0] * 0.75 * (1.5 * 0.21 * 52000) / (350000 * 1.2546)          # NZLUD 1.5 spaces
@@ -103,12 +103,13 @@ def test_fees_reproduce_adams_nh_number(zz_state, params):
     assert c.benchmark_by_year.sum() == pytest.approx(842, abs=0.5)
 
 
-def test_increment_zero_when_current_law_is_full(zz_state, params, ctx):
+def test_increment_zero_when_current_law_is_full(zz_state, params, ctx, zz_results):
     law = {**DEFAULT_LAW, "current_strength": 1.0, "source": "register"}
     for spec in SPECS.values():
         r = run_scenario(spec, zz_state, params, ctx, law)
         assert r["increment"]["estimate"] == {"low": 0.0, "mid": 0.0, "high": 0.0}, spec.name
-        assert r["benchmark"]["mid"] >= 0                  # the benchmark is unchanged by current law
+        # the benchmark layer does not depend on current law: it equals the no-law run's
+        assert r["benchmark"]["mid"] == zz_results["scenarios"][spec.name]["benchmark"]["mid"], spec.name
 
 
 def test_cases_agree_with_the_increment(zz_results):

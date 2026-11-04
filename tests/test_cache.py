@@ -5,7 +5,6 @@ import http.server
 import json
 import threading
 from functools import partial
-from pathlib import Path
 
 import pytest
 
@@ -28,12 +27,9 @@ def local_server(tmp_path):
 
 
 @pytest.fixture
-def dirs(tmp_path, monkeypatch):
-    raw = tmp_path / "raw"
-    man = tmp_path / "manifests"
-    monkeypatch.setenv("DATA_DIR", str(raw))
-    monkeypatch.setenv("HRE_MANIFEST_DIR", str(man))
-    return raw, man
+def dirs(tmp_path):
+    """The raw cache and manifest folders the autouse conftest fixture already points the module at."""
+    return tmp_path / "raw", tmp_path / "manifests"
 
 
 def test_fetch_writes_file_and_manifest(local_server, dirs):
@@ -81,7 +77,7 @@ def test_fetch_404_raises_without_retry_loop(local_server, dirs):
     assert not (raw / "demo" / "missing.txt").exists()
 
 
-def test_record_assembled_file(dirs, tmp_path):
+def test_record_assembled_file(dirs):
     raw, man = dirs
     p = raw / "transit" / "stops_33.json"
     p.parent.mkdir(parents=True)
@@ -93,9 +89,10 @@ def test_record_assembled_file(dirs, tmp_path):
 
 
 def test_dotenv_and_user_agent(tmp_path, monkeypatch):
-    monkeypatch.delenv("HRE_CONTACT_EMAIL", raising=False)
+    monkeypatch.setenv("HRE_CONTACT_EMAIL", "placeholder")
+    monkeypatch.delenv("HRE_CONTACT_EMAIL")      # recorded, so the value load_dotenv writes is undone after the test
     env = tmp_path / ".env"
     env.write_text("# comment\nHRE_CONTACT_EMAIL=team@example.org\nDATA_DIR='x'\n")
     cache.load_dotenv(env)
     assert "team@example.org" in cache.user_agent()
-    assert cache.raw_dir() == Path("x") or True  # DATA_DIR may already be set by another fixture
+    assert cache.raw_dir() == tmp_path / "raw"   # DATA_DIR was already set (conftest): .env never overrides

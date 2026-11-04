@@ -74,7 +74,7 @@ def test_la_is_never_fitted_and_split_logic():
     assert 0 < with_la["la_in_test"] < 50
 
 
-def test_register_block_round_trips(tmp_path):
+def test_register_block_round_trips():
     import yaml
 
     from hre.assumptions.loader import check_entry

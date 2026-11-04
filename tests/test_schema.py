@@ -134,7 +134,7 @@ def test_unknown_field_is_refused():
 
 def test_state_permits_history_field(sample_dir):
     from hre.build.build_state_inputs import build_state
-    from hre.schema import SCHEMA_VERSION, validate
+    from hre.schema import SCHEMA_VERSION
 
     si, _ = build_state("ZZ", sample_dir)
     d = si.to_dict()
