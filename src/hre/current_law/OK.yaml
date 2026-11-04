@@ -1,0 +1,84 @@
+# Oklahoma current-law register (ADU): no statewide ADU law found.
+# Checked through the 2026 session on 2026-11-03; what was searched and any bill that passed but only
+# enables or studies is in notes. Strength 0 by the rule (docs/methods/current_law.md); quotes checked by
+# hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: OK
+scenarios:
+  adu:
+    rechecked: '2026-11-03'
+    record:
+      law: 'No statewide ADU law found. Local zoning authority: 11 O.S. 43-101 (municipalities).'
+      summary: Oklahoma law leaves accessory dwelling units to each city and town; no statute requires them to be
+        allowed.
+      quote: a municipal governing body may regulate and restrict the height, number of stories, and size of buildings
+        and other structures
+      url: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os11.rtf
+      accessed: '2026-11-03'
+      in_effect: 'Not applicable: no statewide ADU law (checked through the 2026 session).'
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Oklahoma Statutes, Title 11, section 43-101 (Oklahoma Legislature, complete Title 11)
+        url: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os11.rtf
+        locator: section 43-101
+        quote: a municipal governing body may regulate and restrict the height, number of stories, and size of buildings
+          and other structures
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Oklahoma Statutes, Title 11, section 43-101 (Oklahoma Legislature, complete Title 11)
+        url: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os11.rtf
+        locator: section 43-101
+        quote: a municipal governing body may regulate and restrict the height, number of stories, and size of buildings
+          and other structures
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Oklahoma Statutes, Title 11, section 43-101 (Oklahoma Legislature, complete Title 11)
+        url: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os11.rtf
+        locator: section 43-101
+        quote: a municipal governing body may regulate and restrict the height, number of stories, and size of buildings
+          and other structures
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Oklahoma Statutes, Title 11, section 43-101 (Oklahoma Legislature, complete Title 11)
+        url: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os11.rtf
+        locator: section 43-101
+        quote: a municipal governing body may regulate and restrict the height, number of stories, and size of buildings
+          and other structures
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: Oklahoma has no statewide law requiring cities or counties to allow ADUs, so none of the
+      benchmark is in law and all of it would be newly affected. Cities that allow ADUs on their own are not counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Title 11 (RTF from oklegislature.gov, includes 2025 session laws) has no accessory dwelling text. oklegislature.gov
+      bill pages checked: HB 1051 (2025 Fair Zoning Act) died in committee; SB 1519 (2026, no-impact home-based
+      businesses) and SB 1619 (2026) sit on Senate General Order; HB 3335 (2026 Oklahoma Housing Act) is an empty
+      shell. No Oklahoma ADU bill found by web search. Doubt: the oklegislature.gov full-text search could not be
+      scripted and OSCN shows a bot challenge, so 2026 enrolled bills were not searched by text; Title 19 (counties)
+      was not read.'

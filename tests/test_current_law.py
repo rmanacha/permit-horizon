@@ -40,11 +40,11 @@ def test_nh_adu_worked_example():
     assert register_digest("NH") is not None
 
 
-def test_missing_file_or_scenario_gives_the_default():
-    r = current_strength("WY", "adu")
+def test_missing_file_or_scenario_gives_the_default(tmp_path):
+    r = current_strength("WY", "adu", tmp_path)             # an empty folder: no file at all
     assert (r["current_strength"], r["newly_affected_share"], r["note"]) == (0.0, 1.0, DEFAULT_NOTE)
-    r = current_strength("NH", "fees")          # NH file exists, fees not assessed
-    assert r["current_strength"] == 0.0 and r["file"] == "NH.yaml"
+    r = current_strength("WY", "fees")          # WY file exists (ADU only), fees not assessed
+    assert r["current_strength"] == 0.0 and r["file"] == "WY.yaml" and r["note"] == DEFAULT_NOTE
 
 
 def test_incomplete_entry_falls_back_loudly(tmp_path):
@@ -186,3 +186,13 @@ def test_stored_coverage_shares_reproduce_from_the_cache():
         pytest.skip("ACS B01003 or the place Gazetteer not cached (hre validate --law-coverage --fetch)")
     rows = cov.check_files(HERE, raw)
     assert rows and all(r["ok"] for r in rows), [(r["state"], r["scenario"], r["computed"]) for r in rows if not r["ok"]]
+
+
+def test_every_state_and_dc_has_an_adu_entry():
+    from hre.data.states import STATES
+
+    codes = {s.usps for s in STATES.values() if not s.synthetic and s.usps != "PR"}   # the 50 states and DC
+    assert len(codes) == 51
+    for code in codes:
+        r = current_strength(code, "adu")
+        assert r["source"] == "register", f"{code}: no ADU entry"

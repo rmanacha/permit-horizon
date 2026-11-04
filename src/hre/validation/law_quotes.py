@@ -84,6 +84,7 @@ def _get(url: str, session: requests.Session) -> bytes:
 
 
 LINE_NUMBER = re.compile(r"(?m)^\s*\d{1,3}\s+")
+GLUED_LINE_NUMBER = re.compile(r"(?m)(?<=[A-Za-z])\d{1,3}[ \t]*$")   # "is amended by12"; never "1,000"
 
 
 def pdf_text(data: bytes) -> str | None:
@@ -96,7 +97,8 @@ def pdf_text(data: bytes) -> str | None:
 
     reader = PdfReader(io.BytesIO(data))
     pages = [(pg.extract_text() or "") for pg in reader.pages]
-    return LINE_NUMBER.sub("", "\n".join(pages)).replace("-\n", "")
+    text = LINE_NUMBER.sub("", "\n".join(pages))
+    return GLUED_LINE_NUMBER.sub("", text).replace("-\n", "")
 
 
 def page_text(url: str, cache: Path, fetch: bool, session: requests.Session | None = None) -> tuple[str | None, str]:

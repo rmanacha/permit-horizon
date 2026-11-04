@@ -1,0 +1,89 @@
+# Alabama current-law register (ADU): no statewide ADU law found.
+# Checked through the 2026 session on 2026-11-03; what was searched and any bill that passed but only
+# enables or studies is in notes. Strength 0 by the rule (docs/methods/current_law.md); quotes checked by
+# hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: AL
+scenarios:
+  adu:
+    rechecked: '2026-11-03'
+    record:
+      law: 'No statewide ADU law found. Local zoning authority: Code of Alabama 11-52-70 (cities and towns)'
+      summary: Alabama law leaves accessory dwelling units to each city and county; no statute requires them to
+        be allowed.
+      quote: Each municipal corporation in the State of Alabama may divide the territory within its corporate limits
+        into business, industrial and residential zones or districts
+      url: https://alison.legislature.state.al.us/code-of-alabama?section=11-52-70
+      accessed: '2026-11-03'
+      in_effect: 'Not applicable: no statewide ADU law (checked through the 2026 session).'
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Code of Alabama 11-52-70
+        url: https://alison.legislature.state.al.us/code-of-alabama?section=11-52-70
+        locator: section 11-52-70, first sentence
+        quote: Each municipal corporation in the State of Alabama may divide the territory within its corporate
+          limits into business, industrial and residential zones or districts
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Code of Alabama 11-52-70
+        url: https://alison.legislature.state.al.us/code-of-alabama?section=11-52-70
+        locator: section 11-52-70, first sentence
+        quote: Each municipal corporation in the State of Alabama may divide the territory within its corporate
+          limits into business, industrial and residential zones or districts
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Code of Alabama 11-52-70
+        url: https://alison.legislature.state.al.us/code-of-alabama?section=11-52-70
+        locator: section 11-52-70, first sentence
+        quote: Each municipal corporation in the State of Alabama may divide the territory within its corporate
+          limits into business, industrial and residential zones or districts
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Code of Alabama 11-52-70
+        url: https://alison.legislature.state.al.us/code-of-alabama?section=11-52-70
+        locator: section 11-52-70, first sentence
+        quote: Each municipal corporation in the State of Alabama may divide the territory within its corporate
+          limits into business, industrial and residential zones or districts
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: Alabama has no statewide law requiring cities or counties to allow ADUs, so none of the
+      benchmark is in law and all of it would be newly affected. Cities that allow ADUs on their own are not counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Checked 2026-11-03. Adam''s AL file is empty (no law, every feature unknown), so nothing was ported.
+      The Legislature''s Code of Alabama page (ALISON) is a JavaScript page, so a plain download of the url returns
+      no statute text; the text was read from the site''s own data service, which a script can call with this GET
+      (it returns the section as JSON): https://alison.legislature.state.al.us/graphql?query=query%28%24d%3AString%21%29%7B+codesOfAlabama%28where%3A%7Btype%3A%7Beq%3ASection%7D%2CdisplayId%3A%7Beq%3A%24d%7D%7D%29%7B+data%7B+displayId+title+content+history+%7D+%7D+%7D&variables=%7B%22d%22%3A%2211-52-70%22%7D
+      . Full-text search of the whole Code of Alabama for the exact phrase ''accessory dwelling'' returned 0 sections
+      (control phrases such as ''accessory after the fact'' returned their sections). Full-text search of every
+      bill in the Legislature''s bill database (sessions 1997 to 2026) returned 0 bills for ''accessory dwelling'',
+      ''accessory dwelling unit'', ''accessory apartment'', ''granny flat'', ''ADU'' and ''missing middle''. 2023-2026
+      zoning-related bills that passed were unrelated to ADUs (2025 HB 281 and 2024 SB 291 on zoning boards and
+      municipal officials; 2026 HB 404, community land trusts in Class 1 municipalities, enacted, no zoning rule).
+      No 2025-2026 bill passed that enables or studies ADUs.'

@@ -1,0 +1,97 @@
+# Mississippi current-law register (ADU): no statewide ADU law found.
+# Checked through the 2026 session on 2026-11-03; what was searched and any bill that passed but only
+# enables or studies is in notes. Strength 0 by the rule (docs/methods/current_law.md); quotes checked by
+# hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: MS
+scenarios:
+  adu:
+    rechecked: '2026-11-03'
+    record:
+      law: 'No statewide ADU law found. Local zoning authority: Mississippi Code 17-1-3 (municipalities and counties)'
+      summary: Mississippi law leaves accessory dwelling units to each city and county; no statute requires them
+        to be allowed.
+      quote: the governing authority of any municipality, and, with respect to the unincorporated part of any county,
+        the governing authority of any county, in its discretion, are empowered to regulate the height, number of
+        stories and size of building and other structures
+      url: https://billstatus.ls.state.ms.us/documents/2022/html/SB/2001-2099/SB2095SG.htm
+      accessed: '2026-11-03'
+      in_effect: 'Not applicable: no statewide ADU law (checked through the 2026 session).'
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Mississippi Code 17-1-3, as set out in S.B. 2095 (2022 Regular Session, Laws 2022, chapter 303)
+        url: https://billstatus.ls.state.ms.us/documents/2022/html/SB/2001-2099/SB2095SG.htm
+        locator: section 36 of the act, setting out Code section 17-1-3(1)
+        quote: the governing authority of any municipality, and, with respect to the unincorporated part of any
+          county, the governing authority of any county, in its discretion, are empowered to regulate the height,
+          number of stories and size of building and other structures
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Mississippi Code 17-1-3, as set out in S.B. 2095 (2022 Regular Session, Laws 2022, chapter 303)
+        url: https://billstatus.ls.state.ms.us/documents/2022/html/SB/2001-2099/SB2095SG.htm
+        locator: section 36 of the act, setting out Code section 17-1-3(1)
+        quote: the governing authority of any municipality, and, with respect to the unincorporated part of any
+          county, the governing authority of any county, in its discretion, are empowered to regulate the height,
+          number of stories and size of building and other structures
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Mississippi Code 17-1-3, as set out in S.B. 2095 (2022 Regular Session, Laws 2022, chapter 303)
+        url: https://billstatus.ls.state.ms.us/documents/2022/html/SB/2001-2099/SB2095SG.htm
+        locator: section 36 of the act, setting out Code section 17-1-3(1)
+        quote: the governing authority of any municipality, and, with respect to the unincorporated part of any
+          county, the governing authority of any county, in its discretion, are empowered to regulate the height,
+          number of stories and size of building and other structures
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Mississippi Code 17-1-3, as set out in S.B. 2095 (2022 Regular Session, Laws 2022, chapter 303)
+        url: https://billstatus.ls.state.ms.us/documents/2022/html/SB/2001-2099/SB2095SG.htm
+        locator: section 36 of the act, setting out Code section 17-1-3(1)
+        quote: the governing authority of any municipality, and, with respect to the unincorporated part of any
+          county, the governing authority of any county, in its discretion, are empowered to regulate the height,
+          number of stories and size of building and other structures
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: Mississippi has no statewide law requiring cities or counties to allow ADUs, so none of
+      the benchmark is in law and all of it would be newly affected. Cities that allow ADUs on their own are not
+      counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Checked 2026-11-03. Adam''s MS file is empty, so nothing was ported. SOURCE LIMITS: the Mississippi
+      Code is published by LexisNexis (linked from legislature.ms.gov at http://www.lexisnexis.com/hottopics/mscode/),
+      a script-gated page, so no code page could be downloaded. The url is the enrolled act S.B. 2095 (2022, chapter
+      303, per the Legislature''s bill history), which brings forward Code section 17-1-3 in full; the Legislature''s
+      bill-status pages show no later amendment of 17-1-3 (the 2023, 2024 and 2025 code-section pages list no bill;
+      2026 S.B. 2756 and S.B. 2757 on disabled citizens'' residential access died in committee on 2026-02-03). Section
+      17-1-1 (definition of governing authority) was not fetched. ADU search: the Legislature''s Report of All Measures
+      XML for 2023, 2024, 2025 and 2026 (3,525, 3,882, 3,811 and 4,116 measures; billstatus.ls.state.ms.us/{year}/pdf/all_measures/allmsrs.xml)
+      has no short title mentioning accessory dwelling, ADU, granny flat, guest house, zoning density reform or
+      similar; only housing-adjacent items (2023 H.B. 894, chapter 348, zoning-violation penalties; died: 2024 H.B.
+      827 zoning updates every 10 years, 2026 S.B. 2893 land-use procedure). The Legislature''s text search is an
+      outside form that could not be scripted, so bill text was not searched. No 2025-2026 bill passed that enables
+      or studies ADUs.'

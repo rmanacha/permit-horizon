@@ -1,0 +1,85 @@
+# Wyoming current-law register (ADU): no statewide ADU law found.
+# Checked through the 2026 session on 2026-11-03; what was searched and any bill that passed but only
+# enables or studies is in notes. Strength 0 by the rule (docs/methods/current_law.md); quotes checked by
+# hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: WY
+scenarios:
+  adu:
+    rechecked: '2026-11-03'
+    record:
+      law: 'No statewide ADU law found. Local zoning authority: W.S. 15-1-601 (cities and towns) and W.S. 18-5-201
+        (counties).'
+      summary: Wyoming law leaves accessory dwelling units to each city, town and county; no statute requires them
+        to be allowed.
+      quote: 'The governing body of any city or town, by ordinance, may:'
+      url: https://wyoleg.gov/statutes/compress/title15.pdf
+      accessed: '2026-11-03'
+      in_effect: 'Not applicable: no statewide ADU law (checked through the 2026 session).'
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Wyoming Statutes 15-1-601 (Title 15)
+        url: https://wyoleg.gov/statutes/compress/title15.pdf
+        locator: subsection (a)
+        quote: 'The governing body of any city or town, by ordinance, may:'
+        accessed: '2026-11-03'
+      - title: Wyoming Statutes 18-5-201 (Title 18)
+        url: https://wyoleg.gov/statutes/compress/title18.pdf
+        locator: subsection (a)
+        quote: each board of county commissioners may regulate and restrict the location and use of buildings and
+          structures
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Wyoming Statutes 15-1-601 (Title 15)
+        url: https://wyoleg.gov/statutes/compress/title15.pdf
+        locator: subsection (a)
+        quote: 'The governing body of any city or town, by ordinance, may:'
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Wyoming Statutes 15-1-601 (Title 15)
+        url: https://wyoleg.gov/statutes/compress/title15.pdf
+        locator: subsection (a)
+        quote: 'The governing body of any city or town, by ordinance, may:'
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Wyoming Statutes 15-1-601 (Title 15)
+        url: https://wyoleg.gov/statutes/compress/title15.pdf
+        locator: subsection (a)
+        quote: 'The governing body of any city or town, by ordinance, may:'
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: Wyoming has no statewide law requiring cities or counties to allow ADUs, so none of the
+      benchmark is in law and all of it would be newly affected. Cities that allow ADUs on their own are not counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: wyoleg.gov House and Senate Journals for the 2023, 2024, 2025 and 2026 sessions (full bill lists) have
+      no accessory dwelling or accessory residential unit bill; only 'accessory after the fact' appears. A 2024
+      interim-committee working draft 'Accessory residential units-permits' (24LSO-0280, marked not approved for
+      introduction) never became a bill. 2026 SF0042 (county zoning authority) failed introduction and is not about
+      ADUs.

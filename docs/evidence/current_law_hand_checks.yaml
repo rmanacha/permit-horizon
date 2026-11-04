@@ -107,3 +107,51 @@ checks:
   quote: Waiving or eliminating regulations such as requirements for
   checked: '2026-11-03'
   how: read in a browser; the code site draws the text with JavaScript, so a script sees an empty page
+- state: AL
+  url: https://alison.legislature.state.al.us/code-of-alabama?section=11-52-70
+  quote: Each municipal corporation in the State of Alabama may divide the territory within its corporate limits
+    into business, industrial and residential zones or districts
+  checked: '2026-11-04'
+  how: read in a browser; the Code of Alabama page draws its text with JavaScript
+- state: SD
+  url: https://sdlegislature.gov/Statutes/11-4-1
+  quote: the governing body of any municipality may regulate and restrict the height, number of stories, and size
+    of buildings and other structures
+  checked: '2026-11-04'
+  how: read in a browser; the codified-law page draws its text with JavaScript
+- state: SD
+  url: https://sdlegislature.gov/Statutes/11-2-13
+  quote: the board may adopt a zoning ordinance to regulate and restrict the height, number of stories, and size
+    of buildings and other structures
+  checked: '2026-11-04'
+  how: read in a browser; the codified-law page draws its text with JavaScript
+- state: NY
+  url: https://www.nysenate.gov/legislation/laws/TWN/261
+  quote: the town board is hereby empowered by local law or ordinance to regulate and restrict the height, number
+    of stories and size of buildings and other structures
+  checked: '2026-11-04'
+  how: read in a browser; nysenate.gov refuses scripted requests
+- state: NY
+  url: https://www.nysenate.gov/legislation/laws/RPT/421-P*2
+  quote: After a public hearing, the governing board of a county, city, town or village may adopt a local law
+  checked: '2026-11-04'
+  how: read in a browser; nysenate.gov refuses scripted requests
+- state: NY
+  url: https://www.nysenate.gov/legislation/laws/EXC/292
+  quote: also includes any accessory dwelling unit, defined as any attached or a detached residential dwelling unit
+  checked: '2026-11-04'
+  how: read in a browser; nysenate.gov refuses scripted requests
+- state: IL
+  url: https://www.ilga.gov/Documents/legislation/ilcs/documents/006500050K11-13-1.htm
+  quote: the corporate authorities in each municipality have the following powers
+  checked: '2026-11-04'
+  how: fetched with curl and searched with the same normalization; the site's certificate chain fails Python's TLS
+    check
+- state: MS
+  url: https://billstatus.ls.state.ms.us/documents/2022/html/SB/2001-2099/SB2095SG.htm
+  quote: the governing authority of any municipality, and, with respect to the unincorporated part of any county,
+    the governing authority of any county, in its discretion, are empowered to regulate the height, number of stories
+    and size of building and other structures
+  checked: '2026-11-04'
+  how: fetched with curl and searched with the same normalization; the site's certificate chain fails Python's TLS
+    check

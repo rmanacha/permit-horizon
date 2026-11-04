@@ -1,0 +1,80 @@
+# Wisconsin current-law register (ADU): no statewide ADU law found.
+# Checked through the 2026 session on 2026-11-03; what was searched and any bill that passed but only
+# enables or studies is in notes. Strength 0 by the rule (docs/methods/current_law.md); quotes checked by
+# hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: WI
+scenarios:
+  adu:
+    rechecked: '2026-11-03'
+    record:
+      law: 'No statewide ADU law found. Local zoning authority: Wis. Stat. 62.23(7) (cities), applied to villages
+        by 61.35, with 60.61 (towns) and 59.69 (counties).'
+      summary: Wisconsin law leaves accessory dwelling units to each city, village, town and county; no statute
+        requires them to be allowed.
+      quote: the council may regulate and restrict by ordinance
+      url: https://docs.legis.wisconsin.gov/document/statutes/62.23(7)
+      accessed: '2026-11-03'
+      in_effect: 'Not applicable: no statewide ADU law (checked through the 2026 session).'
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Wisconsin Statutes 62.23(7)(am)
+        url: https://docs.legis.wisconsin.gov/document/statutes/62.23(7)
+        locator: paragraph (am), grant of power
+        quote: the council may regulate and restrict by ordinance
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Wisconsin Statutes 62.23(7)(am)
+        url: https://docs.legis.wisconsin.gov/document/statutes/62.23(7)
+        locator: paragraph (am), grant of power
+        quote: the council may regulate and restrict by ordinance
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Wisconsin Statutes 62.23(7)(am)
+        url: https://docs.legis.wisconsin.gov/document/statutes/62.23(7)
+        locator: paragraph (am), grant of power
+        quote: the council may regulate and restrict by ordinance
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Wisconsin Statutes 62.23(7)(am)
+        url: https://docs.legis.wisconsin.gov/document/statutes/62.23(7)
+        locator: paragraph (am), grant of power
+        quote: the council may regulate and restrict by ordinance
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: Wisconsin has no statewide law requiring cities or counties to allow ADUs, so none of the
+      benchmark is in law and all of it would be newly affected. Cities that allow ADUs on their own are not counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Official statute chapters 59, 60, 61, 62 and 66 (docs.legis.wisconsin.gov PDFs, ''2023-24 Wisconsin
+      Statutes updated through 2025 Wis. Act 247'', published 2026-10-01) have no accessory dwelling text. Official
+      bill pages: 2025 AB 449 / SB 473 (local regulation of ADUs; would create 59.69(16), 60.61(3o), 62.23(7)(j))
+      and AB 365 / SB 247 (local and private regulation) all ''Failed to pass pursuant to Senate Joint Resolution
+      1'' on 2026-03-23 (AB 449 had passed the Assembly committee 13-1, SB 473 the Senate committee 5-0). These
+      would have limited local rules; none enacted.'

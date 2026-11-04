@@ -1,0 +1,116 @@
+# Minnesota current-law register (ADU): no statewide ADU law found.
+# Checked through the 2026 session on 2026-11-03; what was searched and any bill that passed but only
+# enables or studies is in notes. Strength 0 by the rule (docs/methods/current_law.md); quotes checked by
+# hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: MN
+scenarios:
+  adu:
+    rechecked: '2026-11-03'
+    record:
+      law: 'No statewide ADU law found. Local zoning authority: Minnesota Statutes 462.357 (cities and towns). Two
+        laws mention ADUs without requiring them: a 2025 funding bonus (Laws 2025, chapter 32, article 3, section
+        13) and a Housing Finance Agency loan power (Minnesota Statutes 462A.05, subdivision 14)'
+      summary: Minnesota law leaves accessory dwelling units to each city and county; no statute requires them to
+        be allowed.
+      quote: a municipality may by ordinance regulate on the earth's surface, in the air space above the surface,
+        and in subsurface areas, the location, height, width, bulk, type of foundation, number of stories, size
+        of buildings and other structures
+      url: https://www.revisor.mn.gov/statutes/cite/462.357
+      accessed: '2026-11-03'
+      in_effect: 'Not applicable: no statewide ADU law (checked through the 2026 session).'
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No statute requires a city or county to allow an ADU. A 2025 law only gives affordable-housing
+        projects up to five percent extra points in state funding competitions when the city allows ADUs, duplexes
+        or townhomes on half its single-family land; it expires at the end of 2029.
+      status: differs
+      sources:
+      - title: Minnesota Statutes 462.357
+        url: https://www.revisor.mn.gov/statutes/cite/462.357
+        locator: subdivision 1
+        quote: a municipality may by ordinance regulate on the earth's surface, in the air space above the surface,
+          and in subsurface areas, the location, height, width, bulk, type of foundation, number of stories, size
+          of buildings and other structures
+        accessed: '2026-11-03'
+      - title: Laws of Minnesota 2025, chapter 32 (S.F. 2298), Local actions to support housing
+        url: https://www.revisor.mn.gov/laws/2025/0/32/
+        locator: article 3, section 13, clause (2)
+        quote: the jurisdiction allows for duplexes, accessory dwelling units, or townhomes within 50 percent of
+          the area within the jurisdiction zoned for single-family housing
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+      - The 2025 funding bonus is a scoring preference for state housing money, not a rule on cities, and applies
+        only to selection systems written from its effective date until December 31, 2029.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: No statute requires cities to allow detached ADUs. State housing-loan law lets the Housing
+        Finance Agency finance adding or rehabilitating a detached ADU, which is a funding power, not a zoning rule.
+      status: differs
+      sources:
+      - title: Minnesota Statutes 462.357
+        url: https://www.revisor.mn.gov/statutes/cite/462.357
+        locator: subdivision 1
+        quote: a municipality may by ordinance regulate on the earth's surface, in the air space above the surface,
+          and in subsurface areas, the location, height, width, bulk, type of foundation, number of stories, size
+          of buildings and other structures
+        accessed: '2026-11-03'
+      - title: Minnesota Statutes 462A.05 (Housing Finance Agency specific powers)
+        url: https://www.revisor.mn.gov/statutes/cite/462A.05
+        locator: subdivision 14
+        quote: Rehabilitation may include the addition or rehabilitation of a detached accessory dwelling unit.
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Minnesota Statutes 462.357
+        url: https://www.revisor.mn.gov/statutes/cite/462.357
+        locator: subdivision 1
+        quote: a municipality may by ordinance regulate on the earth's surface, in the air space above the surface,
+          and in subsurface areas, the location, height, width, bulk, type of foundation, number of stories, size
+          of buildings and other structures
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Minnesota Statutes 462.357
+        url: https://www.revisor.mn.gov/statutes/cite/462.357
+        locator: subdivision 1
+        quote: a municipality may by ordinance regulate on the earth's surface, in the air space above the surface,
+          and in subsurface areas, the location, height, width, bulk, type of foundation, number of stories, size
+          of buildings and other structures
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: Minnesota has no statewide law requiring cities or counties to allow ADUs, so none of the
+      benchmark is in law and all of it would be newly affected. A 2025 funding bonus and a Housing Finance Agency
+      loan power mention ADUs but require nothing of cities. Cities that allow ADUs on their own are not counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Checked 2026-11-03. Adam''s MN file is empty, so nothing was ported. Official full-text search of the
+      Revisor''s site (https://www.revisor.mn.gov/search/doc_result.php with keyword_type=exact, keyword ''accessory
+      dwelling'', 2026 Statutes and session laws 2023-2026) found only: Minnesota Statutes 462A.05 (subd. 14, sentence
+      added by Laws 2023, chapter 37, article 4, section 1, kept by Laws 2024, chapter 127, article 15, section
+      4); Laws 2025, chapter 32 (S.F. 2298), article 3, section 13 (bonus points up to 5% in competitive Housing
+      Finance Agency capital programs for projects in jurisdictions meeting any of eight criteria, one being ADUs/duplexes/townhomes
+      on 50% of single-family land; effective the day after enactment, expires 2029-12-31; ADU appears in clause
+      (2)); Laws 2025, 1st Special Session, chapter 9 (a human services long-term-care study item that lists tax
+      incentives for ADUs among the topics; study only); and the 2023 session law index. A control search (''Housing
+      Finance Agency'') returned 2026 session laws, so 2026 laws were covered and none mentions ADUs. ADU zoning
+      bills never passed: 2025 HF 1987 (Starter Homes Act; referred to Housing Finance and Policy 2025-03-06), 2026
+      HF 3895 (referred 2026-03-02; press reports it failed 5-7 in committee), 2025 SF 3418 (referred 2025-04-23)
+      and 2026 SF 4123 (referred 2026-03-04); revisor.mn.gov shows only introduction and referral for each. No bill
+      passed that requires cities to allow ADUs; the enabling-only items are the funding bonus and loan power above.'

@@ -1,0 +1,93 @@
+# Tennessee current-law register (ADU): no statewide ADU law found.
+# Checked through the 2026 session on 2026-11-03; what was searched and any bill that passed but only
+# enables or studies is in notes. Strength 0 by the rule (docs/methods/current_law.md); quotes checked by
+# hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: TN
+scenarios:
+  adu:
+    rechecked: '2026-11-03'
+    record:
+      law: 'No statewide ADU law found. The 2026 bill to regulate ADUs statewide, H.B. 2031 / S.B. 2131, was taken
+        off notice in committee and died. Local zoning authority: Tenn. Code Ann. 13-7-201 (cities) and 13-7-101
+        (counties).'
+      summary: Tennessee law leaves accessory dwelling units to each city and county; no statute requires them to
+        be allowed.
+      quote: relative to accessory dwelling units. Housing - As introduced, provides for the regulation of accessory
+        dwelling units.
+      url: https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=HB2031&GA=114
+      accessed: '2026-11-03'
+      in_effect: 'Not applicable: no statewide ADU law (checked through the 2026 session).'
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No statute addresses this; it is left to local zoning. The 2026 bill that would have regulated
+        ADUs statewide did not pass.
+      status: differs
+      sources:
+      - title: Tennessee General Assembly, H.B. 2031 (2026) bill history
+        url: https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=HB2031&GA=114
+        locator: caption and bill history (taken off notice, March 11, 2026)
+        quote: relative to accessory dwelling units. Housing - As introduced, provides for the regulation of accessory
+          dwelling units.
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: No statute addresses this; it is left to local zoning. The 2026 bill that would have regulated
+        ADUs statewide did not pass.
+      status: differs
+      sources:
+      - title: Tennessee General Assembly, H.B. 2031 (2026) bill history
+        url: https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=HB2031&GA=114
+        locator: caption and bill history (taken off notice, March 11, 2026)
+        quote: relative to accessory dwelling units. Housing - As introduced, provides for the regulation of accessory
+          dwelling units.
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: No statute addresses this; it is left to local zoning. The 2026 bill that would have regulated
+        ADUs statewide did not pass.
+      status: differs
+      sources:
+      - title: Tennessee General Assembly, H.B. 2031 (2026) bill history
+        url: https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=HB2031&GA=114
+        locator: caption and bill history (taken off notice, March 11, 2026)
+        quote: relative to accessory dwelling units. Housing - As introduced, provides for the regulation of accessory
+          dwelling units.
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No statute addresses this; it is left to local zoning. The 2026 bill that would have regulated
+        ADUs statewide did not pass.
+      status: differs
+      sources:
+      - title: Tennessee General Assembly, H.B. 2031 (2026) bill history
+        url: https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=HB2031&GA=114
+        locator: caption and bill history (taken off notice, March 11, 2026)
+        quote: relative to accessory dwelling units. Housing - As introduced, provides for the regulation of accessory
+          dwelling units.
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: Tennessee has no statewide law requiring cities or counties to allow ADUs, so none of the
+      benchmark is in law and all of it would be newly affected. Cities that allow ADUs on their own are not counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'The official Tennessee Code is published only on LexisNexis''s free public access site behind an I Agree
+      terms page, which was not accepted, so the zoning enabling sections are cited but not quoted; the official
+      bill history is the source. 2024 HB 2292 / SB 2124 stalled; Public Chapter 1044 (2026, local review deadlines,
+      effective 2027-01-01) has no ADU text. Agent notes: UNVERIFIED QUOTE AND URL. The only official host of the
+      Tennessee Code is LexisNexis''s free public access site, which requires clicking I Agree to its terms; not
+      clicked. Quote is from a Justia copy seen in a search result, not from an official page: a person must open
+      https://www.lexisnexis.com/hottopics/tncode, find 13-7-201, and confirm. 13-7-101 (counties) not read. Bills
+      (wapp.capitol.tn.gov, official): 2026 HB 2031 / SB 2131 (ADU regulation, Titles 5, 6, 7, 13, 66, 68) - House:
+      taken off notice in Cities and Counties Subcommittee 2026-03-11, no further action; Senate: assigned to General'

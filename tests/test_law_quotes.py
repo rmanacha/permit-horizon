@@ -44,3 +44,8 @@ def test_uncached_page_without_fetch_is_reported_not_guessed(tmp_path):
     law = _law_file(tmp_path, "x", "y")
     rows = lq.check(law, fetch=False, data_dir=tmp_path / "raw")
     assert rows[0]["found"] is None and "not cached" in rows[0]["status"]
+
+
+def test_glued_line_numbers_go_but_thousands_stay():
+    text = "is hereby amended by12\nan ADU of at least 1,000\nsquare feet"
+    assert lq.GLUED_LINE_NUMBER.sub("", text) == "is hereby amended by\nan ADU of at least 1,000\nsquare feet"

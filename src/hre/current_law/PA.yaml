@@ -1,0 +1,87 @@
+# Pennsylvania current-law register (ADU): no statewide ADU law found.
+# Checked through the 2026 session on 2026-11-03; what was searched and any bill that passed but only
+# enables or studies is in notes. Strength 0 by the rule (docs/methods/current_law.md); quotes checked by
+# hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: PA
+scenarios:
+  adu:
+    rechecked: '2026-11-03'
+    record:
+      law: 'No statewide ADU law found. Local zoning authority: Pennsylvania Municipalities Planning Code, Act 247
+        of 1968, section 601 (53 P.S. 10601).'
+      summary: Pennsylvania law leaves accessory dwelling units to each municipality; no statute requires them to
+        be allowed.
+      quote: may enact, amend and repeal zoning ordinances to implement comprehensive plans and to accomplish any
+        of the purposes of this act
+      url: https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=PDF&SessYr=1968&ActNum=0247.&SessInd=0
+      accessed: '2026-11-03'
+      in_effect: 'Not applicable: no statewide ADU law (checked through November 3, 2026).'
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Pennsylvania Municipalities Planning Code (Act 247 of 1968), section 601 (53 P.S. 10601)
+        url: https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=PDF&SessYr=1968&ActNum=0247.&SessInd=0
+        locator: section 601
+        quote: may enact, amend and repeal zoning ordinances to implement comprehensive plans and to accomplish
+          any of the purposes of this act
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Pennsylvania Municipalities Planning Code (Act 247 of 1968), section 601 (53 P.S. 10601)
+        url: https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=PDF&SessYr=1968&ActNum=0247.&SessInd=0
+        locator: section 601
+        quote: may enact, amend and repeal zoning ordinances to implement comprehensive plans and to accomplish
+          any of the purposes of this act
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Pennsylvania Municipalities Planning Code (Act 247 of 1968), section 601 (53 P.S. 10601)
+        url: https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=PDF&SessYr=1968&ActNum=0247.&SessInd=0
+        locator: section 601
+        quote: may enact, amend and repeal zoning ordinances to implement comprehensive plans and to accomplish
+          any of the purposes of this act
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Pennsylvania Municipalities Planning Code (Act 247 of 1968), section 601 (53 P.S. 10601)
+        url: https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=PDF&SessYr=1968&ActNum=0247.&SessInd=0
+        locator: section 601
+        quote: may enact, amend and repeal zoning ordinances to implement comprehensive plans and to accomplish
+          any of the purposes of this act
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: Pennsylvania has no statewide law requiring cities or counties to allow ADUs, so none of
+      the benchmark is in law and all of it would be newly affected. Cities that allow ADUs on their own are not
+      counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'FLAG - live bills, not law as of 2026-11-03 (palegis.us): H.B. 2186 (2025-26; ''providing for accessory
+      dwelling units'', Title 53) passed the House 139-62 on 2026-06-01 and was referred to Senate Urban Affairs
+      and Housing 2026-06-05; S.B. 1346 (MPC amendments, ''Lowering Housing Costs: Accessory Dwelling Unit Reform'')
+      reported from Senate Urban Affairs and Housing 2026-07-12, first consideration, not yet passed. The session
+      ends Nov 30, 2026; redo before publication. The MPC text on palegis.us is current through Act 58 of 2026 (section
+      503.1 amended 2026-10-08) and has no accessory dwelling text; the quote is section 601 (counties'' zoning
+      power is limited by section 602).'

@@ -1,0 +1,83 @@
+# Texas current-law register (ADU): no statewide ADU law found.
+# Checked through the 2026 session on 2026-11-03; what was searched and any bill that passed but only
+# enables or studies is in notes. Strength 0 by the rule (docs/methods/current_law.md); quotes checked by
+# hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: TX
+scenarios:
+  adu:
+    rechecked: '2026-11-03'
+    record:
+      law: 'No statewide ADU law found. Local zoning authority: Texas Local Government Code 211.003 (municipal zoning).'
+      summary: Texas law leaves accessory dwelling units to each city; no statute requires them to be allowed.
+      quote: The governing body of a municipality may regulate
+      url: https://tcss.legis.texas.gov/resources/LG/htm/LG.211.htm
+      accessed: '2026-11-03'
+      in_effect: 'Not applicable: no statewide ADU law (checked through the 2025 sessions; Texas held no regular
+        session in 2026).'
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Texas Local Government Code section 211.003
+        url: https://tcss.legis.texas.gov/resources/LG/htm/LG.211.htm
+        locator: subsection (a)
+        quote: The governing body of a municipality may regulate
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Texas Local Government Code section 211.003
+        url: https://tcss.legis.texas.gov/resources/LG/htm/LG.211.htm
+        locator: subsection (a)
+        quote: The governing body of a municipality may regulate
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Texas Local Government Code section 211.003
+        url: https://tcss.legis.texas.gov/resources/LG/htm/LG.211.htm
+        locator: subsection (a)
+        quote: The governing body of a municipality may regulate
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Texas Local Government Code section 211.003
+        url: https://tcss.legis.texas.gov/resources/LG/htm/LG.211.htm
+        locator: subsection (a)
+        quote: The governing body of a municipality may regulate
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: Texas has no statewide law requiring cities or counties to allow ADUs, so none of the benchmark
+      is in law and all of it would be newly affected. Cities that allow ADUs on their own are not counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Texas Legislature Online text search for the phrase accessory dwelling in all bill versions: 89R finds
+      HB 878, HB 1779, HB 2480, SB 673 (introduced/engrossed only); 88R finds HB 2789, HB 3074, SB 1412, SB 2239;
+      zero matches in enrolled versions in 88R, 88(1-4), 89R, 89(1), 89(2). SB 673 (Hughes, 2025) passed the Senate
+      2025-04-10, House committee reported 2025-05-08, placed on General State Calendar 2025-05-26, no later action;
+      SB 1412 (2023) passed the Senate and ''Failed to pass to 3rd reading'' in the House 2023-05-22; HB 1779, HB
+      2480, HB 878 stayed in House committee. Enacted 2025 laws on housing that do not mention ADUs: SB 15 (small
+      lot sizes, effective 2025-09-01), SB 840 (Chapter 778) and HB 24 (Chapter 909) (mixed-use and multifamily
+      zoning). The statute page statutes.capitol.texas.gov is script-rendered and states it is current through the
+      89th Second Called Session, 2025; the quote is read from the Legislature''s file server for the same page
+      (tcss.legis.texas.gov/resources/LG/htm/LG.211.htm, the path that site loads).'

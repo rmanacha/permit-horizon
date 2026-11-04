@@ -1,0 +1,94 @@
+# Louisiana current-law register (ADU): no statewide ADU law found.
+# Checked through the 2026 session on 2026-11-03; what was searched and any bill that passed but only
+# enables or studies is in notes. Strength 0 by the rule (docs/methods/current_law.md); quotes checked by
+# hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: LA
+scenarios:
+  adu:
+    rechecked: '2026-11-03'
+    record:
+      law: 'No statewide ADU law found. Local zoning authority: Louisiana Revised Statutes 33:4721 (municipalities)'
+      summary: Louisiana law leaves accessory dwelling units to each city and parish; no statute requires them to
+        be allowed.
+      quote: the governing authority of all municipalities may regulate and restrict the height, number of stories,
+        and size of structures, the percentage of lot that may be occupied, the size of yards, courts, and other
+        open spaces, the density of population, and the location and use of the buildings, structures, and land
+        for trade, industry, residence, or other purposes
+      url: https://www.legis.la.gov/legis/Law.aspx?d=91118
+      accessed: '2026-11-03'
+      in_effect: 'Not applicable: no statewide ADU law (checked through the 2026 session).'
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Louisiana Revised Statutes 33:4721
+        url: https://www.legis.la.gov/legis/Law.aspx?d=91118
+        locator: R.S. 33:4721, first sentence
+        quote: the governing authority of all municipalities may regulate and restrict the height, number of stories,
+          and size of structures, the percentage of lot that may be occupied, the size of yards, courts, and other
+          open spaces, the density of population, and the location and use of the buildings, structures, and land
+          for trade, industry, residence, or other purposes
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Louisiana Revised Statutes 33:4721
+        url: https://www.legis.la.gov/legis/Law.aspx?d=91118
+        locator: R.S. 33:4721, first sentence
+        quote: the governing authority of all municipalities may regulate and restrict the height, number of stories,
+          and size of structures, the percentage of lot that may be occupied, the size of yards, courts, and other
+          open spaces, the density of population, and the location and use of the buildings, structures, and land
+          for trade, industry, residence, or other purposes
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Louisiana Revised Statutes 33:4721
+        url: https://www.legis.la.gov/legis/Law.aspx?d=91118
+        locator: R.S. 33:4721, first sentence
+        quote: the governing authority of all municipalities may regulate and restrict the height, number of stories,
+          and size of structures, the percentage of lot that may be occupied, the size of yards, courts, and other
+          open spaces, the density of population, and the location and use of the buildings, structures, and land
+          for trade, industry, residence, or other purposes
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Louisiana Revised Statutes 33:4721
+        url: https://www.legis.la.gov/legis/Law.aspx?d=91118
+        locator: R.S. 33:4721, first sentence
+        quote: the governing authority of all municipalities may regulate and restrict the height, number of stories,
+          and size of structures, the percentage of lot that may be occupied, the size of yards, courts, and other
+          open spaces, the density of population, and the location and use of the buildings, structures, and land
+          for trade, industry, residence, or other purposes
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: Louisiana has no statewide law requiring cities or counties to allow ADUs, so none of the
+      benchmark is in law and all of it would be newly affected. Cities that allow ADUs on their own are not counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: Checked 2026-11-03. Adam's LA file is empty, so nothing was ported. Official bill-text search on legis.la.gov
+      (Bill Search > Search Bill Text, all versions of the text) for the phrase 'accessory dwelling' returned 0
+      instruments in each of the 2023, 2024, 2025 and 2026 regular sessions; the same search for 'zoning' returned
+      bills in each session (control). The only Louisiana ADU bill found by web search is 2022 HB 737 (contractor
+      licensing definition), outside 2023-2026. No 2025-2026 bill passed that enables or studies ADUs. Parish zoning
+      power (a parish's own authority) was not separately quoted; R.S. 33:4721 covers municipalities.
