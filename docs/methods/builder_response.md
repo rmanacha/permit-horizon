@@ -1,6 +1,6 @@
 # Builder response (parking and fees)
 
-Code: `src/hre/model/response.py`. Parameters: `builder_response_override`, `supply_elasticity_metro_default`, `supply_elasticity_nonmetro`, `demand_elasticity`, `fee_pass_through`, `adjustment_share_5yr`, `new_home_price_ratio`, `stock_supply_elasticity`, `stock_realization_share`, `us_housing_growth_5yr`; Saiz table `src/hre/assumptions/elasticities.yaml`.
+Code: `src/hre/model/response.py`. Parameters: `builder_response_override`, `supply_elasticity_metro_default`, `supply_elasticity_nonmetro`, `demand_elasticity`, `fee_pass_through`, `adjustment_share_5yr`, `new_home_price_ratio`, `stock_supply_elasticity`, `stock_realization_share` (and `us_housing_growth_5yr`, the register's denominator for the high end); Saiz table `src/hre/assumptions/elasticities.yaml`.
 
 **What it answers:** how many more homes get built over five years when a reform cuts a builder's cost. The unit is *percent more homes over five years per 1% fall in cost relative to the price of a new home*. An elasticity is already "percent per percent", so a response of 0.75 means a 1% cost cut adds 0.75% to five years' permits.
 

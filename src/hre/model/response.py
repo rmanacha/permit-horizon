@@ -21,7 +21,9 @@ Three routes, documented in docs/methods/builder_response.md:
    why it is not the primary route.
 
 3. Stock-elasticity diagnostic (Adam's): stock elasticity x realization share /
-   national five-year growth = 0.3 x 0.5 / 0.0529 = 2.84 (the high end of route 1).
+   national five-year growth = 0.3 x 0.5 / 0.0529 = 2.84 (the high end of route 1;
+   ``stock_route_response`` states the arithmetic, and the fee scenario's diagnostics
+   apply the stock route to each state's housing stock).
 
 ``quantity_change`` turns a response into homes:
        base_units x response x (cost_cut / price)
@@ -115,12 +117,4 @@ def resolve_response(params: Params, eps_s: Any = None) -> dict[str, Any]:
             raise ValueError("composite route needs county supply elasticities")
         value = composite
         route = "composite"
-    return {
-        "route": route,
-        "value": value,
-        "composite": composite,
-        "stock_route": stock_route_response(params["stock_supply_elasticity"],
-                                            params["stock_realization_share"],
-                                            params["us_housing_growth_5yr"]),
-        "unit": "percent more homes over 5 years per 1% fall in cost relative to the new-home price",
-    }
+    return {"route": route, "value": value, "composite": composite}
