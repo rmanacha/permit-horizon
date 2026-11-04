@@ -259,4 +259,6 @@
   --focus-width: 3px;
   --cell-min: 64px;
   --control-min: 44px;
+  --tour-panel-width: 360px;
+  --tour-sheet-max: 45vh;
 }

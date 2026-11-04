@@ -283,6 +283,19 @@ main section:not(.ds-card) > h2 { border-top: var(--border-heavy) solid var(--cs
   .brief .data-table th, .brief .data-table td { padding: var(--space-0) var(--space-1); }
 }
 
+/* --- The tour: the stop's element outlined, the text in a fixed panel (a bottom sheet on phones) --- */
+.tour-start { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); margin: var(--space-3) var(--space-0); }
+.tour-target { outline: var(--border-heavy) solid var(--accent-highlight); outline-offset: var(--space-2); scroll-margin-top: var(--space-5); }
+.tour-panel { position: fixed; right: var(--space-5); bottom: var(--space-5); width: var(--tour-panel-width); z-index: 20; background: var(--cs-white); color: var(--color-text); border: var(--border-thick) solid var(--cs-navy); border-top: var(--border-heavy) solid var(--accent-highlight); padding: var(--space-4) var(--space-5); box-shadow: var(--shadow-overlay); }
+.tour-panel .ds-eyebrow { margin: var(--space-0); }
+.tour-title { font-size: var(--fs-h4); margin: var(--space-1) var(--space-0) var(--space-2); }
+.tour-text { font-size: var(--fs-small); margin: var(--space-0) var(--space-0) var(--space-3); }
+.tour-panel .button-list { align-items: center; margin: var(--space-0); }
+@media (max-width: 640px) {
+  .tour-panel { left: var(--space-0); right: var(--space-0); bottom: var(--space-0); width: auto; max-height: var(--tour-sheet-max); overflow-y: auto; border-left: none; border-right: none; border-bottom: none; }
+  .tour-target { scroll-margin-top: var(--space-3); }
+}
+
 /* Validation ledger: one disclosure per check under the table */
 .ledger-detail { border-left: var(--border-heavy) solid var(--cs-navy); background: var(--color-surface); padding: var(--space-2) var(--space-4); margin: var(--space-3) var(--space-0); }
 .ledger-detail summary { cursor: pointer; font-family: var(--font-display); font-weight: var(--fw-bold); color: var(--color-heading); }

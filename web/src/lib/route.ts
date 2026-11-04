@@ -1,5 +1,6 @@
 // The view lives in the URL hash, so a link restores it exactly (share links, step 5):
 //   #/<page>?st=NH&sc=adu&case=50-1&set=builder_response_override:high,fee_cut_share:0.3&show=adu,fees
+// `tour=N` opens the site tour at stop N (the tour keeps its place here, never in browser storage).
 // Hash routing needs no server rewrite rules, so it works on GitHub Pages, Docker and http.server.
 import type { Choice } from '../engine/rescale.ts';
 import { LEVELS, SCENARIOS, type Level, type ScenarioName } from '../types/results.ts';
@@ -28,6 +29,8 @@ export interface View {
   caseSel: CaseSel;
   settings: Settings;
   show: ScenarioName[];
+  /** The open tour stop (1-based); 0 when the tour is closed. */
+  tour: number;
 }
 
 export const DEFAULT_VIEW: View = {
@@ -37,6 +40,7 @@ export const DEFAULT_VIEW: View = {
   caseSel: { kind: 'register_default' },
   settings: {},
   show: [...SCENARIOS],
+  tour: 0,
 };
 
 /** The key of a case in a scenario's `cases` block. */
@@ -112,6 +116,7 @@ export function parseHash(hash: string): View {
     caseSel: decodeCase(q.get('case')),
     settings: decodeSettings(q.get('set')),
     show: show.length ? show : [...SCENARIOS],
+    tour: /^[1-9]$/.test(q.get('tour') ?? '') ? Number(q.get('tour')) : 0,
   };
 }
 
@@ -124,6 +129,7 @@ export function buildHash(v: View): string {
   const s = encodeSettings(v.settings);
   if (s) q.set('set', s);
   if (v.show.length && v.show.length < SCENARIOS.length) q.set('show', v.show.join(','));
+  if (v.tour) q.set('tour', String(v.tour));
   const qs = q.toString().replace(/%3A/g, ':').replace(/%2C/g, ',');
   return `#/${v.page}${qs ? `?${qs}` : ''}`;
 }

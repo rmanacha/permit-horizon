@@ -2,6 +2,7 @@
 // turned into JSON the site imports:
 //   docs/GLOSSARY.md        -> web/src/content/glossary.json   lines "- **Term** (`id`): definition"
 //   docs/methods/limits.md  -> web/src/content/limits.json     lines "- **Title**: sentence"
+//   web/src/content/tour.md -> web/src/content/tour.json       stops "## Title (`target`, page)" and their text
 // `npm run content` writes the JSON; scripts/content.test.mjs fails when the JSON is out of date.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -35,12 +36,26 @@ export function parseLimits(md) {
   return out;
 }
 
+/** The tour's stops: a heading names the stop, its target element and its page; the lines under it are its text. */
+export function parseTour(md) {
+  const stops = [];
+  for (const line of md.split('\n')) {
+    const h = /^## (.+?) \(`([a-z-]+)`, ([a-z]+)\)$/.exec(line);
+    if (h) stops.push({ title: h[1], target: h[2], page: h[3], text: '' });
+    else if (/^## /.test(line)) throw new Error(`tour heading not in the "## Title (\`target\`, page)" form: ${line}`);
+    else if (stops.length && line.trim()) stops[stops.length - 1].text += `${stops[stops.length - 1].text ? ' ' : ''}${line.trim()}`;
+  }
+  return stops;
+}
+
 export function render() {
   const glossary = parseGlossary(readFileSync(`${REPO}docs/GLOSSARY.md`, 'utf8'));
   const limits = parseLimits(readFileSync(`${REPO}docs/methods/limits.md`, 'utf8'));
+  const tour = parseTour(readFileSync(`${REPO}web/src/content/tour.md`, 'utf8'));
   return {
     'web/src/content/glossary.json': `${JSON.stringify({ source: 'docs/GLOSSARY.md', terms: glossary }, null, 1)}\n`,
     'web/src/content/limits.json': `${JSON.stringify({ source: 'docs/methods/limits.md', limits }, null, 1)}\n`,
+    'web/src/content/tour.json': `${JSON.stringify({ source: 'web/src/content/tour.md', stops: tour }, null, 1)}\n`,
   };
 }
 

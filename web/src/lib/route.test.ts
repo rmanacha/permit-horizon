@@ -19,7 +19,14 @@ test('a share link restores the view', () => {
 });
 
 test('junk in the hash falls back to defaults', () => {
-  const v = parseHash('#/nowhere?st=new&sc=x&case=7-9&set=a:b,:1,Bad-Id:2&show=zz');
+  const v = parseHash('#/nowhere?st=new&sc=x&case=7-9&set=a:b,:1,Bad-Id:2&show=zz&tour=x');
   assert.deepEqual(v, DEFAULT_VIEW);
   assert.equal(buildHash(DEFAULT_VIEW), '#/explore');
+});
+
+test('the tour share link opens the tour at its first stop; closing it leaves the view as it was', () => {
+  const v = parseHash('#/explore?st=NH&tour=1');
+  assert.deepEqual(v, { ...DEFAULT_VIEW, state: 'NH', tour: 1 });
+  assert.equal(buildHash(v), '#/explore?st=NH&tour=1');
+  assert.equal(buildHash({ ...v, tour: 0 }), '#/explore?st=NH');
 });

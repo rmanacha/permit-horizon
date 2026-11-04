@@ -20,7 +20,7 @@ export function ScenarioCard({ v, state, stateName }: { v: ScenarioView; state: 
       eyebrow={SHORT[v.name]}
       title={<Term term={SCENARIO_TERM[v.name]}>{v.label}</Term>}
     >
-      <dl className="layers">
+      <dl className="layers" data-tour="layers">
         <div className="layer">
           <dt>
             <Term term="benchmark">Benchmark</Term>: what the source policy produced, moved to {stateName}
@@ -78,7 +78,7 @@ export function ScenarioCard({ v, state, stateName }: { v: ScenarioView; state: 
           </dd>
         </div>
       </dl>
-      <p className="law-note">
+      <p className="law-note" data-tour="law-note">
         <strong>
           <Term term="current-law">Current law</Term>:
         </strong>{' '}

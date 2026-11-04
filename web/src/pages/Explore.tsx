@@ -9,6 +9,7 @@ import { ChartTable } from '../components/Figure.tsx';
 import { RangeChart } from '../components/charts.tsx';
 import { ExactBadge, PlainTag, StatusBadge } from '../components/Badge.tsx';
 import { Button } from '../components/ds/Button.tsx';
+import { TourStart } from '../components/Tour.tsx';
 import { Checkbox } from '../components/ds/Checkbox.tsx';
 import { StatCallout } from '../components/ds/StatCallout.tsx';
 import { fmtCount, fmtShare } from '../lib/format.ts';
@@ -30,6 +31,7 @@ function Landing() {
         assumptions behind it.
       </p>
       <p>Choose a state at the top of the page, or pick one below.</p>
+      <TourStart />
       <div className="table-wrap">
         <table className="data-table">
           <caption>
@@ -74,7 +76,7 @@ function BaselineCard({ r, name }: { r: Results; name: string }) {
   const b = r.baseline;
   const years = `${b.forecast_years[0]}-${b.forecast_years[b.forecast_years.length - 1]}`;
   return (
-    <section aria-labelledby="baseline-h" className="baseline-block">
+    <section aria-labelledby="baseline-h" className="baseline-block" data-tour="baseline">
       <h2 id="baseline-h" className="sr-only">
         Baseline
       </h2>
@@ -129,7 +131,7 @@ function CompareTable({ r, views }: { r: Results; views: ScenarioView[] }) {
   const caseDefault = views.every((v) => v.caseKey === 'register_default');
   const combined = r.combined;
   return (
-    <section aria-labelledby="compare-h">
+    <section aria-labelledby="compare-h" data-tour="compare">
       <h2 id="compare-h">Compare the reforms</h2>
       <p className="small muted">
         Ranked by the middle <Term term="increment">increment over current law</Term>. Every increment is in permits, so they
@@ -344,6 +346,7 @@ function ExploreState({ r }: { r: Results }) {
     <>
       <h1>{name}: building permits over 2026-2030</h1>
       <p className="lead">{r.baseline.narrative[0]}</p>
+      <TourStart />
       <BaselineCard r={r} name={name} />
       <section aria-labelledby="reforms-h">
         <h2 id="reforms-h">Five reforms, three layers each</h2>

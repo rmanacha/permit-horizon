@@ -1,0 +1,35 @@
+{
+ "source": "web/src/content/tour.md",
+ "stops": [
+  {
+   "title": "The baseline",
+   "target": "baseline",
+   "page": "explore",
+   "text": "If nothing changes, New Hampshire issues about 24,250 building permits over 2026-2030: the last three years, averaged and carried forward. The range beside it, 12,991 to 38,616, is as wide as history says it should be. In 80% of past five-year periods the actual total landed inside a range this wide; it's a reading of history, with no probability attached."
+  },
+  {
+   "title": "One reform, three layers",
+   "target": "layers",
+   "page": "explore",
+   "text": "The benchmark is what the reform produced where it was measured, moved to New Hampshire, in the source's own unit. The increment in the blue band is the part that would be new here, in building permits, and the total adds it to the baseline. Every number carries its unit and its own low and high, so finished homes and permits never get added together."
+  },
+  {
+   "title": "Current law is a dimmer switch",
+   "target": "law-note",
+   "page": "explore",
+   "text": "This note says how much of the reform New Hampshire already has. Its ADU law carries three of the four benchmark features, so three quarters of the switch is already on and a quarter of the reform would be new. \"Human review pending\" means nobody on the team has signed off on this reading of the statute yet; the Scenario detail page quotes and links it."
+  },
+  {
+   "title": "Compare the reforms",
+   "target": "compare",
+   "page": "explore",
+   "text": "This table ranks the five increments, all in permits, so they can be compared. The warning row says where the order changes between the low, middle and high assumption sets: a ranking that flips isn't one to repeat on its own. Benchmarks sit in their own units and aren't ranked."
+  },
+  {
+   "title": "Every check, including the misses",
+   "target": "ledger",
+   "page": "validation",
+   "text": "This ledger lists every check we ran against real places, misses included. The Austin check was written down and fingerprinted before the count was fetched: the model said 139 to 1,217 ADU permits a year, Austin issued 117, and the miss stays on the page. The [Methods and limits](#/methods?st=NH) page lists what the tool can't tell you: which towns will build, prices or rents, or how likely any number is."
+  }
+ ]
+}

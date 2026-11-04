@@ -8,7 +8,7 @@ export const TEAM = [
 ];
 export const TEAM_NOTE = 'Teammates to be listed.';
 // Test counts shown on the About page; scripts/check_submission.py fails when they differ from a run.
-export const TEST_COUNTS = { python: 332, web: 30 };
+export const TEST_COUNTS = { python: 332, web: 32 };
 export const CREDITS = [
   'Adam Ruege, a teammate, built an earlier prototype (Housing Reform Estimator v2.0). The 20-year swing range, the ADU home-value tiers, several register entries and the New Hampshire ADU law record are ported from it with attribution, marked in place.',
 ];

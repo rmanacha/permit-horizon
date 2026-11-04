@@ -118,7 +118,7 @@ function Ledger() {
   const l = registers.validation_ledger;
   const classes = l.classes ?? {};
   return (
-    <section aria-labelledby="ledger-h">
+    <section aria-labelledby="ledger-h" data-tour="ledger">
       <h2 id="ledger-h">
         The <Term term="validation-ledger">validation ledger</Term>: the model against real reforms
       </h2>

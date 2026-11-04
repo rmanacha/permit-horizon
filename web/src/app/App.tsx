@@ -9,6 +9,7 @@ import { ValidationPage } from '../pages/Validation.tsx';
 import { AboutPage } from '../pages/About.tsx';
 import { BriefPage } from '../pages/Brief.tsx';
 import { Select } from '../components/ds/Select.tsx';
+import { Tour } from '../components/Tour.tsx';
 
 const NAV: Array<{ page: Page; label: string }> = [
   { page: 'explore', label: 'Explore' },
@@ -99,6 +100,7 @@ function Shell() {
       <main id="main" tabIndex={-1}>
         {page}
       </main>
+      <Tour />
       <footer className="site-footer no-print">
         <div className="site-footer-inner">
           <p>{meta.no_llm}</p>
