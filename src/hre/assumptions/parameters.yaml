@@ -131,7 +131,7 @@ parameters:
   - id: baseline_alt_band_history_years
     label: Years of history for the 20-year swing band (shown beside the headline)
     description: >-
-      Adam Ruege's v2.0 band rule, shown in its own section next to the headline band (decision 69):
+      Adam Ruege's v2.0 band rule, shown in its own section next to the headline band:
       point = the state's last five years of permits; low and high = point x the slowest and fastest
       rolling five-year totals of the last this-many years, each divided by their average. Coverage
       below is from docs/evidence/baseline_backtest.md, band rule B.
@@ -280,7 +280,7 @@ parameters:
     label: Builder response to lower costs
     description: >-
       Percent more homes over five years per 1% fall in cost relative to the price of a new home.
-      The primary route (decision 61): a measured flow response, used directly instead of the
+      The primary route: a measured flow response, used directly instead of the
       composite of elasticities.
     unit: percent more homes over 5 years per 1% fall in cost relative to the new-home price
     low: 0.0
@@ -313,7 +313,7 @@ parameters:
       zero. High: Baum-Snow and Han (2024) housing unit supply elasticity 0.3, half assumed to arrive
       within 5 years, divided by U.S. housing unit growth of 5.29% from July 2020 to July 2025:
       0.3 x 0.5 / 0.0529 = 2.84.
-      What the team re-read (decision 67): the 5.29% growth, 148,260,882 / 140,817,690 - 1 =
+      What the team re-read: the 5.29% growth, 148,260,882 / 140,817,690 - 1 =
       0.0529 (United States row of the Census county housing-unit file CO-EST2025-HU.xlsx, July 1
       2020 and 2025, re-read 2026-11-03); Albouy et al.'s demand elasticity and the Census new-home
       prices used beside this entry. Carried from Adam Ruege's v2.0 record and not yet re-read: the
@@ -501,7 +501,7 @@ parameters:
     citation: >-
       The Microgeography of Housing Supply reports average predicted housing-unit supply elasticity
       0.3 across urban neighborhoods.
-      Carried from Adam Ruege's v2.0 record and not yet re-read by the team (decision 67): the
+      Carried from Adam Ruege's v2.0 record and not yet re-read by the team: the
       publisher returned HTTP 403 and no open abstract or working paper was found on 2026-11-03.
     rationale: Use a stock elasticity with a stock denominator in the diagnostic.
     transferability: Urban neighborhoods; national.
@@ -614,7 +614,7 @@ parameters:
     label: Price adjustment exponent (gamma)
     description: >-
       Missing middle and TOD rates are scaled by (county median value / source city median value)
-      ^ gamma, bounded; gamma = 0 means no adjustment (decision 34).
+      ^ gamma, bounded; gamma = 0 means no adjustment.
     unit: exponent
     low: 0.0
     mid: 0.5
@@ -1068,9 +1068,9 @@ parameters:
       988 / 169,497 = 0.00583 and 987 / 169,497 = 0.00582 permits per single-family home in 2022
       and 2023, years 3 and 4 after the reform: 5.8 per 1,000. As completions: 0.0058 / 1.18 =
       0.0049 per home per year. Adam's frozen Seattle holdout under-predicted Seattle by 59%,
-      which is why this sets the high in places like Seattle (decision 33).
+      which is why this sets the high in places like Seattle.
     rationale: A dense central city with pre-approved plans and an active program; the upper end of measured uptake.
-    transferability: Applied only to central counties of metropolitan areas (decision 71); rural counties keep their tier high.
+    transferability: Applied only to central counties of metropolitan areas; rural counties keep their tier high.
     levels: {low: "5.8 per 1,000", mid: "5.8 per 1,000", high: "5.8 per 1,000"}
 
   - id: adu_overlay_maine
@@ -1229,7 +1229,7 @@ parameters:
 
   - id: mm_source_city_value
     label: Median home value in the missing-middle source city (Portland, OR)
-    description: Denominator of the market adjustment for missing middle (decision 34).
+    description: Denominator of the market adjustment for missing middle.
     unit: dollars (ACS median value of owner-occupied homes)
     low: 581500
     mid: 581500
@@ -1253,7 +1253,7 @@ parameters:
 
   - id: tod_source_city_value
     label: Median home value in the TOD source city (Los Angeles)
-    description: Denominator of the market adjustment for transit-oriented density (decision 34).
+    description: Denominator of the market adjustment for transit-oriented density.
     unit: dollars (ACS median value of owner-occupied homes)
     low: 921200
     mid: 921200
@@ -1503,7 +1503,7 @@ parameters:
       structures average $52,000 per space ($29,000 in Phoenix and Washington, D.C., to $99,000 in
       Portland); underground parking averages $73,000; both exclude land.
     rationale: Minimums bind mainly where parking is built in structures, so the spaces left unbuilt are mostly structured.
-    transferability: 17 large cities; surface lots cost far less (decision 71 drops the surface tier).
+    transferability: 17 large cities; surface lots cost far less, and the surface-parking tier is not modeled.
     levels: {low: "$29,000", mid: "$52,000", high: "$73,000"}
     ported_from: adam-v2.0
 
@@ -1532,7 +1532,7 @@ parameters:
       (low 0); high 1.0 treats every county like the cities measured; mid 0.5 halves the response
       outside central metropolitan counties.
     rationale: Parking minimums bind where land is dear; elsewhere builders supply the parking anyway.
-    transferability: Nine US cities; the county split is a proxy for density (decision 57's rule).
+    transferability: Nine US cities; the county split (central metropolitan counties against the rest) is a proxy for density.
     levels: {low: "0 (no response)", mid: "50%", high: "100% (same as central)"}
 
   - id: actual_fee_per_unit

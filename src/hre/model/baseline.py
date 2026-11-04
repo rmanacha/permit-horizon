@@ -187,7 +187,7 @@ def baseline(state: StateInputs, params: Params) -> dict[str, Any]:
             "coverage_realtime": realtime,
             "reading_history": band_period_reading(by_period) + " " + band_realtime_reading(realtime),
             "source": "docs/evidence/baseline_backtest.md",
-            "alternative": "see alternative_band (Adam's 20-year swing rule), shown separately",
+            "alternative": "see the 20-year swing range (Adam Ruege's rule), shown separately",
         },
         "alternative_band": alternative,
         "method": (f"Mean of {win_years[0]}-{win_years[-1]} Census BPS units authorised "

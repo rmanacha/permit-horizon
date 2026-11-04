@@ -77,3 +77,33 @@ def test_bundle_was_built_from_the_current_engine(meta):
             f"web/public/results/ was built at {sha[:7]}, and these files changed since: "
             f"{', '.join(changed[:8])}{' ...' if len(changed) > 8 else ''}. Commit the code, run "
             "'make results-all export' from the clean checkout, and commit the bundle on its own.")
+
+
+def _sentences(obj):
+    if isinstance(obj, dict):
+        for v in obj.values():
+            yield from _sentences(v)
+    elif isinstance(obj, list):
+        for v in obj:
+            yield from _sentences(v)
+    elif isinstance(obj, str) and obj.count(" ") >= 3:
+        yield obj
+
+
+def test_text_the_website_shows_has_no_internal_references():
+    """Sentences in the bundle reach legislators verbatim: no decision numbers, phase names or ids."""
+    import re
+
+    bad = re.compile(r"\bdecisions? \d|\bPhase \d|\b(net_permits|stock_change|cost_response_proxy|completed_homes|"
+                     r"alternative_band|newly_affected_share)\b")
+    files = sorted(BUNDLE.glob("[A-Z][A-Z].json")) + [BUNDLE / "registers.json"]
+    hits = []
+    for f in files:
+        data = json.loads(f.read_text(encoding="utf-8"))
+        if f.name == "registers.json":     # current-law notes are kept for reviewers and never shown
+            for law in data["current_law"].values():
+                for sc in law["scenarios"].values():
+                    sc.pop("notes", None)
+            data.pop("validation_ledger", None)   # checked by tests/test_ledger.py
+        hits += [f"{f.name}: {m.group(0)!r} in {s[:90]!r}" for s in _sentences(data) if (m := bad.search(s))]
+    assert not hits, hits[:10]

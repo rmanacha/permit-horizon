@@ -25,6 +25,7 @@ from typing import Any
 
 import numpy as np
 
+from hre.model.drivers import OUTCOME_WORDS
 from hre.model.params import Params
 
 LEVEL_KEYS = ("low", "mid", "high")
@@ -79,7 +80,8 @@ def _assumptions(case: dict[str, Any], share: float, delay: int, strength_note: 
         s.append(f"The user assumes {share:.0%} of the measured homes or lots are newly affected.")
         s.append(f"No activity for {delay} year(s), then a constant rate from the source evidence.")
     s.append("The source rate applies to the selected group without reducing construction elsewhere.")
-    s.append(f"Outcome kept in the source's unit ({outcome}); a permit is not assumed to become a home.")
+    s.append(f"Outcome kept in the source's unit ({OUTCOME_WORDS.get(outcome, outcome)}); a permit is not "
+             "assumed to become a home.")
     return s
 
 

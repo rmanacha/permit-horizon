@@ -52,6 +52,6 @@ def pep_cross_check(state: StateInputs) -> dict[str, Any]:
                    "change_share": (tot_end - tot_base) / tot_base if tot_base else None}
                   if available else None),
         "caveat": CAVEAT,
-        "source": "Census Population Estimates, CO-EST2025-HU.xlsx (Vintage 2025); decision 56",
+        "source": "Census Population Estimates, CO-EST2025-HU.xlsx (Vintage 2025)",   # decision 56
         "notes": notes,
     }
