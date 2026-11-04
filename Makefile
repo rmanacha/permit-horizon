@@ -8,7 +8,7 @@
 # Requires: uv (https://docs.astral.sh/uv/). uv downloads the pinned Python
 # itself (.python-version) and never touches the system Python.
 
-.PHONY: setup test run lint demo data validate-aclf hcd results backtest adu-tiers nrc register-md results-all export web web-dev test-web law-check ledger docs pages sbom
+.PHONY: setup test run lint demo data validate-aclf hcd results backtest adu-tiers nrc register-md results-all export web web-dev test-web law-check ledger docs pages sbom check
 
 STATE ?= NH
 PORT ?= 8080
@@ -69,6 +69,9 @@ register-md: ## The assumption register as Markdown -> docs/methods/register.md
 
 docs:    ## Rewrite every generated table in the docs from its source (register, current law, ledger, bundle)
 	uv run python -m hre.docs
+
+check:   ## The submission checklist item by item (STRICT=1 for the submission run: pending items fail)
+	uv run python scripts/check_submission.py $(if $(STRICT),--strict,)
 
 sbom:    ## Save GitHub's SBOM (the "Export SBOM" document) -> docs/sbom/sbom.spdx.json (network; after CI's dependency-graph job)
 	uv run python scripts/fetch_sbom.py

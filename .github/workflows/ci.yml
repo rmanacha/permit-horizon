@@ -53,6 +53,12 @@ jobs:
       - name: Offline demo build
         run: make demo
 
+      # The submission checklist without the test suites (run above) and without network calls:
+      # documents, generated tables, page counts, bundle labels, SBOM. Items that wait on the
+      # repository owner print PENDING and do not fail here.
+      - name: Submission checklist
+        run: uv run python scripts/check_submission.py --skip-tests --offline
+
       # Web front-end (Phase 4): the locked npm packages, a type-checked build of web/dist, and
       # the web tests. The results bundle in web/public/results/ is committed (decision 74) and
       # only copied into the build; nothing here regenerates it.
