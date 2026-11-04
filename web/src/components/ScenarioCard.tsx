@@ -3,7 +3,7 @@ import { useView } from '../app/context.tsx';
 import { fmtCount, fmtShare } from '../lib/format.ts';
 import { SCENARIO_TERM, SHORT } from '../lib/names.ts';
 import { Card } from './ds/Card.tsx';
-import type { ScenarioView } from '../lib/viewmodel.ts';
+import { lawLead, type ScenarioView } from '../lib/viewmodel.ts';
 import { AdjustedResult } from './AdjustedResult.tsx';
 import { ReviewBadge, StatusBadge } from './Badge.tsx';
 import { Num, RangeText } from './Num.tsx';
@@ -82,7 +82,8 @@ export function ScenarioCard({ v, state, stateName }: { v: ScenarioView; state: 
         <strong>
           <Term term="current-law">Current law</Term>:
         </strong>{' '}
-        {v.lawSource === 'default' ? v.lawNote : `A statewide law is on file. ${v.lawNote}`}{' '}
+        {lawLead(v.lawSource, v.lawStrength)}
+        {v.lawNote}{' '}
         {v.humanReview && <ReviewBadge text={v.humanReview} />}
       </p>
       {v.mover && !(v.zeroNote && v.increment.high === 0) && (

@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { rankIncrements, registerLookup, scenarioView } from './viewmodel.ts';
+import { lawLead, rankIncrements, registerLookup, scenarioView } from './viewmodel.ts';
 import type { Registers, Results } from '../types/results.ts';
 
 const DIR = fileURLToPath(new URL('../../public/results/', import.meta.url));
@@ -17,6 +17,15 @@ test('register default: increment, total and homes come straight from the result
   assert.equal(v.status, 'register_default');
   assert.equal(v.share, 0.25);
   assert.equal(v.humanReview, 'human review pending');
+});
+
+test('the current-law lead-in says whether any of the reform is in state law', () => {
+  const AZ = JSON.parse(readFileSync(`${DIR}AZ.json`, 'utf8')) as Results;
+  const adu = scenarioView(AZ, 'adu', REG, {}, { kind: 'register_default' });
+  const tod = scenarioView(AZ, 'tod', REG, {}, { kind: 'register_default' });
+  assert.equal(lawLead(adu.lawSource, adu.lawStrength), 'A statewide law is on file. ');
+  assert.equal(lawLead(tod.lawSource, tod.lawStrength), 'State law checked. ');
+  assert.equal(lawLead('default', 0), '');
 });
 
 test('a user case reads that case from the file', () => {

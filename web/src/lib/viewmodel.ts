@@ -26,12 +26,20 @@ export interface ScenarioView {
   lawNote: string;
   humanReview: string | null;
   lawSource: string;
+  /** Share of the benchmark already in state law (0 when nothing is, or no file). */
+  lawStrength: number;
   zeroNote: string | null;
   mover: TornadoBar | null;
 }
 
 function scale(x: LMH, f: number): LMH {
   return { low: x.low * f, mid: x.mid * f, high: x.high * f };
+}
+
+/** The card's lead-in before the law note: nothing for the default, and for a file, whether any of the reform is in law. */
+export function lawLead(source: string, strength: number): string {
+  if (source === 'default') return '';
+  return strength > 0 ? 'A statewide law is on file. ' : 'State law checked. ';
 }
 
 export function humanReviewText(h: unknown): string | null {
@@ -83,6 +91,7 @@ export function scenarioView(
     lawNote: s.increment.current_law.note,
     humanReview: humanReviewText(s.increment.current_law.human_review),
     lawSource: s.increment.current_law.source,
+    lawStrength: s.increment.current_law.current_strength ?? 0,
     zeroNote: zero,
     mover: s.tornado[0] ?? null,
   };
