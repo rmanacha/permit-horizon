@@ -1,0 +1,177 @@
+# Colorado current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: CO
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: C.R.S. title 29, article 35 (accessory dwelling units; the requirements are at 29-35-403 as codified),
+        added by H.B. 24-1152 (2024, Session Laws chapter 167), which numbers the sections 29-35-101 to 29-35-105
+      summary: Cities and towns of 1,000 people or more inside a metropolitan planning area, and the part of a county
+        inside a census place of 40,000 or more in such an area, must allow one ADU, attached, detached or inside
+        the house, wherever a detached single-family home is allowed, approved by staff without a public hearing
+        and with no new parking in most cases.
+      quote: ON OR AFTER JUNE 30, 2025, A SUBJECT JURISDICTION SHALL ALLOW, SUBJECT TO AN ADMINISTRATIVE APPROVAL
+        PROCESS, ONE ACCESSORY DWELLING UNIT AS AN ACCESSORY USE
+      url: https://leg.colorado.gov/sites/default/files/2024a_1152_signed.pdf
+      accessed: '2026-11-03'
+      in_effect: Act effective May 13, 2024; covered cities, towns and county areas must comply from June 30, 2025.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Covered cities, towns and county areas must allow one ADU as an accessory use to a detached
+        single-family home anywhere such homes are allowed, approved by staff on objective standards without a public
+        hearing.
+      status: supported_with_limits
+      sources:
+      - title: Colorado H.B. 24-1152, signed act
+        url: https://leg.colorado.gov/sites/default/files/2024a_1152_signed.pdf
+        locator: section 29-35-103 (1) of the act, page 11
+        quote: SHALL ALLOW, SUBJECT TO AN ADMINISTRATIVE APPROVAL PROCESS, ONE ACCESSORY DWELLING UNIT AS AN ACCESSORY
+          USE
+        accessed: '2026-11-03'
+      - title: Colorado H.B. 24-1152, signed act
+        url: https://leg.colorado.gov/sites/default/files/2024a_1152_signed.pdf
+        locator: section 29-35-102 (21)(a), page 10
+        quote: A MUNICIPALITY THAT BOTH HAS A POPULATION OF ONE THOUSAND OR MORE, AS REPORTED BY THE STATE DEMOGRAPHY
+          OFFICE
+        accessed: '2026-11-03'
+      - title: Colorado H.B. 24-1152, signed act
+        url: https://leg.colorado.gov/sites/default/files/2024a_1152_signed.pdf
+        locator: section 29-35-102 (21)(b), page 11
+        quote: THE PORTION OF A COUNTY THAT IS BOTH WITHIN A CENSUS DESIGNATED PLACE WITH A POPULATION OF FORTY
+          THOUSAND OR MORE, AS REPORTED IN THE MOST RECENT DECENNIAL CENSUS, AND WITHIN A METROPOLITAN PLANNING
+          ORGANIZATION
+        accessed: '2026-11-03'
+      - title: Colorado H.B. 24-1152, signed act
+        url: https://leg.colorado.gov/sites/default/files/2024a_1152_signed.pdf
+        locator: section 29-35-103 (4), page 14
+        quote: THIS SECTION ONLY APPLIES TO A PARCEL IN A SUBJECT JURISDICTION THAT IS NOT AN EXEMPT PARCEL.
+        accessed: '2026-11-03'
+      limitations:
+      - Only cities and towns of 1,000 people or more inside one of the state's five metropolitan planning areas
+        (Denver region, Colorado Springs, North Front Range, Pueblo and Grand Valley) are covered, plus the unincorporated
+        part of a census place of 40,000 or more in those areas (Highlands Ranch). Smaller towns, towns outside
+        those areas and other unincorporated county land are not.
+      - Parcels without public water and sewer (or with a well that cannot serve another unit), historic properties
+        outside a historic district, and parcels in a floodway or 100-year floodplain are exempt.
+      - A town may require the owner to show they live on the parcel when applying, except when the ADU is built
+        together with a new house.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The required ADU is defined as an internal, attached or detached unit, and towns may not
+        hold a detached ADU to a rear setback larger than for other accessory buildings or five feet, whichever
+        is greater.
+      status: supported_with_limits
+      sources:
+      - title: Colorado H.B. 24-1152, signed act
+        url: https://leg.colorado.gov/sites/default/files/2024a_1152_signed.pdf
+        locator: section 29-35-102 (2), page 6
+        quote: MEANS AN INTERNAL, ATTACHED, OR DETACHED DWELLING UNIT THAT
+        accessed: '2026-11-03'
+      - title: Colorado H.B. 24-1152, signed act
+        url: https://leg.colorado.gov/sites/default/files/2024a_1152_signed.pdf
+        locator: section 29-35-102 (18)(d), page 10
+        quote: REQUIRES A REAR SETBACK FOR AN ACCESSORY DWELLING UNIT THAT IS LARGER THAN THE GREATER OF
+        accessed: '2026-11-03'
+      limitations:
+      - The law reaches the forms through its definition of the unit that must be allowed; it does not list each
+        form separately.
+      - Covered places only.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: Towns may not use a standard that fails to allow ADUs of 500 to 750 square feet, so a 600
+        square foot unit must be allowed. Towns may still hold the ADU to no larger than the house.
+      status: supported_with_limits
+      sources:
+      - title: Colorado H.B. 24-1152, signed act
+        url: https://leg.colorado.gov/sites/default/files/2024a_1152_signed.pdf
+        locator: section 29-35-102 (18)(b), page 10
+        quote: BETWEEN FIVE HUNDRED AND SEVEN HUNDRED FIFTY SQUARE FEET
+        accessed: '2026-11-03'
+      - title: Colorado H.B. 24-1152, signed act
+        url: https://leg.colorado.gov/sites/default/files/2024a_1152_signed.pdf
+        locator: section 29-35-103 (2)(c), page 12
+        quote: APPLY A RESTRICTIVE DESIGN OR DIMENSION STANDARD TO AN ACCESSORY DWELLING UNIT.
+        accessed: '2026-11-03'
+      - title: Colorado H.B. 24-1152, signed act
+        url: https://leg.colorado.gov/sites/default/files/2024a_1152_signed.pdf
+        locator: section 29-35-103 (3)(c), page 13
+        quote: SIZE OF AN ACCESSORY DWELLING UNIT SO THAT IT IS NO LARGER THAN THE SIZE OF THE PRINCIPAL DWELLING
+          UNIT
+        accessed: '2026-11-03'
+      limitations:
+      - On lots with a house under 600 square feet, the ADU may be held to the house's size.
+      - Covered places only.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: Towns may not require a new off-street parking space for an ADU. They may ask that an existing
+        driveway or garage space be set aside for it, and may require one new space only on a lot with no off-street
+        parking at all, in a zone that required parking for the house as of 2024, on a block where street parking
+        is banned.
+      status: supported_with_limits
+      sources:
+      - title: Colorado H.B. 24-1152, signed act
+        url: https://leg.colorado.gov/sites/default/files/2024a_1152_signed.pdf
+        locator: section 29-35-103 (2)(a), page 11
+        quote: REQUIRE THE CONSTRUCTION OF A NEW OFF-STREET PARKING SPACE IN CONNECTION WITH THE CONSTRUCTION OR
+          CONVERSION OF AN ACCESSORY DWELLING UNIT
+        accessed: '2026-11-03'
+      - title: Colorado H.B. 24-1152, signed act
+        url: https://leg.colorado.gov/sites/default/files/2024a_1152_signed.pdf
+        locator: section 29-35-103 (3)(b)(I), page 12
+        quote: DOES NOT HAVE AN EXISTING OFF-STREET PARKING SPACE, INCLUDING A DRIVEWAY, GARAGE, OR TANDEM PARKING
+          SPACE
+        accessed: '2026-11-03'
+      limitations:
+      - 'One new space may be required on the few lots that meet all three conditions: no existing off-street space,
+        a zone that required parking for the house as of January 1, 2024, and a block where street parking is banned.'
+      - Covered places only.
+    current_strength: 0.63
+    strength_rationale: 'All four benchmark features are in Colorado law in the places it covers: one ADU per lot
+      approved by staff, attached or detached, of at least 600 square feet, and no new parking except on a few lots
+      with no off-street space where street parking is banned. The law covers cities and towns of 1,000 people or
+      more in the state''s five metropolitan planning areas, plus Highlands Ranch; they hold 63% of the state''s
+      detached homes, so 1 × 0.63 = 0.63 of the benchmark is in law. Homes elsewhere would be newly covered.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Re-verified 2026-11-03 against the signed act PDF (leg.colorado.gov); the bill page (blocked to curl,
+      read by a web fetch) shows Session Laws chapter 167, approved and effective May 13, 2024, and no later amendment;
+      no 2025 or 2026 amending bill found. The act prints new law in capitals, so quotes are in capitals exactly
+      as printed. Codified numbering (part 4: 29-35-402 definitions, 29-35-403 requirements) comes from the Department
+      of Local Affairs page and FindLaw, not from official codified text (LexisNexis only). Changes from Adam''s
+      record: county coverage is census places of 40,000 or more (Adam right; the brief''s pointer of 1,000 was
+      for municipalities); parking changed from differs to supported with limits because the exception requires
+      all three narrow conditions and designating an existing space adds no parking; reviewer may prefer differs.
+      current_strength 1.0 is the feature share; coverage pending.'
+    coverage:
+      share: 0.6255
+      rule:
+        min_population: 1000
+        counties:
+        - '001'
+        - '005'
+        - '013'
+        - '014'
+        - '031'
+        - '035'
+        - '041'
+        - 059
+        - 069
+        - '077'
+        - '101'
+        - '119'
+        - '123'
+        unincorporated: cdp
+        cdp_min_population: 40000
+      basis: 'ACS 2020-2024: 965,170 detached homes in 152 covered places + 29,622 outside incorporated places =
+        62.5% of 1,590,419. The 13 counties with land in a metropolitan planning area; this slightly over-counts
+        towns in those counties that lie outside the planning boundary (for example Estes Park). The law uses the
+        State Demography Office''s population estimates; the ACS is used here. Highlands Ranch is the only census-designated
+        place of 40,000 or more.'

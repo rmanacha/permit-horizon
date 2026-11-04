@@ -1,0 +1,101 @@
+# Indiana current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: IN
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: IC 36-7-4.3-3 (public hearing to review local zoning for more housing) and IC 36-7-1-1.5 (definition
+        of accessory dwelling unit), added by House Enrolled Act 1001 (2026), Public Law 73-2026; no statewide requirement
+        to allow ADUs
+      summary: Indiana requires every county, city and town to hold a public hearing by January 1, 2027 to review
+        its zoning with the goal of more housing, and lists ADUs among the factors to consider. It does not require
+        any place to allow ADUs.
+      quote: Not later than January 1, 2027, a unit shall conduct a public hearing to review the UDO and any zoning
+        regulations and land development rules, with the goal of increasing housing development by using the following
+        factors
+      url: https://iga.in.gov/laws/2026/ic/titles/36#36-7-4.3-3
+      accessed: '2026-11-03'
+      in_effect: Hearing and report due January 1, 2027 (act signed March 4, 2026). The law requires a review, not
+        ADUs.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No statute requires ADUs to be allowed. Each county, city and town must review its zoning
+        in a public hearing, with ADUs one of nine listed factors, and report the results; changing the rules is
+        left to each place.
+      status: differs
+      sources:
+      - title: Indiana Code 36-7-4.3-3 (2026)
+        url: https://iga.in.gov/laws/2026/ic/titles/36#36-7-4.3-3
+        locator: section 3, opening and factor (2)
+        quote: Constructing other housing types including accessory dwelling units and manufactured and modular
+          housing
+        accessed: '2026-11-03'
+      - title: Indiana Code 36-7-4.3-3 (2026)
+        url: https://iga.in.gov/laws/2026/ic/titles/36#36-7-4.3-3
+        locator: section 3, opening
+        quote: Not later than January 1, 2027, a unit shall conduct a public hearing to review the UDO and any zoning
+          regulations and land development rules, with the goal of increasing housing development by using the following
+          factors
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs, including any adopted after the 2026 hearings, are not counted.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The definition covers a unit inside the house or on the same lot, but no form must be allowed;
+        it is left to local zoning.
+      status: differs
+      sources:
+      - title: Indiana Code 36-7-1-1.5
+        url: https://iga.in.gov/laws/2026/ic/titles/36#36-7-1-1.5
+        locator: IC 36-7-1-1.5
+        quote: self-contained living unit internal to or on the same lot or parcel as a single family dwelling
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: The definition describes an ADU as no larger than 75% of the house or 1,000 square feet,
+        but no size must be allowed; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Indiana Code 36-7-1-1.5
+        url: https://iga.in.gov/laws/2026/ic/titles/36#36-7-1-1.5
+        locator: IC 36-7-1-1.5(1)
+        quote: seventy-five percent (75%) of the interior habitable area
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: Waiving off-street parking rules is another factor the hearing reviews, but no parking
+        limit is required.
+      status: differs
+      sources:
+      - title: Indiana Code 36-7-4.3-3 (2026)
+        url: https://iga.in.gov/laws/2026/ic/titles/36#36-7-4.3-3
+        locator: factor (5)(E)
+        quote: Waiving or eliminating regulations such as requirements for
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: Indiana requires its counties, cities and towns to review their zoning in a public hearing,
+      with ADUs among the options to consider, but does not require any of them to allow ADUs. So none of the benchmark
+      is in law and all of it would be newly affected. Places that allow ADUs on their own, including after the
+      review, are not counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Hearing-only law; zero by the gate. Changed from Adam: per lot unknown to differs (the enacted text
+      is now read: IC 36-7-4.3-3 requires a hearing, not ADUs); forms, size, parking unknown to differs. ''unit''
+      = county, city, or town (IC 36-7-4.3-1). IC 36-7-4.3-3 also shows ''Amended by P.L.152-2026, SEC.498'' (technical
+      corrections). Quote check caveat: iga.in.gov serves only a JavaScript shell to scripts; the checker needs
+      a browser, or the underlying file https://iga.in.gov/ic/2026/Title_36.html fetched from within the site. Adam''s
+      ''effective July 1, 2026'' for the act was not verified (enrolled PDF not read).'

@@ -1,0 +1,189 @@
+# Washington current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: WA
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: RCW 36.70A.680 and 36.70A.681, enacted by H.B. 1337 (2023, chapter 334); RCW 36.70A.680 amended by S.S.B.
+        5558 (2025, chapter 148)
+      summary: Cities and counties that fully plan under the Growth Management Act must allow two ADUs, attached
+        or detached, on every lot in urban growth areas where single-family homes are allowed, may not cap their
+        size below 1,000 square feet, and may not require owner occupancy.
+      quote: The city or county must allow at least two accessory dwelling units on all lots that are located in
+        all zoning districts within an urban growth area that allow for single-family homes
+      url: https://app.leg.wa.gov/RCW/default.aspx?cite=36.70A.681
+      accessed: '2026-11-03'
+      in_effect: Local rules take effect with each jurisdiction's periodic plan update, and where a city or county
+        has not adopted them the state rules apply directly. In force since 2025 in King, Kitsap, Pierce and Snohomish
+        counties and their cities, and since December 31, 2025 in Clallam, Clark, Island, Jefferson, Lewis, Mason,
+        San Juan, Skagit, Thurston and Whatcom. From December 31, 2026 in Benton, Chelan, Douglas, Franklin, Kittitas,
+        Spokane, Walla Walla and Yakima, and from June 30, 2027 in Columbia, Garfield, Grant, Pacific, Pend Oreille
+        and Stevens. Small, slow-growing counties and cities may finish their plan updates up to 24 months later.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Covered cities and counties must allow at least two ADUs on every lot in an urban growth
+        area zoning district that allows single-family homes, and must allow an ADU on any lot that meets the minimum
+        lot size for the house.
+      status: supported_with_limits
+      sources:
+      - title: Revised Code of Washington 36.70A.681
+        url: https://app.leg.wa.gov/RCW/default.aspx?cite=36.70A.681
+        locator: subsection (1)(c)
+        quote: The city or county must allow at least two accessory dwelling units on all lots that are located
+          in all zoning districts within an urban growth area that allow for single-family homes
+        accessed: '2026-11-03'
+      - title: Revised Code of Washington 36.70A.680
+        url: https://app.leg.wa.gov/RCW/default.aspx?cite=36.70A.680
+        locator: subsections (1)(a) and (2)
+        quote: must only apply in the portions of towns, cities, and counties that are within urban growth areas
+          designated under this chapter
+        accessed: '2026-11-03'
+      - title: Revised Code of Washington 36.70A.130
+        url: https://app.leg.wa.gov/RCW/default.aspx?cite=36.70A.130
+        locator: subsection (5)(c) and (d)
+        quote: On or before December 31, 2026, with the following review and, if needed, revision, on or before
+          June 30, 2036, and every 10 years thereafter, for Benton, Chelan, Cowlitz, Douglas, Franklin, Kittitas,
+          Skamania, Spokane, Walla Walla, and Yakima counties and the cities within those counties
+        accessed: '2026-11-03'
+      limitations:
+      - Only the 28 counties that fully plan under the Growth Management Act and the cities in them are bound, and
+        only inside urban growth areas; rural land and the 11 partially planning counties are not covered.
+      - In eight counties the rules take effect on December 31, 2026, and in six more on June 30, 2027.
+      - Lots in critical areas or their buffers, lots not served by public sewers, and lots in some impaired drinking
+        water watersheds can be excluded.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: Covered cities and counties must allow attached and detached ADUs in any combination, must
+        permit ADUs in structures detached from the house, and must allow conversions of existing structures such
+        as garages.
+      status: supported_with_limits
+      sources:
+      - title: Revised Code of Washington 36.70A.681
+        url: https://app.leg.wa.gov/RCW/default.aspx?cite=36.70A.681
+        locator: subsection (1)(c)(i)
+        quote: One attached accessory dwelling unit and one detached accessory dwelling unit
+        accessed: '2026-11-03'
+      - title: Revised Code of Washington 36.70A.681
+        url: https://app.leg.wa.gov/RCW/default.aspx?cite=36.70A.681
+        locator: subsection (1)(d)
+        quote: The city or county must permit accessory dwelling units in structures detached from the principal
+          unit
+        accessed: '2026-11-03'
+      limitations:
+      - Covered places only, as for one ADU per lot.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: Covered cities and counties may not cap an ADU's floor area below 1,000 square feet.
+      status: supported_with_limits
+      sources:
+      - title: Revised Code of Washington 36.70A.681
+        url: https://app.leg.wa.gov/RCW/default.aspx?cite=36.70A.681
+        locator: subsection (1)(f)
+        quote: may not establish a maximum gross floor area requirement for accessory dwelling units that is less
+          than 1,000 square feet
+        accessed: '2026-11-03'
+      limitations:
+      - Covered places only.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No parking may be required within half a mile walking distance of a major transit stop.
+        Elsewhere a city or county may require one off-street space per ADU on lots under 6,000 square feet and
+        two on larger lots.
+      status: differs
+      sources:
+      - title: Revised Code of Washington 36.70A.681
+        url: https://app.leg.wa.gov/RCW/default.aspx?cite=36.70A.681
+        locator: subsection (2)(a)(i)
+        quote: Require off-street parking as a condition of permitting development of accessory dwelling units within
+          one-half mile walking distance of a major transit stop
+        accessed: '2026-11-03'
+      - title: Revised Code of Washington 36.70A.681
+        url: https://app.leg.wa.gov/RCW/default.aspx?cite=36.70A.681
+        locator: subsection (2)(a)(ii) and (iii)
+        quote: Require more than one off-street parking space per unit as a condition of permitting development
+          of accessory dwelling units on lots smaller than 6,000 square feet
+        accessed: '2026-11-03'
+      limitations:
+      - A 2025 law (chapter 204) bars parking minimums for homes under 1,200 square feet in cities and counties
+        of more than 30,000 people from 2027 or 2028. It does not name ADUs and is not counted here.
+    current_strength: 0.54
+    strength_rationale: 'Three of the four benchmark features are in Washington law in the places it covers: one
+      ADU per lot (two are required), attached or detached, of at least 1,000 square feet. The fourth, no added
+      parking, is not: away from major transit stops a city or county may require one or two spaces. The law covers
+      urban growth areas in the 28 counties that fully plan under the Growth Management Act, 14 of them only from
+      late 2026 or mid 2027; weighted by those dates, they hold 72% of the state''s detached homes, so 3 / 4 × 0.72
+      = 0.54 of the benchmark is in law.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'All four statuses unchanged from Adam''s record. No in_effect_from set: most covered homes are in counties
+      already bound before 2026; the 2026 and 2027 county groups should be handled in the coverage share (proposal
+      in coverage_rule_why). Preliminary probe with the working-tree coverage code (2026-11-03): proposal 0.7499
+      of the state''s detached homes, lower bound 0.5635; by update group with the CDP proxy, King-Kitsap-Pierce-Snohomish
+      0.4675, the 2025 group 0.1387, the 2026 group 0.1288, the 2027 group 0.0150, so horizon weighting would give
+      about 0.72. Parking: 2025 c 204 (E.S.S.B. 5184) sections 2 to 4 bar minimum parking for ''Residences under
+      1,200 square feet'' in cities and counties over 30,000 (by January 27, 2027 for 50,000 or more, July 27, 2028
+      for 30,000 to 50,000); whether that reaches ADUs is an interpretation question for the parking scenario, not
+      counted here. Rural detached ADUs outside urban growth areas (2026 c 231) are a county option and not counted.'
+    coverage:
+      share: 0.7198
+      rule:
+        counties:
+        - '005'
+        - '007'
+        - 009
+        - '011'
+        - '013'
+        - '017'
+        - '021'
+        - '023'
+        - '025'
+        - 029
+        - '031'
+        - '033'
+        - '035'
+        - '037'
+        - '041'
+        - '045'
+        - 049
+        - '051'
+        - '053'
+        - '055'
+        - '057'
+        - '061'
+        - '063'
+        - '065'
+        - '067'
+        - '071'
+        - '073'
+        - '077'
+        places: all
+        unincorporated: cdp
+        county_in_effect_from:
+          '005': '2026-12-31'
+          '007': '2026-12-31'
+          '017': '2026-12-31'
+          '021': '2026-12-31'
+          '037': '2026-12-31'
+          '063': '2026-12-31'
+          '071': '2026-12-31'
+          '077': '2026-12-31'
+          '013': '2027-06-30'
+          '023': '2027-06-30'
+          '025': '2027-06-30'
+          049: '2027-06-30'
+          '051': '2027-06-30'
+          '065': '2027-06-30'
+      basis: 'ACS 2020-2024: 1,098,783 detached homes in 285 covered places + 374,841 outside incorporated places
+        = 72.0% of 2,047,311. The 28 counties that fully plan under the Growth Management Act (Department of Commerce
+        list), with census-designated places as a stand-in for unincorporated urban growth areas (cities alone give
+        a lower bound). Benton, Chelan, Douglas, Franklin, Kittitas, Spokane, Walla Walla and Yakima are reached
+        from December 31, 2026, and Columbia, Garfield, Grant, Pacific, Pend Oreille and Stevens from June 30, 2027;
+        their homes count for the share of 2026-2030 the law is in force there.'

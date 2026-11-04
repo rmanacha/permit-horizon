@@ -1,0 +1,104 @@
+# Maryland current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: MD
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: Maryland Land Use Article 4-501 to 4-504, added by H.B. 1466 (2025, chapter 197) and applied to charter
+        counties by Land Use 1-401(b) and to Baltimore City by Land Use 10-103(b)
+      summary: Every Maryland county and municipality had to adopt, by October 1, 2026, a local law authorizing
+        ADUs on land with a single-family house. The state law leaves where and how they are allowed to local zoning,
+        caps an ADU at 75% of the house's size, and lets local governments require parking after a parking study.
+      quote: On or before October 1, 2026, each legislative body shall adopt a local law authorizing the development
+        of accessory dwelling units in accordance with this section.
+      url: https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=glu&section=4-504&enactments=false
+      accessed: '2026-11-03'
+      in_effect: Act effective October 1, 2025; local laws due October 1, 2026.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Each county and municipality must adopt a local law authorizing ADUs by October 1, 2026,
+        but the state law does not say on which lots, does not require approval by right, and leaves local zoning
+        powers in place. It does not guarantee an ADU on a lot with a single-family home.
+      status: differs
+      sources:
+      - title: Maryland Land Use Article 4-504
+        url: https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=glu&section=4-504&enactments=false
+        locator: subsection (a)(1)
+        quote: On or before October 1, 2026, each legislative body shall adopt a local law authorizing the development
+          of accessory dwelling units in accordance with this section.
+        accessed: '2026-11-03'
+      - title: Maryland Land Use Article 4-503
+        url: https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=glu&section=4-503&enactments=false
+        locator: subsection (b)(1)
+        quote: this subtitle does not alter or abrogate any zoning power or related authority granted to a local
+          jurisdiction under this title.
+        accessed: '2026-11-03'
+      limitations:
+      - Local laws adopted under the 2026 deadline are not counted; they have not been surveyed.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The state definition of an ADU includes a separate building or an addition to the house,
+        but the law does not require local laws to allow both.
+      status: differs
+      sources:
+      - title: Maryland Land Use Article 4-501
+        url: https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=glu&section=4-501&enactments=false
+        locator: subsection (b)(2)
+        quote: separate from the primary single–family detached dwelling unit; or
+        accessed: '2026-11-03'
+      limitations:
+      - Local laws adopted under the 2026 deadline are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: An ADU may be no larger than 75% of the house. The law protects no minimum size.
+      status: differs
+      sources:
+      - title: Maryland Land Use Article 4-501
+        url: https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=glu&section=4-501&enactments=false
+        locator: subsection (b)(1)(ii)
+        quote: not greater than 75% of the size of and subordinate in use to the primary single–family detached
+          dwelling unit.
+        accessed: '2026-11-03'
+      limitations: []
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: Local laws may add off-street parking requirements for ADUs after a parking study, with
+        a waiver process.
+      status: differs
+      sources:
+      - title: Maryland Land Use Article 4-504
+        url: https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=glu&section=4-504&enactments=false
+        locator: subsection (e)(1)(i)
+        quote: 'A local law adopted under this section may establish additional off–street parking requirements
+          that consider:'
+        accessed: '2026-11-03'
+      limitations: []
+    current_strength: 0.0
+    strength_rationale: Maryland requires every county and municipality to adopt a local law authorizing ADUs by
+      October 1, 2026, but the state law does not require them on every lot with a single-family home or by right,
+      and leaves their form, size and parking to local rules. So none of the benchmark is guaranteed by state law
+      and all of it would be newly affected. Local laws adopted to meet the deadline are not counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Re-checked 2026-11-03 on mgaleg.maryland.gov (Land Use 4-501 to 4-504, 1-401, 10-103; HB 1466 bill page:
+      Approved by the Governor, Chapter 197, effective October 1, 2025; chapter PDF CH_197_hb1466t.pdf; DLS fiscal
+      and policy note, Third Reader - Revised). Codified sections stop at 4-504. MAJOR CHANGE from Adam''s record
+      (0.50 implied: per-lot and forms supported): per-lot and forms now differs, strength 0. Reason: the enacted
+      text requires only ''a local law authorizing the development of ADUs'', keeps local zoning power (4-503(b)(1)),
+      and sets no lots, approval process or forms. The chaptered PDF shows that passage struck the bill''s ''shall
+      apply to all land in the local jurisdiction zoned for single-family residential use'', ministerial approval
+      within 90 days (4-505), the transit-area no-parking rule and the impact-fee limits; the DLS note on the final
+      bill lists only health and safety standards, density exclusion, setbacks and optional parking. Applies to
+      every county (charter counties via 1-401(b)(19); Montgomery and Prince George''s are charter counties, and
+      1-401(c) supersedes Division II), Baltimore City (10-103(b)(18)) and municipalities. 2026 session: HB 1236
+      and HB 1538 (Generational Housing Act) got hearings only; no 2026 change. If the reviewer reads 4-504 as a
+      per-lot mandate, per-lot and forms would be supported from 2026-10-01 and strength 0.43 (2 x 1553/1826 / 4
+      = 0.425).'

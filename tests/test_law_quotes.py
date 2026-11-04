@@ -29,9 +29,15 @@ def test_check_reports_found_missing_and_pdf(tmp_path):
     page = "<html><script>var x=1;</script><p>I. One accessory dwelling&nbsp;unit <b>shall</b> be allowed.</p></html>"
     lq._cache_path("https://example.gov/s1.htm", cache).write_text(page)
     rows = lq.check(law, fetch=False, data_dir=tmp_path / "raw")
-    assert [r["status"] for r in rows] == ["found", "NOT FOUND", "PDF, checked by hand"]
+    assert [r["status"] for r in rows][:2] == ["found", "NOT FOUND"]
+    assert "not cached" in rows[2]["status"]                     # the PDF was never fetched here
     md = lq.render_markdown(rows, "2026-11-03")
     assert "1 of 3 quotes found" in md and "## Not found" in md
+
+
+def test_pdf_margin_line_numbers_are_dropped():
+    assert lq.normalize(lq.LINE_NUMBER.sub("", "12  shall allow one accessory\n13  dwelling unit")) == \
+        "shall allow one accessory dwelling unit"
 
 
 def test_uncached_page_without_fetch_is_reported_not_guessed(tmp_path):

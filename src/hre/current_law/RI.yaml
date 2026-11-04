@@ -1,0 +1,114 @@
+# Rhode Island current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: RI
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: R.I. Gen. Laws 45-24-37(e) and 45-24-73, as amended by H 7062 Sub A and S 2998 Sub A (2024, Public Laws
+        chapters 284 and 285); 45-24-73 first enacted by Public Laws 2022, chapters 437 and 440
+      summary: Every Rhode Island city and town must allow one ADU by right, through a building permit only, inside
+        the footprint of an existing house or accessory building on a residential lot. New detached ADUs and additions
+        must be allowed on lots of 20,000 square feet or more, and on owner-occupied lots for a family member with
+        a disability.
+      quote: Pursuant to § 45-24-37, one accessory dwelling unit (ADU) per lot shall be allowed by right
+      url: https://webserver.rilegislature.gov/Statutes/TITLE45/45-24/45-24-73.htm
+      accessed: '2026-11-03'
+      in_effect: Current rules since June 25, 2024 (no ADU changes in the 2025 or 2026 sessions).
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: On any residential lot, one ADU within the footprint of the existing house, or of an existing
+        attached or detached accessory building, is a permitted use approved through a building permit only. Lots
+        of 20,000 square feet or more, and owner-occupied lots housing a family member with a disability, may add
+        one without that footprint limit.
+      status: supported_with_limits
+      sources:
+      - title: Rhode Island General Laws 45-24-73
+        url: https://webserver.rilegislature.gov/Statutes/TITLE45/45-24/45-24-73.htm
+        locator: subsection (a)
+        quote: Pursuant to § 45-24-37, one accessory dwelling unit (ADU) per lot shall be allowed by right
+        accessed: '2026-11-03'
+      - title: Rhode Island General Laws 45-24-37
+        url: https://webserver.rilegislature.gov/Statutes/TITLE45/45-24/45-24-37.htm
+        locator: subsection (e)
+        quote: shall be permitted through an administrative building permit process only.
+        accessed: '2026-11-03'
+      limitations:
+      - On lots under 20,000 square feet, the ADU must fit within the existing footprint of the house or an existing
+        accessory building.
+      - Dimensional rules no stricter than those for accessory buildings in the zone apply, and ADUs may not be
+        rented to tourists or through short-term rental platforms.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: New detached ADUs and additions to the house are required only on lots of 20,000 square
+        feet or more, or as an accommodation for a family member with a disability. On smaller lots, only conversions
+        within existing buildings, including an existing detached garage, are required.
+      status: differs
+      sources:
+      - title: Rhode Island General Laws 45-24-73
+        url: https://webserver.rilegislature.gov/Statutes/TITLE45/45-24/45-24-73.htm
+        locator: subsection (a)(2)
+        quote: On a lot with a total lot area of twenty thousand square feet (20,000 sq. ft.) or
+        accessed: '2026-11-03'
+      - title: Rhode Island General Laws 45-24-73
+        url: https://webserver.rilegislature.gov/Statutes/TITLE45/45-24/45-24-73.htm
+        locator: subsection (a)(3)
+        quote: or existing accessory attached or detached structure and does not expand the footprint
+        accessed: '2026-11-03'
+      limitations:
+      - The share of single-family lots of 20,000 square feet or more has not been measured.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: A town's maximum must allow a studio or one-bedroom ADU of at least 900 square feet, or
+        60% of the house's floor area if that is less, and a two-bedroom ADU of at least 1,200 square feet, or 60%.
+        That reaches 600 square feet whenever the house has at least 1,000 square feet.
+      status: supported_with_limits
+      sources:
+      - title: Rhode Island General Laws 45-24-73
+        url: https://webserver.rilegislature.gov/Statutes/TITLE45/45-24/45-24-73.htm
+        locator: subsection (b)(1)(i)
+        quote: A studio or one bedroom ADU of at least nine hundred square feet (900 sq. ft), or
+        accessed: '2026-11-03'
+      - title: Rhode Island General Laws 45-24-73
+        url: https://webserver.rilegislature.gov/Statutes/TITLE45/45-24/45-24-73.htm
+        locator: subsection (b)(1)(i)
+        quote: sixty percent (60%) of the floor area of the principal dwelling, whichever is less;
+        accessed: '2026-11-03'
+      limitations:
+      - On lots with a house under 1,000 square feet, the protected size is below 600 square feet.
+      - On lots under 20,000 square feet, the unit must also fit within an existing building's footprint.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: Towns may require up to one off-street parking space for each bedroom of the ADU.
+      status: differs
+      sources:
+      - title: Rhode Island General Laws 45-24-73
+        url: https://webserver.rilegislature.gov/Statutes/TITLE45/45-24/45-24-73.htm
+        locator: subsection (b)(2)(viii)
+        quote: Require more than one off-street parking space per bedroom of the ADU;
+        accessed: '2026-11-03'
+      limitations: []
+    current_strength: 0.5
+    strength_rationale: 'Two of the four benchmark features are in Rhode Island law in every city and town: one
+      ADU per lot by right, and a protected size of at least 600 square feet for houses of 1,000 square feet or
+      more. The other two are not: on lots under 20,000 square feet only conversions within existing buildings are
+      required, not new detached units or additions, and towns may require a parking space per bedroom. So 2 / 4
+      = 0.50 of the benchmark is in law and 0.50 would be newly affected.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Re-checked 2026-11-03 on webserver.rilegislature.gov (45-24-73, 45-24-37 and P.L. 2024 chapters 284
+      and 285). Searched all 427 posted 2026 public laws (law26001 to law26449) for ''accessory dwelling'' and ''45-24-73'':
+      chapters 327 and 328 (SAFE units) and 352 (title 45 reenactment) mention ADUs but do not change 45-24-73 or
+      the ADU definition; H 7779 (2026, local owner-residency and 1,000 sq ft options) passed the House but is not
+      among the public laws. Strength unchanged (0.50) but two statuses changed from Adam''s record: forms moved
+      to differs (new detached units only on lots of 20,000 sq ft or more, following the Utah precedent where detached
+      ADUs only on large lots count as differs); size moved to supported_with_limits under the brief''s size rule
+      (the floor min(900, 60% of the house) reaches 600 at a 1,000 sq ft house). Coverage 1: binds every city and
+      town.'

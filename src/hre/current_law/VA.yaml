@@ -1,0 +1,120 @@
+# Virginia current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: VA
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: Va. Code 15.2-2292.4 (development and use of accessory dwelling units), enacted by S.B. 531 (2026, chapter
+        895)
+      summary: From July 1, 2027, single-family zoning districts in Virginia's counties, cities and towns are deemed
+        to allow an attached or detached ADU as a permitted accessory use, with an ADU permit fee of no more than
+        $500. Localities may still require dedicated parking and may cap the ADU at 500 square feet (350 on the
+        smallest lots). Localities that adopted an ADU ordinance before January 1, 2026 are exempt.
+      quote: Zoning ordinances for single-family residential zoning districts shall be deemed to include accessory
+        dwelling units as a permitted accessory use
+      url: https://law.lis.virginia.gov/vacode/title15.2/chapter22/section15.2-2292.4/
+      accessed: '2026-11-03'
+      in_effect: July 1, 2027 (enacted 2026). Does not apply to localities that adopted an ADU ordinance before
+        January 1, 2026.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: From July 1, 2027, single-family zoning is deemed to include ADUs as a permitted accessory
+        use, and the locality must issue the ADU permit when the listed requirements are met.
+      status: supported_with_limits
+      in_effect_from: '2027-07-01'
+      sources:
+      - title: Code of Virginia 15.2-2292.4
+        url: https://law.lis.virginia.gov/vacode/title15.2/chapter22/section15.2-2292.4/
+        locator: subsection B
+        quote: Zoning ordinances for single-family residential zoning districts shall be deemed to include accessory
+          dwelling units as a permitted accessory use
+        accessed: '2026-11-03'
+      - title: Code of Virginia 15.2-2292.4
+        url: https://law.lis.virginia.gov/vacode/title15.2/chapter22/section15.2-2292.4/
+        locator: subsection I
+        quote: Nothing in this section shall apply to a locality that adopted an ADU ordinance prior to January
+          1, 2026.
+        accessed: '2026-11-03'
+      - title: Code of Virginia 15.2-2292.4
+        url: https://law.lis.virginia.gov/vacode/title15.2/chapter22/section15.2-2292.4/
+        locator: section heading
+        quote: (Effective July 1, 2027) Development and use of accessory dwelling units
+        accessed: '2026-11-03'
+      limitations:
+      - Localities that adopted an ADU ordinance before January 1, 2026 are exempt, whatever that ordinance allows;
+        which localities these are has not been inventoried.
+      - Localities may require the owner to live in the house or the ADU at the time of application, a lease of
+        at least 30 days, and no ADU on a lot that already has more than one home.
+      - Historic district, building code, utility and flood rules still apply, and private covenants are preserved.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The law defines an ADU as an attached or detached dwelling unit on the lot, and localities
+        may not set stricter height, setback or lot coverage rules for it than for a single-family home in the same
+        zone.
+      status: supported_with_limits
+      in_effect_from: '2027-07-01'
+      sources:
+      - title: Code of Virginia 15.2-2292.4
+        url: https://law.lis.virginia.gov/vacode/title15.2/chapter22/section15.2-2292.4/
+        locator: subsection A
+        quote: means an attached or detached dwelling unit on a residential dwelling lot
+        accessed: '2026-11-03'
+      limitations:
+      - Localities may require a detached ADU to be within 500 feet of the house.
+      - Exempt localities (ADU ordinance before 2026) are not covered.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: Localities may limit an ADU's floor area to as little as 500 square feet on lots of 2,500
+        square feet or more, and 350 square feet on smaller lots, so 600 square feet is not protected.
+      status: differs
+      sources:
+      - title: Code of Virginia 15.2-2292.4
+        url: https://law.lis.virginia.gov/vacode/title15.2/chapter22/section15.2-2292.4/
+        locator: subsection D.4
+        quote: Limits on floor area, lot coverage, and impervious area of an ADU of no less than (i) 350 square
+          feet on lots less than 2,500 square feet and (ii) 500 square feet on lots 2,500 square feet or greater
+        accessed: '2026-11-03'
+      limitations: []
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: Localities may require dedicated parking for the ADU, and replacement of any required parking
+        for the house that the ADU removes.
+      status: differs
+      sources:
+      - title: Code of Virginia 15.2-2292.4
+        url: https://law.lis.virginia.gov/vacode/title15.2/chapter22/section15.2-2292.4/
+        locator: subsection D.3
+        quote: Dedicated parking for the ADU
+        accessed: '2026-11-03'
+      limitations: []
+    current_strength: 0.35
+    strength_rationale: 'Two of the four benchmark features are in Virginia law from July 1, 2027: one ADU per lot
+      as a permitted use, attached or detached. The other two are not: localities may cap an ADU at 500 square feet
+      and may require a parking space for it. Because the law takes effect halfway through 2027, it counts for 70%
+      of the 2026-2030 period, so 2 / 4 × 0.70 = 0.35 of the benchmark is in law where it applies. This is an upper
+      bound: a county or city that adopted its own ADU ordinance before 2026 is exempt, and those places have not
+      yet been counted.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Adam marked all four not yet effective; brief''s horizon rule gives per lot and forms supported_with_limits
+      with in_effect_from 2027-07-01 (0.7010 each), size and parking differs: 2 x 0.7010 / 4 = 0.3505, stored 0.35.
+      Coverage pending and hard: subsection I exempts every locality with a pre-2026 ADU ordinance; needs a list.
+      Bill number S.B. 531 confirmed only through the official code page''s history link (lis.virginia.gov/bill-details/20261/SB531/text/CHAP0895);
+      the LIS app and legacylis did not return the chapter text to a script, so the approval date (Adam: April 13,
+      2026) is unverified. Related but not counted: Va. Code 15.2-2292.1 requires localities to allow one temporary
+      family health care structure for a caregiver as a permitted accessory use. Coverage: subsection I exempts
+      localities with an ADU ordinance adopted before 2026; no inventory of them was made, so coverage is left at
+      1 (an upper bound). Va. Code 15.2-2292.4 binds every locality (county, city and town) with single-family zoning,
+      subsection B, except, under subsection I, ''a locality that adopted an ADU ordinance prior to January 1, 2026.''
+      No population threshold, so no census year. The exemption cannot be written with the population keys: the
+      rule above is an upper bound, and the true share needs an inventory of Virginia localities with an ADU ordinance
+      adopted before 2026 (many large counties and cities have one), removed from both places and unincorporated
+      county areas. Until that inventory exists, treat coverage as unknown and possibly small.'

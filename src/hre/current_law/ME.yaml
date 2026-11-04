@@ -1,0 +1,112 @@
+# Maine current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: ME
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: 30-A M.R.S. 4364-B, enacted by L.D. 2003 (Public Law 2021, chapter 672, section 6, signed April 27, 2022);
+        amended by L.D. 1706 (Public Law 2023, chapter 192), L.D. 1829 (Public Law 2025, chapter 385) and L.D. 2173
+        (Public Law 2025, chapter 733, signed April 16, 2026)
+      summary: 'Every Maine municipality must allow at least one ADU on any lot with a single-family home in areas
+        where housing is allowed: inside the house, attached to it, or as a new building on the lot, with no parking
+        beyond what the house needs. Towns may cap the ADU''s size.'
+      quote: At least one accessory dwelling unit must be allowed on any lot where the principal structure is a
+        single-family dwelling unit or 2-unit or 3-unit residential structure
+      url: https://legislature.maine.gov/statutes/30-A/title30-Asec4364-B.html
+      accessed: '2026-11-03'
+      in_effect: Since January 1, 2024 in municipalities whose officers adopt ordinances without a town vote, and
+        since July 1, 2024 in all others. The 2025 and 2026 amendments, including the ban on owner-occupancy rules
+        and the extension to two- and three-unit buildings, apply from July 1, 2027.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Every municipality must allow at least one ADU on any lot whose main building is a single-family
+        home, in any area where housing is allowed. A lot that does not conform to zoning still qualifies if the
+        ADU does not make the nonconformity worse.
+      status: supported_with_limits
+      sources:
+      - title: Maine Revised Statutes 30-A section 4364-B
+        url: https://legislature.maine.gov/statutes/30-A/title30-Asec4364-B.html
+        locator: subsection 3, paragraph A
+        quote: At least one accessory dwelling unit must be allowed on any lot where the principal structure is
+          a single-family dwelling unit
+        accessed: '2026-11-03'
+      - title: Maine Revised Statutes 30-A section 4364
+        url: https://legislature.maine.gov/statutes/30-A/title30-Asec4364.html
+        locator: subsection 1-A (implementation date, applied to ADUs by section 4364-B, subsection 1-A)
+        quote: January 1, 2024 for municipalities for which ordinances may be enacted by the municipal officers
+          without further action or approval by the voters of the municipality; and
+        accessed: '2026-11-03'
+      limitations:
+      - Until July 1, 2027, towns may require the owner to live on the lot and may send ADUs to planning board review;
+        from that date they may not.
+      - Lots in the Lewiston and Auburn drinking-water watershed are excluded, lots on septic systems must still
+        meet the state's minimum lot size law, and from July 1, 2027 towns may exempt coastal barriers, flood hazard
+        areas and sand dunes.
+      - The owner must show adequate water and wastewater service, and shoreland zoning rules still apply. The law
+        binds municipalities, so Maine's unorganized territory is not covered.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: An ADU may be built inside the existing house, attached to or sharing a wall with it, or
+        as a new building on the lot.
+      status: supported_with_limits
+      sources:
+      - title: Maine Revised Statutes 30-A section 4364-B
+        url: https://legislature.maine.gov/statutes/30-A/title30-Asec4364-B.html
+        locator: subsection 2, paragraphs B and C
+        quote: As a new structure on the lot for the primary purpose of creating an accessory dwelling unit.
+        accessed: '2026-11-03'
+      limitations:
+      - ADUs inside or attached to the house get the house's setbacks; a new detached building follows the town's
+        own setback and dimensional rules.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: The law sets only a minimum size of 190 square feet and lets each town impose a maximum
+        size, so a 600 square foot unit is not protected.
+      status: differs
+      sources:
+      - title: Maine Revised Statutes 30-A section 4364-B
+        url: https://legislature.maine.gov/statutes/30-A/title30-Asec4364-B.html
+        locator: subsection 6
+        quote: A municipality may impose a maximum size for an accessory dwelling unit.
+        accessed: '2026-11-03'
+      limitations:
+      - Local maximum sizes have not been surveyed.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: An ADU may not be subject to any parking requirement beyond what the single-family home
+        on the lot must provide.
+      status: supported_with_limits
+      sources:
+      - title: Maine Revised Statutes 30-A section 4364-B
+        url: https://legislature.maine.gov/statutes/30-A/title30-Asec4364-B.html
+        locator: subsection 4, paragraph C
+        quote: An accessory dwelling unit may not be subject to any additional parking requirements beyond the parking
+          requirements of the single-family dwelling unit on the lot where the accessory dwelling unit is located.
+        accessed: '2026-11-03'
+      limitations: []
+    current_strength: 0.75
+    strength_rationale: 'Three of the four benchmark features are in Maine law in every municipality: one ADU per
+      lot, attached or detached, with no added parking. The fourth, a size of at least 600 square feet, is not:
+      the law sets only a 190 square foot minimum and lets towns cap the size. So 3 / 4 = 0.75 of the benchmark
+      is already in law and 0.25 would be newly affected. Until July 1, 2027, towns may also require the owner to
+      live on the lot.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Re-checked 2026-11-03 against the statute page (extracted 10/05/2026) and the chaptered laws PL 2025
+      c. 385 (LD 1829) and c. 733 (LD 2173). Statuses unchanged from Adam''s record (3 of 4, coverage 1). Resolved
+      Adam''s open question: c. 733 sec. 25 amends c. 385 sec. 23 so that c. 385 (owner-occupancy ban, density exemption
+      limited to one ADU, plumbing-inspector sign-off) applies to all municipalities from July 1, 2027; c. 733''s
+      own changes (2- and 3-unit buildings, no planning board approval, flood and dune exemptions) also apply from
+      July 1, 2027 (c. 733 sec. 26; committee amendment C-A H-1041 summary item 14). The PDF text extraction does
+      not show strike-through, so the July 1, 2027 date rests on the committee amendment summary; check the printed
+      chapter. The ''Title 12, chapter 423-A'' carve-out in subsection 1 is the minimum lot size law for septic
+      systems (12 MRSA 4807-A), not the Land Use Planning Commission. Unorganized territory is outside any municipality;
+      its share of homes is small and cannot be separated with Census places, so no coverage rule is proposed.'

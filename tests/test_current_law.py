@@ -127,38 +127,55 @@ def test_showcase_states_file_all_five_reforms():
 
 
 def _write_acs(tmp_path):
-    """A two-county state 99 with one big city, one small town, one CDP and a reservation."""
+    """State 99: county 001 holds a big city and a small town, county 003 a CDP; a reservation;
+    two towns (county subdivisions) in county 003."""
     acs = tmp_path / "acs"
     acs.mkdir()
     rows = {   # GEO_ID: (total, detached)
         "0400000US99": (1000, 600),
         "0500000US99001": (700, 400), "0500000US99003": (300, 200),
         "1600000US9910000": (500, 300), "1600000US9920000": (100, 60), "1600000US9930000": (80, 50),
+        "1550000US9910000001": (500, 300), "1550000US9920000001": (100, 60), "1550000US9930000003": (80, 50),
         "2600000US123499": (40, 30),
+        "0600000US9900311111": (150, 120), "0600000US9900322222": (150, 80),
     }
     head = "GEO_ID|B25024_E001|B25024_M001|B25024_E002|B25024_M002"
     (acs / "acsdt5y2024-b25024.dat").write_text(
         head + "\n" + "\n".join(f"{g}|{t}|1|{d}|1" for g, (t, d) in rows.items()) + "\n")
-    pop = {"1600000US9910000": 90000, "1600000US9920000": 4000, "1600000US9930000": 3000}
+    pop = {"1600000US9910000": 90000, "1600000US9920000": 4000, "1600000US9930000": 3000,
+           "0500000US99001": 120000, "0500000US99003": 9000}
     (acs / "acsdt5y2024-b01003.dat").write_text(
         "GEO_ID|B01003_E001|B01003_M001\n" + "\n".join(f"{g}|{p}|1" for g, p in pop.items()) + "\n")
     names = {"1600000US9910000": "Big city, Test", "1600000US9920000": "Small town, Test",
-             "1600000US9930000": "Edge CDP, Test"}
+             "1600000US9930000": "Edge CDP, Test",
+             "0600000US9900311111": "Andover town, East County, Test",
+             "0600000US9900322222": "Bolton town, East County, Test"}
     (acs / "Geos20245YR.txt").write_text(
-        "FILEID|STUSAB|SUMLEVEL|GEO_ID|NAME\n" + "\n".join(f"x|ts|160|{g}|{n}" for g, n in names.items()) + "\n")
+        "FILEID|STUSAB|SUMLEVEL|GEO_ID|NAME\n" + "\n".join(f"x|ts|0|{g}|{n}" for g, n in names.items()) + "\n")
     return tmp_path
 
 
 def test_coverage_arithmetic_on_a_fixture(tmp_path):
     dd = _write_acs(tmp_path)
     r = cov.coverage_share("99", {"above_population": 75000, "unincorporated": "all", "exclude_tribal": True}, dd)
-    # covered: Big city 300 + outside incorporated (600 - 300 - 60 = 240, the CDP counts as outside) - tribal 30
+    # covered: Big city 300 + outside incorporated (40 in 001 + 200 in 003; the CDP counts as outside) - tribal 30
     assert r["covered_place_homes"] == 300 and r["homes_outside_incorporated"] == 240
     assert r["tribal_homes_excluded"] == 30 and r["covered_outside_homes"] == 210
     assert r["share"] == pytest.approx(510 / 600, abs=1e-4)
     assert [p["name"] for p in r["largest_uncovered"]] == ["Small town"]
     r = cov.coverage_share("99", {"places": "all", "unincorporated": "none"}, dd)
     assert r["share"] == pytest.approx(360 / 600, abs=1e-4)
+    # one county only; unincorporated urban areas only (the CDP, 50 homes, is in county 003)
+    r = cov.coverage_share("99", {"counties": ["003"], "unincorporated": "cdp", "cdp_min_population": 1000}, dd)
+    assert r["covered_place_homes"] == 0 and r["covered_outside_homes"] == 50
+    # unincorporated land only in counties of 15,000 or more people (county 003 has 9,000)
+    r = cov.coverage_share("99", {"unincorporated": "all", "county_min_population": 15000}, dd)
+    assert r["covered_outside_homes"] == 40 and r["share"] == pytest.approx(400 / 600, abs=1e-4)
+    # every town except one that opted out
+    r = cov.coverage_share("99", {"unincorporated": "all", "exclude_subdivisions": ["Andover"]}, dd)
+    assert r["share"] == pytest.approx((600 - 120) / 600, abs=1e-4)
+    with pytest.raises(ValueError):
+        cov.coverage_share("99", {"unincorporated": "all", "exclude_subdivisions": ["Nowhere"]}, dd)
 
 
 def test_stored_coverage_shares_reproduce_from_the_cache():

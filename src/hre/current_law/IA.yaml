@@ -1,0 +1,127 @@
+# Iowa current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: IA
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: Iowa Code 364.3(23) (cities) and 331.301(29) (counties), added by S.F. 592 (2025 Iowa Acts chapter 38)
+        and amended by S.F. 2369 (2026 Iowa Acts chapter 1013)
+      summary: Every Iowa city and county must allow at least one attached or detached ADU on a lot with a single-family
+        home, in zones where such homes are allowed, up to 1,000 square feet or half the house if larger, approved
+        without discretionary review, with no added parking and no owner-occupancy rule.
+      quote: A city shall allow a minimum of one accessory dwelling unit on the same lot as a single family residence
+        within a zoning district where a single family residence is an allowed principal use
+      url: https://www.legis.iowa.gov/docs/acts/2026/CH1013.pdf
+      accessed: '2026-11-03'
+      in_effect: Since July 1, 2025. The 2026 amendments, which tie the rule to zones where single-family homes
+        are allowed and add review in historic areas, took effect July 1, 2026.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Every city and county must allow at least one ADU on a lot with a single-family home in
+        any zone where such homes are allowed, and must approve a permit that meets the law's conditions without
+        discretionary review or a hearing.
+      status: supported_with_limits
+      sources:
+      - title: 2026 Iowa Acts, chapter 1013 (S.F. 2369)
+        url: https://www.legis.iowa.gov/docs/acts/2026/CH1013.pdf
+        locator: section 3, amending Iowa Code 364.3(23)(a)
+        quote: A city shall allow a minimum of one accessory dwelling unit on the same lot as a single family residence
+          within a zoning district where a single family residence is an allowed principal use
+        accessed: '2026-11-03'
+      - title: 2026 Iowa Acts, chapter 1013 (S.F. 2369)
+        url: https://www.legis.iowa.gov/docs/acts/2026/CH1013.pdf
+        locator: section 1, amending Iowa Code 331.301(29)(a)
+        quote: A county shall allow a minimum of one accessory dwelling unit on the same lot as a single family
+          residence within a zoning district where a single family residence is an allowed principal use
+        accessed: '2026-11-03'
+      - title: Iowa Code 2026, section 364.3
+        url: https://www.legis.iowa.gov/docs/code/364.3.pdf
+        locator: subsection 23, paragraph c
+        quote: and by state law without discretionary review or hearing and consistent with the time frame assigned
+          to the approval of a single family residence
+        accessed: '2026-11-03'
+      limitations:
+      - Deed restrictions and homeowner association rules may still bar ADUs, though local rules may not treat association
+        lots more strictly.
+      - In designated historic areas, the county, city or historic preservation commission may regulate an ADU it
+        finds incongruous with the area.
+      - Building codes apply, and a manufactured or mobile home used as an ADU must be placed on a permanent foundation.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The ADU may be attached to or detached from the house, including a unit in a detached garage,
+        and placement rules may be no stricter than for the house.
+      status: supported_with_limits
+      sources:
+      - title: Iowa Code 2026, section 364.3
+        url: https://www.legis.iowa.gov/docs/code/364.3.pdf
+        locator: subsection 23, paragraph e(1)
+        quote: means an additional residential dwelling unit located on the same lot as a single family residence
+          that is either attached to or detached from the single family residence.
+        accessed: '2026-11-03'
+      - title: Iowa Code 2026, section 331.301
+        url: https://www.legis.iowa.gov/docs/code/331.301.pdf
+        locator: subsection 29, paragraph e(2)
+        quote: includes being part of any accessory structure such as a detached garage.
+        accessed: '2026-11-03'
+      limitations: []
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: The law caps an ADU at 1,000 square feet or half the house, whichever is larger, and cities
+        and counties must approve a unit within that cap; rules that conflict are void. A 600 square foot unit is
+        therefore allowed on every covered lot.
+      status: supported_with_limits
+      sources:
+      - title: 2026 Iowa Acts, chapter 1013 (S.F. 2369)
+        url: https://www.legis.iowa.gov/docs/acts/2026/CH1013.pdf
+        locator: section 3, Iowa Code 364.3(23)(a)(2)
+        quote: An accessory dwelling unit shall not exceed one thousand square feet or fifty percent of the size
+          of the single family residence, whichever is larger.
+        accessed: '2026-11-03'
+      - title: Iowa Code 2026, section 364.3
+        url: https://www.legis.iowa.gov/docs/code/364.3.pdf
+        locator: subsection 23, paragraph d
+        quote: regulating accessory dwelling units in a manner that conflicts with this subsection is void.
+        accessed: '2026-11-03'
+      limitations: []
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: Cities and counties may not require parking for the lot beyond what the house needs, or
+        a fee in place of parking.
+      status: supported_with_limits
+      sources:
+      - title: Iowa Code 2026, section 364.3
+        url: https://www.legis.iowa.gov/docs/code/364.3.pdf
+        locator: subsection 23, paragraph b(3)
+        quote: have additional parking beyond that required for a single family residence or payment of a fee in
+          lieu of providing additional parking.
+        accessed: '2026-11-03'
+      - title: Iowa Code 2026, section 331.301
+        url: https://www.legis.iowa.gov/docs/code/331.301.pdf
+        locator: subsection 29, paragraph b(3)
+        quote: have additional parking beyond that required for a single family residence or payment of a fee in
+          lieu of providing additional parking.
+        accessed: '2026-11-03'
+      limitations: []
+    current_strength: 1.0
+    strength_rationale: 'All four benchmark features are in Iowa law in every city and county: one ADU per lot approved
+      without discretionary review, attached or detached, of at least 600 square feet, and no added parking. So
+      the whole benchmark is already in law and none of it would be newly affected. Deed restrictions and homeowner
+      association rules can still bar ADUs on some lots.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Re-verified 2026-11-03 against the Iowa Code 2026 section PDFs (which include S.F. 592) and the 2026
+      Iowa Acts chapter 1013 PDF (S.F. 2369, approved April 9, 2026). The official acts-amended tables show S.F.
+      592 effective July 1, 2025 (signed May 1, 2025) and S.F. 2369 sections 1 and 3 effective July 1, 2026; no
+      other 2026 act touches 364.3(23) or 331.301(29). S.F. 592 numbered the county paragraph 331.301(27); the 2026
+      Code numbers it (29). The code PDFs print some spaces before punctuation, so quotes stop short of those spots.
+      Changes from Adam''s record: the county paragraphs are now cross-checked (the parking and attached-or-detached
+      rules match the city text); record URL moved to chapter 1013 to show the current wording. Coverage 1: binds
+      every city and county. All features in force before 2026, so no in-effect dates.'

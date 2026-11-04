@@ -1,0 +1,108 @@
+# Delaware current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: DE
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: 29 Del. C. 9220 to 9224 (Affordable Housing Act), added by Senate Substitute 2 for Senate Bill 23 (2026),
+        the Housing for Every Delawarean Act, 85 Del. Laws chapter 343
+      summary: Delaware's 2026 housing law requires each county and town of more than 2,000 people to adopt, with
+        its next comprehensive plan, an affordable housing plan that authorizes ADUs among other housing types without
+        a conditional use permit or special exception. It does not require an ADU on every single-family lot or
+        set rules on their form, size or parking.
+      quote: Authorization for a mix of housing types, including single-family detached, single-family attached,
+        duplexes, triplexes, multifamily dwellings, accessory dwelling units, cottage housing developments, and
+        manufactured housing without the need for a conditional use permit or special exception.
+      url: https://delcode.delaware.gov/title29/c092/sc03/index.html
+      accessed: '2026-11-03'
+      in_effect: Signed and effective July 13, 2026. Each county or town must adopt its first affordable housing
+        plan with its next comprehensive plan; one that adopts a plan before February 1, 2027 may wait until its
+        next five-year review. There is no fixed date for ADU rules.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Each county and town of more than 2,000 people must authorize ADUs, without a conditional
+        use permit or special exception, in the affordable housing plan of its next comprehensive plan. The law
+        does not say where, and does not require an ADU on every lot with a single-family home.
+      status: differs
+      sources:
+      - title: Delaware Code title 29, section 9222
+        url: https://delcode.delaware.gov/title29/c092/sc03/index.html
+        locator: section 9222(b)(2)
+        quote: Authorization for a mix of housing types, including single-family detached, single-family attached,
+          duplexes, triplexes, multifamily dwellings, accessory dwelling units, cottage housing developments, and
+          manufactured housing without the need for a conditional use permit or special exception.
+        accessed: '2026-11-03'
+      - title: Delaware Code title 29, section 9221
+        url: https://delcode.delaware.gov/title29/c092/sc03/index.html
+        locator: section 9221(c)
+        quote: A local jurisdiction must adopt its initial affordable housing plan concurrently with its next comprehensive
+          plan
+        accessed: '2026-11-03'
+      limitations:
+      - Counties and towns of 2,000 people or fewer are not covered.
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: No statute addresses whether ADUs may be detached or attached; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Delaware Code title 29, section 9222
+        url: https://delcode.delaware.gov/title29/c092/sc03/index.html
+        locator: section 9222(b)(2)
+        quote: accessory dwelling units, cottage housing developments, and manufactured housing without the need
+          for a conditional use permit or special exception
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: No statute sets an ADU size. The housing plan must only evaluate bulk standards, including
+        minimum unit sizes.
+      status: differs
+      sources:
+      - title: Delaware Code title 29, section 9222
+        url: https://delcode.delaware.gov/title29/c092/sc03/index.html
+        locator: section 9222(b)(3)
+        quote: Evaluation of bulk standards, including minimum lot sizes, maximum lot widths, minimum setbacks,
+          minimum unit size, maximum lot coverage, maximum building heights, and dedicated open space requirements
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No statute sets ADU parking. Reduced parking appears only as one optional incentive for
+        including affordable homes in a development.
+      status: differs
+      sources:
+      - title: Delaware Code title 29, section 9222
+        url: https://delcode.delaware.gov/title29/c092/sc03/index.html
+        locator: section 9222(c)(1)
+        quote: reduced parking requirements, or reduced open space requirements, for including affordable housing
+          units
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: Delaware's 2026 housing law asks every county and town of more than 2,000 people to authorize
+      ADUs, without a conditional use permit or special exception, in the affordable housing plan of its next comprehensive
+      plan. It does not require an ADU on every single-family lot and says nothing about their form, size or parking,
+      so none of the benchmark is in law and all of it would be newly affected. Cities and counties that allow ADUs
+      on their own are not counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Re-checked 2026-11-03 on legis.delaware.gov (SS 2 for SB 23: signed and effective 7/13/26, 85 Del. Laws
+      c. 343) and the codified text on delcode.delaware.gov (29 Del. C. ch. 92, subch. III). Same conclusion as
+      Adam (gate fails, strength 0); Adam''s forms, size and parking rows were ''unknown'' with no sources, now
+      ''differs'' with sources because the codified text plainly sets nothing on them. The only ADU references in
+      the act are 9222(b)(2) and the ''rental unit'' definition in 9202. Timing: plans follow each jurisdiction''s
+      comprehensive plan cycle, so there is no single binding date; this would matter only if a later law made the
+      authorization parcel-level. SB 87 (2025), a direct ADU mandate (Title 25), stalled ''Out of Committee 5/7/25''
+      and was not enacted. Strength 0 needs no coverage block.'

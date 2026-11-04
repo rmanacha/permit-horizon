@@ -1,0 +1,119 @@
+# Hawaii current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: HI
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: HRS 46-4.8, added by S.B. 3202 (2024), Act 39, Session Laws of Hawaii 2024
+      summary: Each county must, by December 31, 2026, adopt rules allowing at least two ADUs, or the equivalent,
+        on residential lots in the state urban district, or instead zone districts for them sized to set housing
+        targets. The units remain subject to each county's development standards, including form, size and parking.
+      quote: each county shall adopt or amend ordinances defining reasonable standards that allow for the construction
+        of at least two accessory dwelling units, or the reasonable equivalent, for residential use on all residentially
+        zoned lots.
+      url: https://data.capitol.hawaii.gov/hrscurrent/Vol02_Ch0046-0115/HRS0046/HRS_0046-0004_0008.htm
+      accessed: '2026-11-03'
+      in_effect: Act effective May 28, 2024; counties must adopt ordinances by December 31, 2026. After that date
+        a county without one may not deny up to two ADUs on a single-family lot for exceeding the allowed number
+        of units.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Counties must allow at least two ADUs, or the equivalent, on residential lots in the state
+        urban district, or else zone districts that allow them meeting set housing targets. A county that has not
+        acted by December 31, 2026 may not deny up to two ADUs on a single-family lot for exceeding the unit limit.
+      status: supported_with_limits
+      in_effect_from: '2026-12-31'
+      sources:
+      - title: Hawaii Revised Statutes 46-4.8
+        url: https://data.capitol.hawaii.gov/hrscurrent/Vol02_Ch0046-0115/HRS0046/HRS_0046-0004_0008.htm
+        locator: subsection (b)
+        quote: that allow for the construction of at least two accessory dwelling units, or the reasonable equivalent,
+          for residential use on all residentially zoned lots.
+        accessed: '2026-11-03'
+      - title: Hawaii Revised Statutes 46-4.8
+        url: https://data.capitol.hawaii.gov/hrscurrent/Vol02_Ch0046-0115/HRS0046/HRS_0046-0004_0008.htm
+        locator: subsection (c)
+        quote: A county that does not adopt or amend an ordinance pursuant to subsection (b) shall adopt or amend
+          ordinances pursuant to this subsection
+        accessed: '2026-11-03'
+      - title: Hawaii Revised Statutes 46-4.8
+        url: https://data.capitol.hawaii.gov/hrscurrent/Vol02_Ch0046-0115/HRS0046/HRS_0046-0004_0008.htm
+        locator: subsection (g)
+        quote: If a county does not adopt or amend zoning ordinances pursuant to this section by December 31, 2026,
+          the county shall not deny any permit application on the basis of exceeding the maximum number of housing
+          units allowed
+        accessed: '2026-11-03'
+      - title: Hawaii Revised Statutes 46-4.8
+        url: https://data.capitol.hawaii.gov/hrscurrent/Vol02_Ch0046-0115/HRS0046/HRS_0046-0004_0008.htm
+        locator: subsection (i)(1)
+        quote: Any area outside of the urban district established by chapter 205;
+        accessed: '2026-11-03'
+      limitations:
+      - Applies only in the state urban district, and not in rural or low-density residential zones, special management
+        areas or high-hazard areas.
+      - A county may instead allow ADUs only in districts it chooses, sized to half its projected five-year housing
+        need plus areas near transit stations and major roads, so not every lot is reached.
+      - Counties keep their development standards and permit review, and may deny permits where utilities are insufficient.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The law does not say what form the units take; ADUs remain subject to all of each county's
+        development standards.
+      status: differs
+      sources:
+      - title: Hawaii Revised Statutes 46-4.8
+        url: https://data.capitol.hawaii.gov/hrscurrent/Vol02_Ch0046-0115/HRS0046/HRS_0046-0004_0008.htm
+        locator: subsection (e)
+        quote: Accessory dwelling units developed pursuant to this section shall be subject to all development standards
+          adopted by the respective county
+        accessed: '2026-11-03'
+      limitations: []
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: The law sets no minimum size; each county's development standards decide it.
+      status: differs
+      sources:
+      - title: Hawaii Revised Statutes 46-4.8
+        url: https://data.capitol.hawaii.gov/hrscurrent/Vol02_Ch0046-0115/HRS0046/HRS_0046-0004_0008.htm
+        locator: subsection (e)
+        quote: Accessory dwelling units developed pursuant to this section shall be subject to all development standards
+          adopted by the respective county
+        accessed: '2026-11-03'
+      limitations: []
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: The law has no parking rule; each county's development standards decide it.
+      status: differs
+      sources:
+      - title: Hawaii Revised Statutes 46-4.8
+        url: https://data.capitol.hawaii.gov/hrscurrent/Vol02_Ch0046-0115/HRS0046/HRS_0046-0004_0008.htm
+        locator: subsection (e)
+        quote: Accessory dwelling units developed pursuant to this section shall be subject to all development standards
+          adopted by the respective county
+        accessed: '2026-11-03'
+      limitations: []
+    current_strength: 0.2
+    strength_rationale: 'One of the four benchmark features is in Hawaii law from December 31, 2026: ADUs allowed
+      on residential lots, at least two per lot or the equivalent. The other three, detached and attached forms,
+      a size of at least 600 square feet and no added parking, are not: the law leaves form, size and parking to
+      each county''s standards. In force for 80% of 2026 to 2030, that gives 1 / 4 × 0.80 = 0.20 of the benchmark
+      already in law and 0.80 newly affected. The law reaches only residential lots in the state urban district,
+      and a county may instead allow ADUs only in districts it chooses.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Re-verified 2026-11-03 against the official HRS 46-4.8 page (data.capitol.hawaii.gov; history note L
+      2024, c 39, section 1) and the Act 39 session-law PDF (approved May 28, 2024). Checked for amendments: 2025
+      and 2026 bills that would amend or repeal the section (H.B. 516 repeal, H.B. 541, S.B. 2423) never passed
+      their first committees; no 2025 or 2026 conference draft mentions accessory dwelling units or section 46-4.8.
+      Changes from Adam''s record: forms, size and parking changed from unknown to differs, because subsection (e)
+      leaves them to county standards (the statute settles that they are not required); in_effect_from 2026-12-31
+      added (county deadline). No coverage block: the law binds all four counties, but it reaches only urban-district
+      residential zones and lets a county pick districts instead, which the place-based coverage rule cannot measure;
+      the reviewer may want a coverage discount. current_strength 0.20 = 0.8007 / 4.'

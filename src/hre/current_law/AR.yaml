@@ -1,0 +1,134 @@
+# Arkansas current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: AR
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: Arkansas Code 14-56-205, added by H.B. 1503 (2025, Act 313)
+      summary: Every Arkansas city and town must allow at least one attached, detached or internal ADU by right
+        on any lot with a single-family home, up to 75% of the house or 1,000 square feet, whichever is less, with
+        no added parking, no owner-occupancy rule and impact fees of $250 or less. Unincorporated county land is
+        not covered.
+      quote: otherwise regulates the use of at least one (1) accessory dwelling unit by
+      url: https://arkleg.state.ar.us/Acts/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2F&file=313.pdf&ddBienniumSession=2025%2F2025R
+      accessed: '2026-11-03'
+      in_effect: Act approved March 18, 2025, effective August 5, 2025; local rules that conflict with it are invalid
+        from January 1, 2026.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Cities and towns may not restrict, prohibit or otherwise regulate at least one ADU by right,
+        without a hearing, variance or special permit, on any lot with a single-family home.
+      status: supported_with_limits
+      in_effect_from: '2026-01-01'
+      sources:
+      - title: Arkansas Act 313 of 2025 (H.B. 1503)
+        url: https://arkleg.state.ar.us/Acts/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2F&file=313.pdf&ddBienniumSession=2025%2F2025R
+        locator: 14-56-205(b)(1), page 2 line 25
+        quote: Except as provided in this section, a municipality shall not
+        accessed: '2026-11-03'
+      - title: Arkansas Act 313 of 2025 (H.B. 1503)
+        url: https://arkleg.state.ar.us/Acts/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2F&file=313.pdf&ddBienniumSession=2025%2F2025R
+        locator: 14-56-205(b)(1), page 2 line 27
+        quote: otherwise regulates the use of at least one (1) accessory dwelling unit by
+        accessed: '2026-11-03'
+      - title: Arkansas Act 313 of 2025 (H.B. 1503)
+        url: https://arkleg.state.ar.us/Acts/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2F&file=313.pdf&ddBienniumSession=2025%2F2025R
+        locator: 14-56-205(c)(3), page 3 lines 5 to 6
+        quote: dwelling unit be occupied by the owner;
+        accessed: '2026-11-03'
+      limitations:
+      - Only cities and towns are bound; unincorporated county land is not covered.
+      - The ADU must be smaller than the house and meet building, fire and other applicable regulatory requirements;
+        a city may require will-serve letters for water and sewer.
+      - Owner-occupancy rules are barred.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The ADU may be attached, detached or internal to the house, and height, setback and lot
+        rules for it may be no stricter than for the house.
+      status: supported_with_limits
+      in_effect_from: '2026-01-01'
+      sources:
+      - title: Arkansas Act 313 of 2025 (H.B. 1503)
+        url: https://arkleg.state.ar.us/Acts/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2F&file=313.pdf&ddBienniumSession=2025%2F2025R
+        locator: 14-56-205(b)(2), page 2 line 29
+        quote: An accessory dwelling unit may be attached, detached, or
+        accessed: '2026-11-03'
+      limitations:
+      - Cities and towns only.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: An attached or detached ADU may be up to 75% of the house's floor area or 1,000 square
+        feet, whichever is less, and cities may not impose stricter standards. That reaches 600 square feet whenever
+        the house has at least 800 square feet of living space.
+      status: supported_with_limits
+      in_effect_from: '2026-01-01'
+      sources:
+      - title: Arkansas Act 313 of 2025 (H.B. 1503)
+        url: https://arkleg.state.ar.us/Acts/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2F&file=313.pdf&ddBienniumSession=2025%2F2025R
+        locator: 14-56-205(b)(3), page 2 line 32
+        quote: to the single-family dwelling, it shall not be more than seventy-five percent
+        accessed: '2026-11-03'
+      - title: Arkansas Act 313 of 2025 (H.B. 1503)
+        url: https://arkleg.state.ar.us/Acts/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2F&file=313.pdf&ddBienniumSession=2025%2F2025R
+        locator: 14-56-205(b)(3), page 2 line 34
+        quote: square feet (1,000 sq. ft.), whichever is less.
+        accessed: '2026-11-03'
+      - title: Arkansas Act 313 of 2025 (H.B. 1503)
+        url: https://arkleg.state.ar.us/Acts/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2F&file=313.pdf&ddBienniumSession=2025%2F2025R
+        locator: 14-56-205(c)(8), page 3 line 20
+        quote: Impose more onerous development standards on an accessory
+        accessed: '2026-11-03'
+      limitations:
+      - On lots with a house under 800 square feet, the protected size is below 600 square feet.
+      - Cities and towns only.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: Cities and towns may not require additional parking for an ADU, or fees in place of parking.
+      status: supported_with_limits
+      in_effect_from: '2026-01-01'
+      sources:
+      - title: Arkansas Act 313 of 2025 (H.B. 1503)
+        url: https://arkleg.state.ar.us/Acts/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2F&file=313.pdf&ddBienniumSession=2025%2F2025R
+        locator: 14-56-205(c)(1), page 2 line 36
+        quote: Require that a lot or parcel have additional parking to
+        accessed: '2026-11-03'
+      - title: Arkansas Act 313 of 2025 (H.B. 1503)
+        url: https://arkleg.state.ar.us/Acts/FTPDocument?path=%2FACTS%2F2025R%2FPublic%2F&file=313.pdf&ddBienniumSession=2025%2F2025R
+        locator: 14-56-205(c)(1), page 3 line 1
+        quote: accommodate an accessory dwelling unit or require fees in lieu of additional
+        accessed: '2026-11-03'
+      limitations:
+      - Cities and towns only.
+    current_strength: 0.65
+    strength_rationale: 'All four benchmark features are in Arkansas law, but only in cities and towns: one ADU
+      per lot by right, attached or detached, at least 600 square feet where the house has 800 square feet or more,
+      and no added parking. Cities and towns hold 65% of the state''s detached single-family homes, so 1 × 0.65
+      = 0.65 of the benchmark is in law. Homes outside cities and towns would be newly covered.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Re-verified 2026-11-03 against the Act 313 PDF on arkleg.state.ar.us (approved March 18, 2025; no emergency
+      clause). Effective date August 5, 2025 is the general date for 2025 acts without an emergency clause (Attorney
+      General Opinion 2025-032: sine die May 5, 2025), not printed in the act. The act PDF prints a line number
+      at the end of each line, so every quote is kept within one printed line. Codified Arkansas Code (LexisNexis)
+      not checked; no 2025 or 2026 amendment found. Changes from Adam''s record: size changed from differs to supported
+      with limits (75% of the house or 1,000 square feet, whichever is less, reaches 600 square feet for houses
+      of 800 or more, the rule used for Arizona); in_effect_from 2026-01-01 added (the date conflicting local rules
+      become invalid; horizon share 1.0). Note subsection (h) says the section does not supersede applicable regulatory
+      requirements, which the act defines to include local zoning and design standards; read with (b)(1) and (c)(8)
+      it does not undo the by-right rule, but a reviewer may wish to note it. current_strength 1.0 is the feature
+      share; coverage pending.'
+    coverage:
+      share: 0.6515
+      rule:
+        places: all
+        unincorporated: none
+      basis: 'ACS 2020-2024: 635,853 detached homes in 500 covered places = 65.1% of 975,991. Cities and towns only;
+        Arkansas has no tribal reservations.'

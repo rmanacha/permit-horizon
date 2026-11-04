@@ -1,0 +1,134 @@
+# West Virginia current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: WV
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: W. Va. Code 8-42-1 to 8-42-3 (enacted as 8-40-1 to 8-40-3 and redesignated), by S.B. 659 (2026, chapter
+        241, Acts of the Regular Session)
+      summary: Every West Virginia city, town and village must allow at least one attached, detached or internal
+        ADU by right on each lot with a single-family home, with no added parking and fees capped at $250. Counties
+        are not covered.
+      quote: a municipality shall not adopt a policy, regulation, or ordinance that restricts, prohibits, or otherwise
+        regulates the use of at least one accessory dwelling unit by right on a lot or parcel that contains a single-family
+        dwelling
+      url: https://code.wvlegislature.gov/8-42-2/
+      accessed: '2026-11-03'
+      in_effect: In effect June 4, 2026 (passed March 6, 2026; approved March 14, 2026). Conflicting local rules
+        are invalid from January 1, 2027.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Municipalities may not restrict at least one ADU by right on a lot with a single-family
+        home; by right means approval without a public hearing, variance, conditional use permit or other discretionary
+        zoning action.
+      status: supported_with_limits
+      in_effect_from: '2027-01-01'
+      sources:
+      - title: West Virginia Code 8-42-2
+        url: https://code.wvlegislature.gov/8-42-2/
+        locator: subsection (a)
+        quote: a municipality shall not adopt a policy, regulation, or ordinance that restricts, prohibits, or otherwise
+          regulates the use of at least one accessory dwelling unit by right on a lot or parcel that contains a
+          single-family dwelling
+        accessed: '2026-11-03'
+      - title: West Virginia Code 8-42-1
+        url: https://code.wvlegislature.gov/8-42-1/
+        locator: subsection (b)
+        quote: means the ability to be approved without requiring
+        accessed: '2026-11-03'
+      - title: West Virginia Code 8-42-3
+        url: https://code.wvlegislature.gov/8-42-3/
+        locator: subsection (c)
+        quote: A policy, regulation, or ordinance in effect on or after January 1, 2027, that applies to an accessory
+          dwelling unit and does not comply with this article is invalid to the extent of its conflict with this
+          article.
+        accessed: '2026-11-03'
+      limitations:
+      - Only incorporated cities, towns and villages are bound; land outside them, under county rules, is not covered.
+      - The law also says it does not supersede applicable regulatory requirements, which include local zoning ordinances,
+        so how far local zoning rules can still limit ADUs may be disputed.
+      - Municipalities may require will-serve letters for water and sewer and may regulate short-term rentals; historic
+        districts may set design rules.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The ADU may be attached, detached or internal to the house, and a manufactured home on
+        a permanent foundation may serve as one.
+      status: supported_with_limits
+      in_effect_from: '2027-01-01'
+      sources:
+      - title: West Virginia Code 8-42-2
+        url: https://code.wvlegislature.gov/8-42-2/
+        locator: subsection (b)
+        quote: An accessory dwelling unit may be attached, detached, or internal to the single-family dwelling on
+          a lot or parcel.
+        accessed: '2026-11-03'
+      limitations:
+      - Municipalities only.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: An attached or detached ADU may be up to 75% of the house's floor area or 1,000 square
+        feet, whichever is less, and municipalities may not impose stricter standards. That reaches 600 square feet
+        whenever the house has at least 800 square feet; internal ADUs have no such cap.
+      status: supported_with_limits
+      in_effect_from: '2027-01-01'
+      sources:
+      - title: West Virginia Code 8-42-2
+        url: https://code.wvlegislature.gov/8-42-2/
+        locator: subsection (c)
+        quote: it shall not be more than 75 percent of the gross floor area of the single-family dwelling or 1,000
+          square feet, whichever is less
+        accessed: '2026-11-03'
+      - title: West Virginia Code 8-42-2
+        url: https://code.wvlegislature.gov/8-42-2/
+        locator: subsection (d)(7)
+        quote: Impose more onerous development standards on an accessory dwelling unit beyond those set forth in
+          this article
+        accessed: '2026-11-03'
+      limitations:
+      - On lots with a house under 800 square feet, an attached or detached ADU is capped below 600 square feet.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: Municipalities may not require added parking, or fees in place of parking, for an ADU.
+      status: supported_with_limits
+      in_effect_from: '2027-01-01'
+      sources:
+      - title: West Virginia Code 8-42-2
+        url: https://code.wvlegislature.gov/8-42-2/
+        locator: subsection (d)(1)
+        quote: Require that a lot or parcel have additional parking to accommodate an accessory dwelling unit or
+          require fees in lieu of additional parking
+        accessed: '2026-11-03'
+      limitations:
+      - Municipalities only.
+    current_strength: 0.28
+    strength_rationale: 'All four benchmark features are in West Virginia law for its cities, towns and villages:
+      one ADU per lot by right, attached or detached, at least 600 square feet where the house has 800 square feet
+      or more, with no added parking. Conflicting local rules become invalid on January 1, 2027, so the law counts
+      for 80% of 2026 to 2030, and incorporated places hold 36% of the state''s detached homes: 0.80 × 0.355 = 0.28
+      of the benchmark is in law. Homes outside cities and towns would be newly covered.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Changed from Adam: section numbers 8-40 to 8-42 (redesignated per the bill history ''Code Affected''
+      list and the code site); size differs to supported_with_limits (75%/1,000 rule, same as Arizona''s decision
+      92 reading); in_effect_from 2027-01-01 per the brief (act effective 2026-06-04, conflicting rules invalid
+      2027-01-01). Feature share 4 x 0.8001 / 4 = 0.80; coverage pending (municipalities only). Doubt worth a reviewer''s
+      eye: 8-42-1(a) defines an ADU as a unit that ''complies with ... any applicable regulatory requirements'',
+      which 8-42-1(d)(2)(C) says include ''Applicable zoning ordinances and conditions'', and 8-42-3(e)(1) says
+      the article does not ''Supersede applicable regulatory requirements''; read literally this could let local
+      zoning narrow the mandate. Chapter 241 and approval date 3/14/2026 from the bill history page: https://www.wvlegislature.gov/Bill_Status/bills_history.cfm?input=659&year=2026&sessiontype=RS&btype=bill
+      ; enrolled text: https://www.wvlegislature.gov/Bill_Status/bills_text.cfm?billdoc=sb659+sub1+enr.htm&i=659&sesstype=RS&yr=2026'
+    coverage:
+      share: 0.3553
+      rule:
+        places: all
+        unincorporated: none
+      basis: 'ACS 2020-2024: 216,992 detached homes in 231 covered places = 35.5% of 610,791. Cities, towns and
+        villages; counties have no duty under this chapter.'

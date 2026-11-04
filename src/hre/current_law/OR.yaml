@@ -1,0 +1,112 @@
+# Oregon current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: OR
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: ORS 197A.425 (formerly ORS 197.312(5) and (6)), enacted by S.B. 1051 (2017, chapter 745) and amended
+        by H.B. 2001 (2019, chapter 639) and H.B. 2347 (2025, chapter 38)
+      summary: Oregon cities of more than 2,500 people and counties of more than 15,000 must allow at least one
+        interior, attached or detached ADU for each detached house in areas inside the urban growth boundary zoned
+        for detached houses, and may not require owner occupancy or added off-street parking.
+      quote: shall allow in areas within the urban growth boundary that are zoned for detached single-unit dwellings
+        the development of at least one accessory dwelling unit for each detached single-unit dwelling
+      url: https://www.oregonlegislature.gov/bills_laws/ors/ors197A.html
+      accessed: '2026-11-03'
+      in_effect: Required since July 1, 2018; the bars on owner occupancy and added parking since January 1, 2020.
+        Not amended in the 2026 session.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Covered cities and counties must allow at least one ADU for each detached house in areas
+        inside the urban growth boundary zoned for detached houses, subject only to reasonable local rules on siting
+        and design.
+      status: supported_with_limits
+      sources:
+      - title: Oregon Revised Statutes 197A.425
+        url: https://www.oregonlegislature.gov/bills_laws/ors/ors197A.html
+        locator: 197A.425(1)(a)
+        quote: A city with a population greater than 2,500 or a county with a population greater than 15,000 shall
+          allow
+        accessed: '2026-11-03'
+      limitations:
+      - Cities of 2,500 people or fewer and counties of 15,000 or fewer are not covered, nor is land outside urban
+        growth boundaries. Populations are the official estimates certified each year by Portland State University.
+      - Reasonable local rules on siting and design still apply.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The statute defines the required ADU as an interior, attached or detached structure.
+      status: supported_with_limits
+      sources:
+      - title: Oregon Revised Statutes 197A.425
+        url: https://www.oregonlegislature.gov/bills_laws/ors/ors197A.html
+        locator: 197A.425(1)(b)(A)
+        quote: means an interior, attached or detached residential structure that is used in connection with or
+          that is accessory to a single-unit dwelling
+        accessed: '2026-11-03'
+      limitations:
+      - The statute does not say every form must be allowed on every lot; reasonable local siting and design rules
+        apply.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: The statute sets no minimum size that cities and counties must allow; size is left to reasonable
+        local rules on siting and design.
+      status: differs
+      sources:
+      - title: Oregon Revised Statutes 197A.425
+        url: https://www.oregonlegislature.gov/bills_laws/ors/ors197A.html
+        locator: 197A.425(1)(a)
+        quote: subject to reasonable local regulations relating to siting and design
+        accessed: '2026-11-03'
+      limitations:
+      - Local size limits have not been surveyed and are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: Reasonable local rules may not include requirements to build added off-street parking or
+        owner-occupancy requirements.
+      status: supported_with_limits
+      sources:
+      - title: Oregon Revised Statutes 197A.425
+        url: https://www.oregonlegislature.gov/bills_laws/ors/ors197A.html
+        locator: 197A.425(1)(b)(B)
+        quote: does not include owner-occupancy requirements of either the primary or accessory structure or requirements
+          to construct additional off-street parking
+        accessed: '2026-11-03'
+      - title: Oregon Revised Statutes 197A.425
+        url: https://www.oregonlegislature.gov/bills_laws/ors/ors197A.html
+        locator: 197A.425(2)
+        quote: does not prohibit local governments from regulating vacation occupancies
+        accessed: '2026-11-03'
+      limitations:
+      - Cities and counties may still require owner occupancy or off-street parking for vacation rentals.
+    current_strength: 0.56
+    strength_rationale: 'Three of the four benchmark features are in Oregon law in the places it covers: one ADU
+      per detached house, interior, attached or detached, with no added parking. The fourth, a size of at least
+      600 square feet, is not: the statute sets no minimum size. The law covers cities of more than 2,500 people
+      and urban land in counties of more than 15,000; those places hold about 74% of the state''s detached homes
+      (62% counting cities alone), so 3 / 4 × 0.744 = 0.56 of the benchmark is in law.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Statuses unchanged from Adam''s record except size: Adam had unknown with no source; now differs, because
+      197A.425 contains no size rule and the method counts a feature no statute addresses as differs. Strength unchanged
+      at 0.75 before coverage. Coverage pending: proposal and alternative above; preliminary probe with the working-tree
+      coverage code (2026-11-03): 0.6216 with unincorporated none, 0.7426 with the CDP alternative; the session
+      should compute and write the real block.'
+    coverage:
+      share: 0.7441
+      rule:
+        above_population: 2500
+        unincorporated: cdp
+        county_min_population: 15000
+      basis: 'ACS 2020-2024: 723,853 detached homes in 112 covered places + 142,662 outside incorporated places
+        = 74.4% of 1,164,457. Cities of more than 2,500 people, plus census-designated places in counties of more
+        than 15,000 as a stand-in for unincorporated land inside urban growth boundaries (the law''s reach in counties).
+        Cities alone give 62.2%; rural CDPs outside the boundaries are over-counted. The law uses Portland State
+        University''s certified populations; the ACS is used here.'

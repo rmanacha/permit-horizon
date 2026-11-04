@@ -1,0 +1,150 @@
+# California current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: CA
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: California Government Code 66310 to 66342, mainly 66314, 66321, 66322 and 66323, renumbered by S.B. 477
+        (2024, chapter 7) and amended by A.B. 2533 (2024, chapter 834), S.B. 1211 (2024, chapter 296) and S.B. 543
+        (2025, chapter 520), among others
+      summary: Every California city and county must approve, without a hearing, one ADU converted from space in
+        a house or accessory structure, one junior ADU, and one new detached ADU of up to 800 square feet on any
+        lot with a single-family home in a residential or mixed-use zone, and may not require parking for those
+        units or owner occupancy for the ADUs.
+      quote: Government Code section 66323 creates four categories of ADUs (and JADUs) that must be approved ministerially
+      url: https://www.hcd.ca.gov/sites/default/files/docs/policy-and-research/adu-handbook-update.pdf
+      accessed: '2026-11-03'
+      in_effect: Ministerial approval of these units since January 1, 2020; current section numbers since 2024;
+        latest changes effective January 1, 2026.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Every city and county, including charter cities, must approve without discretionary review
+        or a hearing one ADU converted from existing space and one new detached ADU on any lot with an existing
+        or proposed single-family home in a residential or mixed-use zone.
+      status: supported_with_limits
+      sources:
+      - title: California Government Code 66323
+        url: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=66323
+        locator: subdivision (a)(2)
+        quote: One detached, new construction, accessory dwelling unit that does not exceed four-foot side and rear
+          yard setbacks for a lot with a proposed or existing single-family dwelling
+        accessed: '2026-11-03'
+      - title: California HCD ADU Handbook, March 2026 (Government Code 66323(a)(2))
+        url: https://www.hcd.ca.gov/sites/default/files/docs/policy-and-research/adu-handbook-update.pdf
+        locator: page 16, 66323 Units, item 2
+        quote: One detached new construction ADU that does not exceed four-foot side and rear yard setbacks is permitted
+          on lots with an existing or proposed single-family dwelling
+        accessed: '2026-11-03'
+      - title: California HCD ADU Handbook, March 2026 (Government Code 66323(a))
+        url: https://www.hcd.ca.gov/sites/default/files/docs/policy-and-research/adu-handbook-update.pdf
+        locator: page 17, combinations of 66323 Units
+        quote: on single-family lots, local agencies must allow at least one ADU constructed from existing space,
+          one JADU, and one newly constructed detached ADU
+        accessed: '2026-11-03'
+      - title: California HCD ADU Handbook, March 2026 (Government Code 66313(g))
+        url: https://www.hcd.ca.gov/sites/default/files/docs/policy-and-research/adu-handbook-update.pdf
+        locator: page 7, glossary, Local Agency
+        quote: A city, county, or city and county, whether general law or chartered.
+        accessed: '2026-11-03'
+      limitations:
+      - Applies only on lots zoned for housing; a lot rezoned to a use that excludes housing loses the right.
+      - Cities and counties may limit where other ADUs go for water, sewer, traffic or safety reasons, but not these
+        units.
+      - Owner occupancy may not be required for an ADU; it may be required for a junior ADU that shares a bathroom
+        with the house.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: Attached, detached and converted ADUs must all be permitted on lots zoned for single-family
+        or multifamily housing, and a new detached ADU is one of the units that must be approved without a hearing.
+      status: supported_with_limits
+      sources:
+      - title: California HCD ADU Handbook, March 2026 (Government Code 66314(d)(2) and (d)(3))
+        url: https://www.hcd.ca.gov/sites/default/files/docs/policy-and-research/adu-handbook-update.pdf
+        locator: page 31, ADUs on lots zoned for multifamily use
+        quote: A local agency must permit an attached, detached, or converted ADU on a lot that is zoned to allow
+          single-family or multifamily residential use and includes an existing or proposed dwelling
+        accessed: '2026-11-03'
+      - title: California HCD ADU Handbook, March 2026 (Government Code 66314(d)(3))
+        url: https://www.hcd.ca.gov/sites/default/files/docs/policy-and-research/adu-handbook-update.pdf
+        locator: page 40, Types of ADUs
+        quote: An attached ADU is a newly created (constructed) dwelling structure that structurally abuts (and
+          connects to) an existing or proposed primary dwelling or accessory structure
+        accessed: '2026-11-03'
+      limitations:
+      - An attached ADU may be capped at half the floor area of the house, but not below 850 square feet.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: A new detached ADU of up to 800 square feet must be approved without a hearing, and any
+        local maximum size must allow at least 850 square feet, or 1,000 square feet for an ADU with more than one
+        bedroom.
+      status: supported_with_limits
+      sources:
+      - title: California Government Code 66323
+        url: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=66323
+        locator: subdivision (a)(2)(A)
+        quote: A total floor area limitation of not more than 800 square feet of livable space
+        accessed: '2026-11-03'
+      - title: California HCD ADU Handbook, March 2026 (Government Code 66323(a)(2)(B))
+        url: https://www.hcd.ca.gov/sites/default/files/docs/policy-and-research/adu-handbook-update.pdf
+        locator: page 16, 66323 Units, item 2
+        quote: The maximum unit size is 800 square feet
+        accessed: '2026-11-03'
+      - title: California HCD ADU Handbook, March 2026 (Government Code 66321(b)(2))
+        url: https://www.hcd.ca.gov/sites/default/files/docs/policy-and-research/adu-handbook-update.pdf
+        locator: page 38, Size Requirements and Restrictions
+        quote: maximum unit size requirements must allow an ADU of at least 850 square feet of interior livable
+          space, or 1,000 square feet of interior livable space for ADUs with more than one bedroom
+        accessed: '2026-11-03'
+      limitations:
+      - Size is measured as interior livable space.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No parking may be required for the units that must be approved without a hearing, including
+        the new detached ADU of up to 800 square feet. Other ADUs may be required to have at most one space per
+        unit or bedroom, and none near public transit and in other listed cases.
+      status: supported_with_limits
+      sources:
+      - title: California Government Code 66322
+        url: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=66322
+        locator: subdivision (a)
+        quote: A local agency shall not impose any parking standards for an accessory dwelling unit in any of the
+          following instances
+        accessed: '2026-11-03'
+      - title: California HCD ADU Handbook, March 2026 (Government Code 66323)
+        url: https://www.hcd.ca.gov/sites/default/files/docs/policy-and-research/adu-handbook-update.pdf
+        locator: page 33, Parking Requirements
+        quote: local agencies may not impose parking requirements on 66323 Units
+        accessed: '2026-11-03'
+      - title: California HCD ADU Handbook, March 2026 (Government Code 66314(d)(10)(A))
+        url: https://www.hcd.ca.gov/sites/default/files/docs/policy-and-research/adu-handbook-update.pdf
+        locator: page 33, Parking Requirements
+        quote: Parking requirements for ADUs shall not exceed one parking space per unit or bedroom, whichever is
+          less
+        accessed: '2026-11-03'
+      limitations:
+      - Larger ADUs built under the general rules may be required to have one space, unless they are within half
+        a mile walking distance of public transit or meet another listed exemption.
+    current_strength: 1.0
+    strength_rationale: 'All four benchmark features are in California law in every city and county: one ADU per
+      lot approved without a hearing, attached or detached, a new detached unit of up to 800 square feet with local
+      size caps no lower than 850, and no parking for those units. So 4 / 4 = 1.00 of the benchmark is already in
+      law and none would be newly affected. Larger ADUs built under the general rules may still need one parking
+      space away from transit.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'All four statuses unchanged from Adam''s record. Statute site (leginfo) blocked scripted access with
+      a Cloudflare challenge on 2026-11-03; all quotes come from the HCD ADU Handbook (March 2026), an official
+      state agency page that restates Government Code 66313, 66314, 66321 and 66323 with citations. Parking counted
+      as supported because the benchmark unit (one detached ADU of 600 square feet or more) can always be built
+      under 66323(a)(2) with no parking; general-rule ADUs can still face one space. Coverage 1: binds every city,
+      county and city and county, charter cities included (66313(g)). Statute text for 66322 and 66323 read on leginfo
+      in a browser on 2026-11-03 (leginfo refuses scripted requests); the HCD handbook sources are the machine-checked
+      ones.'

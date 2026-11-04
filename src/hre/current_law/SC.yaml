@@ -1,0 +1,94 @@
+# South Carolina current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: SC
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: 'No statewide ADU law found. Local zoning authority: S.C. Code 6-29-720. The planning law lists accessory
+        dwellings among market-based incentives a housing plan must consider (S.C. Code 6-29-1110(3)(e) and 6-29-510(D)(6),
+        2007 Act No. 31).'
+      summary: South Carolina law leaves accessory dwelling units to each city and county; no statute requires them
+        to be allowed.
+      quote: the governing body of a municipality or county may adopt a zoning ordinance to help implement the comprehensive
+        plan
+      url: https://www.scstatehouse.gov/code/t06c029.php
+      accessed: '2026-11-03'
+      in_effect: 'Not applicable: no statewide ADU law (checked through the 2026 session).'
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No statute requires ADUs to be allowed. The planning law names promoting accessory dwellings
+        as one incentive a local housing plan should analyze, which requires nothing of any lot.
+      status: differs
+      sources:
+      - title: South Carolina Code 6-29-1110
+        url: https://www.scstatehouse.gov/code/t06c029.php
+        locator: section 6-29-1110(3)(e)
+        quote: creating preapproved design standards to allow for quick and easy approval, and promoting infill
+          development, mixed use and accessory dwellings
+        accessed: '2026-11-03'
+      - title: South Carolina Code 6-29-510
+        url: https://www.scstatehouse.gov/code/t06c029.php
+        locator: section 6-29-510(D)(6)
+        quote: an analysis of market-based incentives that may be made available to encourage development of affordable
+          housing
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: South Carolina Code 6-29-720
+        url: https://www.scstatehouse.gov/code/t06c029.php
+        locator: section 6-29-720(A)
+        quote: the governing body of a municipality or county may adopt a zoning ordinance to help implement the
+          comprehensive plan
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: South Carolina Code 6-29-720
+        url: https://www.scstatehouse.gov/code/t06c029.php
+        locator: section 6-29-720(A)
+        quote: the governing body of a municipality or county may adopt a zoning ordinance to help implement the
+          comprehensive plan
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No statute addresses this; it is left to local zoning, which may regulate off-street parking.
+      status: differs
+      sources:
+      - title: South Carolina Code 6-29-720
+        url: https://www.scstatehouse.gov/code/t06c029.php
+        locator: section 6-29-720(A)(5)
+        quote: the amount of off-street parking and loading that must be provided
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: South Carolina has no statewide law requiring cities or counties to allow ADUs, so none
+      of the benchmark is in law and all of it would be newly affected. Cities that allow ADUs on their own are
+      not counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'No statewide requirement; zero by the gate. Changed from Adam: record moved to the no-statewide-law
+      form (Adam: ''allows only'' citing 6-29-1110(3)); forms, size, parking unknown to differs. 2007 Act No. 31
+      section 4 confirmed from the 6-29-1110 history note (''1994 Act No. 355, SECTION 1; 2007 Act No. 31, SECTION
+      4, eff May 23, 2007''); bill number of Act 31 not confirmed. Enacted acts 2023 to 2026 checked by title on
+      scstatehouse.gov/listofacts.php; ADU bills found by full-text search (H. 5372 of 2024, H. 3469 of 2025-2026)
+      are property tax incentives and were not enacted.'

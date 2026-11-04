@@ -1,0 +1,258 @@
+# Connecticut current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: CT
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: 'General Statutes 8-2o, enacted by Public Act 21-29, section 6 (H.B. 6107, 2021) and amended by November
+        Special Session Public Act 25-1 (H.B. 8002, 2025) and Public Act 26-7 (H.B. 5288, 2026); parking: General
+        Statutes 8-3n, enacted by November Special Session Public Act 25-1, section 19'
+      summary: Connecticut towns that did not opt out before 2023 must allow one ADU as of right, attached or detached,
+        on every lot with a single-family home. Since July 1, 2026, towns generally may not reject a small housing
+        application for lacking parking. The protected size reaches 600 square feet only for houses of 2,000 square
+        feet or more.
+      quote: provided at least one accessory apartment shall be allowed as of right on each lot that contains a
+        single-family dwelling
+      url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+      accessed: '2026-11-03'
+      in_effect: The ADU law took effect January 1, 2022 and bound towns that had not opted out from January 1,
+        2023. The parking rule applies from July 1, 2026. From October 1, 2026, the ADU rules also bind towns that
+        zone under special acts.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Zoning must allow at least one ADU as of right on each lot with a single-family home, with
+        a decision within 65 days, in every town that did not opt out before January 1, 2023. Since October 1, 2026
+        this also covers towns that zone under special acts.
+      status: supported_with_limits
+      sources:
+      - title: Connecticut General Statutes 8-2o (2026 Supplement)
+        url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+        locator: section 8-2o(a)(1)
+        quote: provided at least one accessory apartment shall be allowed as of right on each lot that contains
+          a single-family dwelling
+        accessed: '2026-11-03'
+      - title: Connecticut General Statutes 8-2o (2026 Supplement)
+        url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+        locator: section 8-2o(f)
+        quote: except that, on and after January 1, 2023, no municipality may opt out of the provisions of said
+          subsections
+        accessed: '2026-11-03'
+      - title: Office of Legislative Research, Public Act Summary of PA 26-7
+        url: https://www.cga.ct.gov/2026/SUM/PDF/2026SUM00007-R01HB-05288-SUM.PDF
+        locator: summary, first change; effective October 1, 2026
+        quote: Previously, these requirements applied only to municipalities that exercise zoning
+        accessed: '2026-11-03'
+      limitations:
+      - Towns that opted out before January 1, 2023 are not covered. Towns did not have to report opt-outs to the
+        state; a 2023 survey by the advocacy group DesegregateCT counted 115 of 169.
+      - In opted-out towns, an owner of three years or more in a transit-oriented district may still build an ADU
+        as of right.
+      - Towns may limit short-term rentals and keep their rules for wells and septic systems.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: Zoning must allow ADUs attached to or within the house, or detached from it on the same
+        lot.
+      status: supported_with_limits
+      sources:
+      - title: Connecticut General Statutes 8-2o (2026 Supplement)
+        url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+        locator: section 8-2o(a)(2)
+        quote: Allow accessory apartments to be attached to or located within the proposed or existing principal
+          dwelling, or detached from the proposed or existing principal dwelling and located on the same lot as
+          such dwelling
+        accessed: '2026-11-03'
+      limitations:
+      - Covered towns only.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: Towns may cap the size at 30% of the house's floor area or 1,000 square feet, whichever
+        is less. That reaches 600 square feet only for houses of 2,000 square feet or more; a 1,500 square foot
+        house need allow only 450.
+      status: differs
+      sources:
+      - title: Connecticut General Statutes 8-2o (2026 Supplement)
+        url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+        locator: section 8-2o(a)(3)
+        quote: not less than thirty per cent of the net floor area of the principal dwelling, or one thousand square
+          feet, whichever is less
+        accessed: '2026-11-03'
+      limitations: []
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: The ADU law lets towns require one space. But since July 1, 2026, no zoning official or
+        commission may reject an application for any residential development of fewer than 17 homes, such as an
+        ADU, solely because it lacks required off-street parking, unless it finds a specific harm to public health
+        and safety that conditions cannot fix.
+      status: supported_with_limits
+      in_effect_from: '2026-07-01'
+      sources:
+      - title: Connecticut General Statutes 8-3n (2026 Supplement)
+        url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+        locator: section 8-3n(a), effective July 1, 2026
+        quote: shall reject an application for any residential development solely on the basis that such development
+          fails to conform with any requirement for off-street motor vehicle parking spaces
+        accessed: '2026-11-03'
+      - title: Connecticut General Statutes 8-2o (2026 Supplement)
+        url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+        locator: section 8-2o(a)(6)(C)
+        quote: any more than one parking space for any such accessory apartment
+        accessed: '2026-11-03'
+      limitations:
+      - Towns may still require parking where they find a lack of it would harm public health and safety, and in
+        up to two conservation and traffic mitigation districts of no more than 4% of their land each.
+      - Whether the general parking rule reaches a single ADU application has not been tested in court.
+    current_strength: 0.21
+    strength_rationale: 'Three of the four benchmark features are in Connecticut law in the towns that did not opt
+      out: one ADU per lot as of right, attached or detached, and, since July 1, 2026, no denial for lacking parking
+      in most places. The fourth, a size of at least 600 square feet, is not: towns may cap the size at 30% of the
+      house. The parking rule counts for the nine tenths of 2026 to 2030 it is in force, so (1 + 1 + 0.90) / 4 =
+      0.73. But 115 towns opted out before 2023, and the towns that stayed in hold 29% of the state''s detached
+      homes, so 0.73 × 0.29 = 0.21 of the benchmark is in law.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Re-checked 2026-11-03 on cga.ct.gov: 2026 Supplement chapter 124 (8-2o with Nov. Sp. Sess. PA 25-1 subsection
+      (g); 8-3n effective July 1, 2026), PA 26-7 (signed May 7, 2026, effective October 1, 2026: renames to ''accessory
+      dwelling unit'', extends 8-2o(a) to special-act zoning, keeps the opt-out language), OLR summaries of PA 25-1
+      (sections 18, 19 and 53) and PA 26-7. HB 5507 (2026), which would have voided opt-outs, died on the House
+      calendar (tabled April 15, 2026). Change from Adam''s record: parking moved from differs to supported_with_limits
+      from 2026-07-01, because 8-3n bars rejecting any residential development of 16 or fewer units solely for parking
+      nonconformity (OLR: ''fewer than 17 units''), which in practice removes the one-space option outside conservation
+      and traffic mitigation districts; this is a judgment call and could be argued as differs (8-2o still says
+      a town may require one space; the health-and-safety finding is discretionary). If the reviewer prefers differs,
+      strength becomes 0.50. Strength shown is the feature share only; coverage pending (town-level, list above).
+      Horizon share for July 1, 2026: 1645/1826 = 0.9009.'
+    coverage:
+      share: 0.2899
+      rule:
+        places: all
+        unincorporated: all
+        exclude_subdivisions:
+        - Andover
+        - Ansonia
+        - Ashford
+        - Avon
+        - Barkhamsted
+        - Beacon Falls
+        - Berlin
+        - Bethany
+        - Bethel
+        - Bloomfield
+        - Bozrah
+        - Branford
+        - Bridgewater
+        - Bristol
+        - Brookfield
+        - Brooklyn
+        - Burlington
+        - Columbia
+        - Canaan
+        - Canterbury
+        - Chaplin
+        - Cheshire
+        - Colebrook
+        - Cornwall
+        - Coventry
+        - Danbury
+        - Darien
+        - Derby
+        - Durham
+        - East Hampton
+        - East Hartford
+        - East Haven
+        - Easton
+        - East Lyme
+        - Enfield
+        - Fairfield
+        - Farmington
+        - Franklin
+        - Glastonbury
+        - Granby
+        - Greenwich
+        - Griswold
+        - Hamden
+        - Harwinton
+        - Kent
+        - Killingly
+        - Lebanon
+        - Ledyard
+        - Lisbon
+        - Litchfield
+        - Lyme
+        - Mansfield
+        - Meriden
+        - Middlebury
+        - Middlefield
+        - Middletown
+        - Milford
+        - Monroe
+        - Montville
+        - Naugatuck
+        - New Britain
+        - New Canaan
+        - New Fairfield
+        - New Hartford
+        - New London
+        - New Milford
+        - Newington
+        - Norfolk
+        - North Branford
+        - North Haven
+        - Norwalk
+        - Norwich
+        - Old Lyme
+        - Old Saybrook
+        - Orange
+        - Oxford
+        - Plainfield
+        - Plainville
+        - Pomfret
+        - Preston
+        - Prospect
+        - Putnam
+        - Redding
+        - Roxbury
+        - Salem
+        - Salisbury
+        - Seymour
+        - Sharon
+        - Shelton
+        - Sherman
+        - Simsbury
+        - Somers
+        - South Windsor
+        - Southington
+        - Sprague
+        - Stafford
+        - Stratford
+        - Stamford
+        - Sterling
+        - Stonington
+        - Thomaston
+        - Trumbull
+        - Union
+        - Wallingford
+        - Warren
+        - Washington
+        - Waterbury
+        - Watertown
+        - West Haven
+        - Weston
+        - Westport
+        - Willington
+        - Wilton
+        - Windsor Locks
+        - Woodstock
+        exclude_tribal: true
+      basis: 'ACS 2020-2024: 237,697 detached homes in 32 covered places + 665,034 outside incorporated places (after
+        removing 40 on tribal land) - 641,032 in the 115 towns the law does not reach = 29.0% of 902,771. Every
+        town except the 115 that opted out before 2023. No official list of opt-outs exists; the list is DesegregateCT''s
+        September 2023 survey (14 of the 54 towns that stayed in are unconfirmed there). Bethlehem and Eastford
+        have no zoning and are counted as covered, since nothing in their rules bars an ADU.'

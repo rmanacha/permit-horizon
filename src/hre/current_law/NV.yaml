@@ -1,0 +1,144 @@
+# Nevada current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: NV
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: NRS 278.257, added by A.B. 396 (2025, Statutes of Nevada chapter 365); the deadline and fallback are
+        in section 11 of the act
+      summary: Counties of 100,000 people or more (Clark and Washoe) and cities of 60,000 or more must adopt an
+        ordinance allowing ADUs, attached, detached or inside the house, on single-family lots. Where a covered
+        county or city had no such ordinance by July 1, 2026, ADUs are allowed on any residential parcel without
+        restriction.
+      quote: each governing body of a county whose population is 100,000 or more and each governing body of a city
+        whose population is 60,000 or more shall adopt an ordinance that authorizes the development and use of an
+        accessory dwelling unit on residential property.
+      url: https://www.leg.state.nv.us/NRS/NRS-278.html
+      accessed: '2026-11-03'
+      in_effect: Act approved June 6, 2025; the requirement applies from July 1, 2026.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Covered counties and cities must adopt an ordinance that allows ADUs on property zoned
+        for single-family homes. If they had not done so by July 1, 2026, ADUs are allowed on any residential parcel
+        without restriction.
+      status: supported_with_limits
+      in_effect_from: '2026-07-01'
+      sources:
+      - title: Nevada Revised Statutes 278.257
+        url: https://www.leg.state.nv.us/NRS/NRS-278.html
+        locator: NRS 278.257 subsection 1
+        quote: shall adopt an ordinance that authorizes the development and use of an accessory dwelling unit on
+          residential property.
+        accessed: '2026-11-03'
+      - title: Nevada Revised Statutes 278.257
+        url: https://www.leg.state.nv.us/NRS/NRS-278.html
+        locator: NRS 278.257 subsection 6(c)
+        quote: means a property that is located in an area of the county or city, as applicable, zoned for single-family
+          residential use.
+        accessed: '2026-11-03'
+      - title: Statutes of Nevada 2025, chapter 365 (A.B. 396)
+        url: https://www.leg.state.nv.us/Division/Legal/LawLibrary/Statutes/83rd2025/Stats202519.html
+        locator: section 11, subsection 2, page 2387
+        quote: accessory dwelling units are authorized on any parcel zoned for residential use without restriction.
+        accessed: '2026-11-03'
+      - title: Statutes of Nevada 2025, chapter 365 (A.B. 396)
+        url: https://www.leg.state.nv.us/Division/Legal/LawLibrary/Statutes/83rd2025/Stats202519.html
+        locator: section 14, subsection 2(b), page 2387
+        quote: On July 1, 2026, for all other purposes.
+        accessed: '2026-11-03'
+      - title: Nevada Revised Statutes 278.257
+        url: https://www.leg.state.nv.us/NRS/NRS-278.html
+        locator: NRS 278.257 subsection 5
+        quote: does not apply in a region in a county or city in this State for which there has been created by
+          interstate compact a regional planning agency
+        accessed: '2026-11-03'
+      limitations:
+      - Only Clark and Washoe counties (outside cities) and the cities of 60,000 people or more (Las Vegas, Henderson,
+        North Las Vegas, Reno and Sparks) are covered; other counties, Carson City and smaller cities such as Boulder
+        City and Mesquite are not.
+      - The Lake Tahoe region, governed by the regional planning compact, is excluded.
+      - The law does not say the ADU must be approved by right, and it does not bar lot-size or other conditions
+        beyond those it lists.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The required ADU is defined to include units attached to, detached from or built within
+        the house, and side and rear setbacks for it may be no stricter than for the house.
+      status: supported_with_limits
+      in_effect_from: '2026-07-01'
+      sources:
+      - title: Nevada Revised Statutes 278.257
+        url: https://www.leg.state.nv.us/NRS/NRS-278.html
+        locator: NRS 278.257 subsection 6(a)
+        quote: regardless of whether the independent living space is attached, detached or built within the primary
+          residence
+        accessed: '2026-11-03'
+      - title: Nevada Revised Statutes 278.257
+        url: https://www.leg.state.nv.us/NRS/NRS-278.html
+        locator: NRS 278.257 subsection 2(c)
+        quote: Require any side or rear setback for the accessory dwelling unit that is more restrictive than the
+          requirements for the primary residence.
+        accessed: '2026-11-03'
+      limitations:
+      - The law reaches the forms through its definition of the unit that must be allowed; it does not list each
+        form separately.
+      - Covered counties and cities only.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: The law lists the conditions an ordinance may not impose (a ban on kitchens, more than
+        one parking space, stricter setbacks, street repairs, a ban on renting); a size limit is not among them,
+        so a county or city may cap ADUs below 600 square feet.
+      status: differs
+      sources:
+      - title: Nevada Revised Statutes 278.257
+        url: https://www.leg.state.nv.us/NRS/NRS-278.html
+        locator: NRS 278.257 subsection 2
+        quote: 'subsection 1 must not as a condition of approval of an accessory dwelling unit:'
+        accessed: '2026-11-03'
+      limitations: []
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: A county or city may require one added parking space for an ADU, and more where the house's
+        parking and street parking do not meet the ADU's needs.
+      status: differs
+      sources:
+      - title: Nevada Revised Statutes 278.257
+        url: https://www.leg.state.nv.us/NRS/NRS-278.html
+        locator: NRS 278.257 subsection 2(b)
+        quote: Require more than one additional parking space for the accessory dwelling unit provided that the
+          existing parking for the primary residence and street parking satisfy the anticipated parking needs for
+          the accessory dwelling unit.
+        accessed: '2026-11-03'
+      limitations: []
+    current_strength: 0.38
+    strength_rationale: 'Two of the four benchmark features are in Nevada law from July 1, 2026, in Clark and Washoe
+      counties and the five cities of 60,000 people or more: ADUs allowed on single-family lots, attached or detached.
+      The other two are not: the law sets no minimum size, and a county or city may require an added parking space.
+      In force for 90% of 2026 to 2030, in places holding 85% of the state''s detached homes: 2 / 4 × 0.90 × 0.853
+      = 0.38 of the benchmark is in law.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Re-verified 2026-11-03 from the official NRS chapter 278 page (codified as NRS 278.257, added by 2025
+      page 2376) and the Statutes of Nevada 2025 page for chapter 365 (approved June 6, 2025; sections 11 and 14).
+      Nevada held no regular session in 2026; no later amendment found. Changes from Adam''s record: size changed
+      from unknown to differs (the statute is silent, so a cap below 600 square feet is allowed); in_effect_from
+      2026-07-01 added to the two supported rows; record URL kept on the NRS page, which now loads. current_strength
+      0.45 is the feature share (2 x 0.9009 / 4 = 0.4504); coverage pending.'
+    coverage:
+      share: 0.8528
+      rule:
+        min_population: 60000
+        unincorporated: all
+        county_min_population: 100000
+        exclude_tribal: true
+      basis: 'ACS 2020-2024: 425,031 detached homes in 5 covered places + 257,677 outside incorporated places (after
+        removing 3,829 on tribal land) = 85.3% of 800,558. Cities of 60,000 or more and the unincorporated parts
+        of Clark and Washoe counties (2020 Census, NRS 0.050), less tribal land. The Tahoe Regional Planning Agency
+        area (Incline Village and Crystal Bay) is excluded by the law but not subtracted here, a small over-count.'

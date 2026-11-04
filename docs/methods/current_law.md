@@ -89,18 +89,46 @@ that reaches few homes can fall below its band (Arizona middle housing, 0.04, at
 
 ## Coverage, measured
 
-`coverage.rule` in a state file names the jurisdictions the law binds (`above_population`,
-`min_population`, `places`, `unincorporated`, `exclude_tribal`, `near_downtown_miles`), and
+`coverage.rule` in a state file names the jurisdictions the law binds, and
 `hre validate --law-coverage` recomputes the share from the cache and fails when it differs from
-the stored `coverage.share`. Places are Census places; a "CDP" is unincorporated and counts
+the stored `coverage.share`. The keys (all in `src/hre/current_law/coverage.py`):
+
+| Key | Meaning | Used by |
+|---|---|---|
+| `above_population`, `min_population` | incorporated places over (or at least) a population | AZ, ID, NC, NV, OR, CO |
+| `places: all / none` | every incorporated place, or none | AR, MA, MT, WV |
+| `unincorporated: all / cdp / none` | land outside cities; `cdp` counts census-designated places only, a stand-in for unincorporated urban areas (growth boundaries) | AZ, NV, MA, CT; CO, OR, WA |
+| `cdp_min_population`, `county_min_population` | only CDPs, or only counties, of that size | CO; NV, OR |
+| `counties` | restrict everything to listed counties | CO (metropolitan planning areas), WA (Growth Management Act counties) |
+| `county_in_effect_from` | counties the law reaches only later count their share of 2026-2030 | WA |
+| `exclude_places`, `exclude_subdivisions` | named cities, or towns that opted out | MA (Boston), NC (coastal cities); CT (115 towns) |
+| `exclude_tribal` | homes on tribal land | AZ, NV, CT |
+| `near_downtown_miles` | upper bound for a rule that reaches only land near downtown | AZ middle housing | Places are Census places; a "CDP" is unincorporated and counts
 with the areas outside cities. When a statute uses the decennial census for its threshold (Arizona,
 A.R.S. 1-215), the ACS 2020-2024 set of places is compared with the 2020 Census set in the basis
 text. A rule that reaches only the area near each downtown is an upper bound: a circle of radius
 the rule's reach plus one mile at the place's average density of detached homes.
 
+Where the census geography cannot express a law exactly, the file says which way the figure
+leans (decision 95): CDPs stand in for urban growth areas (an over-count where rural CDPs lie
+outside them), a county list over-counts towns outside a planning boundary, and Virginia's
+exemption for localities with an earlier ordinance is not subtracted (an upper bound).
+Connecticut's opt-out list is the only one that exists, an advocacy group's 2023 survey; no state
+agency collected one.
+
 Limits: the share is statewide, so the engine applies one strength to every county; a county
 with mostly uncovered towns gets the state's average. Local ordinances that go further than the
 statute are not counted anywhere: the register measures state law only, and every card says so.
+
+## Every quote is checked against its page
+
+`uv run hre validate --law-quotes --fetch` fetches every cited page once and searches for each
+quote word for word (`docs/evidence/current_law_quotes.md`); statutes published as PDFs are read
+with the optional `law` extra (pypdf, decision 94). Three official sites cannot be read by a
+script: California's leginfo refuses scripted requests, Indiana's code site draws its text with
+JavaScript, and Connecticut's certificate chain fails Python's TLS check. Their quotes were read
+by hand and are recorded with date and method in `docs/evidence/current_law_hand_checks.yaml`;
+the check reports them as "checked by hand", never as found.
 
 ## What the website shows
 

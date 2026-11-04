@@ -1,0 +1,139 @@
+# District of Columbia current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: DC
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: Zoning Regulations of 2016, 11-U DCMR section 253 (accessory apartments), adopted by Z.C. Order No. 08-06A
+        (63 DCR 2447, March 4, 2016) and amended by Z.C. Order No. 18-16/19-27 (70 DCR 11297, August 25, 2023);
+        with 11-D DCMR 201.1, 5002 and 5003 and 11-C DCMR 701.5
+      summary: In the District's residential house (R) zones, one accessory apartment is allowed as a matter of
+        right in the house or in an accessory building such as a garage, with the owner living in one of the two
+        units. The Georgetown R zones need a special exception, and the rowhouse flat (RF) zones allow a second
+        home as a flat instead.
+      quote: An accessory apartment shall be permitted in a principal dwelling or an accessory building as a matter
+        of right in the R zones
+      url: https://dcoz.dc.gov/sites/default/files/dc/sites/dcoz/page_content/attachments/ZR16_unoff_export_10012025.pdf
+      accessed: '2026-11-03'
+      in_effect: Since September 6, 2016 (current text effective August 25, 2023).
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: One accessory apartment is allowed with each principal dwelling in every R zone, as a matter
+        of right except in the two Georgetown R zones, where the Board of Zoning Adjustment must approve a special
+        exception.
+      status: supported_with_limits
+      sources:
+      - title: 11-U DCMR 253 (Office of Zoning compilation, October 1, 2025)
+        url: https://dcoz.dc.gov/sites/default/files/dc/sites/dcoz/page_content/attachments/ZR16_unoff_export_10012025.pdf
+        locator: Subtitle U, section 253.2 (page U 2-23, PDF page 818)
+        quote: An accessory apartment shall be permitted in a principal dwelling or an accessory building as a matter
+          of right in the R zones
+        accessed: '2026-11-03'
+      - title: 11-D DCMR 201.1 (Office of Zoning compilation, October 1, 2025)
+        url: https://dcoz.dc.gov/sites/default/files/dc/sites/dcoz/page_content/attachments/ZR16_unoff_export_10012025.pdf
+        locator: Subtitle D, section 201.1 (page D 2-2, PDF page 230)
+        quote: In all R zones, one (1) principal dwelling unit and one (1) accessory apartment shall be permitted
+        accessed: '2026-11-03'
+      - title: 11-U DCMR 253 (Office of Zoning compilation, October 1, 2025)
+        url: https://dcoz.dc.gov/sites/default/files/dc/sites/dcoz/page_content/attachments/ZR16_unoff_export_10012025.pdf
+        locator: Subtitle U, section 253.5 (page U 2-23, PDF page 818)
+        quote: Either the principal dwelling or accessory apartment unit shall be owner-occupied for the duration
+          of the accessory apartment use.
+        accessed: '2026-11-03'
+      limitations:
+      - The owner must live in the house or the apartment for as long as the apartment is used, and no more than
+        three people may live in the apartment.
+      - An apartment inside the house requires a house of at least 2,000 square feet in R-1 zones and 1,200 square
+        feet in R-2 zones.
+      - The rowhouse flat (RF) zones do not allow accessory apartments; they allow two or more principal homes per
+        lot instead.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The apartment may be in the house or in a detached accessory building; in an accessory
+        building it is a matter of right where the lot has permanent access by an open passage or an improved alley
+        to a street, and needs a special exception otherwise.
+      status: supported_with_limits
+      sources:
+      - title: 11-U DCMR 253 (Office of Zoning compilation, October 1, 2025)
+        url: https://dcoz.dc.gov/sites/default/files/dc/sites/dcoz/page_content/attachments/ZR16_unoff_export_10012025.pdf
+        locator: Subtitle U, section 253.8 (page U 2-24, PDF page 819)
+        quote: There shall be permanent access to the accessory building apartment
+        accessed: '2026-11-03'
+      limitations:
+      - Apartments in accessory buildings without the required passage or alley access need a special exception;
+        the building may not have a roof deck.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: An apartment in an accessory building may fill a building of two stories with a footprint
+        of 450 square feet (or 30% of the required rear yard, if greater), so 600 square feet is allowed. An apartment
+        inside the house is limited to 35% of the house, which reaches 600 square feet only in houses of about 1,715
+        square feet or more.
+      status: supported_with_limits
+      sources:
+      - title: 11-D DCMR 5003.1 (Office of Zoning compilation, October 1, 2025)
+        url: https://dcoz.dc.gov/sites/default/files/dc/sites/dcoz/page_content/attachments/ZR16_unoff_export_10012025.pdf
+        locator: Subtitle D, section 5003.1 (page D 50-2, PDF page 269)
+        quote: The maximum building area for an accessory building in an R zone shall be the greater of thirty (30%)
+          of the required rear yard area or four hundred and fifty square feet (450 sq. ft.).
+        accessed: '2026-11-03'
+      - title: 11-D DCMR 5002.1 (Office of Zoning compilation, October 1, 2025)
+        url: https://dcoz.dc.gov/sites/default/files/dc/sites/dcoz/page_content/attachments/ZR16_unoff_export_10012025.pdf
+        locator: Subtitle D, section 5002.1 (page D 50-2, PDF page 269)
+        quote: The maximum height of an accessory building in an R zone shall be two (2) stories
+        accessed: '2026-11-03'
+      - title: 11-U DCMR 253 (Office of Zoning compilation, October 1, 2025)
+        url: https://dcoz.dc.gov/sites/default/files/dc/sites/dcoz/page_content/attachments/ZR16_unoff_export_10012025.pdf
+        locator: Subtitle U, section 253.7(b) (page U 2-23, PDF page 818)
+        quote: The accessory apartment unit may not occupy more than thirty-five percent (35%) of the gross floor
+          area of the house
+        accessed: '2026-11-03'
+      limitations:
+      - Inside the house, a 600 square foot apartment needs a house of about 1,715 square feet or more; many rowhouses
+        are smaller.
+      - A detached apartment of 600 square feet needs a two-story accessory building, on a lot with the required
+        alley or passage access, within the zone's lot occupancy limit.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: The parking table requires one space per principal dwelling for a single-family home and
+        nothing for the accessory apartment, and minimums apply when a new building is constructed.
+      status: supported_with_limits
+      sources:
+      - title: 11-C DCMR 701.5 (Office of Zoning compilation, October 1, 2025)
+        url: https://dcoz.dc.gov/sites/default/files/dc/sites/dcoz/page_content/attachments/ZR16_unoff_export_10012025.pdf
+        locator: Subtitle C, Table C 701.5 (page C 7-2, PDF page 125)
+        quote: Residential, single dwelling unit 1 per principal dwelling.
+        accessed: '2026-11-03'
+      limitations:
+      - The house itself may still need its own space under the general rule; the accessory apartment adds none.
+    current_strength: 1.0
+    strength_rationale: 'All four benchmark features are in the District''s zoning regulations: one accessory apartment
+      per house as a matter of right in the residential house zones, in the house or in a detached building, of
+      at least 600 square feet in a two-story accessory building, with no added parking. So all of the benchmark
+      is already in law and none would be newly affected. The owner must still live on site, apartments inside small
+      houses are capped below 600 square feet, and the Georgetown zones need a special exception.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Changed from Adam: size differs to supported_with_limits and parking unknown to supported_with_limits,
+      raising DC from 0.50 (Adam''s two supported) to 1.0. The size call is a judgment worth a reviewer''s eye:
+      the internal route (35% of the house, R-2/R-3 house minimum 1,200 square feet, so as little as 420) falls
+      short of 600 for houses under about 1,715 square feet, while the detached route (D 5003.1 footprint of 450
+      square feet or 30% of the required rear yard, D 5002.1 two stories) allows 600+ as a matter of right where
+      the 253.8 access conditions are met. If the reviewer reads the typical home as an internal-apartment rowhouse,
+      size should be differs and the strength 0.75. Parking: C 701.5 ''Residential, single dwelling unit: 1 per
+      principal dwelling'' (C 701.2: minimums apply when a new building is constructed). Official text check: dcregs.dc.gov
+      SectionList 11-U253 lists adopted rule R0052760 (effective 8/25/2023; source 63 DCR 2447, 3338; 70 DCR 011297);
+      its View Text download matches the dcoz PDF; the PDF prints the hyphen in ''R-3/GT'' in 253.2 as a non-breaking
+      hyphen, so quotes avoid the zone names. One discrepancy: Table U 253.7(a) in the dcregs adopted-rule download
+      lists ''R-1 2,000 sq. ft.'' and ''R-2 1,200 sq. ft.'', while the dcoz compilation lists ''R-2, R-3 1,200 sq.
+      ft.''; the limitation names only R-1 and R-2. N146931 (Z.C. Order 08-06R, 10/16/2026) changes only DCRA to
+      Department of Buildings in 253.13. The dcoz PDF is labelled an unofficial compilation on the Office of Zoning
+      site; if the session requires dcregs URLs, the official section page is https://www.dcregs.dc.gov/Common/DCMR/SectionList.aspx?SectionNumber=11-U253
+      (text in the download only).'

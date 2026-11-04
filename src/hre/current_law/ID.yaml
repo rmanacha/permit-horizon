@@ -1,0 +1,133 @@
+# Idaho current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: ID
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: Idaho Code 67-6541, added by S.B. 1354 (2026, Session Law chapter 265)
+      summary: Cities of more than 10,000 people must, by February 1, 2027, allow one ADU inside the house or one
+        detached ADU on every lot zoned for single-family homes outside historic districts, approved administratively
+        as a matter of right, with no owner-occupancy rule and no size cap below 1,000 square feet or 75% of the
+        house.
+      quote: Allow for either one (1) internal accessory dwelling unit within the single-family dwelling or one
+        (1) detached accessory dwelling unit per lot in the rear yard or subject to setbacks required of the primary
+        dwelling;
+      url: https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6541/
+      accessed: '2026-11-03'
+      in_effect: Act effective July 1, 2026; cities must amend their plans and rules by February 1, 2027.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: By February 1, 2027, covered cities must allow one ADU on every lot zoned for single-family
+        homes outside historic areas, and an ADU that meets the city's land use rules must be approved administratively
+        as a matter of right.
+      status: supported_with_limits
+      in_effect_from: '2027-02-01'
+      sources:
+      - title: Idaho Code 67-6541
+        url: https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6541/
+        locator: subsection (2)
+        quote: each city governing board shall amend its comprehensive plan and land use regulations for all land
+          zoned for single-family residential uses
+        accessed: '2026-11-03'
+      - title: Idaho Code 67-6541
+        url: https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6541/
+        locator: subsection (3)
+        quote: shall be approved administratively and as a matter of right, without the need for discretionary approval.
+        accessed: '2026-11-03'
+      - title: Idaho Code 67-6541
+        url: https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6541/
+        locator: subsection (6)
+        quote: The provisions of this section shall apply only to cities with a population greater than ten thousand
+          (10,000).
+        accessed: '2026-11-03'
+      limitations:
+      - Only cities of more than 10,000 people are covered; counties and smaller cities are not.
+      - Lots in historic districts and designated historic properties are excluded.
+      - Building, fire, floodplain, utility, environmental and right-of-way setback rules still apply.
+      - Owner-occupancy rules are barred.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: Covered cities must allow either one ADU inside the house or one detached ADU in the rear
+        yard or within the house's setbacks. Attached additions are counted as ADUs but are not expressly required.
+      status: supported_with_limits
+      in_effect_from: '2027-02-01'
+      sources:
+      - title: Idaho Code 67-6541
+        url: https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6541/
+        locator: subsection (2)(a)
+        quote: or one (1) detached accessory dwelling unit per lot in the rear yard or subject to setbacks required
+          of the primary dwelling
+        accessed: '2026-11-03'
+      - title: Idaho Code 67-6541
+        url: https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6541/
+        locator: subsection (1)
+        quote: An accessory dwelling unit may be internal, attached, or detached
+        accessed: '2026-11-03'
+      limitations:
+      - One ADU per lot, inside the house or detached; attached additions are not expressly required.
+      - Covered cities only.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: Cities may not cap an ADU below 1,000 square feet or 75% of the house. The text does not
+        say which governs when they differ; under the narrower reading, 600 square feet is protected for houses
+        of 800 square feet or more.
+      status: supported_with_limits
+      in_effect_from: '2027-02-01'
+      sources:
+      - title: Idaho Code 67-6541
+        url: https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6541/
+        locator: subsection (2)(d)
+        quote: Prohibit limiting the size of an accessory dwelling unit to less than one thousand (1000) square
+          feet or seventy-five percent (75%) of the size of the primary dwelling;
+        accessed: '2026-11-03'
+      limitations:
+      - On lots with a house under 800 square feet, the protected size may be below 600 square feet.
+      - Covered cities only.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: Cities may not require parking for an ADU unless the house has no off-street parking, the
+        street is not built for parking, or the house is within a quarter mile of transit, an employment area or
+        commercial services. In cities of this size the last exception reaches many lots, and the law sets no cap
+        on spaces there.
+      status: differs
+      sources:
+      - title: Idaho Code 67-6541
+        url: https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6541/
+        locator: subsection (2)(b)
+        quote: unless the principal dwelling unit is within one-fourth (1/4) mile of transit, an employment area,
+          or commercial services;
+        accessed: '2026-11-03'
+      limitations: []
+    current_strength: 0.31
+    strength_rationale: 'Three of the four benchmark features are in Idaho law from February 1, 2027, in the cities
+      it covers: one ADU per lot as a matter of right, a detached unit allowed, and a size of at least 600 square
+      feet for most houses. The fourth, no added parking, is not: cities may require parking near transit, jobs
+      or shops, or where the house has no off-street parking. The law is in force for 78% of 2026 to 2030, in cities
+      of more than 10,000 people that hold 53% of the state''s detached homes: 3 / 4 × 0.78 × 0.53 = 0.31 of the
+      benchmark is in law.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Adam''s record had the law and dates but no feature rows (all unknown); every row is new, from the official
+      codified page (history note: added 2026, ch. 265, sec. 2, p. 1118) and the bill page (signed by the Governor
+      March 31, 2026; Session Law chapter 265; effective July 1, 2026). in_effect_from is the city deadline of February
+      1, 2027, not the act''s July 1, 2026 date, because subsection (2) gives cities until then and nothing self-executes
+      earlier (subsection (1), which bars outright bans, applies from July 1, 2026 but requires nothing per lot).
+      Forms read ''allow for either'' as letting the owner choose internal or detached. Parking is differs because
+      the quarter-mile exception is broad. Section 1 of the act also amends Idaho Code 55-3212 on homeowner association
+      rules (not counted). current_strength 0.59 = 3 x 0.7831 / 4 = 0.5873, the feature share; coverage pending.'
+    coverage:
+      share: 0.5345
+      rule:
+        above_population: 10000
+        unincorporated: none
+      basis: 'ACS 2020-2024: 313,591 detached homes in 25 covered places = 53.4% of 586,652. Cities of more than
+        10,000 people; counties are not named. The statute does not say which count; the ACS is used here, and Middleton
+        and Rathdrum, just over 10,000 in the ACS, may be under it in the 2020 Census.'

@@ -1,0 +1,104 @@
+# Vermont current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: VT
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: 24 V.S.A. 4412(1)(E) and 4303(38), as amended by S.237 (2020, Act 179), S.100 (2023, Act 47) and S.328
+        (2026, Act 179)
+      summary: Every Vermont municipality must allow one ADU within or appurtenant to a single-family home as a
+        permitted use, outside flood hazard and river erosion areas, under the same rules as a home without one,
+        for units up to 900 square feet or 30 percent of the house, whichever is greater.
+      quote: no bylaw shall have the effect of excluding as a permitted use one accessory dwelling unit that is
+        located within or appurtenant to a single-family dwelling
+      url: https://legislature.vermont.gov/statutes/section/24/117/04412
+      accessed: '2026-11-03'
+      in_effect: Required since before 2020; current wording since July 1, 2026, when the condition that the lot
+        be owner-occupied was removed.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No bylaw may exclude as a permitted use one ADU within or appurtenant to a single-family
+        home, and the home with its ADU must face the same review and dimensional rules as a home without one. Since
+        July 1, 2026 this applies whether or not the owner lives on the lot.
+      status: supported_with_limits
+      sources:
+      - title: Vermont Statutes 24 V.S.A. 4412
+        url: https://legislature.vermont.gov/statutes/section/24/117/04412
+        locator: subdivision (1)(E)
+        quote: no bylaw shall have the effect of excluding as a permitted use one accessory dwelling unit that is
+          located within or appurtenant to a single-family dwelling
+        accessed: '2026-11-03'
+      - title: Vermont Statutes 24 V.S.A. 4412
+        url: https://legislature.vermont.gov/statutes/section/24/117/04412
+        locator: subdivision (1)(E)
+        quote: A bylaw shall require a single-family dwelling with an accessory dwelling unit to be subject to the
+          same review, dimensional, or other controls as required for a single-family dwelling without an accessory
+          dwelling unit.
+        accessed: '2026-11-03'
+      limitations:
+      - Flood hazard and fluvial erosion area bylaws may still exclude ADUs.
+      - The property must have enough wastewater capacity, and the unit must be clearly subordinate to the house.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The protected ADU may be within or appurtenant to the house, and converting an existing
+        detached building into an ADU may not face stricter criteria than a single-family home.
+      status: supported_with_limits
+      sources:
+      - title: Vermont Statutes 24 V.S.A. 4412
+        url: https://legislature.vermont.gov/statutes/section/24/117/04412
+        locator: subdivision (1)(E)
+        quote: The criteria for conversion of an existing detached nonresidential building to habitable space for
+          an accessory dwelling unit shall not be more restrictive than the criteria used for a single-family dwelling
+          without an accessory dwelling unit.
+        accessed: '2026-11-03'
+      limitations:
+      - The statute does not define appurtenant or name newly built detached units expressly.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: A unit no larger than 30 percent of the house or 900 square feet, whichever is greater,
+        is an ADU in law and so cannot be excluded. Towns must therefore allow at least 900 square feet.
+      status: supported_with_limits
+      sources:
+      - title: Vermont Statutes 24 V.S.A. 4303
+        url: https://legislature.vermont.gov/statutes/section/24/117/04303
+        locator: subdivision (38)(B)
+        quote: the unit does not exceed 30 percent of the total habitable floor area of the single-family dwelling
+          or 900 square feet, whichever is greater
+        accessed: '2026-11-03'
+      limitations:
+      - Lot coverage, setback and other dimensional rules for the house apply to the house and ADU together.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: In districts served by municipal sewer and water, a town may require one parking space
+        for each dwelling unit, including an ADU; elsewhere the statute sets no limit.
+      status: differs
+      sources:
+      - title: Vermont Statutes 24 V.S.A. 4414
+        url: https://legislature.vermont.gov/statutes/section/24/117/04414
+        locator: subdivision (4)
+        quote: a municipality shall not require more than one parking space per dwelling unit
+        accessed: '2026-11-03'
+      limitations:
+      - Whether towns require ADU parking has not been surveyed.
+    current_strength: 0.75
+    strength_rationale: 'Three of the four benchmark features are in Vermont law in every municipality: one ADU
+      per lot as a permitted use, within or appurtenant to the house (including converted detached buildings), of
+      up to at least 900 square feet. The fourth, no added parking, is not: towns may require one space per dwelling
+      unit where sewer and water serve, and the statute sets no limit elsewhere. So 3 / 4 = 0.75 of the benchmark
+      is already in law and 0.25 would be newly affected.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Two statuses changed from Adam''s record, raising the strength from 0.50 to 0.75. Size (Adam: unknown,
+      no source) is supported with limits: the definition in 24 V.S.A. 4303(38) protects units up to 900 square
+      feet or 30 percent of the house, whichever is greater. Parking (Adam: unknown) differs: 24 V.S.A. 4414(4)
+      lets towns require one space per dwelling unit in sewered districts and sets no cap elsewhere (the older one-space-per-bedroom
+      ADU sentence in 4414(4) is no longer in the statute). Forms kept as supported with limits; ''appurtenant''
+      is undefined. Coverage 1: 4412 applies ''in every municipality''; towns without bylaws do not restrict ADUs.'

@@ -1,0 +1,142 @@
+# North Carolina current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: NC
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: G.S. 160D-917 (accessory dwelling units), enacted by S.B. 445 (2025 session), Session Law 2026-59, section
+        44, ratified August 6, 2026 and signed August 11, 2026
+      summary: Cities of 50,000 people or more outside the state's 20 coastal counties must allow at least one attached
+        or detached ADU with each single-family detached home in residential zones, with no parking requirement
+        and a maximum size of no less than 800 square feet. Counties and smaller cities are not covered.
+      quote: A local government shall allow the development of at least one accessory dwelling unit which conforms
+        to the North Carolina Residential Code
+      url: https://www.ncleg.gov/EnactedLegislation/SessionLaws/PDF/2025-2026/SL2026-59.pdf
+      accessed: '2026-11-03'
+      in_effect: Applies to ADU permit applications from January 15, 2027. Covered cities must adopt rules by July
+        1, 2027; where a city misses that date, ADUs are allowed there without any limits.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Covered cities must allow at least one ADU for each single-family detached home in areas
+        zoned for residential use that allow such homes, built at the same time as the house or later, and may not
+        require a conditional zoning district.
+      status: supported_with_limits
+      in_effect_from: '2027-01-15'
+      sources:
+      - title: North Carolina Session Law 2026-59, section 44
+        url: https://www.ncleg.gov/EnactedLegislation/SessionLaws/PDF/2025-2026/SL2026-59.pdf
+        locator: section 44(a), new G.S. 160D-917(a)
+        quote: A local government shall allow the development of at least one accessory dwelling unit which conforms
+          to the North Carolina Residential Code
+        accessed: '2026-11-03'
+      - title: North Carolina Session Law 2026-59, section 44
+        url: https://www.ncleg.gov/EnactedLegislation/SessionLaws/PDF/2025-2026/SL2026-59.pdf
+        locator: new G.S. 160D-917(h)
+        quote: This section applies only to cities with a population of 50,000 or greater, that are not in the coastal
+          area
+        accessed: '2026-11-03'
+      - title: North Carolina Session Law 2026-59, section 44
+        url: https://www.ncleg.gov/EnactedLegislation/SessionLaws/PDF/2025-2026/SL2026-59.pdf
+        locator: section 44(d)
+        quote: Subsection (a) of this section becomes effective January 15, 2027
+        accessed: '2026-11-03'
+      limitations:
+      - Only cities of 50,000 people or more outside the 20 coastal counties are bound; counties and smaller towns
+        are not. Of the large cities, Wilmington and Jacksonville are in coastal counties and are excluded.
+      - Properties in local historic preservation districts and National Historic Landmarks are excluded, as are
+        units not connected to water and sewer (or well and septic). Private covenants still apply.
+      - The law bars requiring a conditional zoning district but does not say in so many words that the ADU must
+        be approved without a hearing; cities keep their other regulatory powers except where the section limits
+        them.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The law defines an ADU as an attached or detached residential structure on the same parcel
+        as the house, so either form counts toward the required unit. Cities may require it to sit beside or behind
+        the house.
+      status: supported_with_limits
+      in_effect_from: '2027-01-15'
+      sources:
+      - title: North Carolina Session Law 2026-59, section 44
+        url: https://www.ncleg.gov/EnactedLegislation/SessionLaws/PDF/2025-2026/SL2026-59.pdf
+        locator: new G.S. 160D-917(g)
+        quote: means an attached or detached residential structure
+        accessed: '2026-11-03'
+      - title: North Carolina Session Law 2026-59, section 44
+        url: https://www.ncleg.gov/EnactedLegislation/SessionLaws/PDF/2025-2026/SL2026-59.pdf
+        locator: new G.S. 160D-917(c)(2)
+        quote: Require that accessory dwelling units be located to the side or rear
+        accessed: '2026-11-03'
+      limitations:
+      - The law does not say in so many words that a city must allow both forms; it requires at least one ADU and
+        defines an ADU as attached or detached.
+      - Covered cities only.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: Cities may not set a maximum ADU size below 800 square feet (or above 1,000), but may require
+        the ADU to be smaller than the house. A 600 square foot unit is allowed with any house larger than 600 square
+        feet.
+      status: supported_with_limits
+      in_effect_from: '2027-01-15'
+      sources:
+      - title: North Carolina Session Law 2026-59, section 44
+        url: https://www.ncleg.gov/EnactedLegislation/SessionLaws/PDF/2025-2026/SL2026-59.pdf
+        locator: new G.S. 160D-917(b)(6)
+        quote: Set a maximum accessory dwelling unit size of less than 800 square feet or greater than 1,000 square
+          feet.
+        accessed: '2026-11-03'
+      - title: North Carolina Session Law 2026-59, section 44
+        url: https://www.ncleg.gov/EnactedLegislation/SessionLaws/PDF/2025-2026/SL2026-59.pdf
+        locator: new G.S. 160D-917(c)(3)
+        quote: Require that accessory dwelling units be smaller than the primary
+        accessed: '2026-11-03'
+      limitations:
+      - The ADU must be smaller than the house, so homes of 600 square feet or less cannot have a 600 square foot
+        unit.
+      - Covered cities only.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: Covered cities may not set minimum parking requirements or other parking restrictions for
+        the ADU, including when an existing structure is converted.
+      status: supported_with_limits
+      in_effect_from: '2027-01-15'
+      sources:
+      - title: North Carolina Session Law 2026-59, section 44
+        url: https://www.ncleg.gov/EnactedLegislation/SessionLaws/PDF/2025-2026/SL2026-59.pdf
+        locator: new G.S. 160D-917(b)(3)
+        quote: Establish minimum parking requirements or other parking restrictions
+        accessed: '2026-11-03'
+      limitations:
+      - Covered cities only.
+    current_strength: 0.22
+    strength_rationale: 'All four benchmark features are in North Carolina law from January 15, 2027: one ADU per
+      lot, attached or detached, of at least 600 square feet, with no added parking. The law counts for the 79%
+      of 2026 to 2030 it is in force, and it binds only cities of 50,000 people or more outside the coastal counties,
+      which hold 27% of the state''s detached homes: 0.792 × 0.272 = 0.22 of the benchmark is in law. Counties and
+      smaller towns would be newly covered.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Adam marked all four not yet effective; the brief''s horizon rule gives each its substantive status
+      with in_effect_from 2027-01-15 (feature share 4 x 0.7924 / 4 = 0.79). current_strength is the feature share
+      only; coverage pending (cities of 50,000+ outside the 20 CAMA counties). Ratified 2026-08-06, approved 2026-08-11
+      (PDF signature page). Checked S.L. 2026-61 (H268, technical changes): it does not touch 160D-917. Codified
+      page GS_160D-917 shows ''Reserved for future codification purposes'' as of 2026-11-03. Quotes are from the
+      pypdf text of the PDF; whitespace differs from the PDF line breaks.'
+    coverage:
+      share: 0.2722
+      rule:
+        min_population: 50000
+        unincorporated: none
+        exclude_places:
+        - Wilmington city
+        - Jacksonville city
+      basis: 'ACS 2020-2024: 870,013 detached homes in 20 covered places = 27.2% of 3,196,105. Cities of 50,000
+        or more outside the 20 coastal-area counties (which removes Wilmington and Jacksonville). The section names
+        no census year; the ACS is used, and Mooresville and Wake Forest are just over 50,000 in the ACS.'

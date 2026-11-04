@@ -1,0 +1,109 @@
+# Current-law quotes on pages a script cannot read, checked by a person on the date given.
+# hre validate --law-quotes reports these as 'checked by hand' instead of failed or not found.
+# Add an entry only after reading the quote on the official page yourself.
+
+checks:
+- state: CA
+  url: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=66323
+  quote: One detached, new construction, accessory dwelling unit that does not exceed four-foot side and rear yard
+    setbacks for a lot with a proposed or existing single-family dwelling
+  checked: '2026-11-03'
+  how: read on leginfo in a browser; the site refuses scripted requests
+- state: CA
+  url: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=66323
+  quote: A total floor area limitation of not more than 800 square feet of livable space
+  checked: '2026-11-03'
+  how: read on leginfo in a browser; the site refuses scripted requests
+- state: CA
+  url: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=66322
+  quote: A local agency shall not impose any parking standards for an accessory dwelling unit in any of the following
+    instances
+  checked: '2026-11-03'
+  how: read on leginfo in a browser; the site refuses scripted requests
+- state: CT
+  url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+  quote: provided at least one accessory apartment shall be allowed as of right on each lot that contains a single-family
+    dwelling
+  checked: '2026-11-03'
+  how: fetched with curl and searched with the same normalization; the site's certificate chain fails Python's TLS
+    check
+- state: CT
+  url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+  quote: provided at least one accessory apartment shall be allowed as of right on each lot that contains a single-family
+    dwelling
+  checked: '2026-11-03'
+  how: fetched with curl and searched with the same normalization; the site's certificate chain fails Python's TLS
+    check
+- state: CT
+  url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+  quote: except that, on and after January 1, 2023, no municipality may opt out of the provisions of said subsections
+  checked: '2026-11-03'
+  how: fetched with curl and searched with the same normalization; the site's certificate chain fails Python's TLS
+    check
+- state: CT
+  url: https://www.cga.ct.gov/2026/SUM/PDF/2026SUM00007-R01HB-05288-SUM.PDF
+  quote: Previously, these requirements applied only to municipalities that exercise zoning
+  checked: '2026-11-03'
+  how: fetched with curl and searched with the same normalization; the site's certificate chain fails Python's TLS
+    check
+- state: CT
+  url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+  quote: Allow accessory apartments to be attached to or located within the proposed or existing principal dwelling,
+    or detached from the proposed or existing principal dwelling and located on the same lot as such dwelling
+  checked: '2026-11-03'
+  how: fetched with curl and searched with the same normalization; the site's certificate chain fails Python's TLS
+    check
+- state: CT
+  url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+  quote: not less than thirty per cent of the net floor area of the principal dwelling, or one thousand square feet,
+    whichever is less
+  checked: '2026-11-03'
+  how: fetched with curl and searched with the same normalization; the site's certificate chain fails Python's TLS
+    check
+- state: CT
+  url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+  quote: shall reject an application for any residential development solely on the basis that such development fails
+    to conform with any requirement for off-street motor vehicle parking spaces
+  checked: '2026-11-03'
+  how: fetched with curl and searched with the same normalization; the site's certificate chain fails Python's TLS
+    check
+- state: CT
+  url: https://www.cga.ct.gov/2026/sup/chap_124.htm
+  quote: any more than one parking space for any such accessory apartment
+  checked: '2026-11-03'
+  how: fetched with curl and searched with the same normalization; the site's certificate chain fails Python's TLS
+    check
+- state: IN
+  url: https://iga.in.gov/laws/2026/ic/titles/36#36-7-4.3-3
+  quote: Not later than January 1, 2027, a unit shall conduct a public hearing to review the UDO and any zoning
+    regulations and land development rules, with the goal of increasing housing development by using the following
+    factors
+  checked: '2026-11-03'
+  how: read in a browser; the code site draws the text with JavaScript, so a script sees an empty page
+- state: IN
+  url: https://iga.in.gov/laws/2026/ic/titles/36#36-7-4.3-3
+  quote: Constructing other housing types including accessory dwelling units and manufactured and modular housing
+  checked: '2026-11-03'
+  how: read in a browser; the code site draws the text with JavaScript, so a script sees an empty page
+- state: IN
+  url: https://iga.in.gov/laws/2026/ic/titles/36#36-7-4.3-3
+  quote: Not later than January 1, 2027, a unit shall conduct a public hearing to review the UDO and any zoning
+    regulations and land development rules, with the goal of increasing housing development by using the following
+    factors
+  checked: '2026-11-03'
+  how: read in a browser; the code site draws the text with JavaScript, so a script sees an empty page
+- state: IN
+  url: https://iga.in.gov/laws/2026/ic/titles/36#36-7-1-1.5
+  quote: self-contained living unit internal to or on the same lot or parcel as a single family dwelling
+  checked: '2026-11-03'
+  how: read in a browser; the code site draws the text with JavaScript, so a script sees an empty page
+- state: IN
+  url: https://iga.in.gov/laws/2026/ic/titles/36#36-7-1-1.5
+  quote: seventy-five percent (75%) of the interior habitable area
+  checked: '2026-11-03'
+  how: read in a browser; the code site draws the text with JavaScript, so a script sees an empty page
+- state: IN
+  url: https://iga.in.gov/laws/2026/ic/titles/36#36-7-4.3-3
+  quote: Waiving or eliminating regulations such as requirements for
+  checked: '2026-11-03'
+  how: read in a browser; the code site draws the text with JavaScript, so a script sees an empty page

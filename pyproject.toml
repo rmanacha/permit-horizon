@@ -23,6 +23,8 @@ hre = "hre.cli:app"
 [project.optional-dependencies]
 # Used only by the data pipeline (fetch and clean scripts), never by the engine.
 pipeline = ["pandas>=2.2"]
+# Used only by hre validate --law-quotes to read statutes published as PDFs (decision 94).
+law = ["pypdf>=5.1,<6"]
 
 [dependency-groups]
 dev = ["pytest>=8", "ruff>=0.12"]

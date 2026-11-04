@@ -1,0 +1,97 @@
+# Kansas current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: KS
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: K.S.A. 2026 Supp. 12-776 (the by-right housing development act), enacted by S.B. 418 (2026, Session Laws
+        chapter 76), section 1
+      summary: Kansas requires cities and counties to approve, without discretionary review and within 30 days,
+        housing projects, including ADUs, that already meet local zoning. It does not require any place to allow
+        ADUs.
+      quote: that meet the definition of a by-right housing development pursuant to subsection (b)(2) and the criteria
+        outlined in the zoning code and land use regulations shall be approved by-right
+      url: https://www.kslegislature.gov/li/b2025_26/measures/documents/sb418_enrolled.pdf
+      accessed: '2026-11-03'
+      in_effect: July 1, 2026 (approved April 7, 2026). It speeds approval of ADUs that local zoning already allows;
+        it does not require ADUs.
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: No statute requires ADUs to be allowed. An ADU that already meets local zoning must be
+        approved without discretionary review, and is deemed approved if not denied within 30 days, but whether
+        ADUs are allowed at all is left to each city and county.
+      status: differs
+      sources:
+      - title: Kansas S.B. 418 (2026), enrolled
+        url: https://www.kslegislature.gov/li/b2025_26/measures/documents/sb418_enrolled.pdf
+        locator: section 1(c)(1)
+        quote: that meet the definition of a by-right housing development pursuant to subsection (b)(2) and the
+          criteria outlined in the zoning code and land use regulations shall be approved by-right
+        accessed: '2026-11-03'
+      - title: Kansas Revisor of Statutes, 2026 composite list by bill
+        url: https://www.ksrevisor.gov/rpts/2026NewAmendsAndRepealsBillOrder.pdf
+        locator: S.B. 418 rows
+        quote: 12-776 (Supp.) New 418 1 76 7/1/2026
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+      - The faster approval does not apply to projects needing state or federal discharge permits or drainage studies,
+        in historic districts, or needing new public infrastructure that is not built or agreed as a condition.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Kansas S.B. 418 (2026), enrolled
+        url: https://www.kslegislature.gov/li/b2025_26/measures/documents/sb418_enrolled.pdf
+        locator: section 1(b)(1)
+        quote: means a secondary housing unit that is subordinate to the primary dwelling unit on the same lot
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Kansas S.B. 418 (2026), enrolled
+        url: https://www.kslegislature.gov/li/b2025_26/measures/documents/sb418_enrolled.pdf
+        locator: section 1(c)(1)
+        quote: that meet the definition of a by-right housing development pursuant to subsection (b)(2) and the
+          criteria outlined in the zoning code and land use regulations shall be approved by-right
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: No statute addresses this; it is left to local zoning.
+      status: differs
+      sources:
+      - title: Kansas S.B. 418 (2026), enrolled
+        url: https://www.kslegislature.gov/li/b2025_26/measures/documents/sb418_enrolled.pdf
+        locator: section 1(c)(1)
+        quote: that meet the definition of a by-right housing development pursuant to subsection (b)(2) and the
+          criteria outlined in the zoning code and land use regulations shall be approved by-right
+        accessed: '2026-11-03'
+      limitations:
+      - Local ordinances that allow ADUs are not counted.
+    current_strength: 0.0
+    strength_rationale: Kansas law speeds approval of ADUs that local zoning already allows but does not require
+      any city or county to allow them, so none of the benchmark is in law and all of it would be newly affected.
+      Cities and counties that allow ADUs on their own are not counted.
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Procedural law only; zero by the gate. Changed from Adam: K.S.A. 12-776 and chapter 76 confirmed from
+      the Revisor''s composite list (Adam: number not found); effective 7/1/2026 confirmed there (act: ''from and
+      after its publication in the statute book''); approval 2026-04-07 confirmed on the measure page; forms, size,
+      parking unknown to differs. Adam''s enrolled-PDF URL (b2025_26/bills/download/?apn=...) replaced by the measures/documents
+      URL that served the PDF to curl. Other sections of S.B. 418 (third-party review, small-house building rules,
+      12-758(c) treating residential land as zoned for single-family use) do not touch ADUs.'

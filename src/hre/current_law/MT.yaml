@@ -1,0 +1,133 @@
+# Montana current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: MT
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: MCA 76-2-345 (cities and towns), enacted by S.B. 528 (2023, chapter 502); MCA 76-2-215 (counties with
+        zoning), enacted by S.B. 532 (2025, chapter 619)
+      summary: Every Montana city and town that zones must allow at least one attached, detached or internal ADU
+        by right on each lot with a single-family home, of up to 75% of the house or 1,000 square feet, with no
+        added parking and no owner-occupancy rule. Counties must allow one ADU by right in the areas they zone,
+        without the city size and parking rules.
+      quote: A municipality shall adopt regulations under this chapter that allow a minimum of one accessory dwelling
+        unit by right on a lot or parcel that contains a single-family dwelling.
+      url: https://mca.legmt.gov/bills/mca/title_0760/chapter_0020/part_0030/section_0450/0760-0020-0030-0450.html
+      accessed: '2026-11-03'
+      in_effect: 'Cities and towns: required from January 1, 2024. A district court blocked the law from December
+        29, 2023 until the Montana Supreme Court lifted that order on September 3, 2024, and the Supreme Court upheld
+        the law on March 17, 2026. Counties with zoning: required from October 1, 2025.'
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Every incorporated city, town and consolidated city-county that zones must allow at least
+        one ADU by right, without a hearing or discretionary review, on each lot with a single-family home, and
+        may not require owner occupancy. Where a city had not adopted rules by January 1, 2024, it must permit ADUs
+        under the state rules.
+      status: supported_with_limits
+      sources:
+      - title: Montana Code Annotated 76-2-345
+        url: https://mca.legmt.gov/bills/mca/title_0760/chapter_0020/part_0030/section_0450/0760-0020-0030-0450.html
+        locator: subsection (1)(a)
+        quote: A municipality shall adopt regulations under this chapter that allow a minimum of one accessory dwelling
+          unit by right on a lot or parcel that contains a single-family dwelling.
+        accessed: '2026-11-03'
+      - title: Montana Code Annotated 76-2-345
+        url: https://mca.legmt.gov/bills/mca/title_0760/chapter_0020/part_0030/section_0450/0760-0020-0030-0450.html
+        locator: subsection (9)(d)
+        quote: means an incorporated city, town, or consolidated city-county that exercises zoning powers under
+          this part
+        accessed: '2026-11-03'
+      - title: Montana Code Annotated 76-2-215
+        url: https://mca.legmt.gov/bills/mca/title_0760/chapter_0020/part_0020/section_0150/0760-0020-0020-0150.html
+        locator: subsection (1)(a)
+        quote: In jurisdictional areas where the board of county commissioners has established zoning regulations
+          under this part, the regulations must allow a minimum of one accessory dwelling unit by right on a lot
+          or parcel that contains a single-family dwelling.
+        accessed: '2026-11-03'
+      limitations:
+      - Areas outside cities and towns are bound only where the county has adopted zoning, and the county law does
+        not carry the city size and parking rules; those areas are not counted.
+      - The law does not override private covenants that bar ADUs, and cities may require water and sewer service
+        letters.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The ADU may be attached, detached or internal to the house, in cities and in zoned county
+        areas alike.
+      status: supported_with_limits
+      sources:
+      - title: Montana Code Annotated 76-2-345
+        url: https://mca.legmt.gov/bills/mca/title_0760/chapter_0020/part_0030/section_0450/0760-0020-0030-0450.html
+        locator: subsection (1)(b)
+        quote: An accessory dwelling unit may be attached, detached, or internal to the single-family dwelling on
+          a lot or parcel.
+        accessed: '2026-11-03'
+      limitations:
+      - Cities and towns only, as counted here.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: An attached or detached ADU may be up to 75% of the house's floor area or 1,000 square
+        feet, whichever is less, and cities may not impose stricter development standards than the section sets.
+        That reaches 600 square feet whenever the house has at least 800 square feet.
+      status: supported_with_limits
+      sources:
+      - title: Montana Code Annotated 76-2-345
+        url: https://mca.legmt.gov/bills/mca/title_0760/chapter_0020/part_0030/section_0450/0760-0020-0030-0450.html
+        locator: subsection (1)(c)
+        quote: it may not be more than 75% of the gross floor area of the single-family dwelling or 1,000 square
+          feet, whichever is less
+        accessed: '2026-11-03'
+      - title: Montana Code Annotated 76-2-345
+        url: https://mca.legmt.gov/bills/mca/title_0760/chapter_0020/part_0030/section_0450/0760-0020-0030-0450.html
+        locator: subsection (2)(h)
+        quote: impose more onerous development standards on an accessory dwelling unit beyond those set forth in
+          this section
+        accessed: '2026-11-03'
+      limitations:
+      - On lots with a house under 800 square feet, the allowed size is below 600 square feet, and any ADU must
+        be smaller than the house.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: Cities may not require added parking, or a fee in place of parking, for an ADU.
+      status: supported_with_limits
+      sources:
+      - title: Montana Code Annotated 76-2-345
+        url: https://mca.legmt.gov/bills/mca/title_0760/chapter_0020/part_0030/section_0450/0760-0020-0030-0450.html
+        locator: subsection (2)(a)
+        quote: require that a lot or parcel have additional parking to accommodate an accessory dwelling unit or
+          require fees in lieu of additional parking
+        accessed: '2026-11-03'
+      limitations:
+      - The county law does not repeat this rule.
+    current_strength: 0.49
+    strength_rationale: 'All four benchmark features are in Montana law for cities and towns: one ADU per lot by
+      right, attached, detached or internal, up to 75% of the house or 1,000 square feet (600 square feet for houses
+      of 800 or more), with no added parking. Cities and towns hold 49% of the state''s detached homes, so 1 × 0.49
+      = 0.49 of the benchmark is in law. County zoning districts must also allow ADUs, but without the size and
+      parking rules, and are not counted. A court order paused the law from December 2023 to September 2024; the
+      Montana Supreme Court upheld it in March 2026.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'One status changed from Adam''s record: size (Adam: differs) is supported with limits under the method''s
+      size rule, because the protected size of 75% of the house or 1,000 square feet reaches 600 square feet for
+      houses of 800 or more (as for Arizona). Strength before coverage rises from 0.75 to 1.00. Litigation checked
+      (see header): injunction reversed 2024 MT 200; law upheld 2026 MT 53. The official juddocumentservice.mt.gov
+      copy of 2026 MT 53 was not located by script (the Supreme Court docket site is a JavaScript app); the court-stamped
+      copy read was hosted by Montana Free Press. Coverage pending; preliminary probe with the working-tree coverage
+      code (2026-11-03): 0.4864 with places all, unincorporated none.'
+    coverage:
+      share: 0.4864
+      rule:
+        places: all
+        unincorporated: none
+      basis: 'ACS 2020-2024: 176,933 detached homes in 127 covered places = 48.6% of 363,783. Cities, towns and
+        consolidated city-counties; county zoning districts must also allow ADUs under MCA 76-2-215 but without
+        the size and parking rules, and are left out. Towns without zoning cannot be told apart in the ACS, a slight
+        over-count.'

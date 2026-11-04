@@ -7,8 +7,10 @@ space, typographic quotes and dashes. The result is ``docs/evidence/current_law_
 
 Pages are untrusted text: they are only searched, never executed or followed beyond one known
 indirection (le.utah.gov section pages load the text from a versioned file named in the page).
-A PDF is not parsed (no PDF library is a dependency); its quotes are listed as "PDF, checked by
-hand" and the reviewer checklist covers them (docs/methods/current_law.md).
+A PDF is read with pypdf when the optional ``law`` extra is installed (decision 94; ``uv sync
+--all-extras``): its pages are joined and printed line numbers at the start of a line are dropped
+(session laws print them in the margin). Without the extra, a PDF's quotes are listed as "PDF, not
+read" and the reviewer checklist covers them (docs/methods/current_law.md).
 """
 
 from __future__ import annotations
@@ -81,10 +83,24 @@ def _get(url: str, session: requests.Session) -> bytes:
     raise RuntimeError("unreachable")
 
 
+LINE_NUMBER = re.compile(r"(?m)^\s*\d{1,3}\s+")
+
+
+def pdf_text(data: bytes) -> str | None:
+    """Text of a PDF with margin line numbers removed, or None when pypdf is not installed."""
+    try:
+        from pypdf import PdfReader
+    except ImportError:
+        return None
+    import io
+
+    reader = PdfReader(io.BytesIO(data))
+    pages = [(pg.extract_text() or "") for pg in reader.pages]
+    return LINE_NUMBER.sub("", "\n".join(pages)).replace("-\n", "")
+
+
 def page_text(url: str, cache: Path, fetch: bool, session: requests.Session | None = None) -> tuple[str | None, str]:
     """(plain text or None, status) for one URL; status explains a None."""
-    if url.lower().split("?")[0].endswith(".pdf"):
-        return None, "PDF, checked by hand"
     path = _cache_path(url, cache)
     if not path.exists():
         if not fetch:
@@ -99,14 +115,28 @@ def page_text(url: str, cache: Path, fetch: bool, session: requests.Session | No
             return None, f"fetch failed ({type(e).__name__})"
         cache.mkdir(parents=True, exist_ok=True)
         path.write_bytes(raw)
-    raw_text = path.read_bytes().decode("utf-8", "replace")
-    if raw_text.lstrip()[:5] == "%PDF-":
-        return None, "PDF, checked by hand"
-    return html_to_text(raw_text), "fetched"
+    raw = path.read_bytes()
+    if raw.lstrip()[:5] == b"%PDF-":
+        t = pdf_text(raw)
+        return (t, "fetched (PDF)") if t is not None else (None, "PDF, not read (install the law extra)")
+    return html_to_text(raw.decode("utf-8", "replace")), "fetched"
 
 
-def check(law_dir: Path, fetch: bool = False, data_dir: Path | None = None) -> list[dict[str, Any]]:
+HAND_CHECKS = Path(__file__).resolve().parents[3] / "docs" / "evidence" / "current_law_hand_checks.yaml"
+
+
+def hand_checks(path: Path = HAND_CHECKS) -> dict[tuple[str, str], dict[str, Any]]:
+    """(url, normalized quote) -> the person's check, for pages a script cannot read."""
+    if not path.exists():
+        return {}
+    doc = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return {(c["url"], normalize(c["quote"])): c for c in doc.get("checks") or []}
+
+
+def check(law_dir: Path, fetch: bool = False, data_dir: Path | None = None,
+          hand_path: Path = HAND_CHECKS) -> list[dict[str, Any]]:
     cache = (data_dir or raw_dir()) / "law_pages"
+    hand = hand_checks(hand_path)
     texts: dict[str, tuple[str | None, str]] = {}
     session = requests.Session()
     out = []
@@ -116,7 +146,11 @@ def check(law_dir: Path, fetch: bool = False, data_dir: Path | None = None) -> l
             texts[row["url"]] = (normalize(t) if t is not None else None, status)
         text, status = texts[row["url"]]
         found = None if text is None else normalize(row["quote"]) in text
-        out.append({**row, "found": found, "status": status if text is None else ("found" if found else "NOT FOUND")})
+        label = status if text is None else ("found" if found else "NOT FOUND")
+        h = hand.get((row["url"], normalize(row["quote"])))
+        if found is not True and h:
+            found, label = None, f"checked by hand {h['checked']} ({h['how']})"
+        out.append({**row, "found": found, "status": label})
     return out
 
 

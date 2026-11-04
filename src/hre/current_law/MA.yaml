@@ -1,0 +1,125 @@
+# Massachusetts current-law register (ADU).
+# Entry seeded from Adam Ruege's v2.0 record (ported_from: adam-v2.0) and re-checked against the official text on 2026-11-03; changes from the
+# prior record and open doubts are in notes. Strength rule and coverage: docs/methods/current_law.md
+# (decisions 62 and 91); quotes checked by hre validate --law-quotes (docs/evidence/current_law_quotes.md).
+
+state: MA
+scenarios:
+  adu:
+    ported_from: adam-v2.0
+    rechecked: '2026-11-03'
+    record:
+      law: General Laws chapter 40A, section 3 (protected ADU use) and section 1A (definition), as amended by sections
+        7 and 8 of Chapter 150 of the Acts of 2024 (H. 4977, the Affordable Homes Act)
+      summary: No Massachusetts city or town that zones under chapter 40A may ban, unreasonably restrict, or require
+        a special permit for one ADU in a single-family zoning district, or require the owner to live on site. The
+        protected ADU may be up to half the size of the house or 900 square feet, whichever is smaller. Boston,
+        which zones under its own law, is not covered.
+      quote: No zoning ordinance or by-law shall prohibit, unreasonably restrict or require a special permit or
+        other discretionary zoning approval for the use of land or structures for a single accessory dwelling unit,
+        or the rental thereof, in a single-family residential zoning district
+      url: https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVII/Chapter40A/Section3
+      accessed: '2026-11-03'
+      in_effect: 'February 2, 2025: 180 days after the act was approved on August 6, 2024.'
+    features:
+    - id: adu_per_lot
+      challenge_requirement: Allow one ADU on a parcel with an existing single-family building.
+      observed_position: Zoning may not ban, unreasonably restrict, or require a special permit or other discretionary
+        approval for one ADU in a single-family zoning district, and may not require the owner to live in either
+        unit.
+      status: supported_with_limits
+      sources:
+      - title: Massachusetts General Laws chapter 40A, section 3
+        url: https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVII/Chapter40A/Section3
+        locator: paragraph on accessory dwelling units, first sentence
+        quote: require a special permit or other discretionary zoning approval for the use of land or structures
+          for a single accessory dwelling unit
+        accessed: '2026-11-03'
+      - title: Massachusetts General Laws chapter 40A, section 3
+        url: https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVII/Chapter40A/Section3
+        locator: paragraph on accessory dwelling units, second sentence
+        quote: shall not require owner occupancy of either the accessory dwelling unit or the principal dwelling
+        accessed: '2026-11-03'
+      - title: Acts of 2024, Chapter 150
+        url: https://malegislature.gov/Laws/SessionLaws/Acts/2024/Chapter150
+        locator: section 143 (effective date of section 8)
+        quote: Sections 8, 46, 48 and 49 shall take effect 180 days after the effective date of this act.
+        accessed: '2026-11-03'
+      limitations:
+      - 'Boston is not covered: it zones under its own special act, not chapter 40A.'
+      - Towns may still apply reasonable rules on setbacks, bulk, height, septic systems and site plan review, and
+        may restrict short-term rentals. A second ADU may require a special permit.
+    - id: adu_forms
+      challenge_requirement: Allow detached and semi-detached ADUs.
+      observed_position: The protected ADU is any self-contained unit on the same lot as the house with its own
+        entrance, so a detached cottage, an addition or a conversion all qualify.
+      status: supported_with_limits
+      sources:
+      - title: Massachusetts General Laws chapter 40A, section 1A
+        url: https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVII/Chapter40A/Section1A
+        locator: definition of accessory dwelling unit
+        quote: a self-contained housing unit, inclusive of sleeping, cooking and sanitary facilities on the same
+          lot as a principal dwelling
+        accessed: '2026-11-03'
+      limitations:
+      - Reasonable dimensional rules for the zone apply to a detached unit.
+    - id: adu_size
+      challenge_requirement: Allow ADUs of at least 600 square feet.
+      observed_position: A protected ADU may be up to half the gross floor area of the house or 900 square feet,
+        whichever is smaller. That reaches 600 square feet whenever the house has at least 1,200 square feet of
+        gross floor area.
+      status: supported_with_limits
+      sources:
+      - title: Massachusetts General Laws chapter 40A, section 1A
+        url: https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVII/Chapter40A/Section1A
+        locator: definition of accessory dwelling unit, clause (ii)
+        quote: is not larger in gross floor area than 1/2 the gross floor area of the principal dwelling or 900
+          square feet, whichever is smaller
+        accessed: '2026-11-03'
+      limitations:
+      - On lots with a house under 1,200 square feet of gross floor area, the protected size is below 600 square
+        feet.
+      - The statute lets towns add size limits that are not unreasonable; the state housing office's rules and guidance
+        say towns may not set a limit below the statutory size.
+    - id: adu_parking
+      challenge_requirement: Require no added parking for the ADU.
+      observed_position: Towns may require one added parking space, except within half a mile of a commuter rail
+        station, subway station, ferry terminal or bus station, where none may be required.
+      status: differs
+      sources:
+      - title: Massachusetts General Laws chapter 40A, section 3
+        url: https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVII/Chapter40A/Section3
+        locator: paragraph on accessory dwelling units, second sentence
+        quote: not more than 1 additional parking space shall be required for an accessory dwelling unit
+        accessed: '2026-11-03'
+      limitations:
+      - Whether towns use the option has not been surveyed.
+    current_strength: 0.73
+    strength_rationale: 'Three of the four benchmark features are in Massachusetts law in every city and town except
+      Boston, which zones under its own law: one ADU per lot without a special permit, attached or detached, and
+      a protected size of at least 600 square feet for houses of 1,200 square feet or more. The fourth, no added
+      parking, is not: towns may require one space except within half a mile of a transit station. The places covered
+      hold 98% of the state''s detached homes, so 3 / 4 × 0.976 = 0.73 of the benchmark is in law.'
+    human_review:
+      status: pending
+      by: null
+      date: null
+    notes: 'Re-checked 2026-11-03 on malegislature.gov (40A s. 3, s. 1A, Acts 2024 c. 150, which has an emergency
+      preamble, so the act took effect August 6, 2024 and section 8 on February 2, 2025). Change from Adam''s record:
+      size moved from differs to supported_with_limits under the brief''s size rule (min(half the house, 900) reaches
+      600 at 1,200 sq ft of gross floor area, below a typical house; the AZ precedent is 800 sq ft). Basis for treating
+      900/half as a protected floor: 760 CMR 71.00 and the EOHLC ADU FAQ (''A city/town cannot restrict the size
+      of a Protected Use ADU below 900sqft but may allow for larger Protected Use ADUs''), read in a copy printed
+      from mass.gov on 12/15/25 and posted by the Town of Wellesley; mass.gov returned HTTP 403 to scripted requests,
+      so neither is cited as a source. Same FAQ copy confirms detached ADUs must be allowed by right and that Boston
+      is excluded. Coverage pending: Boston removed.'
+    coverage:
+      share: 0.9762
+      rule:
+        places: all
+        unincorporated: all
+        exclude_places:
+        - Boston city
+      basis: 'ACS 2020-2024: 517,963 detached homes in 57 covered places + 994,654 outside incorporated places =
+        97.6% of 1,549,565. Every city and town except Boston, which zones under its own special act rather than
+        chapter 40A.'
