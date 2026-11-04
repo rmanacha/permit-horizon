@@ -19,7 +19,7 @@ from typing import Any
 import numpy as np
 
 from hre.model.params import Params
-from hre.model.scenarios.common import Core, Spec, flat_years, market_adjustment, run_scenario
+from hre.model.scenarios.common import Core, Spec, flat_years, market_adjustment
 from hre.schema import StateInputs
 
 IDS = ("mm_rate_per_lot", "mm_sf_only_share", "mm_net_new_factor", "mm_code_penalty", "ramp_missing_middle")
@@ -103,8 +103,3 @@ SPEC = Spec(
     linear=("mm_sf_only_share", "mm_code_penalty"),
     diagnostics=diagnostics,
 )
-
-
-def run_missing_middle(state: StateInputs, params: Params, law: dict[str, Any],
-                       ctx: dict[str, Any]) -> dict[str, Any]:
-    return run_scenario(SPEC, state, params, ctx, law)

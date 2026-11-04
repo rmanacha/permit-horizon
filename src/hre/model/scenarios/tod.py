@@ -20,7 +20,7 @@ from typing import Any
 import numpy as np
 
 from hre.model.params import Params
-from hre.model.scenarios.common import Core, Spec, flat_years, market_adjustment, run_scenario
+from hre.model.scenarios.common import Core, Spec, flat_years, market_adjustment
 from hre.schema import StateInputs
 
 IDS = ("tod_rate_per_home", "tod_distance_miles", "ramp_tod")   # conversion held at mid (see SPEC)
@@ -96,7 +96,3 @@ SPEC = Spec(
     linear=("tod_rate_per_home",),
     diagnostics=diagnostics,
 )
-
-
-def run_tod(state: StateInputs, params: Params, law: dict[str, Any], ctx: dict[str, Any]) -> dict[str, Any]:
-    return run_scenario(SPEC, state, params, ctx, law)

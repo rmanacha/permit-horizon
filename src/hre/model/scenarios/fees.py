@@ -24,7 +24,7 @@ import numpy as np
 
 from hre.model.params import Params
 from hre.model.response import quantity_change, resolve_response
-from hre.model.scenarios.common import Core, Spec, run_scenario
+from hre.model.scenarios.common import Core, Spec
 from hre.schema import StateInputs
 
 IDS = ("builder_response_override", "new_home_price_ratio", "ramp_immediate")
@@ -119,7 +119,3 @@ SPEC = Spec(
     grid=("builder_response_override", "new_home_price_ratio"),
     diagnostics=diagnostics,
 )
-
-
-def run_fees(state: StateInputs, params: Params, law: dict[str, Any], ctx: dict[str, Any]) -> dict[str, Any]:
-    return run_scenario(SPEC, state, params, ctx, law)

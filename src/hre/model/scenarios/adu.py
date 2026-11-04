@@ -22,7 +22,7 @@ from typing import Any
 import numpy as np
 
 from hre.model.params import Params
-from hre.model.scenarios.common import Core, Spec, flat_years, run_scenario
+from hre.model.scenarios.common import Core, Spec, flat_years
 from hre.model.tiers import N_TIERS, county_adu_rates
 from hre.schema import StateInputs
 
@@ -85,7 +85,3 @@ SPEC = Spec(
     ),
     linear=("adu_permits_per_completion",),
 )
-
-
-def run_adu(state: StateInputs, params: Params, law: dict[str, Any], ctx: dict[str, Any]) -> dict[str, Any]:
-    return run_scenario(SPEC, state, params, ctx, law)
