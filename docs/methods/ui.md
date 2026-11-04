@@ -35,6 +35,21 @@ A printable one-page brief (`#/brief`) and three downloads (the view as CSV and 
 table in long form with `outcome` and `caveats` columns) sit on Explore. Downloads are built in
 the browser; nothing is sent anywhere.
 
+## The tour
+
+Five stops on New Hampshire, about three minutes: the baseline and its range; one reform card's
+three layers; the current-law note and its human-review tag; the compare table and its flip
+warning; the validation ledger with a miss and a link to the limits. **Take the tour** on the
+Explore page opens `#/explore?st=NH&tour=1`. The stop lives in the address bar (`tour=N`), never in
+cookies or browser storage, so a link opens the tour at any stop, and closing it (Done or Escape)
+drops the parameter. Each stop outlines one element (`data-tour="..."` in the page markup), scrolls
+to it and moves focus to a dialog with the stop's title and text, so screen readers read it; Next,
+Done and Escape work from the keyboard. On phones the panel is a sheet at the bottom of the screen,
+under the outlined element. The tour explains how to read the tool and never argues for a reform;
+the result sentences on the cards stay the engine's. The text is `web/src/content/tour.md`
+(`cd web && npm run content` turns it into `tour.json`), and `scripts/content.test.mjs` checks that
+every stop's element exists on its page and that the text carries no internal wording.
+
 ## Rules the code enforces
 
 - **Every number carries its outcome label** (`permits`, `net permits`, `completed homes`,
@@ -109,9 +124,10 @@ it writes `results/XX.json` with the same layout.
 ## Where the text comes from
 
 Results sentences come from the bundle (fixed templates in `src/hre/model/drivers.py`). Site
-text that is not a result lives in Markdown: the glossary in `docs/GLOSSARY.md` and the limits in
-`docs/methods/limits.md`, turned into `web/src/content/*.json` by `cd web && npm run content`
-(`scripts/content.test.mjs` fails when they drift). Team, credits and document links are in
+text that is not a result lives in Markdown: the glossary in `docs/GLOSSARY.md`, the limits in
+`docs/methods/limits.md` and the tour's stops in `web/src/content/tour.md`, turned into
+`web/src/content/*.json` by `cd web && npm run content` (`scripts/content.test.mjs` fails when they
+drift). Team, credits and document links are in
 `web/src/content/site.ts`.
 
 ## Tests (`make test-web`)
@@ -120,7 +136,7 @@ text that is not a result lives in Markdown: the glossary in `docs/GLOSSARY.md` 
 |---|---|
 | `src/engine/rescale.test.ts` | the rescale reproduces every tornado bar and grid cell in all 51 states; interpolation, typed values, cases, the county-scoped factor, the command text |
 | `src/data/bundle.test.ts` | every committed bundle file has the keys and types the site reads |
-| `src/lib/viewmodel.test.ts`, `route.test.ts`, `format.test.ts`, `downloads.test.ts` | cases, rankings and flip warnings; share links round-trip; number formats and labels; every download row has an outcome |
-| `scripts/style_rules.test.mjs`, `licenses.test.mjs`, `content.test.mjs` | no inline styles or stray colors; permissive licences only; glossary and limits in step with their Markdown |
+| `src/lib/viewmodel.test.ts`, `route.test.ts`, `format.test.ts`, `downloads.test.ts` | cases, rankings and flip warnings; share links round-trip and the tour link opens the tour; number formats and labels; every download row has an outcome |
+| `scripts/style_rules.test.mjs`, `licenses.test.mjs`, `content.test.mjs` | no inline styles or stray colors; permissive licences only; glossary, limits and tour in step with their Markdown, every tour stop's element on its page |
 | `scripts/ds_props.test.mjs`, `fonts.test.mjs` | the design-system port keeps the system's props; the fonts are the manifest's files with their licences |
 | `scripts/rescale_equality.mjs` | the page's arithmetic against `hre run --set` |

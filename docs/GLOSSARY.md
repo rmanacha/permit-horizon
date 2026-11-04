@@ -72,3 +72,7 @@ ids stable when you edit a definition.
 - **Transit-oriented density (TOD)** (`tod`): Allowing more homes near major transit stops.
 - **Parking minimum** (`parking-minimum`): A rule requiring a set number of parking spaces for each new home. Removing it lowers the cost of building where builders would otherwise provide fewer spaces.
 - **Development and impact fees** (`fees`): Charges a locality levies on new homes. The challenge assumes $50,000 a home in total, cut in half.
+
+## The website
+
+- **Tour** (`tour`): Five stops on New Hampshire, about three minutes, opened by the Take the tour button on the Explore page or by a link ending in tour=1. Each stop outlines one element and explains how to read it; Next, Done and the Escape key move through it, and nothing is stored in your browser.
