@@ -232,7 +232,7 @@
   {
    "id": "baseline_alt_band_history_years",
    "label": "Years of history for the 20-year swing band (shown beside the headline)",
-   "description": "Adam Ruege's v2.0 band rule, shown in its own section next to the headline band (decision 69): point = the state's last five years of permits; low and high = point x the slowest and fastest rolling five-year totals of the last this-many years, each divided by their average. Coverage below is from docs/evidence/baseline_backtest.md, band rule B.",
+   "description": "Adam Ruege's v2.0 band rule, shown in its own section next to the headline band: point = the state's last five years of permits; low and high = point x the slowest and fastest rolling five-year totals of the last this-many years, each divided by their average. Coverage below is from docs/evidence/baseline_backtest.md, band rule B.",
    "unit": "years of Building Permits Survey state history",
    "low": 10,
    "mid": 20,
@@ -406,7 +406,7 @@
   {
    "id": "builder_response_override",
    "label": "Builder response to lower costs",
-   "description": "Percent more homes over five years per 1% fall in cost relative to the price of a new home. The primary route (decision 61): a measured flow response, used directly instead of the composite of elasticities.",
+   "description": "Percent more homes over five years per 1% fall in cost relative to the price of a new home. The primary route: a measured flow response, used directly instead of the composite of elasticities.",
    "unit": "percent more homes over 5 years per 1% fall in cost relative to the new-home price",
    "low": 0.0,
    "mid": 0.75,
@@ -440,7 +440,7 @@
      "accessed": "2026-10-15"
     }
    ],
-   "citation": "Middle: Mayer and Somerville (2000), p. 651: a 1 percent increase in house prices results in a temporary 15 percent increase in new construction over six quarters; read as 15% of one quarter's construction spread over 20 quarters, 0.15 / 20 = 0.75% of 5 years' construction. Low: the same paper, p. 653, finds the impact fee coefficient not statistically different from zero. High: Baum-Snow and Han (2024) housing unit supply elasticity 0.3, half assumed to arrive within 5 years, divided by U.S. housing unit growth of 5.29% from July 2020 to July 2025: 0.3 x 0.5 / 0.0529 = 2.84. What the team re-read (decision 67): the 5.29% growth, 148,260,882 / 140,817,690 - 1 = 0.0529 (United States row of the Census county housing-unit file CO-EST2025-HU.xlsx, July 1 2020 and 2025, re-read 2026-11-03); Albouy et al.'s demand elasticity and the Census new-home prices used beside this entry. Carried from Adam Ruege's v2.0 record and not yet re-read: the Mayer and Somerville quotes on pp. 651 and 653 (paywalled) and Baum-Snow and Han's 0.3 (the publisher returned HTTP 403 and no open abstract was found on 2026-11-03).",
+   "citation": "Middle: Mayer and Somerville (2000), p. 651: a 1 percent increase in house prices results in a temporary 15 percent increase in new construction over six quarters; read as 15% of one quarter's construction spread over 20 quarters, 0.15 / 20 = 0.75% of 5 years' construction. Low: the same paper, p. 653, finds the impact fee coefficient not statistically different from zero. High: Baum-Snow and Han (2024) housing unit supply elasticity 0.3, half assumed to arrive within 5 years, divided by U.S. housing unit growth of 5.29% from July 2020 to July 2025: 0.3 x 0.5 / 0.0529 = 2.84. What the team re-read: the 5.29% growth, 148,260,882 / 140,817,690 - 1 = 0.0529 (United States row of the Census county housing-unit file CO-EST2025-HU.xlsx, July 1 2020 and 2025, re-read 2026-11-03); Albouy et al.'s demand elasticity and the Census new-home prices used beside this entry. Carried from Adam Ruege's v2.0 record and not yet re-read: the Mayer and Somerville quotes on pp. 651 and 653 (paywalled) and Baum-Snow and Han's 0.3 (the publisher returned HTTP 403 and no open abstract was found on 2026-11-03).",
    "rationale": "No study measures a cut near $25,000 per unit; the range runs from no response to a long-run supply response.",
    "transferability": "National; no state-specific estimate exists.",
    "levels": {
@@ -678,7 +678,7 @@
      "accessed": "2026-10-15"
     }
    ],
-   "citation": "The Microgeography of Housing Supply reports average predicted housing-unit supply elasticity 0.3 across urban neighborhoods. Carried from Adam Ruege's v2.0 record and not yet re-read by the team (decision 67): the publisher returned HTTP 403 and no open abstract or working paper was found on 2026-11-03.",
+   "citation": "The Microgeography of Housing Supply reports average predicted housing-unit supply elasticity 0.3 across urban neighborhoods. Carried from Adam Ruege's v2.0 record and not yet re-read by the team: the publisher returned HTTP 403 and no open abstract or working paper was found on 2026-11-03.",
    "rationale": "Use a stock elasticity with a stock denominator in the diagnostic.",
    "transferability": "Urban neighborhoods; national.",
    "levels": {
@@ -823,7 +823,7 @@
   {
    "id": "value_ratio_exponent",
    "label": "Price adjustment exponent (gamma)",
-   "description": "Missing middle and TOD rates are scaled by (county median value / source city median value) ^ gamma, bounded; gamma = 0 means no adjustment (decision 34).",
+   "description": "Missing middle and TOD rates are scaled by (county median value / source city median value) ^ gamma, bounded; gamma = 0 means no adjustment.",
    "unit": "exponent",
    "low": 0.0,
    "mid": 0.5,
@@ -981,7 +981,7 @@
    "direction": 0,
    "sources": [
     {
-     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)",
+     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated",
      "url": "https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year",
      "locator": "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json",
      "accessed": "2026-11-03"
@@ -1025,7 +1025,7 @@
    "direction": 0,
    "sources": [
     {
-     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)",
+     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated",
      "url": "https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year",
      "locator": "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json",
      "accessed": "2026-11-03"
@@ -1069,7 +1069,7 @@
    "direction": 0,
    "sources": [
     {
-     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)",
+     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated",
      "url": "https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year",
      "locator": "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json",
      "accessed": "2026-11-03"
@@ -1113,7 +1113,7 @@
    "direction": 0,
    "sources": [
     {
-     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)",
+     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated",
      "url": "https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year",
      "locator": "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json",
      "accessed": "2026-11-03"
@@ -1157,7 +1157,7 @@
    "direction": 1,
    "sources": [
     {
-     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)",
+     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated",
      "url": "https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year",
      "locator": "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json",
      "accessed": "2026-11-03"
@@ -1201,7 +1201,7 @@
    "direction": 1,
    "sources": [
     {
-     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)",
+     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated",
      "url": "https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year",
      "locator": "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json",
      "accessed": "2026-11-03"
@@ -1245,7 +1245,7 @@
    "direction": 1,
    "sources": [
     {
-     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)",
+     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated",
      "url": "https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year",
      "locator": "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json",
      "accessed": "2026-11-03"
@@ -1289,7 +1289,7 @@
    "direction": 1,
    "sources": [
     {
-     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)",
+     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated",
      "url": "https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year",
      "locator": "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json",
      "accessed": "2026-11-03"
@@ -1333,7 +1333,7 @@
    "direction": 1,
    "sources": [
     {
-     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated (decision 50)",
+     "title": "California HCD Annual Progress Report Table A2 (ADU rows), de-duplicated",
      "url": "https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year",
      "locator": "report years 2023-2025, UNIT_CAT == ADU, certificates of occupancy; data/processed/CA_hcd_adu.json",
      "accessed": "2026-11-03"
@@ -1377,7 +1377,7 @@
    "direction": 1,
    "sources": [
     {
-     "title": "California HCD APR Table A2, ADU rows, de-duplicated (data/processed/CA_hcd_adu.json, decision 50)",
+     "title": "California HCD APR Table A2, ADU rows, de-duplicated (data/processed/CA_hcd_adu.json)",
      "url": "https://data.ca.gov/dataset/housing-element-annual-progress-report-apr-data-by-jurisdiction-and-year",
      "locator": "statewide de-duplicated permitted and completed ADUs by report year 2018-2025",
      "accessed": "2026-11-03"
@@ -1421,9 +1421,9 @@
      "accessed": "2026-11-02"
     }
    ],
-   "citation": "988 / 169,497 = 0.00583 and 987 / 169,497 = 0.00582 permits per single-family home in 2022 and 2023, years 3 and 4 after the reform: 5.8 per 1,000. As completions: 0.0058 / 1.18 = 0.0049 per home per year. Adam's frozen Seattle holdout under-predicted Seattle by 59%, which is why this sets the high in places like Seattle (decision 33).",
+   "citation": "988 / 169,497 = 0.00583 and 987 / 169,497 = 0.00582 permits per single-family home in 2022 and 2023, years 3 and 4 after the reform: 5.8 per 1,000. As completions: 0.0058 / 1.18 = 0.0049 per home per year. Adam's frozen Seattle holdout under-predicted Seattle by 59%, which is why this sets the high in places like Seattle.",
    "rationale": "A dense central city with pre-approved plans and an active program; the upper end of measured uptake.",
-   "transferability": "Applied only to central counties of metropolitan areas (decision 71); rural counties keep their tier high.",
+   "transferability": "Applied only to central counties of metropolitan areas; rural counties keep their tier high.",
    "levels": {
     "low": "5.8 per 1,000",
     "mid": "5.8 per 1,000",
@@ -1615,7 +1615,7 @@
   {
    "id": "mm_source_city_value",
    "label": "Median home value in the missing-middle source city (Portland, OR)",
-   "description": "Denominator of the market adjustment for missing middle (decision 34).",
+   "description": "Denominator of the market adjustment for missing middle.",
    "unit": "dollars (ACS median value of owner-occupied homes)",
    "low": 581500,
    "mid": 581500,
@@ -1647,7 +1647,7 @@
   {
    "id": "tod_source_city_value",
    "label": "Median home value in the TOD source city (Los Angeles)",
-   "description": "Denominator of the market adjustment for transit-oriented density (decision 34).",
+   "description": "Denominator of the market adjustment for transit-oriented density.",
    "unit": "dollars (ACS median value of owner-occupied homes)",
    "low": 921200,
    "mid": 921200,
@@ -1694,7 +1694,7 @@
    "direction": 0,
    "sources": [
     {
-     "title": "Permit Horizon decision 34 (Phase 3 brief, shared conventions)",
+     "title": "Permit Horizon method note, missing middle (market adjustment, a team convention)",
      "url": "https://github.com/rmanacha/permit-horizon/blob/main/docs/methods/missing_middle.md",
      "locator": "market adjustment = clip((county_value / source_city_value) ^ gamma, 0.5, 1.5)",
      "accessed": "2026-11-03"
@@ -1984,7 +1984,7 @@
    ],
    "citation": "No Such Thing as Free Parking: Construction Costs in 17 U.S. Cities, p. 10: aboveground structures average $52,000 per space ($29,000 in Phoenix and Washington, D.C., to $99,000 in Portland); underground parking averages $73,000; both exclude land.",
    "rationale": "Minimums bind mainly where parking is built in structures, so the spaces left unbuilt are mostly structured.",
-   "transferability": "17 large cities; surface lots cost far less (decision 71 drops the surface tier).",
+   "transferability": "17 large cities; surface lots cost far less, and the surface-parking tier is not modeled.",
    "levels": {
     "low": "$29,000",
     "mid": "$52,000",
@@ -2017,7 +2017,7 @@
    ],
    "citation": "Judgment: the nine-city study finds little to no change in car-oriented low-density cities (low 0); high 1.0 treats every county like the cities measured; mid 0.5 halves the response outside central metropolitan counties.",
    "rationale": "Parking minimums bind where land is dear; elsewhere builders supply the parking anyway.",
-   "transferability": "Nine US cities; the county split is a proxy for density (decision 57's rule).",
+   "transferability": "Nine US cities; the county split (central metropolitan counties against the rest) is a proxy for density.",
    "levels": {
     "low": "0 (no response)",
     "mid": "50%",
@@ -9489,7 +9489,7 @@
    "vintage_key": "aclf",
    "only_for": null,
    "in_model": false,
-   "why_not": "Downloaded and checked, then excluded (decision 46): from July 2023 the published count reads about double the Census housing-unit estimates.",
+   "why_not": "Downloaded and checked, then excluded: from July 2023 the published count reads about double the Census housing-unit estimates.",
    "manifest": "data/manifests/aclf.json"
   },
   {
