@@ -88,6 +88,15 @@ def county_supply_elasticity(state: StateInputs, params: Params, saiz_by_cbsa: d
     return np.array(vals), origin
 
 
+def geography_check(resp: dict[str, Any]) -> dict[str, Any] | None:
+    """The composite per county as the results file's geography check; None without county elasticities."""
+    c = resp.get("composite")
+    if c is None:
+        return None
+    return {"composite_per_county": np.atleast_1d(c).tolist(),
+            "reading": "Composite of elasticities per county (diagnostic): supply-constrained metros respond less."}
+
+
 def resolve_response(params: Params, eps_s: Any = None) -> dict[str, Any]:
     """The response the scenarios use, with the route named.
 

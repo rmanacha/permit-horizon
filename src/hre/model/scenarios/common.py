@@ -102,6 +102,17 @@ def flat_years(per_year: np.ndarray, horizon: int) -> np.ndarray:
     return np.repeat(np.asarray(per_year, dtype=float)[None, :], horizon, axis=0)
 
 
+def new_home_price(state: StateInputs, params: Params) -> np.ndarray:
+    """[counties] county median value x the new-home price ratio; 0 where the value is missing."""
+    return np.array([c.median_value or 0 for c in state.counties], dtype=float) * float(params["new_home_price_ratio"])
+
+
+def no_price_notes(state: StateInputs) -> list[str]:
+    """One note per county without a median value (so no price and no response)."""
+    return [f"{c.fips} {c.name}: no median value, so no price and no response" for c in state.counties
+            if not c.median_value]
+
+
 def evaluate(spec: Spec, state: StateInputs, params: Params, ctx: dict[str, Any], share: float) -> dict[str, Any]:
     """The register-default increment at the levels ``params`` holds (also the tornado's run_fn)."""
     c = spec.core(state, params, ctx)

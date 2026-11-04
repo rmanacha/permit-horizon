@@ -23,8 +23,8 @@ from typing import Any
 import numpy as np
 
 from hre.model.params import Params
-from hre.model.response import quantity_change, resolve_response
-from hre.model.scenarios.common import Core, Spec
+from hre.model.response import geography_check, quantity_change, resolve_response
+from hre.model.scenarios.common import Core, Spec, flat_years, new_home_price, no_price_notes
 from hre.schema import StateInputs
 
 IDS = ("builder_response_override", "new_home_price_ratio", "ramp_immediate")
@@ -32,10 +32,6 @@ IDS = ("builder_response_override", "new_home_price_ratio", "ramp_immediate")
 
 def fee_cut(params: Params) -> float:
     return float(params["total_fee_per_unit"]) * float(params["fee_cut_share"])
-
-
-def price(state: StateInputs, params: Params) -> np.ndarray:
-    return np.array([c.median_value or 0 for c in state.counties], dtype=float) * float(params["new_home_price_ratio"])
 
 
 def homes_per_permit(params: Params, by_type: np.ndarray) -> float:
@@ -51,26 +47,20 @@ def homes_per_permit(params: Params, by_type: np.ndarray) -> float:
 
 def core(state: StateInputs, params: Params, ctx: dict[str, Any], cut: float | None = None) -> Core:
     c = fee_cut(params) if cut is None else cut
-    p = price(state, params)
+    p = new_home_price(state, params)
     resp = resolve_response(params, ctx.get("eps_s"))
     base = ctx["baseline_by_type"].sum(axis=1)
     homes = quantity_change(base, c, p, resp["value"])
     horizon = int(params["horizon_years"])
-    composite = resp.get("composite")
     return Core(
-        benchmark_by_year=np.repeat((np.asarray(homes, dtype=float) / horizon)[None, :], horizon, axis=0),
+        benchmark_by_year=flat_years(homes / horizon, horizon),
         market=np.ones(len(state.counties)),
         conversion=1.0,
         homes_per_permit=homes_per_permit(params, ctx["baseline_by_type"]),
         factors={"baseline_permits": base.tolist(), "fee_cut": c, "new_home_price": p.tolist(),
                  "cut_share_of_price": np.divide(c, p, out=np.zeros_like(p), where=p > 0).tolist(),
                  "response": resp["value"], "response_route": resp["route"],
-                 "geography_check": None if composite is None else {
-                     "composite_per_county": np.atleast_1d(composite).tolist(),
-                     "reading": "Composite of elasticities per county (diagnostic): supply-constrained metros "
-                                "respond less."},
-                 "notes": [f"{s.fips} {s.name}: no median value, so no price and no response"
-                           for s in state.counties if not s.median_value]},
+                 "geography_check": geography_check(resp), "notes": no_price_notes(state)},
     )
 
 
@@ -81,7 +71,7 @@ def diagnostics(state: StateInputs, params: Params, ctx: dict[str, Any]) -> dict
     actual = {lv: float(core(state, pm.at({"builder_response_override": lv}), ctx, cut=actual_cut)
                         .benchmark_by_year.sum()) for lv in ("low", "mid", "high")}
     stock = np.array([ctx["stock"].get(s.fips, 0) for s in state.counties], dtype=float)
-    p = price(state, pm)
+    p = new_home_price(state, pm)
     share = np.divide(fee_cut(pm), p, out=np.zeros_like(p), where=p > 0)
     stock_route = float((stock * float(pm["stock_supply_elasticity"]) * float(pm["stock_realization_share"])
                          * share).sum())

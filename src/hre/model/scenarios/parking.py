@@ -19,8 +19,8 @@ from typing import Any
 import numpy as np
 
 from hre.model.params import Params
-from hre.model.response import quantity_change, resolve_response
-from hre.model.scenarios.common import Core, Spec
+from hre.model.response import geography_check, quantity_change, resolve_response
+from hre.model.scenarios.common import Core, Spec, flat_years, new_home_price, no_price_notes
 from hre.schema import StateInputs
 
 IDS = ("builder_response_override", "parking_built_share", "parking_cost_per_space", "new_home_price_ratio",
@@ -43,19 +43,18 @@ def required_spaces(state: StateInputs, params: Params) -> tuple[np.ndarray, lis
 def core(state: StateInputs, params: Params, ctx: dict[str, Any]) -> Core:
     spaces, origin = required_spaces(state, params)
     saving = spaces * (1.0 - float(params["parking_built_share"])) * float(params["parking_cost_per_space"])
-    price = np.array([c.median_value or 0 for c in state.counties], dtype=float) * float(params["new_home_price_ratio"])
+    price = new_home_price(state, params)
     resp = resolve_response(params, ctx.get("eps_s"))
     density = np.array([1.0 if c.metro_role == "central" else float(params["parking_low_density_factor"])
                         for c in state.counties])
     base = ctx["baseline_by_type"][:, 3]                       # 5+ unit permits over five years
     homes = quantity_change(base, saving, price, resp["value"]) * density
     horizon = int(params["horizon_years"])
-    notes = [f"{c.fips} {c.name}: no median value, so no price and no response" for c in state.counties
-             if not c.median_value]
+    notes = no_price_notes(state)
     if not base.any():
         notes.append("No permits in 5+ unit buildings in the baseline: the parking response is zero.")
     return Core(
-        benchmark_by_year=np.repeat((homes / horizon)[None, :], horizon, axis=0),
+        benchmark_by_year=flat_years(homes / horizon, horizon),
         market=np.ones(len(state.counties)),
         conversion=1.0,
         homes_per_permit=float(params["completions_per_permit_5plus"]),
@@ -63,17 +62,9 @@ def core(state: StateInputs, params: Params, ctx: dict[str, Any]) -> Core:
                  "spaces_source": origin, "saving_per_home": saving.tolist(), "new_home_price": price.tolist(),
                  "saving_share_of_price": np.divide(saving, price, out=np.zeros_like(price), where=price > 0).tolist(),
                  "density_factor": density.tolist(), "response": resp["value"], "response_route": resp["route"],
-                 "geography_check": _composite(resp), "notes": notes},
+                 "geography_check": geography_check(resp), "notes": notes},
         linear_counties={"parking_low_density_factor": [c.metro_role != "central" for c in state.counties]},
     )
-
-
-def _composite(resp: dict[str, Any]) -> Any:
-    c = resp.get("composite")
-    if c is None:
-        return None
-    return {"composite_per_county": np.atleast_1d(c).tolist(),
-            "reading": "Composite of elasticities per county (diagnostic): supply-constrained metros respond less."}
 
 
 SPEC = Spec(
