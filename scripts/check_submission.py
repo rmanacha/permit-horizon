@@ -112,7 +112,7 @@ def check_secrets(files: list[str]) -> Item:
 
 def check_forbidden(files: list[str]) -> Item:
     bad = [f for f in files if FORBIDDEN.search(f)]
-    data = [f for f in files if f.startswith("data/") and not f.startswith(DATA_ALLOWED) and f not in DATA_ALLOWED]
+    data = [f for f in files if f.startswith("data/") and not f.startswith(DATA_ALLOWED)]
     if bad or data:
         return Item("FAIL", "No audio, transcripts or raw data", f"tracked: {bad + data}")
     return Item("PASS", "No audio, transcripts or raw data",
@@ -205,11 +205,11 @@ def _count(pattern: str, text: str) -> int:
 
 
 def check_tests(skip: bool) -> list[Item]:
+    if skip:
+        return [Item("NOTE", "Tests", "not run (--skip-tests)")]
     site = (REPO / "web" / "src" / "content" / "site.ts").read_text(encoding="utf-8")
     m = re.search(r"TEST_COUNTS = \{ python: (\d+), web: (\d+) \}", site)
     shown = (int(m.group(1)), int(m.group(2))) if m else None
-    if skip:
-        return [Item("NOTE", "Tests", "not run (--skip-tests)")]
     py = subprocess.run([sys.executable, "-m", "pytest", "-q", "-p", "no:cacheprovider"], cwd=REPO,
                         capture_output=True, text=True, check=False)
     tail = py.stdout.strip().splitlines()[-1] if py.stdout.strip() else py.stderr[-300:]
@@ -247,7 +247,7 @@ def check_sbom() -> Item:
     npm = {(p["name"], p["version"]) for p in docs.sbom_packages() if p["ecosystem"] == "npm"}
     same = py == {(n, v) for n, (v, _) in docs.uv_packages().items()} and npm == set(docs.npm_packages())
     if bad or not same:
-        return Item("FAIL", "SBOM", f"licences {bad}; matches the lock files: {same} (run make sbom after CI)")
+        return Item("FAIL", "SBOM", f"licences {bad}; matches the lock files: {same} (run make sbom after GitHub's dependency graph has updated)")
     return Item("PASS", "SBOM", f"{len(doc['packages'])} packages, created {doc['creationInfo']['created']}, the same "
                 "as uv.lock and web/package-lock.json, every licence permissive")
 

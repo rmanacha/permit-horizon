@@ -1,7 +1,7 @@
 """The stored SBOM (docs/sbom/sbom.spdx.json, from GitHub's dependency graph) matches the lock files.
 
-If this fails after a dependency changed: push, wait for CI's dependency-graph job, run
-`make sbom`, and commit the new file.
+If this fails after a dependency changed: push, wait for GitHub's dependency-graph update (the
+`update-uv-graph` check on the commit), run `make sbom`, and commit the new file.
 """
 
 import json
