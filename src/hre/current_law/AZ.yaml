@@ -124,7 +124,7 @@ scenarios:
       15 largest cities, at most 5% of the state's detached homes. So 0.75 × 0.05 = 0.04 of the
       benchmark is in law at most, and almost all of it would be newly affected.
     human_review: {status: pending, by: null, date: null}
-    notes: "New entry 2026-11-03; coverage is an upper bound (decision 91)."
+    notes: "New entry 2026-11-03; coverage is an upper bound (decision 91). The denominator is all detached homes; against the scenario's exposed stock (central metropolitan counties, 1,963,420 homes) the share is 0.0546 and the strength still rounds to 0.04, erring toward a larger increment (planning window note, 2026-11-03)."
 
   tod:
     record:

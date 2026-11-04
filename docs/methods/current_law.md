@@ -114,7 +114,12 @@ leans (decision 95): CDPs stand in for urban growth areas (an over-count where r
 outside them), a county list over-counts towns outside a planning boundary, and Virginia's
 exemption for localities with an earlier ordinance is not subtracted (an upper bound).
 Connecticut's opt-out list is the only one that exists, an advocacy group's 2023 survey; no state
-agency collected one.
+agency collected one. The denominator is always the state's detached homes, although the
+missing-middle estimate is exposed only in central metropolitan counties; for a middle-housing law
+the share of *exposed* homes the law reaches is therefore a little higher. In Arizona it is 5.46%
+of the 1,963,420 exposed homes against 5.23% of all 2,048,854, and the strength is 0.04 either way;
+the gap errs toward a larger increment. If a later state makes it material, use the scenario's
+exposed stock as the denominator.
 
 Limits: the share is statewide, so the engine applies one strength to every county; a county
 with mostly uncovered towns gets the state's average. Local ordinances that go further than the
