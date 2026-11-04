@@ -107,6 +107,14 @@ def fetch(
         fetch_transit.fetch_ntm_stops(st, counties, dd, force=force)
         fetch_transit.fetch_ntd_modes(st, dd, force=force)
         fetch_rail_supplement.fetch_rail_supplement(st.fips, dd, force=force)
+        from hre.adapters import registry
+
+        a = registry.get(st.usps)
+        if a is not None and a.enabled:
+            p = registry.fetch(st.usps, Path("data/processed"))
+            typer.echo(f"{st.usps}: parcel adapter counts -> {p}")
+        elif a is not None:
+            typer.echo(f"{st.usps}: parcel adapter disabled ({a.rules.get('disabled_reason', '')[:80]}...)")
     if hcd:
         typer.echo("hcd: California APR Table A2 (about 295 MB)")
         fetch_hcd.fetch_hcd(dd, force=force)
@@ -135,6 +143,8 @@ def build(
         except MissingSource as e:
             typer.echo(str(e), err=True)
             raise typer.Exit(code=2) from e
+        if s.get("adapter") not in (None, "none"):
+            typer.echo(f"   parcel adapter: {s['adapter']}")
         typer.echo(f"{s['state']}: {s['counties']} counties, {s['block_groups']} block groups, "
                    f"{s['major_stops']} major stops, {s['bg_within_half_mile']} block groups within "
                    f"half a mile; permits latest year {s['permits_latest_year_total']:,}; "

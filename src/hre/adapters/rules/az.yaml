@@ -1,0 +1,31 @@
+# Arizona: Maricopa County Assessor and Pinal County parcels. Ported from Adam Ruege's v2.0
+# parcel_sources records for AZ (ported_from: adam-v2.0) and re-checked against the live services
+# on 2026-11-03 (Maricopa 1,220,587 parcels, his 1,220,654; Pinal 161,927 distinct parcels, his
+# 161,932). Neither service states a licence (see license_text); counts only are published.
+state: AZ
+enabled: true
+tolerance: 0.30
+ported_from: adam-v2.0
+rechecked: "2026-11-03"
+queries:
+  - county: Maricopa
+    layer: https://gis.mcassessor.maricopa.gov/arcgis/rest/services/Parcels/MapServer/0
+    where: "PUC >= '0100' AND PUC <= '0179'"
+    distinct_field: APN
+  - county: Pinal
+    layer: https://gis.pinal.gov/mapping/rest/services/TaxParcels/FeatureServer/3
+    where: "USECD >= '0100' AND USECD <= '0179'"
+    distinct_field: PARCELID
+sources:
+  - dataset: "Maricopa County Assessor parcels (Parcels map service)"
+    area: "Maricopa County"
+    rule: "Arizona Department of Revenue property use codes 0100 to 0179 (single-family residential), counted once per parcel number; a house with a second residence (018x), mobile homes (08xx) and other residential series left out"
+    license_text: "No licence stated. The Assessor's data page says its files are free to download; free to download is not a licence, and the county bars commercial resale without a sublicence. Only county totals are used and published."
+    documentation_url: https://mcassessor.maricopa.gov/page/data_sales/
+    accessed: "2026-11-03"
+  - dataset: "Pinal County TaxParcels (Pinal County GIS, with Assessor use codes)"
+    area: "Pinal County"
+    rule: "Arizona Department of Revenue property use codes 0100 to 0179, counted once per parcel number (the layer repeats a parcel for each condominium unit); other residential series left out"
+    license_text: "No licence stated; a disclaimer only (the user must verify accuracy). Only the county total is used and published."
+    documentation_url: https://www.arcgis.com/home/item.html?id=e119dcf75dba46d98db4fc3043b938ec
+    accessed: "2026-11-03"

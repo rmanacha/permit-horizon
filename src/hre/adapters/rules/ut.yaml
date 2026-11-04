@@ -1,0 +1,19 @@
+# Utah: Housing Unit Inventory (WFRC, MAG, UGRC). Ported from Adam Ruege's v2.0 parcel_sources
+# record for UT (ported_from: adam-v2.0) and re-checked against the live service on 2026-11-03:
+# the same grouped count reproduces his seven county totals exactly (Davis 88,083; Morgan 3,686;
+# Salt Lake 240,491; Tooele 21,749; Utah 147,317; Washington 53,794; Weber 67,197).
+state: UT
+enabled: true
+tolerance: 0.30
+layer: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/HousingUnitInventory/FeatureServer/0
+where: "TYPE = 'single_family' AND SUBTYPE = 'single_family'"
+group_by: COUNTY
+ported_from: adam-v2.0
+rechecked: "2026-11-03"
+sources:
+  - dataset: "Utah Housing Unit Inventory (Wasatch Front Regional Council, Mountainland Association of Governments, Utah Geospatial Resource Center)"
+    area: "The counties the inventory covers; it is complete in Davis, Morgan, Salt Lake, Tooele, Utah, Washington and Weber, and partial in Box Elder, Summit and Wasatch (the tolerance test keeps ACS there)"
+    rule: "Features with type single_family and subtype single_family (single-family homes with an ADU, townhomes, duplexes, condominiums and mobile home parks left out), counted once per feature, per county"
+    license_text: "Creative Commons Attribution 4.0 International (stated on the ArcGIS item)"
+    documentation_url: https://www.arcgis.com/home/item.html?id=bbdc62867c2340949f530a71666223ab
+    accessed: "2026-11-03"

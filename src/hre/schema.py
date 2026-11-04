@@ -96,6 +96,7 @@ class StateInputs:
     state_permits_history: dict[str, int] = field(default_factory=dict)
     notes: list[str] = field(default_factory=list)
     schema_version: str = SCHEMA_VERSION
+    adapter: dict[str, Any] = field(default_factory=dict)   # parcel adapter provenance (decision 39); {} if none
 
     # -- serialisation -------------------------------------------------------
 
@@ -128,6 +129,7 @@ class StateInputs:
             state_permits_history=dict(d.get("state_permits_history", {})),
             notes=list(d.get("notes", [])),
             schema_version=str(d.get("schema_version", SCHEMA_VERSION)),
+            adapter=dict(d.get("adapter", {})),
         )
 
     @classmethod
@@ -196,6 +198,8 @@ def validate(d: dict[str, Any]) -> list[str]:
                 p.append(f"state_permits_history key {year!r} is not 'YYYY'")
             if not (_is_int(units) and units >= 0):
                 p.append(f"state_permits_history[{year}] must be a non-negative int")
+    if not isinstance(d.get("adapter", {}), dict):
+        p.append("adapter must be an object")
     if str(d.get("schema_version", SCHEMA_VERSION)) != SCHEMA_VERSION:
         p.append(f"schema_version {d.get('schema_version')!r} != {SCHEMA_VERSION!r}")
 

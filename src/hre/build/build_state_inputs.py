@@ -205,9 +205,31 @@ def build_state(code: str, data_dir: Path | None = None, *, lenient: bool = Fals
     return si, summary
 
 
+def _apply_adapter(si: StateInputs, out_dir: Path) -> str:
+    """Parcel counts where the state has an enabled adapter and its summary is on disk (decision 39)."""
+    from hre.adapters import registry
+
+    a = registry.get(si.state)
+    if a is None:
+        return "none"
+    if not a.enabled:
+        si.notes.append(f"adapter {si.state} disabled: {a.rules.get('disabled_reason', '')}")
+        return "disabled"
+    if not a.summary_path(out_dir).exists():
+        si.notes.append(f"adapter {si.state}: no {a.summary_path(out_dir).name}; run hre fetch --state "
+                        f"{si.state}. ACS counts kept.")
+        return "summary missing"
+    a.enrich(si, out_dir)
+    problems = validate(si.to_dict())
+    if problems:
+        raise ValueError("StateInputs failed validation after the adapter:\n  " + "\n  ".join(problems[:20]))
+    return f"{len(si.adapter['used_counties'])} counties from parcels, {len(si.adapter['excluded_counties'])} kept ACS"
+
+
 def write_state(code: str, data_dir: Path | None = None, out_dir: Path = Path("data/processed"),
                 *, lenient: bool = False) -> tuple[Path, dict]:
     si, summary = build_state(code, data_dir, lenient=lenient)
+    summary["adapter"] = _apply_adapter(si, out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     dest = out_dir / f"{si.state}.json"
     dest.write_text(si.to_json() + "\n", encoding="utf-8")

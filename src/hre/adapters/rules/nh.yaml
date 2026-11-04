@@ -1,0 +1,20 @@
+# New Hampshire: NH Parcel Mosaic CAMA table (NH Department of Revenue Administration, served by
+# NH GRANIT). Ported from Adam Ruege's v2.0 parcel_sources record for NH (ported_from: adam-v2.0).
+# DISABLED until GRANIT confirms that county counts may be published (docs/evidence/nh_granit_terms.md).
+# The table has a Name field and street addresses; the grouped count never requests them.
+state: NH
+enabled: false
+disabled_reason: "The Parcel Mosaic states no licence, only that the data are for estimation and planning purposes; whether derived county counts may be published is being asked of GRANIT (docs/evidence/nh_granit_terms.md). New Hampshire keeps the ACS count until then."
+tolerance: 0.30
+layer: https://nhgeodata.unh.edu/nhgeodata/rest/services/CAD/ParcelMosaic/MapServer/3
+where: "SLUC = '11'"
+group_by: CountyName
+ported_from: adam-v2.0
+rechecked: "2026-11-03"
+sources:
+  - dataset: "NH Parcel Mosaic CAMA table (NH Department of Revenue Administration, served by NH GRANIT)"
+    area: "All 10 counties"
+    rule: "State land use code 11, Single Family Home; multi-family (12, 13), condominium units (14, 15) and manufactured housing (17, 18) left out; homes some towns code 19 (unclassified residential) are not counted"
+    license_text: "No licence stated. The service says the data are for estimation and planning purposes only and not intended for legal use."
+    documentation_url: https://nhgeodata.unh.edu/nhgeodata/rest/services/CAD/ParcelMosaic/MapServer/info/iteminfo
+    accessed: "2026-11-03"
