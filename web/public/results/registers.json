@@ -2227,10 +2227,435 @@
   }
  ],
  "current_law": {
+  "AZ": {
+   "state": "AZ",
+   "scenarios": {
+    "adu": {
+     "ported_from": "adam-v2.0",
+     "rechecked": "2026-11-03",
+     "record": {
+      "law": "A.R.S. 9-461.18 (cities and towns of more than 75,000 people), enacted by H.B. 2720 (2024, chapter 196) and amended by H.B. 2928 (2025, chapter 217); A.R.S. 11-810.01 (counties), added by H.B. 2928",
+      "summary": "Cities and towns of more than 75,000 people, and every county outside cities, must allow one attached and one detached ADU as a permitted use on every lot where a single-family home is allowed, with no added parking.",
+      "quote": "A municipality shall adopt regulations that allow on any lot or parcel where a single-family dwelling is allowed all of the following: 1. At least one attached and one detached accessory dwelling unit as a permitted use.",
+      "url": "https://www.azleg.gov/ars/9/00461-18.htm",
+      "accessed": "2026-11-03",
+      "in_effect": "Cities: regulations due January 1, 2025. Counties: regulations due January 1, 2026. Where a city or county missed its deadline, ADUs are allowed on all residential lots without limits."
+     },
+     "features": [
+      {
+       "id": "adu_per_lot",
+       "challenge_requirement": "Allow one ADU on a parcel with an existing single-family building.",
+       "observed_position": "Covered cities and every county must allow at least one attached and one detached ADU as a permitted use, approved without a public hearing, on any lot where a single-family home is allowed.",
+       "status": "supported_with_limits",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-461.18",
+         "url": "https://www.azleg.gov/ars/9/00461-18.htm",
+         "locator": "subsections A.1 and H",
+         "quote": "This section applies to a municipality with a population of more than seventy-five thousand persons.",
+         "accessed": "2026-11-03"
+        },
+        {
+         "title": "Arizona Revised Statutes 11-810.01",
+         "url": "https://www.azleg.gov/ars/11/00810-01.htm",
+         "locator": "subsection A.1",
+         "quote": "At least one attached and one detached accessory dwelling unit as a permitted use.",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Cities and towns of 75,000 people or fewer are not covered (by the 2020 Census count, which Arizona law uses); together they hold about one in five of the state's detached homes.",
+        "Tribal land and land near military and public airports are excluded."
+       ]
+      },
+      {
+       "id": "adu_forms",
+       "challenge_requirement": "Allow detached and semi-detached ADUs.",
+       "observed_position": "Both an attached and a detached ADU must be allowed on the same lot, and a second detached ADU on lots of an acre or more when one unit is rented as affordable housing.",
+       "status": "supported_with_limits",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-461.18",
+         "url": "https://www.azleg.gov/ars/9/00461-18.htm",
+         "locator": "subsection A.1 and A.2",
+         "quote": "At least one attached and one detached accessory dwelling unit as a permitted use.",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Covered cities and counties only."
+       ]
+      },
+      {
+       "id": "adu_size",
+       "challenge_requirement": "Allow ADUs of at least 600 square feet.",
+       "observed_position": "Cities and counties must allow an ADU of 75% of the house's floor area or 1,000 square feet, whichever is less. That reaches 600 square feet whenever the house has at least 800 square feet of living space.",
+       "status": "supported_with_limits",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-461.18",
+         "url": "https://www.azleg.gov/ars/9/00461-18.htm",
+         "locator": "subsection A.3",
+         "quote": "seventy-five percent of the gross floor area of the single-family dwelling on the same lot or parcel or one thousand square feet, whichever is less",
+         "accessed": "2026-11-03"
+        },
+        {
+         "title": "Arizona Revised Statutes 11-810.01",
+         "url": "https://www.azleg.gov/ars/11/00810-01.htm",
+         "locator": "subsection B",
+         "quote": "at least seventy-five percent of the gross floor area of the single-family dwelling on the same lot or parcel or one thousand square feet, whichever is less",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "On lots with a house under 800 square feet, the protected size is below 600 square feet."
+       ]
+      },
+      {
+       "id": "adu_parking",
+       "challenge_requirement": "Require no added parking for the ADU.",
+       "observed_position": "Cities and counties may not require added parking, or a fee in place of parking, for an ADU.",
+       "status": "supported_with_limits",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-461.18",
+         "url": "https://www.azleg.gov/ars/9/00461-18.htm",
+         "locator": "subsection B.3",
+         "quote": "Require that a lot or parcel have additional parking to accommodate an accessory dwelling unit or require payment of fees instead of additional parking.",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Covered cities and counties only."
+       ]
+      }
+     ],
+     "coverage": {
+      "share": 0.7989,
+      "rule": {
+       "above_population": 75000,
+       "unincorporated": "all",
+       "exclude_tribal": true
+      },
+      "basis": "ACS 2020-2024: 1,203,063 detached homes in the 15 cities and towns of more than 75,000 people, plus 433,794 outside any city or town after removing 46,822 on tribal land, out of 2,048,854 in the state. The same 15 places exceed 75,000 in the 2020 Census."
+     },
+     "current_strength": 0.8,
+     "strength_rationale": "All four benchmark features are in Arizona law, but only in the places the law covers: cities and towns of more than 75,000 people and the areas outside any city or town, which hold 80% of the state's detached single-family homes. So 1 \u00d7 0.80 = 0.80 of the benchmark is already in law. The other 20% of homes, in smaller cities and towns, would be newly covered.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "Strength rule and coverage from decision 91; size status changed from Adam's record on re-check (decision 92)."
+    },
+    "missing_middle": {
+     "record": {
+      "law": "A.R.S. 9-462.13 (middle housing), enacted by H.B. 2721 (2024, chapter 197)",
+      "summary": "Cities of 75,000 people or more must allow duplexes, triplexes, fourplexes and townhomes as a permitted use on single-family lots within one mile of downtown, and on at least 20% of any new development of more than ten acres.",
+      "quote": "the development of duplexes, triplexes, fourplexes and townhomes as a permitted use on both of the following: 1. All lots zoned for single-family residential use within one mile of the municipality's central business district.",
+      "url": "https://www.azleg.gov/ars/9/00462-13.htm",
+      "accessed": "2026-11-03",
+      "in_effect": "Regulations due January 1, 2026; where a city missed the deadline, middle housing is allowed on all single-family lots without limits."
+     },
+     "features": [
+      {
+       "id": "mm_parcels",
+       "challenge_requirement": "Apply the reform to parcels currently limited to single-family use.",
+       "observed_position": "Applies to single-family lots within one mile of downtown in cities of 75,000 or more, and to 20% of new developments over ten acres; other single-family lots are not covered.",
+       "status": "supported_with_limits",
+       "in_effect_from": "2026-01-01",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-462.13",
+         "url": "https://www.azleg.gov/ars/9/00462-13.htm",
+         "locator": "subsection A",
+         "quote": "All lots zoned for single-family residential use within one mile of the municipality's central business district.",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Each city designates its own downtown area; the share of homes within a mile of it has not been mapped (the coverage figure is an upper bound).",
+        "Unincorporated areas and land near airports are excluded."
+       ]
+      },
+      {
+       "id": "mm_units",
+       "challenge_requirement": "Allow two to six homes on each affected parcel.",
+       "observed_position": "Duplexes, triplexes, fourplexes and townhomes must be allowed; five- and six-unit buildings are not required.",
+       "status": "supported_with_limits",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-462.13",
+         "url": "https://www.azleg.gov/ars/9/00462-13.htm",
+         "locator": "subsections A and H.7",
+         "quote": "Includes duplexes, triplexes, fourplexes and townhouses.",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Up to four homes per lot, not six."
+       ]
+      },
+      {
+       "id": "mm_height",
+       "challenge_requirement": "Allow buildings of up to three stories.",
+       "observed_position": "Cities may not limit middle housing to fewer than two floors; three stories are not required.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-462.13",
+         "url": "https://www.azleg.gov/ars/9/00462-13.htm",
+         "locator": "subsection B.2",
+         "quote": "Restrict middle housing types to less than two floors.",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      },
+      {
+       "id": "mm_envelope",
+       "challenge_requirement": "The model may assume setbacks and lot coverage do not prevent two to six homes.",
+       "observed_position": "Rules for middle housing may not be stricter than for single-family homes in the same zone, and the floor area ratio may not be held below 50%.",
+       "status": "supported_with_limits",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-462.13",
+         "url": "https://www.azleg.gov/ars/9/00462-13.htm",
+         "locator": "subsection B.3 and B.4",
+         "quote": "Restrict middle housing types to a floor area ratio of less than fifty percent.",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Whether a 50% floor area ratio fits four homes depends on lot size."
+       ]
+      }
+     ],
+     "coverage": {
+      "share": 0.0523,
+      "rule": {
+       "min_population": 75000,
+       "unincorporated": "none",
+       "near_downtown_miles": 1
+      },
+      "basis": "Upper bound, ACS 2020-2024 and the 2025 Gazetteer: in each of the 15 cities of 75,000 or more, the detached homes in a circle of two miles' radius around downtown (a downtown up to a mile across plus the one-mile reach) at the city's average density, 107,133 in all, out of 2,048,854 in the state. Downtowns hold fewer detached homes than the city average, so the true share is lower."
+     },
+     "current_strength": 0.04,
+     "strength_rationale": "Three of the four benchmark features are in Arizona law (lots gaining rights, two to four homes, and a building envelope no stricter than for single-family homes); the three-story height is not. But the law reaches only single-family lots within a mile of downtown in the 15 largest cities, at most 5% of the state's detached homes. So 0.75 \u00d7 0.05 = 0.04 of the benchmark is in law at most, and almost all of it would be newly affected.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "New entry 2026-11-03; coverage is an upper bound (decision 91)."
+    },
+    "tod": {
+     "record": {
+      "law": "No statewide transit-area density law found. Nearest statute: A.R.S. 9-462.10 (multifamily housing and conversions on commercial parcels in cities of 150,000 or more, 2024).",
+      "summary": "Arizona law does not raise allowed housing density near transit stops. A separate law lets large cities' obsolete commercial buildings become apartments, without regard to transit.",
+      "quote": "shall establish objective standards to allow multifamily residential development or adaptive reuse of existing commercial, office or mixed use parcels within the municipality without requiring a conditional use permit, a planned unit development or rezoning application",
+      "url": "https://www.azleg.gov/ars/9/00462-10.htm",
+      "accessed": "2026-11-03",
+      "in_effect": "Not applicable: no transit-area law. The commercial-parcel law applies to cities of 150,000 or more."
+     },
+     "features": [
+      {
+       "id": "tod_density",
+       "challenge_requirement": "Increase permitted building height, floor area ratio, or both near major transit stops.",
+       "observed_position": "No statute raises allowed height or density near transit. The commercial-parcel law allows apartments on at least 10% of commercial parcels in cities of 150,000 or more, at the highest nearby multifamily density and up to five stories, wherever the buildings are obsolete.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-462.10",
+         "url": "https://www.azleg.gov/ars/9/00462-10.htm",
+         "locator": "subsections A.1 and E.3 to E.4",
+         "quote": "The allowable height may not exceed five stories",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Searched the Arizona Revised Statutes and 2024 to 2026 session laws; local transit overlays (for example in Phoenix and Tempe) are not counted."
+       ]
+      },
+      {
+       "id": "tod_geography",
+       "challenge_requirement": "Define major transit stops and justify the distance threshold.",
+       "observed_position": "No statute defines major transit stops or a distance for housing rules.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-462.10",
+         "url": "https://www.azleg.gov/ars/9/00462-10.htm",
+         "locator": "subsection A",
+         "quote": "a municipality with a population of one hundred fifty thousand or more persons",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      },
+      {
+       "id": "tod_parking",
+       "challenge_requirement": "The model may assume parking requirements near transit are reduced or removed.",
+       "observed_position": "No transit-area parking rule. Conversions under the commercial-parcel law may not face more parking than existing multifamily rules require.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-462.10",
+         "url": "https://www.azleg.gov/ars/9/00462-10.htm",
+         "locator": "subsection D",
+         "quote": "The objective standards may not contain parking space requirements that exceed the parking requirements that apply to multifamily residential buildings",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      }
+     ],
+     "current_strength": 0.0,
+     "strength_rationale": "Arizona has no statewide law that raises housing density near transit stops, so none of the benchmark is in law and all of it would be newly affected. A 2024 law that lets large cities' obsolete commercial buildings become apartments is not tied to transit and is not counted.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "New entry 2026-11-03; zero by the gate rule (decision 91)."
+    },
+    "parking": {
+     "record": {
+      "law": "No statewide cap or repeal of residential parking minimums. Partial rules: A.R.S. 9-461.18 (no added parking for ADUs), 9-462.13 (at most one space per middle-housing unit), 9-462.10 (conversions).",
+      "summary": "Arizona limits parking requirements only for ADUs, middle housing and commercial-to-residential conversions; minimums for apartment buildings are set by each city.",
+      "quote": "Require more than one off-street parking space per unit.",
+      "url": "https://www.azleg.gov/ars/9/00462-13.htm",
+      "accessed": "2026-11-03",
+      "in_effect": "Not applicable: no general law. The middle-housing cap applies from January 1, 2026."
+     },
+     "features": [
+      {
+       "id": "parking_minimum",
+       "challenge_requirement": "Reduce or remove parking minimums for new residential development.",
+       "observed_position": "No statute reduces minimums for apartment buildings of five or more homes, the buildings the parking estimate covers. The caps for ADUs and for two- to four-unit middle housing do not reach them.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-462.13",
+         "url": "https://www.azleg.gov/ars/9/00462-13.htm",
+         "locator": "subsection B.7",
+         "quote": "Require more than one off-street parking space per unit.",
+         "accessed": "2026-11-03"
+        },
+        {
+         "title": "Arizona Revised Statutes 9-461.18",
+         "url": "https://www.azleg.gov/ars/9/00461-18.htm",
+         "locator": "subsection B.3",
+         "quote": "Require that a lot or parcel have additional parking to accommodate an accessory dwelling unit",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Local parking reforms (for example Phoenix's near light rail) are not counted."
+       ]
+      },
+      {
+       "id": "parking_provision",
+       "challenge_requirement": "State how much parking developers provide without a mandate.",
+       "observed_position": "The statutes do not address how much parking builders provide; the estimate's assumption about the share of parking still built covers this.",
+       "status": "unknown",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-462.13",
+         "url": "https://www.azleg.gov/ars/9/00462-13.htm",
+         "locator": "subsection B.7",
+         "quote": "Require more than one off-street parking space per unit.",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      }
+     ],
+     "current_strength": 0.0,
+     "strength_rationale": "Arizona caps parking only for ADUs and small middle-housing buildings. Minimums for apartment buildings, which the parking estimate covers, are untouched, so none of the benchmark is in law and all of it would be newly affected.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "New entry 2026-11-03; zero by the gate rule (decision 91)."
+    },
+    "fees": {
+     "record": {
+      "law": "A.R.S. 9-463.05 (development fees charged by cities and towns)",
+      "summary": "Arizona law limits what development fees may pay for and requires them to be proportionate; it does not cut them.",
+      "quote": "The development fee shall not exceed a proportionate share of the cost of necessary public services, based on service units, needed to provide necessary public services to the development.",
+      "url": "https://www.azleg.gov/ars/9/00463-05.htm",
+      "accessed": "2026-11-03",
+      "in_effect": "In force; no fee reduction enacted."
+     },
+     "features": [
+      {
+       "id": "fees_level",
+       "challenge_requirement": "Assume total fees of $50,000 per home for the challenge comparison.",
+       "observed_position": "State law does not set a fee level; fees are set by each city under the statute's rules and are not measured here.",
+       "status": "unknown",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-463.05",
+         "url": "https://www.azleg.gov/ars/9/00463-05.htm",
+         "locator": "subsection B.2",
+         "quote": "The municipality shall calculate the development fee based on the infrastructure improvements plan adopted pursuant to this section.",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      },
+      {
+       "id": "fees_cut",
+       "challenge_requirement": "Reduce total fees by 50%.",
+       "observed_position": "No statute reduces development fees; the law caps each fee at a proportionate share of infrastructure costs.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-463.05",
+         "url": "https://www.azleg.gov/ars/9/00463-05.htm",
+         "locator": "subsection B.3",
+         "quote": "The development fee shall not exceed a proportionate share of the cost of necessary public services",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      },
+      {
+       "id": "fees_categories",
+       "challenge_requirement": "Cover planning, environmental review, building, and impact fees.",
+       "observed_position": "The statute governs development (impact) fees only; planning and building permit fees are not addressed.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Arizona Revised Statutes 9-463.05",
+         "url": "https://www.azleg.gov/ars/9/00463-05.htm",
+         "locator": "subsection A",
+         "quote": "A municipality may assess development fees to offset costs to the municipality associated with providing necessary public services to a development",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      }
+     ],
+     "current_strength": 0.0,
+     "strength_rationale": "Arizona regulates how development fees are set but has not cut them, so none of the 50% fee cut is in law and all of it would be newly affected.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "New entry 2026-11-03; zero by the gate rule (decision 91)."
+    }
+   }
+  },
   "NH": {
    "state": "NH",
    "scenarios": {
     "adu": {
+     "ported_from": "adam-v2.0",
+     "rechecked": "2026-11-03",
      "record": {
       "law": "RSA 674:71 to 674:73, as amended by H.B. 577 (2025, chapter 197) and H.B. 1079 (2026, chapter 210); first enacted by S.B. 146 (2016, chapter 6)",
       "summary": "Every New Hampshire town or city with zoning must allow one attached or detached ADU by right in every district that allows single-family homes, and may require the owner to live in one of the two units.",
@@ -2243,7 +2668,7 @@
       {
        "id": "adu_per_lot",
        "challenge_requirement": "Allow one ADU on a parcel with an existing single-family building.",
-       "observed_position": "The section requires one attached or detached ADU as of right on covered single-family lots, subject to specified exceptions.",
+       "observed_position": "The section requires one attached or detached ADU as of right on covered single-family lots, subject to specified exceptions. Since August 2026, towns must also allow ADUs in existing structures such as detached garages.",
        "status": "supported_with_limits",
        "sources": [
         {
@@ -2252,10 +2677,17 @@
          "locator": "paragraph I",
          "quote": "One accessory dwelling unit, which may be either attached or detached",
          "accessed": "2026-11-03"
+        },
+        {
+         "title": "New Hampshire RSA 674:72",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-72.htm",
+         "locator": "paragraph XI",
+         "quote": "A municipality shall allow accessory dwelling units to be converted from existing structures",
+         "accessed": "2026-11-03"
         }
        ],
        "limitations": [
-        "Municipal owner-occupancy (paragraph VI), dimensional, utility and other permitted conditions remain.",
+        "Towns may still require the owner to live on site (paragraph VI), and dimensional, utility and other permitted conditions remain.",
         "The number of affected parcels has not been measured."
        ]
       },
@@ -2270,6 +2702,13 @@
          "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-72.htm",
          "locator": "paragraph I",
          "quote": "either attached or detached",
+         "accessed": "2026-11-03"
+        },
+        {
+         "title": "New Hampshire RSA 674:73",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-73.htm",
+         "locator": "single paragraph",
+         "quote": "A municipality shall permit one detached accessory dwelling unit.",
          "accessed": "2026-11-03"
         }
        ],
@@ -2315,12 +2754,701 @@
       }
      ],
      "current_strength": 0.75,
-     "strength_rationale": "Starting rule (decision 62): three of the four benchmark features (one ADU per lot, attached or detached, at least 600 square feet) are supported with limits and one (no added parking) differs, so 3 / 4 = 0.75 of the benchmark is already in law and 0.25 is newly affected. Owner-occupancy may still be required (paragraph VI); human review pending.",
+     "strength_rationale": "Three of the four benchmark features are in New Hampshire law in every town with zoning: one ADU per lot, attached or detached, of at least 600 square feet. The fourth, no added parking, is not: towns may require one more space. So 3 / 4 = 0.75 of the benchmark is already in law and 0.25 would be newly affected. Towns may also still require the owner to live on site.",
      "human_review": {
       "status": "pending",
       "by": null,
       "date": null
-     }
+     },
+     "notes": "0.75 is decision 62's starting rule, unchanged under decision 91 (every town with zoning is bound, coverage 1). Re-reviewed 2026-11-03."
+    },
+    "missing_middle": {
+     "record": {
+      "law": "No statewide middle-housing requirement found. Nearest: RSA 674:58 to 674:61 (workforce housing), which requires reasonable and realistic opportunities for workforce housing.",
+      "summary": "New Hampshire requires towns to allow workforce housing in a majority of their residential land, but it does not give single-family lots the right to two to six homes.",
+      "quote": "This paragraph shall not be construed to require a municipality to allow for the development of multifamily housing in a majority of its land zoned to permit residential uses.",
+      "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-59.htm",
+      "accessed": "2026-11-03",
+      "in_effect": "Workforce housing law since January 1, 2010; the 2025 and 2026 lot-size bills were sent to interim study and did not pass."
+     },
+     "features": [
+      {
+       "id": "mm_parcels",
+       "challenge_requirement": "Apply the reform to parcels currently limited to single-family use.",
+       "observed_position": "No statute gives single-family lots the right to two to six homes. The workforce housing law leaves each town to choose where such housing goes.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "New Hampshire RSA 674:59",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-59.htm",
+         "locator": "paragraph I",
+         "quote": "Such a municipality shall have the discretion to determine what land areas are appropriate to meet this obligation.",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Local zoning that allows duplexes or more on single-family lots is not counted."
+       ]
+      },
+      {
+       "id": "mm_units",
+       "challenge_requirement": "Allow two to six homes on each affected parcel.",
+       "observed_position": "Not addressed by state law.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "New Hampshire RSA 674:59",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-59.htm",
+         "locator": "paragraph I",
+         "quote": "This paragraph shall not be construed to require a municipality to allow for the development of multifamily housing in a majority of its land zoned to permit residential uses.",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      },
+      {
+       "id": "mm_height",
+       "challenge_requirement": "Allow buildings of up to three stories.",
+       "observed_position": "Not addressed by state law.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "New Hampshire RSA 674:16",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-16.htm",
+         "locator": "paragraph I(a)",
+         "quote": "The height, number of stories and size of buildings and other structures",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      },
+      {
+       "id": "mm_envelope",
+       "challenge_requirement": "The model may assume setbacks and lot coverage do not prevent two to six homes.",
+       "observed_position": "Not addressed by state law; towns set lot sizes and coverage.",
+       "status": "unknown",
+       "sources": [
+        {
+         "title": "New Hampshire RSA 674:16",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-16.htm",
+         "locator": "paragraph I(b)",
+         "quote": "Lot sizes, the percentage of a lot that may be occupied, and the size of yards",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      }
+     ],
+     "current_strength": 0.0,
+     "strength_rationale": "New Hampshire requires towns to make room for workforce housing but lets each town choose where, and does not give single-family lots the right to two to six homes. So none of the benchmark is in law and all of it would be newly affected.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "New entry 2026-11-03; zero by the gate rule (decision 91)."
+    },
+    "tod": {
+     "record": {
+      "law": "No statewide transit-area density law found. Nearest: RSA 674:80 (multifamily housing on commercially zoned land), enacted by H.B. 631 (2025, chapter 201).",
+      "summary": "New Hampshire does not raise allowed housing density near transit stops. From July 1, 2026, towns must allow apartments on commercially zoned land where roads, water and sewer are adequate, without regard to transit.",
+      "quote": "municipalities shall allow multi-family dwelling units, as defined in RSA 674:43, I on commercially zoned land, provided that adequate infrastructure, including roads, water, and sewage systems, shall be available to support the development",
+      "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-80.htm",
+      "accessed": "2026-11-03",
+      "in_effect": "Not applicable: no transit-area law. The commercial-land law is effective July 1, 2026."
+     },
+     "features": [
+      {
+       "id": "tod_density",
+       "challenge_requirement": "Increase permitted building height, floor area ratio, or both near major transit stops.",
+       "observed_position": "No statute raises allowed height or density near transit. Apartments on commercial land are allowed statewide from July 2026, wherever infrastructure is adequate.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "New Hampshire RSA 674:80",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-80.htm",
+         "locator": "paragraph I",
+         "quote": "municipalities shall allow multi-family dwelling units",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "The state has few rail stops (three Amtrak Downeaster stations); the estimate's transit benchmark is small here for that reason."
+       ]
+      },
+      {
+       "id": "tod_geography",
+       "challenge_requirement": "Define major transit stops and justify the distance threshold.",
+       "observed_position": "No statute defines major transit stops or a distance for housing rules.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "New Hampshire RSA 674:80",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-80.htm",
+         "locator": "paragraph I",
+         "quote": "on commercially zoned land",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      },
+      {
+       "id": "tod_parking",
+       "challenge_requirement": "The model may assume parking requirements near transit are reduced or removed.",
+       "observed_position": "No transit-area rule; the statewide cap of one required space per home applies everywhere.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "New Hampshire RSA 674:16",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-16.htm",
+         "locator": "paragraph VII",
+         "quote": "shall not require more than one residential parking space per unit",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      }
+     ],
+     "current_strength": 0.0,
+     "strength_rationale": "New Hampshire has no law that raises housing density near transit stops, so none of the benchmark is in law and all of it would be newly affected. The 2025 law allowing apartments on commercial land is not tied to transit and is not counted.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "New entry 2026-11-03; zero by the gate rule (decision 91)."
+    },
+    "parking": {
+     "record": {
+      "law": "RSA 674:16, VII, added by S.B. 284 (2025, chapter 258) and amended by 2026 chapter 329",
+      "summary": "Towns and cities may not require more than one parking space per home (and, from September 13, 2026, may not require that space to be in a garage).",
+      "quote": "may regulate accessory parking for vehicles, but shall not require more than one residential parking space per unit",
+      "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-16.htm",
+      "accessed": "2026-11-03",
+      "in_effect": "September 13, 2025; garage rule September 13, 2026"
+     },
+     "features": [
+      {
+       "id": "parking_minimum",
+       "challenge_requirement": "Reduce or remove parking minimums for new residential development.",
+       "observed_position": "Minimums are capped at one space per home statewide; one space may still be required.",
+       "status": "supported_with_limits",
+       "sources": [
+        {
+         "title": "New Hampshire RSA 674:16",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-16.htm",
+         "locator": "paragraph VII",
+         "quote": "shall not require more than one residential parking space per unit",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "The last required space is not removed.",
+        "Applicants may also propose shared or off-site parking that a planning board must consider (RSA 674:16-a)."
+       ]
+      },
+      {
+       "id": "parking_provision",
+       "challenge_requirement": "State how much parking developers provide without a mandate.",
+       "observed_position": "Not addressed by state law; the estimate's assumption about the share of parking still built covers this.",
+       "status": "unknown",
+       "sources": [
+        {
+         "title": "New Hampshire RSA 674:16-a",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-16-a.htm",
+         "locator": "paragraph III",
+         "quote": "a planning board shall be required to approve the alternative parking solution",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      }
+     ],
+     "current_strength": 0.43,
+     "strength_method": "quantified",
+     "strength_arithmetic": "The parking estimate removes each county's required spaces per home: 1.7955 in Hillsborough (Manchester-Nashua metro), 1.9139 in Rockingham and Strafford (Boston metro), and the register's 1 elsewhere. The cap already removes the spaces above one, a share 1 - 1/spaces of each county's benchmark: 0.4431 and 0.4775, and 0 where one space is required. Weighted by the mid increment before the cap (Hillsborough 61.37, Rockingham 58.26, Strafford 25.00 of 157.29 permits): (61.37 x 0.4431 + 58.26 x 0.4775 + 25.00 x 0.4775) / 157.29 = 0.426.",
+     "strength_rationale": "Since September 2025 New Hampshire towns may require at most one parking space per home. The parking estimate removes the spaces local codes require, about 1.8 to 1.9 per home in the Manchester-Nashua and Boston-area counties and one elsewhere, so the cap has already removed the part above one. Weighted by where the estimate's added homes are, that is 0.43 of the benchmark; the remaining 0.57, the last required space, would be newly affected.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "Quantified strength (decision 93): the feature rule would give 0.50 (one of two features); the arithmetic is linear in required spaces, as the parking formula is."
+    },
+    "fees": {
+     "record": {
+      "law": "RSA 674:21, V (impact fees)",
+      "summary": "New Hampshire limits impact fees to a proportional share of the capital costs a development creates; it does not cut them.",
+      "quote": "The amount of any such fee shall be a proportional share of municipal capital improvement costs which is reasonably related to the capital needs created by the development",
+      "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-21.htm",
+      "accessed": "2026-11-03",
+      "in_effect": "In force; no fee reduction enacted."
+     },
+     "features": [
+      {
+       "id": "fees_level",
+       "challenge_requirement": "Assume total fees of $50,000 per home for the challenge comparison.",
+       "observed_position": "State law does not set a fee level; fees are set by each town and are not measured here.",
+       "status": "unknown",
+       "sources": [
+        {
+         "title": "New Hampshire RSA 674:21",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-21.htm",
+         "locator": "paragraph V(b)",
+         "quote": "In order for a municipality to adopt an impact fee ordinance, it must have enacted a capital improvements program",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      },
+      {
+       "id": "fees_cut",
+       "challenge_requirement": "Reduce total fees by 50%.",
+       "observed_position": "No statute reduces development fees.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "New Hampshire RSA 674:21",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-21.htm",
+         "locator": "paragraph V(a)",
+         "quote": "shall be a proportional share of municipal capital improvement costs",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      },
+      {
+       "id": "fees_categories",
+       "challenge_requirement": "Cover planning, environmental review, building, and impact fees.",
+       "observed_position": "The statute governs impact fees only; planning and building permit fees are set locally.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "New Hampshire RSA 674:21",
+         "url": "https://gc.nh.gov/rsa/html/LXIV/674/674-21.htm",
+         "locator": "paragraph V",
+         "quote": "\"impact fee\" means a fee or assessment imposed upon development",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      }
+     ],
+     "current_strength": 0.0,
+     "strength_rationale": "New Hampshire limits impact fees to a proportional share of new capital costs but has not cut fees, so none of the 50% fee cut is in law and all of it would be newly affected.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "New entry 2026-11-03; zero by the gate rule (decision 91)."
+    }
+   }
+  },
+  "UT": {
+   "state": "UT",
+   "scenarios": {
+    "adu": {
+     "ported_from": "adam-v2.0",
+     "rechecked": "2026-11-03",
+     "record": {
+      "law": "Utah Code 10-21-303 (cities and towns) and 17-80-303 (counties), internal ADUs, first enacted by H.B. 82 (2021); detached ADUs on large lots, Utah Code 10-21-304, enacted by S.B. 284 (2026, chapter 166)",
+      "summary": "Every Utah city, town and county must treat an ADU inside a single-family house as a permitted use in residential zones. Since October 1, 2026, cities of 10,000 people or more must also permit a detached ADU on lots of 11,000 square feet or more.",
+      "quote": "In any area zoned primarily for residential use: (a) the use of an internal accessory dwelling unit is a permitted use",
+      "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S303.html",
+      "accessed": "2026-11-03",
+      "in_effect": "Internal ADUs since May 5, 2021 (current section numbers since November 6, 2025); detached ADUs on lots of 11,000 square feet or more since October 1, 2026."
+     },
+     "features": [
+      {
+       "id": "adu_per_lot",
+       "challenge_requirement": "Allow one ADU on a parcel with an existing single-family building.",
+       "observed_position": "One ADU inside the house is a permitted use in every residential zone of every city, town and county, and towns may not add rules on lot size, frontage or the unit's size.",
+       "status": "supported_with_limits",
+       "sources": [
+        {
+         "title": "Utah Code 10-21-303",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S303.html",
+         "locator": "subsection (1)",
+         "quote": "the use of an internal accessory dwelling unit is a permitted use",
+         "accessed": "2026-11-03"
+        },
+        {
+         "title": "Utah Code 17-80-303",
+         "url": "https://le.utah.gov/xcode/Title17/Chapter80/17-80-S303.html",
+         "locator": "subsection (1)",
+         "quote": "the use of an internal accessory dwelling unit is a permitted use",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Only ADUs inside the existing house's footprint are covered statewide.",
+        "Towns may bar them on lots of 6,000 square feet or less, and in zones covering up to a quarter of their residential land (two thirds in towns with a large university).",
+        "Towns may require the owner to live on site when the unit is rented."
+       ]
+      },
+      {
+       "id": "adu_forms",
+       "challenge_requirement": "Allow detached and semi-detached ADUs.",
+       "observed_position": "Statewide, only ADUs inside the house are required. Since October 1, 2026, cities of 10,000 people or more (and of 5,000 or more in the larger counties) must permit a detached ADU, but only on lots of 11,000 square feet or more; additions to the house are not required.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Utah Code 10-21-304",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S304.html",
+         "locator": "subsection (1)(a)",
+         "quote": "permits a detached accessory dwelling unit on any lot or parcel that is 11,000 square feet or larger and contains a single-family dwelling",
+         "accessed": "2026-11-03"
+        },
+        {
+         "title": "Utah Code 10-21-101",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S101.html",
+         "locator": "subsection (25), specified municipality",
+         "quote": "a city of the first, second, third, or fourth class",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Detached ADUs on smaller lots, in smaller towns and in counties remain up to local rules."
+       ]
+      },
+      {
+       "id": "adu_size",
+       "challenge_requirement": "Allow ADUs of at least 600 square feet.",
+       "observed_position": "Towns and counties may not limit the size of an ADU inside the house relative to the house, so a 600 square foot unit is allowed wherever the house is large enough.",
+       "status": "supported_with_limits",
+       "sources": [
+        {
+         "title": "Utah Code 10-21-303",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S303.html",
+         "locator": "subsection (1)(b)(i)",
+         "quote": "the size of the internal accessory dwelling unit in relation to the primary dwelling",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "The unit must fit inside the existing house."
+       ]
+      },
+      {
+       "id": "adu_parking",
+       "challenge_requirement": "Require no added parking for the ADU.",
+       "observed_position": "Towns may require one more parking space for an ADU inside the house, and one or two spaces for a detached ADU.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Utah Code 10-21-303",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S303.html",
+         "locator": "subsection (3)(c)(i)",
+         "quote": "to include one additional on-site parking space for an internal accessory dwelling unit",
+         "accessed": "2026-11-03"
+        },
+        {
+         "title": "Utah Code 10-21-304",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S304.html",
+         "locator": "subsection (3)(b) and (c)",
+         "quote": "require more than two on-site parking spaces assigned to a detached accessory dwelling unit that is 650 square feet or larger",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      }
+     ],
+     "current_strength": 0.5,
+     "strength_rationale": "Two of the four benchmark features are in Utah law in every city, town and county: one ADU per lot as a permitted use and no limit on its size relative to the house. The other two are not: the statewide rule covers only units inside the house, and towns may require an added parking space. So 2 / 4 = 0.50 of the benchmark is in law and 0.50 would be newly affected. Detached ADUs required on large lots since October 2026 are noted but do not meet the benchmark's form on most lots.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "Strength rule from decision 91; size status changed from Adam's record on re-check (decision 92)."
+    },
+    "missing_middle": {
+     "record": {
+      "law": "No statewide middle-housing requirement found. Nearest: Utah Code 10-21-201 (moderate income housing plans), whose menu of strategies includes rezoning for higher density.",
+      "summary": "Utah requires cities to plan for moderate income housing by choosing strategies from a menu; none requires duplexes to sixplexes on single-family lots.",
+      "quote": "rezone for densities necessary to facilitate the production of moderate income housing",
+      "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S201.html",
+      "accessed": "2026-11-03",
+      "in_effect": "Housing plan menu in force; no middle-housing mandate found in the code as of November 2026."
+     },
+     "features": [
+      {
+       "id": "mm_parcels",
+       "challenge_requirement": "Apply the reform to parcels currently limited to single-family use.",
+       "observed_position": "No statute gives single-family lots the right to two to six homes. Rezoning for density is one strategy a city may choose for its housing plan.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Utah Code 10-21-201",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S201.html",
+         "locator": "subsection (3)(a)(iii)(A)",
+         "quote": "rezone for densities necessary to facilitate the production of moderate income housing",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Local rezonings that allow middle housing are not counted."
+       ]
+      },
+      {
+       "id": "mm_units",
+       "challenge_requirement": "Allow two to six homes on each affected parcel.",
+       "observed_position": "Not addressed by state law.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Utah Code 10-21-201",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S201.html",
+         "locator": "subsection (2)(c)",
+         "quote": "shall include a recommendation to implement three or more of the moderate income housing strategies",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      },
+      {
+       "id": "mm_height",
+       "challenge_requirement": "Allow buildings of up to three stories.",
+       "observed_position": "Not addressed by state law.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Utah Code 10-21-201",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S201.html",
+         "locator": "subsection (3)(a)(iii)",
+         "quote": "a recommendation to implement the required number of any of the following moderate income housing strategies",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      },
+      {
+       "id": "mm_envelope",
+       "challenge_requirement": "The model may assume setbacks and lot coverage do not prevent two to six homes.",
+       "observed_position": "Not addressed by state law.",
+       "status": "unknown",
+       "sources": [
+        {
+         "title": "Utah Code 10-21-201",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S201.html",
+         "locator": "subsection (3)(a)(iii)",
+         "quote": "a recommendation to implement the required number of any of the following moderate income housing strategies",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      }
+     ],
+     "current_strength": 0.0,
+     "strength_rationale": "Utah asks cities to choose housing strategies from a menu but does not give single-family lots the right to two to six homes, so none of the benchmark is in law and all of it would be newly affected.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "New entry 2026-11-03; zero by the gate rule (decision 91)."
+    },
+    "tod": {
+     "record": {
+      "law": "Utah Code 63N-23-104 (station area plans), first enacted by H.B. 462 (2022); station area defined in Utah Code 10-21-101",
+      "summary": "Cities with a rail or bus rapid transit station must adopt a station area plan that promotes housing within half a mile of rail stations, but the law does not set or require any density increase.",
+      "quote": "develop and adopt a station area plan; and (ii) adopt any appropriate land use regulations to implement the station area plan",
+      "url": "https://le.utah.gov/xcode/Title63N/Chapter23/63N-23-S104.html",
+      "accessed": "2026-11-03",
+      "in_effect": "Plans for existing stations were due by December 31, 2025, with later dates for cities with more than four stations."
+     },
+     "features": [
+      {
+       "id": "tod_density",
+       "challenge_requirement": "Increase permitted building height, floor area ratio, or both near major transit stops.",
+       "observed_position": "Each station area plan must promote more housing, and a city may consider higher densities, but no height or density increase is required.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Utah Code 63N-23-104",
+         "url": "https://le.utah.gov/xcode/Title63N/Chapter23/63N-23-S104.html",
+         "locator": "subsection (6)(b)(i)(B)",
+         "quote": "providing for densities necessary to facilitate the development of moderate income housing",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Densities adopted in local station area plans are not counted."
+       ]
+      },
+      {
+       "id": "tod_geography",
+       "challenge_requirement": "Define major transit stops and justify the distance threshold.",
+       "observed_position": "A station area is the land within half a mile of a rail station platform, or a quarter mile of a bus rapid transit platform.",
+       "status": "supported_with_limits",
+       "sources": [
+        {
+         "title": "Utah Code 10-21-101",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S101.html",
+         "locator": "subsection (26)(a)",
+         "quote": "the area within a one-half mile radius of the center of the fixed guideway public transit station platform",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Fixed-guideway stations only; frequent local bus stops are not included."
+       ]
+      },
+      {
+       "id": "tod_parking",
+       "challenge_requirement": "The model may assume parking requirements near transit are reduced or removed.",
+       "observed_position": "Reducing parking near transit is one option a city may choose in its housing plan; it is not required.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Utah Code 10-21-201",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S201.html",
+         "locator": "subsection (3)(a)(iii)(H)",
+         "quote": "amend land use regulations to eliminate or reduce parking requirements for residential development where a resident is less likely to rely on the resident's own vehicle",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      }
+     ],
+     "current_strength": 0.0,
+     "strength_rationale": "Utah defines station areas and requires cities to plan them, but it does not require higher density there, so none of the benchmark's density increase is in law and all of it would be newly affected. Densities that cities adopt in their own station area plans are not counted.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "New entry 2026-11-03; zero by the gate rule even though the geography feature is supported (decision 91)."
+    },
+    "parking": {
+     "record": {
+      "law": "No statewide cap or repeal of residential parking minimums. Nearest: Utah Code 10-20-618 (parking space size and garages, as amended by S.B. 181, 2025) and the parking option in Utah Code 10-21-201.",
+      "summary": "Utah limits the size cities may require for a parking space and how garages count, but cities still set how many spaces new housing needs.",
+      "quote": "Nothing in this section prohibits a municipality from requiring on-site parking for owner-occupied affordable housing.",
+      "url": "https://le.utah.gov/xcode/Title10/Chapter20/10-20-S618.html",
+      "accessed": "2026-11-03",
+      "in_effect": "Space-size rules in force since May 7, 2025 (current section number since November 6, 2025)."
+     },
+     "features": [
+      {
+       "id": "parking_minimum",
+       "challenge_requirement": "Reduce or remove parking minimums for new residential development.",
+       "observed_position": "No statute reduces the number of spaces required. Cities may choose to reduce parking near transit as one strategy in their housing plan.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Utah Code 10-21-201",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S201.html",
+         "locator": "subsection (3)(a)(iii)(H)",
+         "quote": "amend land use regulations to eliminate or reduce parking requirements for residential development",
+         "accessed": "2026-11-03"
+        },
+        {
+         "title": "Utah Code 10-20-618",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter20/10-20-S618.html",
+         "locator": "subsection (7)",
+         "quote": "Nothing in this section prohibits a municipality from requiring on-site parking for owner-occupied affordable housing.",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": [
+        "Local parking reductions are not counted."
+       ]
+      },
+      {
+       "id": "parking_provision",
+       "challenge_requirement": "State how much parking developers provide without a mandate.",
+       "observed_position": "Not addressed by state law; the estimate's assumption about the share of parking still built covers this.",
+       "status": "unknown",
+       "sources": [
+        {
+         "title": "Utah Code 10-20-618",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter20/10-20-S618.html",
+         "locator": "subsection (4)",
+         "quote": "A municipality that is a specified municipality may not",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      }
+     ],
+     "current_strength": 0.0,
+     "strength_rationale": "Utah regulates the size of required parking spaces but not how many are required, so none of the benchmark is in law and all of it would be newly affected.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "New entry 2026-11-03; zero by the gate rule (decision 91)."
+    },
+    "fees": {
+     "record": {
+      "law": "Utah Code 11-36a (Impact Fees Act), section 11-36a-202 (prohibited impact fees)",
+      "summary": "Utah limits what impact fees may pay for and bars them on ADUs inside existing houses; it does not cut fees on new homes generally.",
+      "quote": "on development activity that consists of the construction of an internal accessory dwelling unit, as defined in Section 10-21-303, within an existing primary dwelling",
+      "url": "https://le.utah.gov/xcode/Title11/Chapter36a/11-36a-S202.html",
+      "accessed": "2026-11-03",
+      "in_effect": "In force; no general fee reduction enacted."
+     },
+     "features": [
+      {
+       "id": "fees_level",
+       "challenge_requirement": "Assume total fees of $50,000 per home for the challenge comparison.",
+       "observed_position": "State law does not set a fee level; fees are set locally and are not measured here.",
+       "status": "unknown",
+       "sources": [
+        {
+         "title": "Utah Code 11-36a-202",
+         "url": "https://le.utah.gov/xcode/Title11/Chapter36a/11-36a-S202.html",
+         "locator": "subsection (1)(c)",
+         "quote": "impose or charge any other fees as a condition of development approval unless those fees are a reasonable charge for the service provided",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      },
+      {
+       "id": "fees_cut",
+       "challenge_requirement": "Reduce total fees by 50%.",
+       "observed_position": "No statute cuts fees on new homes; waiving or reducing fees for moderate income housing is one option in a city's housing plan.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Utah Code 10-21-201",
+         "url": "https://le.utah.gov/xcode/Title10/Chapter21/10-21-S201.html",
+         "locator": "subsection (3)(a)(iii)(L)",
+         "quote": "reduce, waive, or eliminate impact fees related to moderate income housing",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      },
+      {
+       "id": "fees_categories",
+       "challenge_requirement": "Cover planning, environmental review, building, and impact fees.",
+       "observed_position": "The act governs impact fees and requires other approval fees to be a reasonable charge for the service; it does not reduce them.",
+       "status": "differs",
+       "sources": [
+        {
+         "title": "Utah Code 11-36a-202",
+         "url": "https://le.utah.gov/xcode/Title11/Chapter36a/11-36a-S202.html",
+         "locator": "subsection (1)(c)",
+         "quote": "unless those fees are a reasonable charge for the service provided",
+         "accessed": "2026-11-03"
+        }
+       ],
+       "limitations": []
+      }
+     ],
+     "current_strength": 0.0,
+     "strength_rationale": "Utah regulates impact fees and exempts ADUs inside existing houses, but it has not cut fees on new homes, so none of the 50% fee cut is in law and all of it would be newly affected.",
+     "human_review": {
+      "status": "pending",
+      "by": null,
+      "date": null
+     },
+     "notes": "New entry 2026-11-03; zero by the gate rule (decision 91)."
     }
    }
   }
@@ -2366,14 +3494,14 @@
    "title": "American Community Survey 5-year summary files",
    "license": "U.S. Census Bureau, public domain; catalog entry tagged CC0 1.0",
    "notes": "Table-based 5-year summary files; block-group margins of error are large and are not stored; tracts and block groups are 2020 vintage; Connecticut in planning regions.",
-   "files": 9,
+   "files": 10,
    "where": [
     "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/documentation/",
     "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/"
    ],
    "accessed": [
     "2026-11-03",
-    "2026-11-03"
+    "2026-11-04"
    ],
    "vintages": [
     "ACS 5-year 2020-2024 (2024 release)"
@@ -2501,14 +3629,14 @@
    "id": "gazetteer",
    "title": "Census Gazetteer, counties",
    "license": "U.S. Census Bureau, public domain (U.S. government work)",
-   "notes": "County names, land area (sq mi) and internal points; used as the county index every other source is joined to by FIPS.",
-   "files": 1,
+   "notes": "County names, land area (sq mi) and internal points; used as the county index every other source is joined to by FIPS. The place file's land area is used only for the upper bound on homes near a downtown in the current-law coverage check.",
+   "files": 2,
    "where": [
     "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/"
    ],
    "accessed": [
     "2026-11-03",
-    "2026-11-03"
+    "2026-11-04"
    ],
    "vintages": [
     "2025"

@@ -232,23 +232,23 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 1536.8592,
-      "mid": 8063.0552,
-      "high": 48968.7561
+      "low": 307.3718,
+      "mid": 1612.611,
+      "high": 9793.7512
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.2,
      "benchmark_mid": 12423.8139,
      "benchmark_outcome": "completed_homes"
     },
     "missing_middle": {
      "increment": {
       "low": 0.0,
-      "mid": 9868.5535,
-      "high": 17595.5441
+      "mid": 9473.8114,
+      "high": 16891.7223
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.96,
      "benchmark_mid": 11858.4994,
      "benchmark_outcome": "net_permits"
     },
@@ -287,9 +287,9 @@
     }
    },
    "combined": {
-    "low": 1536.8592,
-    "mid": 31486.2885,
-    "high": 118462.8842
+    "low": 307.3718,
+    "mid": 24656.1258,
+    "high": 78697.8398
    }
   },
   {
@@ -2237,11 +2237,11 @@
     "parking": {
      "increment": {
       "low": 0.0,
-      "mid": 157.2944,
-      "high": 595.6216
+      "mid": 89.6578,
+      "high": 339.5043
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.57,
      "benchmark_mid": 157.2944,
      "benchmark_outcome": "cost_response_proxy"
     },
@@ -2259,8 +2259,8 @@
    },
    "combined": {
     "low": 41.1071,
-    "mid": 2403.6402,
-    "high": 7560.3107
+    "mid": 2336.0036,
+    "high": 7304.1934
    }
   },
   {
@@ -3225,12 +3225,12 @@
    "scenarios": {
     "adu": {
      "increment": {
-      "low": 753.602,
-      "mid": 3750.5179,
-      "high": 18313.4857
+      "low": 376.801,
+      "mid": 1875.2589,
+      "high": 9156.7429
      },
      "status": "register_default",
-     "newly_affected_share": 1.0,
+     "newly_affected_share": 0.5,
      "benchmark_mid": 5778.9181,
      "benchmark_outcome": "completed_homes"
     },
@@ -3280,9 +3280,9 @@
     }
    },
    "combined": {
-    "low": 753.602,
-    "mid": 12155.78,
-    "high": 43199.0134
+    "low": 376.801,
+    "mid": 10283.1424,
+    "high": 34066.3364
    }
   },
   {
