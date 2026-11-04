@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const ref = readFileSync(`${ROOT}scripts/ds-reference/index.d.ts`, 'utf8');
-const PORTED = { Button: 'Button', Tag: 'Tag', Card: 'Card', StatCallout: 'StatCallout', Tabs: 'Tabs', Select: 'Select', Input: 'Input', Checkbox: 'Checkbox' };
+const PORTED = ['Button', 'Tag', 'Card', 'StatCallout', 'Tabs', 'Select', 'Input', 'Checkbox'];   // one file each under src/components/ds/
 
 function props(src, name) {
   const m = new RegExp(`interface ${name}Props\\s*\\{([\\s\\S]*?)\\n\\}`).exec(src);
@@ -17,8 +17,8 @@ function props(src, name) {
 }
 
 test('every declared design-system prop exists on the port (style becomes className)', () => {
-  for (const [name, file] of Object.entries(PORTED)) {
-    const ours = new Set(props(readFileSync(`${ROOT}src/components/ds/${file}.tsx`, 'utf8'), name));
+  for (const name of PORTED) {
+    const ours = new Set(props(readFileSync(`${ROOT}src/components/ds/${name}.tsx`, 'utf8'), name));
     for (const p of props(ref, name)) {
       const want = p === 'style' ? 'className' : p;
       assert.ok(ours.has(want), `${name}: prop "${want}" is declared by the design system but missing on the port`);

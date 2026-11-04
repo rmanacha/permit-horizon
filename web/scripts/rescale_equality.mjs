@@ -99,9 +99,10 @@ try {
         const want = run.scenarios[name].components.increment_mid_permits;
         const d = a.value === null ? Infinity : rel(a.value, want);
         const tol = exact ? 1e-9 : 1e-3;
-        const ok = d <= tol || (a.value !== null && Math.abs(a.value - want) <= (exact ? 1e-9 : 5e-4));
+        const close = d <= tol || (a.value !== null && Math.abs(a.value - want) <= (exact ? 1e-9 : 5e-4));
+        const ok = close && !(exact && a.route !== 'multiplicative');   // an exact set must take the exact route
         compared += 1;
-        if (!ok || (exact && a.route !== 'multiplicative')) failures += 1;
+        if (!ok) failures += 1;
         rows.push(`    ${name.padEnd(15)} page ${String(a.value?.toFixed(6)).padStart(14)}  engine ${want.toFixed(6).padStart(14)}  ` +
           `rel diff ${d.toExponential(1).padStart(8)}  ${a.route}${ok ? '' : '  FAIL'}`);
       }

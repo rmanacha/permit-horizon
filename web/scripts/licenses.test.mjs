@@ -1,5 +1,5 @@
 // Every npm package in the lock file (all platforms, including optional native binaries) must
-// carry a licence the challenge allows for dependencies: MIT, ISC, BSD-2/3-Clause or Apache-2.0.
+// carry a licence the challenge allows for dependencies: MIT, ISC, BSD-2/3-Clause, 0BSD or Apache-2.0.
 // The lock file records each package's licence, so this needs no download and no extra tool.
 // (`npx license-checker --summary` gives the same answer for the installed tree; see docs/methods/ui.md.)
 import { test } from 'node:test';
