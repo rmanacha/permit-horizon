@@ -3,7 +3,7 @@
 // ranking. Pure functions (no React), so the rules are tested in viewmodel.test.ts.
 import { adjust, type Adjusted, type RegisterValues } from '../engine/rescale.ts';
 import { caseKey, type CaseSel, type Settings } from './route.ts';
-import { type LMH, type Outcome, type Results, type ScenarioName, type TornadoBar } from '../types/results.ts';
+import { type HumanReview, type LMH, type Outcome, type Results, type ScenarioName, type TornadoBar } from '../types/results.ts';
 
 export interface ScenarioView {
   name: ScenarioName;
@@ -42,17 +42,11 @@ export function lawLead(source: string, strength: number): string {
   return strength > 0 ? 'A statewide law is on file. ' : 'State law checked. ';
 }
 
-export function humanReviewText(h: unknown): string | null {
-  if (h === null || h === undefined || h === false) return null;
-  if (typeof h === 'string') return h;
-  if (typeof h === 'object' && h !== null && 'status' in h) {
-    const o = h as { status?: string; by?: string | null; date?: string | null };
-    if (o.status === 'done' || o.status === 'complete' || o.status === 'reviewed') {
-      return `reviewed${o.by ? ` by ${o.by}` : ''}${o.date ? ` on ${o.date}` : ''}`;
-    }
-    return `human review ${o.status ?? 'pending'}`;
-  }
-  return String(h);
+/** "reviewed by X on D" or "human review pending" for a current-law record; null when the state has no file. */
+export function humanReviewText(h: HumanReview | null): string | null {
+  if (h === null) return null;
+  if (h.status === 'reviewed') return `reviewed${h.by ? ` by ${h.by}` : ''}${h.date ? ` on ${h.date}` : ''}`;
+  return `human review ${h.status}`;
 }
 
 export function scenarioView(

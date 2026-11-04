@@ -26,12 +26,12 @@ export function fmtNumber(n: number, digits = 4): string {
   return new Intl.NumberFormat('en-US', { maximumSignificantDigits: digits }).format(n);
 }
 
-export const OUTCOME_LABELS: Record<Outcome, { short: string; plural: string; glossary: string }> = {
-  permits: { short: 'permits', plural: 'permits', glossary: 'outcome-permits' },
-  net_permits: { short: 'net permits', plural: 'net permits', glossary: 'outcome-net-permits' },
-  completed_homes: { short: 'completed homes', plural: 'completed homes', glossary: 'outcome-completed-homes' },
-  stock_change: { short: 'homes added to the stock', plural: 'homes added to the stock', glossary: 'outcome-stock-change' },
-  cost_response_proxy: { short: 'cost-response permits', plural: 'cost-response permits', glossary: 'outcome-cost-response-proxy' },
+export const OUTCOME_LABELS: Record<Outcome, { short: string; glossary: string }> = {
+  permits: { short: 'permits', glossary: 'outcome-permits' },
+  net_permits: { short: 'net permits', glossary: 'outcome-net-permits' },
+  completed_homes: { short: 'completed homes', glossary: 'outcome-completed-homes' },
+  stock_change: { short: 'homes added to the stock', glossary: 'outcome-stock-change' },
+  cost_response_proxy: { short: 'cost-response permits', glossary: 'outcome-cost-response-proxy' },
 };
 
 export function outcomeLabel(o: Outcome | string): string {
@@ -42,7 +42,6 @@ export const STATUS_LABELS: Record<string, string> = {
   register_default: 'Register default',
   user_case: 'User case',
   assumed_zero: 'Assumed zero',
-  unknown: 'Unknown',
 };
 
 export function statusLabel(s: string): string {

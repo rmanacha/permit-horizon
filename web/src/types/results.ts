@@ -143,11 +143,18 @@ export interface Grid {
   cells: Record<string, number>;
 }
 
+/** The human_review block of a current-law record (src/hre/current_law/schema.py allows pending or reviewed). */
+export interface HumanReview {
+  status: 'pending' | 'reviewed';
+  by?: string | null;
+  date?: string | null;
+}
+
 export interface CurrentLawRef {
   current_strength: number;
   source: string;
   note: string;
-  human_review: string | boolean | null;
+  human_review: HumanReview | null;
   file: string | null;
 }
 
