@@ -34,8 +34,8 @@ Each page needs the owner's sign-in. Expected counts are all zero.
 5. Close the two Dependabot pull requests above with the reason given (https://github.com/rmanacha/permit-horizon/pulls), then write the counts below and commit. `make check` reads this block; `make check STRICT=1` fails until every line is filled and every count is 0 (or the line says why a finding is justified).
 
 <!-- filled in by the repository owner -->
-- Code scanning open alerts:
-- Dependabot open alerts:
-- Secret scanning open alerts:
-- Push protection:
-- Checked by and date:
+- Code scanning open alerts: 0
+- Dependabot open alerts: 0
+- Secret scanning open alerts: 0
+- Push protection: on
+- Checked by and date: Rishabh Manacha, 2026-11-05
