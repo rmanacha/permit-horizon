@@ -64,7 +64,7 @@ def outliers(rs: list[dict[str, Any]]) -> list[str]:
             continue
         for r in rs:
             p = r[s]["pct"]
-            if med > 0 and (p > 3 * med or p < med / 3):
+            if p > 3 * med or p < med / 3:
                 flags.append(f"{s}: {r['state']} {p:.2f}% of baseline (median {med:.2f}%)")
     return flags
 
@@ -94,9 +94,10 @@ def render(results: list[dict[str, Any]], run_date: str, keep: str = "") -> str:
                  + f" | {_f(r['combined']['mid'])} | {r['combined_pct']:.1f}% |")
     tot = {s: sum(r[s]["increment"] for r in rs) for s in SCENARIOS}
     base = sum(r["baseline"] for r in rs)
+    combined = sum(r["combined"]["mid"] for r in rs)
     L += ["", (f"All {len(rs)} together: baseline {_f(base)} permits; increments "
                + ", ".join(f"{s} {_f(tot[s])} ({100 * tot[s] / base:.1f}%)" for s in SCENARIOS)
-               + f"; combined {_f(sum(r['combined']['mid'] for r in rs))}."), ""]
+               + f"; combined {_f(combined)}."), ""]
     L += ["## 2. Distribution across states (increment as % of baseline, mid)", "",
           "| Scenario | Min | Median | Max | States with zero |", "|---|---|---|---|---|"]
     for s in SCENARIOS:
@@ -117,10 +118,8 @@ def render(results: list[dict[str, Any]], run_date: str, keep: str = "") -> str:
                  "a year in 2023-2025 (de-duplicated HCD) and permitted 30,000 to 40,000. The tier rates are "
                  "fitted on California, so this is a consistency check, not a test.")
     worst = max(rs, key=lambda r: (r["missing_middle"]["high"] + r["tod"]["high"]) / r["stock"] if r["stock"] else 0)
-    nat_b = sum(r["baseline"] for r in rs)
-    nat_c = sum(r["combined"]["mid"] for r in rs)
-    L.append(f"- **National scale.** All five together add {_f(nat_c)} permits at mid over five years, "
-             f"{100 * nat_c / nat_b:.1f}% of the {_f(nat_b)}-permit national baseline.")
+    L.append(f"- **National scale.** All five together add {_f(combined)} permits at mid over five years, "
+             f"{100 * combined / base:.1f}% of the {_f(base)}-permit national baseline.")
     if worst["stock"]:
         share = 100 * (worst["missing_middle"]["high"] + worst["tod"]["high"]) / worst["stock"]
         L.append(f"- **Upzoning upper bound.** Auckland's upzoning added 4.1% of its stock in five years. Our "

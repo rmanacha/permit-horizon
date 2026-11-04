@@ -420,7 +420,7 @@ def uv_packages() -> dict[str, tuple[str, str]]:
         got = closure([d["name"] for d in deps], taken)
         roles |= dict.fromkeys(got, f"optional extra `{extra}`")
         taken |= got
-    for group, deps in sorted(root.get("dev-dependencies", {}).items()):
+    for _group, deps in sorted(root.get("dev-dependencies", {}).items()):
         got = closure([d["name"] for d in deps], taken)
         roles |= dict.fromkeys(got, "development only (tests, lint)")
         taken |= got
