@@ -74,3 +74,16 @@ def test_adu_table_covers_all_51_jurisdictions():
             and not r.startswith("|---")]
     listed_none = text.rsplit("(strength 0, the whole benchmark counts as new): ", 1)[1].rstrip(".").split(", ")
     assert len(rows) + len(listed_none) == 51
+
+
+def test_site_text_has_no_internal_references():
+    """Glossary, limits and fixed site text reach legislators verbatim: no decision numbers or phase names."""
+    import re
+
+    bad = re.compile(r"\bdecisions? \d|\bPhase \d", re.IGNORECASE)
+    lines = [ln for rel in ("docs/GLOSSARY.md", "docs/methods/limits.md")
+             for ln in (REPO / rel).read_text(encoding="utf-8").splitlines() if ln.startswith("- **")]
+    site = (REPO / "web/src/content/site.ts").read_text(encoding="utf-8")
+    lines += [m.group(0) for m in re.finditer(r"'[^']{20,}'|\"[^\"]{20,}\"", site)]
+    hits = [ln for ln in lines if bad.search(ln)]
+    assert not hits, hits

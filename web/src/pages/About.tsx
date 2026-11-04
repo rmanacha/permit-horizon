@@ -1,6 +1,6 @@
 import { useShared, useView } from '../app/context.tsx';
 import { StateResults } from '../components/StateResults.tsx';
-import { CREDITS, DOCS, REPO_URL, SITE_URL, TEAM, TEAM_NOTE, doc } from '../content/site.ts';
+import { CREDITS, DOCS, REPO_URL, SITE_URL, TEAM, TEAM_NOTE, TEST_COUNTS, doc } from '../content/site.ts';
 import { Term } from '../components/Term.tsx';
 
 export function AboutPage() {
@@ -89,7 +89,8 @@ make test    # the automated tests (offline)`}</pre>
       <h2>Licence, AI use and privacy</h2>
       <p>
         The code is open source under Apache-2.0; each dataset keeps its own terms (Assumptions and data page). AI coding assistants
-        helped write the code, and every function has tests; the <a href={doc('docs/DISCLOSURES.md')}>disclosures</a> list the tools. {meta.no_llm}
+        helped write the code; {TEST_COUNTS.python} Python tests and {TEST_COUNTS.web} website tests check it on every change, and
+        the <a href={doc('docs/DISCLOSURES.md')}>disclosures</a> list the tools. {meta.no_llm}
       </p>
       <p>This site is static: it sends nothing anywhere, sets no cookies and has no tracking. Downloads are built in your browser.</p>
     </>

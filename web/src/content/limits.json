@@ -14,12 +14,12 @@
    "text": "The baseline range is fitted on history. It held in most past periods, but for forecasts made in 2005-2010, the bust, the actual total fell inside only 56% of the time, and a range drawn at the time would have missed almost every state in 2005-2008."
   },
   {
-   "title": "Local rules",
-   "text": "The tool reads state law only, and only where a current-law file exists; local zoning, permitting practice and fee schedules are not modeled. Where no file exists the whole benchmark counts as new, so estimates read high in states whose law already gives part of a reform."
+   "title": "Local rules and local opposition",
+   "text": "The tool reads state law only. Local zoning, fee schedules, how fast towns issue permits and local opposition are not modeled, and a town can comply with a state law on paper while still slowing building. Every state has an ADU law file; the other four reforms have files for Utah, New Hampshire and Arizona only, so elsewhere their whole benchmark counts as new."
   },
   {
-   "title": "Prices, rents and who can afford the homes",
-   "text": "The tool estimates building permits. It does not estimate prices, rents, affordability or who moves in."
+   "title": "Prices, rents and homelessness",
+   "text": "The tool estimates building permits. It does not estimate prices, rents, affordability, homelessness or who moves in."
   },
   {
    "title": "Permits are not homes",
@@ -28,6 +28,10 @@
   {
    "title": "Homes built without a permit count",
    "text": "The Census permit survey misses homes built where no permit is required and many ADU conversions, so the baseline and the ADU increment are not measured the same way."
+  },
+  {
+   "title": "After 2030",
+   "text": "Every estimate stops at five years; anything a reform produces after 2030 is outside it."
   },
   {
    "title": "Reforms together",
