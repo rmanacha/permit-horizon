@@ -66,6 +66,7 @@ function evaluated at the low, mid and high assumption sets, so the layers canno
 | `grid` | parking and fees only: `params`, `levels`, `cells` {"id=lv|id=lv|...": increment in permits} for every low/mid/high combination (parking 81 cells, fees 9) |
 | `diagnostics` | outside every band: missing-middle comparison rates and the all-metro sensitivity; TOD quarter-mile count and boundary rate; fees actual-fee variant and stock route |
 | `limits[]`, `notes[]`, `narrative[]` | the sentences a legislator must hear; data notes; four template sentences |
+| `band_ids` | the register ids that move in the low and high sets (the scenario's `Spec.band`: the source rate with its ramp, or the builder response); the Scenario page tags them "band" and the Comparison's confidence line reads their register confidence |
 | `levels_used` | which level each register id took in the low, mid and high sets |
 
 Rules the validator checks: low ≤ mid ≤ high in every layer; outcome labels from the fixed set;
