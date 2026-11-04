@@ -8,7 +8,7 @@
 # Requires: uv (https://docs.astral.sh/uv/). uv downloads the pinned Python
 # itself (.python-version) and never touches the system Python.
 
-.PHONY: setup test run lint demo data validate-aclf hcd results backtest adu-tiers nrc register-md results-all export web web-dev test-web law-check ledger
+.PHONY: setup test run lint demo data validate-aclf hcd results backtest adu-tiers nrc register-md results-all export web web-dev test-web law-check ledger docs pages
 
 STATE ?= NH
 PORT ?= 8080
@@ -66,6 +66,12 @@ ledger:  ## The validation ledger as tables -> docs/evidence/validation.md (no n
 
 register-md: ## The assumption register as Markdown -> docs/methods/register.md
 	uv run hre export --register-md --out docs/methods/register.md
+
+docs:    ## Rewrite every generated table in the docs from its source (register, current law, ledger, bundle)
+	uv run python -m hre.docs
+
+pages:   ## Print the two page-limited docs to PDF (Chrome) and store the counts -> docs/evidence/page_counts.json
+	uv run --with markdown==3.8 python scripts/count_pages.py
 
 web:     ## Build the static site -> web/dist (Node 22.18+; installs the locked npm packages first)
 	cd web && npm ci --no-audit --no-fund && npm run build

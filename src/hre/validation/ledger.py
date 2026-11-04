@@ -91,16 +91,10 @@ def _fmt(x: Any) -> str:
     return f"{x:,.0f}" if isinstance(x, (int, float)) and abs(x) >= 10 else f"{x:g}"
 
 
-def render_markdown(doc: dict[str, Any], today: str, keep: str = "") -> str:
-    """docs/evidence/validation.md: the ledger as tables, then the hand-written narrative kept as is."""
+def summary_table(doc: dict[str, Any]) -> list[str]:
+    """The ledger as one table and a totals line (validation.md and the Model and Assumptions Overview)."""
     rows = doc.get("entries") or []
     out = [
-        "# Validation: every check of the model, hits and misses",
-        "",
-        (f"Generated {today} by `uv run hre validate --ledger` from `validation/ledger.yaml` (the same entries the "
-        "website's Validation page shows). Frozen checks keep their protocol and hash in `validation/<check>/`; "
-        "`tests/test_ledger.py` recomputes every hit and miss and re-hashes every protocol."),
-        "",
         "| Check | Evidence class | Place and years | Outcome | Model low / mid / high | Actual | Result |",
         "|---|---|---|---|---|---|---|",
     ]
@@ -113,7 +107,23 @@ def render_markdown(doc: dict[str, Any], today: str, keep: str = "") -> str:
                    f"{e['outcome']} ({e['unit']}) | {pred} | {actual} | {e['result'].replace('_', ' ')} |")
     counts = {k: sum(1 for e in rows if e["result"] == k) for k in RESULTS}
     out += ["", (f"Totals: {counts['hit']} hit, {counts['miss']} miss, {counts['pending']} pending, "
-            f"{counts['not_a_test']} not a test."), "", "## What each check shows and does not", ""]
+            f"{counts['not_a_test']} not a test.")]
+    return out
+
+
+def render_markdown(doc: dict[str, Any], today: str, keep: str = "") -> str:
+    """docs/evidence/validation.md: the ledger as tables, then the hand-written narrative kept as is."""
+    rows = doc.get("entries") or []
+    out = [
+        "# Validation: every check of the model, hits and misses",
+        "",
+        (f"Generated {today} by `uv run hre validate --ledger` from `validation/ledger.yaml` (the same entries the "
+        "website's Validation page shows). Frozen checks keep their protocol and hash in `validation/<check>/`; "
+        "`tests/test_ledger.py` recomputes every hit and miss and re-hashes every protocol."),
+        "",
+        *summary_table(doc),
+        "", "## What each check shows and does not", "",
+    ]
     for e in rows:
         fz = e.get("frozen") or {}
         out += [f"### {e['title']}", "", e["result_text"], "",

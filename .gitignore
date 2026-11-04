@@ -87,3 +87,6 @@ npm-debug.log*
 # web/public/results/ IS committed (decision 74): regenerate with `make results-all export`
 # after any change to the engine, the register or the inputs; tests/test_bundle.py fails if stale.
 /results/
+
+# Page-count PDFs (scripts/count_pages.py); attach them to the submission, never commit
+docs/pdf/
