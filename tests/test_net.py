@@ -87,3 +87,21 @@ def test_a_refused_connection_is_transient_and_gives_up():
 def test_build_url_keeps_an_existing_query():
     assert net.build_url("https://x/q?a=1", {"b": "2 3"}) == "https://x/q?a=1&b=2+3"
     assert net.build_url("https://x/q", None) == "https://x/q"
+
+
+def test_ssl_context_falls_back_to_a_system_bundle(monkeypatch, tmp_path):
+    import ssl
+    from pathlib import Path
+
+    system = next((b for b in net.SYSTEM_BUNDLES if Path(b).is_file()), None)
+    if system is None:
+        pytest.skip("no system certificate bundle on this machine")
+    bundle = tmp_path / "bundle.pem"
+    bundle.write_bytes(Path(system).read_bytes())
+    monkeypatch.setattr(net, "SYSTEM_BUNDLES", ("/nonexistent.pem", str(bundle)))
+    monkeypatch.setattr(ssl, "create_default_context", lambda: ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT))
+    net.ssl_context.cache_clear()
+    try:
+        assert net.ssl_context().cert_store_stats()["x509_ca"] > 0
+    finally:
+        net.ssl_context.cache_clear()

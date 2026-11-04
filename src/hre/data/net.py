@@ -5,8 +5,9 @@ parcel count queries (``hre.adapters.arcgis``) and the current-law quote check
 (``hre.validation.law_quotes``). It replaced ``requests``, whose certificate bundle (certifi) is
 licensed MPL-2.0, a copyleft licence the project does not accept for any dependency. TLS
 certificates come from the operating system's trust store through Python's default SSL context
-(macOS ``/etc/ssl/cert.pem``, the ``ca-certificates`` bundle on Linux); set ``SSL_CERT_FILE`` to
-use another bundle.
+(macOS ``/etc/ssl/cert.pem``, the ``ca-certificates`` bundle on Linux). An interpreter whose own
+default holds no certificates (a python.org build before its "Install Certificates" step) falls
+back to the first system bundle that exists; set ``SSL_CERT_FILE`` to use another bundle.
 
     with_retries(lambda: get_bytes(url), retries=4)        # bytes, retried on 429/5xx and network errors
     download(url, dest)                                     # streamed to a file
@@ -15,6 +16,7 @@ use another bundle.
 
 from __future__ import annotations
 
+import functools
 import http.client
 import http.cookiejar
 import json
@@ -29,6 +31,9 @@ from pathlib import Path
 from typing import Any
 
 RETRY_STATUSES = frozenset({429, 500, 502, 503, 504})
+# Certificate bundles the operating system keeps: macOS and Alpine, Debian and Ubuntu, RHEL, SUSE.
+SYSTEM_BUNDLES = ("/etc/ssl/cert.pem", "/etc/ssl/certs/ca-certificates.crt",
+                  "/etc/pki/tls/certs/ca-bundle.crt", "/etc/ssl/ca-bundle.pem")
 CHUNK = 1 << 20
 
 
@@ -48,6 +53,18 @@ TRANSIENT: tuple[type[BaseException], ...] = (urllib.error.URLError, ConnectionE
 ERRORS: tuple[type[BaseException], ...] = (HTTPError, *TRANSIENT)
 
 
+@functools.cache
+def ssl_context() -> ssl.SSLContext:
+    """Python's default context, plus the system bundle when the default loaded no certificates."""
+    ctx = ssl.create_default_context()
+    if not ctx.cert_store_stats().get("x509_ca"):
+        for path in SYSTEM_BUNDLES:
+            if Path(path).is_file():
+                ctx.load_verify_locations(cafile=path)
+                break
+    return ctx
+
+
 def _timeout(timeout: float | tuple[float, float]) -> float:
     """urllib takes one socket timeout; a (connect, read) pair uses the longer read value."""
     return float(max(timeout)) if isinstance(timeout, tuple) else float(timeout)
@@ -65,7 +82,7 @@ def _open(url: str, params: dict[str, Any] | None, headers: dict[str, str] | Non
                                  method="GET")
     # A cookie jar per request, as a browser keeps one across the redirects of one page.
     opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()),
-                                         urllib.request.HTTPSHandler(context=ssl.create_default_context()))
+                                         urllib.request.HTTPSHandler(context=ssl_context()))
     try:
         return opener.open(req, timeout=_timeout(timeout))
     except urllib.error.HTTPError as e:
