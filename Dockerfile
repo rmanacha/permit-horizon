@@ -9,7 +9,7 @@
 # Base images are pinned by digest; Dependabot (docker ecosystem) proposes updates.
 
 # --- 1. Build the static site --------------------------------------------------------------
-FROM node:24-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c AS web
+FROM node:24-slim@sha256:01d566e8d94d8c619591d78652babfccd3c6992a3dffa9ed5ab39e11cf6c70e9 AS web
 WORKDIR /src/web
 COPY web/package.json web/package-lock.json ./
 RUN npm ci --no-audit --no-fund
